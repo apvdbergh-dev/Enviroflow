@@ -7,7 +7,6 @@ Placeholders zijn op de site geel gemarkeerd (`[ZO]`). Alles hieronder is bewust
 | Placeholder | Waar zichtbaar |
 |---|---|
 | `[BTW-NUMMER]` | Footer, contactpagina |
-| `[OFFICIEEL DEALER / DISTRIBUTEUR NEDERLAND]` – kies de exacte relatie met EXFLO | Homepage (partnerblok), /partners/exflo/ |
 | Verzendkosten `[IN TE VULLEN]` (`shipping.flatRate`, of laten staan: "na bestelling berekend") | Winkelwagen, checkout, Levering & verzending |
 | Controle adres: stond als "Molendijk 70, [3235XH] [Rockanje]" aangeleverd; nu getoond als Molendijk 70, 3235 XH Rockanje | Footer, contact, schema.org |
 | Domein `baseUrl` (nu `https://www.enviroflow.nl`) | Canonicals, sitemap, schema.org |
