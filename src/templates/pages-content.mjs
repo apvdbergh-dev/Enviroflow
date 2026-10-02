@@ -124,14 +124,14 @@ ${ctaBand({ title: 'Kennismaken?', text: 'Bel of mail ons. Wij horen graag waar 
 
 export function partnersPage(ctx) {
   const body = `<section class="page-head"><div class="container"><h1>Partners</h1><p class="lead">EnviroFlow werkt samen met fabrikanten die wij kennen en vertrouwen.</p></div></section>
-<section class="section section--tight"><div class="container"><div class="cat-grid">${ctx.brands.filter((b) => b.active).map((b) => `<a class="ccard" href="/partners/${b.slug}/"><div class="logo-ph logo-ph--card">${b.logo ? `<img src="${b.logo}" alt="${esc(b.name)} logo">` : ph(b.logoPlaceholder)}</div><div class="ccard__body"><h2>${esc(b.name)}</h2><p>${esc(b.intro)}</p><span class="link-arrow">Meer over ${esc(b.name)} ${icon('arrow')}</span></div></a>`).join('')}</div></div></section>`;
+<section class="section section--tight"><div class="container"><div class="cat-grid">${ctx.brands.filter((b) => b.active).map((b) => `<a class="ccard" href="/partners/${b.slug}/"><div class="logo-ph logo-ph--card">${b.logo ? `<img class="partner-logo" src="${b.logo}" alt="${esc(b.name)} logo" width="280" height="105">` : ph(b.logoPlaceholder)}</div><div class="ccard__body"><h2>${esc(b.name)}</h2><p>${esc(b.intro)}</p><span class="link-arrow">Meer over ${esc(b.name)} ${icon('arrow')}</span></div></a>`).join('')}</div></div></section>`;
   return { path: '/partners/', title: 'Partners | EnviroFlow', description: 'De fabrikanten waarmee EnviroFlow samenwerkt.', body, crumbs: [H, { name: 'Partners', url: '/partners/' }] };
 }
 
 export function brandPage(b, ctx) {
-  const lines = ctx.products.filter((p) => p.brand === b.id && p.line);
+  const lines = ctx.products.filter((p) => p.brand === b.id && p.line).filter((p, i, arr) => arr.findIndex((x) => x.line === p.line) === i);
   const body = `
-<section class="page-head"><div class="container page-head__grid"><div><p class="eyebrow">Partner</p><h1>${esc(b.name)}</h1><p class="lead">${esc(b.intro)}</p><p>EnviroFlow is ${ph(ctx.site.partnerRelation)} van ${esc(b.name)}.</p></div><div class="logo-ph logo-ph--lg">${b.logo ? `<img src="${b.logo}" alt="${esc(b.name)} logo">` : ph(b.logoPlaceholder)}</div></div></section>
+<section class="page-head"><div class="container page-head__grid"><div><p class="eyebrow">Partner</p><h1>${esc(b.name)}</h1><p class="lead">${esc(b.intro)}</p><p>EnviroFlow is ${ph(ctx.site.partnerRelation)} van ${esc(b.name)}.</p></div><div class="logo-ph logo-ph--lg logo-ph--filled">${b.logo ? `<img class="partner-logo" src="${b.logo}" alt="${esc(b.name)} logo" width="280" height="105">` : ph(b.logoPlaceholder)}</div></div></section>
 <section class="section section--tight"><div class="container split">
   <div><h2>Over ${esc(b.name)}</h2><p>${esc(b.name)} is een fabrikant uit ${esc(b.country)} van flexibele tanks, opvangbakken, waterkeringen en matten van technisch textiel. Het bedrijf is actief sinds ${esc(b.since)}.</p><p>EnviroFlow is geen fabrikant. Wij adviseren, leveren en denken mee over de toepassing van ${esc(b.name)}-producten in Nederland.</p></div>
   <div><h2>Productlijnen</h2><ul class="check-list">${lines.map((p) => `<li>${icon('check')}<a href="${ctx.urls.product(p)}">${esc(p.line)}</a>: ${esc(p.short)}</li>`).join('')}</ul></div>

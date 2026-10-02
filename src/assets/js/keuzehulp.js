@@ -88,6 +88,11 @@
     var cats = recommend(a);
     var catIds = cats.map(function (c) { return c.id; });
     var prods = data.products.filter(function (p) { return catIds.indexOf(p.category) > -1; });
+    if (a.eenheid === 'vaten' && parseFloat(a.aantal) > 0) {
+      var nv = parseFloat(a.aantal);
+      var fitv = prods.filter(function (p) { return p.drums && p.drums >= nv; }).sort(function (x, y) { return x.drums - y.drums; });
+      prods = fitv.length ? fitv : prods;
+    }
     if (a.eenheid === "IBC's" && parseFloat(a.aantal) > 0) {
       var n = parseFloat(a.aantal);
       var fit = prods.filter(function (p) { return p.ibc && p.ibc >= n; }).sort(function (x, y) { return x.ibc - y.ibc; });

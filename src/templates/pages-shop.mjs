@@ -21,7 +21,7 @@ export function home(ctx) {
       <div class="btn-row"><a class="btn btn--accent btn--lg" href="/producten/">Bekijk producten ${icon('arrow')}</a><a class="btn btn--outline-light btn--lg" href="/offerte-aanvragen/?type=advies">Vraag advies aan</a></div>
       <p class="hero__phone">Liever direct overleggen? Bel <a href="tel:${site.phonePrimary.tel}">${site.phonePrimary.display}</a></p>
     </div>
-    <div class="hero__visual">${media({ alt: 'Sfeerbeeld: flexibele opvangbak met IBC\'s in een industriële hal, koel daglicht' }, '4-3', true)}</div>
+    <div class="hero__visual">${media({ src: '/assets/img/producten/sfeer-opslag-vaten.jpg', alt: 'Vaten op flexibele opvangbakken van EXFLO in een magazijn' }, '4-3', true)}</div>
   </div>
   ${wave('hero-wave')}
 </section>
@@ -61,7 +61,7 @@ export function home(ctx) {
 ${featured.length ? `<section class="section" aria-labelledby="h-featured">
   <div class="container">
     <div class="section-head section-head--row"><div><p class="eyebrow">Direct online te bestellen</p><h2 id="h-featured">Uitgelichte producten</h2></div><a class="link-arrow" href="/producten/opvang-en-spill-containment/">Alle opvangoplossingen ${icon('arrow')}</a></div>
-    <div class="product-grid product-grid--3">${featured.map((p) => productCard(p, ctx)).join('')}</div>
+    <div class="product-grid">${featured.map((p) => productCard(p, ctx)).join('')}</div>
   </div>
 </section>` : ''}
 
@@ -95,7 +95,7 @@ ${featured.length ? `<section class="section" aria-labelledby="h-featured">
 
 <section class="section" aria-labelledby="h-partner">
   <div class="container partner-block">
-    <div class="partner-block__logo">${exflo.logo ? `<img src="${exflo.logo}" alt="EXFLO logo" loading="lazy">` : `<div class="logo-ph">${ph(exflo.logoPlaceholder)}</div>`}</div>
+    <div class="partner-block__logo">${exflo.logo ? `<img class="partner-logo" src="${exflo.logo}" alt="EXFLO – Think flexible" width="280" height="105" loading="lazy">` : `<div class="logo-ph">${ph(exflo.logoPlaceholder)}</div>`}</div>
     <div>
       <p class="eyebrow">Partner</p>
       <h2 id="h-partner">Producten van EXFLO</h2>
@@ -240,7 +240,7 @@ export function groupPage(g, ctx) {
   const cats = categories.filter((c) => c.group === g.id);
   const list = products.filter((p) => cats.some((c) => c.id === p.category));
   const body = `
-<section class="page-head"><div class="container page-head__grid"><div><h1>${esc(g.name)}</h1><p class="lead">${esc(g.short)}</p></div>${media({ alt: g.image }, '16-9')}</div></section>
+<section class="page-head"><div class="container page-head__grid"><div><h1>${esc(g.name)}</h1><p class="lead">${esc(g.short)}</p></div>${media({ src: g.imageSrc, alt: g.image }, '16-9')}</div></section>
 <section class="section section--tight"><div class="container"><h2 class="subhead">Categorieën</h2><div class="cat-grid cat-grid--compact">${cats.map((c) => categoryCard(c, ctx, { compact: true })).join('')}</div></div></section>
 ${listingSection(list, ctx, { title: `Alle producten in ${g.name.toLowerCase()}` })}
 <div class="container section--tight">${adviceBlock(ctx.site)}</div>`;
@@ -257,7 +257,7 @@ export function categoryPage(c, ctx) {
     <p class="eyebrow">${esc(g.name)}</p><h1>${esc(c.name)}</h1>
     ${c.intro.map((p, i) => `<p class="${i === 0 ? 'lead' : ''}">${esc(p)}</p>`).join('')}
     <div class="btn-row"><a class="btn btn--primary" href="#h-listing">Bekijk producten</a><a class="btn btn--ghost" href="/offerte-aanvragen/?type=advies&amp;categorie=${c.id}">Advies aanvragen</a></div>
-  </div>${media({ alt: c.image }, '4-3', true)}</div></section>
+  </div>${media({ src: c.imageSrc, alt: c.image }, '4-3', true)}</div></section>
   ${c.applications?.length ? `<section class="section section--tight section--grey" aria-labelledby="h-toep"><div class="container"><h2 id="h-toep" class="subhead">Toepassingen</h2><ul class="check-list check-list--cols">${c.applications.map((a) => `<li>${icon('check')}${esc(a)}</li>`).join('')}</ul></div></section>` : ''}`;
 
   let main;
@@ -321,7 +321,7 @@ export function productPage(p, ctx) {
 </section>
 
 <nav class="subnav" aria-label="Op deze pagina"><div class="container"><ul>
-  <li><a href="#toepassing">Toepassing</a></li><li><a href="#voordelen">Voordelen</a></li><li><a href="#specificaties">Specificaties</a></li><li><a href="#geschikt">Geschikt voor</a></li><li><a href="#downloads">Downloads</a></li>
+  <li><a href="#toepassing">Toepassing</a></li><li><a href="#voordelen">Voordelen</a></li><li><a href="#specificaties">Specificaties</a></li>${p.sizes ? '<li><a href="#uitvoeringen">Uitvoeringen</a></li>' : ''}<li><a href="#geschikt">Geschikt voor</a></li><li><a href="#downloads">Downloads</a></li>
 </ul></div></nav>
 
 <section class="section section--tight"><div class="container product-detail">
@@ -331,13 +331,16 @@ export function productPage(p, ctx) {
     <section id="specificaties" class="pd-block"><h2>Specificaties</h2>
       <table class="spec-table"><caption class="sr-only">Specificaties ${esc(p.name)}</caption><tbody>
         <tr><th scope="row">Fabrikant</th><td>${esc(brand.name)}</td></tr>
-        ${SPEC_LABELS.map(([k, l]) => `<tr><th scope="row">${l}</th><td>${p.specs?.[k] ? esc(p.specs[k]) : unknown}</td></tr>`).join('')}
+        ${SPEC_LABELS.map(([k, l]) => `<tr><th scope="row">${l}</th><td>${p.specs?.[k] ? esc(p.specs[k]) + (k === 'certificering' ? `<br><span class="small muted">${t.foreignCertNote}</span>` : '') : unknown}</td></tr>`).join('')}
         <tr><th scope="row">Geschikte vloeistoffen</th><td>${p.liquids?.length ? esc(p.liquids.join(', ')) : `<span class="muted">${t.liquidCheck}</span>`}</td></tr>
       </tbody></table>
+      ${p.source ? `<p class="small muted">Bron: productinformatie van de fabrikant (${esc(brand.name)}). Wijzigingen voorbehouden.</p>` : ''}
     </section>
+    ${p.sizes ? `<section id="uitvoeringen" class="pd-block"><h2>Uitvoeringen</h2><div class="table-scroll"><table class="spec-table spec-table--grid"><caption class="sr-only">Uitvoeringen ${esc(p.name)}</caption><thead><tr>${p.sizes.head.map((h) => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${p.sizes.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${p.sizes.note ? `<p class="small muted">${esc(p.sizes.note)}</p>` : ''}</section>` : ''}
     <section id="geschikt" class="pd-block"><h2>Geschikt voor</h2><ul class="check-list">${p.suitableFor.map((b) => `<li>${icon('check')}${esc(b)}</li>`).join('')}</ul></section>
     <section id="downloads" class="pd-block"><h2>Downloads</h2>
-      ${p.datasheet ? `<a class="download" href="${esc(p.datasheet)}" download>${icon('download')}<span>Datasheet ${esc(p.name)} (PDF)</span></a>` : `<p class="muted">Datasheet op aanvraag. <a href="mailto:${site.email}?subject=${encodeURIComponent(`Datasheet ${p.name}`)}">Vraag de datasheet aan</a>.</p>`}
+      ${(p.downloads || []).map((d) => `<a class="download" href="${esc(d.href)}" download>${icon('download')}<span>${esc(d.label)}</span></a>`).join('')}
+      <p class="muted">Een volledige datasheet ontvangt u op aanvraag. <a href="mailto:${site.email}?subject=${encodeURIComponent(`Datasheet ${p.name}`)}">Vraag de datasheet aan</a>.</p>
     </section>
     <div class="notice">${icon('info')}<p>${t.requirementsNote}</p></div>
   </div>
@@ -533,7 +536,7 @@ export function thanksPage(ctx) {
 export function keuzehulpPage(ctx) {
   const { categories, urls, products } = ctx;
   const catData = categories.map((c) => ({ id: c.id, name: c.name, short: c.short, url: urls.category(c) }));
-  const prodData = products.filter(isOrderable).map((p) => ({ id: p.id, name: p.name, url: urls.product(p), category: p.category, ibc: p.attributes?.ibcCount || null }));
+  const prodData = products.filter(isOrderable).map((p) => ({ id: p.id, name: p.name, url: urls.product(p), category: p.category, ibc: p.attributes?.ibcCount || null, drums: p.attributes?.drumCount || null }));
   const radio = (name, opts) => `<div class="choice-grid">${opts.map(([v, l]) => `<label class="choice"><input type="radio" name="${name}" value="${v}" required><span>${l}</span></label>`).join('')}</div>`;
   const steps = [
     ['doel', 'Wat wilt u doen?', radio('doel', [['opvangen', 'Vloeistof opvangen (lekkages, morsingen)'], ['opslaan', 'Vloeistof opslaan'], ['beschermen', 'Beschermen tegen water'], ['anders', 'Iets anders']])],

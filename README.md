@@ -49,8 +49,10 @@ scripts/check.mjs             kwaliteitscontrole van de build
 | `leadTime`, `stock` | Alleen tonen als ingevuld; anders *Levertijd op aanvraag*. |
 | `specs.*` | `null` = *Neem contact op voor actuele specificaties*. Vul alleen waarden uit de EXFLO-datasheet in. `certificering`: exacte naam uit de datasheet. |
 | `liquids` | Alleen vullen als de datasheet de vloeistoffen noemt; anders *Wij controleren de geschiktheid voor uw vloeistof*. |
-| `datasheet` | Pad naar PDF, bijv. `/assets/datasheets/waterbase-f.pdf` (bestand in `src/assets/datasheets/`). |
-| `images` | `[{ "src": "/assets/img/producten/x.jpg", "alt": "…", "width": 1200, "height": 900 }]`. Zet naast elke jpg/png een `.webp` met dezelfde naam; die wordt automatisch gebruikt. Zonder `src` verschijnt een beschrijvende placeholder. |
+| `downloads` | Lijst van PDF's: `[{ "label": "…", "href": "/assets/datasheets/x.pdf" }]` (bestand in `src/assets/datasheets/`). |
+| `sizes` | Optionele tabel met uitvoeringen: `{ "head": [...], "rows": [[...]], "note": "…" }`. |
+| `source` | URL van de bronpagina bij de fabrikant. |
+| `images` | `[{ "src": "/assets/img/producten/x.jpg", "alt": "…", "width": 1200, "height": 900 }]`. Zet naast elke jpg/png een `.webp` met dezelfde naam; die wordt automatisch gebruikt. Zonder `src` verschijnt een beschrijvende placeholder. Productfoto's staan in `src/assets/img/producten/`. |
 | `attributes` | Voedt de filters: `ibcCount`, `drumCount`, `capacityL`, `dimensions`, `material`, `application[]`, `liquids[]`, `location`, `duration`. Een filter verschijnt automatisch zodra er minstens twee verschillende waarden in een overzicht staan. |
 | `featured` | Tonen bij *Uitgelichte producten* op de homepage (alleen als het product online bestelbaar is). |
 

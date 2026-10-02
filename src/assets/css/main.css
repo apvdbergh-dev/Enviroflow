@@ -596,3 +596,10 @@ a.contact-card:hover { border-color: var(--deep); color: var(--deep); }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
 @media print { .site-header, .site-footer, .mobile-bar, .cookie, .subnav { display: none !important; } body { padding: 0; } }
 .wizard-result .cat-grid, .wizard-result .link-list { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); margin-bottom: 8px; }
+
+.download + .download { margin-left: 8px; }
+.download { margin-bottom: 8px; }
+.table-scroll { overflow-x: auto; }
+.spec-table--grid th { width: auto; white-space: nowrap; }
+.spec-table--grid td { white-space: nowrap; }
+.partner-logo { max-width: 280px; width: 100%; height: auto; }

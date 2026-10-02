@@ -13,21 +13,25 @@ Placeholders zijn op de site geel gemarkeerd (`[ZO]`). Alles hieronder is bewust
 
 ## Beeld en merk
 
-- `[EXFLO-LOGO]` – officieel EXFLO-logo (SVG of PNG), in `src/assets/img/` en `logo` in `brands.json`.
 - Vectorversie (SVG) van het EnviroFlow-logo; de footer gebruikt nu een vectorbenadering voor donkere achtergrond.
-- Hero-sfeerbeeld (homepage) en categoriebeelden: elke placeholder beschrijft het gewenste beeld.
-- Productfoto's van EXFLO per product (`images` in `products.json`, met webp-versie).
 - Foto van de oprichters (Over ons) – `[FOTO VOLGT]`.
+- Sfeerbeelden voor oplossingen, sectoren en kennisbank (nu beschrijvende placeholders). Productfoto's, categoriefoto's, homepagebeeld en EXFLO-logo komen van exflo.eu.
+- Controleer of het gebruik van de EXFLO-foto's en het logo past binnen uw distributieafspraak.
 
 ## Producten (`src/data/products.json`)
 
-- **Prijzen** – nu bij geen enkel product een echte prijs. Drie producten staan als online-bestelbaar sjabloon met `[PRIJS]` (afrekenen geblokkeerd): Flexibele opvangbak voor 1 IBC, … voor 2 IBC's, Wasmat voor voertuigen. Vul prijzen in uit uw prijslijst (excl. btw) of zet ze op `null`.
-- **Productlijn controleren** – de producten per categorie (o.a. opvangbakken voor 1, 2 en 4 IBC's, vaten, voertuigen) zijn functioneel benoemd. Controleer namen, maten en varianten tegen het EXFLO-assortiment en vul artikelnummers (`sku`) in.
-- **Specificaties** – afmetingen, capaciteit, materiaal (alleen TPU bij Waterbase D Plus is ingevuld), gewicht, aansluitingen, temperatuurbereik, chemische bestendigheid, garantie, certificering: alles uit de datasheets.
-- **Geschikte vloeistoffen** (`liquids`) – alleen invullen als de datasheet dat vermeldt.
-- **Datasheets (PDF)** per product.
-- **Levertijd en voorraad** (`leadTime`, `stock`) – optioneel.
-- **Voordelen-bullets** – algemeen geformuleerd; controleer ze tegen de datasheets.
+Alle productgegevens komen van exflo.eu (opgehaald 2 oktober 2026); de bron-URL staat per product in `source`.
+
+- **Prijzen – BESLISSING NODIG.** De 15 online bestelbare producten (10 opvangbakken, 4 wasmatten voor voertuigen en 1 motorwasmat) hebben nu de **netto webshopprijzen van EXFLO in euro's**, één-op-één overgenomen. Dat zijn de verkoopprijzen van de fabrikant zelf. Pas ze aan naar uw eigen verkoopprijs (marge, transport naar Nederland) voordat de shop live gaat.
+- **Bewust zonder prijs (offerte):** brandwater-, retentie-, afvalwater-, brandstof-, UAN- en mesttanks, Hydronion, Exflooder-waterkeringen (volgens uw webshopregels), decontaminatiematten, drinkwatertank, Flextanker en Exnoiser (EXFLO publiceert hiervoor geen prijs of het product valt onder "alleen offerte"). Ook de Waterbase R-tank van 30.000 l en de Exflooder hebben bij EXFLO wel een webprijs, maar staan volgens uw regels op offerte.
+- **Levertijd en voorraad**: niet overgenomen, omdat de levertijden van EXFLO gelden voor levering in Polen. Vul `leadTime`/`stock` in als u uw eigen levertijd naar Nederland weet.
+- **Te controleren:**
+  - UAN-tank (Farmer type U): de EXFLO-pagina noemt zowel 7 als 10 jaar garantie. Op de site staat "10 jaar volgens de productpagina van EXFLO". Vraag dit na bij EXFLO.
+  - Exflooder: in de EXFLO-webshop staan Exflooder+-varianten met Ø 45/90 cm en andere prijzen dan in hun prijslijst (Ø 46/94 cm). Op de site staan de maten uit de prijslijst; prijs op aanvraag.
+  - Fuelbase: EXFLO noemt ook MIL-uitvoeringen (benzine, kerosine) "in certificering"; die zijn bewust niet opgenomen.
+- **Datasheets:** EXFLO publiceert geen losse datasheets per product. Toegevoegd: de chemische bestendigheidstabel voor de opvangbakken (Engels, PDF). Vraag volledige datasheets op bij EXFLO en voeg ze toe aan `downloads`.
+- **Artikelnummers** (`sku`) ontbreken; EXFLO toont ze niet online.
+- **Dekzeilen en hoezen op maat:** geen EXFLO-productpagina gevonden; staat als maatwerk op aanvraag.
 
 ## Teksten
 

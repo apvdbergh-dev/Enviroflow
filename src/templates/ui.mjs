@@ -143,7 +143,7 @@ export function productCard(p, ctx) {
 
 export function categoryCard(c, ctx, { compact = false } = {}) {
   return `<a class="ccard ${compact ? 'ccard--compact' : ''}" href="${ctx.urls.category(c)}">
-  ${compact ? '' : media({ alt: c.image }, '16-9')}
+  ${compact ? '' : media({ src: c.imageSrc, alt: c.image }, '16-9')}
   <div class="ccard__body"><h3>${esc(c.name)}</h3><p>${esc(c.short)}</p><span class="link-arrow">Bekijk oplossing ${icon('arrow')}</span></div>
 </a>`;
 }
