@@ -45,7 +45,7 @@ const iconSprite = () => `<svg xmlns="http://www.w3.org/2000/svg" style="display
 export const wave = (cls = '') => `<div class="wave ${cls}" aria-hidden="true"><svg viewBox="0 0 1440 48" preserveAspectRatio="none"><defs><linearGradient id="wg${cls.replace(/\W/g, '')}" x1="0" x2="1"><stop offset="0" stop-color="#2BA84A"/><stop offset=".55" stop-color="#12A18F"/><stop offset="1" stop-color="#1E9BE0"/></linearGradient></defs><path d="M0 30 C 240 4, 420 46, 720 26 S 1200 8, 1440 22" fill="none" stroke="url(#wg${cls.replace(/\W/g, '')})" stroke-width="3"/></svg></div>`;
 
 /** Logo voor donkere achtergrond (vectorbenadering van het woordmerk). */
-export const logoDark = () => `<svg class="logo-dark" viewBox="0 0 520 120" role="img" aria-label="EnviroFlow – Environmental Solutions"><defs><linearGradient id="lgflow" x1="0" x2="1"><stop offset="0" stop-color="#2BA84A"/><stop offset=".55" stop-color="#12A18F"/><stop offset="1" stop-color="#1E9BE0"/></linearGradient></defs><text x="2" y="64" font-family="Archivo, sans-serif" font-weight="800" font-size="66" fill="#fff" textLength="262" lengthAdjust="spacingAndGlyphs">ENVIRO</text><text x="270" y="64" font-family="Archivo, sans-serif" font-weight="800" font-style="italic" font-size="66" fill="url(#lgflow)" textLength="240" lengthAdjust="spacingAndGlyphs">FLOW</text><path d="M4 98 C 120 58, 210 112, 300 86 S 450 66, 516 72" stroke="url(#lgflow)" stroke-width="6" fill="none" stroke-linecap="round"/><text x="300" y="114" font-family="Inter, sans-serif" font-weight="600" font-size="13" letter-spacing="2.6" fill="#a9dccd" textLength="214" lengthAdjust="spacing">ENVIRONMENTAL SOLUTIONS</text></svg>`;
+export const logoDark = () => `<img class="logo-dark" src="/assets/img/enviroflow-logo-wit.webp" srcset="/assets/img/enviroflow-logo-wit.webp 1x, /assets/img/enviroflow-logo-wit@2x.webp 2x" width="520" height="55" alt="EnviroFlow" loading="lazy">`;
 
 /** Afbeelding of beschrijvende placeholder. img = { src, alt, width, height } */
 export function media(img, ratio = '4-3', eager = false) {
@@ -207,7 +207,7 @@ function header(ctx, path) {
   return `<header class="site-header" data-header>
   <div class="header-main">
     <div class="container header-main__inner">
-      <a class="logo" href="/" aria-label="EnviroFlow – naar de homepage"><img src="/assets/img/enviroflow-logo.webp" srcset="/assets/img/enviroflow-logo.webp 1x, /assets/img/enviroflow-logo@2x.webp 2x" width="236" height="50" alt="EnviroFlow – Environmental Solutions"></a>
+      <a class="logo" href="/" aria-label="EnviroFlow – naar de homepage"><img src="/assets/img/enviroflow-logo.webp" srcset="/assets/img/enviroflow-logo.webp 1x, /assets/img/enviroflow-logo@2x.webp 2x" width="520" height="55" alt="EnviroFlow"></a>
       <form class="search" role="search" action="/zoeken/" method="get" data-search>
         <label class="sr-only" for="q-header">${t.search}</label>
         <input id="q-header" name="q" type="search" placeholder="${t.searchPlaceholder}" autocomplete="off" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list">
@@ -322,7 +322,7 @@ export function layout(ctx, { path, title, description, body, crumbs = [], jsonl
 ${noindex ? '<meta name="robots" content="noindex, follow">' : ''}
 <meta property="og:type" content="website"><meta property="og:locale" content="nl_NL"><meta property="og:site_name" content="EnviroFlow">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canonical}">
-<meta property="og:image" content="${site.baseUrl}${ogImage || '/assets/img/enviroflow-logo.png'}">
+<meta property="og:image" content="${site.baseUrl}${ogImage || '/assets/img/enviroflow-og.png'}">
 <meta name="theme-color" content="#0A3B2C">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
