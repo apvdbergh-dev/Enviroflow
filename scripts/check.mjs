@@ -21,6 +21,9 @@ for (const file of pages) {
     if (descs.has(desc)) errors.push(`${rel}: dubbele description met ${descs.get(desc)}`); else descs.set(desc, rel);
   }
   for (const m of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)) { try { JSON.parse(m[1]); } catch { errors.push(`${rel}: ongeldige JSON-LD`); } }
+  for (const m of html.matchAll(/srcset="([^"]+)"/g)) {
+    for (const part of m[1].split(',')) { const u = part.trim().split(/\s+/)[0]; if (u.startsWith('/') && !existsSync(join(dist, u))) errors.push(`${rel}: ontbrekende srcset ${u}`); }
+  }
   for (const m of html.matchAll(/(?:href|src)="(\/[^"#?]*)/g)) {
     const u = m[1];
     const target = join(dist, u);

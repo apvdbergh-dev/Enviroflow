@@ -37,7 +37,12 @@
       }) && Object.keys(ranges).every(function (k) {
         var v = parseFloat(card.dataset[k]); return !isNaN(v) && v >= ranges[k][0] && v <= ranges[k][1];
       });
+      var wasHidden = card.hidden;
       card.hidden = !ok; if (ok) shown++;
+      if (ok && wasHidden && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        card.classList.add('is-entering');
+        requestAnimationFrame(function () { requestAnimationFrame(function () { card.classList.remove('is-entering'); }); });
+      }
     });
     count.textContent = '(' + shown + ')';
     empty.hidden = shown !== 0;

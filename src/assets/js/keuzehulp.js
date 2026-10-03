@@ -101,7 +101,7 @@
 
     result.querySelector('[data-result-summary]').innerHTML = '<p><strong>Uw antwoorden</strong></p><dl>' + rows.map(function (r) { return '<dt>' + EF.esc(r[0]) + '</dt><dd>' + EF.esc(r[1]) + '</dd>'; }).join('') + '</dl>';
     result.querySelector('[data-result-cats]').innerHTML = cats.map(function (c) {
-      return '<a class="ccard ccard--compact" href="' + c.url + '"><div class="ccard__body"><h3>' + EF.esc(c.name) + '</h3><p>' + EF.esc(c.short) + '</p><span class="link-arrow">Bekijk oplossing <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></div></a>';
+      return '<a class="ccard ccard--compact" href="' + c.url + '"><span class="ccard__name">' + EF.esc(c.name) + '</span><span class="ccard__text">' + EF.esc(c.short) + '</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>';
     }).join('');
     result.querySelector('[data-result-products]').innerHTML = prods.length ? '<h3 class="subhead">Direct online te bestellen</h3><ul class="link-list">' + prods.slice(0, 3).map(function (p) { return '<li><a href="' + p.url + '">' + EF.esc(p.name) + '<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>'; }).join('') + '</ul>' : '';
 

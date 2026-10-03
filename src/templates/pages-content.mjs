@@ -3,6 +3,8 @@ import { esc, ph, icon, media, adviceBlock, ctaBand, productCard, categoryCard, 
 import { stepsList } from './pages-shop.mjs';
 
 const H = { name: 'Home', url: '/' };
+/** Foto van de eerste gekoppelde categorie met een foto. */
+const heroImg = (cats, label) => { const c = (cats || []).find((x) => x && x.imageSrc); return c ? { src: c.imageSrc, alt: c.image } : { alt: `Foto: ${label}` }; };
 const sourcesBlock = (sources) => sources?.length ? `<div class="sources"><h3>Officiële bronnen</h3><ul>${sources.map((s) => `<li><a href="${s.url}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join('')}</ul><p class="small muted">Dit is algemene informatie. Welke eisen voor uw situatie gelden, bepaalt het bevoegd gezag.</p></div>` : '';
 
 /* ---------------------------------------------------------------- oplossingen */
@@ -17,7 +19,7 @@ export function solutionPage(s, ctx) {
   const cats = s.categories.map((id) => ctx.categoryById[id]).filter((c) => c?.active);
   const prods = ctx.products.filter((p) => s.categories.includes(p.category)).slice(0, 6);
   const body = `
-<section class="page-head"><div class="container page-head__grid"><div><p class="eyebrow">Oplossing</p><h1>${esc(s.title)}</h1>${s.problem.map((p, i) => `<p class="${i ? '' : 'lead'}">${esc(p)}</p>`).join('')}<a class="btn btn--primary" href="/offerte-aanvragen/?type=advies">Bespreek uw situatie</a></div>${media({ alt: `Foto: ${s.title.toLowerCase()} in de praktijk` }, '4-3')}</div></section>
+<section class="page-head"><div class="container page-head__grid"><div><p class="eyebrow">Oplossing</p><h1>${esc(s.title)}</h1>${s.problem.map((p, i) => `<p class="${i ? '' : 'lead'}">${esc(p)}</p>`).join('')}<a class="btn btn--primary" href="/offerte-aanvragen/?type=advies">Bespreek uw situatie</a></div>${media(heroImg(cats, s.title), '4-3', true)}</div></section>
 <section class="section section--tight section--grey"><div class="container split"><div><h2>Waar let u op?</h2><ul class="check-list">${s.attention.map((a) => `<li>${icon('check')}${esc(a)}</li>`).join('')}</ul></div>${sourcesBlock(s.sources)}</div></section>
 <section class="section section--tight"><div class="container"><h2>Mogelijke oplossingen</h2><div class="cat-grid">${cats.map((c) => categoryCard(c, ctx)).join('')}</div></div></section>
 ${prods.length ? `<section class="section section--tight"><div class="container"><h2>Passende producten</h2><div class="product-grid product-grid--3">${prods.map((p) => productCard(p, ctx)).join('')}</div></div></section>` : ''}
@@ -35,7 +37,7 @@ export function sectorsOverview(ctx) {
 export function sectorPage(s, ctx) {
   const cats = s.categories.map((id) => ctx.categoryById[id]).filter((c) => c?.active);
   const body = `
-<section class="page-head"><div class="container page-head__grid"><div><p class="eyebrow">Sector</p><h1>${esc(s.name)}</h1><p class="lead">${esc(s.intro)}</p><a class="btn btn--primary" href="/offerte-aanvragen/?type=advies">Advies aanvragen</a></div>${media({ alt: `Foto: toepassing in de sector ${s.name.toLowerCase()}` }, '4-3')}</div></section>
+<section class="page-head"><div class="container page-head__grid"><div><p class="eyebrow">Sector</p><h1>${esc(s.name)}</h1><p class="lead">${esc(s.intro)}</p><a class="btn btn--primary" href="/offerte-aanvragen/?type=advies">Advies aanvragen</a></div>${media(heroImg(cats, s.name), '4-3', true)}</div></section>
 <section class="section section--tight section--grey"><div class="container split">
   <div><h2>Typische vloeistoffen</h2><ul class="check-list">${s.liquids.map((l) => `<li>${icon('drop')}${esc(l)}</li>`).join('')}</ul></div>
   <div><h2>Veelvoorkomende risico's</h2><ul class="check-list">${s.risks.map((l) => `<li>${icon('info')}${esc(l)}</li>`).join('')}</ul></div>
@@ -84,7 +86,7 @@ ${ctaBand({ title: 'Een vergelijkbare situatie?', text: 'Bespreek uw situatie me
 /* ---------------------------------------------------------------- kennisbank */
 export function knowledgeOverview(ctx) {
   const body = `<section class="page-head"><div class="container"><h1>Kennisbank</h1><p class="lead">Praktische uitleg over opvangen, opslaan en verplaatsen van vloeistoffen. Bij wet- en regelgeving verwijzen wij naar de officiële bron.</p></div></section>
-<section class="section section--tight"><div class="container"><div class="article-grid">${ctx.articles.map((a) => `<a class="acard" href="/kennisbank/${a.slug}/">${media({ alt: `Illustratie bij: ${a.title}` }, '16-9')}<div class="acard__body"><h2>${esc(a.title)}</h2><p>${esc(a.description)}</p><span class="link-arrow">Lees artikel ${icon('arrow')}</span></div></a>`).join('')}</div></div></section>`;
+<section class="section section--tight"><div class="container"><div class="article-grid">${ctx.articles.map((a) => `<a class="acard" href="/kennisbank/${a.slug}/">${media(heroImg(a.categories.map((id) => ctx.categoryById[id]), a.title), '16-9')}<div class="acard__body"><h2>${esc(a.title)}</h2><p>${esc(a.description)}</p><span class="link-arrow">Lees artikel ${icon('arrow')}</span></div></a>`).join('')}</div></div></section>`;
   return { path: '/kennisbank/', title: 'Kennisbank: lekbakken, flexibele tanks en opslag | EnviroFlow', description: 'Artikelen over flexibele lekbakken, IBC opvangbakken, opvangcapaciteit, flexibele tanks, bluswater, mest, brandstof en wateroverlast.', body, crumbs: [H, { name: 'Kennisbank', url: '/kennisbank/' }] };
 }
 
@@ -95,7 +97,7 @@ export function articlePage(a, ctx) {
 <article class="article">
   <header class="article__head container container--narrow"><p class="eyebrow">Kennisbank</p><h1>${esc(a.title)}</h1><p class="lead">${esc(a.intro)}</p></header>
   <div class="container container--narrow article__body">
-    ${media({ alt: `Illustratie bij: ${a.title}` }, '16-9')}
+    ${media(heroImg(cats, a.title), '16-9', true)}
     ${a.sections.map((s) => `<h2>${esc(s.h)}</h2>${(s.p || []).map((p) => `<p>${esc(p)}</p>`).join('')}${s.list ? `<ul class="check-list">${s.list.map((l) => `<li>${icon('check')}${esc(l)}</li>`).join('')}</ul>` : ''}`).join('')}
     ${sourcesBlock(a.sources)}
     <div class="notice">${icon('info')}<p>${ctx.t.requirementsNote}</p></div>
@@ -112,7 +114,7 @@ ${cats.length ? `<section class="section section--tight section--grey"><div clas
 /* ---------------------------------------------------------------- over ons & partners */
 export function aboutPage(ctx) {
   const body = `
-<section class="page-head"><div class="container page-head__grid"><div><h1>Over EnviroFlow</h1><p class="lead">EnviroFlow is een jong bedrijf, opgericht door twee broers. Wij helpen bedrijven om vloeistoffen veilig en praktisch op te slaan, op te vangen en te verplaatsen.</p></div>${media({ alt: 'Foto: de twee oprichters van EnviroFlow bij een flexibele opvangbak [FOTO VOLGT]' }, '4-3')}</div></section>
+<section class="page-head"><div class="container page-head__grid"><div><h1>Over EnviroFlow</h1><p class="lead">EnviroFlow is een jong bedrijf, opgericht door twee broers. Wij helpen bedrijven om vloeistoffen veilig en praktisch op te slaan, op te vangen en te verplaatsen.</p></div>${media({ src: '/assets/img/producten/opvangbak-praktijk.jpg', alt: "IBC's in een flexibele opvangbak van EXFLO" }, '4-3', true)}</div></section>
 <section class="section section--tight"><div class="container split">
   <div><h2>Waar wij voor staan</h2><p>Wij zijn geen webshop die zo goedkoop mogelijk levert. Wij willen eerst begrijpen wat uw situatie is: welke vloeistof, hoeveel, waar en hoe lang. Daarna zoeken we de oplossing die daarbij past, standaard of op maat.</p><p>U heeft bij ons korte lijnen en persoonlijk contact. U belt of mailt rechtstreeks met de mensen die uw aanvraag behandelen.</p></div>
   <div><h2>Onze ambitie</h2><p>Wij beginnen met de flexibele oplossingen van EXFLO. Ons doel is om uit te groeien tot een vaste partner voor alles rond opslag en opvang van vloeistoffen. Het assortiment breiden wij stap voor stap uit, onder meer met lekbakken van staal en kunststof, spill kits, absorptiemateriaal, pompen en slangen.</p></div>

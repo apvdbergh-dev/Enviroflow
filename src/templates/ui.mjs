@@ -54,7 +54,8 @@ export function media(img, ratio = '4-3', eager = false) {
     return `<picture class="media r-${ratio}"><source type="image/webp" srcset="${esc(base)}.webp"><img src="${esc(img.src)}" alt="${esc(img.alt)}" width="${img.width || 800}" height="${img.height || 600}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture>`;
   }
   const alt = img?.alt || 'Afbeelding volgt';
-  return `<div class="media media--ph r-${ratio}" role="img" aria-label="${esc(alt)}"><span>${icon('file')}${esc(alt)}</span></div>`;
+  const label = alt.replace(/^(Foto|Illustratie bij):\s*/i, '');
+  return `<div class="media media--ph r-${ratio}" role="img" aria-label="${esc(label)}"><span>${icon('grid')}${esc(label)}</span></div>`;
 }
 
 export function priceBlock(p, t, size = '') {
@@ -126,25 +127,25 @@ export function productCard(p, ctx) {
   return `<article class="pcard" ${attrs}>
   <a class="pcard__media" href="${url}" tabindex="-1" aria-hidden="true">${media(p.images?.[0], '4-3')}</a>
   <div class="pcard__body">
-    <p class="pcard__brand">${esc(ctx.brandById[p.brand]?.name || '')}</p>
+    <p class="pcard__meta"><span>${esc(ctx.brandById[p.brand]?.name || '')}</span><span class="status ${orderable ? 'status--on' : ''}">${orderable ? 'Online bestelbaar' : 'Op aanvraag'}</span></p>
     <h3 class="pcard__title"><a href="${url}">${esc(p.name)}</a></h3>
     <p class="pcard__short">${esc(p.short)}</p>
     <div class="pcard__foot">
       ${priceBlock(p, t)}
-      <span class="tag ${orderable ? 'tag--green' : ''}">${orderable ? 'Online bestelbaar' : 'Op aanvraag'}</span>
-    </div>
-    <div class="pcard__actions">
-      ${orderable ? `<button class="btn btn--primary btn--sm" type="button" data-add-to-cart="${esc(p.id)}">${icon('cart')}In winkelwagen</button>` : ''}
-      <a class="btn ${orderable ? 'btn--ghost' : 'btn--primary'} btn--sm" href="/offerte-aanvragen/?product=${encodeURIComponent(p.id)}">Offerte aanvragen</a>
+      <div class="pcard__actions">
+        ${orderable ? `<button class="btn btn--primary btn--sm" type="button" data-add-to-cart="${esc(p.id)}">${icon('cart')}In winkelwagen</button>` : `<a class="btn btn--primary btn--sm" href="/offerte-aanvragen/?product=${encodeURIComponent(p.id)}">Offerte aanvragen</a>`}
+        ${orderable ? `<a class="pcard__quote" href="/offerte-aanvragen/?product=${encodeURIComponent(p.id)}">Offerte aanvragen</a>` : `<a class="pcard__quote" href="${url}">Bekijk details</a>`}
+      </div>
     </div>
   </div>
 </article>`;
 }
 
 export function categoryCard(c, ctx, { compact = false } = {}) {
-  return `<a class="ccard ${compact ? 'ccard--compact' : ''}" href="${ctx.urls.category(c)}">
-  ${compact ? '' : media({ src: c.imageSrc, alt: c.image }, '16-9')}
-  <div class="ccard__body"><h3>${esc(c.name)}</h3><p>${esc(c.short)}</p><span class="link-arrow">Bekijk oplossing ${icon('arrow')}</span></div>
+  if (compact) return `<a class="ccard ccard--compact" href="${ctx.urls.category(c)}"><span class="ccard__name">${esc(c.name)}</span><span class="ccard__text">${esc(c.short)}</span>${icon('arrow')}</a>`;
+  return `<a class="ccard" href="${ctx.urls.category(c)}">
+  <span class="ccard__media">${media({ src: c.imageSrc, alt: c.image }, '16-10')}</span>
+  <span class="ccard__body"><span class="ccard__title">${esc(c.name)}</span><span class="ccard__text">${esc(c.short)}</span><span class="link-arrow">Bekijk oplossing ${icon('arrow')}</span></span>
 </a>`;
 }
 
@@ -249,7 +250,6 @@ function footer(ctx) {
   const { site, groups, urls } = ctx;
   const a = site.address;
   return `<footer class="site-footer">
-  ${wave('footer-wave')}
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="footer-logo" aria-label="EnviroFlow – naar de homepage">${logoDark()}</a>

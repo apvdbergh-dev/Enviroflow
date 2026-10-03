@@ -249,6 +249,69 @@
     });
   });
 
+  /* ---------- beweging ---------- */
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Header krijgt schaduw zodra de pagina scrolt.
+  if (header) {
+    var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 4); };
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  }
+
+  // Elementen onder de vouw komen rustig in beeld; wat al zichtbaar is, blijft direct staan.
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    var groups = [
+      '.section-head', '.group-grid > *', '.index-list > li', '.product-grid > *', '.cat-grid > *', '.problem-list > li', '.problems__head',
+      '.steps > *', '.sector-grid > li', '.article-grid > *', '.keuze-teaser', '.feature__text', '.partner-block > *', '.advice',
+      '.cta-band__inner > *', '.pd-block', '.faq', '.custom-hint', '.sector-cards > *', '.link-list > li', '.check-list--cols', '.scard'
+    ];
+    var revealEls = [];
+    document.querySelectorAll(groups.join(',')).forEach(function (el) {
+      if (el.closest('.hero')) return;
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.92) return;
+      var siblings = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+      el.style.setProperty('--rd', Math.min(siblings, 6) * 60 + 'ms');
+      el.classList.add('reveal'); revealEls.push(el);
+    });
+    document.querySelectorAll('.feature__media, .page-head__grid > .media').forEach(function (el) {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.92) return;
+      el.classList.add('reveal-img'); revealEls.push(el);
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    revealEls.forEach(function (el) { io.observe(el); });
+    // Vangnet: nooit iets onzichtbaar laten (bijv. bij printen of een sprong naar een anker).
+    window.addEventListener('beforeprint', function () { revealEls.forEach(function (el) { el.classList.add('is-visible'); }); });
+    setTimeout(function () { revealEls.forEach(function (el) { if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('is-visible'); }); }, 1200);
+  }
+
+  // Winkelwagenteller springt kort op bij toevoegen.
+  document.addEventListener('ef:cart', function () {
+    if (reduceMotion) return;
+    document.querySelectorAll('[data-cart-count]').forEach(function (el) { el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); });
+  });
+  // Prijzen wisselen zichtbaar bij de btw-schakelaar.
+  document.addEventListener('ef:vat', function () {
+    if (reduceMotion) return;
+    document.querySelectorAll('[data-price-excl]').forEach(function (el) { el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); });
+  });
+
+  // Subnavigatie op productpagina's volgt de sectie in beeld.
+  var subLinks = document.querySelectorAll('.subnav a[href^="#"]');
+  if (subLinks.length && 'IntersectionObserver' in window) {
+    var map = {};
+    subLinks.forEach(function (a) { var t = document.getElementById(a.getAttribute('href').slice(1)); if (t) map[t.id] = a; });
+    var so = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        subLinks.forEach(function (a) { a.classList.remove('is-active'); });
+        if (map[e.target.id]) map[e.target.id].classList.add('is-active');
+      });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    Object.keys(map).forEach(function (id) { so.observe(document.getElementById(id)); });
+  }
+
   Cart.updateCount();
   EF.applyVat();
   window.EF = EF;

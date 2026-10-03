@@ -1,8 +1,7 @@
 // Home, productoverzichten, productpagina's, winkelwagen, checkout, formulieren en keuzehulp.
-import { esc, ph, icon, wave, media, priceBlock, faqBlock, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus } from './ui.mjs';
+import { esc, ph, icon, media, priceBlock, faqBlock, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus } from './ui.mjs';
 import { isOrderable, hasRealPrice } from '../lib/catalog.mjs';
 
-const GROUP_ICONS = { opvang: 'tray', tanks: 'tank', mobiel: 'wave', overig: 'grid' };
 
 /* ================================================================ HOME */
 export function home(ctx) {
@@ -10,115 +9,137 @@ export function home(ctx) {
   const exflo = brandById.exflo;
   const featured = products.filter((p) => isOrderable(p) && p.featured).slice(0, 4);
   const popular = categories.filter((c) => c.popular).slice(0, 8);
+  const spot = products.find((p) => p.id === 'opvangbak-1-ibc');
+  const catCount = (g) => categories.filter((c) => c.group === g.id).length;
 
   const body = `
-<section class="hero">
+<section class="hero" aria-labelledby="h-hero">
+  <div class="hero__media">${media({ src: '/assets/img/producten/sfeer-opslag-vaten.jpg', alt: 'Vaten op flexibele opvangbakken van EXFLO in een magazijn', width: 1200, height: 900 }, '4-3', true)}</div>
   <div class="container hero__inner">
     <div class="hero__content">
-      <p class="eyebrow eyebrow--light">Zakelijke specialist in vloeistofopslag en opvang</p>
-      <h1>Veilige oplossingen voor vloeistofopslag en opvang</h1>
-      <p class="hero__lead">Van flexibele lekbakken voor IBC's tot brandwater-, brandstof- en mesttanks. EnviroFlow helpt bedrijven vloeistoffen veilig en praktisch op te slaan, op te vangen en te verplaatsen.</p>
-      <div class="btn-row"><a class="btn btn--accent btn--lg" href="/producten/">Bekijk producten ${icon('arrow')}</a><a class="btn btn--outline-light btn--lg" href="/offerte-aanvragen/?type=advies">Vraag advies aan</a></div>
-      <p class="hero__phone">Liever direct overleggen? Bel <a href="tel:${site.phonePrimary.tel}">${site.phonePrimary.display}</a></p>
+      <p class="kicker kicker--light hero__in" style="--d:0">Zakelijke specialist in vloeistofopslag en opvang</p>
+      <h1 id="h-hero" class="hero__title"><span class="line"><span style="--d:1">Veilige oplossingen</span></span> <span class="line"><span style="--d:2">voor vloeistofopslag</span></span> <span class="line"><span style="--d:3">en opvang</span></span></h1>
+      <p class="hero__lead hero__in" style="--d:4">Van flexibele lekbakken voor IBC's tot brandwater-, brandstof- en mesttanks. EnviroFlow helpt bedrijven vloeistoffen veilig en praktisch op te slaan, op te vangen en te verplaatsen.</p>
+      <div class="btn-row hero__in" style="--d:5"><a class="btn btn--accent btn--lg" href="/producten/">Bekijk producten ${icon('arrow')}</a><a class="btn btn--outline-light btn--lg" href="/offerte-aanvragen/?type=advies">Vraag advies aan</a></div>
+      <p class="hero__phone hero__in" style="--d:6">${icon('phone')}<span>Liever direct overleggen? Bel <a href="tel:${site.phonePrimary.tel}">${site.phonePrimary.display}</a></span></p>
     </div>
-    <div class="hero__visual">${media({ src: '/assets/img/producten/sfeer-opslag-vaten.jpg', alt: 'Vaten op flexibele opvangbakken van EXFLO in een magazijn' }, '4-3', true)}</div>
+    ${spot ? `<a class="spec-card hero__in" style="--d:7" href="${urls.product(spot)}">
+      <span class="spec-card__label">Uitgelicht</span>
+      <span class="spec-card__name">${esc(spot.name)}</span>
+      <dl class="spec-card__rows">
+        <div><dt>Opvangcapaciteit</dt><dd>${esc(spot.specs.capaciteit)}</dd></div>
+        <div><dt>Afmetingen</dt><dd>${esc(spot.specs.afmetingen.replace(' (l × b × h)', ''))}</dd></div>
+        <div><dt>Garantie</dt><dd>7 jaar</dd></div>
+      </dl>
+      <span class="spec-card__foot">${priceBlock(spot, ctx.t)}<span class="spec-card__go" aria-hidden="true">${icon('arrow')}</span></span>
+    </a>` : ''}
   </div>
-  ${wave('hero-wave')}
 </section>
 
-<section class="trustbar" aria-label="Waarom EnviroFlow">
-  <ul class="container trustbar__list">
-    ${['Zakelijke specialist', 'Praktisch advies', 'Maatwerk mogelijk', 'Persoonlijk contact', 'Producten van EXFLO'].map((u) => `<li>${icon('check')}${u}</li>`).join('')}
+<section class="usp" aria-label="Waarom EnviroFlow">
+  <ul class="container usp__list">
+    ${['Zakelijke specialist', 'Praktisch advies', 'Maatwerk mogelijk', 'Persoonlijk contact', 'Producten van EXFLO'].map((u) => `<li>${u}</li>`).join('')}
   </ul>
 </section>
 
 <section class="section" aria-labelledby="h-groups">
   <div class="container">
-    <div class="section-head"><p class="eyebrow">Assortiment</p><h2 id="h-groups">Oplossingen voor opvang, opslag en bescherming</h2><p>Vier productgroepen, één aanspreekpunt. Kies een groep of bekijk direct een populaire categorie.</p></div>
+    <div class="section-head section-head--row"><div><p class="kicker">Assortiment</p><h2 id="h-groups">Oplossingen voor opvang, opslag en bescherming</h2></div><p class="section-head__aside">Vier productgroepen, één aanspreekpunt. Online te bestellen of op aanvraag, altijd met advies.</p></div>
     <div class="group-grid">
       ${groups.map((g) => `<a class="gtile" href="${urls.group(g)}">
-        <span class="gtile__icon">${icon(GROUP_ICONS[g.id] || 'grid')}</span>
-        <h3>${esc(g.name)}</h3><p>${esc(g.short)}</p>
-        <ul>${categories.filter((c) => c.group === g.id).slice(0, 4).map((c) => `<li>${esc(c.name)}</li>`).join('')}</ul>
-        <span class="link-arrow">Bekijk ${esc(g.name.toLowerCase())} ${icon('arrow')}</span>
+        ${media({ src: g.imageSrc, alt: g.image }, '3-4')}
+        <span class="gtile__shade" aria-hidden="true"></span>
+        <span class="gtile__body">
+          <span class="gtile__count">${catCount(g)} categorieën</span>
+          <span class="gtile__title">${esc(g.name)}</span>
+          <span class="gtile__text">${esc(g.short)}</span>
+          <span class="gtile__go">Bekijk ${icon('arrow')}</span>
+        </span>
       </a>`).join('')}
     </div>
-    <h3 class="subhead">Populaire categorieën</h3>
-    <div class="cat-grid cat-grid--compact">${popular.map((c) => categoryCard(c, ctx, { compact: true })).join('')}</div>
+    <div class="index">
+      <h3 class="index__title">Populaire categorieën</h3>
+      <ul class="index-list">${popular.map((c) => `<li><a href="${urls.category(c)}"><span class="index-list__name">${esc(c.name)}</span><span class="index-list__text">${esc(c.short)}</span>${icon('arrow')}</a></li>`).join('')}</ul>
+    </div>
   </div>
 </section>
 
-<section class="section section--grey" aria-labelledby="h-problems">
-  <div class="container">
-    <div class="section-head"><p class="eyebrow">Vanuit uw situatie</p><h2 id="h-problems">Waar loopt u tegenaan?</h2><p>Kies de situatie die het best bij u past. Wij laten zien waar u op let en welke oplossingen passen.</p></div>
-    <div class="problem-grid">
-      ${solutions.map((s) => `<a class="ptile" href="/oplossingen/${s.slug}/"><span>${esc(s.tile)}</span>${icon('arrow')}</a>`).join('')}
-      <a class="ptile ptile--alt" href="/keuzehulp/"><span>Iets anders? Gebruik de keuzehulp</span>${icon('compass')}</a>
+<section class="section section--dark" aria-labelledby="h-problems">
+  <div class="container problems">
+    <div class="problems__head">
+      <p class="kicker kicker--light">Vanuit uw situatie</p>
+      <h2 id="h-problems">Waar loopt u tegenaan?</h2>
+      <p>Kies de situatie die het best bij u past. Wij laten zien waar u op let en welke oplossingen passen.</p>
+      <a class="btn btn--outline-light" href="/keuzehulp/">${icon('compass')}Iets anders? Start de keuzehulp</a>
     </div>
+    <ul class="problem-list">
+      ${solutions.map((s) => `<li><a href="/oplossingen/${s.slug}/"><span>${esc(s.tile)}</span>${icon('arrow')}</a></li>`).join('')}
+    </ul>
   </div>
 </section>
 
 ${featured.length ? `<section class="section" aria-labelledby="h-featured">
   <div class="container">
-    <div class="section-head section-head--row"><div><p class="eyebrow">Direct online te bestellen</p><h2 id="h-featured">Uitgelichte producten</h2></div><a class="link-arrow" href="/producten/opvang-en-spill-containment/">Alle opvangoplossingen ${icon('arrow')}</a></div>
+    <div class="section-head section-head--row"><div><p class="kicker">Direct online te bestellen</p><h2 id="h-featured">Uitgelichte producten</h2></div><a class="link-arrow" href="/producten/opvang-en-spill-containment/flexibele-opvangbakken/">Alle opvangbakken ${icon('arrow')}</a></div>
     <div class="product-grid">${featured.map((p) => productCard(p, ctx)).join('')}</div>
   </div>
 </section>` : ''}
 
-<section class="section section--dark keuze-teaser" aria-labelledby="h-keuze">
-  <div class="container keuze-teaser__inner">
-    <div>
-      <p class="eyebrow eyebrow--light">Keuzehulp</p>
-      <h2 id="h-keuze">Welke oplossing heeft u nodig?</h2>
-      <p>Beantwoord zes korte vragen over uw vloeistof, de hoeveelheid en de locatie. U ziet direct welke oplossingen geschikt kunnen zijn, en een specialist kijkt op verzoek mee.</p>
-      <a class="btn btn--accent btn--lg" href="/keuzehulp/">Start de keuzehulp ${icon('arrow')}</a>
+<section class="section section--tight" aria-labelledby="h-keuze">
+  <div class="container">
+    <div class="keuze-teaser">
+      <div class="keuze-teaser__text">
+        <p class="kicker kicker--light">Keuzehulp</p>
+        <h2 id="h-keuze">Welke oplossing heeft u nodig?</h2>
+        <p>Zes korte vragen over uw vloeistof, de hoeveelheid en de locatie. U ziet direct welke oplossingen geschikt kunnen zijn. Een specialist kijkt op verzoek mee.</p>
+        <a class="btn btn--accent btn--lg" href="/keuzehulp/">Start de keuzehulp ${icon('arrow')}</a>
+      </div>
+      <ol class="keuze-teaser__steps">
+        ${['Wat wilt u doen?', 'Welke vloeistof?', 'Hoeveel?', 'Binnen of buiten?', 'Tijdelijk of permanent?', 'Beschikbare ruimte'].map((q, i) => `<li><span>${i + 1}</span>${q}</li>`).join('')}
+      </ol>
     </div>
-    <ol class="keuze-teaser__steps">
-      ${['Wat wilt u doen?', 'Welke vloeistof?', 'Hoeveel?', 'Binnen of buiten?', 'Tijdelijk of permanent?', 'Beschikbare ruimte'].map((q, i) => `<li><span>${i + 1}</span>${q}</li>`).join('')}
-    </ol>
   </div>
 </section>
 
 <section class="section" aria-labelledby="h-sectors">
   <div class="container">
-    <div class="section-head"><p class="eyebrow">Sectoren</p><h2 id="h-sectors">Voor bedrijven die met vloeistoffen werken</h2></div>
-    <ul class="sector-grid">${sectors.map((s) => `<li><a href="/sectoren/${s.slug}/">${esc(s.name)}${icon('arrow')}</a></li>`).join('')}</ul>
+    <div class="section-head section-head--row"><div><p class="kicker">Sectoren</p><h2 id="h-sectors">Voor bedrijven die met vloeistoffen werken</h2></div><a class="link-arrow" href="/sectoren/">Alle sectoren ${icon('arrow')}</a></div>
+    <ul class="sector-grid">${sectors.map((s) => `<li><a href="/sectoren/${s.slug}/"><span>${esc(s.name)}</span>${icon('arrow')}</a></li>`).join('')}</ul>
   </div>
 </section>
 
-<section class="section section--grey" aria-labelledby="h-werkwijze">
+<section class="section section--mist" aria-labelledby="h-werkwijze">
   <div class="container">
-    <div class="section-head"><p class="eyebrow">Werkwijze</p><h2 id="h-werkwijze">Hoe wij werken</h2></div>
+    <div class="section-head"><p class="kicker">Werkwijze</p><h2 id="h-werkwijze">Hoe wij werken</h2></div>
     ${stepsList()}
   </div>
 </section>
 
-<section class="section" aria-labelledby="h-partner">
+<section class="section" aria-labelledby="h-maatwerk">
+  <div class="container feature">
+    <div class="feature__media">${media({ src: '/assets/img/producten/sfeer-hal-ibc.jpg', alt: "IBC's in een flexibele opvangbak van EXFLO" }, '4-3')}</div>
+    <div class="feature__text">
+      <p class="kicker">Maatwerk</p>
+      <h2 id="h-maatwerk">Past een standaardmaat niet?</h2>
+      <p>Een opvangbak rond een specifieke machine, een tank voor een ruimte met beperkte hoogte of een afwijkende aansluiting. Vertel ons wat u nodig heeft. Wij bekijken samen met de fabrikant wat mogelijk is.</p>
+      <div class="btn-row"><a class="btn btn--primary" href="/maatwerk-aanvragen/">Vraag maatwerk aan</a><a class="btn btn--ghost" href="/contact/">Neem contact op</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="h-partner">
   <div class="container partner-block">
     <div class="partner-block__logo">${exflo.logo ? `<img class="partner-logo" src="${exflo.logo}" alt="EXFLO – Think flexible" width="280" height="105" loading="lazy">` : `<div class="logo-ph">${ph(exflo.logoPlaceholder)}</div>`}</div>
-    <div>
-      <p class="eyebrow">Partner</p>
+    <div class="partner-block__text">
+      <p class="kicker">Partner</p>
       <h2 id="h-partner">Producten van EXFLO</h2>
-      <p>${esc(exflo.intro)}</p>
-      <p>EnviroFlow is ${ph(site.partnerRelation)} van EXFLO.</p>
+      <p>${esc(exflo.intro)} EnviroFlow is ${ph(site.partnerRelation)} van EXFLO.</p>
       <a class="link-arrow" href="/partners/exflo/">Meer over EXFLO ${icon('arrow')}</a>
     </div>
   </div>
 </section>
 
-<section class="section section--grey" aria-labelledby="h-maatwerk">
-  <div class="container split">
-    <div>
-      <p class="eyebrow">Maatwerk</p>
-      <h2 id="h-maatwerk">Past een standaardmaat niet?</h2>
-      <p>Een opvangbak rond een specifieke machine, een tank voor een ruimte met beperkte hoogte of een afwijkende aansluiting. Vertel ons wat u nodig heeft. Wij bekijken samen met de fabrikant wat mogelijk is.</p>
-      <a class="btn btn--primary" href="/maatwerk-aanvragen/">Vraag maatwerk aan</a>
-    </div>
-    ${media({ alt: 'Foto: opvangbak op maat rond een machine in een productiehal' }, '16-9')}
-  </div>
-</section>
-
-${ctaBand({ title: 'Weet u niet welke oplossing u nodig heeft?', text: 'Bespreek uw situatie met een specialist. Wij denken mee en komen met een passend voorstel.', buttons: [{ label: 'Vraag advies aan', href: '/offerte-aanvragen/?type=advies', cls: 'btn--accent' }, { label: `Bel een specialist`, href: `tel:${site.phonePrimary.tel}`, cls: 'btn--outline-light', icon: 'phone' }] })}
+${ctaBand({ title: 'Weet u niet welke oplossing u nodig heeft?', text: 'Bespreek uw situatie met een specialist. Wij denken mee en komen met een passend voorstel.', buttons: [{ label: 'Vraag advies aan', href: '/offerte-aanvragen/?type=advies', cls: 'btn--accent' }, { label: `Bel ${site.phonePrimary.display}`, href: `tel:${site.phonePrimary.tel}`, cls: 'btn--outline-light', icon: 'phone' }] })}
 `;
   const org = {
     '@context': 'https://schema.org', '@type': 'Organization', name: 'EnviroFlow', url: site.baseUrl,
@@ -144,7 +165,7 @@ export function stepsList() {
     ['U ontvangt een voorstel', 'Een concreet voorstel met product, uitvoering en prijs.', 'clipboard'],
     ['Wij leveren', 'Wij stemmen de levering af op uw locatie en planning.', 'truck']
   ];
-  return `<ol class="steps">${steps.map(([h, p, ic], i) => `<li class="step"><span class="step__num">${i + 1}</span>${icon(ic, 'step__icon')}<h3>${h}</h3><p>${p}</p></li>`).join('')}</ol>`;
+  return `<ol class="steps">${steps.map(([h, p, ic], i) => `<li class="step"><span class="step__num">0${i + 1}</span><span class="step__icon">${icon(ic)}</span><h3>${h}</h3><p>${p}</p></li>`).join('')}</ol>`;
 }
 
 /* ================================================================ LISTINGS */
