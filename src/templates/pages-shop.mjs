@@ -1,5 +1,5 @@
 // Home, productoverzichten, productpagina's, winkelwagen, checkout, formulieren en keuzehulp.
-import { esc, ph, icon, media, priceBlock, faqBlock, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus } from './ui.mjs';
+import { esc, ph, icon, fmtEUR, media, priceBlock, faqBlock, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus } from './ui.mjs';
 import { isOrderable, hasRealPrice } from '../lib/catalog.mjs';
 
 
@@ -9,12 +9,22 @@ export function home(ctx) {
   const exflo = brandById.exflo;
   const featured = products.filter((p) => isOrderable(p) && p.featured).slice(0, 4);
   const popular = categories.filter((c) => c.popular).slice(0, 8);
-  const spot = products.find((p) => p.id === 'opvangbak-1-ibc');
+  const minPrice = (catId) => Math.min(...products.filter((p) => p.category === catId && typeof p.price === 'number' && !p.quoteOnly).map((p) => p.price));
+  const catUrl = (id) => urls.category(ctx.categoryById[id]);
+  const slides = [
+    { img: 'hero-opvang', group: 'Opvang & spill containment', short: 'Opvangbakken', title: "Flexibele opvangbakken voor IBC's en vaten", text: `Van 226 tot 22.575 liter opvangcapaciteit, met 7 jaar fabrieksgarantie. Online te bestellen vanaf ${fmtEUR(minPrice('flexibele-opvangbakken'))} excl. btw.`, cta: 'Bekijk opvangbakken', href: catUrl('flexibele-opvangbakken') },
+    { img: 'hero-brandwater', group: 'Flexibele tanks', short: 'Brandwatertanks', title: 'Brandwatertanks van 50 tot 300 m³', text: 'EXFLO Waterbase F met verwarmingsmatten en isolatie, voor een bluswatervoorziening die ook in de winter werkt.', cta: 'Bekijk de Waterbase F', href: urls.product(products.find((p) => p.id === 'exflo-waterbase-f')) },
+    { img: 'hero-waterkering', group: 'Mobiel & calamiteiten', short: 'Waterkeringen', title: 'Mobiele waterkeringen tegen wateroverlast', text: 'EXFLO Exflooder: sneller geplaatst dan een dijk van zandzakken. Hoogte na vullen tot 89 cm, gestapeld meer dan 140 cm.', cta: 'Bekijk waterkeringen', href: catUrl('mobiele-waterkeringen') },
+    { img: 'hero-mest', group: 'Landbouw', short: 'Mest & UAN', title: 'Extra opslag voor mest en meststoffen', text: 'Mestzakken van 50 tot 300 m³ zonder bouwwerkzaamheden, met 10 jaar garantie op lekdichtheid.', cta: 'Bekijk mestzakken', href: catUrl('mest-en-slurrytanks') }
+  ];
   const catCount = (g) => categories.filter((c) => c.group === g.id).length;
 
   const body = `
-<section class="hero" aria-labelledby="h-hero">
-  <div class="hero__media">${media({ src: '/assets/img/producten/sfeer-opslag-vaten.jpg', alt: 'Vaten op flexibele opvangbakken van EXFLO in een magazijn', width: 1200, height: 900 }, '4-3', true)}</div>
+<section class="hero hero--slider" aria-labelledby="h-hero" data-hero>
+  <div class="hero__slides" aria-hidden="true">
+    ${slides.map((sl, i) => `<div class="hero__slide${i === 0 ? ' is-active' : ''}" data-slide="${i}"><picture><source type="image/webp" srcset="/assets/img/hero/${sl.img}.webp"><img src="/assets/img/hero/${sl.img}.jpg" alt="" width="1600" height="900" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture></div>`).join('')}
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
   <div class="container hero__inner">
     <div class="hero__content">
       <p class="kicker kicker--light hero__in" style="--d:0">Zakelijke specialist in vloeistofopslag en opvang</p>
@@ -23,16 +33,24 @@ export function home(ctx) {
       <div class="btn-row hero__in" style="--d:5"><a class="btn btn--accent btn--lg" href="/producten/">Bekijk producten ${icon('arrow')}</a><a class="btn btn--outline-light btn--lg" href="/offerte-aanvragen/?type=advies">Vraag advies aan</a></div>
       <p class="hero__phone hero__in" style="--d:6">${icon('phone')}<span>Liever direct overleggen? Bel <a href="tel:${site.phonePrimary.tel}">${site.phonePrimary.display}</a></span></p>
     </div>
-    ${spot ? `<a class="spec-card hero__in" style="--d:7" href="${urls.product(spot)}">
-      <span class="spec-card__label">Uitgelicht</span>
-      <span class="spec-card__name">${esc(spot.name)}</span>
-      <dl class="spec-card__rows">
-        <div><dt>Opvangcapaciteit</dt><dd>${esc(spot.specs.capaciteit)}</dd></div>
-        <div><dt>Afmetingen</dt><dd>${esc(spot.specs.afmetingen.replace(' (l × b × h)', ''))}</dd></div>
-        <div><dt>Garantie</dt><dd>7 jaar</dd></div>
-      </dl>
-      <span class="spec-card__foot">${priceBlock(spot, ctx.t)}<span class="spec-card__go" aria-hidden="true">${icon('arrow')}</span></span>
-    </a>` : ''}
+    <div class="hero__captions hero__in" style="--d:7" role="region" aria-roledescription="carrousel" aria-label="Uitgelichte oplossingen">
+      ${slides.map((sl, i) => `<div class="hero__caption${i === 0 ? ' is-active' : ''}" role="group" aria-roledescription="dia" aria-label="${i + 1} van ${slides.length}: ${esc(sl.group)}" data-caption="${i}"${i === 0 ? '' : ' aria-hidden="true"'}>
+        <span class="hero__caption-kicker"><span class="hero__caption-num">${String(i + 1).padStart(2, '0')}</span>${esc(sl.group)}</span>
+        <p class="hero__caption-title">${esc(sl.title)}</p>
+        <p class="hero__caption-text">${esc(sl.text)}</p>
+        <a class="hero__caption-link" href="${sl.href}"${i === 0 ? '' : ' tabindex="-1"'}>${esc(sl.cta)} ${icon('arrow')}</a>
+      </div>`).join('')}
+    </div>
+  </div>
+  <div class="container hero__controls hero__in" style="--d:8">
+    <ol class="hero__progress">
+      ${slides.map((sl, i) => `<li><button type="button" data-goto="${i}" aria-label="Toon dia ${i + 1}: ${esc(sl.group)}"${i === 0 ? ' aria-current="true"' : ''}><span class="hero__progress-label"><span>${String(i + 1).padStart(2, '0')}</span> ${esc(sl.short)}</span><span class="hero__progress-bar"><i></i></span></button></li>`).join('')}
+    </ol>
+    <div class="hero__nav">
+      <button type="button" class="hero__btn" data-prev aria-label="Vorige dia">${icon('arrow', 'flip')}</button>
+      <button type="button" class="hero__btn" data-toggle aria-label="Diashow pauzeren" aria-pressed="false"><svg class="ic ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg><svg class="ic ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg></button>
+      <button type="button" class="hero__btn" data-next aria-label="Volgende dia">${icon('arrow')}</button>
+    </div>
   </div>
 </section>
 
@@ -154,7 +172,7 @@ ${ctaBand({ title: 'Weet u niet welke oplossing u nodig heeft?', text: 'Bespreek
     path: '/',
     title: 'IBC lekbak, flexibele tanks & opvangbakken | EnviroFlow',
     description: 'EnviroFlow levert flexibele opvangbakken, brandwater-, brandstof-, drinkwater- en mesttanks en mobiele waterkeringen voor bedrijven. Persoonlijk advies en maatwerk.',
-    body, jsonld: [org], bodyClass: 'page-home'
+    body, jsonld: [org], bodyClass: 'page-home', scripts: ['/assets/js/hero.js']
   };
 }
 
