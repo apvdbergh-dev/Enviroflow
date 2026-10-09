@@ -929,3 +929,13 @@ a.contact-card:hover span { text-decoration: underline; text-underline-offset: 3
 @keyframes kenBurnsAlt { from { transform: scale(1.14) translate3d(1.5%, 1%, 0); } to { transform: scale(1.04) translate3d(0, 0, 0); } }
 @keyframes heroFade { from { opacity: 0; transform: scale(1.03); } }
 @media (prefers-reduced-motion: reduce) { .hero__slide { transition-duration: 1ms; } .hero__caption > * { transition-duration: 1ms !important; transition-delay: 0ms !important; } }
+
+/* productfoto's in winkelwagen en besteloverzicht */
+.media--product { background: var(--mist); border-radius: var(--r-sm); }
+.media--product img { mix-blend-mode: multiply; object-fit: contain; padding: 6%; }
+.cart-line__media { display: block; text-decoration: none; }
+.cart-line { grid-template-columns: 96px 1fr; }
+@media (min-width: 640px) { .cart-line { grid-template-columns: 120px 1fr; } }
+.mini-line { align-items: center; }
+.mini-line__media { flex: none; width: 52px; }
+.mini-line__name { flex: 1; min-width: 0; }

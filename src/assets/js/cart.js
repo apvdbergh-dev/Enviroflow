@@ -33,7 +33,16 @@
       '<div><span>Btw (' + Math.round(rate * 100) + '%)</span><span>' + EF.fmt(t.vat) + '</span></div>' +
       '<div class="total"><span>Totaal incl. btw</span><span>' + EF.fmt(t.total) + '</span></div></div>';
   }
-  var phMedia = function (l) { return '<div class="media media--ph r-1-1" role="img" aria-label="' + esc(l.image && l.image.alt || l.name) + '"><span><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span></div>'; };
+  // Productfoto (WebP, met JPG als terugval); zonder foto een neutraal vlak.
+  var rel = function (u) { return window.EF_REL ? window.EF_REL(u) : u; };
+  var phMedia = function (l, ratio) {
+    var img = l.image || {}; ratio = ratio || '1-1';
+    if (img.src) {
+      var webp = img.src.replace(/\.(jpe?g|png)$/i, '.webp');
+      return '<div class="media r-' + ratio + ' media--product"><img src="' + rel(webp) + '" alt="' + esc(img.alt || l.name) + '" width="160" height="160" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=\'' + rel(img.src) + '\'"></div>';
+    }
+    return '<div class="media media--ph r-' + ratio + '" role="img" aria-label="' + esc(l.name) + '"><span><svg class="ic" aria-hidden="true"><use href="#i-grid"/></svg></span></div>';
+  };
 
   /* ---------- winkelwagenpagina ---------- */
   var cartPage = document.querySelector('[data-cart-page]');
@@ -51,7 +60,7 @@
           return;
         }
         itemsEl.innerHTML = '<h2 class="sr-only">Producten in uw winkelwagen</h2><ul class="cart-lines" style="list-style:none;padding:0;margin:0">' + ls.map(function (l) {
-          return '<li class="cart-line"><div class="cart-line__media">' + phMedia(l) + '</div><div>' +
+          return '<li class="cart-line"><a class="cart-line__media" href="' + l.url + '" tabindex="-1" aria-hidden="true">' + phMedia(l) + '</a><div>' +
             '<a class="cart-line__name" href="' + l.url + '">' + esc(l.name) + '</a><div class="small muted">Prijs per stuk: ' + unitPrice(l) + '</div>' +
             '<div class="cart-line__row"><div class="qty qty--sm"><button type="button" data-step="-1" data-id="' + esc(l.id) + '" aria-label="Aantal ' + esc(l.name) + ' verlagen">−</button>' +
             '<input type="number" min="1" max="999" value="' + l.qty + '" data-qty="' + esc(l.id) + '" aria-label="Aantal ' + esc(l.name) + '" inputmode="numeric">' +
@@ -98,7 +107,7 @@
         sumBox.innerHTML = '<p>Uw winkelwagen is leeg.</p><a class="btn btn--primary" href="/producten/">Bekijk producten</a>';
         submit.disabled = true; return;
       }
-      sumBox.innerHTML = ls.map(function (l) { return '<div class="mini-line"><span>' + l.qty + ' × ' + esc(l.name) + '</span><span>' + (l.price == null ? '€ ' + ph(l.placeholder) : EF.fmt(l.price * l.qty)) + '</span></div>'; }).join('') + totalsHtml(t);
+      sumBox.innerHTML = ls.map(function (l) { return '<div class="mini-line"><span class="mini-line__media">' + phMedia(l) + '</span><span class="mini-line__name">' + l.qty + ' × ' + esc(l.name) + '</span><span>' + (l.price == null ? '€ ' + ph(l.placeholder) : EF.fmt(l.price * l.qty)) + '</span></div>'; }).join('') + totalsHtml(t);
       if (t.hasPlaceholder) {
         submit.disabled = true;
         status.hidden = false; status.className = 'form-status err';

@@ -166,6 +166,7 @@ ${ctaBand({ title: 'Weet u niet welke oplossing u nodig heeft?', text: 'Bespreek
     address: { '@type': 'PostalAddress', streetAddress: site.address.street, postalCode: site.address.postalCode, addressLocality: site.address.city, addressCountry: site.address.country },
     areaServed: { '@type': 'Country', name: site.address.countryName },
     identifier: { '@type': 'PropertyValue', propertyID: 'KvK', value: site.kvk },
+    vatID: site.vatNumber,
     contactPoint: [{ '@type': 'ContactPoint', telephone: site.phonePrimary.tel, contactType: 'sales', areaServed: 'NL', availableLanguage: 'nl' }]
   };
   return {
