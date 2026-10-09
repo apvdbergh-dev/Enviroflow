@@ -1,13 +1,17 @@
 // Maakt van ./dist een statische preview zonder server (./dist-preview):
 // relatieve links, alleen WebP-productfoto's en formulieren die niets versturen.
 // Gebruik: node build.mjs && node scripts/build-preview.mjs
+// Met --hosting: één map (./dist-hosting) om bij een gewone webhost te uploaden,
+// met index.html als startpagina en niet vindbaar in Google.
 import { readdirSync, readFileSync, writeFileSync, mkdirSync, rmSync, statSync, copyFileSync } from 'node:fs';
 import { join, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const src = join(root, 'dist');
-const out = join(root, 'dist-preview');
+const HOSTING = process.argv.includes('--hosting');
+const HOME = HOSTING ? 'index.html' : 'home.html';
+const out = join(root, HOSTING ? 'dist-hosting' : 'dist-preview');
 rmSync(out, { recursive: true, force: true });
 
 const files = [];
@@ -16,7 +20,7 @@ const files = [];
 const SHIM = (base) => `<script>
 window.EF_BASE=${JSON.stringify(base)};
 (function(){var B=window.EF_BASE;
-function rel(u){var q='',i=u.search(/[?#]/);if(i>-1){q=u.slice(i);u=u.slice(0,i);}if(u==='/')return B+'home.html'+q;u=u.replace(/^\\//,'');if(u===''||/\\/$/.test(u))u+='index.html';return B+u+q;}
+function rel(u){var q='',i=u.search(/[?#]/);if(i>-1){q=u.slice(i);u=u.slice(0,i);}if(u==='/')return B+'${HOME}'+q;u=u.replace(/^\\//,'');if(u===''||/\\/$/.test(u))u+='index.html';return B+u+q;}
 window.EF_REL=rel;var f=window.fetch;window.fetch=function(u,o){if(typeof u==='string'&&u.charAt(0)==='/'&&u.indexOf('/api/')!==0)u=rel(u);return f.call(this,u,o);};
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href');if(h&&h.charAt(0)==='/'&&h.charAt(1)!=='/'){e.preventDefault();location.href=rel(h);}},true);
 document.addEventListener('submit',function(e){var fm=e.target,act=fm.getAttribute('action')||'';if(act.indexOf('/api/')===0||fm.hasAttribute('data-checkout-form')){e.preventDefault();e.stopImmediatePropagation();var s=fm.querySelector('.form-status');var msg='Conceptversie: formulieren en bestellingen worden nog niet verzonden. Neem voorlopig contact op via 06 19 13 32 52 of Info@enviroflow.nl.';if(s){s.hidden=false;s.className='form-status err';s.textContent=msg;}}},true);
@@ -27,7 +31,7 @@ const relPath = (fromFile, absUrl) => {
   let q = '';
   const i = absUrl.search(/[?#]/);
   if (i > -1) { q = absUrl.slice(i); absUrl = absUrl.slice(0, i); }
-  let target = absUrl === '/' ? 'home.html' : absUrl.replace(/^\//, '');
+  let target = absUrl === '/' ? HOME : absUrl.replace(/^\//, '');
   if (target === '' || target.endsWith('/')) target += 'index.html';
   target = target.replace(/^(assets\/img\/producten\/.+)\.jpg$/, '$1.webp');
   let r = relative(dirname(fromFile), join(out, target)).split('\\').join('/');
@@ -38,7 +42,8 @@ let count = 0;
 for (const f of files) {
   const relName = relative(src, f);
   if (relName.startsWith('assets/img/producten/') && relName.endsWith('.jpg')) continue;
-  let dest = join(out, relName === 'index.html' ? 'home.html' : relName);
+  if (HOSTING && (relName === 'robots.txt' || relName === 'sitemap.xml')) continue;
+  let dest = join(out, relName === 'index.html' ? HOME : relName);
   mkdirSync(dirname(dest), { recursive: true });
   if (!f.endsWith('.html')) { copyFileSync(f, dest); count++; continue; }
   let html = readFileSync(f, 'utf8');
@@ -46,7 +51,14 @@ for (const f of files) {
   html = html.replace(/srcset="([^"]+)"/g, (m, v) => `srcset="${v.split(',').map((part) => { const [u, d] = part.trim().split(/\s+/); return (u.startsWith('/') ? relPath(dest, u) : u) + (d ? ' ' + d : ''); }).join(', ')}"`);
   const base = relative(dirname(dest), out).split('\\').join('/');
   html = html.replace(/<body([^>]*)>/, (m) => m + SHIM(base ? base + '/' : ''));
+  if (HOSTING) html = html.replace(/<meta name="robots"[^>]*>/g, '').replace('</head>', '<meta name="robots" content="noindex, nofollow">\n</head>');
   writeFileSync(dest, html); count++;
+}
+
+if (HOSTING) {
+  writeFileSync(join(out, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
+  console.log(`Hostingversie gereed: ${count + 1} bestanden → dist-hosting/`);
+  process.exit(0);
 }
 
 // Startpagina voor de Artifact: zonder eigen doctype/html/head/body (wordt door de host omhuld).
