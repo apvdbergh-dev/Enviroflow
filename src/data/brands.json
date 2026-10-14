@@ -1,0 +1,22 @@
+[
+  {
+    "id": "exflo",
+    "name": "EXFLO",
+    "slug": "exflo",
+    "active": true,
+    "country": "Polen",
+    "since": "2011",
+    "logo": "/assets/img/partners/exflo-logo.svg",
+    "logoPlaceholder": "[EXFLO-LOGO]",
+    "intro": "Voor flexibele tanks en opvangoplossingen werkt EnviroFlow samen met EXFLO, Europese fabrikant van oplossingen op basis van technisch textiel sinds 2011.",
+    "productLines": [
+      "Waterbase",
+      "Fuelbase",
+      "Exflooder",
+      "Exnoiser",
+      "Hydronion"
+    ],
+    "logoDark": "/assets/img/partners/exflo-logo-wit.svg",
+    "website": "https://exflo.eu/"
+  }
+]

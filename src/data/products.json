@@ -1,0 +1,2996 @@
+[
+  {
+    "id": "opvangbak-1-vat",
+    "slug": "opvangbak-1-vat",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak voor 1 vat",
+    "line": null,
+    "sku": null,
+    "short": "Flexibele lekbak voor één vat. Opvangcapaciteit 226 liter.",
+    "purpose": [
+      "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder één vat. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
+      "De opvangbak is gemaakt van technisch weefsel met een EVA-coating. Dat materiaal is volgens de fabrikant sterker en chemisch beter bestand dan standaard PVC-weefsel."
+    ],
+    "benefits": [
+      "Zwaar EVA-weefsel (1.365 g/m²): sterk en breed chemisch bestendig",
+      "7 jaar fabrieksgarantie",
+      "In enkele minuten geplaatst; opgevouwen past hij op een magazijnstelling",
+      "Ook op maat leverbaar"
+    ],
+    "suitableFor": [
+      "Opslag van één vat (200 l)",
+      "Aftappunten",
+      "Werkplaatsen en onderhoudslocaties"
+    ],
+    "price": 357,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-1-vat.jpg",
+        "alt": "EXFLO flexibele opvangbak met één vat",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-leeg.jpg",
+        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-praktijk.jpg",
+        "alt": "EXFLO opvangbak in gebruik",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "1,05 × 0,65 × 0,35 m (l × b × h)",
+      "capaciteit": "226 liter",
+      "materiaal": "Technisch weefsel met EVA-coating (poly(ethyleen-co-vinylacetaat)), 1.365 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": 1,
+      "capacityL": 226,
+      "dimensions": "1,05 × 0,65 × 0,35 m",
+      "material": "EVA-weefsel",
+      "application": [
+        "Vaten"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-2-vaten",
+      "opvangbak-4-vaten",
+      "opvangbak-1-ibc"
+    ],
+    "featured": true,
+    "source": "https://exflo.eu/product/1-drum-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-2-vaten",
+    "slug": "opvangbak-2-vaten",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak voor 2 vaten",
+    "line": null,
+    "sku": null,
+    "short": "Flexibele lekbak voor twee vaten. Opvangcapaciteit 410 liter.",
+    "purpose": [
+      "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder twee vaten. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
+      "De opvangbak is gemaakt van technisch weefsel met een EVA-coating. Dat materiaal is volgens de fabrikant sterker en chemisch beter bestand dan standaard PVC-weefsel."
+    ],
+    "benefits": [
+      "Zwaar EVA-weefsel (1.365 g/m²): sterk en breed chemisch bestendig",
+      "7 jaar fabrieksgarantie",
+      "In enkele minuten geplaatst; opgevouwen past hij op een magazijnstelling",
+      "Ook op maat leverbaar"
+    ],
+    "suitableFor": [
+      "Opslag van twee vaten",
+      "Aftappunten",
+      "Werkplaatsen"
+    ],
+    "price": 504,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-2-vaten.jpg",
+        "alt": "EXFLO flexibele opvangbak met twee vaten",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-leeg.jpg",
+        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-praktijk.jpg",
+        "alt": "EXFLO opvangbak in gebruik",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "1,90 × 0,65 × 0,35 m (l × b × h)",
+      "capaciteit": "410 liter",
+      "materiaal": "Technisch weefsel met EVA-coating (poly(ethyleen-co-vinylacetaat)), 1.365 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": 2,
+      "capacityL": 410,
+      "dimensions": "1,90 × 0,65 × 0,35 m",
+      "material": "EVA-weefsel",
+      "application": [
+        "Vaten"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-1-vat",
+      "opvangbak-4-vaten"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/product/2-drum-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-4-vaten",
+    "slug": "opvangbak-4-vaten",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak voor 4 vaten",
+    "line": null,
+    "sku": null,
+    "short": "Lage flexibele lekbak voor vier vaten. Opvangcapaciteit 412 liter.",
+    "purpose": [
+      "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder vier vaten. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
+      "De opvangbak is gemaakt van technisch weefsel met een EVA-coating. Dat materiaal is volgens de fabrikant sterker en chemisch beter bestand dan standaard PVC-weefsel."
+    ],
+    "benefits": [
+      "Zwaar EVA-weefsel (1.365 g/m²): sterk en breed chemisch bestendig",
+      "7 jaar fabrieksgarantie",
+      "In enkele minuten geplaatst; opgevouwen past hij op een magazijnstelling",
+      "Ook op maat leverbaar"
+    ],
+    "suitableFor": [
+      "Opslag van vier vaten",
+      "Werkplaatsen en magazijnen"
+    ],
+    "price": 613,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-4-vaten.jpg",
+        "alt": "EXFLO flexibele opvangbak met vier vaten",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-leeg.jpg",
+        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-praktijk.jpg",
+        "alt": "EXFLO opvangbak in gebruik",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "2,90 × 1,07 × 0,14 m (l × b × h)",
+      "capaciteit": "412 liter",
+      "materiaal": "Technisch weefsel met EVA-coating (poly(ethyleen-co-vinylacetaat)), 1.365 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": 4,
+      "capacityL": 412,
+      "dimensions": "2,90 × 1,07 × 0,14 m",
+      "material": "EVA-weefsel",
+      "application": [
+        "Vaten"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-2-vaten",
+      "opvangbak-1-ibc"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/product/4-drum-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-1-ibc",
+    "slug": "opvangbak-1-ibc",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak voor 1 IBC",
+    "line": null,
+    "sku": null,
+    "short": "Flexibele IBC lekbak voor één IBC van 1.000 liter. Opvangcapaciteit 1.149 liter.",
+    "purpose": [
+      "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder één IBC van 1.000 liter. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
+      "De opvangbak is gemaakt van technisch weefsel met een EVA-coating. Dat materiaal is volgens de fabrikant sterker en chemisch beter bestand dan standaard PVC-weefsel."
+    ],
+    "benefits": [
+      "Zwaar EVA-weefsel (1.365 g/m²): sterk en breed chemisch bestendig",
+      "7 jaar fabrieksgarantie",
+      "In enkele minuten geplaatst; opgevouwen past hij op een magazijnstelling",
+      "Ook op maat leverbaar"
+    ],
+    "suitableFor": [
+      "Opslag van één IBC (1.000 l)",
+      "Magazijnen en werkplaatsen",
+      "Tijdelijke opslag op locatie"
+    ],
+    "price": 718,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-1-ibc.jpg",
+        "alt": "EXFLO flexibele opvangbak met één IBC",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-leeg.jpg",
+        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-praktijk.jpg",
+        "alt": "EXFLO opvangbak in gebruik",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "2,16 × 1,60 × 0,35 m (l × b × h)",
+      "capaciteit": "1.149 liter",
+      "materiaal": "Technisch weefsel met EVA-coating (poly(ethyleen-co-vinylacetaat)), 1.365 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": 1,
+      "drumCount": null,
+      "capacityL": 1149,
+      "dimensions": "2,16 × 1,60 × 0,35 m",
+      "material": "EVA-weefsel",
+      "application": [
+        "IBC's"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-2-ibc",
+      "opvangbak-4-ibc",
+      "opvangbak-1-vat"
+    ],
+    "featured": true,
+    "source": "https://exflo.eu/product/1-ibc-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-2-ibc",
+    "slug": "opvangbak-2-ibc",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak voor 2 IBC's",
+    "line": null,
+    "sku": null,
+    "short": "Flexibele IBC opvangbak voor twee IBC's van 1.000 liter. Opvangcapaciteit 1.795 liter.",
+    "purpose": [
+      "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder twee IBC's van 1.000 liter. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
+      "De opvangbak is gemaakt van technisch weefsel met een EVA-coating. Dat materiaal is volgens de fabrikant sterker en chemisch beter bestand dan standaard PVC-weefsel."
+    ],
+    "benefits": [
+      "Zwaar EVA-weefsel (1.365 g/m²): sterk en breed chemisch bestendig",
+      "7 jaar fabrieksgarantie",
+      "In enkele minuten geplaatst; opgevouwen past hij op een magazijnstelling",
+      "Ook op maat leverbaar"
+    ],
+    "suitableFor": [
+      "Opslag van twee IBC's",
+      "Magazijnen en werkplaatsen",
+      "Tijdelijke opslag op locatie"
+    ],
+    "price": 946,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-2-ibc.jpg",
+        "alt": "EXFLO flexibele opvangbak met twee IBC's",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-leeg.jpg",
+        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-praktijk.jpg",
+        "alt": "EXFLO opvangbak in gebruik",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "2,50 × 2,16 × 0,35 m (l × b × h)",
+      "capaciteit": "1.795 liter",
+      "materiaal": "Technisch weefsel met EVA-coating (poly(ethyleen-co-vinylacetaat)), 1.365 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": 2,
+      "drumCount": null,
+      "capacityL": 1795,
+      "dimensions": "2,50 × 2,16 × 0,35 m",
+      "material": "EVA-weefsel",
+      "application": [
+        "IBC's"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-1-ibc",
+      "opvangbak-4-ibc"
+    ],
+    "featured": true,
+    "source": "https://exflo.eu/product/2-ibc-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-4-ibc",
+    "slug": "opvangbak-4-ibc",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak voor 4 IBC's",
+    "line": null,
+    "sku": null,
+    "short": "Flexibele IBC opvangbak voor vier IBC's op een rij. Opvangcapaciteit 2.420 liter.",
+    "purpose": [
+      "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder vier IBC's van 1.000 liter. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
+      "De opvangbak is gemaakt van technisch weefsel met een EVA-coating. Dat materiaal is volgens de fabrikant sterker en chemisch beter bestand dan standaard PVC-weefsel."
+    ],
+    "benefits": [
+      "Zwaar EVA-weefsel (1.365 g/m²): sterk en breed chemisch bestendig",
+      "7 jaar fabrieksgarantie",
+      "In enkele minuten geplaatst; opgevouwen past hij op een magazijnstelling",
+      "Ook op maat leverbaar"
+    ],
+    "suitableFor": [
+      "Opslag van vier IBC's",
+      "Langs een wand of in een gang",
+      "Tijdelijke opslag op locatie"
+    ],
+    "price": 1278,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-4-ibc.jpg",
+        "alt": "EXFLO flexibele opvangbak met vier IBC's",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-leeg.jpg",
+        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-praktijk.jpg",
+        "alt": "EXFLO opvangbak in gebruik",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "5,20 × 1,40 × 0,35 m (l × b × h)",
+      "capaciteit": "2.420 liter",
+      "materiaal": "Technisch weefsel met EVA-coating (poly(ethyleen-co-vinylacetaat)), 1.365 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": 4,
+      "drumCount": null,
+      "capacityL": 2420,
+      "dimensions": "5,20 × 1,40 × 0,35 m",
+      "material": "EVA-weefsel",
+      "application": [
+        "IBC's"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-2-ibc",
+      "opvangbak-10-ibc"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/product/4-ibc-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-10-ibc",
+    "slug": "opvangbak-10-ibc",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak voor 10 IBC's",
+    "line": null,
+    "sku": null,
+    "short": "Flexibele IBC opvangbak voor tien IBC's. Opvangcapaciteit 5.836 liter.",
+    "purpose": [
+      "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder tien IBC's van 1.000 liter. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
+      "De opvangbak is gemaakt van technisch weefsel met een EVA-coating. Dat materiaal is volgens de fabrikant sterker en chemisch beter bestand dan standaard PVC-weefsel."
+    ],
+    "benefits": [
+      "Zwaar EVA-weefsel (1.365 g/m²): sterk en breed chemisch bestendig",
+      "7 jaar fabrieksgarantie",
+      "In enkele minuten geplaatst; opgevouwen past hij op een magazijnstelling",
+      "Ook op maat leverbaar"
+    ],
+    "suitableFor": [
+      "Opslag van tien IBC's",
+      "Grotere opslaglocaties",
+      "Projectlocaties"
+    ],
+    "price": 1767,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-10-ibc.jpg",
+        "alt": "EXFLO flexibele opvangbak voor tien IBC's",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-leeg.jpg",
+        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-praktijk.jpg",
+        "alt": "EXFLO opvangbak in gebruik",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "5,95 × 2,95 × 0,35 m (l × b × h)",
+      "capaciteit": "5.836 liter",
+      "materiaal": "Technisch weefsel met EVA-coating (poly(ethyleen-co-vinylacetaat)), 1.365 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": 10,
+      "drumCount": null,
+      "capacityL": 5836,
+      "dimensions": "5,95 × 2,95 × 0,35 m",
+      "material": "EVA-weefsel",
+      "application": [
+        "IBC's"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-4-ibc",
+      "opvangbak-2-ibc"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/product/10-ibc-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-aggregaat",
+    "slug": "opvangbak-aggregaat",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak voor aggregaat (3 × 1,5 m)",
+    "line": null,
+    "sku": null,
+    "short": "Opvangbak onder een aggregaat, pomp of koelmachine. Opvangcapaciteit 1.451 liter.",
+    "purpose": [
+      "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder een aggregaat, pomp of koelmachine bij een storing of brandstoflek. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
+      "De opvangbak is gemaakt van technisch weefsel met een EVA-coating. Dat materiaal is volgens de fabrikant sterker en chemisch beter bestand dan standaard PVC-weefsel."
+    ],
+    "benefits": [
+      "Zwaar EVA-weefsel (1.365 g/m²): sterk en breed chemisch bestendig",
+      "7 jaar fabrieksgarantie",
+      "In enkele minuten geplaatst; opgevouwen past hij op een magazijnstelling",
+      "Ook op maat leverbaar"
+    ],
+    "suitableFor": [
+      "Aggregaten en noodstroom",
+      "Pompen en koelmachines",
+      "Bouw- en evenemententerreinen"
+    ],
+    "price": 841,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-aggregaat.jpg",
+        "alt": "EXFLO flexibele opvangbak voor een aggregaat",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-leeg.jpg",
+        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-praktijk.jpg",
+        "alt": "EXFLO opvangbak in gebruik",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "2,91 × 1,50 × 0,35 m (l × b × h)",
+      "capaciteit": "1.451 liter",
+      "materiaal": "Technisch weefsel met EVA-coating (poly(ethyleen-co-vinylacetaat)), 1.365 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": 1451,
+      "dimensions": "2,91 × 1,50 × 0,35 m",
+      "material": "EVA-weefsel",
+      "application": [
+        "Machines"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "fuelbase-brandstoftank",
+      "opvangbak-voertuigen-tankwagen"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/product/generator-spill-containment-berm-3-x-15-m/"
+  },
+  {
+    "id": "opvangbak-voertuigen-tankwagen",
+    "slug": "opvangbak-voertuigen-tankwagen",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak voor tankwagen",
+    "line": null,
+    "sku": null,
+    "short": "Inrijdbare opvangbak voor een tankwagen. Opvangcapaciteit 11.655 liter.",
+    "purpose": [
+      "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder een tankwagen bij een storing, lek of bij het reinigen van het voertuig. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
+      "De opvangbak is gemaakt van technisch weefsel met een EVA-coating. Dat materiaal is volgens de fabrikant sterker en chemisch beter bestand dan standaard PVC-weefsel."
+    ],
+    "benefits": [
+      "Zwaar EVA-weefsel (1.365 g/m²): sterk en breed chemisch bestendig",
+      "7 jaar fabrieksgarantie",
+      "In enkele minuten geplaatst; opgevouwen past hij op een magazijnstelling",
+      "Ook op maat leverbaar"
+    ],
+    "suitableFor": [
+      "Tankwagens",
+      "Laad- en losplaatsen",
+      "Calamiteiten"
+    ],
+    "price": 3396,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-tankwagen.jpg",
+        "alt": "EXFLO inrijdbare opvangbak voor een tankwagen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-leeg.jpg",
+        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-praktijk.jpg",
+        "alt": "EXFLO opvangbak in gebruik",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "9,50 × 3,69 × 0,35 m (l × b × h)",
+      "capaciteit": "11.655 liter",
+      "materiaal": "Technisch weefsel met EVA-coating (poly(ethyleen-co-vinylacetaat)), 1.365 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": 11655,
+      "dimensions": "9,50 × 3,69 × 0,35 m",
+      "material": "EVA-weefsel",
+      "application": [
+        "Voertuigen"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-voertuigen-vrachtwagen",
+      "opvangbak-aggregaat"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/product/tanker-truck-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-voertuigen-vrachtwagen",
+    "slug": "opvangbak-voertuigen-vrachtwagen",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak voor vrachtwagen",
+    "line": null,
+    "sku": null,
+    "short": "Inrijdbare opvangbak voor een vrachtwagen met oplegger. Opvangcapaciteit 22.575 liter.",
+    "purpose": [
+      "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder een vrachtwagen bij een storing, brandstoflek of bij het reinigen van het voertuig. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
+      "De opvangbak is gemaakt van technisch weefsel met een EVA-coating. Dat materiaal is volgens de fabrikant sterker en chemisch beter bestand dan standaard PVC-weefsel."
+    ],
+    "benefits": [
+      "Zwaar EVA-weefsel (1.365 g/m²): sterk en breed chemisch bestendig",
+      "7 jaar fabrieksgarantie",
+      "In enkele minuten geplaatst; opgevouwen past hij op een magazijnstelling",
+      "Ook op maat leverbaar"
+    ],
+    "suitableFor": [
+      "Vrachtwagens",
+      "Laad- en losplaatsen",
+      "Transport van gevaarlijke stoffen"
+    ],
+    "price": 5505,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-vrachtwagen.jpg",
+        "alt": "EXFLO inrijdbare opvangbak voor een vrachtwagen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-leeg.jpg",
+        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-praktijk.jpg",
+        "alt": "EXFLO opvangbak in gebruik",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "18,40 × 3,69 × 0,35 m (l × b × h)",
+      "capaciteit": "22.575 liter",
+      "materiaal": "Technisch weefsel met EVA-coating (poly(ethyleen-co-vinylacetaat)), 1.365 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": 22575,
+      "dimensions": "18,40 × 3,69 × 0,35 m",
+      "material": "EVA-weefsel",
+      "application": [
+        "Voertuigen"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-voertuigen-tankwagen",
+      "wasmat-8x4"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/product/truck-spill-containment-berm/"
+  },
+  {
+    "id": "wasmat-6x3",
+    "slug": "wasmat-6x3",
+    "category": "wasmatten-voertuigen",
+    "brand": "exflo",
+    "name": "Wasmat voor voertuigen 6 × 3 m",
+    "line": null,
+    "sku": null,
+    "short": "Opblaasbare wasmat 6 × 3 m voor het opvangen van waswater.",
+    "purpose": [
+      "Een opblaasbare wasmat van 6 × 3 m vangt waswater met reinigingsmiddelen, olie en vuil op. Zo komt het niet in de bodem of het riool terecht en kunt u het opzuigen en afvoeren.",
+      "De totale lengte en breedte van de uitgevouwen mat (voordat de randen zijn opgeblazen) is tot 30 cm groter dan de opgegeven afmetingen van de vloer."
+    ],
+    "benefits": [
+      "Opblaasbare randen: waswater blijft op de mat",
+      "Uit te breiden met oprijstroken tegen beschadiging",
+      "Waswater op te zuigen met een industriële stofzuiger",
+      "Opgevouwen klein: past in een doos en op een stelling"
+    ],
+    "suitableFor": [
+      "Auto's en bestelwagens",
+      "Wassen op locaties zonder wasplaats",
+      "Garages (minder modder en sneeuw in de ruimte)"
+    ],
+    "price": 674,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/wasmat.jpg",
+        "alt": "EXFLO wasmat 6 × 3 m",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/wasmat-in-gebruik.jpg",
+        "alt": "Auto op een EXFLO wasmat",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/wasmat-detail.jpg",
+        "alt": "Detail van de opblaasbare rand van de wasmat",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "6 × 3 m (vloer), randhoogte 10 cm",
+      "capaciteit": null,
+      "materiaal": "Driedubbellaags PVC-gecoat technisch weefsel, gelakt, 900 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": "6 × 3 m",
+      "material": "PVC-weefsel",
+      "application": [
+        "Voertuigen"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "wasmat-6x3-oprijstroken",
+      "wasmat-8x4",
+      "opvangbak-voertuigen-vrachtwagen"
+    ],
+    "featured": true,
+    "source": "https://exflo.eu/product/car-wash-mat-6-x-3-m/"
+  },
+  {
+    "id": "wasmat-6x3-oprijstroken",
+    "slug": "wasmat-6x3-oprijstroken",
+    "category": "wasmatten-voertuigen",
+    "brand": "exflo",
+    "name": "Wasmat voor voertuigen 6 × 3 m met oprijstroken",
+    "line": null,
+    "sku": null,
+    "short": "Opblaasbare wasmat 6 × 3 m voor het opvangen van waswater, met oprijstroken.",
+    "purpose": [
+      "Een opblaasbare wasmat van 6 × 3 m vangt waswater met reinigingsmiddelen, olie en vuil op. Zo komt het niet in de bodem of het riool terecht en kunt u het opzuigen en afvoeren.",
+      "De totale lengte en breedte van de uitgevouwen mat (voordat de randen zijn opgeblazen) is tot 30 cm groter dan de opgegeven afmetingen van de vloer."
+    ],
+    "benefits": [
+      "Opblaasbare randen: waswater blijft op de mat",
+      "Inclusief set van twee oprijstroken (PVC 650 g/m²) tegen beschadiging",
+      "Waswater op te zuigen met een industriële stofzuiger",
+      "Opgevouwen klein: past in een doos en op een stelling"
+    ],
+    "suitableFor": [
+      "Auto's en bestelwagens",
+      "Wassen op locaties zonder wasplaats",
+      "Garages (minder modder en sneeuw in de ruimte)"
+    ],
+    "price": 790,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/wasmat-met-oprijstroken.jpg",
+        "alt": "EXFLO wasmat 6 × 3 m met oprijstroken",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/wasmat-in-gebruik.jpg",
+        "alt": "Auto op een EXFLO wasmat",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/wasmat-detail.jpg",
+        "alt": "Detail van de opblaasbare rand van de wasmat",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "6 × 3 m (vloer), randhoogte 10 cm",
+      "capaciteit": null,
+      "materiaal": "Driedubbellaags PVC-gecoat technisch weefsel, gelakt, 900 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": "6 × 3 m",
+      "material": "PVC-weefsel",
+      "application": [
+        "Voertuigen"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "wasmat-8x4",
+      "opvangbak-voertuigen-vrachtwagen"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/product/car-wash-mat-6-x-3-m-overrun-lanes/"
+  },
+  {
+    "id": "wasmat-8x4",
+    "slug": "wasmat-8x4",
+    "category": "wasmatten-voertuigen",
+    "brand": "exflo",
+    "name": "Wasmat voor voertuigen 8 × 4 m",
+    "line": null,
+    "sku": null,
+    "short": "Opblaasbare wasmat 8 × 4 m voor het opvangen van waswater.",
+    "purpose": [
+      "Een opblaasbare wasmat van 8 × 4 m vangt waswater met reinigingsmiddelen, olie en vuil op. Zo komt het niet in de bodem of het riool terecht en kunt u het opzuigen en afvoeren.",
+      "De totale lengte en breedte van de uitgevouwen mat (voordat de randen zijn opgeblazen) is tot 30 cm groter dan de opgegeven afmetingen van de vloer."
+    ],
+    "benefits": [
+      "Opblaasbare randen: waswater blijft op de mat",
+      "Uit te breiden met oprijstroken tegen beschadiging",
+      "Waswater op te zuigen met een industriële stofzuiger",
+      "Opgevouwen klein: past in een doos en op een stelling"
+    ],
+    "suitableFor": [
+      "Auto's en bestelwagens",
+      "Wassen op locaties zonder wasplaats",
+      "Garages (minder modder en sneeuw in de ruimte)"
+    ],
+    "price": 1055,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/wasmat.jpg",
+        "alt": "EXFLO wasmat 8 × 4 m",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/wasmat-in-gebruik.jpg",
+        "alt": "Auto op een EXFLO wasmat",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/wasmat-detail.jpg",
+        "alt": "Detail van de opblaasbare rand van de wasmat",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "8 × 4 m (vloer), randhoogte 10 cm",
+      "capaciteit": null,
+      "materiaal": "Driedubbellaags PVC-gecoat technisch weefsel, gelakt, 900 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": "8 × 4 m",
+      "material": "PVC-weefsel",
+      "application": [
+        "Voertuigen"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "wasmat-6x3-oprijstroken",
+      "opvangbak-voertuigen-vrachtwagen"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/product/car-wash-mat-8-x-40-m/"
+  },
+  {
+    "id": "wasmat-8x4-oprijstroken",
+    "slug": "wasmat-8x4-oprijstroken",
+    "category": "wasmatten-voertuigen",
+    "brand": "exflo",
+    "name": "Wasmat voor voertuigen 8 × 4 m met oprijstroken",
+    "line": null,
+    "sku": null,
+    "short": "Opblaasbare wasmat 8 × 4 m voor het opvangen van waswater, met oprijstroken.",
+    "purpose": [
+      "Een opblaasbare wasmat van 8 × 4 m vangt waswater met reinigingsmiddelen, olie en vuil op. Zo komt het niet in de bodem of het riool terecht en kunt u het opzuigen en afvoeren.",
+      "De totale lengte en breedte van de uitgevouwen mat (voordat de randen zijn opgeblazen) is tot 30 cm groter dan de opgegeven afmetingen van de vloer."
+    ],
+    "benefits": [
+      "Opblaasbare randen: waswater blijft op de mat",
+      "Inclusief set van twee oprijstroken (PVC 650 g/m²) tegen beschadiging",
+      "Waswater op te zuigen met een industriële stofzuiger",
+      "Opgevouwen klein: past in een doos en op een stelling"
+    ],
+    "suitableFor": [
+      "Auto's en bestelwagens",
+      "Wassen op locaties zonder wasplaats",
+      "Garages (minder modder en sneeuw in de ruimte)"
+    ],
+    "price": 1210,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/wasmat-met-oprijstroken.jpg",
+        "alt": "EXFLO wasmat 8 × 4 m met oprijstroken",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/wasmat-in-gebruik.jpg",
+        "alt": "Auto op een EXFLO wasmat",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/wasmat-detail.jpg",
+        "alt": "Detail van de opblaasbare rand van de wasmat",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "8 × 4 m (vloer), randhoogte 10 cm",
+      "capaciteit": null,
+      "materiaal": "Driedubbellaags PVC-gecoat technisch weefsel, gelakt, 900 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": "8 × 4 m",
+      "material": "PVC-weefsel",
+      "application": [
+        "Voertuigen"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "wasmat-6x3-oprijstroken",
+      "wasmat-8x4",
+      "opvangbak-voertuigen-vrachtwagen"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/product/car-wash-mat-8-x-40-m-overrun-lanes/"
+  },
+  {
+    "id": "wasmat-motor",
+    "slug": "wasmat-motor",
+    "category": "wasmatten-voertuigen",
+    "brand": "exflo",
+    "name": "Wasmat voor motoren 3 × 2 m",
+    "line": null,
+    "sku": null,
+    "short": "Opblaasbare wasmat van 3 × 2 m voor motoren en andere tweewielers.",
+    "purpose": [
+      "Deze opblaasbare wasmat van 3 × 2 m vangt waswater met reinigingsmiddelen op bij het wassen van motoren en andere tweewielers. Ook handig in de garage tegen modder en sneeuw."
+    ],
+    "benefits": [
+      "Makkelijk op en af te rijden met een tweewieler",
+      "In enkele minuten klaar voor gebruik",
+      "Sterk en goed bestand tegen beschadiging",
+      "Opgevouwen neemt hij weinig ruimte in"
+    ],
+    "suitableFor": [
+      "Motoren en scooters",
+      "Garages en werkplaatsen"
+    ],
+    "price": 503,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/wasmat-motor.jpg",
+        "alt": "EXFLO wasmat voor motoren",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/wasmat-motor-2.jpg",
+        "alt": "Motor op een EXFLO wasmat",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "3 × 2 m",
+      "capaciteit": null,
+      "materiaal": null,
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": "3 × 2 m",
+      "material": null,
+      "application": [
+        "Voertuigen"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "wasmat-6x3"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/product/motorbike-wash-mat/"
+  },
+  {
+    "id": "decontaminatiemat-voertuigen",
+    "slug": "decontaminatiemat-voertuigen",
+    "category": "decontaminatiematten-voertuigen",
+    "brand": "exflo",
+    "name": "Decontaminatiemat voor voertuigen",
+    "line": null,
+    "sku": null,
+    "short": "Mobiele mat met opblaasbare randen van 20 cm voor het decontamineren van voertuigen. 6.690 of 12.508 liter.",
+    "purpose": [
+      "Ontwikkeld voor inzet bij chemische, biologische, radiologische en nucleaire (CBRN) dreigingen. De mat vangt decontaminatievloeistof en verontreinigd water op bij het reinigen van militaire, hulpverlenings- en civiele voertuigen, in het veld of op een vaste post.",
+      "Ook bedoeld voor snelle inzet bij de bestrijding van besmettelijke dierziekten, zoals Afrikaanse varkenspest en mond-en-klauwzeer."
+    ],
+    "benefits": [
+      "EVA-weefsel van 1.365 g/m²: hoge chemische en mechanische bestendigheid",
+      "Opblaasbare randen van 20 cm houden de vloeistof vast",
+      "Zonder gereedschap op te bouwen",
+      "Opgevouwen klein genoeg voor op een brandweerwagen"
+    ],
+    "suitableFor": [
+      "Brandweer en hulpdiensten",
+      "Defensie",
+      "Dierziektebestrijding en calamiteiten"
+    ],
+    "price": null,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/decontaminatiemat-voertuigen.jpg",
+        "alt": "EXFLO decontaminatiemat voor voertuigen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/decontaminatiemat-voertuigen-2.jpg",
+        "alt": "Voertuig op een EXFLO decontaminatiemat",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "9,62 × 3,66 × 0,20 m of 12,66 × 5,20 × 0,20 m",
+      "capaciteit": "6.690 liter of 12.508 liter",
+      "materiaal": "Technisch weefsel met EVA-coating, 1.365 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "3 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "certificering": null
+    },
+    "sizes": {
+      "head": [
+        "Afmetingen (l × b × h)",
+        "Inhoud"
+      ],
+      "rows": [
+        [
+          "9,62 × 3,66 × 0,20 m",
+          "6.690 l"
+        ],
+        [
+          "12,66 × 5,20 × 0,20 m",
+          "12.508 l"
+        ]
+      ]
+    },
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": null,
+      "material": "EVA-weefsel",
+      "application": [
+        "Voertuigen"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "decontaminatiebad-personen",
+      "opvangbak-voertuigen-vrachtwagen"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/vehicle-decontamination-mats/"
+  },
+  {
+    "id": "decontaminatiebad-personen",
+    "slug": "decontaminatiebad-personen",
+    "category": "decontaminatiebaden-personen",
+    "brand": "exflo",
+    "name": "Decontaminatiemat voor personen",
+    "line": null,
+    "sku": null,
+    "short": "Mobiele opvangmat met opblaasbare randen van 20 cm voor het decontamineren van personen. 931, 1.509 of 2.090 liter.",
+    "purpose": [
+      "Ontwikkeld voor inzet bij CBRN-dreigingen, epidemieën en reddingsacties. De mat vangt decontaminatievloeistof op bij het ontsmetten van personen en beschermende kleding en beperkt zo het risico op secundaire besmetting."
+    ],
+    "benefits": [
+      "EVA-weefsel van 1.365 g/m²: hoge chemische bestendigheid",
+      "Randen van 20 cm met steunen houden de vloeistof vast",
+      "Zonder gereedschap op te bouwen",
+      "Aan te sluiten op afvoer- en opslagsystemen"
+    ],
+    "suitableFor": [
+      "Brandweer en hulpdiensten",
+      "Defensie",
+      "Mobiele decontaminatieposten"
+    ],
+    "price": null,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/decontaminatiemat-personen.jpg",
+        "alt": "EXFLO decontaminatiemat voor personen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/decontaminatiemat-personen-2.jpg",
+        "alt": "EXFLO decontaminatiemat voor personen in gebruik",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "2,45 × 2,00 × 0,20 m, 3,97 × 2,00 × 0,20 m of 5,50 × 2,00 × 0,20 m",
+      "capaciteit": "931, 1.509 of 2.090 liter",
+      "materiaal": "Technisch weefsel met EVA-coating, 1.365 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "3 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "certificering": null
+    },
+    "sizes": {
+      "head": [
+        "Afmetingen (l × b × h)",
+        "Inhoud"
+      ],
+      "rows": [
+        [
+          "2,45 × 2,00 × 0,20 m",
+          "931 l"
+        ],
+        [
+          "3,97 × 2,00 × 0,20 m",
+          "1.509 l"
+        ],
+        [
+          "5,50 × 2,00 × 0,20 m",
+          "2.090 l"
+        ]
+      ]
+    },
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": null,
+      "material": "EVA-weefsel",
+      "application": [
+        "Personen"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "decontaminatiemat-voertuigen"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/human-decontamination-mats/"
+  },
+  {
+    "id": "exflo-waterbase-f",
+    "slug": "exflo-waterbase-f",
+    "category": "brandwatertanks",
+    "brand": "exflo",
+    "name": "EXFLO Waterbase F brandwatertank",
+    "line": "Waterbase F",
+    "sku": null,
+    "short": "Flexibele brandwatertank (bluswatertank) van 50 tot 300 m³, ook geschikt voor gebruik in de winter.",
+    "purpose": [
+      "De Waterbase F is een flexibele tank voor de opslag van bluswater, als alternatief voor een betonnen of stalen reservoir. De tank is ontworpen voor gebruik het hele jaar door, ook bij vorst: verwarmingsmatten met sensoren en isolatie beschermen het water tegen bevriezen.",
+      "Welke inhoud en aansluitingen nodig zijn, stemt u af met de brandweer of veiligheidsregio. Wij helpen u om de juiste tank te kiezen."
+    ],
+    "benefits": [
+      "Geen bouwwerkzaamheden: alleen een vlakke ondergrond, bijv. een verdicht zandbed",
+      "Verwarmingsmatten met regelunit en isolatieset tegen bevriezen",
+      "Te koppelen aan een hydrofoorinstallatie of waterstandsbewaking",
+      "Ook op maat leverbaar"
+    ],
+    "suitableFor": [
+      "Bedrijven en bedrijventerreinen",
+      "Agrarische bedrijven",
+      "Tijdelijke buffer bij renovatie van een vaste bluswatertank"
+    ],
+    "price": null,
+    "quoteOnly": true,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/waterbase-f.jpg",
+        "alt": "EXFLO Waterbase F brandwatertank",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/waterbase-f-2.jpg",
+        "alt": "Flexibele brandwatertank van EXFLO op locatie",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/waterbase-f-3.jpg",
+        "alt": "EXFLO brandwatertank met afdekking",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "Van 8,78 × 7,45 m (50 m³) tot 20,50 × 11,86 m (300 m³), zie uitvoeringen",
+      "capaciteit": "50 tot 300 m³",
+      "materiaal": "Meerlaags technisch weefsel met interne polyester versterking, PVC met UV-lak",
+      "gewicht": null,
+      "aansluitingen": "Afnameaansluitingen met DN100-afsluiters en Storz 110-koppeling (2 st., met verwarmingskabels en isolatie); vulaansluiting Storz 110 (1 st.)",
+      "temperatuurbereik": "Materialen blijven flexibel tot −30 °C",
+      "chemischeBestendigheid": null,
+      "garantie": "2 jaar, uit te breiden tot 10 jaar bij jaarlijkse geautoriseerde inspectie (fabrieksgarantie EXFLO)",
+      "certificering": "CNBOP-goedkeuringscertificaat nr. 4983/2023 (Polen)"
+    },
+    "sizes": {
+      "head": [
+        "Afmetingen (l × b)",
+        "Inhoud",
+        "Vermogen verwarmingsmatten"
+      ],
+      "rows": [
+        [
+          "8,78 × 7,45 m",
+          "50 m³",
+          "7,5 kW"
+        ],
+        [
+          "11,72 × 9,00 m",
+          "100 m³",
+          "11,5 kW"
+        ],
+        [
+          "14,70 × 9,85 m",
+          "150 m³",
+          "15,0 kW"
+        ],
+        [
+          "15,25 × 11,86 m",
+          "200 m³",
+          "18,8 kW"
+        ],
+        [
+          "16,87 × 11,86 m",
+          "225 m³",
+          "22,5 kW"
+        ],
+        [
+          "18,85 × 11,86 m",
+          "250 m³",
+          "22,5 kW"
+        ],
+        [
+          "20,50 × 11,86 m",
+          "300 m³",
+          "26,1 kW"
+        ]
+      ],
+      "note": "Standaarduitrusting: 2 afnameaansluitingen DN100 met Storz 110, vulaansluiting Storz 110, verwarmingsmatten met regelunit, isolatiematten en afdekking met spanbanden."
+    },
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": null,
+      "material": "PVC-weefsel",
+      "application": [
+        "Bluswater"
+      ],
+      "liquids": [
+        "Bluswater"
+      ],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "exflo-hydronion",
+      "waterbase-r-retentietank"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/fire-protection-flexible-tanks/"
+  },
+  {
+    "id": "exflo-waterbase-d-plus",
+    "slug": "exflo-waterbase-d-plus",
+    "category": "drinkwatertanks",
+    "brand": "exflo",
+    "name": "EXFLO Waterbase D Plus drinkwatertank",
+    "line": "Waterbase D Plus",
+    "sku": null,
+    "short": "Flexibele drinkwatertank van TPU, stationair of mobiel (op aanhanger).",
+    "purpose": [
+      "De Waterbase D Plus is een flexibele tank voor de opslag en distributie van drinkwater op locatie. Hij is gemaakt van weefsel met een coating van thermoplastisch polyurethaan (TPU) met lage migratie.",
+      "Geschikt voor bouwplaatsen, veldkampen, evenementen en noodsituaties, en als reservevoorziening voor waterbedrijven en industrie. Modellen tot 5.000 liter wegen minder dan 35 kg en passen leeg en opgevouwen in de kofferbak van een personenauto."
+    ],
+    "benefits": [
+      "TPU-weefsel conform BS 6920 met WRAS-certificaat: geen invloed op smaak en geur",
+      "BPA- en ftalaatvrij",
+      "Door één persoon te vervoeren en te plaatsen (tot 5.000 l)",
+      "5 jaar fabrieksgarantie"
+    ],
+    "suitableFor": [
+      "Tijdelijke drinkwatervoorziening",
+      "Evenementen en veldkampen",
+      "Noodvoorziening bij storingen"
+    ],
+    "price": null,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/waterbase-d-plus.jpg",
+        "alt": "EXFLO Waterbase D Plus drinkwatertank",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/waterbase-d-plus-2.jpg",
+        "alt": "Flexibele drinkwatertank van EXFLO in gebruik",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/waterbase-d-plus-3.jpg",
+        "alt": "EXFLO drinkwatertank op locatie",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": null,
+      "capaciteit": null,
+      "materiaal": "Weefsel met TPU-coating (thermoplastisch polyurethaan), BPA- en ftalaatvrij",
+      "gewicht": "Minder dan 35 kg voor modellen tot 5.000 liter",
+      "aansluitingen": "Vul-/aftapaansluiting 2\" BSP buitendraad; inspectie-opening Ø 10 cm met dop; ontluchting met overvulbeveiliging",
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "5 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "PZH-certificaat (Polen); weefsel conform BS 6920 met WRAS-certificaat (Verenigd Koninkrijk)"
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": null,
+      "material": "TPU",
+      "application": [
+        "Drinkwater"
+      ],
+      "liquids": [
+        "Drinkwater"
+      ],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "exflo-flextanker",
+      "exflo-hydronion"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/drinking-water-tanks/"
+  },
+  {
+    "id": "waterbase-r-retentietank",
+    "slug": "waterbase-r-retentietank",
+    "category": "industriele-water-en-buffertanks",
+    "brand": "exflo",
+    "name": "EXFLO Waterbase R retentie- en buffertank",
+    "line": "Waterbase R",
+    "sku": null,
+    "short": "Flexibele retentietank van 10 tot 250 m³ voor regenwater, industriewater, grijs water en afvalwater.",
+    "purpose": [
+      "De Waterbase R is een flexibele tank van PVC-gecoat meerlaags weefsel voor tijdelijke of permanente opslag van water. Bedoeld voor retentie: regenwater opvangen en hergebruiken, wateroverlast beperken en water bufferen."
+    ],
+    "benefits": [
+      "10 jaar garantie op lekdichtheid",
+      "Geen bouwwerkzaamheden: plaatsen op gras, betonplaten of een zandbed",
+      "Inspectieluik van 146 mm voor reiniging en controle",
+      "Extra aansluitingen op aanvraag"
+    ],
+    "suitableFor": [
+      "Opvang en hergebruik van regenwater",
+      "Buffering van proces- en industriewater",
+      "Tijdelijke wateropslag op projecten"
+    ],
+    "price": null,
+    "quoteOnly": true,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/waterbase-r.jpg",
+        "alt": "EXFLO Waterbase R retentietank",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "Van 6,50 × 2,90 m (10 m³) tot 18,50 × 11,80 m (250 m³), zie uitvoeringen",
+      "capaciteit": "10 tot 250 m³",
+      "materiaal": "Meerlaags technisch weefsel met PVC-coating, UV-bestendig",
+      "gewicht": "Van 63 kg (10 m³) tot 599 kg (250 m³)",
+      "aansluitingen": "Inlaat DN80 / 3\" BSP met bocht 90° en Storz 75; uitlaat DN50 / 2\" BSP met afsluiter, zeef en Storz 52; ontluchting 2\"; inspectieflens Ø 146 mm",
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "10 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "certificering": null
+    },
+    "sizes": {
+      "head": [
+        "Inhoud",
+        "Afmetingen (l × b)",
+        "Max. hoogte",
+        "Gewicht"
+      ],
+      "rows": [
+        [
+          "10 m³",
+          "6,50 × 2,90 m",
+          "0,8 m",
+          "63 kg"
+        ],
+        [
+          "15 m³",
+          "5,90 × 4,45 m",
+          "0,8 m",
+          "83 kg"
+        ],
+        [
+          "25 m³",
+          "6,00 × 5,90 m",
+          "1,0 m",
+          "107 kg"
+        ],
+        [
+          "50 m³",
+          "10,00 × 5,90 m",
+          "1,1 m",
+          "171 kg"
+        ],
+        [
+          "75 m³",
+          "9,20 × 8,90 m",
+          "1,2 m",
+          "232 kg"
+        ],
+        [
+          "100 m³",
+          "11,20 × 8,90 m",
+          "1,2 m",
+          "280 kg"
+        ],
+        [
+          "150 m³",
+          "11,80 × 11,80 m",
+          "1,4 m",
+          "387 kg"
+        ],
+        [
+          "200 m³",
+          "15,10 × 11,80 m",
+          "1,4 m",
+          "491 kg"
+        ],
+        [
+          "250 m³",
+          "18,50 × 11,80 m",
+          "1,4 m",
+          "599 kg"
+        ]
+      ]
+    },
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": null,
+      "material": "PVC-weefsel",
+      "application": [
+        "Regenwater",
+        "Proceswater"
+      ],
+      "liquids": [
+        "Regenwater",
+        "Industriewater",
+        "Afvalwater"
+      ],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "waterbase-r-30000",
+      "waterbase-w-afvalwatertank",
+      "exflo-hydronion"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/retention-tank/"
+  },
+  {
+    "id": "waterbase-r-30000",
+    "slug": "waterbase-r-30000",
+    "category": "industriele-water-en-buffertanks",
+    "brand": "exflo",
+    "name": "EXFLO Waterbase R industriewatertank 30.000 l",
+    "line": "Waterbase R",
+    "sku": null,
+    "short": "Flexibele tank van 30.000 liter voor industriewater, vuil water en regenwater. Afmetingen 8,78 × 4,95 m.",
+    "purpose": [
+      "Flexibele Waterbase R-tank van 30.000 liter voor de opslag van industriewater (geen drinkwater), vuil of verontreinigd water, afvalwater en regenwater."
+    ],
+    "benefits": [
+      "Veel inhoud zonder vaste constructie",
+      "Tijdelijk of permanent in te zetten",
+      "Leeg compact te vervoeren",
+      "Uitvoering in overleg"
+    ],
+    "suitableFor": [
+      "Industrie",
+      "Bouw en infra",
+      "Waterbeheer"
+    ],
+    "price": null,
+    "quoteOnly": true,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": [
+      "Industriewater (geen drinkwater)",
+      "Vuil en verontreinigd water",
+      "Afvalwater",
+      "Regenwater"
+    ],
+    "images": [
+      {
+        "src": "/assets/img/producten/waterbase-r-30000.jpg",
+        "alt": "EXFLO flexibele watertank 30.000 liter",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/waterbase-r-30000-2.jpg",
+        "alt": "EXFLO flexibele watertank gevuld op locatie",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "8,78 × 4,95 m",
+      "capaciteit": "30.000 liter",
+      "materiaal": null,
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Vloeistoffen met een dichtheid tot 1 kg/dm³ en een pH van 3 tot 10",
+      "garantie": null,
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": 30000,
+      "dimensions": null,
+      "material": null,
+      "application": [
+        "Proceswater",
+        "Regenwater"
+      ],
+      "liquids": [
+        "Industriewater",
+        "Afvalwater",
+        "Regenwater"
+      ],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "waterbase-r-retentietank",
+      "waterbase-w-afvalwatertank"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/product/industrial-water-tank-30-000-l/"
+  },
+  {
+    "id": "waterbase-w-afvalwatertank",
+    "slug": "waterbase-w-afvalwatertank",
+    "category": "afvalwatertanks",
+    "brand": "exflo",
+    "name": "EXFLO Waterbase W afvalwatertank",
+    "line": "Waterbase W",
+    "sku": null,
+    "short": "Flexibele tank van 10 tot 250 m³ voor afvalwater, fecaliën en vuil water.",
+    "purpose": [
+      "De Waterbase W is een dichte, verplaatsbare tank voor afvalwater, fecaliën en vuil water. Geschikt voor tijdelijke containerbases, modulaire woningen, evenementen en campings, en voor het opvangen van decontaminatiewater."
+    ],
+    "benefits": [
+      "7 jaar garantie op lekdichtheid",
+      "Hydrolysebestendig weefsel met UV-lak",
+      "Geen vaste verankering nodig",
+      "In ongeveer 30 minuten geplaatst"
+    ],
+    "suitableFor": [
+      "Bouwplaatsen en containerbases",
+      "Evenementen en campings",
+      "Opvang van decontaminatiewater"
+    ],
+    "price": null,
+    "quoteOnly": true,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": [
+      "Afvalwater en fecaliën",
+      "Vuil en verontreinigd water",
+      "Industriewater (geen drinkwater)",
+      "Regenwater"
+    ],
+    "images": [
+      {
+        "src": "/assets/img/producten/waterbase-w.jpg",
+        "alt": "EXFLO Waterbase W afvalwatertank",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/waterbase-w-2.jpg",
+        "alt": "EXFLO afvalwatertank op locatie",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "Van 6,50 × 2,84 m (10 m³) tot 18,60 × 11,74 m (250 m³), zie uitvoeringen",
+      "capaciteit": "10 tot 250 m³",
+      "materiaal": "Meerlaags technisch weefsel, PVC-coating met polyester gaas, UV-lak",
+      "gewicht": "Van 60 kg (10 m³) tot 535 kg (250 m³)",
+      "aansluitingen": "Vul-/aftapaansluiting 2 × DN80 / 3\" BSP binnendraad met afsluiter; ontluchting 2\"",
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Vloeistoffen met een dichtheid tot 1 kg/dm³ en een pH van 3 tot 10",
+      "garantie": "7 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "certificering": null
+    },
+    "sizes": {
+      "head": [
+        "Inhoud",
+        "Afmetingen (l × b)",
+        "Max. hoogte",
+        "Gewicht"
+      ],
+      "rows": [
+        [
+          "10 m³",
+          "6,50 × 2,84 m",
+          "0,85 m",
+          "60 kg"
+        ],
+        [
+          "15 m³",
+          "5,80 × 4,45 m",
+          "0,80 m",
+          "78 kg"
+        ],
+        [
+          "25 m³",
+          "6,00 × 5,80 m",
+          "1,00 m",
+          "99 kg"
+        ],
+        [
+          "30 m³",
+          "7,20 × 5,80 m",
+          "1,00 m",
+          "113 kg"
+        ],
+        [
+          "50 m³",
+          "6,65 × 8,77 m",
+          "1,20 m",
+          "155 kg"
+        ],
+        [
+          "75 m³",
+          "8,80 × 8,77 m",
+          "1,30 m",
+          "210 kg"
+        ],
+        [
+          "100 m³",
+          "11,40 × 8,77 m",
+          "1,30 m",
+          "252 kg"
+        ],
+        [
+          "150 m³",
+          "11,95 × 11,74 m",
+          "1,35 m",
+          "346 kg"
+        ],
+        [
+          "200 m³",
+          "15,15 × 11,74 m",
+          "1,40 m",
+          "439 kg"
+        ],
+        [
+          "250 m³",
+          "18,60 × 11,74 m",
+          "1,40 m",
+          "535 kg"
+        ]
+      ]
+    },
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": null,
+      "material": "PVC-weefsel",
+      "application": [
+        "Afvalwater"
+      ],
+      "liquids": [
+        "Afvalwater"
+      ],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "waterbase-r-retentietank"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/industrial-water-tanks/"
+  },
+  {
+    "id": "fuelbase-brandstoftank",
+    "slug": "fuelbase-brandstoftank",
+    "category": "brandstoftanks",
+    "brand": "exflo",
+    "name": "EXFLO Fuelbase XSD brandstoftank",
+    "line": "Fuelbase",
+    "sku": null,
+    "short": "Flexibele tank van 200, 500 of 900 liter voor tijdelijke opslag van diesel en verwarmingsolie.",
+    "purpose": [
+      "De Fuelbase XSD is een zelfdragende, flexibele tank voor de tijdelijke opslag van diesel en verwarmingsolie, bijvoorbeeld bij een storing in een installatie of op een projectlocatie.",
+      "Volgens EXFLO moet de tank in een opvangbak staan met minimaal 110% van de tankinhoud. Wij adviseren u graag over een passende opvangbak."
+    ],
+    "benefits": [
+      "Antistatisch, UV-bestendig TPU-weefsel",
+      "Lekdichtheid van elke tank getest door UDT",
+      "Zelfdragend: geen fundering nodig",
+      "Opgevouwen slechts een paar procent van het volume"
+    ],
+    "suitableFor": [
+      "Aggregaten en noodstroom",
+      "Bouw- en infraprojecten",
+      "Tijdelijke verwarming"
+    ],
+    "price": null,
+    "quoteOnly": true,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": [
+      "Diesel",
+      "Verwarmingsolie"
+    ],
+    "images": [
+      {
+        "src": "/assets/img/producten/fuelbase.jpg",
+        "alt": "EXFLO Fuelbase flexibele brandstoftank",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/fuelbase-2.jpg",
+        "alt": "EXFLO Fuelbase brandstoftank op locatie",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/fuelbase-3.jpg",
+        "alt": "Aansluiting van de EXFLO Fuelbase brandstoftank",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "1,89 × 0,80 m (200 l), 1,89 × 1,40 m (500 l) of 1,89 × 1,90 m (900 l)",
+      "capaciteit": "200, 500 of 900 liter",
+      "materiaal": "Meerlaags technisch weefsel met antistatische TPU-coating",
+      "gewicht": null,
+      "aansluitingen": "Vul-/aftapaansluiting met 1\"-afsluiter, bocht 90° en 1\" Camlock-koppeling (F) met stofkap; ontluchting; interne aanzuigzeef",
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "certificering": "Lekdichtheid getest door UDT (Pools keuringsinstituut)"
+    },
+    "sizes": {
+      "head": [
+        "Afmetingen (l × b)",
+        "Inhoud"
+      ],
+      "rows": [
+        [
+          "1,89 × 0,80 m",
+          "200 l"
+        ],
+        [
+          "1,89 × 1,40 m",
+          "500 l"
+        ],
+        [
+          "1,89 × 1,90 m",
+          "900 l"
+        ]
+      ],
+      "note": "Standaard: vul-/aftapaansluiting, ontluchting en afdekking. Aanbevolen: opvangbak met minimaal 110% van de tankinhoud."
+    },
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": null,
+      "material": "TPU",
+      "application": [
+        "Brandstof"
+      ],
+      "liquids": [
+        "Diesel",
+        "Verwarmingsolie"
+      ],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-aggregaat",
+      "opvangbak-1-ibc"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/flexible-fuel-tanks/"
+  },
+  {
+    "id": "farmer-u-uan-tank",
+    "slug": "farmer-u-uan-tank",
+    "category": "uan-tanks",
+    "brand": "exflo",
+    "name": "EXFLO Farmer type U UAN-tank",
+    "line": "Farmer type U",
+    "sku": null,
+    "short": "Flexibele tank van 20 tot 265 m³ voor UAN en andere vloeibare minerale meststoffen.",
+    "purpose": [
+      "De Farmer type U is een flexibele tank voor de veilige opslag van vloeibare minerale meststoffen zoals UAN. De tank staat op vrijwel elke vlakke ondergrond. EXFLO adviseert de tank in een extra opvangmembraan te plaatsen."
+    ],
+    "benefits": [
+      "Bestand tegen vorst tot −30 °C",
+      "UV-bestendig, gelakt PVC-weefsel",
+      "Extra aansluitingen op vrijwel elke plek mogelijk",
+      "Optioneel opvangmembraan als tweede tankwand"
+    ],
+    "suitableFor": [
+      "Akkerbouw",
+      "Loonwerk",
+      "Agrarische handel"
+    ],
+    "price": null,
+    "quoteOnly": true,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": [
+      "UAN en andere vloeibare meststoffen (pH 3–10, alcoholgehalte < 4%)"
+    ],
+    "images": [
+      {
+        "src": "/assets/img/producten/farmer-u.jpg",
+        "alt": "EXFLO UAN-tank op een agrarisch bedrijf",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/farmer-u-2.jpg",
+        "alt": "EXFLO flexibele UAN-tank",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": null,
+      "capaciteit": "20 tot 265 m³",
+      "materiaal": "Polyesterweefsel, aan beide zijden PVC-gecoat en gelakt, UV-bestendig, cadmiumvrij; 1.300 g/m²; treksterkte 4.400 N/5 cm",
+      "gewicht": null,
+      "aansluitingen": "Vul-/aftapaansluiting 3\" draad (1 st. standaard); ontluchting 2\" draad",
+      "temperatuurbereik": "−30 °C tot +70 °C",
+      "chemischeBestendigheid": "Vloeibare meststoffen met een pH van 3 tot 10 en een alcoholgehalte onder 4%",
+      "garantie": "10 jaar op lekdichtheid volgens de productpagina van EXFLO",
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": null,
+      "material": "PVC-weefsel",
+      "application": [
+        "UAN"
+      ],
+      "liquids": [
+        "UAN"
+      ],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "farmer-s-mestzak"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/uan-flexible-tanks/"
+  },
+  {
+    "id": "farmer-s-mestzak",
+    "slug": "farmer-s-mestzak",
+    "category": "mest-en-slurrytanks",
+    "brand": "exflo",
+    "name": "EXFLO Farmer type S mestzak",
+    "line": "Farmer type S",
+    "sku": null,
+    "short": "Flexibele mestzak van 50 tot 300 m³ voor drijfmest, digestaat en andere natuurlijke meststoffen.",
+    "purpose": [
+      "De Farmer type S is een flexibele tank voor de opslag van drijfmest, digestaat en andere natuurlijke meststoffen. Het weefsel is speciaal bedoeld voor contact met natuurlijke meststoffen en digestaat, en beperkt de uitstoot van gassen en geur.",
+      "Voor mestopslag gelden in Nederland eigen regels. Controleer bij uw gemeente of omgevingsdienst welke eisen voor uw situatie gelden."
+    ],
+    "benefits": [
+      "10 jaar garantie op lekdichtheid",
+      "Bestand tegen vorst tot −30 °C",
+      "Extra buffer op het erf of bij de plek waar de mest wordt uitgereden",
+      "Meerdere keren op te vouwen en te verplaatsen"
+    ],
+    "suitableFor": [
+      "Melkvee- en varkenshouderij",
+      "Loonwerk",
+      "Vergisting"
+    ],
+    "price": null,
+    "quoteOnly": true,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": [
+      "Drijfmest",
+      "Digestaat"
+    ],
+    "images": [
+      {
+        "src": "/assets/img/producten/farmer-s.jpg",
+        "alt": "EXFLO mestzak op een agrarisch bedrijf",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/farmer-s-2.jpg",
+        "alt": "Gevulde EXFLO mestzak",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/farmer-s-3.jpg",
+        "alt": "EXFLO mestzak op het erf",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "Van 8,78 × 7,20 m (50 m³) tot 20,64 × 12,65 m (300 m³), zie uitvoeringen",
+      "capaciteit": "50 tot 300 m³",
+      "materiaal": "Gelakt, PVC-gecoat technisch weefsel, 1.300 g/m²; treksterkte 4.300 N/5 cm",
+      "gewicht": null,
+      "aansluitingen": "5\"-schuifafsluiter met hendel (1 st. bij 50 m³, 2 st. vanaf 100 m³); ontluchting",
+      "temperatuurbereik": "−30 °C tot +70 °C",
+      "chemischeBestendigheid": null,
+      "garantie": "10 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "certificering": null
+    },
+    "sizes": {
+      "head": [
+        "Inhoud",
+        "Afmetingen (l × b)"
+      ],
+      "rows": [
+        [
+          "50 m³",
+          "8,78 × 7,20 m"
+        ],
+        [
+          "100 m³",
+          "11,74 × 8,60 m"
+        ],
+        [
+          "150 m³",
+          "14,70 × 9,40 m"
+        ],
+        [
+          "200 m³",
+          "14,70 × 12,10 m"
+        ],
+        [
+          "250 m³",
+          "17,67 × 12,50 m"
+        ],
+        [
+          "300 m³",
+          "20,64 × 12,65 m"
+        ]
+      ],
+      "note": "De tank heeft geen menger."
+    },
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": null,
+      "material": "PVC-weefsel",
+      "application": [
+        "Mest"
+      ],
+      "liquids": [
+        "Drijfmest",
+        "Digestaat"
+      ],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "farmer-u-uan-tank"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/slurry-flexible-tanks/"
+  },
+  {
+    "id": "exflo-flextanker",
+    "slug": "exflo-flextanker",
+    "category": "mobiele-watertanks",
+    "brand": "exflo",
+    "name": "EXFLO Flextanker mobiele tank",
+    "line": "Flextanker",
+    "sku": null,
+    "short": "Flexibele transporttank van 500 tot 10.000 liter die een aanhanger verandert in een tankwagen.",
+    "purpose": [
+      "De Flextanker is een zelfdragende, flexibele tank zonder frame voor het vervoer van water en andere vloeistoffen op een aanhanger, pick-up of oplegger. Ook leverbaar in een drinkwateruitvoering (Waterbase D Plus met PZH-certificaat).",
+      "Daarnaast levert EXFLO de GFFF-tank van 300 liter voor quads en ATV-aanhangers."
+    ],
+    "benefits": [
+      "Zelfdragend: geen frame nodig",
+      "Snelkoppelingen voor snel vullen en legen",
+      "Temperatuurbestendig van −30 °C tot +80 °C",
+      "Leeg slechts een paar procent van het volume"
+    ],
+    "suitableFor": [
+      "Watertransport naar moeilijk bereikbare plekken",
+      "Brandweer en civiele bescherming",
+      "Groenonderhoud en reiniging op locatie"
+    ],
+    "price": null,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/flextanker.jpg",
+        "alt": "EXFLO Flextanker mobiele tank op een aanhanger",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/flextanker-2.jpg",
+        "alt": "EXFLO mobiele watertank",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": null,
+      "capaciteit": "500 tot 10.000 liter (Flextanker); 300 liter (GFFF-tank voor quads/ATV)",
+      "materiaal": null,
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": "−30 °C tot +80 °C",
+      "chemischeBestendigheid": null,
+      "garantie": "2 jaar op lekdichtheid van de wand en sterkte van de lassen (fabrieksgarantie EXFLO)",
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": null,
+      "material": null,
+      "application": [
+        "Water"
+      ],
+      "liquids": [
+        "Water"
+      ],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "exflo-waterbase-d-plus",
+      "exflo-hydronion"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/mobile-tanks/"
+  },
+  {
+    "id": "exflo-hydronion",
+    "slug": "exflo-hydronion",
+    "category": "open-zelfdragende-tanks",
+    "brand": "exflo",
+    "name": "EXFLO Hydronion open zelfdragende tank",
+    "line": "Hydronion",
+    "sku": null,
+    "short": "Open, zelfdragende bluswatertank zonder frame van 5.000 tot 25.000 liter. In 2 minuten opgezet.",
+    "purpose": [
+      "De Hydronion is een open, zelfdragende tank zonder frame. De open vorm maakt snel vullen en legen mogelijk, ook door meerdere eenheden tegelijk. De hoogte is geschikt om helikopter-blusemmers te vullen."
+    ],
+    "benefits": [
+      "Geen frame: in enkele minuten opgezet",
+      "Zwaar weefsel van 1.000 g/m²",
+      "2 aansluitingen DN100 met Storz 110 voor gelijktijdig vullen en afnemen",
+      "5 jaar garantie op lekdichtheid"
+    ],
+    "suitableFor": [
+      "Brandweer en veiligheidsregio's",
+      "Tijdelijke bluswatervoorziening",
+      "Wateropslag in de landbouw"
+    ],
+    "price": null,
+    "quoteOnly": true,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/hydronion.jpg",
+        "alt": "EXFLO Hydronion open zelfdragende tank",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/hydronion-2.jpg",
+        "alt": "EXFLO Hydronion tank tijdens een brandweeroefening",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/hydronion-3.jpg",
+        "alt": "EXFLO Hydronion tank van bovenaf",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "Van 2,90 × 2,45 × 1,10 m (5.000 l) tot 5,00 × 4,20 × 1,45 m (25.000 l), zie uitvoeringen",
+      "capaciteit": "5.000, 8.000, 10.000, 15.000 of 25.000 liter",
+      "materiaal": "Technisch weefsel met polyester gaas en PVC-coating, 1.000 g/m²",
+      "gewicht": "Van 30 kg (5.000 l) tot 79,8 kg (25.000 l), zonder hoes",
+      "aansluitingen": "2 × geflensde aluminium aansluiting DN100 (4\") met Storz 110-koppeling en kap (zonder afsluiters)",
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "5 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "certificering": "CNBOP-goedkeuringscertificaat nr. 5753/2025 (Polen)"
+    },
+    "sizes": {
+      "head": [
+        "Inhoud",
+        "Max. afmetingen gevuld (diameter × hoogte)",
+        "Gewicht (zonder hoes)"
+      ],
+      "rows": [
+        [
+          "5.000 l",
+          "2,90 × 2,45 × 1,10 m",
+          "30 kg"
+        ],
+        [
+          "8.000 l",
+          "2,90 × 2,00 × 1,40 m",
+          "37 kg"
+        ],
+        [
+          "10.000 l",
+          "2,90 × 2,40 × 1,35 m",
+          "39 kg"
+        ],
+        [
+          "15.000 l",
+          "3,90 × 3,00 × 1,45 m",
+          "41,3 kg"
+        ],
+        [
+          "25.000 l",
+          "5,00 × 4,20 × 1,45 m",
+          "79,8 kg"
+        ]
+      ],
+      "note": "Standaard: 2 aansluitingen DN100 met Storz 110, handgrepen, reflecterende elementen, beschermmat, hoes, reparatieset, kraag met hydrofoob schuim en vlotter onder de zuigleiding."
+    },
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": null,
+      "material": "PVC-weefsel",
+      "application": [
+        "Bluswater"
+      ],
+      "liquids": [
+        "Bluswater"
+      ],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "exflo-waterbase-f",
+      "exflo-flextanker"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/portable-water-tanks/"
+  },
+  {
+    "id": "exflooder-22",
+    "slug": "exflooder-22",
+    "category": "mobiele-waterkeringen",
+    "brand": "exflo",
+    "name": "EXFLO Exflooder mobiele waterkering Ø 22 cm",
+    "line": "Exflooder",
+    "sku": null,
+    "short": "Met water gevulde mobiele waterkering, Ø 22 cm, hoogte na vullen 22 cm. Lengtes 3 m, 5 m, 10 m, 15 m.",
+    "purpose": [
+      "De Exflooder is een flexibele, met water gevulde waterkering: een sneller en lichter alternatief voor zandzakken. Uitrollen, verankeren en vullen met water. Na gebruik leegmaken, drogen en compact opbergen.",
+      "De kleinste uitvoering is geschikt voor het afschermen van entrees, garagedeuren en andere lage openingen."
+    ],
+    "benefits": [
+      "Sneller te plaatsen dan een dijk van zandzakken",
+      "Modules eenvoudig aan elkaar te koppelen",
+      "Leeg slechts een paar procent van het volume",
+      "7 jaar fabrieksgarantie"
+    ],
+    "suitableFor": [
+      "Bedrijfspanden, entrees en garagedeuren",
+      "Gemeenten en waterschappen",
+      "Calamiteitenvoorraad"
+    ],
+    "price": null,
+    "quoteOnly": true,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/exflooder.jpg",
+        "alt": "EXFLO Exflooder mobiele waterkering",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/exflooder-praktijk.jpg",
+        "alt": "EXFLO Exflooder waterkeringen in gebruik",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/exflooder-oefening.jpg",
+        "alt": "Oefening met EXFLO Exflooder waterkeringen",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "Diameter 22 cm; lengte 3 m, 5 m, 10 m, 15 m",
+      "capaciteit": "Hoogte na vullen 22 cm",
+      "materiaal": null,
+      "gewicht": null,
+      "aansluitingen": "Vul-/aftapaansluiting 1\" Storz 25 met kap; ontluchting (1 st. bij 3 en 5 m, 2 st. bij 10 en 15 m)",
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "CNBOP-conformiteitscertificaat (Polen)"
+    },
+    "sizes": {
+      "head": [
+        "Lengte",
+        "Hoogte na vullen"
+      ],
+      "rows": [
+        [
+          "3 m",
+          "22 cm"
+        ],
+        [
+          "5 m",
+          "22 cm"
+        ],
+        [
+          "10 m",
+          "22 cm"
+        ],
+        [
+          "15 m",
+          "22 cm"
+        ]
+      ],
+      "note": null
+    },
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": "Ø 22 cm",
+      "material": null,
+      "application": [
+        "Wateroverlast"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "exflooder-46",
+      "exflooder-94"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/flood-barriers/"
+  },
+  {
+    "id": "exflooder-46",
+    "slug": "exflooder-46",
+    "category": "mobiele-waterkeringen",
+    "brand": "exflo",
+    "name": "EXFLO Exflooder mobiele waterkering Ø 46 cm",
+    "line": "Exflooder",
+    "sku": null,
+    "short": "Met water gevulde mobiele waterkering, Ø 46 cm, hoogte na vullen 45 cm. Lengtes 5 m, 10 m, 15 m.",
+    "purpose": [
+      "De Exflooder is een flexibele, met water gevulde waterkering: een sneller en lichter alternatief voor zandzakken. Uitrollen, verankeren en vullen met water. Na gebruik leegmaken, drogen en compact opbergen.",
+      "De Exflooder+ heeft een licht vernauwde, zelfdichtende mof en extra banden met gespen om modules aan elkaar te koppelen. Gestapeld (piramide) zijn met de Ø 94 cm-uitvoering keringen van meer dan 140 cm hoog mogelijk."
+    ],
+    "benefits": [
+      "Sneller te plaatsen dan een dijk van zandzakken",
+      "Modules eenvoudig aan elkaar te koppelen",
+      "Leeg slechts een paar procent van het volume",
+      "7 jaar fabrieksgarantie"
+    ],
+    "suitableFor": [
+      "Bedrijfspanden, entrees en garagedeuren",
+      "Gemeenten en waterschappen",
+      "Calamiteitenvoorraad"
+    ],
+    "price": null,
+    "quoteOnly": true,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/exflooder.jpg",
+        "alt": "EXFLO Exflooder mobiele waterkering",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/exflooder-praktijk.jpg",
+        "alt": "EXFLO Exflooder waterkeringen in gebruik",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/exflooder-oefening.jpg",
+        "alt": "Oefening met EXFLO Exflooder waterkeringen",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "Diameter 46 cm; lengte 5 m, 10 m, 15 m",
+      "capaciteit": "Hoogte na vullen 45 cm",
+      "materiaal": "Driedubbellaags PVC-weefsel, 900 g/m², UV-lak",
+      "gewicht": null,
+      "aansluitingen": "Vulaansluiting 3\" Storz 75 met kap; aftapaansluiting 3\" Storz 75 met kap; 2 ontluchtingen; 6 handgrepen; 2 verankeringsbanden",
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "CNBOP-conformiteitscertificaat (Polen)"
+    },
+    "sizes": {
+      "head": [
+        "Lengte",
+        "Hoogte na vullen"
+      ],
+      "rows": [
+        [
+          "5 m",
+          "45 cm"
+        ],
+        [
+          "10 m",
+          "45 cm"
+        ],
+        [
+          "15 m",
+          "45 cm"
+        ]
+      ],
+      "note": "Leverbaar als Exflooder en als Exflooder+ (met koppelmof). Optioneel: beschermmat onder de kering en opberghoes."
+    },
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": "Ø 46 cm",
+      "material": "PVC-weefsel",
+      "application": [
+        "Wateroverlast"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "exflooder-22",
+      "exflooder-94"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/flood-barriers/"
+  },
+  {
+    "id": "exflooder-94",
+    "slug": "exflooder-94",
+    "category": "mobiele-waterkeringen",
+    "brand": "exflo",
+    "name": "EXFLO Exflooder mobiele waterkering Ø 94 cm",
+    "line": "Exflooder",
+    "sku": null,
+    "short": "Met water gevulde mobiele waterkering, Ø 94 cm, hoogte na vullen 89 cm. Lengtes 5 m, 10 m, 15 m.",
+    "purpose": [
+      "De Exflooder is een flexibele, met water gevulde waterkering: een sneller en lichter alternatief voor zandzakken. Uitrollen, verankeren en vullen met water. Na gebruik leegmaken, drogen en compact opbergen.",
+      "De Exflooder+ heeft een licht vernauwde, zelfdichtende mof en extra banden met gespen om modules aan elkaar te koppelen. Gestapeld (piramide) zijn met de Ø 94 cm-uitvoering keringen van meer dan 140 cm hoog mogelijk."
+    ],
+    "benefits": [
+      "Sneller te plaatsen dan een dijk van zandzakken",
+      "Modules eenvoudig aan elkaar te koppelen",
+      "Leeg slechts een paar procent van het volume",
+      "7 jaar fabrieksgarantie"
+    ],
+    "suitableFor": [
+      "Bedrijfspanden, entrees en garagedeuren",
+      "Gemeenten en waterschappen",
+      "Calamiteitenvoorraad"
+    ],
+    "price": null,
+    "quoteOnly": true,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/exflooder-90.jpg",
+        "alt": "EXFLO Exflooder mobiele waterkering Ø 94 cm",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/exflooder-praktijk.jpg",
+        "alt": "EXFLO Exflooder waterkeringen in gebruik",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/exflooder-oefening.jpg",
+        "alt": "Oefening met EXFLO Exflooder waterkeringen",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "Diameter 94 cm; lengte 5 m, 10 m, 15 m",
+      "capaciteit": "Hoogte na vullen 89 cm",
+      "materiaal": "Driedubbellaags PVC-weefsel, 900 g/m², UV-lak",
+      "gewicht": null,
+      "aansluitingen": "Vulaansluiting 3\" Storz 75 met kap; aftapflens Ø 146 mm met dop; 2 ontluchtingen; 6 handgrepen; 2 verankeringsbanden",
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "CNBOP-conformiteitscertificaat (Polen)"
+    },
+    "sizes": {
+      "head": [
+        "Lengte",
+        "Hoogte na vullen"
+      ],
+      "rows": [
+        [
+          "5 m",
+          "89 cm"
+        ],
+        [
+          "10 m",
+          "89 cm"
+        ],
+        [
+          "15 m",
+          "89 cm"
+        ]
+      ],
+      "note": "Leverbaar als Exflooder en als Exflooder+ (met koppelmof). Optioneel: beschermmat onder de kering en opberghoes."
+    },
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": "Ø 94 cm",
+      "material": "PVC-weefsel",
+      "application": [
+        "Wateroverlast"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "exflooder-22",
+      "exflooder-46"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/flood-barriers/"
+  },
+  {
+    "id": "exflo-exnoiser",
+    "slug": "exflo-exnoiser",
+    "category": "geluidsabsorberende-matten",
+    "brand": "exflo",
+    "name": "EXFLO Exnoiser R25 geluidsabsorberende mat",
+    "line": "Exnoiser",
+    "sku": null,
+    "short": "Geluidsabsorberende mat van 2,05 × 1,20 m voor geluidsschermen op bouwplaatsen. Geluidsreductie tot 25 dB.",
+    "purpose": [
+      "Exnoiser-matten bevestigt u aan bouwhekken, steigers of andere constructies. Zo bouwt u een geluidsscherm rond een bouwplaats, boorlocatie of installatie. De matten zijn horizontaal en verticaal aan elkaar te koppelen.",
+      "Een geluidsscherm werkt het best zo dicht mogelijk bij de geluidsbron. Houd rekening met de windbelasting op uw locatie."
+    ],
+    "benefits": [
+      "Geluidsreductie tot 25 dB (Dw) in één laag",
+      "Bestand tegen wind, regen, sneeuw en UV",
+      "Modulair te koppelen tot grote schermen",
+      "Akoestische waarden getest door een geaccrediteerd laboratorium"
+    ],
+    "suitableFor": [
+      "Bouwplaatsen in bebouwd gebied",
+      "Boorlocaties",
+      "Aggregaten en pompen"
+    ],
+    "price": null,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/exnoiser.jpg",
+        "alt": "EXFLO Exnoiser geluidsabsorberende matten aan een bouwhek",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/exnoiser-2.jpg",
+        "alt": "Geluidsscherm van EXFLO Exnoiser matten",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/exnoiser-3.jpg",
+        "alt": "Detail van een EXFLO Exnoiser mat",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "2,05 × 1,20 m (hart-op-hart bevestigingspunten 2,00 × 1,05 m)",
+      "capaciteit": null,
+      "materiaal": "Technisch weefsel met polyester gaas en PVC-coating, UV-lak",
+      "gewicht": "14,8 kg per mat",
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "2 jaar (fabrieksgarantie EXFLO)",
+      "certificering": "Testrapport RS-2018/B-268 (11-07-2018), Centrum Techniki Okrętowej S.A. (Polen): Rw 22 (−1; −3) dB en Dw 25 (−1; −4) dB volgens PN-EN ISO 717-1:2013"
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": "2,05 × 1,20 m",
+      "material": null,
+      "application": [
+        "Geluid"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-aggregaat"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/portable-sound-absorbing-mats/"
+  },
+  {
+    "id": "dekzeil-op-maat",
+    "slug": "dekzeil-op-maat",
+    "category": "dekzeilen-en-hoezen",
+    "brand": "exflo",
+    "name": "Dekzeil of hoes op maat",
+    "line": null,
+    "sku": null,
+    "short": "Dekzeil of beschermhoes van technisch textiel, op maat gemaakt.",
+    "purpose": [
+      "Voor het afdekken en beschermen van machines, installaties en opslag. Gemaakt op de afmetingen die u opgeeft."
+    ],
+    "benefits": [
+      "Op maat gemaakt",
+      "Van technisch textiel",
+      "Uitvoering in overleg",
+      "Advies over uitvoering en bevestiging"
+    ],
+    "suitableFor": [
+      "Machines en installaties",
+      "Opslag en materialen"
+    ],
+    "price": null,
+    "quoteOnly": true,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [],
+    "specs": {
+      "afmetingen": null,
+      "capaciteit": null,
+      "materiaal": null,
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": null,
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": null,
+      "dimensions": null,
+      "material": null,
+      "application": [
+        "Afdekken"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "exflo-exnoiser"
+    ],
+    "featured": false,
+    "source": null
+  }
+]

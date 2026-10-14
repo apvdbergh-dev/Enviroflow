@@ -1,0 +1,37 @@
+{
+  "_comment": "Centrale bedrijfsgegevens. Waarden tussen [HAKEN] zijn placeholders en worden zo op de site getoond tot ze zijn ingevuld.",
+  "name": "EnviroFlow",
+  "tagline": "Environmental Solutions",
+  "baseUrl": "https://www.enviroflow.nl",
+  "defaultLocale": "nl",
+  "locales": ["nl"],
+  "phonePrimary": { "display": "06 19 13 32 52", "tel": "+31619133252" },
+  "phoneSecondary": { "display": "06 33 97 00 44", "tel": "+31633970044" },
+  "email": "Info@enviroflow.nl",
+  "address": {
+    "street": "Molendijk 70",
+    "postalCode": "3235 XH",
+    "city": "Rockanje",
+    "country": "NL",
+    "countryName": "Nederland"
+  },
+  "kvk": "94667748",
+  "vatNumber": "NL005099776B64",
+  "serviceArea": "Nederland",
+  "vatRate": 0.21,
+  "currency": "EUR",
+  "shipping": {
+    "_comment": "Zet 'flatRate' op een bedrag excl. btw (bijv. 95) zodra bekend. Bij null: 'Verzendkosten worden na bestelling berekend'.",
+    "flatRate": null,
+    "note": "[IN TE VULLEN: VERZENDKOSTEN]"
+  },
+  "paymentMethods": [
+    { "id": "ideal", "label": "iDEAL" },
+    { "id": "creditcard", "label": "Creditcard" },
+    { "id": "bancontact", "label": "Bancontact" },
+    { "id": "paypal", "label": "PayPal" },
+    { "id": "banktransfer", "label": "Bankoverschrijving" }
+  ],
+  "partnerRelation": "Nederlandse distributeur",
+  "social": []
+}
