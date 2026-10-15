@@ -40,7 +40,8 @@ Alle productgegevens komen van exflo.eu (opgehaald 2 oktober 2026); de bron-URL 
 
 ## Techniek bij livegang
 
-- `MOLLIE_API_KEY` en `BASE_URL` instellen (betaalmethoden aanpassen in `site.json` aan wat in Mollie actief is).
-- `NOTIFY_WEBHOOK_URL` of e-mailkoppeling voor meldingen van nieuwe aanvragen en bestellingen.
-- Hosting met Node.js 20+ (bijv. een VPS, Render, Railway of Fly.io) en HTTPS.
+- Cloudflare Pages-project met KV-binding `EF_DATA` (zie README, "Live op Cloudflare Pages").
+- `MOLLIE_API_KEY` (eerst test, dan live); betaalmethoden in `site.json` gelijk maken aan wat in Mollie actief is.
+- `NTFY_TOPIC` (pushmeldingen) en `RESEND_API_KEY` + domeinverificatie in Resend (e-mail).
+- Domein (www.enviroflow.nl) van GitHub Pages naar Cloudflare Pages omzetten.
 - Optioneel: statistiekenpakket koppelen dat pas laadt na toestemming (`ef:consent`-event in `main.js`).

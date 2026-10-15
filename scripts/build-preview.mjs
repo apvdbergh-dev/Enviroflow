@@ -42,7 +42,7 @@ let count = 0;
 for (const f of files) {
   const relName = relative(src, f);
   if (relName.startsWith('assets/img/producten/') && relName.endsWith('.jpg')) continue;
-  if (HOSTING && (relName === 'robots.txt' || relName === 'sitemap.xml')) continue;
+  if (relName === '_headers' || (HOSTING && (relName === 'robots.txt' || relName === 'sitemap.xml'))) continue;
   let dest = join(out, relName === 'index.html' ? HOME : relName);
   mkdirSync(dirname(dest), { recursive: true });
   if (!f.endsWith('.html')) { copyFileSync(f, dest); count++; continue; }

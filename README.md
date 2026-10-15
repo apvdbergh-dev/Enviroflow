@@ -4,7 +4,7 @@ Nederlandstalige B2B-website met hybride webshop (online bestellen én offerte a
 
 - **Geen externe afhankelijkheden.** Alleen Node.js 20 of nieuwer is nodig.
 - **Statische HTML** (snel, SEO-vriendelijk) die door `build.mjs` uit data wordt gegenereerd.
-- **Kleine Node-server** (`server.mjs`) voor formulieren, uploads, bestellingen en betalingen (Mollie).
+- **Bestellingen, formulieren en betalingen (Mollie)** via `src/lib/api.mjs`: live op Cloudflare Pages Functions, lokaal via `server.mjs`.
 
 ## Starten
 
@@ -14,21 +14,39 @@ npm start          # serveert ./dist + API op http://localhost:8080
 npm run check      # build + controle: één H1, unieke titles/descriptions, JSON-LD, dode links, labels
 ```
 
-Omgevingsvariabelen voor de server:
+Instellingen (omgevingsvariabelen; op Cloudflare onder *Settings → Variables and Secrets*, lokaal als env):
 
 | Variabele | Doel |
 |---|---|
-| `PORT` | Poort (standaard 8080) |
-| `BASE_URL` | Publieke URL, bijv. `https://www.enviroflow.nl` (nodig voor Mollie-redirect en -webhook) |
-| `MOLLIE_API_KEY` | Activeert online betalen via Mollie (iDEAL, creditcard, Bancontact, PayPal, overboeking). Zonder sleutel wordt een bestelling opgeslagen en stuurt u zelf een betaalverzoek. |
-| `NOTIFY_WEBHOOK_URL` | Optioneel: elke aanvraag/bestelling wordt als JSON hierheen gestuurd (bijv. Make/Zapier → e-mail). |
-| `DATA_DIR` | Map voor aanvragen, bestellingen en uploads (standaard `./data`, staat in `.gitignore`). |
+| `MOLLIE_API_KEY` | Activeert online betalen via Mollie. Eerst de **test**-sleutel (`test_…`), bij livegang de `live_…`-sleutel. Zonder sleutel wordt een bestelling opgeslagen en stuurt EnviroFlow zelf een betaalverzoek. **Als geheim (secret) instellen.** |
+| `NTFY_TOPIC` | Geheime kanaalnaam voor pushmeldingen via de ntfy-app. De melding bevat alleen ordernummer en bedrag, geen persoonsgegevens. |
+| `RESEND_API_KEY` | E-mail via Resend: alle gegevens van aanvragen en bestellingen naar EnviroFlow (met bijlagen) en een bevestiging aan de klant na betaling. **Als geheim instellen.** |
+| `MAIL_FROM` | Afzender, standaard `EnviroFlow <bestellingen@enviroflow.nl>` (domein moet in Resend geverifieerd zijn). |
+| `NOTIFY_EMAIL` | Ontvanger van meldingen, standaard het adres uit `site.json`. |
+| `BASE_URL` | Optioneel: publieke URL voor Mollie-terugkeer en -webhook. Standaard het adres waarop het verzoek binnenkomt. |
+| `NTFY_SERVER`, `NTFY_TOKEN`, `MOLLIE_API_URL`, `RESEND_API_URL` | Optioneel: eigen ntfy-server of testomgevingen. |
+| `PORT`, `DATA_DIR` | Alleen lokaal (`server.mjs`): poort en map voor opslag (standaard `./data`). |
+
+## Live op Cloudflare Pages
+
+De website (`dist/`) en de API (`functions/api/[[path]].js`) draaien samen op Cloudflare Pages; opslag in Workers KV.
+
+1. *Workers & Pages → Create → Pages → Connect to Git*, kies deze repository en branch.
+2. Build command `node build.mjs`, output directory `dist`, omgevingsvariabele `NODE_VERSION` = `22`.
+3. Maak een KV-namespace aan (bijv. `enviroflow-data`) en koppel die in het project onder *Settings → Bindings* als **`EF_DATA`**.
+4. Vul de variabelen hierboven in en deploy opnieuw.
+5. Testen kan op het `*.pages.dev`-adres met de Mollie-testsleutel; daarna het domein koppelen.
+
+Lokaal testen met de echte Cloudflare-runtime: `npx wrangler pages dev dist --kv EF_DATA` (na `npm run build`).
 
 ## Opbouw
 
 ```
 build.mjs                     generator → dist/
-server.mjs                    statische bestanden + /api/quote, /api/custom, /api/contact, /api/order, /api/mollie-webhook, /api/order-status
+server.mjs                    lokale server: statische bestanden + /api/* (zelfde code als Cloudflare)
+functions/api/[[path]].js     Cloudflare Pages Function voor /api/* (opslag: KV-binding EF_DATA)
+src/lib/api.mjs               formulieren, bestellingen, Mollie, meldingen (ntfy + Resend)
+src/lib/catalog-core.mjs      catalogusregels zonder bestandstoegang (build, server én Cloudflare)
 src/data/site.json            bedrijfsgegevens, btw, verzendkosten, betaalmethoden, relatie met EXFLO
 src/data/brands.json          merken/partners (EXFLO; later meer)
 src/data/categories.json      4 hoofdgroepen + categorieën (inclusief toekomstige, met "active": false)

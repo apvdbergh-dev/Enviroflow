@@ -114,4 +114,17 @@ Disallow: /zoeken/
 Sitemap: ${catalog.site.baseUrl}/sitemap.xml
 `);
 
+// Beveiligings- en cacheheaders voor Cloudflare Pages (zelfde regels als server.mjs).
+writeFileSync(join(dist, '_headers'), `/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self' https://www.mollie.com; frame-ancestors 'self'; base-uri 'self'
+/assets/img/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+`);
+
 console.log(`Build gereed: ${sitemap.length} indexeerbare pagina's → dist/`);

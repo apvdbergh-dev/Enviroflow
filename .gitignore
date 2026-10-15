@@ -7,3 +7,4 @@ dist/
 dist-preview/
 dist-hosting/
 *.zip
+.wrangler/
