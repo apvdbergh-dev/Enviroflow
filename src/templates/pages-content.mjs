@@ -183,8 +183,9 @@ export function contactPage(ctx) {
 }
 
 /* ---------------------------------------------------------------- juridisch, zoeken, 404 */
-export function legalPage({ slug, title, extra = '' }) {
-  const body = `<section class="section"><div class="container container--narrow prose"><h1>${esc(title)}</h1>${extra}<p>${ph('[TEKST VOLGT]')}</p></div></section>`;
+export function legalPage({ slug, title, extra = '', html = '', draft = false }) {
+  const draftNote = draft ? `<div class="notice" role="note"><p><strong>Conceptversie.</strong> Deze tekst is nog niet definitief vastgesteld.</p></div>` : '';
+  const body = `<section class="section"><div class="container container--narrow prose${html ? ' prose--legal' : ''}"><h1>${esc(title)}</h1>${draftNote}${extra}${html || `<p>${ph('[TEKST VOLGT]')}</p>`}</div></section>`;
   return { path: `/${slug}/`, title: `${title} | EnviroFlow`, description: `${title} van EnviroFlow.`, body, crumbs: [H, { name: title, url: `/${slug}/` }] };
 }
 

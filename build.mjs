@@ -6,6 +6,7 @@ import { loadCatalog, isOrderable, hasRealPrice, groupUrl, categoryUrl, productU
 import { layout } from './src/templates/ui.mjs';
 import * as shop from './src/templates/pages-shop.mjs';
 import * as content from './src/templates/pages-content.mjs';
+import { legalPages, LEGAL_CHOICES } from './src/content/nl/legal.mjs';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const locale = 'nl';
@@ -69,12 +70,13 @@ ctx.brands.filter((b) => b.active).forEach((b) => emit(content.brandPage(b, ctx)
 emit(content.contactPage(ctx));
 emit(content.searchPage(ctx));
 emit(content.notFoundPage(ctx));
+const legal = legalPages(catalog.site);
 [
   { slug: 'levering-en-verzending', title: 'Levering & verzending', extra: `<p>Verzendkosten: ${catalog.site.shipping.flatRate != null ? `€ ${catalog.site.shipping.flatRate} excl. btw` : '<mark class="placeholder">[IN TE VULLEN]</mark> of berekend na bestelling'}. Levertijd: op aanvraag, tenzij bij het product vermeld.</p>` },
-  { slug: 'retourneren', title: 'Retourneren' },
-  { slug: 'algemene-voorwaarden', title: 'Algemene voorwaarden' },
-  { slug: 'privacybeleid', title: 'Privacybeleid' },
-  { slug: 'cookiebeleid', title: 'Cookiebeleid', extra: '<p>Deze website gebruikt standaard alleen functionele opslag (winkelwagen, prijsweergave en uw cookiekeuze). Analytische of marketingcookies worden alleen geplaatst na uw toestemming.</p>' }
+  { slug: 'retourneren', title: 'Retourneren', html: legal.retourneren, draft: LEGAL_CHOICES.draft },
+  { slug: 'algemene-voorwaarden', title: 'Algemene voorwaarden', html: legal['algemene-voorwaarden'], draft: LEGAL_CHOICES.draft },
+  { slug: 'privacybeleid', title: 'Privacybeleid', html: legal.privacybeleid, draft: LEGAL_CHOICES.draft },
+  { slug: 'cookiebeleid', title: 'Cookiebeleid', html: legal.cookiebeleid, draft: LEGAL_CHOICES.draft }
 ].forEach((l) => emit(content.legalPage(l)));
 
 // Assets

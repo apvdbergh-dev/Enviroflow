@@ -34,7 +34,8 @@ Alle productgegevens komen van exflo.eu (opgehaald 2 oktober 2026); de bron-URL 
 
 ## Teksten
 
-- Juridische pagina's `[TEKST VOLGT]`: Levering & verzending, Retourneren, Algemene voorwaarden, Privacybeleid, Cookiebeleid.
+- Levering & verzending: `[TEKST VOLGT]` (hangt af van de keuze voor verzendkosten).
+- Algemene voorwaarden, privacybeleid, retourbeleid en cookiebeleid: conceptteksten in `src/content/nl/legal.mjs`. Zakelijke keuzes (termijnen) staan bovenaan in `LEGAL_CHOICES`; laat de teksten door een jurist controleren en zet daarna `draft` op `false`.
 - Projecten: sjabloon "Voorbeeldsituatie" met `[TITEL PROJECT]`, `[SECTOR]`, `[PLAATS]`, `[PRODUCT]`, `[PROJECTFOTO]` en de vier tekstblokken. Staat op `noindex` tot er een echt project is.
 - Kennisbankartikelen: publicatiedatum (`datePublished`) per artikel; laat de inhoud bij voorkeur nog inhoudelijk controleren.
 
