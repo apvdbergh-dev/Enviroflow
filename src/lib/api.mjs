@@ -104,7 +104,7 @@ export function createApi({ catalog, store, config, log = console }) {
     const headers = { 'Content-Type': 'application/json' };
     if (cfg.ntfyToken) headers.Authorization = `Bearer ${cfg.ntfyToken}`;
     const r = await fetch(cfg.ntfyServer, { method: 'POST', headers, body: JSON.stringify({ topic: cfg.ntfyTopic, title, message, tags, priority }) });
-    if (!r.ok) throw new Error(`ntfy ${r.status}`);
+    if (!r.ok) throw new Error(`ntfy ${r.status}: ${(await r.text()).slice(0, 200)}`);
   }
   async function mail({ to, subject, text, html, replyTo, attachments }) {
     if (!cfg.resendKey) return false;
@@ -115,8 +115,20 @@ export function createApi({ catalog, store, config, log = console }) {
     if (!r.ok) throw new Error(`Resend ${r.status}: ${(await r.text()).slice(0, 300)}`);
     return true;
   }
-  // Meldingen mogen een aanvraag of bestelling nooit laten mislukken.
-  const safely = (label, p) => p.catch((e) => log.error(`melding mislukt (${label}):`, e.message));
+  // Meldingen mogen een aanvraag of bestelling nooit laten mislukken. De laatste fout wordt bewaard
+  // (zonder sleutels of klantgegevens) zodat /api/status laat zien wat er misging.
+  const safely = (label, p) => p.catch((e) => {
+    log.error(`melding mislukt (${label}):`, e.message);
+    return store.putJSON('diag:last-error', { label, error: String(e.message).slice(0, 300), at: new Date().toISOString() }).catch(() => {});
+  });
+
+  // Alleen of iets is ingesteld (ja/nee) en de laatste meldingsfout; geen sleutels of persoonsgegevens.
+  async function handleStatus() {
+    return json(200, {
+      configured: { mollie: Boolean(cfg.mollieKey), mollieMode: cfg.mollieKey ? (cfg.mollieKey.startsWith('live_') ? 'live' : 'test') : null, ntfyTopic: Boolean(cfg.ntfyTopic), ntfyToken: Boolean(cfg.ntfyToken), resend: Boolean(cfg.resendKey) },
+      lastNotificationError: await store.getJSON('diag:last-error')
+    });
+  }
 
   /* ---------- formulieren ---------- */
   async function handleForm(kind, request, bg) {
@@ -317,6 +329,7 @@ export function createApi({ catalog, store, config, log = console }) {
         if (url.pathname === '/api/mollie-webhook') return await handleMollieWebhook(request);
       }
       if (request.method === 'GET' && url.pathname === '/api/order-status') return await handleOrderStatus(url);
+      if (request.method === 'GET' && url.pathname === '/api/status') return await handleStatus();
       return json(404, { error: 'Onbekend endpoint' });
     } catch (err) {
       log.error(err);
