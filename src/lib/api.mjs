@@ -103,8 +103,19 @@ export function createApi({ catalog, store, config, log = console }) {
     if (!cfg.ntfyTopic) return;
     const headers = { 'Content-Type': 'application/json' };
     if (cfg.ntfyToken) headers.Authorization = `Bearer ${cfg.ntfyToken}`;
-    const r = await fetch(cfg.ntfyServer, { method: 'POST', headers, body: JSON.stringify({ topic: cfg.ntfyTopic, title, message, tags, priority }) });
-    if (!r.ok) throw new Error(`ntfy ${r.status}: ${(await r.text()).slice(0, 200)}`);
+    const body = JSON.stringify({ topic: cfg.ntfyTopic, title, message, tags, priority });
+    // De verbinding naar ntfy valt soms weg (bijv. fout 522); dan na een korte pauze opnieuw proberen.
+    let lastError;
+    for (const wait of [0, 1500, 4000]) {
+      if (wait) await new Promise((res) => setTimeout(res, wait));
+      try {
+        const r = await fetch(cfg.ntfyServer, { method: 'POST', headers, body });
+        if (r.ok) return;
+        lastError = new Error(`ntfy ${r.status}: ${(await r.text()).slice(0, 200)}`);
+        if (r.status < 500 && r.status !== 429) break; // fout in de aanvraag zelf: opnieuw proberen helpt niet
+      } catch (e) { lastError = e; }
+    }
+    throw lastError;
   }
   async function mail({ to, subject, text, html, replyTo, attachments }) {
     if (!cfg.resendKey) return false;
