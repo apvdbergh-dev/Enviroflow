@@ -21,7 +21,8 @@ Placeholders zijn op de site geel gemarkeerd (`[ZO]`). Alles hieronder is bewust
 
 Alle productgegevens komen van exflo.eu (opgehaald 2 oktober 2026); de bron-URL staat per product in `source`.
 
-- **Prijzen – BESLISSING NODIG.** De 15 online bestelbare producten (10 opvangbakken, 4 wasmatten voor voertuigen en 1 motorwasmat) hebben nu de **netto webshopprijzen van EXFLO in euro's**, één-op-één overgenomen. Dat zijn de verkoopprijzen van de fabrikant zelf. Pas ze aan naar uw eigen verkoopprijs (marge, transport naar Nederland) voordat de shop live gaat.
+- **Prijzen – VOORLOPIG, NOG DEFINITIEF VASTSTELLEN.** De 15 online bestelbare producten hebben in `products.json` de netto webshopprijzen van EXFLO. Op de site geldt tijdelijk een opslag van **30%** (`priceMarkup` in `site.json`, afgerond op hele euro's). Stel de definitieve verkoopprijzen vast (marge, transport naar Nederland) en pas de opslag of de prijzen per product aan.
+- **Verzendkosten – NOG VASTSTELLEN.** Staat nu op "worden na bestelling berekend": klanten betalen online zonder verzendkosten. Vul `shipping.flatRate` in `site.json` in zodra bekend; dan vult ook de pagina Levering & verzending zich.
 - **Bewust zonder prijs (offerte):** brandwater-, retentie-, afvalwater-, brandstof-, UAN- en mesttanks, Hydronion, Exflooder-waterkeringen (volgens uw webshopregels), decontaminatiematten, drinkwatertank, Flextanker en Exnoiser (EXFLO publiceert hiervoor geen prijs of het product valt onder "alleen offerte"). Ook de Waterbase R-tank van 30.000 l en de Exflooder hebben bij EXFLO wel een webprijs, maar staan volgens uw regels op offerte.
 - **Levertijd en voorraad**: niet overgenomen, omdat de levertijden van EXFLO gelden voor levering in Polen. Vul `leadTime`/`stock` in als u uw eigen levertijd naar Nederland weet.
 - **Te controleren:**

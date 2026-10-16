@@ -6,7 +6,13 @@ export function buildCatalog({ site, brands, categories: { groups, categories },
   const groupById = Object.fromEntries(groups.map((g) => [g.id, g]));
   const categoryById = Object.fromEntries(categories.map((c) => [c.id, c]));
   const brandById = Object.fromEntries(brands.map((b) => [b.id, b]));
-  const activeProducts = products.filter((p) => categoryById[p.category]?.active);
+  // Verkoopprijs = EXFLO-prijs (products.json) plus de opslag uit site.json, afgerond op hele euro's.
+  // Overal (website, winkelwagen, afrekenen, Mollie) wordt deze verkoopprijs gebruikt.
+  const markup = typeof site.priceMarkup === 'number' ? site.priceMarkup : 0;
+  const withSalePrice = (p) => (typeof p.price === 'number' && Number.isFinite(p.price) && p.price > 0
+    ? { ...p, basePrice: p.price, price: Math.round(p.price * (1 + markup)) }
+    : p);
+  const activeProducts = products.filter((p) => categoryById[p.category]?.active).map(withSalePrice);
 
   return { site, brands, groups: activeGroups, categories: activeCategories, products: activeProducts, groupById, categoryById, brandById };
 }
