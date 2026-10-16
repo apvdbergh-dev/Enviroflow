@@ -9,9 +9,9 @@ const ALLOWED_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.heic', '.pdf'])
 const FINAL_STATUSES = new Set(['paid', 'failed', 'canceled', 'expired']);
 
 const FORM_SPECS = {
-  quote: { prefix: 'OFF', label: 'offerteaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['request_type', 'company', 'name', 'email', 'phone', 'product', 'quantity', 'liquid', 'application', 'delivery_date', 'remarks', 'source'] },
-  custom: { prefix: 'MW', label: 'maatwerkaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['company', 'name', 'email', 'phone', 'liquid', 'volume', 'dimensions', 'application', 'location', 'duration', 'wish'] },
-  contact: { prefix: 'CT', label: 'contactbericht', required: ['name', 'email', 'message', 'privacy'], fields: ['name', 'company', 'email', 'phone', 'message'] }
+  quote: { prefix: 'OFF', label: 'offerteaanvraag', title: 'Nieuwe offerteaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['request_type', 'company', 'name', 'email', 'phone', 'product', 'quantity', 'liquid', 'application', 'delivery_date', 'remarks', 'source'] },
+  custom: { prefix: 'MW', label: 'maatwerkaanvraag', title: 'Nieuwe maatwerkaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['company', 'name', 'email', 'phone', 'liquid', 'volume', 'dimensions', 'application', 'location', 'duration', 'wish'] },
+  contact: { prefix: 'CT', label: 'contactbericht', title: 'Nieuw contactbericht', required: ['name', 'email', 'message', 'privacy'], fields: ['name', 'company', 'email', 'phone', 'message'] }
 };
 const LONG_FIELDS = new Set(['remarks', 'wish', 'message']);
 const FIELD_LABELS = {
@@ -151,10 +151,10 @@ export function createApi({ catalog, store, config, log = console }) {
     const d = record.data;
     const rows = Object.entries(d).filter(([k]) => k !== 'product').map(([k, v]) => [FIELD_LABELS[k] || k, v]);
     const fileNote = record.files.length ? `${record.files.length} bijlage(n)${attachments.length < record.files.length ? ' (te groot om allemaal mee te sturen; opgeslagen bij ' + record.id + ')' : ''}` : '';
-    const { text, html } = renderMail(`Nieuwe ${spec.label} via de website (${record.id}).`, [['Gegevens', rows], ['Bijlagen', [['', fileNote || 'geen']]]], 'Beantwoorden van deze mail gaat rechtstreeks naar de klant.');
+    const { text, html } = renderMail(`${spec.title} via de website (${record.id}).`, [['Gegevens', rows], ['Bijlagen', [['', fileNote || 'geen']]]], 'Beantwoorden van deze mail gaat rechtstreeks naar de klant.');
     bg(safely('formulier', Promise.all([
-      push({ title: `Nieuwe ${spec.label}`, message: `${record.id}${record.files.length ? ` · ${record.files.length} bijlage(n)` : ''} · details in je mail`, tags: ['envelope'] }),
-      mail({ to: notifyEmail, subject: `Nieuwe ${spec.label} ${record.id}${d.company ? ` – ${d.company}` : ''}`, text, html, replyTo: d.email, attachments })
+      push({ title: spec.title, message: `${record.id}${record.files.length ? ` · ${record.files.length} bijlage(n)` : ''} · details in je mail`, tags: ['envelope'] }),
+      mail({ to: notifyEmail, subject: `${spec.title} ${record.id}${d.company ? ` – ${d.company}` : ''}`, text, html, replyTo: d.email, attachments })
     ])));
     log.log(`nieuwe ${kind}: ${record.id}`);
     return reply(request, 200, { ok: true, id: record.id });
