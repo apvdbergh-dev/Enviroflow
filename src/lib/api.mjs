@@ -83,13 +83,14 @@ async function readForm(request) {
 /** Bouwt platte tekst en eenvoudige HTML uit secties met [label, waarde]-regels. */
 function renderMail(intro, sections, outro = '') {
   const text = [intro, ...sections.map(([title, rows]) => `${title}\n${rows.filter(([, v]) => v !== '' && v != null).map(([k, v]) => (k ? `  ${k}: ${v}` : `  ${v}`)).join('\n')}`), outro].filter(Boolean).join('\n\n');
-  // Volledig HTML-document met taal en tekenset: nette opmaak telt mee bij spamfilters.
-  const html = `<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EnviroFlow</title></head><body style="margin:0;padding:16px;background:#ffffff">
-<div style="font-family:Arial,sans-serif;font-size:14px;color:#1a1a1a;line-height:1.5;max-width:640px">
-<p>${escHtml(intro).replace(/\n/g, '<br>')}</p>
-${sections.map(([title, rows]) => `<h3 style="color:#0A3B2C;margin:20px 0 6px">${escHtml(title)}</h3><table style="border-collapse:collapse">${rows.filter(([, v]) => v !== '' && v != null).map(([k, v]) => `<tr><td style="padding:2px 12px 2px 0;color:#555;vertical-align:top">${escHtml(k)}</td><td style="padding:2px 0;white-space:pre-wrap">${escHtml(v)}</td></tr>`).join('')}</table>`).join('\n')}
-${outro ? `<p style="margin-top:20px">${escHtml(outro).replace(/\n/g, '<br>')}</p>` : ''}
-</div></body></html>`;
+  // Volledig HTML-document met taal en tekenset; opmaak één keer in <style> i.p.v. per cel (meer tekst t.o.v. code).
+  const rowsHtml = (rows) => rows.filter(([, v]) => v !== '' && v != null).map(([k, v]) => `<tr><td class="k">${escHtml(k)}</td><td>${escHtml(v)}</td></tr>`).join('');
+  const html = `<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EnviroFlow</title>
+<style>body{margin:0;padding:16px;font-family:Arial,sans-serif;font-size:14px;line-height:1.5;color:#1a1a1a}h3{color:#0A3B2C;margin:20px 0 6px}table{border-collapse:collapse}td{padding:2px 12px 2px 0;vertical-align:top;white-space:pre-wrap}td.k{color:#555}</style></head>
+<body><p>${escHtml(intro).replace(/\n/g, '<br>')}</p>
+${sections.map(([title, rows]) => `<h3>${escHtml(title)}</h3><table>${rowsHtml(rows)}</table>`).join('\n')}
+${outro ? `<p>${escHtml(outro).replace(/\n/g, '<br>')}</p>` : ''}
+</body></html>`;
   return { text, html };
 }
 
