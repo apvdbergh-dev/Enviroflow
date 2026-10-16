@@ -1,6 +1,7 @@
 // API voor formulieren, bestellingen en betalingen (Mollie) met meldingen (ntfy-push en e-mail via Resend).
 // Werkt met standaard Request/Response, zodat dezelfde code draait op Cloudflare (functions/) en in server.mjs.
 import { hasRealPrice, isOrderable } from './catalog-core.mjs';
+import { orderPdf } from './order-pdf.mjs';
 
 const MAX_FILES = 10;
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
@@ -82,11 +83,13 @@ async function readForm(request) {
 /** Bouwt platte tekst en eenvoudige HTML uit secties met [label, waarde]-regels. */
 function renderMail(intro, sections, outro = '') {
   const text = [intro, ...sections.map(([title, rows]) => `${title}\n${rows.filter(([, v]) => v !== '' && v != null).map(([k, v]) => (k ? `  ${k}: ${v}` : `  ${v}`)).join('\n')}`), outro].filter(Boolean).join('\n\n');
-  const html = `<div style="font-family:Arial,sans-serif;font-size:14px;color:#1a1a1a;line-height:1.5">
+  // Volledig HTML-document met taal en tekenset: nette opmaak telt mee bij spamfilters.
+  const html = `<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EnviroFlow</title></head><body style="margin:0;padding:16px;background:#ffffff">
+<div style="font-family:Arial,sans-serif;font-size:14px;color:#1a1a1a;line-height:1.5;max-width:640px">
 <p>${escHtml(intro).replace(/\n/g, '<br>')}</p>
 ${sections.map(([title, rows]) => `<h3 style="color:#0A3B2C;margin:20px 0 6px">${escHtml(title)}</h3><table style="border-collapse:collapse">${rows.filter(([, v]) => v !== '' && v != null).map(([k, v]) => `<tr><td style="padding:2px 12px 2px 0;color:#555;vertical-align:top">${escHtml(k)}</td><td style="padding:2px 0;white-space:pre-wrap">${escHtml(v)}</td></tr>`).join('')}</table>`).join('\n')}
 ${outro ? `<p style="margin-top:20px">${escHtml(outro).replace(/\n/g, '<br>')}</p>` : ''}
-</div>`;
+</div></body></html>`;
   return { text, html };
 }
 
@@ -197,19 +200,24 @@ export function createApi({ catalog, store, config, log = console }) {
       ['Opmerkingen', [['', order.remarks]]]
     ];
   }
+  // Orderbevestiging als PDF-bijlage; lukt dat niet, dan gaat de mail zonder bijlage.
+  function pdfAttachment(order) {
+    try { return [{ filename: `Orderbevestiging-${order.id}.pdf`, content: toBase64(orderPdf(order, site)) }]; }
+    catch (e) { log.error('pdf mislukt', order.id, e.message); return []; }
+  }
   function notifyOwnerOfOrder(order, headline) {
-    const { text, html } = renderMail(`${headline} (${order.id}).`, orderMailSections(order), 'Beantwoorden van deze mail gaat rechtstreeks naar de klant.');
+    const { text, html } = renderMail(`${headline} (${order.id}).`, orderMailSections(order), 'Beantwoorden van deze mail gaat rechtstreeks naar de klant. De orderbevestiging die de klant ontvangt, zit als PDF in de bijlage.');
     return Promise.all([
       push({ title: headline, message: `${order.id} · ${eur(order.totals.totalIncl)} · ${order.lines.reduce((s, l) => s + l.qty, 0)} artikel(en) · details in je mail`, tags: ['moneybag'], priority: 5 }),
-      mail({ to: notifyEmail, subject: `${headline} ${order.id} – ${order.customer.company} – ${eur(order.totals.totalIncl)}`, text, html, replyTo: order.customer.email })
+      mail({ to: notifyEmail, subject: `${headline} ${order.id} – ${order.customer.company} – ${eur(order.totals.totalIncl)}`, text, html, replyTo: order.customer.email, attachments: pdfAttachment(order) })
     ]);
   }
   function confirmToCustomer(order, paid) {
-    const intro = `Beste ${order.customer.name},\n\nBedankt voor uw bestelling bij EnviroFlow. ${paid ? 'Wij hebben uw betaling ontvangen.' : 'Wij hebben uw bestelling ontvangen. U ontvangt van ons een bevestiging met betaalinstructies.'}\nHieronder vindt u het overzicht van bestelling ${order.id}.`;
+    const intro = `Beste ${order.customer.name},\n\nBedankt voor uw bestelling bij EnviroFlow. ${paid ? 'Wij hebben uw betaling ontvangen.' : 'Wij hebben uw bestelling ontvangen. U ontvangt van ons een bevestiging met betaalinstructies.'}\nHieronder vindt u het overzicht van bestelling ${order.id}. In de bijlage vindt u de orderbevestiging als PDF.`;
     const sections = orderMailSections(order).filter(([title]) => title !== 'Betaling');
     const outro = `Wij nemen zo snel mogelijk contact met u op over de levering.\nHeeft u vragen? Bel ${site.phonePrimary.display} of mail naar ${site.email}.\n\nMet vriendelijke groet,\nEnviroFlow\n\n${companyFooter}`;
     const { text, html } = renderMail(intro, sections, outro);
-    return mail({ to: order.customer.email, subject: `Bevestiging bestelling ${order.id} – EnviroFlow`, text, html, replyTo: site.email });
+    return mail({ to: order.customer.email, subject: `Bevestiging bestelling ${order.id} – EnviroFlow`, text, html, replyTo: site.email, attachments: pdfAttachment(order) });
   }
 
   async function mollie(path, init = {}) {

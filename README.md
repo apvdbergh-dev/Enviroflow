@@ -20,7 +20,7 @@ Instellingen (omgevingsvariabelen; op Cloudflare onder *Settings → Variables a
 |---|---|
 | `MOLLIE_API_KEY` | Activeert online betalen via Mollie. Eerst de **test**-sleutel (`test_…`), bij livegang de `live_…`-sleutel. Zonder sleutel wordt een bestelling opgeslagen en stuurt EnviroFlow zelf een betaalverzoek. **Als geheim (secret) instellen.** |
 | `NTFY_TOPIC` | Geheime kanaalnaam voor pushmeldingen via de ntfy-app. De melding bevat alleen ordernummer en bedrag, geen persoonsgegevens. |
-| `RESEND_API_KEY` | E-mail via Resend: alle gegevens van aanvragen en bestellingen naar EnviroFlow (met bijlagen) en een bevestiging aan de klant na betaling. **Als geheim instellen.** |
+| `RESEND_API_KEY` | E-mail via Resend: alle gegevens van aanvragen en bestellingen naar EnviroFlow (met bijlagen) en een bevestiging aan de klant na betaling, met de orderbevestiging als PDF (`src/lib/order-pdf.mjs`). **Als geheim instellen.** |
 | `MAIL_FROM` | Afzender, standaard `EnviroFlow <bestellingen@enviroflow.nl>` (domein moet in Resend geverifieerd zijn). |
 | `NOTIFY_EMAIL` | Ontvanger van meldingen, standaard het adres uit `site.json`. |
 | `BASE_URL` | Optioneel: publieke URL voor Mollie-terugkeer en -webhook. Standaard het adres waarop het verzoek binnenkomt. |
