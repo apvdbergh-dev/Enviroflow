@@ -114,6 +114,9 @@ Disallow: /zoeken/
 Sitemap: ${catalog.site.baseUrl}/sitemap.xml
 `);
 
+// Versie van deze build (Cloudflare geeft de commit mee), zodat te controleren is wat er live staat.
+writeFileSync(join(dist, 'version.txt'), `${process.env.CF_PAGES_COMMIT_SHA || 'lokaal'} ${new Date().toISOString()}\n`);
+
 // Beveiligings- en cacheheaders voor Cloudflare Pages (zelfde regels als server.mjs).
 writeFileSync(join(dist, '_headers'), `/*
   X-Content-Type-Options: nosniff
