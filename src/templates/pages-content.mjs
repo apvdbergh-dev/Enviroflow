@@ -51,19 +51,9 @@ ${ctaBand({ title: `Oplossing nodig voor uw bedrijf in ${s.name.toLowerCase()}?`
 export function projectsPage() {
   const body = `
 <section class="page-head"><div class="container"><h1>Projecten</h1><p class="lead">Hier verschijnen binnenkort projecten van EnviroFlow. Elk project beschrijven wij volgens dezelfde opbouw: situatie, uitdaging, oplossing en resultaat.</p></div></section>
-<section class="section section--tight"><div class="container">
-  <article class="project-card">
-    <span class="tag tag--amber">Voorbeeldsituatie</span>
-    <div class="project-card__grid">
-      ${media({ alt: 'Foto: [PROJECTFOTO – volgt bij eerste project]' }, '4-3')}
-      <div>
-        <h2>[TITEL PROJECT]</h2>
-        <p class="muted">[SECTOR] · [LOCATIE]</p>
-        <p>Dit is een sjabloon. Er worden hier geen projecten van derden getoond.</p>
-        <a class="link-arrow" href="/projecten/voorbeeldsituatie/">Bekijk het sjabloon ${icon('arrow')}</a>
-      </div>
-    </div>
-  </article>
+<section class="section section--tight"><div class="container container--narrow">
+  <div class="notice" role="note"><p>Wij werken aan de eerste projectverhalen. Wilt u weten wat wij voor uw situatie kunnen betekenen? Wij denken graag met u mee.</p></div>
+  <div class="btn-row"><a class="btn btn--primary" href="/offerte-aanvragen/">Advies of offerte aanvragen</a><a class="btn btn--ghost" href="/oplossingen/">Bekijk oplossingen</a></div>
 </div></section>`;
   return { path: '/projecten/', title: 'Projecten | EnviroFlow', description: 'Projecten van EnviroFlow: situatie, uitdaging, oplossing en resultaat.', body, crumbs: [H, { name: 'Projecten', url: '/projecten/' }] };
 }

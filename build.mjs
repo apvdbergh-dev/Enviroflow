@@ -61,7 +61,8 @@ solutions.forEach((s) => emit(content.solutionPage(s, ctx)));
 emit(content.sectorsOverview(ctx));
 sectors.forEach((s) => emit(content.sectorPage(s, ctx)));
 emit(content.projectsPage(ctx));
-emit(content.projectTemplatePage(ctx));
+// Sjabloon voor projectpagina's: pas publiceren zodra er een echt project is.
+// emit(content.projectTemplatePage(ctx));
 emit(content.knowledgeOverview(ctx));
 articles.forEach((a) => emit(content.articlePage(a, ctx)));
 emit(content.aboutPage(ctx));
@@ -72,7 +73,7 @@ emit(content.searchPage(ctx));
 emit(content.notFoundPage(ctx));
 const legal = legalPages(catalog.site);
 [
-  { slug: 'levering-en-verzending', title: 'Levering & verzending', extra: `<p>Verzendkosten: ${catalog.site.shipping.flatRate != null ? `€ ${catalog.site.shipping.flatRate} excl. btw` : '<mark class="placeholder">[IN TE VULLEN]</mark> of berekend na bestelling'}. Levertijd: op aanvraag, tenzij bij het product vermeld.</p>` },
+  { slug: 'levering-en-verzending', title: 'Levering & verzending', html: legal['levering-en-verzending'], draft: LEGAL_CHOICES.draft },
   { slug: 'retourneren', title: 'Retourneren', html: legal.retourneren, draft: LEGAL_CHOICES.draft },
   { slug: 'algemene-voorwaarden', title: 'Algemene voorwaarden', html: legal['algemene-voorwaarden'], draft: LEGAL_CHOICES.draft },
   { slug: 'privacybeleid', title: 'Privacybeleid', html: legal.privacybeleid, draft: LEGAL_CHOICES.draft },

@@ -35,9 +35,9 @@ Alle productgegevens komen van exflo.eu (opgehaald 2 oktober 2026); de bron-URL 
 
 ## Teksten
 
-- Levering & verzending: `[TEKST VOLGT]` (hangt af van de keuze voor verzendkosten).
+- Levering & verzending: tekst staat (in `src/content/nl/legal.mjs`); de verzendkosten-alinea past zich aan zodra `shipping.flatRate` is ingevuld.
 - Algemene voorwaarden, privacybeleid, retourbeleid en cookiebeleid: vastgesteld (16 oktober 2026) in `src/content/nl/legal.mjs`; termijnen in `LEGAL_CHOICES`. Advies: laat ze nog door een jurist toetsen (o.a. de meldtermijn van 24 uur voor verborgen gebreken).
-- Projecten: sjabloon "Voorbeeldsituatie" met `[TITEL PROJECT]`, `[SECTOR]`, `[PLAATS]`, `[PRODUCT]`, `[PROJECTFOTO]` en de vier tekstblokken. Staat op `noindex` tot er een echt project is.
+- Projecten: de pagina toont "binnenkort" met een knop naar de offerteaanvraag. Het sjabloon (`projectTemplatePage`, met situatie/uitdaging/oplossing/resultaat) wordt pas gepubliceerd bij het eerste echte project (zet dan de regel in `build.mjs` weer aan).
 - Kennisbankartikelen: publicatiedatum (`datePublished`) per artikel; laat de inhoud bij voorkeur nog inhoudelijk controleren.
 
 ## Techniek bij livegang

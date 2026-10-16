@@ -195,7 +195,30 @@ export function legalPages(site) {
 </ul>
 <p>Deze gegevens blijven op uw eigen apparaat en worden niet met ons of met anderen gedeeld. U kunt ze verwijderen via de instellingen van uw browser. Gaan wij in de toekomst statistieken gebruiken, dan doen wij dat alleen met uw toestemming en passen wij dit beleid aan.</p>`;
 
+  const flat = site.shipping?.flatRate;
+  const levering = `${updated}
+<h2>Waar leveren wij?</h2>
+<p>Wij leveren in ${esc(site.serviceArea)}, op het afleveradres dat u bij uw bestelling opgeeft. Het factuuradres mag daarvan afwijken.</p>
+
+<h2>Verzendkosten</h2>
+${typeof flat === 'number'
+    ? `<p>De verzendkosten bedragen € ${flat.toFixed(2).replace('.', ',')} excl. btw per bestelling. U ziet ze in uw winkelwagen voordat u betaalt.</p>`
+    : `<p>De verzendkosten hangen af van het product, het formaat en het afleveradres. Ze zijn daarom niet in het totaalbedrag in de webshop opgenomen. Na uw bestelling nemen wij contact met u op over de verzendkosten en de levering.</p>`}
+
+<h2>Levertijd</h2>
+<p>De levertijd is op aanvraag, tenzij bij het product een levertijd staat. Opgegeven levertijden zijn indicatief. Heeft u een product op een bepaalde datum nodig? Vermeld dit bij uw bestelling of <a href="/contact/">neem contact met ons op</a>, dan kijken wij wat mogelijk is.</p>
+
+<h2>Bij ontvangst</h2>
+<p>Controleer de levering direct bij ontvangst. Is er iets beschadigd of verkeerd geleverd? Meld dit binnen ${K.complaintHours} uur via ${contactLine(site)}, bij voorkeur met foto’s en uw ordernummer.</p>
+
+<h2>Grote of maatwerkproducten</h2>
+<p>Voor grote tanks, waterkeringen en maatwerk maken wij de levering altijd vooraf met u af. Deze producten bestelt u via een <a href="/offerte-aanvragen/">offerteaanvraag</a>.</p>
+
+<h2>Retourneren</h2>
+<p>Wilt u iets terugsturen? Lees ons <a href="/retourneren/">retourbeleid</a>.</p>`;
+
   return {
+    'levering-en-verzending': levering,
     'algemene-voorwaarden': voorwaarden,
     privacybeleid: privacy,
     retourneren: retour,
