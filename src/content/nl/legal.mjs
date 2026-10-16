@@ -7,12 +7,11 @@ export const LEGAL_CHOICES = {
   updated: '16 oktober 2026',
   offerValidDays: 30,        // geldigheid van offertes
   paymentTermDays: 14,       // betaaltermijn bij betaling op factuur
-  complaintDays: 8,          // zichtbare gebreken melden na levering
-  returnNoticeDays: 14,      // retour aanmelden na levering
+  complaintHours: 24,        // gebreken/schade melden na levering of ontdekking
+  returnNoticeWorkdays: 5,   // retour aanmelden na levering
   returnShipDays: 14,        // retour terugsturen na akkoord
   refundDays: 14,            // terugbetalen na ontvangst retour
   forceMajeureDays: 60,      // daarna mag ontbonden worden
-  requestRetentionYears: 2,  // bewaartermijn aanvragen/contactberichten
   court: 'Rechtbank Rotterdam'
 };
 
@@ -78,8 +77,8 @@ export function legalPages(site) {
 
 <h2>Artikel 8 – Controle en klachten</h2>
 <ol>
-<li>De afnemer controleert de producten direct na ontvangst. Zichtbare gebreken, beschadigingen of afwijkingen meldt de afnemer binnen ${K.complaintDays} dagen na levering, bij voorkeur met foto’s, via ${contactLine(site)}.</li>
-<li>Andere gebreken meldt de afnemer binnen ${K.complaintDays} dagen nadat hij ze heeft ontdekt of redelijkerwijs had kunnen ontdekken.</li>
+<li>De afnemer controleert de producten direct na ontvangst. Zichtbare gebreken, beschadigingen of afwijkingen meldt de afnemer binnen ${K.complaintHours} uur na levering, bij voorkeur met foto’s, via ${contactLine(site)}.</li>
+<li>Andere gebreken meldt de afnemer binnen ${K.complaintHours} uur nadat hij ze heeft ontdekt of redelijkerwijs had kunnen ontdekken.</li>
 <li>Een klacht schort de betalingsverplichting niet op.</li>
 </ol>
 
@@ -144,9 +143,8 @@ export function legalPages(site) {
 
 <h2>Hoe lang bewaren wij gegevens?</h2>
 <ul>
-<li>Contactberichten en aanvragen die niet tot een bestelling leiden: ${K.requestRetentionYears} jaar na het laatste contact.</li>
-<li>Bestellingen en facturen: 7 jaar, vanwege de fiscale bewaarplicht.</li>
-<li>Bijlagen die u via de website meestuurt, worden in de opslag van de website na uiterlijk 1 jaar automatisch verwijderd.</li>
+<li>Contactberichten en aanvragen bewaren wij zolang dat nodig is om uw vraag af te handelen en eventuele vervolgvragen te beantwoorden. Daarna verwijderen wij ze.</li>
+<li>Gegevens van bestellingen en facturen bewaren wij zolang de wet dat verplicht; voor de fiscale bewaarplicht is dat 7 jaar.</li>
 </ul>
 
 <h2>Cookies</h2>
@@ -169,7 +167,7 @@ export function legalPages(site) {
 
 <h2>Voorwaarden</h2>
 <ul>
-<li>U meldt de retour binnen ${K.returnNoticeDays} dagen na levering aan via ${contactLine(site)}, met uw ordernummer.</li>
+<li>U meldt de retour binnen ${K.returnNoticeWorkdays} werkdagen na levering aan via ${contactLine(site)}, met uw ordernummer.</li>
 <li>Het product is ongebruikt, onbeschadigd, niet in contact geweest met vloeistoffen en zit in de originele verpakking.</li>
 <li>Na ons akkoord stuurt u het product binnen ${K.returnShipDays} dagen terug. Retour sturen zonder akkoord is niet mogelijk.</li>
 <li>De kosten en het risico van het terugsturen zijn voor u, tenzij het product beschadigd of verkeerd geleverd is.</li>
@@ -185,7 +183,7 @@ export function legalPages(site) {
 <p>Na ontvangst en controle van het product betalen wij het aankoopbedrag terug op de manier waarop u heeft betaald, binnen ${K.refundDays} dagen na ontvangst van de retour.</p>
 
 <h2>Beschadigd of verkeerd geleverd?</h2>
-<p>Meld dit binnen ${K.complaintDays} dagen na levering, bij voorkeur met foto’s. Dan lossen wij het kosteloos voor u op met herstel, vervanging of terugbetaling.</p>`;
+<p>Meld dit binnen ${K.complaintHours} uur na levering, bij voorkeur met foto’s. Dan lossen wij het kosteloos voor u op met herstel, vervanging of terugbetaling.</p>`;
 
   const cookies = `${updated}
 <p>Deze website gebruikt geen tracking- of advertentiecookies en geen statistiekendienst. Wij slaan alleen gegevens in uw browser op die nodig zijn om de website te laten werken:</p>
