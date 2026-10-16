@@ -88,7 +88,8 @@ export function orderPdf(order, site) {
   y -= 28;
 
   // ---------- gegevensblokken ----------
-  const col2 = MARGIN + 170, col3 = MARGIN + 315;
+  // Rij 1: klant en bestelling; rij 2: afleveradres en factuuradres (altijd allebei).
+  const col2 = MARGIN + 260;
   const block = (title, rows, x, width) => {
     let yy = y;
     text(title, x, yy, { size: 8.5, bold: true, color: MUTED });
@@ -96,12 +97,14 @@ export function orderPdf(order, site) {
     for (const r of rows.filter(Boolean)) for (const ln of wrap(r, 9.5, width)) { text(ln, x, yy, { size: 9.5 }); yy -= 13; }
     return yy;
   };
-  const addr = (a) => typeof a === 'string' ? [a] : [a.street, `${a.postcode} ${a.city}`, a.country && a.country !== 'NL' ? a.country : 'Nederland'];
-  const yA = block('KLANT', [c.company, c.name, c.vatNumber ? `Btw: ${c.vatNumber}` : '', c.email, c.phone], MARGIN, 170);
-  const yB = block('AFLEVERADRES', addr(d), col2, 135);
-  const yC = block('BESTELLING', [`Ordernummer: ${order.id}`, `Datum: ${dateNl(order.createdAt)}`, `Betaalmethode: ${methodLabel}`, paid ? `Status: betaald${order.paidNotifiedAt ? ` op ${dateNl(order.paidNotifiedAt)}` : ''}` : 'Status: nog te betalen', c.reference ? `Uw referentie: ${c.reference}` : ''], col3, right - col3);
-  y = Math.min(yA, yB, yC) - 6;
-  if (typeof b !== 'string') { const yD = block('FACTUURADRES', addr(b), MARGIN, 170); y = yD - 6; }
+  const addr = (a) => [a.street, `${a.postcode} ${a.city}`, a.country && a.country !== 'NL' ? a.country : 'Nederland'];
+  const billing = typeof b === 'string' ? d : b; // "gelijk aan afleveradres" → het afleveradres tonen
+  const yA = block('KLANT', [c.company, c.name, c.vatNumber ? `Btw: ${c.vatNumber}` : '', c.email, c.phone], MARGIN, 230);
+  const yC = block('BESTELLING', [`Ordernummer: ${order.id}`, `Datum: ${dateNl(order.createdAt)}`, `Betaalmethode: ${methodLabel}`, paid ? `Status: betaald${order.paidNotifiedAt ? ` op ${dateNl(order.paidNotifiedAt)}` : ''}` : 'Status: nog te betalen', c.reference ? `Uw referentie: ${c.reference}` : ''], col2, right - col2);
+  y = Math.min(yA, yC) - 10;
+  const yB = block('AFLEVERADRES', addr(d), MARGIN, 230);
+  const yD = block('FACTUURADRES', addr(billing), col2, right - col2);
+  y = Math.min(yB, yD) - 6;
   y -= 10;
 
   // ---------- producten ----------

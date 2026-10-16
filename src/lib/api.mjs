@@ -193,7 +193,7 @@ export function createApi({ catalog, store, config, log = console }) {
     return [
       ['Klant', [['Bedrijf', c.company], ['Btw-nummer', c.vatNumber], ['Naam', c.name], ['E-mail', c.email], ['Telefoon', c.phone], ['Referentie', c.reference]]],
       ['Afleveradres', [['', `${dl.street}, ${dl.postcode} ${dl.city} (${dl.country})`]]],
-      ['Factuuradres', [['', typeof b === 'string' ? b : `${b.street}, ${b.postcode} ${b.city} (${b.country})`]]],
+      ['Factuuradres', [['', typeof b === 'string' ? `${dl.street}, ${dl.postcode} ${dl.city} (${dl.country}) – gelijk aan afleveradres` : `${b.street}, ${b.postcode} ${b.city} (${b.country})`]]],
       ['Producten', order.lines.map((l) => [`${l.qty} ×`, `${l.name} — ${eur(l.totalExcl)} excl. btw`])],
       ['Totaal', [['Subtotaal excl. btw', eur(t.subtotalExcl)], ['Verzendkosten', t.shippingExcl == null ? 'Worden na bestelling berekend' : eur(t.shippingExcl)], [`Btw (${Math.round(site.vatRate * 100)}%)`, eur(t.vat)], ['Totaal incl. btw', eur(t.totalIncl)]]],
       ['Betaling', [['Methode', method], ['Status', order.status]]],
