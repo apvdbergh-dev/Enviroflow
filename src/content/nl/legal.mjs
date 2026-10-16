@@ -3,7 +3,7 @@
 // Zakelijke keuzes staan hieronder bij elkaar, zodat ze op één plek aan te passen zijn.
 
 export const LEGAL_CHOICES = {
-  draft: true,               // toont "Conceptversie" bovenaan tot de teksten zijn vastgesteld
+  draft: false,              // true = toont "Conceptversie" bovenaan de juridische pagina's
   updated: '16 oktober 2026',
   offerValidDays: 30,        // geldigheid van offertes
   paymentTermDays: 14,       // betaaltermijn bij betaling op factuur
