@@ -88,6 +88,10 @@
   /* ---------- checkout ---------- */
   var co = document.querySelector('[data-checkout-form]');
   if (co) {
+    // Apple Pay alleen tonen op apparaten die het ondersteunen (Safari op iPhone, iPad of Mac).
+    try {
+      if (window.ApplePaySession && window.ApplePaySession.canMakePayments()) co.querySelectorAll('[data-apple-only]').forEach(function (el) { el.hidden = false; });
+    } catch (e) { /* geen Apple Pay */ }
     var sumBox = document.querySelector('[data-checkout-summary]');
     var submit = co.querySelector('[data-submit]');
     var status = co.querySelector('.form-status');

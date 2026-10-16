@@ -27,9 +27,9 @@
   },
   "paymentMethods": [
     { "id": "ideal", "label": "iDEAL" },
-    { "id": "creditcard", "label": "Creditcard" },
+    { "id": "creditcard", "label": "Creditcard of Google Pay" },
+    { "id": "applepay", "label": "Apple Pay", "appleOnly": true },
     { "id": "bancontact", "label": "Bancontact" },
-    { "id": "paypal", "label": "PayPal" },
     { "id": "banktransfer", "label": "Bankoverschrijving" }
   ],
   "partnerRelation": "Nederlandse distributeur",

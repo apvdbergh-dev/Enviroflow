@@ -458,7 +458,7 @@ export function checkoutPage(ctx) {
       ${field({ name: 'remarks', label: 'Opmerkingen voor de levering', type: 'textarea', hint: 'Bijvoorbeeld lostijden, bereikbaarheid voor een vrachtwagen, laadperron of heftruck aanwezig.', full: true })}
     </fieldset>
     <fieldset class="form-section"><legend>Betaalmethode</legend>
-      <div class="pay-methods">${site.paymentMethods.map((m, i) => `<label class="pay-method"><input type="radio" name="payment_method" value="${m.id}" ${i === 0 ? 'checked' : ''} required><span>${esc(m.label)}</span></label>`).join('')}</div>
+      <div class="pay-methods">${site.paymentMethods.map((m, i) => `<label class="pay-method"${m.appleOnly ? ' data-apple-only hidden' : ''}><input type="radio" name="payment_method" value="${m.id}" ${i === 0 ? 'checked' : ''} required><span>${esc(m.label)}</span></label>`).join('')}</div>
     </fieldset>
     <div class="form-section">
       <label class="check"><input type="checkbox" name="terms" value="1" required><span>Ik ga akkoord met de <a href="/algemene-voorwaarden/" target="_blank" rel="noopener">algemene voorwaarden</a> en heb het <a href="/privacybeleid/" target="_blank" rel="noopener">privacybeleid</a> gelezen. <span class="req" aria-hidden="true">*</span></span></label>
