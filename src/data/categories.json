@@ -49,7 +49,7 @@
       "popular": true,
       "image": "IBC's en vaten in flexibele opvangbakken in een bedrijfsruimte",
       "short": "Lekbakken voor 1 t/m 10 IBC's, vaten, machines, voertuigen en werkplekken. Standaardmaten en maatwerk.",
-      "seoTitle": "Flexibele opvangbak & IBC lekbak | EnviroFlow",
+      "seoTitle": "Flexibele lekbak & opvangbak voor IBC en vaten | EnviroFlow",
       "seoDescription": "Flexibele opvangbakken en lekbakken voor IBC's, vaten, machines en voertuigen. Standaardmaten en maatwerk. Advies van EnviroFlow.",
       "intro": [
         "Een lekkende IBC, een omgevallen vat of een machine die olie verliest: zonder opvang komt de vloeistof direct op de vloer, in de bodem of in het riool. Een flexibele opvangbak (spill containment berm) vangt lekkages op voordat ze schade aanrichten.",
@@ -80,7 +80,8 @@
           "a": "Ja. Naast standaardmaten zijn opvangbakken op maat mogelijk, bijvoorbeeld voor een bepaalde ruimte, een voertuig of een machine. Vraag maatwerk aan met de afmetingen en een foto van de locatie."
         }
       ],
-      "imageSrc": "/assets/img/producten/opvangbak-praktijk.jpg"
+      "imageSrc": "/assets/img/producten/opvangbak-praktijk.jpg",
+      "h1": "Flexibele lekbakken en opvangbakken voor IBC's en vaten"
     },
     {
       "id": "wasmatten-voertuigen",
@@ -92,7 +93,7 @@
       "popular": true,
       "image": "Auto op een wasmat",
       "short": "Vang waswater met reinigingsmiddelen op bij het wassen van voertuigen en materieel.",
-      "seoTitle": "Wasmat voor voertuigen | Waswater opvangen | EnviroFlow",
+      "seoTitle": "Wasmat voor auto, vrachtwagen en materieel | EnviroFlow",
       "seoDescription": "Wasmatten voor auto's, vrachtwagens en materieel. Vang waswater met reinigingsmiddelen op in plaats van het in de bodem of het riool te laten lopen.",
       "intro": [
         "Bij het wassen van voertuigen en materieel komt waswater met reinigingsmiddelen, olie en vuil vrij. Op een terrein zonder wasplaats loopt dat water de bodem of het riool in.",
@@ -113,7 +114,8 @@
           "a": "Dat hangt af van de afmetingen van het grootste voertuig en de ruimte op uw terrein. Geef de afmetingen door, dan adviseren wij een passende maat."
         }
       ],
-      "imageSrc": "/assets/img/producten/wasmat-in-gebruik.jpg"
+      "imageSrc": "/assets/img/producten/wasmat-in-gebruik.jpg",
+      "h1": "Wasmatten voor voertuigen"
     },
     {
       "id": "decontaminatiematten-voertuigen",
@@ -177,7 +179,7 @@
       "popular": true,
       "image": "Flexibele brandwatertank naast een bedrijfspand",
       "short": "Flexibele brandwatertanks (Waterbase F) als bluswatervoorziening.",
-      "seoTitle": "Brandwatertank & bluswatertank flexibel | EnviroFlow",
+      "seoTitle": "Bluswatertank & brandwatertank (flexibel, 50–300 m³) | EnviroFlow",
       "seoDescription": "Flexibele brandwatertanks (Waterbase F) als bluswatervoorziening voor bedrijven, agrarische locaties en bouwprojecten. Prijs op aanvraag.",
       "intro": [
         "Niet elke locatie heeft voldoende bluswater uit het waterleidingnet of uit open water in de buurt. Een brandwatertank zorgt voor een vaste voorraad bluswater op uw terrein.",
@@ -199,7 +201,8 @@
           "a": "De prijs hangt af van de inhoud, de aansluitingen en de toebehoren. Vraag een offerte aan, dan ontvangt u een voorstel op maat."
         }
       ],
-      "imageSrc": "/assets/img/producten/waterbase-f-2.jpg"
+      "imageSrc": "/assets/img/producten/waterbase-f-2.jpg",
+      "h1": "Brandwatertanks en bluswatertanks"
     },
     {
       "id": "drinkwatertanks",
@@ -211,7 +214,7 @@
       "popular": true,
       "image": "Flexibele drinkwatertank op locatie",
       "short": "Flexibele drinkwatertanks van TPU (Waterbase D Plus).",
-      "seoTitle": "Drinkwatertank flexibel | Waterbase D Plus | EnviroFlow",
+      "seoTitle": "Flexibele drinkwatertank | Waterbase D Plus | EnviroFlow",
       "seoDescription": "Flexibele drinkwatertanks van TPU (Waterbase D Plus) voor tijdelijke en noodvoorziening van drinkwater.",
       "intro": [
         "Op locaties zonder (voldoende) waterleiding, bij storingen of tijdens evenementen is een tijdelijke drinkwatervoorraad nodig. Een flexibele drinkwatertank is snel geplaatst en neemt leeg weinig ruimte in."
@@ -227,7 +230,8 @@
           "a": "De Waterbase D Plus heeft volgens de fabrikant een Pools PZH-certificaat en is gemaakt van weefsel conform BS 6920 met een Brits WRAS-certificaat. Dat zijn geen Nederlandse goedkeuringen. Controleer welke eisen voor uw situatie gelden; wij denken graag met u mee."
         }
       ],
-      "imageSrc": "/assets/img/producten/waterbase-d-plus-2.jpg"
+      "imageSrc": "/assets/img/producten/waterbase-d-plus-2.jpg",
+      "h1": "Flexibele drinkwatertanks"
     },
     {
       "id": "industriele-water-en-buffertanks",
@@ -239,7 +243,7 @@
       "popular": false,
       "image": "Waterbase R retentietank",
       "short": "Retentie, buffering van proceswater en opslag van regenwater.",
-      "seoTitle": "Flexibele buffertank & tijdelijke wateropslag | EnviroFlow",
+      "seoTitle": "Flexibele watertank & buffertank voor wateropslag | EnviroFlow",
       "seoDescription": "Flexibele water- en buffertanks voor retentie, proceswater en regenwater. Tijdelijke of permanente wateropslag. Prijs op aanvraag.",
       "intro": [
         "Proceswater bufferen, regenwater opvangen of tijdelijk water opslaan tijdens een project: een flexibele buffertank biedt veel inhoud zonder vaste constructie."
@@ -251,7 +255,8 @@
         "Tijdelijke wateropslag op de bouwplaats"
       ],
       "faq": [],
-      "imageSrc": "/assets/img/producten/waterbase-r.jpg"
+      "imageSrc": "/assets/img/producten/waterbase-r.jpg",
+      "h1": "Flexibele watertanks en buffertanks"
     },
     {
       "id": "afvalwatertanks",
@@ -286,7 +291,7 @@
       "popular": true,
       "image": "Fuelbase brandstoftank",
       "short": "Flexibele brandstoftanks (Fuelbase) voor diesel en verwarmingsolie.",
-      "seoTitle": "Brandstoftank flexibel | Diesel opslag | EnviroFlow",
+      "seoTitle": "Flexibele dieseltank & brandstoftank | EnviroFlow",
       "seoDescription": "Flexibele brandstoftanks (Fuelbase) voor tijdelijke opslag van diesel en verwarmingsolie op locatie. Prijs op aanvraag.",
       "intro": [
         "Op afgelegen projecten, bij noodstroom of tijdelijke installaties moet brandstof dicht bij het gebruik worden opgeslagen. Een flexibele brandstoftank is licht te vervoeren en snel geplaatst.",
@@ -303,7 +308,8 @@
           "a": "Voor de opslag van vloeibare brandstoffen gelden onder meer de richtlijnen uit PGS 30. Welke eisen voor uw locatie van toepassing zijn, bepaalt het bevoegd gezag. Raadpleeg de officiële publicatie en bespreek uw situatie met ons."
         }
       ],
-      "imageSrc": "/assets/img/producten/fuelbase-2.jpg"
+      "imageSrc": "/assets/img/producten/fuelbase-2.jpg",
+      "h1": "Flexibele brandstoftanks voor diesel"
     },
     {
       "id": "uan-tanks",
@@ -315,7 +321,7 @@
       "popular": false,
       "image": "UAN-tank op een agrarisch bedrijf",
       "short": "Flexibele opslag van UAN en andere vloeibare meststoffen.",
-      "seoTitle": "UAN tank flexibel | Vloeibare meststoffen opslaan | EnviroFlow",
+      "seoTitle": "UAN-tank & opslag vloeibare kunstmest | EnviroFlow",
       "seoDescription": "Flexibele UAN-tanks voor de opslag van vloeibare meststoffen op het agrarisch bedrijf. Prijs op aanvraag.",
       "intro": [
         "Vloeibare meststoffen zoals UAN koopt u vaak in grotere hoeveelheden in. Een flexibele UAN-tank biedt opslag op het erf zonder vaste bouwwerken."
@@ -325,7 +331,8 @@
         "Opslag van andere vloeibare meststoffen"
       ],
       "faq": [],
-      "imageSrc": "/assets/img/producten/farmer-u.jpg"
+      "imageSrc": "/assets/img/producten/farmer-u.jpg",
+      "h1": "UAN-tanks voor vloeibare meststoffen"
     },
     {
       "id": "mest-en-slurrytanks",
@@ -337,7 +344,7 @@
       "popular": true,
       "image": "Mestzak op een agrarisch bedrijf",
       "short": "Flexibele mestzakken en slurrytanks voor extra opslagcapaciteit.",
-      "seoTitle": "Mestzak & flexibele mesttank | EnviroFlow",
+      "seoTitle": "Mestzak & flexibele mestopslag (50–300 m³) | EnviroFlow",
       "seoDescription": "Flexibele mesttanks en mestzakken voor extra opslagcapaciteit voor drijfmest en slurry. Prijs op aanvraag.",
       "intro": [
         "Te weinig opslagcapaciteit voor drijfmest of digestaat? Een flexibele mestzak biedt extra ruimte, ook op plekken waar bouwen van een kelder of silo niet mogelijk is.",
@@ -349,7 +356,8 @@
         "Tijdelijke opslag bij verbouw of calamiteiten"
       ],
       "faq": [],
-      "imageSrc": "/assets/img/producten/farmer-s.jpg"
+      "imageSrc": "/assets/img/producten/farmer-s.jpg",
+      "h1": "Mestzakken en flexibele mestopslag"
     },
     {
       "id": "mobiele-watertanks",
@@ -407,7 +415,7 @@
       "popular": true,
       "image": "Exflooder waterkeringen in gebruik",
       "short": "Mobiele waterkeringen en flood sleeves (Exflooder).",
-      "seoTitle": "Mobiele waterkering | Exflooder | EnviroFlow",
+      "seoTitle": "Mobiele waterkering tegen wateroverlast | EnviroFlow",
       "seoDescription": "Mobiele waterkeringen en flood sleeves (Exflooder) om gebouwen, terreinen en installaties te beschermen tegen wateroverlast. Prijs op aanvraag.",
       "intro": [
         "Hevige regen, hoog water of een gesprongen leiding: water dat uw pand of terrein binnenkomt veroorzaakt veel schade. Een mobiele waterkering legt u neer waar het nodig is en houdt water tegen of leidt het om."
@@ -419,7 +427,8 @@
         "Calamiteitenvoorraad voor gemeenten en waterschappen"
       ],
       "faq": [],
-      "imageSrc": "/assets/img/producten/exflooder-praktijk.jpg"
+      "imageSrc": "/assets/img/producten/exflooder-praktijk.jpg",
+      "h1": "Mobiele waterkeringen tegen wateroverlast"
     },
     {
       "id": "geluidsabsorberende-matten",
@@ -431,7 +440,7 @@
       "popular": false,
       "image": "Geluidsscherm van Exnoiser matten",
       "short": "Geluidsabsorberende matten (Exnoiser) voor bouwplaatsen en boorlocaties.",
-      "seoTitle": "Geluidsabsorberende mat bouwplaats | Exnoiser | EnviroFlow",
+      "seoTitle": "Geluidsscherm & geluidsabsorberende mat bouwplaats | EnviroFlow",
       "seoDescription": "Geluidsabsorberende matten (Exnoiser) om geluid van bouwplaatsen, boorlocaties en installaties te beperken.",
       "intro": [
         "Werkzaamheden in de buurt van woningen of kantoren leiden snel tot klachten over geluid. Geluidsabsorberende matten aan bouwhekken of rond installaties helpen de geluidsoverlast te beperken."
@@ -442,7 +451,8 @@
         "Afscherming van aggregaten en pompen"
       ],
       "faq": [],
-      "imageSrc": "/assets/img/producten/exnoiser.jpg"
+      "imageSrc": "/assets/img/producten/exnoiser.jpg",
+      "h1": "Geluidsabsorberende matten voor de bouwplaats"
     },
     {
       "id": "dekzeilen-en-hoezen",

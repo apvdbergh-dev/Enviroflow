@@ -139,6 +139,10 @@ Disallow: /en/zoeken/
 Sitemap: ${base}/sitemap.xml
 `);
 
+// IndexNow-sleutel (Bing, DuckDuckGo, Ecosia): bewijst dat wij eigenaar zijn wanneer we nieuwe pagina's aanmelden.
+export const INDEXNOW_KEY = 'd77f590aab0f64846ad9e0ad2b88de5b';
+writeFileSync(join(dist, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
+
 // Versie van deze build (Cloudflare geeft de commit mee), zodat te controleren is wat er live staat.
 writeFileSync(join(dist, 'version.txt'), `${process.env.CF_PAGES_COMMIT_SHA || 'lokaal'} ${new Date().toISOString()}\n`);
 

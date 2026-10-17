@@ -282,7 +282,7 @@ export function categoryPage(c, ctx) {
   const faq = faqBlock(c.faq);
   const crumbs = [{ name: 'Home', url: '/' }, { name: T('Producten', 'Products'), url: '/producten/' }, { name: g.name, url: urls.group(g) }, { name: c.name, url: urls.category(c) }];
   const head = `<section class="page-head"><div class="container page-head__grid"><div>
-    <p class="eyebrow">${esc(g.name)}</p><h1>${esc(c.name)}</h1>
+    <p class="eyebrow">${esc(g.name)}</p><h1>${esc(c.h1 || c.name)}</h1>
     ${c.intro.map((p, i) => `<p class="${i === 0 ? 'lead' : ''}">${esc(p)}</p>`).join('')}
     <div class="btn-row"><a class="btn btn--primary" href="#h-listing">${T('Bekijk producten', 'View products')}</a><a class="btn btn--ghost" href="/offerte-aanvragen/?type=advies&amp;categorie=${c.id}">${T('Advies aanvragen', 'Request advice')}</a></div>
   </div>${media({ src: c.imageSrc, alt: c.image }, '4-3', true)}</div></section>
