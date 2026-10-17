@@ -370,6 +370,7 @@ ${footer(ctx)}
 <script>window.EF=${JSON.stringify({ lang, base: isEn() ? '/en' : '', vatRate: site.vatRate, t: ctx.t, shipping: site.shipping.flatRate, phone: site.phonePrimary })};</script>
 <script src="/assets/js/main.js?v=${ctx.version}" defer></script>
 ${scripts.map((s) => `<script src="${s}?v=${ctx.version}" defer></script>`).join('\n')}
+${site.cfAnalyticsToken ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='${JSON.stringify({ token: site.cfAnalyticsToken })}'></script>` : ''}
 </body>
 </html>`;
 }

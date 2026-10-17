@@ -8,6 +8,7 @@
   "phonePrimary": { "display": "06 19 13 32 52", "tel": "+31619133252" },
   "phoneSecondary": { "display": "06 33 97 00 44", "tel": "+31633970044" },
   "email": "Info@enviroflow.nl",
+  "cfAnalyticsToken": "",
   "address": {
     "street": "Molendijk 70",
     "postalCode": "3235 XH",
