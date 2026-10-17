@@ -22,7 +22,8 @@
     var paused = userPaused || hoverPaused || document.hidden;
     hero.classList.toggle('is-paused', paused);
     toggle.setAttribute('aria-pressed', String(userPaused));
-    toggle.setAttribute('aria-label', userPaused ? 'Diashow afspelen' : 'Diashow pauzeren');
+    var en = document.documentElement.lang === 'en';
+    toggle.setAttribute('aria-label', userPaused ? (en ? 'Play slideshow' : 'Diashow afspelen') : (en ? 'Pause slideshow' : 'Diashow pauzeren'));
     hero.querySelector('.hero__captions').setAttribute('aria-live', userPaused ? 'polite' : 'off');
   }
 

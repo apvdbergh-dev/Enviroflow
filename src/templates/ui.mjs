@@ -1,5 +1,6 @@
 // Herbruikbare HTML-bouwstenen en de paginalayout.
 import { hasRealPrice, hasPlaceholderPrice, isOrderable } from '../lib/catalog.mjs';
+import { T, isEn, getLang, numberLocale, localPath } from '../lib/i18n.mjs';
 
 export const esc = (s = '') => String(s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
@@ -7,7 +8,7 @@ export const esc = (s = '') => String(s)
 /** Toont placeholders als [ZO] herkenbaar gemarkeerd. */
 export const ph = (s = '') => esc(s).replace(/\[([^\]]+)\]/g, '<mark class="placeholder">[$1]</mark>');
 
-export const fmtEUR = (n) => new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(n);
+export const fmtEUR = (n) => new Intl.NumberFormat(numberLocale(), { style: 'currency', currency: 'EUR' }).format(n);
 
 const ICONS = {
   phone: '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
@@ -34,7 +35,8 @@ const ICONS = {
   truck: '<path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>',
   clipboard: '<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/>',
   compass: '<circle cx="12" cy="12" r="10"/><path d="m16.2 7.8-2.1 6.3-6.3 2.1 2.1-6.3z"/>',
-  filter: '<path d="M22 3H2l8 9.5V19l4 2v-8.5z"/>'
+  filter: '<path d="M22 3H2l8 9.5V19l4 2v-8.5z"/>',
+  globe: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>'
 };
 
 export const icon = (name, cls = '') => `<svg class="ic ${cls}" aria-hidden="true" focusable="false"><use href="#i-${name}"/></svg>`;
@@ -53,8 +55,8 @@ export function media(img, ratio = '4-3', eager = false) {
     const base = img.src.replace(/\.(jpe?g|png|webp)$/i, '');
     return `<picture class="media r-${ratio}"><source type="image/webp" srcset="${esc(base)}.webp"><img src="${esc(img.src)}" alt="${esc(img.alt)}" width="${img.width || 800}" height="${img.height || 600}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture>`;
   }
-  const alt = img?.alt || 'Afbeelding volgt';
-  const label = alt.replace(/^(Foto|Illustratie bij):\s*/i, '');
+  const alt = img?.alt || T('Afbeelding volgt', 'Image to follow');
+  const label = alt.replace(/^(Foto|Illustratie bij|Photo|Illustration):\s*/i, '');
   return `<div class="media media--ph r-${ratio}" role="img" aria-label="${esc(label)}"><span>${icon('grid')}${esc(label)}</span></div>`;
 }
 
@@ -70,31 +72,31 @@ export function priceBlock(p, t, size = '') {
 
 export function breadcrumbs(items) {
   if (!items?.length) return '';
-  return `<nav class="breadcrumbs container" aria-label="Kruimelpad"><ol>${items.map((b, i) => i === items.length - 1
+  return `<nav class="breadcrumbs container" aria-label="${T('Kruimelpad', 'Breadcrumb')}"><ol>${items.map((b, i) => i === items.length - 1
     ? `<li><span aria-current="page">${esc(b.name)}</span></li>`
     : `<li><a href="${b.url}">${esc(b.name)}</a></li>`).join('')}</ol></nav>`;
 }
 
 export const breadcrumbLd = (items, base) => ({
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
-  itemListElement: items.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.name, item: base + b.url }))
+  itemListElement: items.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.name, item: base + localPath(b.url) }))
 });
 
-export function faqBlock(faq, title = 'Veelgestelde vragen') {
+export function faqBlock(faq, title = T('Veelgestelde vragen', 'Frequently asked questions')) {
   if (!faq?.length) return { html: '', ld: null };
   const html = `<section class="section faq" aria-labelledby="faq-title"><div class="container container--narrow"><h2 id="faq-title">${esc(title)}</h2>${faq.map((f) => `<details class="faq__item"><summary>${esc(f.q)}${icon('chevron', 'faq__chev')}</summary><div class="faq__a"><p>${esc(f.a)}</p></div></details>`).join('')}</div></section>`;
   const ld = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) };
   return { html, ld };
 }
 
-export function adviceBlock(site, { title = 'Twijfelt u welke oplossing past?', text = 'Vertel ons uw situatie. Wij denken mee en adviseren een passende oplossing.' } = {}) {
-  return `<aside class="advice" aria-label="Advies">
-  <div class="advice__body"><p class="eyebrow">Persoonlijk advies</p><h2 class="advice__title">${esc(title)}</h2><p>${esc(text)}</p></div>
+export function adviceBlock(site, { title = T('Twijfelt u welke oplossing past?', 'Not sure which solution fits?'), text = T('Vertel ons uw situatie. Wij denken mee en adviseren een passende oplossing.', 'Tell us about your situation. We will think along with you and recommend a suitable solution.') } = {}) {
+  return `<aside class="advice" aria-label="${T('Advies', 'Advice')}">
+  <div class="advice__body"><p class="eyebrow">${T('Persoonlijk advies', 'Personal advice')}</p><h2 class="advice__title">${esc(title)}</h2><p>${esc(text)}</p></div>
   <div class="advice__contact">
     <a class="advice__line" href="tel:${site.phonePrimary.tel}">${icon('phone')}<span>${site.phonePrimary.display}</span></a>
     <a class="advice__line" href="tel:${site.phoneSecondary.tel}">${icon('phone')}<span>${site.phoneSecondary.display}</span></a>
     <a class="advice__line" href="mailto:${site.email}">${icon('mail')}<span>${site.email}</span></a>
-    <div class="btn-row"><a class="btn btn--primary" href="/offerte-aanvragen/?type=advies">Advies aanvragen</a><a class="btn btn--ghost" href="/keuzehulp/">Naar de keuzehulp</a></div>
+    <div class="btn-row"><a class="btn btn--primary" href="/offerte-aanvragen/?type=advies">${T('Advies aanvragen', 'Request advice')}</a><a class="btn btn--ghost" href="/keuzehulp/">${T('Naar de keuzehulp', 'Go to the selection guide')}</a></div>
   </div>
 </aside>`;
 }
@@ -127,14 +129,14 @@ export function productCard(p, ctx) {
   return `<article class="pcard" ${attrs}>
   <a class="pcard__media" href="${url}" tabindex="-1" aria-hidden="true">${media(p.images?.[0], '4-3')}</a>
   <div class="pcard__body">
-    <p class="pcard__meta"><span>${esc(ctx.brandById[p.brand]?.name || '')}</span><span class="status ${orderable ? 'status--on' : ''}">${orderable ? 'Online bestelbaar' : 'Op aanvraag'}</span></p>
+    <p class="pcard__meta"><span>${esc(ctx.brandById[p.brand]?.name || '')}</span><span class="status ${orderable ? 'status--on' : ''}">${orderable ? T('Online bestelbaar', 'Order online') : T('Op aanvraag', 'On request')}</span></p>
     <h3 class="pcard__title"><a href="${url}">${esc(p.name)}</a></h3>
     <p class="pcard__short">${esc(p.short)}</p>
     <div class="pcard__foot">
       ${priceBlock(p, t)}
       <div class="pcard__actions">
-        ${orderable ? `<button class="btn btn--primary btn--sm" type="button" data-add-to-cart="${esc(p.id)}">${icon('cart')}In winkelwagen</button>` : `<a class="btn btn--primary btn--sm" href="/offerte-aanvragen/?product=${encodeURIComponent(p.id)}">Offerte aanvragen</a>`}
-        ${orderable ? `<a class="pcard__quote" href="/offerte-aanvragen/?product=${encodeURIComponent(p.id)}">Offerte aanvragen</a>` : `<a class="pcard__quote" href="${url}">Bekijk details</a>`}
+        ${orderable ? `<button class="btn btn--primary btn--sm" type="button" data-add-to-cart="${esc(p.id)}">${icon('cart')}${T('In winkelwagen', 'Add to cart')}</button>` : `<a class="btn btn--primary btn--sm" href="/offerte-aanvragen/?product=${encodeURIComponent(p.id)}">${T('Offerte aanvragen', 'Request a quote')}</a>`}
+        ${orderable ? `<a class="pcard__quote" href="/offerte-aanvragen/?product=${encodeURIComponent(p.id)}">${T('Offerte aanvragen', 'Request a quote')}</a>` : `<a class="pcard__quote" href="${url}">${T('Bekijk details', 'View details')}</a>`}
       </div>
     </div>
   </div>
@@ -145,7 +147,7 @@ export function categoryCard(c, ctx, { compact = false } = {}) {
   if (compact) return `<a class="ccard ccard--compact" href="${ctx.urls.category(c)}"><span class="ccard__name">${esc(c.name)}</span><span class="ccard__text">${esc(c.short)}</span>${icon('arrow')}</a>`;
   return `<a class="ccard" href="${ctx.urls.category(c)}">
   <span class="ccard__media">${media({ src: c.imageSrc, alt: c.image }, '16-10')}</span>
-  <span class="ccard__body"><span class="ccard__title">${esc(c.name)}</span><span class="ccard__text">${esc(c.short)}</span><span class="link-arrow">Bekijk oplossing ${icon('arrow')}</span></span>
+  <span class="ccard__body"><span class="ccard__title">${esc(c.name)}</span><span class="ccard__text">${esc(c.short)}</span><span class="link-arrow">${T('Bekijk oplossing', 'View solution')} ${icon('arrow')}</span></span>
 </a>`;
 }
 
@@ -155,7 +157,7 @@ export function field({ name, label, type = 'text', required = false, autocomple
   const req = required ? ' required aria-required="true"' : '';
   const ac = autocomplete ? ` autocomplete="${autocomplete}"` : '';
   const hintId = hint ? ` aria-describedby="${id}-hint"` : '';
-  const lab = `<label for="${id}">${esc(label)}${required ? ' <span class="req" aria-hidden="true">*</span>' : ' <span class="opt">(optioneel)</span>'}</label>`;
+  const lab = `<label for="${id}">${esc(label)}${required ? ' <span class="req" aria-hidden="true">*</span>' : ` <span class="opt">(${T('optioneel', 'optional')})</span>`}</label>`;
   let input;
   if (type === 'textarea') input = `<textarea id="${id}" name="${name}" rows="${rows}"${req}${hintId} ${attrs}>${esc(value)}</textarea>`;
   else if (type === 'select') input = `<select id="${id}" name="${name}"${req}${hintId} ${attrs}>${options.map((o) => { const [v, l] = Array.isArray(o) ? o : [o, o]; return `<option value="${esc(v)}"${v === value ? ' selected' : ''}>${esc(l)}</option>`; }).join('')}</select>`;
@@ -164,7 +166,7 @@ export function field({ name, label, type = 'text', required = false, autocomple
   return `<div class="field${full ? ' field--full' : ''}">${lab}${input}${hint ? `<p class="field__hint" id="${id}-hint">${esc(hint)}</p>` : ''}</div>`;
 }
 
-export const honeypot = () => `<div class="hp" aria-hidden="true"><label for="f-website">Laat dit veld leeg</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>`;
+export const honeypot = () => `<div class="hp" aria-hidden="true"><label for="f-website">${T('Laat dit veld leeg', 'Leave this field empty')}</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>`;
 
 export const formStatus = () => `<div class="form-status" role="status" aria-live="polite" hidden></div>`;
 
@@ -180,10 +182,10 @@ function megaMenu(ctx) {
       <ul>${categories.filter((c) => c.group === g.id).map((c) => `<li><a href="${urls.category(c)}">${esc(c.menuName || c.name)}</a></li>`).join('')}</ul>
     </div>`).join('')}
     <div class="mega__aside">
-      <p class="eyebrow">Hulp bij kiezen</p>
-      <p class="mega__aside-title">Welke oplossing heeft u nodig?</p>
-      <p>Beantwoord zes korte vragen en zie welke oplossingen passen.</p>
-      <a class="btn btn--primary btn--sm" href="/keuzehulp/">Start de keuzehulp</a>
+      <p class="eyebrow">${T('Hulp bij kiezen', 'Help choosing')}</p>
+      <p class="mega__aside-title">${T('Welke oplossing heeft u nodig?', 'Which solution do you need?')}</p>
+      <p>${T('Beantwoord zes korte vragen en zie welke oplossingen passen.', 'Answer six short questions and see which solutions fit.')}</p>
+      <a class="btn btn--primary btn--sm" href="/keuzehulp/">${T('Start de keuzehulp', 'Start the selection guide')}</a>
     </div>
   </div>
 </div>`;
@@ -193,50 +195,64 @@ function dropdown(id, items) {
   return `<div class="dropdown" id="${id}" hidden><ul>${items.map((i) => `<li><a href="${i.url}">${esc(i.name)}</a></li>`).join('')}</ul></div>`;
 }
 
-function header(ctx, path) {
+/** Taalschakelaar NL | EN. altPath is het Nederlandse pad van de huidige pagina. */
+function langSwitch(altPath, cls = '') {
+  const en = isEn();
+  const target = altPath === '/404.html' ? '/' : altPath; // vanaf de 404 naar de homepage van de andere taal
+  const nlHref = target, enHref = localPath(target, 'en');
+  return `<div class="lang-switch ${cls}" data-lang-switch data-active="${en ? 'en' : 'nl'}" role="group" aria-label="${T('Taal', 'Language')}">
+  ${icon('globe', 'lang-switch__icon')}
+  <a href="${nlHref}" hreflang="nl" lang="nl" data-keep-href data-lang="nl"${en ? '' : ' aria-current="true"'}><span class="sr-only">Nederlands </span>NL</a>
+  <a href="${enHref}" hreflang="en" lang="en" data-keep-href data-lang="en"${en ? ' aria-current="true"' : ''}><span class="sr-only">English </span>EN</a>
+</div>`;
+}
+
+function header(ctx, path, altPath) {
   const { site, t } = ctx;
   const navItems = [
     { key: 'producten', label: t.products, url: '/producten/', panel: megaMenu(ctx) },
-    { key: 'oplossingen', label: t.solutions, url: '/oplossingen/', panel: dropdown('dd-oplossingen', ctx.solutions.map((s) => ({ name: s.title, url: `/oplossingen/${s.slug}/` })).concat([{ name: 'Alle oplossingen', url: '/oplossingen/' }])) },
-    { key: 'sectoren', label: t.sectors, url: '/sectoren/', panel: dropdown('dd-sectoren', ctx.sectors.map((s) => ({ name: s.name, url: `/sectoren/${s.slug}/` })).concat([{ name: 'Alle sectoren', url: '/sectoren/' }])) },
+    { key: 'oplossingen', label: t.solutions, url: '/oplossingen/', panel: dropdown('dd-oplossingen', ctx.solutions.map((s) => ({ name: s.title, url: `/oplossingen/${s.slug}/` })).concat([{ name: T('Alle oplossingen', 'All solutions'), url: '/oplossingen/' }])) },
+    { key: 'sectoren', label: t.sectors, url: '/sectoren/', panel: dropdown('dd-sectoren', ctx.sectors.map((s) => ({ name: s.name, url: `/sectoren/${s.slug}/` })).concat([{ name: T('Alle sectoren', 'All sectors'), url: '/sectoren/' }])) },
     { key: 'projecten', label: t.projects, url: '/projecten/' },
     { key: 'kennisbank', label: t.knowledge, url: '/kennisbank/' },
     { key: 'over-ons', label: t.about, url: '/over-ons/' },
     { key: 'contact', label: t.contact, url: '/contact/' }
   ];
-  const isActive = (u) => (u !== '/' && path.startsWith(u)) ? ' aria-current="page"' : '';
+  const isActive = (u) => (u !== '/' && altPath.startsWith(u)) ? ' aria-current="page"' : '';
   return `<header class="site-header" data-header>
   <div class="header-main">
     <div class="container header-main__inner">
-      <a class="logo" href="/" aria-label="EnviroFlow – naar de homepage"><img src="/assets/img/enviroflow-logo.webp" srcset="/assets/img/enviroflow-logo.webp 1x, /assets/img/enviroflow-logo@2x.webp 2x" width="520" height="55" alt="EnviroFlow"></a>
+      <a class="logo" href="/" aria-label="${T('EnviroFlow – naar de homepage', 'EnviroFlow – to the homepage')}"><img src="/assets/img/enviroflow-logo.webp" srcset="/assets/img/enviroflow-logo.webp 1x, /assets/img/enviroflow-logo@2x.webp 2x" width="520" height="55" alt="EnviroFlow"></a>
       <form class="search" role="search" action="/zoeken/" method="get" data-search>
         <label class="sr-only" for="q-header">${t.search}</label>
         <input id="q-header" name="q" type="search" placeholder="${t.searchPlaceholder}" autocomplete="off" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list">
         <button type="submit" class="search__btn" aria-label="${t.search}">${icon('search')}</button>
-        <div class="search__results" id="search-results" role="listbox" aria-label="Zoekresultaten" hidden></div>
+        <div class="search__results" id="search-results" role="listbox" aria-label="${T('Zoekresultaten', 'Search results')}" hidden></div>
       </form>
       <div class="header-actions">
-        <button class="icon-btn search-toggle" type="button" aria-label="Zoeken openen" aria-expanded="false" data-search-toggle>${icon('search')}</button>
-        <a class="header-phone" href="tel:${site.phonePrimary.tel}">${icon('phone')}<span><small>Bel ons</small>${site.phonePrimary.display}</span></a>
+        <button class="icon-btn search-toggle" type="button" aria-label="${T('Zoeken openen', 'Open search')}" aria-expanded="false" data-search-toggle>${icon('search')}</button>
+        <a class="header-phone" href="tel:${site.phonePrimary.tel}">${icon('phone')}<span><small>${T('Bel ons', 'Call us')}</small>${site.phonePrimary.display}</span></a>
+        ${langSwitch(altPath, 'lang-switch--header')}
         <a class="icon-btn cart-link" href="/winkelwagen/" aria-label="${t.cart}">${icon('cart')}<span class="cart-count" data-cart-count hidden>0</span></a>
         <a class="btn btn--primary header-cta" href="/offerte-aanvragen/">${t.quote}</a>
         <button class="icon-btn menu-toggle" type="button" aria-label="${t.menu}" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>${icon('menu')}</button>
       </div>
     </div>
   </div>
-  <nav class="site-nav" id="site-nav" aria-label="Hoofdmenu" data-nav>
+  <nav class="site-nav" id="site-nav" aria-label="${T('Hoofdmenu', 'Main menu')}" data-nav>
     <div class="container site-nav__inner">
       <ul class="nav-list">
         ${navItems.map((n) => n.panel ? `<li class="nav-item has-panel">
-          <a class="nav-link" href="${n.url}"${isActive(n.url)}>${esc(n.label)}</a><button class="nav-expand" type="button" aria-expanded="false" aria-controls="${n.key === 'producten' ? 'mega-producten' : `dd-${n.key}`}" aria-label="${esc(n.label)}: submenu openen">${icon('chevron')}</button>
+          <a class="nav-link" href="${n.url}"${isActive(n.url)}>${esc(n.label)}</a><button class="nav-expand" type="button" aria-expanded="false" aria-controls="${n.key === 'producten' ? 'mega-producten' : `dd-${n.key}`}" aria-label="${esc(n.label)}: ${T('submenu openen', 'open submenu')}">${icon('chevron')}</button>
           ${n.panel}
         </li>` : `<li class="nav-item"><a class="nav-link" href="${n.url}"${isActive(n.url)}>${esc(n.label)}</a></li>`).join('')}
       </ul>
-      <div class="vat-toggle" role="group" aria-label="Prijsweergave">
-        <span class="vat-toggle__label">Prijzen</span>
-        <button type="button" data-vat="excl" aria-pressed="true">excl. btw</button>
-        <button type="button" data-vat="incl" aria-pressed="false">incl. btw</button>
+      <div class="vat-toggle" role="group" aria-label="${T('Prijsweergave', 'Price display')}">
+        <span class="vat-toggle__label">${T('Prijzen', 'Prices')}</span>
+        <button type="button" data-vat="excl" aria-pressed="true">${T('excl. btw', 'excl. VAT')}</button>
+        <button type="button" data-vat="incl" aria-pressed="false">${T('incl. btw', 'incl. VAT')}</button>
       </div>
+      ${langSwitch(altPath, 'lang-switch--menu')}
       <div class="nav-mobile-contact">
         <a href="tel:${site.phonePrimary.tel}">${icon('phone')} ${site.phonePrimary.display}</a>
         <a href="mailto:${site.email}">${icon('mail')} ${site.email}</a>
@@ -252,8 +268,8 @@ function footer(ctx) {
   return `<footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a href="/" class="footer-logo" aria-label="EnviroFlow – naar de homepage">${logoDark()}</a>
-      <p>EnviroFlow helpt bedrijven om vloeistoffen veilig en praktisch op te slaan, op te vangen en te verplaatsen — van een flexibele opvangbak tot complete tankoplossingen.</p>
+      <a href="/" class="footer-logo" aria-label="${T('EnviroFlow – naar de homepage', 'EnviroFlow – to the homepage')}">${logoDark()}</a>
+      <p>${T('EnviroFlow helpt bedrijven om vloeistoffen veilig en praktisch op te slaan, op te vangen en te verplaatsen — van een flexibele opvangbak tot complete tankoplossingen.', 'EnviroFlow helps businesses store, contain and move liquids safely and practically — from a flexible spill tray to complete tank solutions.')}</p>
     </div>
     <div>
       <h2 class="footer-title">Contact</h2>
@@ -265,62 +281,74 @@ function footer(ctx) {
       </ul>
     </div>
     <div>
-      <h2 class="footer-title">Producten</h2>
-      <ul class="footer-list">${groups.map((g) => `<li><a href="${urls.group(g)}">${esc(g.name)}</a></li>`).join('')}<li><a href="/producten/overige-oplossingen/maatwerk/">Maatwerk</a></li></ul>
+      <h2 class="footer-title">${T('Producten', 'Products')}</h2>
+      <ul class="footer-list">${groups.map((g) => `<li><a href="${urls.group(g)}">${esc(g.name)}</a></li>`).join('')}<li><a href="/producten/overige-oplossingen/maatwerk/">${T('Maatwerk', 'Custom-made')}</a></li></ul>
     </div>
     <div>
       <h2 class="footer-title">EnviroFlow</h2>
       <ul class="footer-list">
-        <li><a href="/oplossingen/">Oplossingen</a></li><li><a href="/sectoren/">Sectoren</a></li><li><a href="/projecten/">Projecten</a></li>
-        <li><a href="/kennisbank/">Kennisbank</a></li><li><a href="/over-ons/">Over ons</a></li><li><a href="/partners/">Partners</a></li><li><a href="/contact/">Contact</a></li>
+        <li><a href="/oplossingen/">${T('Oplossingen', 'Solutions')}</a></li><li><a href="/sectoren/">${T('Sectoren', 'Sectors')}</a></li><li><a href="/projecten/">${T('Projecten', 'Projects')}</a></li>
+        <li><a href="/kennisbank/">${T('Kennisbank', 'Knowledge base')}</a></li><li><a href="/over-ons/">${T('Over ons', 'About us')}</a></li><li><a href="/partners/">Partners</a></li><li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
     <div>
-      <h2 class="footer-title">Klantenservice</h2>
+      <h2 class="footer-title">${T('Klantenservice', 'Customer service')}</h2>
       <ul class="footer-list">
-        <li><a href="/offerte-aanvragen/">Offerte aanvragen</a></li><li><a href="/keuzehulp/">Keuzehulp</a></li>
-        <li><a href="/levering-en-verzending/">Levering &amp; verzending</a></li><li><a href="/retourneren/">Retourneren</a></li>
+        <li><a href="/offerte-aanvragen/">${T('Offerte aanvragen', 'Request a quote')}</a></li><li><a href="/keuzehulp/">${T('Keuzehulp', 'Selection guide')}</a></li>
+        <li><a href="/levering-en-verzending/">${T('Levering &amp; verzending', 'Delivery &amp; shipping')}</a></li><li><a href="/retourneren/">${T('Retourneren', 'Returns')}</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="container footer-bottom__inner">
-      <p>© <span data-year>${new Date().getFullYear()}</span> EnviroFlow · KvK ${esc(site.kvk)} · Btw ${ph(site.vatNumber)}</p>
+      <p>© <span data-year>${new Date().getFullYear()}</span> EnviroFlow · ${T('KvK', 'CoC')} ${esc(site.kvk)} · ${T('Btw', 'VAT')} ${ph(site.vatNumber)}</p>
       <ul class="footer-legal">
-        <li><a href="/algemene-voorwaarden/">Algemene voorwaarden</a></li><li><a href="/privacybeleid/">Privacybeleid</a></li>
-        <li><a href="/cookiebeleid/">Cookiebeleid</a></li><li><button type="button" class="linklike" data-cookie-settings>Cookie-instellingen</button></li>
+        <li><a href="/algemene-voorwaarden/">${T('Algemene voorwaarden', 'Terms and conditions')}</a></li><li><a href="/privacybeleid/">${T('Privacybeleid', 'Privacy policy')}</a></li>
+        <li><a href="/cookiebeleid/">${T('Cookiebeleid', 'Cookie policy')}</a></li><li><button type="button" class="linklike" data-cookie-settings>${T('Cookie-instellingen', 'Cookie settings')}</button></li>
       </ul>
     </div>
   </div>
 </footer>
-<div class="mobile-bar" aria-label="Snel contact">
-  <a href="tel:${site.phonePrimary.tel}" class="mobile-bar__btn">${icon('phone')}Bel direct</a>
-  <a href="/offerte-aanvragen/" class="mobile-bar__btn mobile-bar__btn--primary">${icon('clipboard')}Offerte</a>
+<div class="mobile-bar" aria-label="${T('Snel contact', 'Quick contact')}">
+  <a href="tel:${site.phonePrimary.tel}" class="mobile-bar__btn">${icon('phone')}${T('Bel direct', 'Call now')}</a>
+  <a href="/offerte-aanvragen/" class="mobile-bar__btn mobile-bar__btn--primary">${icon('clipboard')}${T('Offerte', 'Quote')}</a>
 </div>
 <div class="cookie" role="dialog" aria-modal="false" aria-labelledby="cookie-title" data-cookie hidden>
   <div class="cookie__inner">
-    <h2 id="cookie-title" class="cookie__title">Cookies op deze website</h2>
-    <p>Wij gebruiken alleen functionele opslag die nodig is voor de website, zoals uw winkelwagen en voorkeur voor prijsweergave. Analytische cookies plaatsen wij alleen met uw toestemming. Lees meer in ons <a href="/cookiebeleid/">cookiebeleid</a>.</p>
-    <div class="btn-row"><button type="button" class="btn btn--ghost btn--sm" data-cookie-choice="necessary">Alleen noodzakelijk</button><button type="button" class="btn btn--ghost btn--sm" data-cookie-choice="all">Alles accepteren</button></div>
+    <h2 id="cookie-title" class="cookie__title">${T('Cookies op deze website', 'Cookies on this website')}</h2>
+    <p>${T('Wij gebruiken alleen functionele opslag die nodig is voor de website, zoals uw winkelwagen en voorkeur voor prijsweergave. Analytische cookies plaatsen wij alleen met uw toestemming. Lees meer in ons <a href="/cookiebeleid/">cookiebeleid</a>.', 'We only use functional storage that the website needs, such as your shopping cart and price display preference. We only place analytical cookies with your consent. Read more in our <a href="/cookiebeleid/">cookie policy</a>.')}</p>
+    <div class="btn-row"><button type="button" class="btn btn--ghost btn--sm" data-cookie-choice="necessary">${T('Alleen noodzakelijk', 'Necessary only')}</button><button type="button" class="btn btn--ghost btn--sm" data-cookie-choice="all">${T('Alles accepteren', 'Accept all')}</button></div>
   </div>
 </div>`;
 }
 
-export function layout(ctx, { path, title, description, body, crumbs = [], jsonld = [], noindex = false, bodyClass = '', scripts = [], ogImage }) {
+/** Zet links naar de eigen site in JSON-LD om naar de taalversie (/en/…). */
+function localizeLd(value, base) {
+  if (typeof value === 'string') return value.startsWith(base + '/') && !value.startsWith(base + '/assets/') ? base + localPath(value.slice(base.length)) : value;
+  if (Array.isArray(value)) return value.map((v) => localizeLd(v, base));
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, localizeLd(v, base)]));
+  return value;
+}
+
+export function layout(ctx, { path, altPath = path, title, description, body, crumbs = [], jsonld = [], noindex = false, bodyClass = '', scripts = [], ogImage }) {
   const { site } = ctx;
   const canonical = site.baseUrl + path;
   const lds = [...jsonld];
   if (crumbs.length) lds.push(breadcrumbLd(crumbs, site.baseUrl));
+  const ldOut = isEn() ? lds.map((l) => localizeLd(l, site.baseUrl)) : lds;
+  const lang = getLang();
+  const altLinks = path === '/404.html' || altPath === '/404.html' ? '' : `<link rel="alternate" hreflang="nl" href="${site.baseUrl}${altPath}"><link rel="alternate" hreflang="en" href="${site.baseUrl}${localPath(altPath, 'en')}"><link rel="alternate" hreflang="x-default" href="${site.baseUrl}${altPath}">`;
   return `<!doctype html>
-<html lang="nl">
+<html lang="${lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${canonical}">
+${altLinks}
 ${noindex ? '<meta name="robots" content="noindex, follow">' : ''}
-<meta property="og:type" content="website"><meta property="og:locale" content="nl_NL"><meta property="og:site_name" content="EnviroFlow">
+<meta property="og:type" content="website"><meta property="og:locale" content="${isEn() ? 'en_GB' : 'nl_NL'}"><meta property="og:locale:alternate" content="${isEn() ? 'nl_NL' : 'en_GB'}"><meta property="og:site_name" content="EnviroFlow">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${site.baseUrl}${ogImage || '/assets/img/enviroflow-og.png'}">
 <meta name="theme-color" content="#0A3B2C">
@@ -328,18 +356,18 @@ ${noindex ? '<meta name="robots" content="noindex, follow">' : ''}
 <link rel="preload" href="/assets/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/archivo-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/main.css?v=${ctx.version}">
-${lds.map((l) => `<script type="application/ld+json">${JSON.stringify(l).replace(/</g, '\\u003c')}</script>`).join('\n')}
+${ldOut.map((l) => `<script type="application/ld+json">${JSON.stringify(l).replace(/</g, '\\u003c')}</script>`).join('\n')}
 </head>
 <body class="${bodyClass}">
 ${iconSprite()}
 <a class="skip-link" href="#main">${ctx.t.skipLink}</a>
-${header(ctx, path)}
+${header(ctx, path, altPath)}
 <main id="main" tabindex="-1">
 ${breadcrumbs(crumbs)}
 ${body}
 </main>
 ${footer(ctx)}
-<script>window.EF=${JSON.stringify({ vatRate: site.vatRate, t: ctx.t, shipping: site.shipping.flatRate, phone: site.phonePrimary })};</script>
+<script>window.EF=${JSON.stringify({ lang, base: isEn() ? '/en' : '', vatRate: site.vatRate, t: ctx.t, shipping: site.shipping.flatRate, phone: site.phonePrimary })};</script>
 <script src="/assets/js/main.js?v=${ctx.version}" defer></script>
 ${scripts.map((s) => `<script src="${s}?v=${ctx.version}" defer></script>`).join('\n')}
 </body>

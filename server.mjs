@@ -35,7 +35,7 @@ const fileStore = {
   async putFile(key, data) { const f = keyPath(key); mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, Buffer.from(data)); }
 };
 const config = configFromEnv(process.env);
-const api = createApi({ catalog: loadCatalog(), store: fileStore, config: { ...config, baseUrl: config.baseUrl || BASE_URL } });
+const api = createApi({ catalog: loadCatalog(), catalogEn: loadCatalog('en'), store: fileStore, config: { ...config, baseUrl: config.baseUrl || BASE_URL } });
 
 function send(res, status, body, headers = {}) {
   res.writeHead(status, { ...SECURITY_HEADERS, ...headers });
@@ -73,7 +73,7 @@ function serveStatic(req, res, pathname) {
     file = join(file, 'index.html');
   }
   if (!existsSync(file)) {
-    const nf = join(DIST, '404.html');
+    const nf = join(DIST, /^\/en(\/|$)/.test(p) ? 'en/404.html' : '404.html'); // Engelse 404 onder /en/
     return send(res, 404, existsSync(nf) ? readFileSync(nf) : 'Niet gevonden', { 'Content-Type': 'text/html; charset=utf-8' });
   }
   const ext = extname(file);

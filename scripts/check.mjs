@@ -17,8 +17,11 @@ for (const file of pages) {
   const desc = html.match(/<meta name="description" content="(.*?)">/)?.[1];
   if (!title || !desc) errors.push(`${rel}: title/description ontbreekt`);
   if (!noindex) {
-    if (titles.has(title)) errors.push(`${rel}: dubbele title met ${titles.get(title)}`); else titles.set(title, rel);
-    if (descs.has(desc)) errors.push(`${rel}: dubbele description met ${descs.get(desc)}`); else descs.set(desc, rel);
+    // Uniek binnen één taal ("Contact | EnviroFlow" mag in het Nederlands en het Engels hetzelfde zijn).
+    const lang = rel.startsWith('/en/') ? 'en' : 'nl';
+    const tKey = `${lang}:${title}`, dKey = `${lang}:${desc}`;
+    if (titles.has(tKey)) errors.push(`${rel}: dubbele title met ${titles.get(tKey)}`); else titles.set(tKey, rel);
+    if (descs.has(dKey)) errors.push(`${rel}: dubbele description met ${descs.get(dKey)}`); else descs.set(dKey, rel);
   }
   for (const m of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)) { try { JSON.parse(m[1]); } catch { errors.push(`${rel}: ongeldige JSON-LD`); } }
   for (const m of html.matchAll(/srcset="([^"]+)"/g)) {

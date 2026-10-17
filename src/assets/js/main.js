@@ -4,6 +4,12 @@
   document.documentElement.classList.add('js');
   var EF = window.EF || {};
 
+  /* ---------- taal: EF.L('Nederlands', 'English') en interne links met /en ervoor ---------- */
+  EF.en = EF.lang === 'en';
+  EF.L = function (nl, en) { return EF.en ? en : nl; };
+  EF.url = function (p) { return (EF.base || '') + p; };
+  EF.locale = EF.en ? 'en-IE' : 'nl-NL';
+
   /* ---------- veilige opslag ---------- */
   var store = {
     get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
@@ -12,7 +18,7 @@
   EF.store = store;
 
   /* ---------- formattering ---------- */
-  var nf = new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' });
+  var nf = new Intl.NumberFormat(EF.locale, { style: 'currency', currency: 'EUR' });
   EF.fmt = function (n) { return nf.format(n); };
   EF.vatMode = function () { return store.get('ef-vat', 'excl'); };
 
@@ -36,13 +42,13 @@
     updateCount: function () {
       var n = Cart.count();
       document.querySelectorAll('[data-cart-count]').forEach(function (el) { el.textContent = n; el.hidden = n === 0; });
-      document.querySelectorAll('.cart-link').forEach(function (a) { a.setAttribute('aria-label', 'Winkelwagen' + (n ? ', ' + n + ' artikel' + (n === 1 ? '' : 'en') : ', leeg')); });
+      document.querySelectorAll('.cart-link').forEach(function (a) { a.setAttribute('aria-label', EF.L('Winkelwagen', 'Shopping cart') + (n ? ', ' + n + EF.L(' artikel' + (n === 1 ? '' : 'en'), ' item' + (n === 1 ? '' : 's')) : EF.L(', leeg', ', empty'))); });
     }
   };
   EF.cart = Cart;
   var catalogPromise;
   EF.catalog = function () {
-    if (!catalogPromise) catalogPromise = fetch('/assets/data/catalog.json').then(function (r) { return r.json(); }).catch(function () { return {}; });
+    if (!catalogPromise) catalogPromise = fetch('/assets/data/catalog' + (EF.en ? '.en' : '') + '.json').then(function (r) { return r.json(); }).catch(function () { return {}; });
     return catalogPromise;
   };
 
@@ -54,7 +60,7 @@
     t.innerHTML = html; t.hidden = false;
     clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.hidden = true; }, 5000);
   };
-  EF.addedToast = function (name) { EF.toast('<span>' + (name ? escapeHtml(name) + ' is toegevoegd aan uw winkelwagen.' : 'Toegevoegd aan uw winkelwagen.') + '</span><a href="/winkelwagen/">Bekijk winkelwagen</a>'); };
+  EF.addedToast = function (name) { EF.toast('<span>' + (name ? escapeHtml(name) + EF.L(' is toegevoegd aan uw winkelwagen.', ' has been added to your shopping cart.') : EF.L('Toegevoegd aan uw winkelwagen.', 'Added to your shopping cart.')) + '</span><a href="' + EF.url('/winkelwagen/') + '">' + EF.L('Bekijk winkelwagen', 'View shopping cart') + '</a>'); };
   function escapeHtml(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   EF.esc = escapeHtml;
 
@@ -66,6 +72,19 @@
     EF.addedToast(card ? card.getAttribute('data-name') : '');
   });
 
+  /* ---------- taalschakelaar: zoekopdracht/ordernummer meenemen en het knopje eerst laten schuiven ---------- */
+  document.querySelectorAll('[data-lang-switch] a').forEach(function (a) {
+    if (location.search || location.hash) a.setAttribute('href', a.getAttribute('href') + location.search + location.hash);
+    a.addEventListener('click', function (e) {
+      var sw = a.closest('[data-lang-switch]'); var to = a.getAttribute('data-lang');
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0 || sw.getAttribute('data-active') === to) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      e.preventDefault();
+      document.querySelectorAll('[data-lang-switch]').forEach(function (s) { s.setAttribute('data-active', to); });
+      setTimeout(function () { window.location.href = a.href; }, 200);
+    });
+  });
+
   /* ---------- btw-schakelaar ---------- */
   EF.applyVat = function () {
     var mode = EF.vatMode(); var rate = EF.vatRate || 0.21;
@@ -73,7 +92,7 @@
       var v = parseFloat(el.getAttribute('data-price-excl'));
       if (!isNaN(v)) el.textContent = EF.fmt(mode === 'incl' ? v * (1 + rate) : v);
     });
-    document.querySelectorAll('[data-vat-label]').forEach(function (el) { el.textContent = mode === 'incl' ? 'incl. btw' : 'excl. btw'; });
+    document.querySelectorAll('[data-vat-label]').forEach(function (el) { el.textContent = mode === 'incl' ? EF.L('incl. btw', 'incl. VAT') : EF.L('excl. btw', 'excl. VAT'); });
     document.querySelectorAll('[data-vat]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-vat') === mode)); });
   };
   document.querySelectorAll('[data-vat]').forEach(function (b) {
@@ -121,8 +140,9 @@
   function setMenu(open) {
     if (!nav) return;
     nav.classList.toggle('open', open);
+    if (header) header.classList.toggle('menu-open', open);
     menuBtn.setAttribute('aria-expanded', String(open));
-    menuBtn.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu');
+    menuBtn.setAttribute('aria-label', open ? EF.L('Menu sluiten', 'Close menu') : 'Menu');
     menuBtn.innerHTML = '<svg class="ic" aria-hidden="true"><use href="#i-' + (open ? 'close' : 'menu') + '"/></svg>';
     document.body.style.overflow = open && !desktop.matches ? 'hidden' : '';
   }
@@ -140,7 +160,7 @@
   });
 
   var indexPromise;
-  function loadIndex() { if (!indexPromise) indexPromise = fetch('/assets/data/search-index.json').then(function (r) { return r.json(); }).catch(function () { return []; }); return indexPromise; }
+  function loadIndex() { if (!indexPromise) indexPromise = fetch('/assets/data/search-index' + (EF.en ? '.en' : '') + '.json').then(function (r) { return r.json(); }).catch(function () { return []; }); return indexPromise; }
   var norm = function (s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); };
   EF.search = function (q) {
     var terms = norm(q).split(/\s+/).filter(Boolean);
@@ -153,7 +173,7 @@
           if (hay.indexOf(terms[i]) === -1) return null;
           score += title.indexOf(terms[i]) > -1 ? 3 : 1;
         }
-        if (it.k === 'Product' || it.k === 'Categorie') score += 0.5;
+        if (it.k === 'Product' || it.k === 'Categorie' || it.k === 'Category') score += 0.5;
         return { it: it, score: score };
       }).filter(Boolean).sort(function (a, b) { return b.score - a.score; }).map(function (r) { return r.it; });
     });
@@ -171,8 +191,8 @@
         if (q.length < 2) return close();
         EF.search(q).then(function (res) {
           var top = res.slice(0, 6);
-          box.innerHTML = top.length ? top.map(function (r, i) { return '<a role="option" id="sr-' + i + '" href="' + r.u + '"><small>' + escapeHtml(r.k) + '</small>' + escapeHtml(r.t) + '</a>'; }).join('') + '<a class="all" href="/zoeken/?q=' + encodeURIComponent(q) + '">Alle resultaten voor “' + escapeHtml(q) + '”</a>'
-            : '<a class="all" href="/offerte-aanvragen/?type=advies">Geen resultaten. Vraag advies aan</a>';
+          box.innerHTML = top.length ? top.map(function (r, i) { return '<a role="option" id="sr-' + i + '" href="' + r.u + '"><small>' + escapeHtml(r.k) + '</small>' + escapeHtml(r.t) + '</a>'; }).join('') + '<a class="all" href="' + EF.url('/zoeken/') + '?q=' + encodeURIComponent(q) + '">' + EF.L('Alle resultaten voor', 'All results for') + ' “' + escapeHtml(q) + '”</a>'
+            : '<a class="all" href="' + EF.url('/offerte-aanvragen/') + '?type=advies">' + EF.L('Geen resultaten. Vraag advies aan', 'No results. Request advice') + '</a>';
           box.hidden = false; input.setAttribute('aria-expanded', 'true'); active = -1;
         });
       }, 120);
@@ -196,9 +216,9 @@
     var pageInput = document.getElementById('q-page'); if (pageInput) pageInput.value = q;
     var summary = document.querySelector('[data-search-summary]');
     if (q) EF.search(q).then(function (res) {
-      summary.textContent = res.length + ' resultaat' + (res.length === 1 ? '' : 'en') + ' voor “' + q + '”';
+      summary.textContent = res.length + EF.L(' resultaat' + (res.length === 1 ? '' : 'en') + ' voor', ' result' + (res.length === 1 ? '' : 's') + ' for') + ' “' + q + '”';
       resultList.innerHTML = res.map(function (r) { return '<li><a href="' + r.u + '"><small>' + escapeHtml(r.k) + '</small><strong>' + escapeHtml(r.t) + '</strong><br>' + escapeHtml(r.d) + '</a></li>'; }).join('')
-        || '<li>Geen resultaten. <a href="/offerte-aanvragen/?type=advies">Vraag advies aan</a> of bel <a href="tel:' + EF.phone.tel + '">' + EF.phone.display + '</a>.</li>';
+        || '<li>' + EF.L('Geen resultaten.', 'No results.') + ' <a href="' + EF.url('/offerte-aanvragen/') + '?type=advies">' + EF.L('Vraag advies aan', 'Request advice') + '</a> ' + EF.L('of bel', 'or call') + ' <a href="tel:' + EF.phone.tel + '">' + EF.phone.display + '</a>.</li>';
     });
   }
 
@@ -223,10 +243,10 @@
     form.querySelectorAll('input, select, textarea').forEach(function (el) {
       if (el.disabled || el.closest('[hidden]') || el.type === 'hidden' || el.closest('.hp')) return;
       if (el.checkValidity()) return;
-      var msg = 'Dit veld is verplicht.';
-      if (el.validity.typeMismatch && el.type === 'email') msg = 'Vul een geldig e-mailadres in.';
-      else if (el.type === 'checkbox') msg = 'Vink dit aan om verder te gaan.';
-      else if (el.validity.rangeUnderflow || el.validity.rangeOverflow) msg = 'Vul een geldige waarde in.';
+      var msg = EF.L('Dit veld is verplicht.', 'This field is required.');
+      if (el.validity.typeMismatch && el.type === 'email') msg = EF.L('Vul een geldig e-mailadres in.', 'Please enter a valid email address.');
+      else if (el.type === 'checkbox') msg = EF.L('Vink dit aan om verder te gaan.', 'Please tick this box to continue.');
+      else if (el.validity.rangeUnderflow || el.validity.rangeOverflow) msg = EF.L('Vul een geldige waarde in.', 'Please enter a valid value.');
       el.setAttribute('aria-invalid', 'true');
       var err = document.createElement('p'); err.className = 'field__error'; err.id = (el.id || el.name) + '-err'; err.textContent = msg;
       var host = el.closest('.field') || el.closest('label') || el.parentNode;

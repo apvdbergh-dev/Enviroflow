@@ -1,110 +1,128 @@
 // Statische sitegenerator voor EnviroFlow. Gebruik: node build.mjs  (output in ./dist)
-import { mkdirSync, writeFileSync, rmSync, cpSync, readFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, rmSync, cpSync, readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { loadCatalog, isOrderable, hasRealPrice, groupUrl, categoryUrl, productUrl } from './src/lib/catalog.mjs';
+import { buildCatalog, isOrderable, hasRealPrice, groupUrl, categoryUrl, productUrl } from './src/lib/catalog.mjs';
+import { setLang, localizeHtml, localPath, LANGS } from './src/lib/i18n.mjs';
+import { translateDeep } from './src/lib/i18n-data.mjs';
 import { layout } from './src/templates/ui.mjs';
 import * as shop from './src/templates/pages-shop.mjs';
 import * as content from './src/templates/pages-content.mjs';
 import { legalPages, LEGAL_CHOICES } from './src/content/nl/legal.mjs';
 
 const root = dirname(fileURLToPath(import.meta.url));
-const locale = 'nl';
 const dist = join(root, 'dist');
-
-const catalog = loadCatalog();
-const t = JSON.parse(readFileSync(join(root, `src/i18n/${locale}.json`), 'utf8'));
-const solutions = (await import(`./src/content/${locale}/solutions.mjs`)).default;
-const sectors = (await import(`./src/content/${locale}/sectors.mjs`)).default;
-const articles = (await import(`./src/content/${locale}/articles.mjs`)).default;
-
-const { groupById, categoryById } = catalog;
-const ctx = {
-  ...catalog, t, solutions, sectors, articles,
-  version: Date.now().toString(36),
-  urls: {
-    group: (g) => groupUrl(g),
-    category: (c) => categoryUrl(c, groupById),
-    product: (p) => productUrl(p, categoryById, groupById)
-  }
+const readJson = (f) => JSON.parse(readFileSync(join(root, f), 'utf8'));
+const raw = { site: readJson('src/data/site.json'), brands: readJson('src/data/brands.json'), categories: readJson('src/data/categories.json'), products: readJson('src/data/products.json') };
+const rawContent = {
+  solutions: (await import('./src/content/nl/solutions.mjs')).default,
+  sectors: (await import('./src/content/nl/sectors.mjs')).default,
+  articles: (await import('./src/content/nl/articles.mjs')).default
 };
+const enTable = existsSync(join(root, 'src/i18n/en-data.json')) ? readJson('src/i18n/en-data.json') : {};
+const version = Date.now().toString(36);
 
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist, { recursive: true });
-
-const sitemap = [];
-function emit(page) {
-  const html = layout(ctx, page);
-  const file = page.file ? join(dist, page.file) : join(dist, page.path, 'index.html');
-  mkdirSync(dirname(file), { recursive: true });
-  writeFileSync(file, html);
-  if (!page.noindex) sitemap.push(page.path);
-}
-
-// Shop & kernpagina's
-emit(shop.home(ctx));
-emit(shop.productsOverview(ctx));
-ctx.groups.forEach((g) => emit(shop.groupPage(g, ctx)));
-ctx.categories.forEach((c) => emit(shop.categoryPage(c, ctx)));
-ctx.products.forEach((p) => emit(shop.productPage(p, ctx)));
-emit(shop.cartPage(ctx));
-emit(shop.checkoutPage(ctx));
-emit(shop.orderStatusPage(ctx));
-emit(shop.quotePage(ctx));
-emit(shop.customPage(ctx));
-emit(shop.thanksPage(ctx));
-emit(shop.keuzehulpPage(ctx));
-
-// Content
-emit(content.solutionsOverview(ctx));
-solutions.forEach((s) => emit(content.solutionPage(s, ctx)));
-emit(content.sectorsOverview(ctx));
-sectors.forEach((s) => emit(content.sectorPage(s, ctx)));
-emit(content.projectsPage(ctx));
-// Sjabloon voor projectpagina's: pas publiceren zodra er een echt project is.
-// emit(content.projectTemplatePage(ctx));
-emit(content.knowledgeOverview(ctx));
-articles.forEach((a) => emit(content.articlePage(a, ctx)));
-emit(content.aboutPage(ctx));
-emit(content.partnersPage(ctx));
-ctx.brands.filter((b) => b.active).forEach((b) => emit(content.brandPage(b, ctx)));
-emit(content.contactPage(ctx));
-emit(content.searchPage(ctx));
-emit(content.notFoundPage(ctx));
-const legal = legalPages(catalog.site);
-[
-  { slug: 'levering-en-verzending', title: 'Levering & verzending', html: legal['levering-en-verzending'], draft: LEGAL_CHOICES.draft },
-  { slug: 'retourneren', title: 'Retourneren', html: legal.retourneren, draft: LEGAL_CHOICES.draft },
-  { slug: 'algemene-voorwaarden', title: 'Algemene voorwaarden', html: legal['algemene-voorwaarden'], draft: LEGAL_CHOICES.draft },
-  { slug: 'privacybeleid', title: 'Privacybeleid', html: legal.privacybeleid, draft: LEGAL_CHOICES.draft },
-  { slug: 'cookiebeleid', title: 'Cookiebeleid', html: legal.cookiebeleid, draft: LEGAL_CHOICES.draft }
-].forEach((l) => emit(content.legalPage(l)));
-
-// Assets
 cpSync(join(root, 'src/assets'), join(dist, 'assets'), { recursive: true });
 mkdirSync(join(dist, 'assets/data'), { recursive: true });
 
-// Catalogus voor winkelwagen (prijzen worden server-side opnieuw gecontroleerd)
-const cartCatalog = Object.fromEntries(catalog.products.filter(isOrderable).map((p) => [p.id, {
-  name: p.name, url: ctx.urls.product(p), price: hasRealPrice(p) ? p.price : null, pricePlaceholder: hasRealPrice(p) ? null : p.price, image: p.images?.[0] || null
-}]));
-writeFileSync(join(dist, 'assets/data/catalog.json'), JSON.stringify(cartCatalog));
+const sitemap = [];
+let siteForRobots;
 
-// Zoekindex
-const searchIndex = [
-  ...catalog.products.map((p) => ({ t: p.name, u: ctx.urls.product(p), d: p.short, k: 'Product', x: [p.line, categoryById[p.category].name, ...(p.attributes?.application || [])].filter(Boolean).join(' ') })),
-  ...catalog.categories.map((c) => ({ t: c.name, u: ctx.urls.category(c), d: c.short, k: 'Categorie', x: (c.applications || []).join(' ') + ' ' + (c.seoTitle || '') })),
-  ...solutions.map((s) => ({ t: s.title, u: `/oplossingen/${s.slug}/`, d: s.seoDescription, k: 'Oplossing', x: s.tile })),
-  ...sectors.map((s) => ({ t: s.name, u: `/sectoren/${s.slug}/`, d: s.intro, k: 'Sector', x: s.liquids.join(' ') })),
-  ...articles.map((a) => ({ t: a.title, u: `/kennisbank/${a.slug}/`, d: a.description, k: 'Kennisbank', x: '' }))
-];
-writeFileSync(join(dist, 'assets/data/search-index.json'), JSON.stringify(searchIndex));
+for (const lang of LANGS) {
+  setLang(lang);
+  const missing = new Map();
+  const tr = (o) => (lang === 'en' ? translateDeep(o, enTable, missing) : o);
+  const catalog = buildCatalog({ site: tr(raw.site), brands: tr(raw.brands), categories: tr(raw.categories), products: tr(raw.products) });
+  const solutions = tr(rawContent.solutions), sectors = tr(rawContent.sectors), articles = tr(rawContent.articles);
+  if (missing.size && process.env.I18N_ALLOW_MISSING === '1') {
+    console.warn(`(ontwikkelmodus) ${missing.size} vertaling(en) ontbreken nog`);
+  } else if (missing.size) {
+    console.error(`\nVERTALING ONTBREEKT voor ${missing.size} tekst(en). Vul ze aan met scripts/i18n-texts.mjs:\n` + [...missing].slice(0, 20).map(([id, nl]) => `  ${id}  ${nl.slice(0, 90)}`).join('\n'));
+    process.exit(1);
+  }
+  const t = readJson(`src/i18n/${lang}.json`);
+  const { groupById, categoryById } = catalog;
+  const ctx = {
+    ...catalog, t, solutions, sectors, articles, lang, version,
+    urls: {
+      group: (g) => groupUrl(g),
+      category: (c) => categoryUrl(c, groupById),
+      product: (p) => productUrl(p, categoryById, groupById)
+    }
+  };
+  const out = lang === 'en' ? join(dist, 'en') : dist;
+  if (lang === 'nl') siteForRobots = catalog.site;
+
+  const emit = (page) => {
+    // Pagina-paden blijven Nederlands in de templates; voor Engels komt er /en voor en worden links omgezet.
+    const localized = { ...page, path: localPath(page.path), altPath: page.path };
+    let html = layout(ctx, localized);
+    if (lang === 'en') html = localizeHtml(html);
+    const file = page.file ? join(out, page.file) : join(out, page.path, 'index.html');
+    mkdirSync(dirname(file), { recursive: true });
+    writeFileSync(file, html);
+    if (!page.noindex) sitemap.push({ path: localized.path, alt: page.path });
+  };
+
+  // Shop & kernpagina's
+  emit(shop.home(ctx));
+  emit(shop.productsOverview(ctx));
+  ctx.groups.forEach((g) => emit(shop.groupPage(g, ctx)));
+  ctx.categories.forEach((c) => emit(shop.categoryPage(c, ctx)));
+  ctx.products.forEach((p) => emit(shop.productPage(p, ctx)));
+  emit(shop.cartPage(ctx));
+  emit(shop.checkoutPage(ctx));
+  emit(shop.orderStatusPage(ctx));
+  emit(shop.quotePage(ctx));
+  emit(shop.customPage(ctx));
+  emit(shop.thanksPage(ctx));
+  emit(shop.keuzehulpPage(ctx));
+
+  // Content
+  emit(content.solutionsOverview(ctx));
+  solutions.forEach((s) => emit(content.solutionPage(s, ctx)));
+  emit(content.sectorsOverview(ctx));
+  sectors.forEach((s) => emit(content.sectorPage(s, ctx)));
+  emit(content.projectsPage(ctx));
+  // Sjabloon voor projectpagina's: pas publiceren zodra er een echt project is.
+  // emit(content.projectTemplatePage(ctx));
+  emit(content.knowledgeOverview(ctx));
+  articles.forEach((a) => emit(content.articlePage(a, ctx)));
+  emit(content.aboutPage(ctx));
+  emit(content.partnersPage(ctx));
+  ctx.brands.filter((b) => b.active).forEach((b) => emit(content.brandPage(b, ctx)));
+  emit(content.contactPage(ctx));
+  emit(content.searchPage(ctx));
+  emit(content.notFoundPage(ctx));
+  const legal = legalPages(catalog.site);
+  legal.pages.forEach((l) => emit(content.legalPage({ ...l, draft: LEGAL_CHOICES.draft })));
+
+  // Catalogus voor winkelwagen (prijzen worden server-side opnieuw gecontroleerd) en zoekindex, per taal.
+  const suffix = lang === 'en' ? '.en' : '';
+  const cartCatalog = Object.fromEntries(catalog.products.filter(isOrderable).map((p) => [p.id, {
+    name: p.name, url: localPath(ctx.urls.product(p)), price: hasRealPrice(p) ? p.price : null, pricePlaceholder: hasRealPrice(p) ? null : p.price, image: p.images?.[0] || null
+  }]));
+  writeFileSync(join(dist, `assets/data/catalog${suffix}.json`), JSON.stringify(cartCatalog));
+  const K = lang === 'en' ? { product: 'Product', category: 'Category', solution: 'Solution', sector: 'Sector', knowledge: 'Knowledge base' } : { product: 'Product', category: 'Categorie', solution: 'Oplossing', sector: 'Sector', knowledge: 'Kennisbank' };
+  const searchIndex = [
+    ...catalog.products.map((p) => ({ t: p.name, u: localPath(ctx.urls.product(p)), d: p.short, k: K.product, x: [p.line, categoryById[p.category].name, ...(p.attributes?.application || [])].filter(Boolean).join(' ') })),
+    ...catalog.categories.map((c) => ({ t: c.name, u: localPath(ctx.urls.category(c)), d: c.short, k: K.category, x: (c.applications || []).join(' ') + ' ' + (c.seoTitle || '') })),
+    ...solutions.map((s) => ({ t: s.title, u: localPath(`/oplossingen/${s.slug}/`), d: s.seoDescription, k: K.solution, x: s.tile })),
+    ...sectors.map((s) => ({ t: s.name, u: localPath(`/sectoren/${s.slug}/`), d: s.intro, k: K.sector, x: s.liquids.join(' ') })),
+    ...articles.map((a) => ({ t: a.title, u: localPath(`/kennisbank/${a.slug}/`), d: a.description, k: K.knowledge, x: '' }))
+  ];
+  writeFileSync(join(dist, `assets/data/search-index${suffix}.json`), JSON.stringify(searchIndex));
+}
+setLang('nl');
 
 // Sitemap & robots
 const today = new Date().toISOString().slice(0, 10);
+const base = siteForRobots.baseUrl;
 writeFileSync(join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemap.map((p) => `  <url><loc>${catalog.site.baseUrl}${p}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${sitemap.map((p) => `  <url><loc>${base}${p.path}</loc><lastmod>${today}</lastmod><xhtml:link rel="alternate" hreflang="nl" href="${base}${p.alt}"/><xhtml:link rel="alternate" hreflang="en" href="${base}${localPath(p.alt, 'en')}"/></url>`).join('\n')}
 </urlset>
 `);
 writeFileSync(join(dist, 'robots.txt'), `User-agent: *
@@ -113,8 +131,12 @@ Disallow: /winkelwagen/
 Disallow: /afrekenen/
 Disallow: /bestelling/
 Disallow: /zoeken/
+Disallow: /en/winkelwagen/
+Disallow: /en/afrekenen/
+Disallow: /en/bestelling/
+Disallow: /en/zoeken/
 
-Sitemap: ${catalog.site.baseUrl}/sitemap.xml
+Sitemap: ${base}/sitemap.xml
 `);
 
 // Versie van deze build (Cloudflare geeft de commit mee), zodat te controleren is wat er live staat.
@@ -133,4 +155,4 @@ writeFileSync(join(dist, '_headers'), `/*
   Cache-Control: public, max-age=31536000, immutable
 `);
 
-console.log(`Build gereed: ${sitemap.length} indexeerbare pagina's → dist/`);
+console.log(`Build gereed: ${sitemap.length} indexeerbare pagina's (NL + EN) → dist/`);

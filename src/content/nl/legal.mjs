@@ -2,9 +2,13 @@
 // Opzet voor een B2B-webshop; laat de teksten vóór livegang controleren door een jurist.
 // Zakelijke keuzes staan hieronder bij elkaar, zodat ze op één plek aan te passen zijn.
 
+import { isEn } from '../../lib/i18n.mjs';
+import { legalPagesEn } from '../en/legal.mjs';
+
 export const LEGAL_CHOICES = {
   draft: false,              // true = toont "Conceptversie" bovenaan de juridische pagina's
   updated: '16 oktober 2026',
+  updatedEn: '16 October 2026', // zelfde datum voor de Engelse vertaling
   offerValidDays: 30,        // geldigheid van offertes
   paymentTermDays: 14,       // betaaltermijn bij betaling op factuur
   complaintHours: 24,        // gebreken/schade melden na levering of ontdekking
@@ -25,6 +29,7 @@ function company(site) {
 const contactLine = (site) => `<a href="mailto:${esc(site.email)}">${esc(site.email)}</a> of ${esc(site.phonePrimary.display)}`;
 
 export function legalPages(site) {
+  if (isEn()) return legalPagesEn(site, LEGAL_CHOICES);
   const updated = `<p class="small muted">Laatst bijgewerkt: ${K.updated}</p>`;
 
   const voorwaarden = `${updated}
@@ -218,10 +223,12 @@ ${typeof flat === 'number'
 <p>Wilt u iets terugsturen? Lees ons <a href="/retourneren/">retourbeleid</a>.</p>`;
 
   return {
-    'levering-en-verzending': levering,
-    'algemene-voorwaarden': voorwaarden,
-    privacybeleid: privacy,
-    retourneren: retour,
-    cookiebeleid: cookies
+    pages: [
+      { slug: 'levering-en-verzending', title: 'Levering & verzending', html: levering },
+      { slug: 'retourneren', title: 'Retourneren', html: retour },
+      { slug: 'algemene-voorwaarden', title: 'Algemene voorwaarden', html: voorwaarden },
+      { slug: 'privacybeleid', title: 'Privacybeleid', html: privacy },
+      { slug: 'cookiebeleid', title: 'Cookiebeleid', html: cookies }
+    ]
   };
 }

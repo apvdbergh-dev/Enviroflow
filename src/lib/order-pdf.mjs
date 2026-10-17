@@ -8,8 +8,10 @@ const YELLOW = [242 / 255, 183 / 255, 5 / 255];   // #F2B705
 const MUTED = [0.38, 0.42, 0.40];
 const LINE = [0.85, 0.87, 0.86];
 
-const eur = (n) => new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(n);
-const dateNl = (iso) => new Intl.DateTimeFormat('nl-NL', { timeZone: 'Europe/Amsterdam', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(iso));
+// Taal van de PDF volgt de taal waarin de klant bestelde (order.lang); Engels gebruikt en-IE (€1,234.56).
+const LOCALE = { nl: 'nl-NL', en: 'en-IE' };
+const fmtEur = (lang) => (n) => new Intl.NumberFormat(LOCALE[lang], { style: 'currency', currency: 'EUR' }).format(n);
+const fmtDate = (lang) => (iso) => new Intl.DateTimeFormat(LOCALE[lang], { timeZone: 'Europe/Amsterdam', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(iso));
 
 /** Tekst naar WinAnsi-bytes (als latin1-string), met escapes voor PDF-strings. Onbekende tekens worden '?'. */
 function encode(text) {
@@ -41,15 +43,18 @@ function wrap(text, size, maxWidth, bold = false) {
 const num = (n) => (Math.round(n * 100) / 100).toString();
 const rgb = (c, stroke = false) => `${c.map(num).join(' ')} ${stroke ? 'RG' : 'rg'}`;
 
-/** Bouwt de PDF en geeft hem terug als Uint8Array. */
-export function orderPdf(order, site) {
+/** Bouwt de PDF en geeft hem terug als Uint8Array. `site` hoort bij de taal (voor de naam van de betaalmethode). */
+export function orderPdf(order, site, lang = order.lang === 'en' ? 'en' : 'nl') {
+  const T = (nl, en) => (lang === 'en' ? en : nl);
+  const eur = fmtEur(lang), dateNl = fmtDate(lang);
+  const title = T('Orderbevestiging', 'Order confirmation');
   const pages = []; let ops = [];
   let y = 0;
   const newPage = () => {
     const first = !ops.length && !pages.length;
     if (ops.length) pages.push(ops);
     ops = []; y = PAGE_H - MARGIN;
-    if (!first) { text(`Orderbevestiging ${order.id} (vervolg)`, MARGIN, y - 8, { size: 9, bold: true, color: MUTED }); y -= 28; }
+    if (!first) { text(`${title} ${order.id} (${T('vervolg', 'continued')})`, MARGIN, y - 8, { size: 9, bold: true, color: MUTED }); y -= 28; }
   };
   const text = (s, x, yy, { size = 10, bold = false, color = [0.1, 0.1, 0.1], align = 'left' } = {}) => {
     const w = textWidth(s, size, bold);
@@ -71,10 +76,10 @@ export function orderPdf(order, site) {
   const tableHeader = () => {
     rect(MARGIN, y - 22, right - MARGIN, 22, DEEP);
     const ty = y - 15;
-    text('Aantal', colQty, ty, { size: 9, bold: true, color: [1, 1, 1] });
+    text(T('Aantal', 'Qty'), colQty, ty, { size: 9, bold: true, color: [1, 1, 1] });
     text('Product', colName, ty, { size: 9, bold: true, color: [1, 1, 1] });
-    text('Prijs per stuk', colUnit, ty, { size: 9, bold: true, color: [1, 1, 1], align: 'right' });
-    text('Totaal', colTotal, ty, { size: 9, bold: true, color: [1, 1, 1], align: 'right' });
+    text(T('Prijs per stuk', 'Unit price'), colUnit, ty, { size: 9, bold: true, color: [1, 1, 1], align: 'right' });
+    text(T('Totaal', 'Total'), colTotal, ty, { size: 9, bold: true, color: [1, 1, 1], align: 'right' });
     y -= 36;
   };
 
@@ -82,7 +87,7 @@ export function orderPdf(order, site) {
   newPage();
   const logoW = 170, logoH = (LOGO.height / LOGO.width) * logoW;
   ops.push(`q ${num(logoW)} 0 0 ${num(logoH)} ${MARGIN} ${num(y - logoH)} cm /Im1 Do Q`);
-  text('Orderbevestiging', right, y - logoH + 2, { size: 20, bold: true, color: DEEP, align: 'right' });
+  text(title, right, y - logoH + 2, { size: 20, bold: true, color: DEEP, align: 'right' });
   y -= logoH + 14;
   rect(MARGIN, y, 48, 3, YELLOW);
   y -= 28;
@@ -97,13 +102,13 @@ export function orderPdf(order, site) {
     for (const r of rows.filter(Boolean)) for (const ln of wrap(r, 9.5, width)) { text(ln, x, yy, { size: 9.5 }); yy -= 13; }
     return yy;
   };
-  const addr = (a) => [a.street, `${a.postcode} ${a.city}`, a.country && a.country !== 'NL' ? a.country : 'Nederland'];
+  const addr = (a) => [a.street, `${a.postcode} ${a.city}`, a.country && a.country !== 'NL' ? a.country : T('Nederland', 'The Netherlands')];
   const billing = typeof b === 'string' ? d : b; // "gelijk aan afleveradres" → het afleveradres tonen
-  const yA = block('KLANT', [c.company, c.name, c.vatNumber ? `Btw: ${c.vatNumber}` : '', c.email, c.phone], MARGIN, 230);
-  const yC = block('BESTELLING', [`Ordernummer: ${order.id}`, `Datum: ${dateNl(order.createdAt)}`, `Betaalmethode: ${methodLabel}`, paid ? `Status: betaald${order.paidNotifiedAt ? ` op ${dateNl(order.paidNotifiedAt)}` : ''}` : 'Status: nog te betalen', c.reference ? `Uw referentie: ${c.reference}` : ''], col2, right - col2);
+  const yA = block(T('KLANT', 'CUSTOMER'), [c.company, c.name, c.vatNumber ? `${T('Btw', 'VAT')}: ${c.vatNumber}` : '', c.email, c.phone], MARGIN, 230);
+  const yC = block(T('BESTELLING', 'ORDER'), [`${T('Ordernummer', 'Order number')}: ${order.id}`, `${T('Datum', 'Date')}: ${dateNl(order.createdAt)}`, `${T('Betaalmethode', 'Payment method')}: ${methodLabel}`, paid ? `Status: ${T('betaald', 'paid')}${order.paidNotifiedAt ? ` ${T('op', 'on')} ${dateNl(order.paidNotifiedAt)}` : ''}` : `Status: ${T('nog te betalen', 'awaiting payment')}`, c.reference ? `${T('Uw referentie', 'Your reference')}: ${c.reference}` : ''], col2, right - col2);
   y = Math.min(yA, yC) - 10;
-  const yB = block('AFLEVERADRES', addr(d), MARGIN, 230);
-  const yD = block('FACTUURADRES', addr(billing), col2, right - col2);
+  const yB = block(T('AFLEVERADRES', 'DELIVERY ADDRESS'), addr(d), MARGIN, 230);
+  const yD = block(T('FACTUURADRES', 'BILLING ADDRESS'), addr(billing), col2, right - col2);
   y = Math.min(yB, yD) - 6;
   y -= 10;
 
@@ -127,12 +132,12 @@ export function orderPdf(order, site) {
   y -= 6;
   const labelX = right - 190;
   const totalRow = (label, value, bold = false) => { text(label, labelX, y, { size: bold ? 11 : 9.5, bold }); text(value, colTotal, y, { size: bold ? 11 : 9.5, bold, align: 'right' }); y -= bold ? 18 : 15; };
-  totalRow('Subtotaal excl. btw', eur(t.subtotalExcl));
-  totalRow('Verzendkosten', t.shippingExcl == null ? 'na bestelling berekend' : eur(t.shippingExcl));
-  totalRow(`Btw (${Math.round(site.vatRate * 100)}%)`, eur(t.vat));
+  totalRow(T('Subtotaal excl. btw', 'Subtotal excl. VAT'), eur(t.subtotalExcl));
+  totalRow(T('Verzendkosten', 'Shipping costs'), t.shippingExcl == null ? T('na bestelling berekend', 'calculated after ordering') : eur(t.shippingExcl));
+  totalRow(`${T('Btw', 'VAT')} (${Math.round(site.vatRate * 100)}%)`, eur(t.vat));
   hline(labelX, right, y + 9, DEEP, 1);
   y -= 4;
-  totalRow('Totaal incl. btw', eur(t.totalIncl), true);
+  totalRow(T('Totaal incl. btw', 'Total incl. VAT'), eur(t.totalIncl), true);
   rect(labelX, y + 8, 48, 2.5, YELLOW);
   y -= 18;
 
@@ -144,24 +149,24 @@ export function orderPdf(order, site) {
     for (const ln of lines) { text(ln, MARGIN, y, { size: 9.5 }); y -= 13; }
     y -= 8;
   };
-  if (order.remarks) para('UW OPMERKINGEN', order.remarks);
-  if (t.shippingExcl == null) para('VERZENDKOSTEN', 'De verzendkosten zijn niet in dit totaal opgenomen. Wij nemen contact met u op over de verzendkosten en de levering.');
-  para('LET OP', 'Dit document is een orderbevestiging en geen factuur.');
-  para('VRAGEN?', `Neem contact met ons op via ${site.email} of ${site.phonePrimary.display} en vermeld uw ordernummer ${order.id}.`);
+  if (order.remarks) para(T('UW OPMERKINGEN', 'YOUR REMARKS'), order.remarks);
+  if (t.shippingExcl == null) para(T('VERZENDKOSTEN', 'SHIPPING COSTS'), T('De verzendkosten zijn niet in dit totaal opgenomen. Wij nemen contact met u op over de verzendkosten en de levering.', 'Shipping costs are not included in this total. We will contact you about the shipping costs and delivery.'));
+  para(T('LET OP', 'PLEASE NOTE'), T('Dit document is een orderbevestiging en geen factuur.', 'This document is an order confirmation, not an invoice.'));
+  para(T('VRAGEN?', 'QUESTIONS?'), T(`Neem contact met ons op via ${site.email} of ${site.phonePrimary.display} en vermeld uw ordernummer ${order.id}.`, `Contact us via ${site.email} or ${site.phonePrimary.display.replace(/^0/, '+31 ')} and quote your order number ${order.id}.`));
 
   pages.push(ops);
 
   // ---------- voettekst op elke pagina ----------
   const a = site.address;
-  const footer = `${site.name} · ${a.street}, ${a.postalCode} ${a.city} · KvK ${site.kvk} · Btw ${site.vatNumber} · ${site.phonePrimary.display} · ${site.email}`;
+  const footer = `${site.name} · ${a.street}, ${a.postalCode} ${a.city}${T('', ', NL')} · ${T('KvK', 'CoC')} ${site.kvk} · ${T('Btw', 'VAT')} ${site.vatNumber} · ${site.phonePrimary.display} · ${site.email}`;
   pages.forEach((p, i) => {
     ops = p;
     hline(MARGIN, right, MARGIN + 6);
     text(footer, PAGE_W / 2, MARGIN - 8, { size: 7.5, color: MUTED, align: 'center' });
-    text(`Pagina ${i + 1} van ${pages.length}`, right, MARGIN - 20, { size: 7.5, color: MUTED, align: 'right' });
+    text(`${T('Pagina', 'Page')} ${i + 1} ${T('van', 'of')} ${pages.length}`, right, MARGIN - 20, { size: 7.5, color: MUTED, align: 'right' });
   });
 
-  return buildPdf(pages.map((p) => p.join('\n')), `Orderbevestiging ${order.id}`);
+  return buildPdf(pages.map((p) => p.join('\n')), `${title} ${order.id}`);
 }
 
 /** Schrijft de PDF-objecten (catalogus, pagina's, fonts, logo) met een correcte xref-tabel. */

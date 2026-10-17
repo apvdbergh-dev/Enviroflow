@@ -1,7 +1,7 @@
 /* Keuzehulp: één vraag per scherm, voortgangsbalk en een indicatief resultaat. */
 (function () {
   'use strict';
-  var EF = window.EF;
+  var EF = window.EF; var L = EF.L;
   var form = document.querySelector('[data-wizard]');
   if (!form) return;
   var data = JSON.parse(document.getElementById('kh-data').textContent);
@@ -14,12 +14,14 @@
   var result = document.querySelector('[data-wizard-result]');
   var current = 0;
 
+  var DUNNO = L('Weet ik nog niet', "Don't know yet");
   var LABELS = {
-    doel: { opvangen: 'Vloeistof opvangen', opslaan: 'Vloeistof opslaan', beschermen: 'Beschermen tegen water', anders: 'Iets anders' },
-    vloeistof: { 'olie-chemicalien': 'Olie of chemicaliën', brandstof: 'Brandstof', drinkwater: 'Drinkwater', bluswater: 'Bluswater', proceswater: 'Proces- of regenwater', afvalwater: 'Afvalwater', mest: 'Mest', uan: 'UAN / vloeibare meststof', anders: 'Anders' },
-    locatie: { binnen: 'Binnen', buiten: 'Buiten', beide: 'Beide / wisselend', onbekend: 'Weet ik nog niet' },
-    duur: { tijdelijk: 'Tijdelijk', permanent: 'Permanent', onbekend: 'Weet ik nog niet' },
-    mobiliteit: { vast: 'Vaste plek', mobiel: 'Mobiel / verplaatsbaar', onbekend: 'Weet ik nog niet' }
+    doel: { opvangen: L('Vloeistof opvangen', 'Contain liquid'), opslaan: L('Vloeistof opslaan', 'Store liquid'), beschermen: L('Beschermen tegen water', 'Protect against water'), anders: L('Iets anders', 'Something else') },
+    vloeistof: { 'olie-chemicalien': L('Olie of chemicaliën', 'Oil or chemicals'), brandstof: L('Brandstof', 'Fuel'), drinkwater: L('Drinkwater', 'Drinking water'), bluswater: L('Bluswater', 'Fire water'), proceswater: L('Proces- of regenwater', 'Process water or rainwater'), afvalwater: L('Afvalwater', 'Waste water'), mest: L('Mest', 'Manure'), uan: L('UAN / vloeibare meststof', 'UAN / liquid fertiliser'), anders: L('Anders', 'Other') },
+    locatie: { binnen: L('Binnen', 'Indoors'), buiten: L('Buiten', 'Outdoors'), beide: L('Beide / wisselend', 'Both / varying'), onbekend: DUNNO },
+    duur: { tijdelijk: L('Tijdelijk', 'Temporary'), permanent: 'Permanent', onbekend: DUNNO },
+    mobiliteit: { vast: L('Vaste plek', 'Fixed location'), mobiel: L('Mobiel / verplaatsbaar', 'Mobile / movable'), onbekend: DUNNO },
+    eenheid: { "IBC's": L("IBC's", 'IBCs'), vaten: L('vaten', 'drums'), liter: L('liter', 'litres'), 'm³': 'm³' }
   };
   var val = function (name) { var el = form.querySelector('[name="' + name + '"]:checked') || form.querySelector('[name="' + name + '"]:not([type=radio])'); return el ? el.value.trim() : ''; };
   var skipped = function (i) { var key = steps[i].getAttribute('data-step'); return val('doel') === 'beschermen' && (key === 'vloeistof' || key === 'hoeveelheid'); };
@@ -30,9 +32,9 @@
     steps.forEach(function (s, j) { if (j === i) s.removeAttribute('data-hidden'); else s.setAttribute('data-hidden', ''); });
     var vis = visibleSteps(); var pos = vis.indexOf(i) + 1;
     bar.style.width = (pos / vis.length * 100) + '%';
-    counter.textContent = 'Vraag ' + pos + ' van ' + vis.length;
+    counter.textContent = L('Vraag ', 'Question ') + pos + L(' van ', ' of ') + vis.length;
     prev.hidden = pos === 1;
-    next.innerHTML = pos === vis.length ? 'Toon oplossingen <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>' : 'Volgende <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>';
+    next.innerHTML = pos === vis.length ? L('Toon oplossingen', 'Show solutions') + ' <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>' : L('Volgende', 'Next') + ' <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>';
     error.hidden = true;
     if (focus) steps[i].querySelector('.wizard__q').focus();
   }
@@ -76,13 +78,13 @@
     var a = { doel: val('doel'), vloeistof: val('vloeistof'), aantal: val('aantal'), eenheid: val('eenheid'), locatie: val('locatie'), duur: val('duur'), mobiliteit: val('mobiliteit'), lengte: val('lengte'), breedte: val('breedte'), hoogte: val('hoogte') };
     if (a.doel === 'beschermen') { a.vloeistof = ''; a.aantal = ''; }
     var rows = [
-      ['Wat wilt u doen?', LABELS.doel[a.doel]],
-      ['Vloeistof', LABELS.vloeistof[a.vloeistof]],
-      ['Hoeveelheid', a.aantal ? a.aantal + ' ' + a.eenheid : ''],
-      ['Binnen of buiten', LABELS.locatie[a.locatie]],
-      ['Duur', LABELS.duur[a.duur]],
-      ['Plaatsing', LABELS.mobiliteit[a.mobiliteit]],
-      ['Beschikbare ruimte', [a.lengte, a.breedte, a.hoogte].some(Boolean) ? [a.lengte || '?', a.breedte || '?', a.hoogte || '?'].join(' × ') + ' m (l × b × h)' : '']
+      [L('Wat wilt u doen?', 'What do you want to do?'), LABELS.doel[a.doel]],
+      [L('Vloeistof', 'Liquid'), LABELS.vloeistof[a.vloeistof]],
+      [L('Hoeveelheid', 'Quantity'), a.aantal ? a.aantal + ' ' + (LABELS.eenheid[a.eenheid] || a.eenheid) : ''],
+      [L('Binnen of buiten', 'Indoors or outdoors'), LABELS.locatie[a.locatie]],
+      [L('Duur', 'Duration'), LABELS.duur[a.duur]],
+      [L('Plaatsing', 'Placement'), LABELS.mobiliteit[a.mobiliteit]],
+      [L('Beschikbare ruimte', 'Available space'), [a.lengte, a.breedte, a.hoogte].some(Boolean) ? [a.lengte || '?', a.breedte || '?', a.hoogte || '?'].join(' × ') + L(' m (l × b × h)', ' m (l × w × h)') : '']
     ].filter(function (r) { return r[1]; });
 
     var cats = recommend(a);
@@ -99,13 +101,13 @@
       prods = fit.length ? fit : prods;
     }
 
-    result.querySelector('[data-result-summary]').innerHTML = '<p><strong>Uw antwoorden</strong></p><dl>' + rows.map(function (r) { return '<dt>' + EF.esc(r[0]) + '</dt><dd>' + EF.esc(r[1]) + '</dd>'; }).join('') + '</dl>';
+    result.querySelector('[data-result-summary]').innerHTML = '<p><strong>' + L('Uw antwoorden', 'Your answers') + '</strong></p><dl>' + rows.map(function (r) { return '<dt>' + EF.esc(r[0]) + '</dt><dd>' + EF.esc(r[1]) + '</dd>'; }).join('') + '</dl>';
     result.querySelector('[data-result-cats]').innerHTML = cats.map(function (c) {
       return '<a class="ccard ccard--compact" href="' + c.url + '"><span class="ccard__name">' + EF.esc(c.name) + '</span><span class="ccard__text">' + EF.esc(c.short) + '</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>';
     }).join('');
-    result.querySelector('[data-result-products]').innerHTML = prods.length ? '<h3 class="subhead">Direct online te bestellen</h3><ul class="link-list">' + prods.slice(0, 3).map(function (p) { return '<li><a href="' + p.url + '">' + EF.esc(p.name) + '<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>'; }).join('') + '</ul>' : '';
+    result.querySelector('[data-result-products]').innerHTML = prods.length ? '<h3 class="subhead">' + L('Direct online te bestellen', 'Order online straight away') + '</h3><ul class="link-list">' + prods.slice(0, 3).map(function (p) { return '<li><a href="' + p.url + '">' + EF.esc(p.name) + '<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>'; }).join('') + '</ul>' : '';
 
-    var text = rows.map(function (r) { return '- ' + r[0] + ': ' + r[1]; }).join('\n') + (cats.length ? '\n- Voorgestelde oplossingen: ' + cats.map(function (c) { return c.name; }).join(', ') : '');
+    var text = rows.map(function (r) { return '- ' + r[0] + ': ' + r[1]; }).join('\n') + (cats.length ? '\n- ' + L('Voorgestelde oplossingen', 'Suggested solutions') + ': ' + cats.map(function (c) { return c.name; }).join(', ') : '');
     try { sessionStorage.setItem('ef-keuzehulp', JSON.stringify({ text: text, liquid: LABELS.vloeistof[a.vloeistof] || '', quantity: a.eenheid !== 'liter' && a.eenheid !== 'm³' ? a.aantal : '', application: LABELS.doel[a.doel] || '' })); } catch (e) { /* */ }
 
     form.hidden = true; result.hidden = false;

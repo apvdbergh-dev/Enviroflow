@@ -128,6 +128,8 @@ mark.placeholder { background: var(--amber-bg); color: var(--amber); padding: 0 
 
 /* ---------- header ---------- */
 .site-header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: saturate(160%) blur(12px); -webkit-backdrop-filter: saturate(160%) blur(12px); transition: box-shadow 240ms ease; }
+/* backdrop-filter maakt van de header het kader voor position:fixed; zonder dit zou het open menu maar 1px hoog zijn */
+.site-header.menu-open { backdrop-filter: none; -webkit-backdrop-filter: none; background: #fff; }
 .site-header.is-scrolled { box-shadow: 0 1px 0 var(--line), 0 10px 30px -18px rgba(6,42,31,.35); }
 .header-main { border-bottom: 1px solid var(--line); }
 .header-main__inner { display: flex; align-items: center; gap: 20px; height: var(--header-h); }
@@ -943,3 +945,24 @@ a.contact-card:hover span { text-decoration: underline; text-underline-offset: 3
 .prose--legal h2 { font-size: clamp(1.125rem, 1rem + .4vw, 1.375rem); margin: 2em 0 .5em; }
 .prose--legal ol, .prose--legal ul { padding-left: 1.25em; }
 .prose--legal li { margin: .35em 0; }
+
+/* Taalschakelaar NL | EN: pil met een schuivende knop onder de actieve taal */
+.lang-switch { position: relative; display: inline-flex; align-items: center; padding: 3px; border: 1px solid var(--line-2); border-radius: 99px; background: #fff; isolation: isolate; }
+.lang-switch__icon { width: 16px; height: 16px; margin: 0 4px 0 7px; color: var(--ink-3); }
+.lang-switch a { position: relative; z-index: 1; display: grid; place-items: center; min-width: 38px; height: 30px; border-radius: 99px; font: 700 .75rem var(--font-body); letter-spacing: .06em; color: var(--ink-2); text-decoration: none; transition: color 240ms var(--ease-out); }
+.lang-switch a:hover { color: var(--deep); }
+.lang-switch[data-active="nl"] a[data-lang="nl"], .lang-switch[data-active="en"] a[data-lang="en"] { color: #fff; } /* tekst op het knopje (volgt het knopje bij het schuiven) */
+.lang-switch a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.lang-switch::after { content: ""; position: absolute; z-index: 0; top: 3px; bottom: 3px; left: calc(100% - 3px - 76px); width: 38px; border-radius: 99px; background: var(--deep); box-shadow: 0 2px 8px rgba(10, 59, 44, .25); transition: transform 340ms var(--ease-out); }
+.lang-switch[data-active="en"]::after { transform: translateX(38px); }
+.lang-switch--header { display: none; margin: 0 6px 0 2px; }
+@media (min-width: 960px) { .lang-switch--header { display: inline-flex; } }
+.lang-switch--menu { order: -1; align-self: flex-start; margin: 8px 0 10px; background: transparent; border-color: var(--line-dark); } /* bovenaan het mobiele menu, nooit onder de cookiemelding */
+.lang-switch--menu .lang-switch__icon { color: var(--on-dark-2); }
+.lang-switch--menu a { color: var(--on-dark); min-width: 46px; height: 36px; }
+.lang-switch--menu a:hover { color: #fff; }
+.lang-switch--menu[data-active="nl"] a[data-lang="nl"], .lang-switch--menu[data-active="en"] a[data-lang="en"] { color: var(--deep); }
+.lang-switch--menu::after { background: #fff; width: 46px; left: calc(100% - 3px - 92px); }
+.lang-switch--menu[data-active="en"]::after { transform: translateX(46px); }
+@media (min-width: 960px) { .lang-switch--menu { display: none; } }
+@media (prefers-reduced-motion: reduce) { .lang-switch::after, .lang-switch a { transition: none; } }

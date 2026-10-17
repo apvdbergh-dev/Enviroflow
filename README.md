@@ -80,7 +80,17 @@ De server berekent prijzen altijd opnieuw uit `products.json`; prijzen uit de br
 
 - **Nieuwe categorie** (bijv. stalen lekbakken, spill kits, absorptiemateriaal, pompen): staat al in `categories.json` met `"active": false`. Zet op `true`, vul `intro`, `applications`, `faq`, `seoTitle`, `seoDescription` en voeg producten toe. Menu, sitemap, filters en zoekindex worden automatisch bijgewerkt.
 - **Nieuw merk**: voeg toe aan `brands.json` (`active: true`) en verwijs ernaar via `brand` in een product. Er komt automatisch een pagina onder `/partners/<slug>/`.
-- **Nieuwe taal/land** (NL → BE → DE → EN): kopieer `src/i18n/nl.json` en `src/content/nl/`, voeg de locale toe aan `site.json` en laat `build.mjs` per locale renderen in een submap (`/be/`, `/de/`, `/en/`) met `hreflang`-links. Catalogus, content en URL-opbouw zijn al centraal; de sjablonen bevatten nog Nederlandse vaste teksten die bij de eerste extra taal naar `src/i18n/` moeten worden verplaatst.
+- **Nieuwe taal/land**: zie *Engelse versie* hieronder; een extra taal volgt hetzelfde patroon (`LANGS` in `src/lib/i18n.mjs`, een vertaaltabel en een submap).
+
+## Engelse versie (`/en/`)
+
+De hele site bestaat ook in het Engels onder `/en/` (zelfde Nederlandse URL's, met `/en` ervoor). De schakelaar NL | EN staat rechtsboven en in het mobiele menu.
+
+- **Vaste teksten in de sjablonen** staan als `T('Nederlands', 'English')` in `src/templates/*.mjs`; in de browser-JS als `EF.L('…', '…')`.
+- **Producten, categorieën, oplossingen, sectoren en kennisbank** worden vertaald via `src/i18n/en-data.json` (per Nederlandse tekst de Engelse). Pas je een Nederlandse tekst aan of voeg je iets toe, dan **stopt de build** met een lijst van wat nog vertaald moet worden (er komt nooit Nederlands op de Engelse site):
+  `node scripts/i18n-texts.mjs missing ontbreekt.tsv` → vul in een bestand per regel `id<TAB>Engelse tekst` in → `node scripts/i18n-texts.mjs merge dat-bestand.tsv`. Oude teksten opruimen: `node scripts/i18n-texts.mjs prune`.
+- **Juridische pagina's**: `src/content/en/legal.mjs` (vertaling; de Nederlandse tekst gaat voor). Pas bij een wijziging beide talen aan.
+- **Bestellen in het Engels**: de klant krijgt de bevestigingsmail en de PDF-orderbevestiging in het Engels, en de Mollie-betaalpagina in het Engels. De mail aan EnviroFlow blijft Nederlands, met de regel *Taal: Engels*.
 - **Landen in de checkout**: lijst `countries` in `checkoutPage` (`src/templates/pages-shop.mjs`).
 
 ## Techniek & kwaliteit

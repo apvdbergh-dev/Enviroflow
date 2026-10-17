@@ -51,7 +51,7 @@
   function doSort() {
     var mode = sort.value;
     var sorted = cards.slice().sort(function (a, b) {
-      if (mode === 'name') return a.dataset.name.localeCompare(b.dataset.name, 'nl');
+      if (mode === 'name') return a.dataset.name.localeCompare(b.dataset.name, document.documentElement.lang || 'nl');
       if (mode === 'price-asc' || mode === 'price-desc') {
         var pa = parseFloat(a.dataset.price), pb = parseFloat(b.dataset.price);
         if (isNaN(pa)) pa = mode === 'price-asc' ? Infinity : -Infinity;
