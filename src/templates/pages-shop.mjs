@@ -316,7 +316,6 @@ export function productPage(p, ctx) {
   const related = (p.related || []).map((id) => products.find((x) => x.id === id)).filter(Boolean)
     .concat(products.filter((x) => x.category === p.category && x.id !== p.id)).filter((x, i, arr) => arr.indexOf(x) === i).slice(0, 3);
   const images = p.images?.length ? p.images : [{ alt: `${T('Foto', 'Photo')}: ${p.name}` }];
-  const unknown = `<span class="muted">${t.specsUnknown}</span>`;
 
   const body = `
 <section class="product-top">
@@ -358,10 +357,10 @@ export function productPage(p, ctx) {
     <section id="voordelen" class="pd-block"><h2>${T('Belangrijkste voordelen', 'Key benefits')}</h2><ul class="check-list">${p.benefits.slice(0, 4).map((b) => `<li>${icon('check')}${esc(b)}</li>`).join('')}</ul></section>
     <section id="specificaties" class="pd-block"><h2>${T('Specificaties', 'Specifications')}</h2>
       <table class="spec-table"><caption class="sr-only">${T('Specificaties', 'Specifications')} ${esc(p.name)}</caption><tbody>
-        ${SPEC_LABELS().map(([k, l]) => `<tr><th scope="row">${l}</th><td>${p.specs?.[k] ? esc(p.specs[k]) + (k === 'certificering' ? `<br><span class="small muted">${t.foreignCertNote}</span>` : '') : unknown}</td></tr>`).join('')}
-        <tr><th scope="row">${T('Geschikte vloeistoffen', 'Suitable liquids')}</th><td>${p.liquids?.length ? esc(p.liquids.join(', ')) : `<span class="muted">${t.liquidCheck}</span>`}</td></tr>
+        ${/* Alleen bekende gegevens tonen; wat ontbreekt staat niet als losse regel in de tabel. */ ''}${SPEC_LABELS().filter(([k]) => p.specs?.[k]).map(([k, l]) => `<tr><th scope="row">${l}</th><td>${esc(p.specs[k])}${k === 'certificering' ? `<br><span class="small muted">${t.foreignCertNote}</span>` : ''}</td></tr>`).join('')}
+        ${p.liquids?.length ? `<tr><th scope="row">${T('Geschikte vloeistoffen', 'Suitable liquids')}</th><td>${esc(p.liquids.join(', '))}</td></tr>` : ''}
       </tbody></table>
-      ${p.source ? `<p class="small muted">${T('Bron: productinformatie van de fabrikant. Wijzigingen voorbehouden.', 'Source: product information from the manufacturer. Subject to change.')}</p>` : ''}
+      <p class="spec-more">${icon('info')}<span>${T('Meer informatie nodig, bijvoorbeeld over een specificatie of de geschiktheid voor uw vloeistof?', 'Need more information, for example about a specification or the suitability for your liquid?')} <a href="/offerte-aanvragen/?type=advies&amp;product=${encodeURIComponent(p.id)}">${T('Neem contact op', 'Contact us')}</a>.${p.source ? ` <span class="muted">${T('Bron: productinformatie van de fabrikant, wijzigingen voorbehouden.', 'Source: product information from the manufacturer, subject to change.')}</span>` : ''}</span></p>
     </section>
     ${p.sizes ? `<section id="uitvoeringen" class="pd-block"><h2>${T('Uitvoeringen', 'Versions')}</h2><div class="table-scroll"><table class="spec-table spec-table--grid"><caption class="sr-only">${T('Uitvoeringen', 'Versions')} ${esc(p.name)}</caption><thead><tr>${p.sizes.head.map((h) => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${p.sizes.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${p.sizes.note ? `<p class="small muted">${esc(p.sizes.note)}</p>` : ''}</section>` : ''}
     <section id="geschikt" class="pd-block"><h2>${T('Geschikt voor', 'Suitable for')}</h2><ul class="check-list">${p.suitableFor.map((b) => `<li>${icon('check')}${esc(b)}</li>`).join('')}</ul></section>

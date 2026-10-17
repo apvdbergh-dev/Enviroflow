@@ -1005,3 +1005,6 @@ a.contact-card:hover span { text-decoration: underline; text-underline-offset: 3
 @media (hover: hover) { .line-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--line-2); } .line-card:hover .media img { transform: scale(1.04); } }
 @media (max-width: 599px) { .brand-facts { grid-template-columns: 1fr; } .brand-facts > div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--line-dark); } .brand-facts > div { padding: 16px 0; } }
 @media (prefers-reduced-motion: reduce) { .line-card, .line-card .media img { transition: none; } }
+/* Eén regel onder de specificatietabel in plaats van "neem contact op" per ontbrekend gegeven */
+.spec-more { display: flex; gap: 10px; align-items: flex-start; margin: 14px 0 0; font-size: .875rem; color: var(--ink-2); }
+.spec-more .ic { width: 18px; height: 18px; flex: none; margin-top: 2px; color: var(--deep); }
