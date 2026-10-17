@@ -1,10 +1,14 @@
 // Sectorpagina's. 'categories' verwijst naar categorie-id's uit src/data/categories.json.
+const IMG = '/assets/img/producten/';
+
 export default [
   {
     slug: 'industrie', name: 'Industrie',
     intro: 'In productie, opslag en onderhoud werkt u met oliën, chemicaliën en proceswater. Lekkages moeten worden opgevangen voordat ze schade veroorzaken.',
     liquids: ['Oliën en smeermiddelen', 'Chemicaliën in IBC\'s en vaten', 'Proceswater', 'Bluswater'],
     risks: ['Lekkage bij opslag en aftappen', 'Morsingen tijdens onderhoud', 'Te weinig buffercapaciteit voor proceswater'],
+    image: { src: IMG + 'sfeer-opslag-vaten.jpg', alt: "IBC's in een flexibele opvangbak in een bedrijfsruimte" },
+    riskCategories: ['flexibele-opvangbakken', 'flexibele-opvangbakken', 'industriele-water-en-buffertanks'],
     categories: ['flexibele-opvangbakken', 'industriele-water-en-buffertanks', 'brandwatertanks', 'maatwerk']
   },
   {
@@ -12,6 +16,8 @@ export default [
     intro: 'Op projectlocaties wisselt de situatie steeds. U heeft oplossingen nodig die snel staan en mee kunnen naar het volgende project.',
     liquids: ['Diesel', 'Hydraulische olie', 'Proceswater en bemalingswater', 'Bluswater'],
     risks: ['Lekkage onder materieel en aggregaten', 'Brandstofopslag op locatie', 'Geluidsoverlast voor de omgeving'],
+    image: { src: IMG + 'waterbase-d-plus-3.jpg', alt: 'Flexibele watertank op een bouwterrein naast bouwketen' },
+    riskCategories: ['flexibele-opvangbakken', 'brandstoftanks', 'geluidsabsorberende-matten'],
     categories: ['flexibele-opvangbakken', 'brandstoftanks', 'industriele-water-en-buffertanks', 'geluidsabsorberende-matten']
   },
   {
@@ -19,6 +25,8 @@ export default [
     intro: 'Op het agrarisch bedrijf slaat u mest, meststoffen, brandstof en water op. Extra capaciteit is vaak nodig zonder dat u direct kunt bouwen.',
     liquids: ['Drijfmest en digestaat', 'UAN en vloeibare meststoffen', 'Diesel', 'Bluswater'],
     risks: ['Te weinig mestopslag', 'Lekkage van meststoffen of brandstof', 'Onvoldoende bluswater in het buitengebied'],
+    image: { src: IMG + 'farmer-s.jpg', alt: 'Flexibele mestzak naast een stal op een agrarisch bedrijf' },
+    riskCategories: ['mest-en-slurrytanks', 'flexibele-opvangbakken', 'brandwatertanks'],
     categories: ['mest-en-slurrytanks', 'uan-tanks', 'brandwatertanks', 'brandstoftanks']
   },
   {
@@ -26,6 +34,8 @@ export default [
     intro: 'In werkplaatsen en op terreinen met voertuigen draait het om opvang van olie, koelvloeistof en waswater.',
     liquids: ['Motorolie en afgewerkte olie', 'Koelvloeistof', 'Waswater met reinigingsmiddelen'],
     risks: ['Druppels en lekkages onder voertuigen', 'Waswater dat in de bodem of het riool loopt', 'Opslag van vaten en IBC\'s'],
+    image: { src: IMG + 'wasmat-in-gebruik.jpg', alt: 'Auto op een wasmat die het waswater opvangt' },
+    riskCategories: ['flexibele-opvangbakken', 'wasmatten-voertuigen', 'flexibele-opvangbakken'],
     categories: ['flexibele-opvangbakken', 'wasmatten-voertuigen']
   },
   {
@@ -33,6 +43,8 @@ export default [
     intro: 'Bij opslag, overslag en het wassen van voertuigen wilt u lekkages en vervuild water onder controle houden.',
     liquids: ['Diesel', 'Producten in IBC\'s en vaten', 'Waswater'],
     risks: ['Lekkende verpakkingen bij op- en overslag', 'Wassen van voertuigen zonder wasplaats', 'Lekkage onder geparkeerd materieel'],
+    image: { src: IMG + 'opvangbak-praktijk.jpg', alt: 'Vaten op pallets in een flexibele opvangbak in een magazijn' },
+    riskCategories: ['flexibele-opvangbakken', 'wasmatten-voertuigen', 'flexibele-opvangbakken'],
     categories: ['flexibele-opvangbakken', 'wasmatten-voertuigen', 'brandstoftanks']
   },
   {
@@ -40,6 +52,8 @@ export default [
     intro: 'Voor beheer van openbare ruimte en calamiteiten heeft u oplossingen nodig die snel inzetbaar zijn en compact kunnen worden opgeslagen.',
     liquids: ['Oppervlaktewater en hemelwater', 'Drinkwater (noodvoorziening)', 'Afvalwater'],
     risks: ['Wateroverlast bij hevige regen of hoog water', 'Tijdelijke watervoorziening bij storingen', 'Opvang van vervuild water bij werkzaamheden'],
+    image: { src: IMG + 'sfeer-waterkering.jpg', alt: 'Mobiele waterkering in gebruik' },
+    riskCategories: ['mobiele-waterkeringen', 'drinkwatertanks', 'afvalwatertanks'],
     categories: ['mobiele-waterkeringen', 'drinkwatertanks', 'open-zelfdragende-tanks', 'afvalwatertanks']
   },
   {
@@ -47,6 +61,8 @@ export default [
     intro: 'Bij inzet en oefening telt dat materiaal snel staat, licht is en goed mee te nemen.',
     liquids: ['Bluswater', 'Verontreinigd spoelwater', 'Gelekte gevaarlijke stoffen'],
     risks: ['Onvoldoende bluswater op locatie', 'Verontreinigd water bij decontaminatie', 'Opvang van lekkages bij incidenten'],
+    image: { src: IMG + 'hydronion.jpg', alt: 'Open zelfdragende tank tijdens een brandweeroefening' },
+    riskCategories: ['open-zelfdragende-tanks', 'decontaminatiematten-voertuigen', 'flexibele-opvangbakken'],
     categories: ['open-zelfdragende-tanks', 'brandwatertanks', 'decontaminatiematten-voertuigen', 'decontaminatiebaden-personen', 'flexibele-opvangbakken']
   },
   {
@@ -54,6 +70,8 @@ export default [
     intro: 'Op een evenemententerrein is alles tijdelijk. Water, brandstof en afvalwater moeten snel geregeld en weer opgeruimd zijn.',
     liquids: ['Drinkwater', 'Afvalwater', 'Diesel voor aggregaten', 'Bluswater'],
     risks: ['Geen vaste water- of rioolaansluiting', 'Lekkage onder aggregaten', 'Eisen voor bluswater op het terrein'],
+    image: { src: IMG + 'waterbase-d-plus-2.jpg', alt: 'Flexibele watertank op een open terrein' },
+    riskCategories: ['drinkwatertanks', 'flexibele-opvangbakken', 'brandwatertanks'],
     categories: ['drinkwatertanks', 'afvalwatertanks', 'flexibele-opvangbakken', 'brandwatertanks']
   },
   {
@@ -61,6 +79,8 @@ export default [
     intro: 'Op kades, schepen en offshore locaties is ruimte beperkt en moet materiaal compact te vervoeren zijn.',
     liquids: ['Brandstof en smeerolie', 'Chemicaliën in verpakking', 'Water'],
     risks: ['Lekkage bij opslag en overslag op de kade', 'Beperkte ruimte voor opvang', 'Tijdelijke opslag bij onderhoud'],
+    image: { src: IMG + 'sfeer-ibc-hal.jpg', alt: "IBC's in een flexibele opvangbak" },
+    riskCategories: ['flexibele-opvangbakken', 'flexibele-opvangbakken', 'maatwerk'],
     categories: ['flexibele-opvangbakken', 'brandstoftanks', 'maatwerk']
   }
 ];

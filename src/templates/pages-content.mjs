@@ -30,23 +30,52 @@ ${ctaBand({ title: T('Bespreek uw situatie', 'Discuss your situation'), text: T(
 }
 
 /* ---------------------------------------------------------------- sectoren */
+const sectorCats = (s, ctx) => s.categories.map((id) => ctx.categoryById[id]).filter((c) => c?.active);
+
+function sectorCard(s, ctx) {
+  const n = sectorCats(s, ctx).length;
+  return `<a class="secard" href="/sectoren/${s.slug}/">
+  <div class="secard__media">${media(s.image, '3-2')}<span class="secard__count">${n} ${T('oplossingen', 'solutions')}</span></div>
+  <div class="secard__body"><h2>${esc(s.name)}</h2><p>${esc(s.intro)}</p>
+    <ul class="secard__tags">${s.liquids.slice(0, 3).map((l) => `<li>${esc(l)}</li>`).join('')}</ul>
+    <span class="link-arrow">${T('Bekijk sector', 'View sector')} ${icon('arrow')}</span></div>
+</a>`;
+}
+
 export function sectorsOverview(ctx) {
-  const body = `<section class="page-head"><div class="container"><h1>${T('Sectoren', 'Sectors')}</h1><p class="lead">${T("Elke sector heeft eigen vloeistoffen, risico's en omstandigheden. Bekijk welke oplossingen bij uw sector passen.", 'Every sector has its own liquids, risks and conditions. See which solutions fit your sector.')}</p></div></section>
-<section class="section section--tight"><div class="container"><div class="sector-cards">${ctx.sectors.map((s) => `<a class="scard" href="/sectoren/${s.slug}/"><h2>${esc(s.name)}</h2><p>${esc(s.intro)}</p><span class="link-arrow">${T('Bekijk oplossingen', 'View solutions')} ${icon('arrow')}</span></a>`).join('')}</div></div></section>`;
-  return { path: '/sectoren/', title: T('Sectoren | Vloeistofopslag en opvang per branche | EnviroFlow', 'Sectors | Liquid storage and containment by industry | EnviroFlow'), description: T('Oplossingen voor industrie, bouw & infra, landbouw, automotive, transport, gemeenten, brandweer, evenementen en scheepvaart.', 'Solutions for industry, construction & infrastructure, agriculture, automotive, transport, municipalities, fire services, events and shipping.'), body, crumbs: [H, { name: T('Sectoren', 'Sectors'), url: '/sectoren/' }] };
+  const body = `<section class="page-head sec-head"><div class="container"><p class="eyebrow">${T('Sectoren', 'Sectors')}</p><h1>${T('Opvang en opslag, afgestemd op uw sector', 'Containment and storage, tailored to your sector')}</h1><p class="lead">${T("Een bouwplaats vraagt iets anders dan een melkveebedrijf of een werkplaats. Kies uw sector en zie welke vloeistoffen, risico's en oplossingen erbij horen.", 'A construction site needs something different from a dairy farm or a workshop. Choose your sector and see which liquids, risks and solutions go with it.')}</p>
+<nav class="sec-chips" aria-label="${T('Sectoren', 'Sectors')}">${ctx.sectors.map((s) => `<a href="/sectoren/${s.slug}/">${esc(s.name)}</a>`).join('')}</nav></div></section>
+<section class="section section--tight"><div class="container"><div class="sec-grid">${ctx.sectors.map((s) => sectorCard(s, ctx)).join('')}</div></div></section>
+<div class="container section--tight">${adviceBlock(ctx.site, { title: T('Staat uw sector er niet bij?', 'Is your sector not listed?'), text: T('Vertel ons wat u wilt opvangen of opslaan. Wij denken mee over een passende oplossing.', 'Tell us what you want to contain or store. We will help you find a suitable solution.') })}</div>`;
+  return { path: '/sectoren/', title: T('Sectoren | Vloeistofopslag en opvang per branche | EnviroFlow', 'Sectors | Liquid storage and containment by industry | EnviroFlow'), description: T('Oplossingen voor industrie, bouw & infra, landbouw, automotive, transport, gemeenten, brandweer, evenementen en scheepvaart.', 'Solutions for industry, construction & infrastructure, agriculture, automotive, transport, municipalities, fire services, events and shipping.'), body, ogImage: ctx.sectors[0].image.src, crumbs: [H, { name: T('Sectoren', 'Sectors'), url: '/sectoren/' }] };
 }
 
 export function sectorPage(s, ctx) {
-  const cats = s.categories.map((id) => ctx.categoryById[id]).filter((c) => c?.active);
+  const cats = sectorCats(s, ctx);
+  const reads = ctx.articles.filter((a) => a.categories.some((c) => s.categories.includes(c))).slice(0, 3);
+  const others = ctx.sectors.filter((o) => o.slug !== s.slug);
+  const risk = (r, i) => {
+    const c = ctx.categoryById[s.riskCategories?.[i]];
+    return `<li class="sec-risk"><span class="sec-risk__n">${String(i + 1).padStart(2, '0')}</span><h3>${esc(r)}</h3>${c?.active ? `<a class="sec-risk__fix" href="${ctx.urls.category(c)}"><span>${T('Oplossing', 'Solution')}</span>${esc(c.name)} ${icon('arrow')}</a>` : ''}</li>`;
+  };
   const body = `
-<section class="page-head"><div class="container page-head__grid"><div><p class="eyebrow">Sector</p><h1>${esc(s.name)}</h1><p class="lead">${esc(s.intro)}</p><a class="btn btn--primary" href="/offerte-aanvragen/?type=advies">${T('Advies aanvragen', 'Request advice')}</a></div>${media(heroImg(cats, s.name), '4-3', true)}</div></section>
-<section class="section section--tight section--grey"><div class="container split">
-  <div><h2>${T('Typische vloeistoffen', 'Typical liquids')}</h2><ul class="check-list">${s.liquids.map((l) => `<li>${icon('drop')}${esc(l)}</li>`).join('')}</ul></div>
-  <div><h2>${T("Veelvoorkomende risico's", 'Common risks')}</h2><ul class="check-list">${s.risks.map((l) => `<li>${icon('info')}${esc(l)}</li>`).join('')}</ul></div>
+<section class="sec-hero-wrap"><div class="container">
+  <div class="sec-hero">
+    <div class="sec-hero__bg">${media(s.image, '21-9', true)}</div>
+    <div class="sec-hero__inner"><p class="eyebrow">Sector</p><h1>${esc(s.name)}</h1><p class="lead">${esc(s.intro)}</p>
+      <div class="btn-row"><a class="btn btn--accent" href="/offerte-aanvragen/?type=advies">${T('Advies aanvragen', 'Request advice')}</a><a class="btn btn--outline-light" href="tel:${ctx.site.phonePrimary.tel}">${icon('phone')}${ctx.site.phonePrimary.display}</a></div></div>
+  </div>
+  <div class="sec-liquids"><p>${T('Vloeistoffen in deze sector', 'Liquids in this sector')}</p><ul>${s.liquids.map((l) => `<li>${icon('drop')}${esc(l)}</li>`).join('')}</ul></div>
 </div></section>
-<section class="section section--tight"><div class="container"><h2>${T('Passende oplossingen', 'Suitable solutions')}</h2><div class="cat-grid">${cats.map((c) => categoryCard(c, ctx)).join('')}</div></div></section>
+<section class="section section--tight"><div class="container">
+  <div class="sec-intro"><p class="eyebrow">${T('Uitdagingen', 'Challenges')}</p><h2>${T('Waar het in de praktijk vaak misgaat', 'Where things often go wrong in practice')}</h2></div>
+  <ol class="sec-risks">${s.risks.map(risk).join('')}</ol>
+</div></section>
+<section class="section section--tight section--grey"><div class="container"><div class="sec-intro"><p class="eyebrow">${T('Oplossingen', 'Solutions')}</p><h2>${T(`Passende oplossingen voor ${s.name.toLowerCase()}`, `Suitable solutions for ${s.name.toLowerCase()}`)}</h2></div><div class="cat-grid">${cats.map((c) => categoryCard(c, ctx)).join('')}</div></div></section>
+${reads.length ? `<section class="section section--tight"><div class="container"><div class="sec-intro sec-intro--row"><div><p class="eyebrow">${T('Kennisbank', 'Knowledge base')}</p><h2>${T('Verder lezen', 'Further reading')}</h2></div><a class="link-arrow" href="/kennisbank/">${T('Alle artikelen', 'All articles')} ${icon('arrow')}</a></div><div class="kb-grid kb-grid--3">${reads.map((a) => articleCard(a)).join('')}</div></div></section>` : ''}
+<section class="section section--tight sec-others"><div class="container"><h2>${T('Andere sectoren', 'Other sectors')}</h2><nav class="sec-chips" aria-label="${T('Andere sectoren', 'Other sectors')}">${others.map((o) => `<a href="/sectoren/${o.slug}/">${esc(o.name)}</a>`).join('')}</nav></div></section>
 ${ctaBand({ title: T(`Oplossing nodig voor uw bedrijf in ${s.name.toLowerCase()}?`, `Need a solution for your business in ${s.name.toLowerCase()}?`), text: T('Wij denken mee over de juiste opvang of opslag voor uw situatie.', 'We help you find the right containment or storage for your situation.'), buttons: [{ label: T('Offerte aanvragen', 'Request a quote'), href: '/offerte-aanvragen/', cls: 'btn--accent' }, { label: T('Bel een specialist', 'Call a specialist'), href: `tel:${ctx.site.phonePrimary.tel}`, cls: 'btn--outline-light', icon: 'phone' }] })}`;
-  return { path: `/sectoren/${s.slug}/`, title: T(`${s.name}: vloeistofopslag en opvang | EnviroFlow`, `${s.name}: liquid storage and containment | EnviroFlow`), description: T(`${s.intro} Bekijk passende oplossingen voor ${s.name.toLowerCase()}.`, `${s.intro} View suitable solutions for ${s.name.toLowerCase()}.`), body, crumbs: [H, { name: T('Sectoren', 'Sectors'), url: '/sectoren/' }, { name: s.name, url: `/sectoren/${s.slug}/` }] };
+  return { path: `/sectoren/${s.slug}/`, title: T(`${s.name}: vloeistofopslag en opvang | EnviroFlow`, `${s.name}: liquid storage and containment | EnviroFlow`), description: T(`${s.intro} Bekijk passende oplossingen voor ${s.name.toLowerCase()}.`, `${s.intro} View suitable solutions for ${s.name.toLowerCase()}.`), body, ogImage: s.image.src, crumbs: [H, { name: T('Sectoren', 'Sectors'), url: '/sectoren/' }, { name: s.name, url: `/sectoren/${s.slug}/` }] };
 }
 
 /* ---------------------------------------------------------------- projecten */
