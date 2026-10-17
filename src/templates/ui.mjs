@@ -129,7 +129,7 @@ export function productCard(p, ctx) {
   return `<article class="pcard" ${attrs}>
   <a class="pcard__media" href="${url}" tabindex="-1" aria-hidden="true">${media(p.images?.[0], '4-3')}</a>
   <div class="pcard__body">
-    <p class="pcard__meta"><span>${esc(ctx.brandById[p.brand]?.name || '')}</span><span class="status ${orderable ? 'status--on' : ''}">${orderable ? T('Online bestelbaar', 'Order online') : T('Op aanvraag', 'On request')}</span></p>
+    <p class="pcard__meta"><span>${esc(p.line || '')}</span><span class="status ${orderable ? 'status--on' : ''}">${orderable ? T('Online bestelbaar', 'Order online') : T('Op aanvraag', 'On request')}</span></p>
     <h3 class="pcard__title"><a href="${url}">${esc(p.name)}</a></h3>
     <p class="pcard__short">${esc(p.short)}</p>
     <div class="pcard__foot">

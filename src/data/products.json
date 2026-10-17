@@ -29,7 +29,7 @@
     "stock": null,
     "downloads": [
       {
-        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "label": "Chemische bestendigheidstabel opvangbakken (fabrikant, Engels, PDF)",
         "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
       }
     ],
@@ -37,19 +37,19 @@
     "images": [
       {
         "src": "/assets/img/producten/opvangbak-1-vat.jpg",
-        "alt": "EXFLO flexibele opvangbak met één vat",
+        "alt": "Flexibele opvangbak met één vat",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-leeg.jpg",
-        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "alt": "Lege opvangbak met opstaande randen",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-praktijk.jpg",
-        "alt": "EXFLO opvangbak in gebruik",
+        "alt": "Opvangbak in gebruik",
         "width": 1200,
         "height": 900
       }
@@ -61,9 +61,9 @@
       "gewicht": null,
       "aansluitingen": null,
       "temperatuurbereik": null,
-      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
-      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
-      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van de fabrikant (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie)",
+      "certificering": "Volgens de fabrikant geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
     },
     "sizes": null,
     "attributes": {
@@ -117,7 +117,7 @@
     "stock": null,
     "downloads": [
       {
-        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "label": "Chemische bestendigheidstabel opvangbakken (fabrikant, Engels, PDF)",
         "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
       }
     ],
@@ -125,19 +125,19 @@
     "images": [
       {
         "src": "/assets/img/producten/opvangbak-2-vaten.jpg",
-        "alt": "EXFLO flexibele opvangbak met twee vaten",
+        "alt": "Flexibele opvangbak met twee vaten",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-leeg.jpg",
-        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "alt": "Lege opvangbak met opstaande randen",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-praktijk.jpg",
-        "alt": "EXFLO opvangbak in gebruik",
+        "alt": "Opvangbak in gebruik",
         "width": 1200,
         "height": 900
       }
@@ -149,9 +149,9 @@
       "gewicht": null,
       "aansluitingen": null,
       "temperatuurbereik": null,
-      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
-      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
-      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van de fabrikant (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie)",
+      "certificering": "Volgens de fabrikant geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
     },
     "sizes": null,
     "attributes": {
@@ -203,7 +203,7 @@
     "stock": null,
     "downloads": [
       {
-        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "label": "Chemische bestendigheidstabel opvangbakken (fabrikant, Engels, PDF)",
         "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
       }
     ],
@@ -211,19 +211,19 @@
     "images": [
       {
         "src": "/assets/img/producten/opvangbak-4-vaten.jpg",
-        "alt": "EXFLO flexibele opvangbak met vier vaten",
+        "alt": "Flexibele opvangbak met vier vaten",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-leeg.jpg",
-        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "alt": "Lege opvangbak met opstaande randen",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-praktijk.jpg",
-        "alt": "EXFLO opvangbak in gebruik",
+        "alt": "Opvangbak in gebruik",
         "width": 1200,
         "height": 900
       }
@@ -235,9 +235,9 @@
       "gewicht": null,
       "aansluitingen": null,
       "temperatuurbereik": null,
-      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
-      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
-      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van de fabrikant (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie)",
+      "certificering": "Volgens de fabrikant geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
     },
     "sizes": null,
     "attributes": {
@@ -290,7 +290,7 @@
     "stock": null,
     "downloads": [
       {
-        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "label": "Chemische bestendigheidstabel opvangbakken (fabrikant, Engels, PDF)",
         "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
       }
     ],
@@ -298,19 +298,19 @@
     "images": [
       {
         "src": "/assets/img/producten/opvangbak-1-ibc.jpg",
-        "alt": "EXFLO flexibele opvangbak met één IBC",
+        "alt": "Flexibele opvangbak met één IBC",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-leeg.jpg",
-        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "alt": "Lege opvangbak met opstaande randen",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-praktijk.jpg",
-        "alt": "EXFLO opvangbak in gebruik",
+        "alt": "Opvangbak in gebruik",
         "width": 1200,
         "height": 900
       }
@@ -322,9 +322,9 @@
       "gewicht": null,
       "aansluitingen": null,
       "temperatuurbereik": null,
-      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
-      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
-      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van de fabrikant (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie)",
+      "certificering": "Volgens de fabrikant geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
     },
     "sizes": null,
     "attributes": {
@@ -378,7 +378,7 @@
     "stock": null,
     "downloads": [
       {
-        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "label": "Chemische bestendigheidstabel opvangbakken (fabrikant, Engels, PDF)",
         "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
       }
     ],
@@ -386,19 +386,19 @@
     "images": [
       {
         "src": "/assets/img/producten/opvangbak-2-ibc.jpg",
-        "alt": "EXFLO flexibele opvangbak met twee IBC's",
+        "alt": "Flexibele opvangbak met twee IBC's",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-leeg.jpg",
-        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "alt": "Lege opvangbak met opstaande randen",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-praktijk.jpg",
-        "alt": "EXFLO opvangbak in gebruik",
+        "alt": "Opvangbak in gebruik",
         "width": 1200,
         "height": 900
       }
@@ -410,9 +410,9 @@
       "gewicht": null,
       "aansluitingen": null,
       "temperatuurbereik": null,
-      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
-      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
-      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van de fabrikant (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie)",
+      "certificering": "Volgens de fabrikant geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
     },
     "sizes": null,
     "attributes": {
@@ -465,7 +465,7 @@
     "stock": null,
     "downloads": [
       {
-        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "label": "Chemische bestendigheidstabel opvangbakken (fabrikant, Engels, PDF)",
         "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
       }
     ],
@@ -473,19 +473,19 @@
     "images": [
       {
         "src": "/assets/img/producten/opvangbak-4-ibc.jpg",
-        "alt": "EXFLO flexibele opvangbak met vier IBC's",
+        "alt": "Flexibele opvangbak met vier IBC's",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-leeg.jpg",
-        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "alt": "Lege opvangbak met opstaande randen",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-praktijk.jpg",
-        "alt": "EXFLO opvangbak in gebruik",
+        "alt": "Opvangbak in gebruik",
         "width": 1200,
         "height": 900
       }
@@ -497,9 +497,9 @@
       "gewicht": null,
       "aansluitingen": null,
       "temperatuurbereik": null,
-      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
-      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
-      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van de fabrikant (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie)",
+      "certificering": "Volgens de fabrikant geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
     },
     "sizes": null,
     "attributes": {
@@ -552,7 +552,7 @@
     "stock": null,
     "downloads": [
       {
-        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "label": "Chemische bestendigheidstabel opvangbakken (fabrikant, Engels, PDF)",
         "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
       }
     ],
@@ -560,19 +560,19 @@
     "images": [
       {
         "src": "/assets/img/producten/opvangbak-10-ibc.jpg",
-        "alt": "EXFLO flexibele opvangbak voor tien IBC's",
+        "alt": "Flexibele opvangbak voor tien IBC's",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-leeg.jpg",
-        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "alt": "Lege opvangbak met opstaande randen",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-praktijk.jpg",
-        "alt": "EXFLO opvangbak in gebruik",
+        "alt": "Opvangbak in gebruik",
         "width": 1200,
         "height": 900
       }
@@ -584,9 +584,9 @@
       "gewicht": null,
       "aansluitingen": null,
       "temperatuurbereik": null,
-      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
-      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
-      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van de fabrikant (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie)",
+      "certificering": "Volgens de fabrikant geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
     },
     "sizes": null,
     "attributes": {
@@ -639,7 +639,7 @@
     "stock": null,
     "downloads": [
       {
-        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "label": "Chemische bestendigheidstabel opvangbakken (fabrikant, Engels, PDF)",
         "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
       }
     ],
@@ -647,19 +647,19 @@
     "images": [
       {
         "src": "/assets/img/producten/opvangbak-aggregaat.jpg",
-        "alt": "EXFLO flexibele opvangbak voor een aggregaat",
+        "alt": "Flexibele opvangbak voor een aggregaat",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-leeg.jpg",
-        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "alt": "Lege opvangbak met opstaande randen",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-praktijk.jpg",
-        "alt": "EXFLO opvangbak in gebruik",
+        "alt": "Opvangbak in gebruik",
         "width": 1200,
         "height": 900
       }
@@ -671,9 +671,9 @@
       "gewicht": null,
       "aansluitingen": null,
       "temperatuurbereik": null,
-      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
-      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
-      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van de fabrikant (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie)",
+      "certificering": "Volgens de fabrikant geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
     },
     "sizes": null,
     "attributes": {
@@ -726,7 +726,7 @@
     "stock": null,
     "downloads": [
       {
-        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "label": "Chemische bestendigheidstabel opvangbakken (fabrikant, Engels, PDF)",
         "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
       }
     ],
@@ -734,19 +734,19 @@
     "images": [
       {
         "src": "/assets/img/producten/opvangbak-tankwagen.jpg",
-        "alt": "EXFLO inrijdbare opvangbak voor een tankwagen",
+        "alt": "Inrijdbare opvangbak voor een tankwagen",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-leeg.jpg",
-        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "alt": "Lege opvangbak met opstaande randen",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-praktijk.jpg",
-        "alt": "EXFLO opvangbak in gebruik",
+        "alt": "Opvangbak in gebruik",
         "width": 1200,
         "height": 900
       }
@@ -758,9 +758,9 @@
       "gewicht": null,
       "aansluitingen": null,
       "temperatuurbereik": null,
-      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
-      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
-      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van de fabrikant (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie)",
+      "certificering": "Volgens de fabrikant geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
     },
     "sizes": null,
     "attributes": {
@@ -813,7 +813,7 @@
     "stock": null,
     "downloads": [
       {
-        "label": "Chemische bestendigheidstabel opvangbakken (EXFLO, Engels, PDF)",
+        "label": "Chemische bestendigheidstabel opvangbakken (fabrikant, Engels, PDF)",
         "href": "/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf"
       }
     ],
@@ -821,19 +821,19 @@
     "images": [
       {
         "src": "/assets/img/producten/opvangbak-vrachtwagen.jpg",
-        "alt": "EXFLO inrijdbare opvangbak voor een vrachtwagen",
+        "alt": "Inrijdbare opvangbak voor een vrachtwagen",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-leeg.jpg",
-        "alt": "Lege EXFLO opvangbak met opstaande randen",
+        "alt": "Lege opvangbak met opstaande randen",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/opvangbak-praktijk.jpg",
-        "alt": "EXFLO opvangbak in gebruik",
+        "alt": "Opvangbak in gebruik",
         "width": 1200,
         "height": 900
       }
@@ -845,9 +845,9 @@
       "gewicht": null,
       "aansluitingen": null,
       "temperatuurbereik": null,
-      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van EXFLO (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
-      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
-      "certificering": "Volgens EXFLO geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
+      "chemischeBestendigheid": "Per vloeistof aangegeven in de bestendigheidstabel van de fabrikant (A = goed, B = matig, C = niet geschikt, bij twee jaar contact). Zie Downloads. Niet elke stof is geschikt, bijvoorbeeld zoutzuur 32% (C).",
+      "garantie": "7 jaar (fabrieksgarantie)",
+      "certificering": "Volgens de fabrikant geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC"
     },
     "sizes": null,
     "attributes": {
@@ -903,13 +903,13 @@
     "images": [
       {
         "src": "/assets/img/producten/wasmat.jpg",
-        "alt": "EXFLO wasmat 6 × 3 m",
+        "alt": "Wasmat 6 × 3 m",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/wasmat-in-gebruik.jpg",
-        "alt": "Auto op een EXFLO wasmat",
+        "alt": "Auto op een wasmat",
         "width": 1200,
         "height": 900
       },
@@ -928,7 +928,7 @@
       "aansluitingen": null,
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
     },
     "sizes": null,
@@ -986,13 +986,13 @@
     "images": [
       {
         "src": "/assets/img/producten/wasmat-met-oprijstroken.jpg",
-        "alt": "EXFLO wasmat 6 × 3 m met oprijstroken",
+        "alt": "Wasmat 6 × 3 m met oprijstroken",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/wasmat-in-gebruik.jpg",
-        "alt": "Auto op een EXFLO wasmat",
+        "alt": "Auto op een wasmat",
         "width": 1200,
         "height": 900
       },
@@ -1011,7 +1011,7 @@
       "aansluitingen": null,
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
     },
     "sizes": null,
@@ -1068,13 +1068,13 @@
     "images": [
       {
         "src": "/assets/img/producten/wasmat.jpg",
-        "alt": "EXFLO wasmat 8 × 4 m",
+        "alt": "Wasmat 8 × 4 m",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/wasmat-in-gebruik.jpg",
-        "alt": "Auto op een EXFLO wasmat",
+        "alt": "Auto op een wasmat",
         "width": 1200,
         "height": 900
       },
@@ -1093,7 +1093,7 @@
       "aansluitingen": null,
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
     },
     "sizes": null,
@@ -1150,13 +1150,13 @@
     "images": [
       {
         "src": "/assets/img/producten/wasmat-met-oprijstroken.jpg",
-        "alt": "EXFLO wasmat 8 × 4 m met oprijstroken",
+        "alt": "Wasmat 8 × 4 m met oprijstroken",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/wasmat-in-gebruik.jpg",
-        "alt": "Auto op een EXFLO wasmat",
+        "alt": "Auto op een wasmat",
         "width": 1200,
         "height": 900
       },
@@ -1175,7 +1175,7 @@
       "aansluitingen": null,
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
     },
     "sizes": null,
@@ -1231,13 +1231,13 @@
     "images": [
       {
         "src": "/assets/img/producten/wasmat-motor.jpg",
-        "alt": "EXFLO wasmat voor motoren",
+        "alt": "Wasmat voor motoren",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/wasmat-motor-2.jpg",
-        "alt": "Motor op een EXFLO wasmat",
+        "alt": "Motor op een wasmat",
         "width": 1200,
         "height": 900
       }
@@ -1250,7 +1250,7 @@
       "aansluitingen": null,
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
     },
     "sizes": null,
@@ -1306,13 +1306,13 @@
     "images": [
       {
         "src": "/assets/img/producten/decontaminatiemat-voertuigen.jpg",
-        "alt": "EXFLO decontaminatiemat voor voertuigen",
+        "alt": "Decontaminatiemat voor voertuigen",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/decontaminatiemat-voertuigen-2.jpg",
-        "alt": "Voertuig op een EXFLO decontaminatiemat",
+        "alt": "Voertuig op een decontaminatiemat",
         "width": 1200,
         "height": 900
       }
@@ -1325,7 +1325,7 @@
       "aansluitingen": null,
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "3 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "garantie": "3 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
     },
     "sizes": {
@@ -1396,13 +1396,13 @@
     "images": [
       {
         "src": "/assets/img/producten/decontaminatiemat-personen.jpg",
-        "alt": "EXFLO decontaminatiemat voor personen",
+        "alt": "Decontaminatiemat voor personen",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/decontaminatiemat-personen-2.jpg",
-        "alt": "EXFLO decontaminatiemat voor personen in gebruik",
+        "alt": "Decontaminatiemat voor personen in gebruik",
         "width": 1200,
         "height": 900
       }
@@ -1415,7 +1415,7 @@
       "aansluitingen": null,
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "3 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "garantie": "3 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
     },
     "sizes": {
@@ -1462,7 +1462,7 @@
     "slug": "exflo-waterbase-f",
     "category": "brandwatertanks",
     "brand": "exflo",
-    "name": "EXFLO Waterbase F brandwatertank",
+    "name": "Waterbase F brandwatertank",
     "line": "Waterbase F",
     "sku": null,
     "short": "Flexibele brandwatertank (bluswatertank) van 50 tot 300 m³, ook geschikt voor gebruik in de winter.",
@@ -1490,19 +1490,19 @@
     "images": [
       {
         "src": "/assets/img/producten/waterbase-f.jpg",
-        "alt": "EXFLO Waterbase F brandwatertank",
+        "alt": "Waterbase F brandwatertank",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/waterbase-f-2.jpg",
-        "alt": "Flexibele brandwatertank van EXFLO op locatie",
+        "alt": "Flexibele brandwatertank op locatie",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/waterbase-f-3.jpg",
-        "alt": "EXFLO brandwatertank met afdekking",
+        "alt": "Brandwatertank met afdekking",
         "width": 1200,
         "height": 900
       }
@@ -1515,7 +1515,7 @@
       "aansluitingen": "Afnameaansluitingen met DN100-afsluiters en Storz 110-koppeling (2 st., met verwarmingskabels en isolatie); vulaansluiting Storz 110 (1 st.)",
       "temperatuurbereik": "Materialen blijven flexibel tot −30 °C",
       "chemischeBestendigheid": null,
-      "garantie": "2 jaar, uit te breiden tot 10 jaar bij jaarlijkse geautoriseerde inspectie (fabrieksgarantie EXFLO)",
+      "garantie": "2 jaar, uit te breiden tot 10 jaar bij jaarlijkse geautoriseerde inspectie (fabrieksgarantie)",
       "certificering": "CNBOP-goedkeuringscertificaat nr. 4983/2023 (Polen)"
     },
     "sizes": {
@@ -1590,7 +1590,7 @@
     "slug": "exflo-waterbase-d-plus",
     "category": "drinkwatertanks",
     "brand": "exflo",
-    "name": "EXFLO Waterbase D Plus drinkwatertank",
+    "name": "Waterbase D Plus drinkwatertank",
     "line": "Waterbase D Plus",
     "sku": null,
     "short": "Flexibele drinkwatertank van TPU, stationair of mobiel (op aanhanger).",
@@ -1618,19 +1618,19 @@
     "images": [
       {
         "src": "/assets/img/producten/waterbase-d-plus.jpg",
-        "alt": "EXFLO Waterbase D Plus drinkwatertank",
+        "alt": "Waterbase D Plus drinkwatertank",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/waterbase-d-plus-2.jpg",
-        "alt": "Flexibele drinkwatertank van EXFLO in gebruik",
+        "alt": "Flexibele drinkwatertank in gebruik",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/waterbase-d-plus-3.jpg",
-        "alt": "EXFLO drinkwatertank op locatie",
+        "alt": "Drinkwatertank op locatie",
         "width": 1200,
         "height": 900
       }
@@ -1643,7 +1643,7 @@
       "aansluitingen": "Vul-/aftapaansluiting 2\" BSP buitendraad; inspectie-opening Ø 10 cm met dop; ontluchting met overvulbeveiliging",
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "5 jaar (fabrieksgarantie EXFLO)",
+      "garantie": "5 jaar (fabrieksgarantie)",
       "certificering": "PZH-certificaat (Polen); weefsel conform BS 6920 met WRAS-certificaat (Verenigd Koninkrijk)"
     },
     "sizes": null,
@@ -1674,7 +1674,7 @@
     "slug": "waterbase-r-retentietank",
     "category": "industriele-water-en-buffertanks",
     "brand": "exflo",
-    "name": "EXFLO Waterbase R retentie- en buffertank",
+    "name": "Waterbase R retentie- en buffertank",
     "line": "Waterbase R",
     "sku": null,
     "short": "Flexibele retentietank van 10 tot 250 m³ voor regenwater, industriewater, grijs water en afvalwater.",
@@ -1701,7 +1701,7 @@
     "images": [
       {
         "src": "/assets/img/producten/waterbase-r.jpg",
-        "alt": "EXFLO Waterbase R retentietank",
+        "alt": "Waterbase R retentietank",
         "width": 1200,
         "height": 900
       }
@@ -1714,7 +1714,7 @@
       "aansluitingen": "Inlaat DN80 / 3\" BSP met bocht 90° en Storz 75; uitlaat DN50 / 2\" BSP met afsluiter, zeef en Storz 52; ontluchting 2\"; inspectieflens Ø 146 mm",
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "10 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "garantie": "10 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
     },
     "sizes": {
@@ -1812,7 +1812,7 @@
     "slug": "waterbase-r-30000",
     "category": "industriele-water-en-buffertanks",
     "brand": "exflo",
-    "name": "EXFLO Waterbase R industriewatertank 30.000 l",
+    "name": "Waterbase R industriewatertank 30.000 l",
     "line": "Waterbase R",
     "sku": null,
     "short": "Flexibele tank van 30.000 liter voor industriewater, vuil water en regenwater. Afmetingen 8,78 × 4,95 m.",
@@ -1844,13 +1844,13 @@
     "images": [
       {
         "src": "/assets/img/producten/waterbase-r-30000.jpg",
-        "alt": "EXFLO flexibele watertank 30.000 liter",
+        "alt": "Flexibele watertank 30.000 liter",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/waterbase-r-30000-2.jpg",
-        "alt": "EXFLO flexibele watertank gevuld op locatie",
+        "alt": "Flexibele watertank gevuld op locatie",
         "width": 1200,
         "height": 900
       }
@@ -1897,7 +1897,7 @@
     "slug": "waterbase-w-afvalwatertank",
     "category": "afvalwatertanks",
     "brand": "exflo",
-    "name": "EXFLO Waterbase W afvalwatertank",
+    "name": "Waterbase W afvalwatertank",
     "line": "Waterbase W",
     "sku": null,
     "short": "Flexibele tank van 10 tot 250 m³ voor afvalwater, fecaliën en vuil water.",
@@ -1929,13 +1929,13 @@
     "images": [
       {
         "src": "/assets/img/producten/waterbase-w.jpg",
-        "alt": "EXFLO Waterbase W afvalwatertank",
+        "alt": "Waterbase W afvalwatertank",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/waterbase-w-2.jpg",
-        "alt": "EXFLO afvalwatertank op locatie",
+        "alt": "Afvalwatertank op locatie",
         "width": 1200,
         "height": 900
       }
@@ -1948,7 +1948,7 @@
       "aansluitingen": "Vul-/aftapaansluiting 2 × DN80 / 3\" BSP binnendraad met afsluiter; ontluchting 2\"",
       "temperatuurbereik": null,
       "chemischeBestendigheid": "Vloeistoffen met een dichtheid tot 1 kg/dm³ en een pH van 3 tot 10",
-      "garantie": "7 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "garantie": "7 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
     },
     "sizes": {
@@ -2047,13 +2047,13 @@
     "slug": "fuelbase-brandstoftank",
     "category": "brandstoftanks",
     "brand": "exflo",
-    "name": "EXFLO Fuelbase XSD brandstoftank",
+    "name": "Fuelbase XSD brandstoftank",
     "line": "Fuelbase",
     "sku": null,
     "short": "Flexibele tank van 200, 500 of 900 liter voor tijdelijke opslag van diesel en verwarmingsolie.",
     "purpose": [
       "De Fuelbase XSD is een zelfdragende, flexibele tank voor de tijdelijke opslag van diesel en verwarmingsolie, bijvoorbeeld bij een storing in een installatie of op een projectlocatie.",
-      "Volgens EXFLO moet de tank in een opvangbak staan met minimaal 110% van de tankinhoud. Wij adviseren u graag over een passende opvangbak."
+      "Volgens de fabrikant moet de tank in een opvangbak staan met minimaal 110% van de tankinhoud. Wij adviseren u graag over een passende opvangbak."
     ],
     "benefits": [
       "Antistatisch, UV-bestendig TPU-weefsel",
@@ -2078,19 +2078,19 @@
     "images": [
       {
         "src": "/assets/img/producten/fuelbase.jpg",
-        "alt": "EXFLO Fuelbase flexibele brandstoftank",
+        "alt": "Fuelbase flexibele brandstoftank",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/fuelbase-2.jpg",
-        "alt": "EXFLO Fuelbase brandstoftank op locatie",
+        "alt": "Fuelbase brandstoftank op locatie",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/fuelbase-3.jpg",
-        "alt": "Aansluiting van de EXFLO Fuelbase brandstoftank",
+        "alt": "Aansluiting van de Fuelbase brandstoftank",
         "width": 1200,
         "height": 900
       }
@@ -2103,7 +2103,7 @@
       "aansluitingen": "Vul-/aftapaansluiting met 1\"-afsluiter, bocht 90° en 1\" Camlock-koppeling (F) met stofkap; ontluchting; interne aanzuigzeef",
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": "Lekdichtheid getest door UDT (Pools keuringsinstituut)"
     },
     "sizes": {
@@ -2155,12 +2155,12 @@
     "slug": "farmer-u-uan-tank",
     "category": "uan-tanks",
     "brand": "exflo",
-    "name": "EXFLO Farmer type U UAN-tank",
+    "name": "Farmer type U UAN-tank",
     "line": "Farmer type U",
     "sku": null,
     "short": "Flexibele tank van 20 tot 265 m³ voor UAN en andere vloeibare minerale meststoffen.",
     "purpose": [
-      "De Farmer type U is een flexibele tank voor de veilige opslag van vloeibare minerale meststoffen zoals UAN. De tank staat op vrijwel elke vlakke ondergrond. EXFLO adviseert de tank in een extra opvangmembraan te plaatsen."
+      "De Farmer type U is een flexibele tank voor de veilige opslag van vloeibare minerale meststoffen zoals UAN. De tank staat op vrijwel elke vlakke ondergrond. De fabrikant adviseert de tank in een extra opvangmembraan te plaatsen."
     ],
     "benefits": [
       "Bestand tegen vorst tot −30 °C",
@@ -2184,13 +2184,13 @@
     "images": [
       {
         "src": "/assets/img/producten/farmer-u.jpg",
-        "alt": "EXFLO UAN-tank op een agrarisch bedrijf",
+        "alt": "UAN-tank op een agrarisch bedrijf",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/farmer-u-2.jpg",
-        "alt": "EXFLO flexibele UAN-tank",
+        "alt": "Flexibele UAN-tank",
         "width": 1200,
         "height": 900
       }
@@ -2203,7 +2203,7 @@
       "aansluitingen": "Vul-/aftapaansluiting 3\" draad (1 st. standaard); ontluchting 2\" draad",
       "temperatuurbereik": "−30 °C tot +70 °C",
       "chemischeBestendigheid": "Vloeibare meststoffen met een pH van 3 tot 10 en een alcoholgehalte onder 4%",
-      "garantie": "10 jaar op lekdichtheid volgens de productpagina van EXFLO",
+      "garantie": "10 jaar op lekdichtheid volgens de productpagina van de fabrikant",
       "certificering": null
     },
     "sizes": null,
@@ -2233,7 +2233,7 @@
     "slug": "farmer-s-mestzak",
     "category": "mest-en-slurrytanks",
     "brand": "exflo",
-    "name": "EXFLO Farmer type S mestzak",
+    "name": "Farmer type S mestzak",
     "line": "Farmer type S",
     "sku": null,
     "short": "Flexibele mestzak van 50 tot 300 m³ voor drijfmest, digestaat en andere natuurlijke meststoffen.",
@@ -2264,19 +2264,19 @@
     "images": [
       {
         "src": "/assets/img/producten/farmer-s.jpg",
-        "alt": "EXFLO mestzak op een agrarisch bedrijf",
+        "alt": "Mestzak op een agrarisch bedrijf",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/farmer-s-2.jpg",
-        "alt": "Gevulde EXFLO mestzak",
+        "alt": "Gevulde mestzak",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/farmer-s-3.jpg",
-        "alt": "EXFLO mestzak op het erf",
+        "alt": "Mestzak op het erf",
         "width": 1200,
         "height": 900
       }
@@ -2289,7 +2289,7 @@
       "aansluitingen": "5\"-schuifafsluiter met hendel (1 st. bij 50 m³, 2 st. vanaf 100 m³); ontluchting",
       "temperatuurbereik": "−30 °C tot +70 °C",
       "chemischeBestendigheid": null,
-      "garantie": "10 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "garantie": "10 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
     },
     "sizes": {
@@ -2352,13 +2352,13 @@
     "slug": "exflo-flextanker",
     "category": "mobiele-watertanks",
     "brand": "exflo",
-    "name": "EXFLO Flextanker mobiele tank",
+    "name": "Flextanker mobiele tank",
     "line": "Flextanker",
     "sku": null,
     "short": "Flexibele transporttank van 500 tot 10.000 liter die een aanhanger verandert in een tankwagen.",
     "purpose": [
       "De Flextanker is een zelfdragende, flexibele tank zonder frame voor het vervoer van water en andere vloeistoffen op een aanhanger, pick-up of oplegger. Ook leverbaar in een drinkwateruitvoering (Waterbase D Plus met PZH-certificaat).",
-      "Daarnaast levert EXFLO de GFFF-tank van 300 liter voor quads en ATV-aanhangers."
+      "Daarnaast is er de GFFF-tank van 300 liter voor quads en ATV-aanhangers."
     ],
     "benefits": [
       "Zelfdragend: geen frame nodig",
@@ -2380,13 +2380,13 @@
     "images": [
       {
         "src": "/assets/img/producten/flextanker.jpg",
-        "alt": "EXFLO Flextanker mobiele tank op een aanhanger",
+        "alt": "Flextanker mobiele tank op een aanhanger",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/flextanker-2.jpg",
-        "alt": "EXFLO mobiele watertank",
+        "alt": "Mobiele watertank",
         "width": 1200,
         "height": 900
       }
@@ -2399,7 +2399,7 @@
       "aansluitingen": null,
       "temperatuurbereik": "−30 °C tot +80 °C",
       "chemischeBestendigheid": null,
-      "garantie": "2 jaar op lekdichtheid van de wand en sterkte van de lassen (fabrieksgarantie EXFLO)",
+      "garantie": "2 jaar op lekdichtheid van de wand en sterkte van de lassen (fabrieksgarantie)",
       "certificering": null
     },
     "sizes": null,
@@ -2430,7 +2430,7 @@
     "slug": "exflo-hydronion",
     "category": "open-zelfdragende-tanks",
     "brand": "exflo",
-    "name": "EXFLO Hydronion open zelfdragende tank",
+    "name": "Hydronion open zelfdragende tank",
     "line": "Hydronion",
     "sku": null,
     "short": "Open, zelfdragende bluswatertank zonder frame van 5.000 tot 25.000 liter. In 2 minuten opgezet.",
@@ -2457,19 +2457,19 @@
     "images": [
       {
         "src": "/assets/img/producten/hydronion.jpg",
-        "alt": "EXFLO Hydronion open zelfdragende tank",
+        "alt": "Hydronion open zelfdragende tank",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/hydronion-2.jpg",
-        "alt": "EXFLO Hydronion tank tijdens een brandweeroefening",
+        "alt": "Hydronion tank tijdens een brandweeroefening",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/hydronion-3.jpg",
-        "alt": "EXFLO Hydronion tank van bovenaf",
+        "alt": "Hydronion tank van bovenaf",
         "width": 1200,
         "height": 900
       }
@@ -2482,7 +2482,7 @@
       "aansluitingen": "2 × geflensde aluminium aansluiting DN100 (4\") met Storz 110-koppeling en kap (zonder afsluiters)",
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "5 jaar op lekdichtheid (fabrieksgarantie EXFLO)",
+      "garantie": "5 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": "CNBOP-goedkeuringscertificaat nr. 5753/2025 (Polen)"
     },
     "sizes": {
@@ -2547,7 +2547,7 @@
     "slug": "exflooder-22",
     "category": "mobiele-waterkeringen",
     "brand": "exflo",
-    "name": "EXFLO Exflooder mobiele waterkering Ø 22 cm",
+    "name": "Exflooder mobiele waterkering Ø 22 cm",
     "line": "Exflooder",
     "sku": null,
     "short": "Met water gevulde mobiele waterkering, Ø 22 cm, hoogte na vullen 22 cm. Lengtes 3 m, 5 m, 10 m, 15 m.",
@@ -2575,19 +2575,19 @@
     "images": [
       {
         "src": "/assets/img/producten/exflooder.jpg",
-        "alt": "EXFLO Exflooder mobiele waterkering",
+        "alt": "Exflooder mobiele waterkering",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/exflooder-praktijk.jpg",
-        "alt": "EXFLO Exflooder waterkeringen in gebruik",
+        "alt": "Exflooder waterkeringen in gebruik",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/exflooder-oefening.jpg",
-        "alt": "Oefening met EXFLO Exflooder waterkeringen",
+        "alt": "Oefening met Exflooder waterkeringen",
         "width": 1200,
         "height": 900
       }
@@ -2600,7 +2600,7 @@
       "aansluitingen": "Vul-/aftapaansluiting 1\" Storz 25 met kap; ontluchting (1 st. bij 3 en 5 m, 2 st. bij 10 en 15 m)",
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "garantie": "7 jaar (fabrieksgarantie)",
       "certificering": "CNBOP-conformiteitscertificaat (Polen)"
     },
     "sizes": {
@@ -2653,7 +2653,7 @@
     "slug": "exflooder-46",
     "category": "mobiele-waterkeringen",
     "brand": "exflo",
-    "name": "EXFLO Exflooder mobiele waterkering Ø 46 cm",
+    "name": "Exflooder mobiele waterkering Ø 46 cm",
     "line": "Exflooder",
     "sku": null,
     "short": "Met water gevulde mobiele waterkering, Ø 46 cm, hoogte na vullen 45 cm. Lengtes 5 m, 10 m, 15 m.",
@@ -2681,19 +2681,19 @@
     "images": [
       {
         "src": "/assets/img/producten/exflooder.jpg",
-        "alt": "EXFLO Exflooder mobiele waterkering",
+        "alt": "Exflooder mobiele waterkering",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/exflooder-praktijk.jpg",
-        "alt": "EXFLO Exflooder waterkeringen in gebruik",
+        "alt": "Exflooder waterkeringen in gebruik",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/exflooder-oefening.jpg",
-        "alt": "Oefening met EXFLO Exflooder waterkeringen",
+        "alt": "Oefening met Exflooder waterkeringen",
         "width": 1200,
         "height": 900
       }
@@ -2706,7 +2706,7 @@
       "aansluitingen": "Vulaansluiting 3\" Storz 75 met kap; aftapaansluiting 3\" Storz 75 met kap; 2 ontluchtingen; 6 handgrepen; 2 verankeringsbanden",
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "garantie": "7 jaar (fabrieksgarantie)",
       "certificering": "CNBOP-conformiteitscertificaat (Polen)"
     },
     "sizes": {
@@ -2755,7 +2755,7 @@
     "slug": "exflooder-94",
     "category": "mobiele-waterkeringen",
     "brand": "exflo",
-    "name": "EXFLO Exflooder mobiele waterkering Ø 94 cm",
+    "name": "Exflooder mobiele waterkering Ø 94 cm",
     "line": "Exflooder",
     "sku": null,
     "short": "Met water gevulde mobiele waterkering, Ø 94 cm, hoogte na vullen 89 cm. Lengtes 5 m, 10 m, 15 m.",
@@ -2783,19 +2783,19 @@
     "images": [
       {
         "src": "/assets/img/producten/exflooder-90.jpg",
-        "alt": "EXFLO Exflooder mobiele waterkering Ø 94 cm",
+        "alt": "Exflooder mobiele waterkering Ø 94 cm",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/exflooder-praktijk.jpg",
-        "alt": "EXFLO Exflooder waterkeringen in gebruik",
+        "alt": "Exflooder waterkeringen in gebruik",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/exflooder-oefening.jpg",
-        "alt": "Oefening met EXFLO Exflooder waterkeringen",
+        "alt": "Oefening met Exflooder waterkeringen",
         "width": 1200,
         "height": 900
       }
@@ -2808,7 +2808,7 @@
       "aansluitingen": "Vulaansluiting 3\" Storz 75 met kap; aftapflens Ø 146 mm met dop; 2 ontluchtingen; 6 handgrepen; 2 verankeringsbanden",
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "7 jaar (fabrieksgarantie EXFLO)",
+      "garantie": "7 jaar (fabrieksgarantie)",
       "certificering": "CNBOP-conformiteitscertificaat (Polen)"
     },
     "sizes": {
@@ -2857,7 +2857,7 @@
     "slug": "exflo-exnoiser",
     "category": "geluidsabsorberende-matten",
     "brand": "exflo",
-    "name": "EXFLO Exnoiser R25 geluidsabsorberende mat",
+    "name": "Exnoiser R25 geluidsabsorberende mat",
     "line": "Exnoiser",
     "sku": null,
     "short": "Geluidsabsorberende mat van 2,05 × 1,20 m voor geluidsschermen op bouwplaatsen. Geluidsreductie tot 25 dB.",
@@ -2885,19 +2885,19 @@
     "images": [
       {
         "src": "/assets/img/producten/exnoiser.jpg",
-        "alt": "EXFLO Exnoiser geluidsabsorberende matten aan een bouwhek",
+        "alt": "Exnoiser geluidsabsorberende matten aan een bouwhek",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/exnoiser-2.jpg",
-        "alt": "Geluidsscherm van EXFLO Exnoiser matten",
+        "alt": "Geluidsscherm van Exnoiser matten",
         "width": 1200,
         "height": 900
       },
       {
         "src": "/assets/img/producten/exnoiser-3.jpg",
-        "alt": "Detail van een EXFLO Exnoiser mat",
+        "alt": "Detail van een Exnoiser mat",
         "width": 1200,
         "height": 900
       }
@@ -2910,7 +2910,7 @@
       "aansluitingen": null,
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
-      "garantie": "2 jaar (fabrieksgarantie EXFLO)",
+      "garantie": "2 jaar (fabrieksgarantie)",
       "certificering": "Testrapport RS-2018/B-268 (11-07-2018), Centrum Techniki Okrętowej S.A. (Polen): Rw 22 (−1; −3) dB en Dw 25 (−1; −4) dB volgens PN-EN ISO 717-1:2013"
     },
     "sizes": null,

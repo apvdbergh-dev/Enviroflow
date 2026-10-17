@@ -6,16 +6,15 @@ import { T, isEn, getLang, localPath } from '../lib/i18n.mjs';
 
 /* ================================================================ HOME */
 export function home(ctx) {
-  const { site, groups, categories, products, solutions, sectors, urls, brandById } = ctx;
-  const exflo = brandById.exflo;
+  const { site, groups, categories, products, solutions, sectors, urls } = ctx;
   const featured = products.filter((p) => isOrderable(p) && p.featured).slice(0, 4);
   const popular = categories.filter((c) => c.popular).slice(0, 8);
   const minPrice = (catId) => Math.min(...products.filter((p) => p.category === catId && typeof p.price === 'number' && !p.quoteOnly).map((p) => p.price));
   const catUrl = (id) => urls.category(ctx.categoryById[id]);
   const slides = [
     { img: 'hero-opvang', group: T('Opvang & spill containment', 'Spill containment'), short: T('Opvangbakken', 'Spill trays'), title: T("Flexibele opvangbakken voor IBC's en vaten", 'Flexible spill trays for IBCs and drums'), text: T(`Van 226 tot 22.575 liter opvangcapaciteit, met 7 jaar fabrieksgarantie. Online te bestellen vanaf ${fmtEUR(minPrice('flexibele-opvangbakken'))} excl. btw.`, `From 226 to 22,575 litres of containment capacity, with a 7-year manufacturer's warranty. Order online from ${fmtEUR(minPrice('flexibele-opvangbakken'))} excl. VAT.`), cta: T('Bekijk opvangbakken', 'View spill trays'), href: catUrl('flexibele-opvangbakken') },
-    { img: 'hero-brandwater', group: T('Flexibele tanks', 'Flexible tanks'), short: T('Brandwatertanks', 'Fire water tanks'), title: T('Brandwatertanks van 50 tot 300 m³', 'Fire water tanks from 50 to 300 m³'), text: T('EXFLO Waterbase F met verwarmingsmatten en isolatie, voor een bluswatervoorziening die ook in de winter werkt.', 'EXFLO Waterbase F with heating mats and insulation, for a fire water supply that also works in winter.'), cta: T('Bekijk de Waterbase F', 'View the Waterbase F'), href: urls.product(products.find((p) => p.id === 'exflo-waterbase-f')) },
-    { img: 'hero-waterkering', group: T('Mobiel & calamiteiten', 'Mobile & emergency'), short: T('Waterkeringen', 'Flood barriers'), title: T('Mobiele waterkeringen tegen wateroverlast', 'Mobile flood barriers against flooding'), text: T('EXFLO Exflooder: sneller geplaatst dan een dijk van zandzakken. Hoogte na vullen tot 89 cm, gestapeld meer dan 140 cm.', 'EXFLO Exflooder: faster to install than a sandbag dike. Height after filling up to 89 cm, stacked more than 140 cm.'), cta: T('Bekijk waterkeringen', 'View flood barriers'), href: catUrl('mobiele-waterkeringen') },
+    { img: 'hero-brandwater', group: T('Flexibele tanks', 'Flexible tanks'), short: T('Brandwatertanks', 'Fire water tanks'), title: T('Brandwatertanks van 50 tot 300 m³', 'Fire water tanks from 50 to 300 m³'), text: T('De Waterbase F met verwarmingsmatten en isolatie, voor een bluswatervoorziening die ook in de winter werkt.', 'The Waterbase F with heating mats and insulation, for a fire water supply that also works in winter.'), cta: T('Bekijk de Waterbase F', 'View the Waterbase F'), href: urls.product(products.find((p) => p.id === 'exflo-waterbase-f')) },
+    { img: 'hero-waterkering', group: T('Mobiel & calamiteiten', 'Mobile & emergency'), short: T('Waterkeringen', 'Flood barriers'), title: T('Mobiele waterkeringen tegen wateroverlast', 'Mobile flood barriers against flooding'), text: T('De Exflooder: sneller geplaatst dan een dijk van zandzakken. Hoogte na vullen tot 89 cm, gestapeld meer dan 140 cm.', 'The Exflooder: faster to install than a sandbag dike. Height after filling up to 89 cm, stacked more than 140 cm.'), cta: T('Bekijk waterkeringen', 'View flood barriers'), href: catUrl('mobiele-waterkeringen') },
     { img: 'hero-mest', group: T('Landbouw', 'Agriculture'), short: T('Mest & UAN', 'Manure & UAN'), title: T('Extra opslag voor mest en meststoffen', 'Extra storage for manure and fertilisers'), text: T('Mestzakken van 50 tot 300 m³ zonder bouwwerkzaamheden, met 10 jaar garantie op lekdichtheid.', 'Manure bags from 50 to 300 m³ without construction work, with a 10-year warranty on leak-tightness.'), cta: T('Bekijk mestzakken', 'View manure bags'), href: catUrl('mest-en-slurrytanks') }
   ];
   const catCount = (g) => categories.filter((c) => c.group === g.id).length;
@@ -57,7 +56,7 @@ export function home(ctx) {
 
 <section class="usp" aria-label="${T('Waarom EnviroFlow', 'Why EnviroFlow')}">
   <ul class="container usp__list">
-    ${(isEn() ? ['Business specialist', 'Practical advice', 'Custom-made possible', 'Personal contact', 'Products by EXFLO'] : ['Zakelijke specialist', 'Praktisch advies', 'Maatwerk mogelijk', 'Persoonlijk contact', 'Producten van EXFLO']).map((u) => `<li>${u}</li>`).join('')}
+    ${(isEn() ? ['Business specialist', 'Practical advice', 'Custom-made possible', 'Personal contact', 'Order online'] : ['Zakelijke specialist', 'Praktisch advies', 'Maatwerk mogelijk', 'Persoonlijk contact', 'Online bestellen']).map((u) => `<li>${u}</li>`).join('')}
   </ul>
 </section>
 
@@ -136,24 +135,12 @@ ${featured.length ? `<section class="section" aria-labelledby="h-featured">
 
 <section class="section" aria-labelledby="h-maatwerk">
   <div class="container feature">
-    <div class="feature__media">${media({ src: '/assets/img/producten/sfeer-hal-ibc.jpg', alt: T("IBC's in een flexibele opvangbak van EXFLO", 'IBCs in a flexible EXFLO spill tray') }, '4-3')}</div>
+    <div class="feature__media">${media({ src: '/assets/img/producten/sfeer-hal-ibc.jpg', alt: T("IBC's in een flexibele opvangbak", 'IBCs in a flexible spill tray') }, '4-3')}</div>
     <div class="feature__text">
       <p class="kicker">${T('Maatwerk', 'Custom-made')}</p>
       <h2 id="h-maatwerk">${T('Past een standaardmaat niet?', "Standard size doesn't fit?")}</h2>
       <p>${T('Een opvangbak rond een specifieke machine, een tank voor een ruimte met beperkte hoogte of een afwijkende aansluiting. Vertel ons wat u nodig heeft. Wij bekijken samen met de fabrikant wat mogelijk is.', 'A spill tray around a specific machine, a tank for a space with limited height or a non-standard connection. Tell us what you need. Together with the manufacturer we look at what is possible.')}</p>
       <div class="btn-row"><a class="btn btn--primary" href="/maatwerk-aanvragen/">${T('Vraag maatwerk aan', 'Request custom-made')}</a><a class="btn btn--ghost" href="/contact/">${T('Neem contact op', 'Contact us')}</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--tight" aria-labelledby="h-partner">
-  <div class="container partner-block">
-    <div class="partner-block__logo">${exflo.logo ? `<img class="partner-logo" src="${exflo.logo}" alt="EXFLO – Think flexible" width="280" height="105" loading="lazy">` : `<div class="logo-ph">${ph(exflo.logoPlaceholder)}</div>`}</div>
-    <div class="partner-block__text">
-      <p class="kicker">Partner</p>
-      <h2 id="h-partner">${T('Producten van EXFLO', 'Products by EXFLO')}</h2>
-      <p>${esc(exflo.intro)} ${T(`EnviroFlow is ${ph(site.partnerRelation)} van EXFLO.`, `EnviroFlow is a ${ph(site.partnerRelation)} of EXFLO.`)}</p>
-      <a class="link-arrow" href="/partners/exflo/">${T('Meer over EXFLO', 'More about EXFLO')} ${icon('arrow')}</a>
     </div>
   </div>
 </section>
@@ -371,11 +358,10 @@ export function productPage(p, ctx) {
     <section id="voordelen" class="pd-block"><h2>${T('Belangrijkste voordelen', 'Key benefits')}</h2><ul class="check-list">${p.benefits.slice(0, 4).map((b) => `<li>${icon('check')}${esc(b)}</li>`).join('')}</ul></section>
     <section id="specificaties" class="pd-block"><h2>${T('Specificaties', 'Specifications')}</h2>
       <table class="spec-table"><caption class="sr-only">${T('Specificaties', 'Specifications')} ${esc(p.name)}</caption><tbody>
-        <tr><th scope="row">${t.manufacturer}</th><td>${esc(brand.name)}</td></tr>
         ${SPEC_LABELS().map(([k, l]) => `<tr><th scope="row">${l}</th><td>${p.specs?.[k] ? esc(p.specs[k]) + (k === 'certificering' ? `<br><span class="small muted">${t.foreignCertNote}</span>` : '') : unknown}</td></tr>`).join('')}
         <tr><th scope="row">${T('Geschikte vloeistoffen', 'Suitable liquids')}</th><td>${p.liquids?.length ? esc(p.liquids.join(', ')) : `<span class="muted">${t.liquidCheck}</span>`}</td></tr>
       </tbody></table>
-      ${p.source ? `<p class="small muted">${T(`Bron: productinformatie van de fabrikant (${esc(brand.name)}). Wijzigingen voorbehouden.`, `Source: product information from the manufacturer (${esc(brand.name)}). Subject to change.`)}</p>` : ''}
+      ${p.source ? `<p class="small muted">${T('Bron: productinformatie van de fabrikant. Wijzigingen voorbehouden.', 'Source: product information from the manufacturer. Subject to change.')}</p>` : ''}
     </section>
     ${p.sizes ? `<section id="uitvoeringen" class="pd-block"><h2>${T('Uitvoeringen', 'Versions')}</h2><div class="table-scroll"><table class="spec-table spec-table--grid"><caption class="sr-only">${T('Uitvoeringen', 'Versions')} ${esc(p.name)}</caption><thead><tr>${p.sizes.head.map((h) => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${p.sizes.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${p.sizes.note ? `<p class="small muted">${esc(p.sizes.note)}</p>` : ''}</section>` : ''}
     <section id="geschikt" class="pd-block"><h2>${T('Geschikt voor', 'Suitable for')}</h2><ul class="check-list">${p.suitableFor.map((b) => `<li>${icon('check')}${esc(b)}</li>`).join('')}</ul></section>

@@ -966,3 +966,42 @@ a.contact-card:hover span { text-decoration: underline; text-underline-offset: 3
 .lang-switch--menu[data-active="en"]::after { transform: translateX(46px); }
 @media (min-width: 960px) { .lang-switch--menu { display: none; } }
 @media (prefers-reduced-motion: reduce) { .lang-switch::after, .lang-switch a { transition: none; } }
+
+/* Partnerpagina (merk): donkere kop met logo, kerncijfers, rol van EnviroFlow en productlijnen met foto */
+.brand-hero { position: relative; background: var(--deep); color: var(--on-dark); padding: 56px 0 0; overflow: hidden; isolation: isolate; }
+.brand-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(700px 380px at 100% 0%, rgba(242,183,5,.14), transparent 70%), radial-gradient(600px 400px at 0% 100%, rgba(255,255,255,.05), transparent 70%); }
+.brand-hero__grid { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 960px) { .brand-hero { padding-top: 80px; } .brand-hero__grid { grid-template-columns: 1.05fr 1fr; gap: 72px; } }
+.brand-hero__title { margin: 0 0 22px; line-height: 0; }
+.brand-hero__title img { width: clamp(200px, 26vw, 300px); height: auto; }
+.brand-hero__lead { font-size: 1.125rem; line-height: 1.6; color: var(--on-dark); max-width: 34em; margin: 0 0 18px; }
+.brand-hero__relation { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 28px; padding: 8px 14px 8px 10px; border: 1px solid var(--line-dark); border-radius: 14px; background: rgba(255,255,255,.05); font-size: .9375rem; color: #fff; }
+.brand-hero__relation .ic { width: 18px; height: 18px; color: var(--accent); flex: none; }
+.brand-hero__relation mark.placeholder { background: none; color: inherit; padding: 0; }
+.brand-hero__visual .media { border-radius: var(--r-lg); box-shadow: var(--shadow-lg); outline: 1px solid rgba(255,255,255,.1); }
+.brand-facts { display: grid; grid-template-columns: repeat(3, 1fr); margin: 48px 0 0; border-top: 1px solid var(--line-dark); }
+.brand-facts > div { padding: 22px 16px 26px 0; }
+.brand-facts > div + div { padding-left: 20px; border-left: 1px solid var(--line-dark); }
+.brand-facts dt { order: 2; font-size: .8125rem; color: var(--on-dark-2); }
+.brand-facts > div { display: flex; flex-direction: column; }
+.brand-facts dd { order: 1; margin: 0 0 4px; font: 700 clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem)/1.1 var(--font-head); color: #fff; }
+.brand-about { display: grid; gap: 40px; }
+@media (min-width: 960px) { .brand-about { grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; } }
+.brand-about p { color: var(--ink-2); max-width: 36em; }
+.brand-roles { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.brand-roles li { display: flex; gap: 16px; padding: 20px 22px; background: var(--mist); border-radius: var(--r-lg); border: 1px solid var(--line); }
+.brand-roles__icon { display: grid; place-items: center; flex: none; width: 44px; height: 44px; border-radius: 12px; background: var(--deep); color: var(--accent); }
+.brand-roles__icon .ic { width: 22px; height: 22px; }
+.brand-roles h3 { margin: 0 0 4px; font-size: 1.0625rem; }
+.brand-roles p { margin: 0; font-size: .9375rem; }
+.line-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.line-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; color: inherit; text-decoration: none; transition: transform 300ms var(--ease-out), box-shadow 300ms var(--ease-out), border-color 200ms ease; }
+.line-card .media { border-radius: 0; }
+.line-card .media img { transition: transform 600ms var(--ease-out); }
+.line-card__body { display: flex; flex-direction: column; gap: 6px; padding: 18px 20px 20px; flex: 1; }
+.line-card h3 { margin: 0; font-size: 1.125rem; color: var(--deep); }
+.line-card p { margin: 0 0 8px; font-size: .875rem; color: var(--ink-2); }
+.line-card .link-arrow { margin-top: auto; }
+@media (hover: hover) { .line-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--line-2); } .line-card:hover .media img { transform: scale(1.04); } }
+@media (max-width: 599px) { .brand-facts { grid-template-columns: 1fr; } .brand-facts > div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--line-dark); } .brand-facts > div { padding: 16px 0; } }
+@media (prefers-reduced-motion: reduce) { .line-card, .line-card .media img { transition: none; } }

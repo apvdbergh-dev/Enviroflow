@@ -44,7 +44,7 @@ export function sectorPage(s, ctx) {
   <div><h2>${T('Typische vloeistoffen', 'Typical liquids')}</h2><ul class="check-list">${s.liquids.map((l) => `<li>${icon('drop')}${esc(l)}</li>`).join('')}</ul></div>
   <div><h2>${T("Veelvoorkomende risico's", 'Common risks')}</h2><ul class="check-list">${s.risks.map((l) => `<li>${icon('info')}${esc(l)}</li>`).join('')}</ul></div>
 </div></section>
-<section class="section section--tight"><div class="container"><h2>${T('Passende EXFLO-oplossingen', 'Suitable EXFLO solutions')}</h2><div class="cat-grid">${cats.map((c) => categoryCard(c, ctx)).join('')}</div></div></section>
+<section class="section section--tight"><div class="container"><h2>${T('Passende oplossingen', 'Suitable solutions')}</h2><div class="cat-grid">${cats.map((c) => categoryCard(c, ctx)).join('')}</div></div></section>
 ${ctaBand({ title: T(`Oplossing nodig voor uw bedrijf in ${s.name.toLowerCase()}?`, `Need a solution for your business in ${s.name.toLowerCase()}?`), text: T('Wij denken mee over de juiste opvang of opslag voor uw situatie.', 'We help you find the right containment or storage for your situation.'), buttons: [{ label: T('Offerte aanvragen', 'Request a quote'), href: '/offerte-aanvragen/', cls: 'btn--accent' }, { label: T('Bel een specialist', 'Call a specialist'), href: `tel:${ctx.site.phonePrimary.tel}`, cls: 'btn--outline-light', icon: 'phone' }] })}`;
   return { path: `/sectoren/${s.slug}/`, title: T(`${s.name}: vloeistofopslag en opvang | EnviroFlow`, `${s.name}: liquid storage and containment | EnviroFlow`), description: T(`${s.intro} Bekijk passende oplossingen voor ${s.name.toLowerCase()}.`, `${s.intro} View suitable solutions for ${s.name.toLowerCase()}.`), body, crumbs: [H, { name: T('Sectoren', 'Sectors'), url: '/sectoren/' }, { name: s.name, url: `/sectoren/${s.slug}/` }] };
 }
@@ -106,10 +106,10 @@ ${cats.length ? `<section class="section section--tight section--grey"><div clas
 /* ---------------------------------------------------------------- over ons & partners */
 export function aboutPage(ctx) {
   const body = `
-<section class="page-head"><div class="container page-head__grid"><div><h1>${T('Over EnviroFlow', 'About EnviroFlow')}</h1><p class="lead">${T('EnviroFlow is een jong bedrijf, opgericht door twee broers. Wij helpen bedrijven om vloeistoffen veilig en praktisch op te slaan, op te vangen en te verplaatsen.', 'EnviroFlow is a young company founded by two brothers. We help businesses store, contain and move liquids safely and practically.')}</p></div>${media({ src: '/assets/img/producten/opvangbak-praktijk.jpg', alt: T("IBC's in een flexibele opvangbak van EXFLO", 'IBCs in a flexible EXFLO spill tray') }, '4-3', true)}</div></section>
+<section class="page-head"><div class="container page-head__grid"><div><h1>${T('Over EnviroFlow', 'About EnviroFlow')}</h1><p class="lead">${T('EnviroFlow is een jong bedrijf, opgericht door twee broers. Wij helpen bedrijven om vloeistoffen veilig en praktisch op te slaan, op te vangen en te verplaatsen.', 'EnviroFlow is a young company founded by two brothers. We help businesses store, contain and move liquids safely and practically.')}</p></div>${media({ src: '/assets/img/producten/opvangbak-praktijk.jpg', alt: T("IBC's in een flexibele opvangbak", 'IBCs in a flexible spill tray') }, '4-3', true)}</div></section>
 <section class="section section--tight"><div class="container split">
   <div><h2>${T('Waar wij voor staan', 'What we stand for')}</h2>${T('<p>Wij zijn geen webshop die zo goedkoop mogelijk levert. Wij willen eerst begrijpen wat uw situatie is: welke vloeistof, hoeveel, waar en hoe lang. Daarna zoeken we de oplossing die daarbij past, standaard of op maat.</p><p>U heeft bij ons korte lijnen en persoonlijk contact. U belt of mailt rechtstreeks met de mensen die uw aanvraag behandelen.</p>', '<p>We are not a web shop that simply delivers as cheaply as possible. We first want to understand your situation: which liquid, how much, where and for how long. Then we look for the solution that fits, standard or custom-made.</p><p>With us you get short lines of communication and personal contact. You call or email directly with the people handling your request.</p>')}</div>
-  <div><h2>${T('Onze ambitie', 'Our ambition')}</h2><p>${T('Wij beginnen met de flexibele oplossingen van EXFLO. Ons doel is om uit te groeien tot een vaste partner voor alles rond opslag en opvang van vloeistoffen. Het assortiment breiden wij stap voor stap uit, onder meer met lekbakken van staal en kunststof, spill kits, absorptiemateriaal, pompen en slangen.', 'We are starting with the flexible solutions from EXFLO. Our goal is to grow into a regular partner for everything related to the storage and containment of liquids. We will expand the range step by step, including steel and plastic spill trays, spill kits, absorbents, pumps and hoses.')}</p></div>
+  <div><h2>${T('Onze ambitie', 'Our ambition')}</h2><p>${T('Wij beginnen met flexibele oplossingen van technisch textiel: opvangbakken, tanks en waterkeringen. Ons doel is om uit te groeien tot een vaste partner voor alles rond opslag en opvang van vloeistoffen. Het assortiment breiden wij stap voor stap uit, onder meer met lekbakken van staal en kunststof, spill kits, absorptiemateriaal, pompen en slangen.', 'We are starting with flexible solutions made of technical textile: spill trays, tanks and flood barriers. Our goal is to grow into a regular partner for everything related to the storage and containment of liquids. We will expand the range step by step, including steel and plastic spill trays, spill kits, absorbents, pumps and hoses.')}</p></div>
 </div></section>
 <section class="section section--grey"><div class="container"><h2>${T('Hoe wij werken', 'How we work')}</h2>${stepsList()}</div></section>
 ${ctaBand({ title: T('Kennismaken?', 'Get to know us?'), text: T('Bel of mail ons. Wij horen graag waar u mee bezig bent.', 'Call or email us. We would love to hear what you are working on.'), buttons: [{ label: T('Neem contact op', 'Contact us'), href: '/contact/', cls: 'btn--accent' }, { label: ctx.site.phonePrimary.display, href: `tel:${ctx.site.phonePrimary.tel}`, cls: 'btn--outline-light', icon: 'phone' }] })}`;
@@ -123,13 +123,50 @@ export function partnersPage(ctx) {
 }
 
 export function brandPage(b, ctx) {
+  // Eén product per productlijn (eerste in de catalogus) voor de kaarten met foto.
   const lines = ctx.products.filter((p) => p.brand === b.id && p.line).filter((p, i, arr) => arr.findIndex((x) => x.line === p.line) === i);
+  const country = T(b.country, COUNTRY_EN[b.country] || b.country);
+  const logo = b.logoDark || b.logo;
+  const facts = [[b.since, T('actief sinds', 'active since')], [country, T('land van de fabrikant', "manufacturer's country")], [String(lines.length), T('productlijnen bij EnviroFlow', 'product lines at EnviroFlow')]];
+  const roles = [
+    ['chat', T('Advies', 'Advice'), T('Welk product past bij uw vloeistof, hoeveelheid en locatie? Wij denken met u mee.', 'Which product suits your liquid, quantity and location? We think along with you.')],
+    ['truck', T('Levering', 'Delivery'), T('Wij leveren in Nederland, op het afleveradres dat u opgeeft.', 'We deliver in the Netherlands, to the delivery address you provide.')],
+    ['ruler', T('Maatwerk', 'Custom-made'), T('Past een standaardmaat niet? Wij bekijken samen met de fabrikant wat mogelijk is.', "Standard size doesn't fit? Together with the manufacturer, we look at what is possible.")]
+  ];
   const body = `
-<section class="page-head"><div class="container page-head__grid"><div><p class="eyebrow">Partner</p><h1>${esc(b.name)}</h1><p class="lead">${esc(b.intro)}</p><p>${T(`EnviroFlow is ${ph(ctx.site.partnerRelation)} van ${esc(b.name)}.`, `EnviroFlow is a ${ph(ctx.site.partnerRelation)} of ${esc(b.name)}.`)}</p></div><div class="logo-ph logo-ph--lg logo-ph--filled">${b.logo ? `<img class="partner-logo" src="${b.logo}" alt="${esc(b.name)} logo" width="280" height="105">` : ph(b.logoPlaceholder)}</div></div></section>
-<section class="section section--tight"><div class="container split">
-  <div><h2>${T('Over', 'About')} ${esc(b.name)}</h2>${T(`<p>${esc(b.name)} is een fabrikant uit ${esc(b.country)} van flexibele tanks, opvangbakken, waterkeringen en matten van technisch textiel. Het bedrijf is actief sinds ${esc(b.since)}.</p><p>EnviroFlow is geen fabrikant. Wij adviseren, leveren en denken mee over de toepassing van ${esc(b.name)}-producten in Nederland.</p>`, `<p>${esc(b.name)} is a manufacturer from ${esc(COUNTRY_EN[b.country] || b.country)} of flexible tanks, spill trays, flood barriers and mats made of technical textile. The company has been active since ${esc(b.since)}.</p><p>EnviroFlow is not a manufacturer. We advise on, supply and help with the use of ${esc(b.name)} products in the Netherlands.</p>`)}</div>
-  <div><h2>${T('Productlijnen', 'Product lines')}</h2><ul class="check-list">${lines.map((p) => `<li>${icon('check')}<a href="${ctx.urls.product(p)}">${esc(p.line)}</a>: ${esc(p.short)}</li>`).join('')}</ul></div>
-</div></section>
+<section class="brand-hero" aria-labelledby="h-brand">
+  <div class="container brand-hero__grid">
+    <div class="brand-hero__text">
+      <p class="eyebrow eyebrow--light">${T('Partner · fabrikant', 'Partner · manufacturer')}</p>
+      <h1 id="h-brand" class="brand-hero__title">${logo ? `<img src="${logo}" alt="${esc(b.name)}" width="280" height="105">` : esc(b.name)}</h1>
+      <p class="brand-hero__lead">${esc(b.intro)}</p>
+      <p class="brand-hero__relation">${icon('check')}<span>${T(`EnviroFlow is ${ph(ctx.site.partnerRelation)} van ${esc(b.name)}.`, `EnviroFlow is a ${ph(ctx.site.partnerRelation)} of ${esc(b.name)}.`)}</span></p>
+      <div class="btn-row"><a class="btn btn--accent" href="#productlijnen">${T('Bekijk de productlijnen', 'View the product lines')} ${icon('arrow')}</a><a class="btn btn--outline-light" href="/offerte-aanvragen/?type=advies">${T('Advies aanvragen', 'Request advice')}</a></div>
+    </div>
+    <div class="brand-hero__visual">
+      ${media({ src: '/assets/img/producten/sfeer-ibc-hal.jpg', alt: T("IBC's in een flexibele opvangbak in een bedrijfshal", 'IBCs in a flexible spill tray in a commercial hall'), width: 1200, height: 900 }, '4-3', true)}
+    </div>
+  </div>
+  <div class="container"><dl class="brand-facts">${facts.map(([v, l]) => `<div><dt>${esc(l)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></div>
+</section>
+<section class="section" aria-labelledby="h-about">
+  <div class="container brand-about">
+    <div>
+      <p class="kicker">${T('De fabrikant', 'The manufacturer')}</p>
+      <h2 id="h-about">${T('Over', 'About')} ${esc(b.name)}</h2>
+      ${T(`<p>${esc(b.name)} is een fabrikant uit ${esc(b.country)} van flexibele tanks, opvangbakken, waterkeringen en matten van technisch textiel. Het bedrijf is actief sinds ${esc(b.since)}.</p><p>EnviroFlow is geen fabrikant. Wij adviseren, leveren en denken mee over de toepassing van ${esc(b.name)}-producten in Nederland.</p>`, `<p>${esc(b.name)} is a manufacturer from ${esc(country)} of flexible tanks, spill trays, flood barriers and mats made of technical textile. The company has been active since ${esc(b.since)}.</p><p>EnviroFlow is not a manufacturer. We advise on, supply and help with the use of ${esc(b.name)} products in the Netherlands.</p>`)}
+    </div>
+    <ul class="brand-roles" aria-label="${T('Wat EnviroFlow doet', 'What EnviroFlow does')}">
+      ${roles.map(([ic, h, txt]) => `<li><span class="brand-roles__icon">${icon(ic)}</span><div><h3>${h}</h3><p>${txt}</p></div></li>`).join('')}
+    </ul>
+  </div>
+</section>
+<section class="section section--tight" id="productlijnen" aria-labelledby="h-lines">
+  <div class="container">
+    <div class="section-head"><h2 id="h-lines">${T('Productlijnen', 'Product lines')}</h2></div>
+    <div class="line-grid">${lines.map((p) => `<a class="line-card" href="${ctx.urls.product(p)}">${media(p.images?.[0] ? { ...p.images[0], alt: p.images[0].alt } : { alt: p.name }, '4-3')}<div class="line-card__body"><h3>${esc(p.line)}</h3><p>${esc(p.short)}</p><span class="link-arrow">${T('Bekijk product', 'View product')} ${icon('arrow')}</span></div></a>`).join('')}</div>
+  </div>
+</section>
 <section class="section section--tight section--grey"><div class="container"><h2>${T('Alle productgroepen', 'All product groups')}</h2><div class="cat-grid cat-grid--compact">${ctx.categories.map((c) => categoryCard(c, ctx, { compact: true })).join('')}</div></div></section>`;
   return { path: `/partners/${b.slug}/`, title: T(`${b.name}: flexibele tanks en opvangbakken | EnviroFlow`, `${b.name}: flexible tanks and spill trays | EnviroFlow`), description: `${b.intro}`, body, crumbs: [H, { name: 'Partners', url: '/partners/' }, { name: b.name, url: `/partners/${b.slug}/` }] };
 }
