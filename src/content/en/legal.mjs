@@ -122,7 +122,7 @@ export function legalPagesEn(site, K) {
 <h2>With whom do we share data?</h2>
 <p>We work with service providers that only process data on our behalf:</p>
 <ul>
-<li><strong>Cloudflare</strong> – hosting of the website and storage of requests and orders.</li>
+<li><strong>Cloudflare</strong> – hosting of the website, storage of requests and orders, and anonymous visitor statistics (Cloudflare Web Analytics).</li>
 <li><strong>Resend</strong> – sending emails about requests and orders.</li>
 <li><strong>Mollie</strong> – processing of online payments.</li>
 <li><strong>Microsoft</strong> – our business email.</li>
@@ -136,7 +136,7 @@ export function legalPagesEn(site, K) {
 </ul>
 
 <h2>Cookies</h2>
-<p>This website does not place tracking or advertising cookies. See our <a href="/cookiebeleid/">cookie policy</a>.</p>
+<p>This website does not place tracking or advertising cookies. For visitor statistics we use Cloudflare Web Analytics, without cookies. See our <a href="/cookiebeleid/">cookie policy</a>.</p>
 
 <h2>Security</h2>
 <p>The website uses a secure connection (https). Only EnviroFlow staff who need the data have access to it.</p>
@@ -174,14 +174,16 @@ export function legalPagesEn(site, K) {
 <p>Report this within ${K.complaintHours} hours of delivery, preferably with photos. We will then resolve it free of charge by repair, replacement or refund.</p>`;
 
   const cookies = `${updated}
-<p>This website does not use tracking or advertising cookies, nor any analytics service. We only store data in your browser that is needed for the website to work:</p>
+<p>This website does not use tracking or advertising cookies. We only store data in your browser that is needed for the website to work:</p>
 <ul>
 <li><strong>Shopping cart</strong> (<code>ef-cart</code>): the products in your shopping cart.</li>
 <li><strong>Price display</strong> (<code>ef-vat</code>): whether you want to see prices including or excluding VAT.</li>
 <li><strong>Cookie choice</strong> (<code>ef-consent</code>): your choice in the cookie notice.</li>
 <li><strong>Selection guide</strong> (<code>ef-keuzehulp</code>): your answers in the selection guide, only while the tab is open.</li>
 </ul>
-<p>This data stays on your own device and is not shared with us or with others. You can delete it via your browser settings. If we start using analytics in the future, we will only do so with your consent and will update this policy.</p>`;
+<p>This data stays on your own device and is not shared with us or with others. You can delete it via your browser settings.</p>
+<h2>Visitor statistics</h2>
+<p>To see how our website is used, we use Cloudflare Web Analytics. This service places no cookies, stores nothing on your device and does not track you across other websites. We only see totals, such as the number of visits per page, where visitors come from (for example a search engine) and the type of device. We only use this data to improve the website.</p>`;
 
   const flat = site.shipping?.flatRate;
   const delivery = `${updated}

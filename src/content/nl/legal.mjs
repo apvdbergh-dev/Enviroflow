@@ -7,8 +7,8 @@ import { legalPagesEn } from '../en/legal.mjs';
 
 export const LEGAL_CHOICES = {
   draft: false,              // true = toont "Conceptversie" bovenaan de juridische pagina's
-  updated: '16 oktober 2026',
-  updatedEn: '16 October 2026', // zelfde datum voor de Engelse vertaling
+  updated: '17 oktober 2026',
+  updatedEn: '17 October 2026', // zelfde datum voor de Engelse vertaling
   offerValidDays: 30,        // geldigheid van offertes
   paymentTermDays: 14,       // betaaltermijn bij betaling op factuur
   complaintHours: 24,        // gebreken/schade melden na levering of ontdekking
@@ -139,7 +139,7 @@ export function legalPages(site) {
 <h2>Met wie delen wij gegevens?</h2>
 <p>Wij werken met dienstverleners die gegevens alleen in onze opdracht verwerken:</p>
 <ul>
-<li><strong>Cloudflare</strong> – hosting van de website en opslag van aanvragen en bestellingen.</li>
+<li><strong>Cloudflare</strong> – hosting van de website, opslag van aanvragen en bestellingen, en anonieme bezoekersstatistieken (Cloudflare Web Analytics).</li>
 <li><strong>Resend</strong> – verzending van e-mails over aanvragen en bestellingen.</li>
 <li><strong>Mollie</strong> – afhandeling van online betalingen.</li>
 <li><strong>Microsoft</strong> – onze zakelijke e-mail.</li>
@@ -153,7 +153,7 @@ export function legalPages(site) {
 </ul>
 
 <h2>Cookies</h2>
-<p>Deze website plaatst geen tracking- of advertentiecookies. Zie ons <a href="/cookiebeleid/">cookiebeleid</a>.</p>
+<p>Deze website plaatst geen tracking- of advertentiecookies. Voor bezoekersstatistieken gebruiken wij Cloudflare Web Analytics, zonder cookies. Zie ons <a href="/cookiebeleid/">cookiebeleid</a>.</p>
 
 <h2>Beveiliging</h2>
 <p>De website gebruikt een beveiligde verbinding (https). Alleen medewerkers van EnviroFlow die de gegevens nodig hebben, hebben er toegang toe.</p>
@@ -191,14 +191,16 @@ export function legalPages(site) {
 <p>Meld dit binnen ${K.complaintHours} uur na levering, bij voorkeur met foto’s. Dan lossen wij het kosteloos voor u op met herstel, vervanging of terugbetaling.</p>`;
 
   const cookies = `${updated}
-<p>Deze website gebruikt geen tracking- of advertentiecookies en geen statistiekendienst. Wij slaan alleen gegevens in uw browser op die nodig zijn om de website te laten werken:</p>
+<p>Deze website gebruikt geen tracking- of advertentiecookies. Wij slaan alleen gegevens in uw browser op die nodig zijn om de website te laten werken:</p>
 <ul>
 <li><strong>Winkelwagen</strong> (<code>ef-cart</code>): de producten in uw winkelwagen.</li>
 <li><strong>Prijsweergave</strong> (<code>ef-vat</code>): of u prijzen inclusief of exclusief btw wilt zien.</li>
 <li><strong>Cookiekeuze</strong> (<code>ef-consent</code>): uw keuze in de cookiemelding.</li>
 <li><strong>Keuzehulp</strong> (<code>ef-keuzehulp</code>): uw antwoorden in de keuzehulp, alleen zolang het tabblad open is.</li>
 </ul>
-<p>Deze gegevens blijven op uw eigen apparaat en worden niet met ons of met anderen gedeeld. U kunt ze verwijderen via de instellingen van uw browser. Gaan wij in de toekomst statistieken gebruiken, dan doen wij dat alleen met uw toestemming en passen wij dit beleid aan.</p>`;
+<p>Deze gegevens blijven op uw eigen apparaat en worden niet met ons of met anderen gedeeld. U kunt ze verwijderen via de instellingen van uw browser.</p>
+<h2>Bezoekersstatistieken</h2>
+<p>Om te zien hoe onze website wordt gebruikt, gebruiken wij Cloudflare Web Analytics. Deze dienst plaatst geen cookies, slaat niets op uw apparaat op en volgt u niet over andere websites. Wij zien alleen totalen, zoals het aantal bezoeken per pagina, de herkomst van bezoekers (bijvoorbeeld een zoekmachine) en het type apparaat. Wij gebruiken deze gegevens alleen om de website te verbeteren.</p>`;
 
   const flat = site.shipping?.flatRate;
   const levering = `${updated}
