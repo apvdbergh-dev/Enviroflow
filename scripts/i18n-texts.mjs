@@ -12,7 +12,7 @@ const readJson = (f) => JSON.parse(readFileSync(root + f, 'utf8'));
 export async function allTexts() {
   const out = new Map();
   for (const f of ['site', 'brands', 'categories', 'products']) collectTexts(readJson(`src/data/${f}.json`), f, out);
-  for (const f of ['solutions', 'sectors', 'articles']) collectTexts((await import(`../src/content/nl/${f}.mjs`)).default, f, out);
+  for (const f of ['solutions', 'sectors']) collectTexts((await import(`../src/content/nl/${f}.mjs`)).default, f, out);
   return out;
 }
 

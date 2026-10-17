@@ -1,7 +1,7 @@
 // Oplossingen, sectoren, projecten, kennisbank, over ons, partners, contact, juridisch, zoeken en 404.
-import { esc, ph, icon, media, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus } from './ui.mjs';
+import { esc, ph, icon, media, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, faqBlock } from './ui.mjs';
 import { stepsList } from './pages-shop.mjs';
-import { T } from '../lib/i18n.mjs';
+import { T, numberLocale } from '../lib/i18n.mjs';
 
 const H = { name: 'Home', url: '/' };
 const COUNTRY_EN = { Polen: 'Poland' };
@@ -76,31 +76,91 @@ ${ctaBand({ title: 'Een vergelijkbare situatie?', text: 'Bespreek uw situatie me
 }
 
 /* ---------------------------------------------------------------- kennisbank */
+// Tekst uit de artikelen: eerst escapen, dan **vet** en [link](/pad/) omzetten.
+const inline = (s) => esc(s)
+  .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+  .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, u) => `<a href="${u}"${/^https?:/.test(u) ? ' target="_blank" rel="noopener"' : ''}>${t}</a>`);
+const plain = (s) => String(s || '').replace(/\*\*|\[|\]\([^)]*\)/g, '');
+const slugify = (s) => plain(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+/** Leestijd in minuten (200 woorden per minuut, minimaal 3). */
+function readMinutes(a) {
+  const parts = [a.intro, ...(a.takeaways || [])];
+  for (const s of a.sections) parts.push(s.h, ...(s.p || []), ...(s.list || []), ...(s.after || []), ...(s.steps || []).flatMap((x) => [x.t, x.d]), ...(s.table?.rows || []).flat(), s.callout?.d || '');
+  for (const f of a.faq || []) parts.push(f.q, f.a);
+  return Math.max(3, Math.round(parts.join(' ').split(/\s+/).length / 200));
+}
+const fmtDate = (iso) => new Intl.DateTimeFormat(numberLocale(), { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(iso));
+const readLabel = (a) => `${readMinutes(a)} ${T('min leestijd', 'min read')}`;
+
+function articleCard(a, cls = '') {
+  return `<a class="kcard ${cls}" href="/kennisbank/${a.slug}/">
+  <div class="kcard__media">${media(a.image, cls ? '16-10' : '3-2')}</div>
+  <div class="kcard__body"><p class="kb-kicker">${esc(a.kicker)}</p><h2>${esc(a.title)}</h2><p>${esc(a.description)}</p>
+  <p class="kcard__meta">${icon('file')}<span>${readLabel(a)}</span><span class="link-arrow">${T('Lees artikel', 'Read article')} ${icon('arrow')}</span></p></div>
+</a>`;
+}
+
 export function knowledgeOverview(ctx) {
-  const body = `<section class="page-head"><div class="container"><h1>${T('Kennisbank', 'Knowledge base')}</h1><p class="lead">${T('Praktische uitleg over opvangen, opslaan en verplaatsen van vloeistoffen. Bij wet- en regelgeving verwijzen wij naar de officiële bron.', 'Practical explanations about containing, storing and moving liquids. For laws and regulations, we refer to the official source.')}</p></div></section>
-<section class="section section--tight"><div class="container"><div class="article-grid">${ctx.articles.map((a) => `<a class="acard" href="/kennisbank/${a.slug}/">${media(heroImg(a.categories.map((id) => ctx.categoryById[id]), a.title), '16-9')}<div class="acard__body"><h2>${esc(a.title)}</h2><p>${esc(a.description)}</p><span class="link-arrow">${T('Lees artikel', 'Read article')} ${icon('arrow')}</span></div></a>`).join('')}</div></div></section>`;
-  return { path: '/kennisbank/', title: T('Kennisbank: lekbakken, flexibele tanks en opslag | EnviroFlow', 'Knowledge base: spill trays, flexible tanks and storage | EnviroFlow'), description: T('Artikelen over flexibele lekbakken, IBC opvangbakken, opvangcapaciteit, flexibele tanks, bluswater, mest, brandstof en wateroverlast.', 'Articles about flexible spill trays, IBC spill trays, containment capacity, flexible tanks, fire water, manure, fuel and flooding.'), body, crumbs: [H, { name: T('Kennisbank', 'Knowledge base'), url: '/kennisbank/' }] };
+  const [first, ...rest] = ctx.articles;
+  const topics = [...new Set(ctx.articles.map((a) => a.kicker))];
+  const body = `<section class="page-head kb-head"><div class="container"><p class="eyebrow">${T('Kennisbank', 'Knowledge base')}</p><h1>${T('Praktische kennis over opvang en opslag van vloeistoffen', 'Practical knowledge about containing and storing liquids')}</h1><p class="lead">${T(`${ctx.articles.length} artikelen met rekenvoorbeelden, maten en de regels die gelden. Bij wet- en regelgeving linken we naar de officiële bron.`, `${ctx.articles.length} articles with worked examples, sizes and the rules that apply. For laws and regulations, we link to the official source.`)}</p>
+<ul class="kb-topics" aria-label="${T('Onderwerpen', 'Topics')}">${topics.map((t) => `<li>${esc(t)}</li>`).join('')}</ul></div></section>
+<section class="section section--tight"><div class="container">
+  ${articleCard(first, 'kcard--featured')}
+  <div class="kb-grid">${rest.map((a) => articleCard(a)).join('')}</div>
+</div></section>
+<div class="container section--tight">${adviceBlock(ctx.site, { title: T('Staat uw vraag er niet tussen?', 'Is your question not covered?'), text: T('Bel of mail ons. Wij denken mee en rekenen met u mee.', 'Call or email us. We will think along and do the maths with you.') })}</div>`;
+  return { path: '/kennisbank/', title: T('Kennisbank: lekbakken, flexibele tanks en opslag | EnviroFlow', 'Knowledge base: spill trays, flexible tanks and storage | EnviroFlow'), description: T('Artikelen over flexibele lekbakken, IBC lekbakken, opvangcapaciteit (PGS 15), flexibele tanks, bluswater, mestopslag, diesel en wateroverlast.', 'Articles about flexible spill trays, IBC spill trays, containment capacity (PGS 15), flexible tanks, fire water, manure storage, diesel and flooding.'), body, crumbs: [H, { name: T('Kennisbank', 'Knowledge base'), url: '/kennisbank/' }] };
+}
+
+function sectionHtml(s) {
+  const id = slugify(s.h);
+  const table = s.table ? `<div class="table-scroll"><table class="kb-table"><thead><tr>${s.table.head.map((h) => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${s.table.rows.map((r) => `<tr>${r.map((c, i) => (i === 0 ? `<th scope="row">${inline(c)}</th>` : `<td>${inline(c)}</td>`)).join('')}</tr>`).join('')}</tbody></table></div>${s.table.note ? `<p class="kb-note">${inline(s.table.note)}</p>` : ''}` : '';
+  return `<section class="kb-section" id="${id}" aria-labelledby="h-${id}">
+  <h2 id="h-${id}">${esc(s.h)}</h2>
+  ${(s.p || []).map((x) => `<p>${inline(x)}</p>`).join('')}
+  ${s.list ? `<ul class="check-list">${s.list.map((x) => `<li>${icon('check')}<span>${inline(x)}</span></li>`).join('')}</ul>` : ''}
+  ${s.steps ? `<ol class="kb-steps">${s.steps.map((x, i) => `<li><span class="kb-steps__n" aria-hidden="true">${i + 1}</span><div><h3>${esc(x.t)}</h3><p>${inline(x.d)}</p></div></li>`).join('')}</ol>` : ''}
+  ${table}
+  ${(s.after || []).map((x) => `<p>${inline(x)}</p>`).join('')}
+  ${s.callout ? `<aside class="kb-callout">${icon('info')}<div><strong>${esc(s.callout.t)}</strong><p>${inline(s.callout.d)}</p></div></aside>` : ''}
+  ${s.image ? `<figure class="kb-figure">${media(s.image, '16-9')}<figcaption>${esc(s.image.caption || '')}</figcaption></figure>` : ''}
+</section>`;
 }
 
 export function articlePage(a, ctx) {
-  const cats = a.categories.map((id) => ctx.categoryById[id]).filter((c) => c?.active);
-  const others = ctx.articles.filter((x) => x.slug !== a.slug).slice(0, 3);
+  const prods = (a.products || []).map((id) => ctx.products.find((p) => p.id === id)).filter(Boolean);
+  const others = ctx.articles.filter((x) => x.slug !== a.slug).sort((x, y) => (y.kicker === a.kicker) - (x.kicker === a.kicker)).slice(0, 3);
+  const toc = a.sections.map((s) => `<li><a href="#${slugify(s.h)}">${esc(s.h)}</a></li>`).join('') + (a.faq?.length ? `<li><a href="#faq-title">${T('Veelgestelde vragen', 'Frequently asked questions')}</a></li>` : '');
+  const faq = faqBlock(a.faq);
   const body = `
-<article class="article">
-  <header class="article__head container container--narrow"><p class="eyebrow">${T('Kennisbank', 'Knowledge base')}</p><h1>${esc(a.title)}</h1><p class="lead">${esc(a.intro)}</p></header>
-  <div class="container container--narrow article__body">
-    ${media(heroImg(cats, a.title), '16-9', true)}
-    ${a.sections.map((s) => `<h2>${esc(s.h)}</h2>${(s.p || []).map((p) => `<p>${esc(p)}</p>`).join('')}${s.list ? `<ul class="check-list">${s.list.map((l) => `<li>${icon('check')}${esc(l)}</li>`).join('')}</ul>` : ''}`).join('')}
-    ${sourcesBlock(a.sources)}
-    <div class="notice">${icon('info')}<p>${ctx.t.requirementsNote}</p></div>
+<article class="kb-article">
+  <header class="kb-hero">
+    <div class="container kb-hero__text">
+      <p class="kb-kicker">${esc(a.kicker)}</p>
+      <h1>${esc(a.title)}</h1>
+      <p class="kb-lead">${esc(a.intro)}</p>
+      <p class="kb-meta"><span>${icon('file')}${readLabel(a)}</span><span>${T('Bijgewerkt op', 'Updated on')} ${fmtDate(a.updated)}</span><span>${T('Door', 'By')} EnviroFlow</span></p>
+    </div>
+    <div class="container kb-hero__media">${media(a.image, '21-9', true)}</div>
+  </header>
+  <div class="container kb-layout">
+    <aside class="kb-toc"><nav aria-label="${T('In dit artikel', 'In this article')}"><p class="kb-toc__title">${T('In dit artikel', 'In this article')}</p><ol>${toc}</ol></nav></aside>
+    <div class="kb-body">
+      <details class="kb-toc-mobile"><summary>${T('In dit artikel', 'In this article')}${icon('chevron')}</summary><ol>${toc}</ol></details>
+      <div class="kb-summary"><h2>${T('In het kort', 'In short')}</h2><ul class="check-list">${a.takeaways.map((x) => `<li>${icon('check')}<span>${inline(x)}</span></li>`).join('')}</ul></div>
+      ${a.sections.map(sectionHtml).join('\n')}
+      ${sourcesBlock(a.sources)}
+    </div>
   </div>
 </article>
-${cats.length ? `<section class="section section--tight section--grey"><div class="container"><h2>${T('Bijbehorende oplossingen', 'Related solutions')}</h2><div class="cat-grid cat-grid--compact">${cats.map((c) => categoryCard(c, ctx, { compact: true })).join('')}</div></div></section>` : ''}
-<section class="section section--tight"><div class="container"><h2>${T('Meer uit de kennisbank', 'More from the knowledge base')}</h2><ul class="link-list">${others.map((o) => `<li><a href="/kennisbank/${o.slug}/">${esc(o.title)}${icon('arrow')}</a></li>`).join('')}</ul></div></section>
-<div class="container section--tight">${adviceBlock(ctx.site)}</div>`;
-  const ld = { '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.description, inLanguage: T('nl-NL', 'en'), mainEntityOfPage: ctx.site.baseUrl + `/kennisbank/${a.slug}/`, author: { '@type': 'Organization', name: 'EnviroFlow' }, publisher: { '@type': 'Organization', name: 'EnviroFlow', logo: { '@type': 'ImageObject', url: ctx.site.baseUrl + '/assets/img/enviroflow-logo.png' } } };
-  if (a.datePublished) ld.datePublished = a.datePublished;
-  return { path: `/kennisbank/${a.slug}/`, title: `${a.title} | ${T('Kennisbank', 'Knowledge base')} EnviroFlow`, description: a.description, body, crumbs: [H, { name: T('Kennisbank', 'Knowledge base'), url: '/kennisbank/' }, { name: a.title, url: `/kennisbank/${a.slug}/` }], jsonld: [ld] };
+${prods.length ? `<section class="section section--tight section--grey"><div class="container"><h2>${T('Producten bij dit artikel', 'Products for this article')}</h2><div class="product-grid product-grid--3">${prods.map((p) => productCard(p, ctx)).join('')}</div></div></section>` : ''}
+${faq.html}
+<div class="container section--tight">${adviceBlock(ctx.site)}</div>
+<section class="section section--tight"><div class="container"><h2>${T('Lees ook', 'Read also')}</h2><div class="kb-grid kb-grid--3">${others.map((o) => articleCard(o)).join('')}</div></div></section>`;
+  const abs = (u) => ctx.site.baseUrl + u;
+  const ld = { '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.description, image: [abs(a.image.src)], inLanguage: T('nl-NL', 'en'), datePublished: a.updated, dateModified: a.updated, mainEntityOfPage: abs(`/kennisbank/${a.slug}/`), author: { '@type': 'Organization', name: 'EnviroFlow', url: ctx.site.baseUrl }, publisher: { '@type': 'Organization', name: 'EnviroFlow', logo: { '@type': 'ImageObject', url: abs('/assets/img/enviroflow-logo.png') } } };
+  return { path: `/kennisbank/${a.slug}/`, title: a.seoTitle || `${a.title} | EnviroFlow`, description: a.description, ogImage: a.image.src, body, crumbs: [H, { name: T('Kennisbank', 'Knowledge base'), url: '/kennisbank/' }, { name: a.title, url: `/kennisbank/${a.slug}/` }], jsonld: [ld, faq.ld].filter(Boolean) };
 }
 
 /* ---------------------------------------------------------------- over ons & partners */

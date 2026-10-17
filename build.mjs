@@ -19,6 +19,8 @@ const rawContent = {
   sectors: (await import('./src/content/nl/sectors.mjs')).default,
   articles: (await import('./src/content/nl/articles.mjs')).default
 };
+// Kennisbankartikelen zijn lange teksten: de Engelse versie staat als eigen bestand (zelfde slugs).
+const articlesEn = (await import('./src/content/en/articles.mjs')).default;
 const enTable = existsSync(join(root, 'src/i18n/en-data.json')) ? readJson('src/i18n/en-data.json') : {};
 const version = Date.now().toString(36);
 
@@ -35,7 +37,7 @@ for (const lang of LANGS) {
   const missing = new Map();
   const tr = (o) => (lang === 'en' ? translateDeep(o, enTable, missing) : o);
   const catalog = buildCatalog({ site: tr(raw.site), brands: tr(raw.brands), categories: tr(raw.categories), products: tr(raw.products) });
-  const solutions = tr(rawContent.solutions), sectors = tr(rawContent.sectors), articles = tr(rawContent.articles);
+  const solutions = tr(rawContent.solutions), sectors = tr(rawContent.sectors), articles = lang === 'en' ? articlesEn : rawContent.articles;
   if (missing.size && process.env.I18N_ALLOW_MISSING === '1') {
     console.warn(`(ontwikkelmodus) ${missing.size} vertaling(en) ontbreken nog`);
   } else if (missing.size) {
