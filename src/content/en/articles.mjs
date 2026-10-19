@@ -32,7 +32,7 @@ export default [
     slug: 'wat-is-een-flexibele-lekbak',
     kicker: 'Containment',
     title: 'Flexible spill tray: what is it and when should you choose one?',
-    seoTitle: 'Flexible spill tray: what is it and when to choose one? | EnviroFlow',
+    seoTitle: 'What is a flexible spill tray? Explanation and uses | EnviroFlow',
     description: 'What is a flexible spill tray, how does it work and when is it a better fit than a steel one? With sizes, material, Dutch rules (PGS 15) and practical tips.',
     updated: UPDATED,
     image: { src: IMG + 'sfeer-ibc-hal.jpg', alt: 'IBCs in a flexible spill tray in a commercial hall' },
@@ -41,7 +41,8 @@ export default [
       'A flexible spill tray catches leaks and spills under IBCs, drums, generators and vehicles.',
       'It is set up in a few minutes and can be folded when empty.',
       'For packaged liquid hazardous substances, the Dutch PGS 15 guideline requires containment of at least 110% of the largest container.',
-      'Always check that the material is resistant to your liquid.'
+      'Always check that the material is resistant to your liquid.',
+      `View the [flexible spill trays](${L.opvang}) in standard sizes for drums, IBCs, machines and vehicles.`
     ],
     sections: [
       {

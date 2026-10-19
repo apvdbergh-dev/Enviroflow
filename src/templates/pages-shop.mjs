@@ -29,7 +29,7 @@ export function home(ctx) {
     <div class="hero__content">
       <p class="kicker kicker--light hero__in" style="--d:0">${T('Zakelijke specialist in vloeistofopslag en opvang', 'Business specialist in liquid storage and containment')}</p>
       <h1 id="h-hero" class="hero__title">${T('<span class="line"><span style="--d:1">Veilige oplossingen</span></span> <span class="line"><span style="--d:2">voor vloeistofopslag</span></span> <span class="line"><span style="--d:3">en opvang</span></span>', '<span class="line"><span style="--d:1">Safe solutions</span></span> <span class="line"><span style="--d:2">for liquid storage</span></span> <span class="line"><span style="--d:3">and containment</span></span>')}</h1>
-      <p class="hero__lead hero__in" style="--d:4">${T("Van flexibele lekbakken voor IBC's tot brandwater-, brandstof- en mesttanks. EnviroFlow helpt bedrijven vloeistoffen veilig en praktisch op te slaan, op te vangen en te verplaatsen.", 'From flexible spill trays for IBCs to fire water, fuel and manure tanks. EnviroFlow helps businesses store, contain and move liquids safely and practically.')}</p>
+      <p class="hero__lead hero__in" style="--d:4">${T("Van <a href=\"/producten/opvang-en-spill-containment/flexibele-opvangbakken/\" style=\"color:inherit\">flexibele lekbakken voor IBC's</a> tot brandwater-, brandstof- en mesttanks. EnviroFlow helpt bedrijven vloeistoffen veilig en praktisch op te slaan, op te vangen en te verplaatsen.", 'From <a href="/producten/opvang-en-spill-containment/flexibele-opvangbakken/" style="color:inherit">flexible spill trays for IBCs</a> to fire water, fuel and manure tanks. EnviroFlow helps businesses store, contain and move liquids safely and practically.')}</p>
       <div class="btn-row hero__in" style="--d:5"><a class="btn btn--accent btn--lg" href="/producten/">${T('Bekijk producten', 'View products')} ${icon('arrow')}</a><a class="btn btn--outline-light btn--lg" href="/offerte-aanvragen/?type=advies">${T('Vraag advies aan', 'Request advice')}</a></div>
       <p class="hero__phone hero__in" style="--d:6">${icon('phone')}<span>${T('Liever direct overleggen? Bel', 'Prefer to talk right away? Call')} <a href="tel:${site.phonePrimary.tel}">${site.phonePrimary.display}</a></span></p>
     </div>
@@ -159,7 +159,7 @@ ${ctaBand({ title: T('Weet u niet welke oplossing u nodig heeft?', "Not sure whi
   };
   return {
     path: '/',
-    title: T('IBC lekbak, flexibele tanks & opvangbakken | EnviroFlow', 'IBC spill trays, flexible tanks & containment | EnviroFlow'),
+    title: T('Flexibele lekbak, IBC opvangbak & flexibele tanks | EnviroFlow', 'Flexible spill trays, IBC containment & flexible tanks | EnviroFlow'),
     description: T('EnviroFlow levert flexibele opvangbakken, brandwater-, brandstof-, drinkwater- en mesttanks en mobiele waterkeringen voor bedrijven. Persoonlijk advies en maatwerk.', 'EnviroFlow supplies flexible spill trays, fire water, fuel, drinking water and manure tanks and mobile flood barriers for businesses. Personal advice and custom solutions.'),
     body, jsonld: [org], bodyClass: 'page-home', scripts: ['/assets/js/hero.js']
   };
@@ -390,7 +390,7 @@ ${related.length ? `<section class="section section--grey" aria-labelledby="h-re
       seller: { '@type': 'Organization', name: 'EnviroFlow' }
     };
   }
-  return { path: urls.product(p), title: `${p.name} | ${brand.name} | EnviroFlow`, description: (orderable ? T(`${p.short} Online te bestellen of vraag een offerte aan bij EnviroFlow.`, `${p.short} Order online or request a quote from EnviroFlow.`) : T(`${p.short} Prijs op aanvraag. Vraag een offerte aan bij EnviroFlow.`, `${p.short} Price on request. Request a quote from EnviroFlow.`)).replace(/\s+/g, ' '), body, crumbs, jsonld: [ld], scripts: ['/assets/js/product.js'] };
+  return { path: urls.product(p), title: p.seoTitle || `${p.name} | EnviroFlow`, description: (orderable ? T(`${p.short} Online te bestellen of vraag een offerte aan bij EnviroFlow.`, `${p.short} Order online or request a quote from EnviroFlow.`) : T(`${p.short} Prijs op aanvraag. Vraag een offerte aan bij EnviroFlow.`, `${p.short} Price on request. Request a quote from EnviroFlow.`)).replace(/\s+/g, ' '), body, crumbs, jsonld: [ld], scripts: ['/assets/js/product.js'] };
 }
 
 /* ================================================================ CART & CHECKOUT */

@@ -41,7 +41,7 @@ export default [
     slug: 'wat-is-een-flexibele-lekbak',
     kicker: 'Opvang',
     title: 'Flexibele lekbak: wat is het en wanneer kiest u ervoor?',
-    seoTitle: 'Flexibele lekbak: wat is het en wanneer kiest u ervoor? | EnviroFlow',
+    seoTitle: 'Wat is een flexibele lekbak? Uitleg en toepassingen | EnviroFlow',
     description: 'Wat is een flexibele lekbak, hoe werkt hij en wanneer past hij beter dan een stalen lekbak? Met maten, materiaal, regels (PGS 15) en praktijktips.',
     updated: UPDATED,
     image: { src: IMG + 'sfeer-ibc-hal.jpg', alt: "IBC's in een flexibele lekbak in een bedrijfshal" },
@@ -50,7 +50,8 @@ export default [
       "Een flexibele lekbak vangt lekkages en morsingen op onder IBC's, vaten, aggregaten en voertuigen.",
       'Hij staat er in een paar minuten en kan leeg worden opgevouwen.',
       'Voor vloeibare gevaarlijke stoffen in verpakking geldt volgens PGS 15: minimaal 110% van de grootste verpakking opvangen.',
-      'Controleer altijd of het materiaal bestand is tegen uw vloeistof.'
+      'Controleer altijd of het materiaal bestand is tegen uw vloeistof.',
+      `Bekijk de [flexibele lekbakken](${L.opvang}) in standaardmaten voor vaten, IBC's, machines en voertuigen.`
     ],
     sections: [
       {
