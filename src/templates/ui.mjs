@@ -47,13 +47,15 @@ const iconSprite = () => `<svg xmlns="http://www.w3.org/2000/svg" style="display
 export const wave = (cls = '') => `<div class="wave ${cls}" aria-hidden="true"><svg viewBox="0 0 1440 48" preserveAspectRatio="none"><defs><linearGradient id="wg${cls.replace(/\W/g, '')}" x1="0" x2="1"><stop offset="0" stop-color="#2BA84A"/><stop offset=".55" stop-color="#12A18F"/><stop offset="1" stop-color="#1E9BE0"/></linearGradient></defs><path d="M0 30 C 240 4, 420 46, 720 26 S 1200 8, 1440 22" fill="none" stroke="url(#wg${cls.replace(/\W/g, '')})" stroke-width="3"/></svg></div>`;
 
 /** Logo voor donkere achtergrond (vectorbenadering van het woordmerk). */
-export const logoDark = () => `<img class="logo-dark" src="/assets/img/enviroflow-logo-wit.webp" srcset="/assets/img/enviroflow-logo-wit.webp 1x, /assets/img/enviroflow-logo-wit@2x.webp 2x" width="520" height="55" alt="EnviroFlow" loading="lazy">`;
+export const logoDark = () => `<img class="logo-dark" src="/assets/img/enviroflow-logo-wit-400.webp" width="400" height="42" alt="EnviroFlow" loading="lazy">`;
 
 /** Afbeelding of beschrijvende placeholder. img = { src, alt, width, height } */
-export function media(img, ratio = '4-3', eager = false) {
+export function media(img, ratio = '4-3', eager = false, sizes = '(max-width: 700px) 100vw, 600px') {
   if (img && img.src) {
     const base = img.src.replace(/\.(jpe?g|png|webp)$/i, '');
-    return `<picture class="media r-${ratio}"><source type="image/webp" srcset="${esc(base)}.webp"><img src="${esc(img.src)}" alt="${esc(img.alt)}" width="${img.width || 800}" height="${img.height || 600}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture>`;
+    // Productfoto's hebben ook een versie van 800 px breed (voor telefoons en kaarten).
+    const srcset = base.startsWith('/assets/img/producten/') ? `${esc(base)}-800.webp 800w, ${esc(base)}.webp 1200w" sizes="${sizes}` : `${esc(base)}.webp`;
+    return `<picture class="media r-${ratio}"><source type="image/webp" srcset="${srcset}"><img src="${esc(img.src)}" alt="${esc(img.alt)}" width="${img.width || 800}" height="${img.height || 600}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture>`;
   }
   const alt = img?.alt || T('Afbeelding volgt', 'Image to follow');
   const label = alt.replace(/^(Foto|Illustratie bij|Photo|Illustration):\s*/i, '');
@@ -222,10 +224,10 @@ function header(ctx, path, altPath) {
   return `<header class="site-header" data-header>
   <div class="header-main">
     <div class="container header-main__inner">
-      <a class="logo" href="/" aria-label="${T('EnviroFlow – naar de homepage', 'EnviroFlow – to the homepage')}"><img src="/assets/img/enviroflow-logo.webp" srcset="/assets/img/enviroflow-logo.webp 1x, /assets/img/enviroflow-logo@2x.webp 2x" width="520" height="55" alt="EnviroFlow"></a>
+      <a class="logo" href="/" aria-label="${T('EnviroFlow – naar de homepage', 'EnviroFlow – to the homepage')}"><img src="/assets/img/enviroflow-logo-400.webp" width="400" height="42" alt="EnviroFlow"></a>
       <form class="search" role="search" action="/zoeken/" method="get" data-search>
         <label class="sr-only" for="q-header">${t.search}</label>
-        <input id="q-header" name="q" type="search" placeholder="${t.searchPlaceholder}" autocomplete="off" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list">
+        <input id="q-header" name="q" type="search" role="combobox" placeholder="${t.searchPlaceholder}" autocomplete="off" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list">
         <button type="submit" class="search__btn" aria-label="${t.search}">${icon('search')}</button>
         <div class="search__results" id="search-results" role="listbox" aria-label="${T('Zoekresultaten', 'Search results')}" hidden></div>
       </form>

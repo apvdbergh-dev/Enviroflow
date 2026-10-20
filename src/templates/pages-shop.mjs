@@ -22,7 +22,7 @@ export function home(ctx) {
   const body = `
 <section class="hero hero--slider" aria-labelledby="h-hero" data-hero>
   <div class="hero__slides" aria-hidden="true">
-    ${slides.map((sl, i) => `<div class="hero__slide${i === 0 ? ' is-active' : ''}" data-slide="${i}"><picture><source type="image/webp" srcset="/assets/img/hero/${sl.img}.webp"><img src="/assets/img/hero/${sl.img}.jpg" alt="" width="1600" height="900" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture></div>`).join('')}
+    ${slides.map((sl, i) => `<div class="hero__slide${i === 0 ? ' is-active' : ''}" data-slide="${i}"><picture><source type="image/webp" srcset="/assets/img/hero/${sl.img}-800.webp 800w, /assets/img/hero/${sl.img}.webp 1600w" sizes="100vw"><img src="/assets/img/hero/${sl.img}.jpg" alt="" width="1600" height="900" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture></div>`).join('')}
   </div>
   <div class="hero__scrim" aria-hidden="true"></div>
   <div class="container hero__inner">
@@ -44,7 +44,7 @@ export function home(ctx) {
   </div>
   <div class="container hero__controls hero__in" style="--d:8">
     <ol class="hero__progress">
-      ${slides.map((sl, i) => `<li><button type="button" data-goto="${i}" aria-label="${T('Toon dia', 'Show slide')} ${i + 1}: ${esc(sl.group)}"${i === 0 ? ' aria-current="true"' : ''}><span class="hero__progress-label"><span>${String(i + 1).padStart(2, '0')}</span> ${esc(sl.short)}</span><span class="hero__progress-bar"><i></i></span></button></li>`).join('')}
+      ${slides.map((sl, i) => `<li><button type="button" data-goto="${i}"${i === 0 ? ' aria-current="true"' : ''}><span class="hero__progress-label"><span>${String(i + 1).padStart(2, '0')}</span> ${esc(sl.short)}</span><span class="hero__progress-bar"><i></i></span></button></li>`).join('')}
     </ol>
     <div class="hero__nav">
       <button type="button" class="hero__btn" data-prev aria-label="${T('Vorige dia', 'Previous slide')}">${icon('arrow', 'flip')}</button>

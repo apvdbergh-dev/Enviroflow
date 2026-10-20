@@ -17,7 +17,7 @@
   --green: #2BA84A;         /* merkgroen – alleen statussen */
   --ink: #13211C;           /* tekst */
   --ink-2: #4A5853;         /* secundaire tekst (AA op wit) */
-  --ink-3: #6B7873;         /* labels (AA groot) */
+  --ink-3: #5F6C67;         /* labels (AA, ook op lichtgrijs) */
   --on-dark: #E7F0EC;
   --on-dark-2: #A9BFB6;
   --paper: #FFFFFF;
@@ -1150,7 +1150,7 @@ a.contact-card:hover span { text-decoration: underline; text-underline-offset: 3
 .sec-risks { display: grid; gap: 16px; list-style: none; margin: 0; padding: 0; }
 @media (min-width: 860px) { .sec-risks { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
 .sec-risk { display: flex; flex-direction: column; padding: 28px; border-radius: var(--r); background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--accent); }
-.sec-risk__n { font: 700 2rem/1 var(--font-head); color: var(--deep); opacity: .18; margin-bottom: 14px; }
+.sec-risk__n { font: 700 2rem/1 var(--font-head); color: #7F948C; margin-bottom: 14px; }
 .sec-risk h3 { font-size: 1.1875rem; line-height: 1.35; margin: 0 0 20px; flex: 1; }
 .sec-risk__fix { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; padding-top: 16px; border-top: 1px solid var(--line); font-weight: 600; color: var(--deep); text-decoration: none; }
 .sec-risk__fix span { width: 100%; font: 600 .6875rem/1.2 var(--font-head); text-transform: uppercase; letter-spacing: .14em; color: var(--ink-3); }
@@ -1158,3 +1158,5 @@ a.contact-card:hover span { text-decoration: underline; text-underline-offset: 3
 .sec-risk__fix:hover .ic { transform: translateX(3px); }
 .sec-others { border-top: 1px solid var(--line); }
 .sec-others h2 { font-size: 1.125rem; margin-bottom: 16px; }
+.kb-summary a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.kb-summary a:hover { color: var(--accent); }

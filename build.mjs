@@ -155,6 +155,10 @@ writeFileSync(join(dist, '_headers'), `/*
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; form-action 'self' https://www.mollie.com; frame-ancestors 'self'; base-uri 'self'
+/assets/css/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/js/*
+  Cache-Control: public, max-age=31536000, immutable
 /assets/img/*
   Cache-Control: public, max-age=31536000, immutable
 /assets/fonts/*
