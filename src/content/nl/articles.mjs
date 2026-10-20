@@ -41,7 +41,7 @@ export default [
     slug: 'wat-is-een-flexibele-lekbak',
     kicker: 'Opvang',
     title: 'Flexibele lekbak: wat is het en wanneer kiest u ervoor?',
-    seoTitle: 'Wat is een flexibele lekbak? Uitleg en toepassingen | EnviroFlow',
+    seoTitle: 'Flexibele lekbak: wat is het en wanneer kiest u ervoor? | EnviroFlow',
     description: 'Wat is een flexibele lekbak, hoe werkt hij en wanneer past hij beter dan een stalen lekbak? Met maten, materiaal, regels (PGS 15) en praktijktips.',
     updated: UPDATED,
     image: { src: IMG + 'sfeer-ibc-hal.jpg', alt: "IBC's in een flexibele lekbak in een bedrijfshal" },

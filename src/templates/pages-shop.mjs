@@ -297,7 +297,10 @@ export function categoryPage(c, ctx) {
     main = `${listingSection(list, ctx, { title: `${c.name}` })}
     <section class="section section--tight"><div class="container"><div class="custom-hint">${icon('ruler')}<div><h2>${T('Geen passende maat of uitvoering?', 'No suitable size or version?')}</h2><p>${T('Wij bekijken wat er op maat mogelijk is.', 'We look at what is possible as a custom solution.')}</p></div><a class="btn btn--ghost" href="/maatwerk-aanvragen/">${T('Vraag maatwerk aan', 'Request custom-made')}</a></div></div></section>`;
   }
-  const body = `${head}${main}${faq.html}<div class="container section--tight">${adviceBlock(site)}</div>`;
+  // Uit de kennisbank: artikelen over deze categorie (interne links helpen bezoekers en zoekmachines).
+  const reads = (ctx.articles || []).filter((a) => (a.categories || []).includes(c.id)).slice(0, 3);
+  const kb = reads.length ? `<section class="section section--tight" aria-labelledby="h-kb"><div class="container"><h2 id="h-kb" class="subhead">${T('Uit de kennisbank', 'From the knowledge base')}</h2><ul class="link-list">${reads.map((a) => `<li><a href="/kennisbank/${a.slug}/">${esc(a.title)}</a></li>`).join('')}</ul></div></section>` : '';
+  const body = `${head}${main}${faq.html}${kb}<div class="container section--tight">${adviceBlock(site)}</div>`;
   return { path: urls.category(c), title: c.seoTitle || `${c.name} | EnviroFlow`, description: c.seoDescription || c.short, body, crumbs, jsonld: faq.ld ? [faq.ld] : [], scripts: c.isCustom ? ['/assets/js/forms.js'] : ['/assets/js/listing.js'] };
 }
 

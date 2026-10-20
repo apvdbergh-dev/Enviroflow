@@ -32,7 +32,7 @@ export default [
     slug: 'wat-is-een-flexibele-lekbak',
     kicker: 'Containment',
     title: 'Flexible spill tray: what is it and when should you choose one?',
-    seoTitle: 'What is a flexible spill tray? Explanation and uses | EnviroFlow',
+    seoTitle: 'Flexible spill tray: what is it and when to choose one? | EnviroFlow',
     description: 'What is a flexible spill tray, how does it work and when is it a better fit than a steel one? With sizes, material, Dutch rules (PGS 15) and practical tips.',
     updated: UPDATED,
     image: { src: IMG + 'sfeer-ibc-hal.jpg', alt: 'IBCs in a flexible spill tray in a commercial hall' },
