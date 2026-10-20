@@ -50,11 +50,14 @@ export const wave = (cls = '') => `<div class="wave ${cls}" aria-hidden="true"><
 export const logoDark = () => `<img class="logo-dark" src="/assets/img/enviroflow-logo-wit-400.webp" width="400" height="42" alt="EnviroFlow" loading="lazy">`;
 
 /** Afbeelding of beschrijvende placeholder. img = { src, alt, width, height } */
+/** `sizes` voor foto's in kaarten van een raster (smal op desktop, bijna schermbreed op een telefoon). */
+export const CARD_SIZES = '(max-width: 640px) 92vw, (max-width: 1000px) 45vw, 300px';
+
 export function media(img, ratio = '4-3', eager = false, sizes = '(max-width: 700px) 100vw, 600px') {
   if (img && img.src) {
     const base = img.src.replace(/\.(jpe?g|png|webp)$/i, '');
-    // Productfoto's hebben ook een versie van 800 px breed (voor telefoons en kaarten).
-    const srcset = base.startsWith('/assets/img/producten/') ? `${esc(base)}-800.webp 800w, ${esc(base)}.webp 1200w" sizes="${sizes}` : `${esc(base)}.webp`;
+    // Productfoto's hebben ook versies van 400 en 800 px breed (voor kaarten en telefoons).
+    const srcset = base.startsWith('/assets/img/producten/') ? `${esc(base)}-400.webp 400w, ${esc(base)}-800.webp 800w, ${esc(base)}.webp 1200w" sizes="${sizes}` : `${esc(base)}.webp`;
     return `<picture class="media r-${ratio}"><source type="image/webp" srcset="${srcset}"><img src="${esc(img.src)}" alt="${esc(img.alt)}" width="${img.width || 800}" height="${img.height || 600}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture>`;
   }
   const alt = img?.alt || T('Afbeelding volgt', 'Image to follow');
@@ -129,7 +132,7 @@ export function productCard(p, ctx) {
   const attrs = Object.entries(data).map(([k, v]) => `data-${k}="${esc(v)}"`).join(' ');
   const url = urls.product(p);
   return `<article class="pcard" ${attrs}>
-  <a class="pcard__media" href="${url}" tabindex="-1" aria-hidden="true">${media(p.images?.[0], '4-3')}</a>
+  <a class="pcard__media" href="${url}" tabindex="-1" aria-hidden="true">${media(p.images?.[0], '4-3', false, CARD_SIZES)}</a>
   <div class="pcard__body">
     <p class="pcard__meta"><span>${esc(p.line || '')}</span><span class="status ${orderable ? 'status--on' : ''}">${orderable ? T('Online bestelbaar', 'Order online') : T('Op aanvraag', 'On request')}</span></p>
     <h3 class="pcard__title"><a href="${url}">${esc(p.name)}</a></h3>
@@ -148,7 +151,7 @@ export function productCard(p, ctx) {
 export function categoryCard(c, ctx, { compact = false } = {}) {
   if (compact) return `<a class="ccard ccard--compact" href="${ctx.urls.category(c)}"><span class="ccard__name">${esc(c.name)}</span><span class="ccard__text">${esc(c.short)}</span>${icon('arrow')}</a>`;
   return `<a class="ccard" href="${ctx.urls.category(c)}">
-  <span class="ccard__media">${media({ src: c.imageSrc, alt: c.image }, '16-10')}</span>
+  <span class="ccard__media">${media({ src: c.imageSrc, alt: c.image }, '16-10', false, CARD_SIZES)}</span>
   <span class="ccard__body"><span class="ccard__title">${esc(c.name)}</span><span class="ccard__text">${esc(c.short)}</span><span class="link-arrow">${T('Bekijk oplossing', 'View solution')} ${icon('arrow')}</span></span>
 </a>`;
 }

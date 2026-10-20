@@ -286,17 +286,20 @@
       '.cta-band__inner > *', '.pd-block', '.faq', '.custom-hint', '.sector-cards > *', '.link-list > li', '.check-list--cols', '.scard'
     ];
     var revealEls = [];
-    document.querySelectorAll(groups.join(',')).forEach(function (el) {
-      if (el.closest('.hero')) return;
-      if (el.getBoundingClientRect().top < window.innerHeight * 0.92) return;
+    // Eerst alle posities meten, daarna pas klassen zetten: zo hoeft de browser de opmaak maar één keer te berekenen.
+    var fold = window.innerHeight * 0.92;
+    var below = function (sel) {
+      return Array.prototype.filter.call(document.querySelectorAll(sel), function (el) { return !el.closest('.hero'); })
+        .map(function (el) { return [el, el.getBoundingClientRect().top]; })
+        .filter(function (x) { return x[1] >= fold; }).map(function (x) { return x[0]; });
+    };
+    var blocks = below(groups.join(',')), imgs = below('.feature__media, .page-head__grid > .media');
+    blocks.forEach(function (el) {
       var siblings = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
       el.style.setProperty('--rd', Math.min(siblings, 6) * 60 + 'ms');
       el.classList.add('reveal'); revealEls.push(el);
     });
-    document.querySelectorAll('.feature__media, .page-head__grid > .media').forEach(function (el) {
-      if (el.getBoundingClientRect().top < window.innerHeight * 0.92) return;
-      el.classList.add('reveal-img'); revealEls.push(el);
-    });
+    imgs.forEach(function (el) { el.classList.add('reveal-img'); revealEls.push(el); });
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });

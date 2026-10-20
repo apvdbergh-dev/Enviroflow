@@ -1,5 +1,5 @@
 // Oplossingen, sectoren, projecten, kennisbank, over ons, partners, contact, juridisch, zoeken en 404.
-import { esc, ph, icon, media, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, faqBlock } from './ui.mjs';
+import { esc, ph, icon, media, CARD_SIZES, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, faqBlock } from './ui.mjs';
 import { stepsList } from './pages-shop.mjs';
 import { T, numberLocale } from '../lib/i18n.mjs';
 
@@ -35,7 +35,7 @@ const sectorCats = (s, ctx) => s.categories.map((id) => ctx.categoryById[id]).fi
 function sectorCard(s, ctx) {
   const n = sectorCats(s, ctx).length;
   return `<a class="secard" href="/sectoren/${s.slug}/">
-  <div class="secard__media">${media(s.image, '3-2')}<span class="secard__count">${n} ${T('oplossingen', 'solutions')}</span></div>
+  <div class="secard__media">${media(s.image, '3-2', false, CARD_SIZES)}<span class="secard__count">${n} ${T('oplossingen', 'solutions')}</span></div>
   <div class="secard__body"><h2>${esc(s.name)}</h2><p>${esc(s.intro)}</p>
     <ul class="secard__tags">${s.liquids.slice(0, 3).map((l) => `<li>${esc(l)}</li>`).join('')}</ul>
     <span class="link-arrow">${T('Bekijk sector', 'View sector')} ${icon('arrow')}</span></div>
@@ -123,7 +123,7 @@ const readLabel = (a) => `${readMinutes(a)} ${T('min leestijd', 'min read')}`;
 
 function articleCard(a, cls = '') {
   return `<a class="kcard ${cls}" href="/kennisbank/${a.slug}/">
-  <div class="kcard__media">${media(a.image, cls ? '16-10' : '3-2')}</div>
+  <div class="kcard__media">${cls ? media(a.image, '16-10') : media(a.image, '3-2', false, CARD_SIZES)}</div>
   <div class="kcard__body"><p class="kb-kicker">${esc(a.kicker)}</p><h2>${esc(a.title)}</h2><p>${esc(a.description)}</p>
   <p class="kcard__meta">${icon('file')}<span>${readLabel(a)}</span><span class="link-arrow">${T('Lees artikel', 'Read article')} ${icon('arrow')}</span></p></div>
 </a>`;
@@ -253,7 +253,7 @@ export function brandPage(b, ctx) {
 <section class="section section--tight" id="productlijnen" aria-labelledby="h-lines">
   <div class="container">
     <div class="section-head"><h2 id="h-lines">${T('Productlijnen', 'Product lines')}</h2></div>
-    <div class="line-grid">${lines.map((p) => `<a class="line-card" href="${ctx.urls.product(p)}">${media(p.images?.[0] ? { ...p.images[0], alt: p.images[0].alt } : { alt: p.name }, '4-3')}<div class="line-card__body"><h3>${esc(p.line)}</h3><p>${esc(p.short)}</p><span class="link-arrow">${T('Bekijk product', 'View product')} ${icon('arrow')}</span></div></a>`).join('')}</div>
+    <div class="line-grid">${lines.map((p) => `<a class="line-card" href="${ctx.urls.product(p)}">${media(p.images?.[0] ? { ...p.images[0], alt: p.images[0].alt } : { alt: p.name }, '4-3', false, CARD_SIZES)}<div class="line-card__body"><h3>${esc(p.line)}</h3><p>${esc(p.short)}</p><span class="link-arrow">${T('Bekijk product', 'View product')} ${icon('arrow')}</span></div></a>`).join('')}</div>
   </div>
 </section>
 <section class="section section--tight section--grey"><div class="container"><h2>${T('Alle productgroepen', 'All product groups')}</h2><div class="cat-grid cat-grid--compact">${ctx.categories.map((c) => categoryCard(c, ctx, { compact: true })).join('')}</div></div></section>`;

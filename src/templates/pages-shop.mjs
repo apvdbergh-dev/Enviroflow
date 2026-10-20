@@ -1,5 +1,5 @@
 // Home, productoverzichten, productpagina's, winkelwagen, checkout, formulieren en keuzehulp.
-import { esc, ph, icon, fmtEUR, media, priceBlock, faqBlock, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus } from './ui.mjs';
+import { esc, ph, icon, fmtEUR, media, CARD_SIZES, priceBlock, faqBlock, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus } from './ui.mjs';
 import { isOrderable, hasRealPrice } from '../lib/catalog.mjs';
 import { T, isEn, getLang, localPath } from '../lib/i18n.mjs';
 
@@ -65,7 +65,7 @@ export function home(ctx) {
     <div class="section-head section-head--row"><div><p class="kicker">${T('Assortiment', 'Range')}</p><h2 id="h-groups">${T('Oplossingen voor opvang, opslag en bescherming', 'Solutions for containment, storage and protection')}</h2></div><p class="section-head__aside">${T('Vier productgroepen, één aanspreekpunt. Online te bestellen of op aanvraag, altijd met advies.', 'Four product groups, one point of contact. Order online or on request, always with advice.')}</p></div>
     <div class="group-grid">
       ${groups.map((g) => `<a class="gtile" href="${urls.group(g)}">
-        ${media({ src: g.imageSrc, alt: g.image }, '3-4')}
+        ${media({ src: g.imageSrc, alt: g.image }, '3-4', false, CARD_SIZES)}
         <span class="gtile__shade" aria-hidden="true"></span>
         <span class="gtile__body">
           <span class="gtile__count">${catCount(g)} ${T('categorieën', 'categories')}</span>
