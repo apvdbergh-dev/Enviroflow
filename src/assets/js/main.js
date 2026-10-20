@@ -274,8 +274,10 @@
 
   // Header krijgt schaduw zodra de pagina scrolt.
   if (header) {
-    var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 4); };
-    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    var scrolled = false;
+    var onScroll = function () { var now = window.scrollY > 4; if (now !== scrolled) { scrolled = now; header.classList.toggle('is-scrolled', now); } };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    requestAnimationFrame(onScroll); // na de eerste weergave, zodat de browser niet extra hoeft te rekenen
   }
 
   // Elementen onder de vouw komen rustig in beeld; wat al zichtbaar is, blijft direct staan.

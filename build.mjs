@@ -23,6 +23,14 @@ const rawContent = {
 const articlesEn = (await import('./src/content/en/articles.mjs')).default;
 const enTable = existsSync(join(root, 'src/i18n/en-data.json')) ? readJson('src/i18n/en-data.json') : {};
 const version = Date.now().toString(36);
+// De stylesheet gaat direct in elke pagina (geen apart verzoek dat de eerste weergave tegenhoudt).
+// Paden worden absoluut, commentaar en overbodige witruimte gaan eruit.
+const inlineCss = readFileSync(join(root, 'src/assets/css/main.css'), 'utf8')
+  .replace(/url\("\.\.\//g, 'url("/assets/')
+  .replace(/\/\*[\s\S]*?\*\//g, '')
+  .replace(/\s+/g, ' ')
+  .replace(/\s*([{};])\s*/g, '$1')
+  .trim();
 
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist, { recursive: true });
@@ -47,7 +55,7 @@ for (const lang of LANGS) {
   const t = readJson(`src/i18n/${lang}.json`);
   const { groupById, categoryById } = catalog;
   const ctx = {
-    ...catalog, t, solutions, sectors, articles, lang, version,
+    ...catalog, t, solutions, sectors, articles, lang, version, inlineCss,
     urls: {
       group: (g) => groupUrl(g),
       category: (c) => categoryUrl(c, groupById),

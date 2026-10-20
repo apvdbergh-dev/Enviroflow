@@ -362,7 +362,7 @@ ${noindex ? '<meta name="robots" content="noindex, follow">' : ''}
 ${preload}
 <link rel="preload" href="/assets/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/archivo-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/main.css?v=${ctx.version}">
+${ctx.inlineCss ? `<style>${ctx.inlineCss}</style>` : `<link rel="stylesheet" href="/assets/css/main.css?v=${ctx.version}">`}
 ${ldOut.map((l) => `<script type="application/ld+json">${JSON.stringify(l).replace(/</g, '\\u003c')}</script>`).join('\n')}
 </head>
 <body class="${bodyClass}">
@@ -377,7 +377,7 @@ ${footer(ctx)}
 <script>window.EF=${JSON.stringify({ lang, base: isEn() ? '/en' : '', vatRate: site.vatRate, t: ctx.t, shipping: site.shipping.flatRate, phone: site.phonePrimary })};</script>
 <script src="/assets/js/main.js?v=${ctx.version}" defer></script>
 ${scripts.map((s) => `<script src="${s}?v=${ctx.version}" defer></script>`).join('\n')}
-${site.cfAnalyticsToken ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='${JSON.stringify({ token: site.cfAnalyticsToken })}'></script>` : ''}
+${site.cfAnalyticsToken ? `<script>/* Bezoekersstatistieken pas laden als de pagina klaar is (telt niet mee in de laadtijd). */addEventListener('load',function(){setTimeout(function(){var s=document.createElement('script');s.defer=true;s.src='https://static.cloudflareinsights.com/beacon.min.js';s.setAttribute('data-cf-beacon','${JSON.stringify({ token: site.cfAnalyticsToken })}');document.body.appendChild(s)},3000)})</script>` : ''}
 </body>
 </html>`;
 }
