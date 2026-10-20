@@ -22,7 +22,7 @@ export function home(ctx) {
   const body = `
 <section class="hero hero--slider" aria-labelledby="h-hero" data-hero>
   <div class="hero__slides" aria-hidden="true">
-    ${slides.map((sl, i) => `<div class="hero__slide${i === 0 ? ' is-active' : ''}" data-slide="${i}"><picture><source type="image/webp" srcset="/assets/img/hero/${sl.img}-800.webp 800w, /assets/img/hero/${sl.img}.webp 1600w" sizes="100vw"><img src="/assets/img/hero/${sl.img}.jpg" alt="" width="1600" height="900" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture></div>`).join('')}
+    ${slides.map((sl, i) => `<div class="hero__slide${i === 0 ? ' is-active' : ''}" data-slide="${i}"><picture><source type="image/webp" ${i === 0 ? '' : 'data-'}srcset="/assets/img/hero/${sl.img}-800.webp 800w, /assets/img/hero/${sl.img}.webp 1600w" sizes="100vw"><img ${i === 0 ? '' : 'data-'}src="/assets/img/hero/${sl.img}.jpg" alt="" width="1600" height="900" ${i === 0 ? 'fetchpriority="high"' : ''} decoding="async"></picture></div>`).join('')}
   </div>
   <div class="hero__scrim" aria-hidden="true"></div>
   <div class="container hero__inner">
@@ -161,7 +161,9 @@ ${ctaBand({ title: T('Weet u niet welke oplossing u nodig heeft?', "Not sure whi
     path: '/',
     title: T('Flexibele lekbak, IBC opvangbak & flexibele tanks | EnviroFlow', 'Flexible spill trays, IBC containment & flexible tanks | EnviroFlow'),
     description: T('EnviroFlow levert flexibele opvangbakken, brandwater-, brandstof-, drinkwater- en mesttanks en mobiele waterkeringen voor bedrijven. Persoonlijk advies en maatwerk.', 'EnviroFlow supplies flexible spill trays, fire water, fuel, drinking water and manure tanks and mobile flood barriers for businesses. Personal advice and custom solutions.'),
-    body, jsonld: [org], bodyClass: 'page-home', scripts: ['/assets/js/hero.js']
+    body, jsonld: [org], bodyClass: 'page-home', scripts: ['/assets/js/hero.js'],
+    // De eerste hero-foto is het grootste element: direct laten starten, vóór lettertypes en scripts.
+    preload: `<link rel="preload" as="image" type="image/webp" href="/assets/img/hero/${slides[0].img}.webp" imagesrcset="/assets/img/hero/${slides[0].img}-800.webp 800w, /assets/img/hero/${slides[0].img}.webp 1600w" imagesizes="100vw" fetchpriority="high">`
   };
 }
 

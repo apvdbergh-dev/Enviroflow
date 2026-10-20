@@ -33,6 +33,7 @@
     index = (next + n) % n;
     slides[prev].classList.remove('is-active'); slides[prev].classList.add('is-leaving');
     setTimeout(function () { slides[prev].classList.remove('is-leaving'); }, 1400);
+    loadSlide(slides[index]);
     slides[index].classList.add('is-active');
     slides[index].style.setProperty('--dir', dir || 1);
     captions.forEach(function (c, i) {
@@ -45,6 +46,7 @@
     // voortgangsbalk opnieuw starten
     var bar = dots[index].querySelector('i'); bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = '';
     remaining = INTERVAL; schedule();
+    preloadNext();
   }
 
   function schedule() {
@@ -91,8 +93,14 @@
   });
   hero.addEventListener('pointercancel', function () { tracking = false; });
 
-  // Volgende foto vast laden zodra de pagina rustig is.
-  window.addEventListener('load', function () { slides.forEach(function (s) { var img = s.querySelector('img'); if (img) img.loading = 'eager'; }); });
+  // Alleen de volgende foto vast laden, een paar seconden voordat hij aan de beurt is (niet alle foto's bij het openen).
+  // De foto's van de volgende dia's staan in data-src/data-srcset; pas hier krijgen ze een echt adres.
+  function loadSlide(s) {
+    s.querySelectorAll('[data-srcset]').forEach(function (el) { el.srcset = el.getAttribute('data-srcset'); el.removeAttribute('data-srcset'); });
+    s.querySelectorAll('[data-src]').forEach(function (el) { el.src = el.getAttribute('data-src'); el.removeAttribute('data-src'); });
+  }
+  function preloadNext() { loadSlide(slides[(index + 1) % n]); }
+  window.addEventListener('load', function () { setTimeout(preloadNext, INTERVAL - 3000); });
 
   setPausedUi();
   schedule();

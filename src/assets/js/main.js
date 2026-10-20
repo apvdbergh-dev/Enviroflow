@@ -286,24 +286,27 @@
       '.cta-band__inner > *', '.pd-block', '.faq', '.custom-hint', '.sector-cards > *', '.link-list > li', '.check-list--cols', '.scard'
     ];
     var revealEls = [];
-    // Eerst alle posities meten, daarna pas klassen zetten: zo hoeft de browser de opmaak maar één keer te berekenen.
-    var fold = window.innerHeight * 0.92;
-    var below = function (sel) {
-      return Array.prototype.filter.call(document.querySelectorAll(sel), function (el) { return !el.closest('.hero'); })
-        .map(function (el) { return [el, el.getBoundingClientRect().top]; })
-        .filter(function (x) { return x[1] >= fold; }).map(function (x) { return x[0]; });
-    };
-    var blocks = below(groups.join(',')), imgs = below('.feature__media, .page-head__grid > .media');
-    blocks.forEach(function (el) {
+    // De observer meldt eerst de beginpositie van elk element (zonder dat de browser extra moet rekenen).
+    // Wat dan al in beeld staat, blijft gewoon staan; de rest krijgt de inschuif-animatie.
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var el = e.target;
+        if (!el._efSeen) {
+          el._efSeen = true;
+          if (e.boundingClientRect.top < window.innerHeight * 0.92) { io.unobserve(el); return; }
+          el.classList.add(el._efImg ? 'reveal-img' : 'reveal'); revealEls.push(el);
+          return;
+        }
+        if (e.isIntersecting) { el.classList.add('is-visible'); io.unobserve(el); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    document.querySelectorAll(groups.join(',')).forEach(function (el) {
+      if (el.closest('.hero')) return;
       var siblings = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
       el.style.setProperty('--rd', Math.min(siblings, 6) * 60 + 'ms');
-      el.classList.add('reveal'); revealEls.push(el);
+      io.observe(el);
     });
-    imgs.forEach(function (el) { el.classList.add('reveal-img'); revealEls.push(el); });
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    revealEls.forEach(function (el) { io.observe(el); });
+    document.querySelectorAll('.feature__media, .page-head__grid > .media').forEach(function (el) { el._efImg = true; io.observe(el); });
     // Vangnet: nooit iets onzichtbaar laten (bijv. bij printen of een sprong naar een anker).
     window.addEventListener('beforeprint', function () { revealEls.forEach(function (el) { el.classList.add('is-visible'); }); });
     setTimeout(function () { revealEls.forEach(function (el) { if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('is-visible'); }); }, 1200);

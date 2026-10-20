@@ -324,7 +324,8 @@ function footer(ctx) {
     <p>${T('Wij gebruiken alleen functionele opslag die nodig is voor de website, zoals uw winkelwagen en voorkeur voor prijsweergave. Analytische cookies plaatsen wij alleen met uw toestemming. Lees meer in ons <a href="/cookiebeleid/">cookiebeleid</a>.', 'We only use functional storage that the website needs, such as your shopping cart and price display preference. We only place analytical cookies with your consent. Read more in our <a href="/cookiebeleid/">cookie policy</a>.')}</p>
     <div class="btn-row"><button type="button" class="btn btn--ghost btn--sm" data-cookie-choice="necessary">${T('Alleen noodzakelijk', 'Necessary only')}</button><button type="button" class="btn btn--ghost btn--sm" data-cookie-choice="all">${T('Alles accepteren', 'Accept all')}</button></div>
   </div>
-</div>`;
+</div>
+<script>/* Melding meteen bij de eerste weergave tonen (niet pas na het laden van main.js). */try{if(!localStorage.getItem('ef-consent'))document.querySelector('[data-cookie]').hidden=false}catch(e){}</script>`;
 }
 
 /** Zet links naar de eigen site in JSON-LD om naar de taalversie (/en/…). */
@@ -335,7 +336,7 @@ function localizeLd(value, base) {
   return value;
 }
 
-export function layout(ctx, { path, altPath = path, title, description, body, crumbs = [], jsonld = [], noindex = false, bodyClass = '', scripts = [], ogImage }) {
+export function layout(ctx, { path, altPath = path, title, description, body, crumbs = [], jsonld = [], noindex = false, bodyClass = '', scripts = [], ogImage, preload = '' }) {
   const { site } = ctx;
   const canonical = site.baseUrl + path;
   const lds = [...jsonld];
@@ -358,6 +359,7 @@ ${noindex ? '<meta name="robots" content="noindex, follow">' : ''}
 <meta property="og:image" content="${site.baseUrl}${ogImage || '/assets/img/enviroflow-og.png'}">
 <meta name="theme-color" content="#0A3B2C">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+${preload}
 <link rel="preload" href="/assets/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/archivo-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/main.css?v=${ctx.version}">

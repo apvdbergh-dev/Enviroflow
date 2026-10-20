@@ -321,10 +321,10 @@ mark.placeholder { background: var(--amber-bg); color: var(--amber); padding: 0 
 @media (min-width: 1280px) { .hero__content { max-width: 680px; } }
 @media (min-width: 960px) { .hero__title .line { white-space: nowrap; } }
 
-/* hero-introductie (eenmalig bij laden) */
-@media (prefers-reduced-motion: no-preference) {
-  .js .hero__title .line > span { animation: lineUp 900ms var(--ease-out) both; animation-delay: calc(var(--d, 0) * 70ms + 80ms); }
-  .js .hero__in { animation: fadeUp 800ms var(--ease-out) both; animation-delay: calc(var(--d, 0) * 70ms + 120ms); }
+/* hero-introductie (eenmalig bij laden; alleen op grotere schermen, op een telefoon staat alles direct stil) */
+@media (prefers-reduced-motion: no-preference) and (min-width: 960px) {
+  /* Intro alleen met beweging, zonder doorzichtigheid: tekst en foto zijn vanaf de eerste weergave zichtbaar (snel voor LCP/Speed Index). */
+  .js .hero__in { animation: riseIn 600ms var(--ease-out) both; animation-delay: calc(var(--d, 0) * 40ms); }
   .js .hero__media .media { animation: revealLeft 1100ms var(--ease-in-out) both; }
   .js .hero__media img { animation: settle 1600ms var(--ease-out) both; }
 }
@@ -922,14 +922,14 @@ a.contact-card:hover span { text-decoration: underline; text-underline-offset: 3
 }
 
 /* beweging: langzame zoom op de actieve foto en eenmalige intro */
-@media (prefers-reduced-motion: no-preference) {
+/* Alleen op grotere schermen: op een telefoon is de zoom nauwelijks te zien en kost hij laadsnelheid (Speed Index). */
+@media (prefers-reduced-motion: no-preference) and (min-width: 960px) {
   .hero.is-ready .hero__slide.is-active img { animation: kenBurns calc(var(--interval, 7000ms) + 1600ms) var(--ease-out) both; }
   .hero.is-ready .hero__slide:nth-child(even).is-active img { animation-name: kenBurnsAlt; }
-  .js .hero--slider .hero__slides { animation: heroFade 1200ms var(--ease-out) both; }
 }
 @keyframes kenBurns { from { transform: scale(1.14) translate3d(-1.5%, 0, 0); } to { transform: scale(1.04) translate3d(0, 0, 0); } }
 @keyframes kenBurnsAlt { from { transform: scale(1.14) translate3d(1.5%, 1%, 0); } to { transform: scale(1.04) translate3d(0, 0, 0); } }
-@keyframes heroFade { from { opacity: 0; transform: scale(1.03); } }
+@keyframes riseIn { from { transform: translateY(10px); } }
 @media (prefers-reduced-motion: reduce) { .hero__slide { transition-duration: 1ms; } .hero__caption > * { transition-duration: 1ms !important; transition-delay: 0ms !important; } }
 
 /* productfoto's in winkelwagen en besteloverzicht */
