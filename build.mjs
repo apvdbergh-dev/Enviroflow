@@ -159,6 +159,7 @@ writeFileSync(join(dist, 'version.txt'), `${process.env.CF_PAGES_COMMIT_SHA || '
 // Beveiligings- en cacheheaders voor Cloudflare Pages (zelfde regels als server.mjs).
 writeFileSync(join(dist, '_headers'), `/*
   X-Content-Type-Options: nosniff
+  Strict-Transport-Security: max-age=31536000
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=()
