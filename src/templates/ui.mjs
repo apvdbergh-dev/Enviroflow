@@ -19,6 +19,7 @@ const ICONS = {
   close: '<path d="M18 6 6 18M6 6l12 12"/>',
   check: '<path d="M20 6 9 17l-5-5"/>',
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+  play: '<path d="M7 4.5v15l12.5-7.5z"/>',
   chevron: '<path d="m6 9 6 6 6-6"/>',
   download: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>',
   pin: '<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>',
@@ -170,6 +171,10 @@ export function field({ name, label, type = 'text', required = false, autocomple
   else input = `<input id="${id}" name="${name}" type="${type}"${req}${ac}${hintId} value="${esc(value)}" ${attrs}>`;
   return `<div class="field${full ? ' field--full' : ''}">${lab}${input}${hint ? `<p class="field__hint" id="${id}-hint">${esc(hint)}</p>` : ''}</div>`;
 }
+
+/** Twee optionele vragen om te leren van elke aanvraag. De waarde blijft Nederlands (voor de interne e-mail), het label volgt de taal. */
+export const insightFields = () => `${field({ name: 'found_via', label: T('Hoe heeft u ons gevonden?', 'How did you find us?'), type: 'select', options: [['', T('Maak een keuze', 'Make a choice')], ['Google (zoeken)', T('Google (zoeken)', 'Google (search)')], ['Advertentie', T('Advertentie', 'Advertisement')], ['LinkedIn', 'LinkedIn'], ['Aanbevolen door iemand', T('Aanbevolen door iemand', 'Recommended by someone')], ['Website van de fabrikant', T('Website van de fabrikant', "Manufacturer's website")], ['Beurs of evenement', T('Beurs of evenement', 'Trade fair or event')], ['Anders', T('Anders', 'Other')]] })}
+    ${field({ name: 'doubts', label: T('Waar twijfelt u nog over?', 'What are you still unsure about?'), type: 'textarea', rows: 3, full: true, hint: T('Bijvoorbeeld de maat, de geschiktheid voor uw vloeistof, de regels of de levertijd. Zo kunnen wij u gerichter helpen.', 'For example the size, suitability for your liquid, the rules or the delivery time. This helps us to help you better.') })}`;
 
 export const honeypot = () => `<div class="hp" aria-hidden="true"><label for="f-website">${T('Laat dit veld leeg', 'Leave this field empty')}</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>`;
 

@@ -10,15 +10,15 @@ const ALLOWED_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.heic', '.pdf'])
 const FINAL_STATUSES = new Set(['paid', 'failed', 'canceled', 'expired']);
 
 const FORM_SPECS = {
-  quote: { prefix: 'OFF', label: 'offerteaanvraag', title: 'Nieuwe offerteaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['request_type', 'company', 'name', 'email', 'phone', 'product', 'quantity', 'liquid', 'application', 'delivery_date', 'remarks', 'source'] },
-  custom: { prefix: 'MW', label: 'maatwerkaanvraag', title: 'Nieuwe maatwerkaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['company', 'name', 'email', 'phone', 'liquid', 'volume', 'dimensions', 'application', 'location', 'duration', 'wish'] },
-  contact: { prefix: 'CT', label: 'contactbericht', title: 'Nieuw contactbericht', required: ['name', 'email', 'message', 'privacy'], fields: ['name', 'company', 'email', 'phone', 'message'] }
+  quote: { prefix: 'OFF', label: 'offerteaanvraag', title: 'Nieuwe offerteaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['request_type', 'company', 'name', 'email', 'phone', 'product', 'quantity', 'liquid', 'application', 'delivery_date', 'remarks', 'source', 'found_via', 'doubts'] },
+  custom: { prefix: 'MW', label: 'maatwerkaanvraag', title: 'Nieuwe maatwerkaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['company', 'name', 'email', 'phone', 'liquid', 'volume', 'dimensions', 'application', 'location', 'duration', 'wish', 'found_via', 'doubts'] },
+  contact: { prefix: 'CT', label: 'contactbericht', title: 'Nieuw contactbericht', required: ['name', 'email', 'message', 'privacy'], fields: ['name', 'company', 'email', 'phone', 'message', 'found_via', 'doubts'] }
 };
-const LONG_FIELDS = new Set(['remarks', 'wish', 'message']);
+const LONG_FIELDS = new Set(['remarks', 'wish', 'message', 'doubts']);
 const FIELD_LABELS = {
   request_type: 'Soort aanvraag', company: 'Bedrijf', name: 'Naam', email: 'E-mail', phone: 'Telefoon', product: 'Product (id)', productName: 'Product',
   quantity: 'Aantal', liquid: 'Vloeistof', application: 'Toepassing', delivery_date: 'Gewenste leverdatum', remarks: 'Opmerkingen', source: 'Bron',
-  volume: 'Volume', dimensions: 'Afmetingen', location: 'Locatie', duration: 'Gebruiksduur', wish: 'Wens', message: 'Bericht', vatNumber: 'Btw-nummer', reference: 'Referentie'
+  volume: 'Volume', dimensions: 'Afmetingen', location: 'Locatie', duration: 'Gebruiksduur', wish: 'Wens', message: 'Bericht', found_via: 'Hoe gevonden', doubts: 'Twijfelt nog over', vatNumber: 'Btw-nummer', reference: 'Referentie'
 };
 const ORDER_REQUIRED = ['company', 'name', 'email', 'phone', 'delivery_street', 'delivery_postcode', 'delivery_city', 'payment_method', 'terms'];
 

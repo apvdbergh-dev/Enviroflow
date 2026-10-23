@@ -85,7 +85,39 @@
         }
       ],
       "imageSrc": "/assets/img/producten/opvangbak-praktijk.jpg",
-      "h1": "Flexibele lekbakken en opvangbakken voor IBC's en vaten"
+      "h1": "Flexibele lekbakken en opvangbakken voor IBC's en vaten",
+      "productPage": {
+        "_comment": "Vaste blokken op elke productpagina van deze categorie. videos: [{\"youtube\": \"id\", \"title\": \"…\", \"poster\": \"/assets/img/video/….webp\"}] of [{\"src\": \"/assets/video/….mp4\", …}]; photos: [{\"src\", \"alt\", \"width\", \"height\", \"caption\"}]. Alleen invullen met materiaal waarvoor toestemming is.",
+        "videos": [],
+        "photos": [],
+        "compare": true,
+        "faq": [
+          {
+            "q": "Hoe snel staat de opvangbak klaar?",
+            "a": "Vouw de opvangbak uit en schuif de steunen in de opstaande wand. Volgens de fabrikant is dat in enkele minuten gebeurd. Er is geen extra constructie of bouwwerk nodig."
+          },
+          {
+            "q": "Telt de opgegeven capaciteit met de vaten of IBC's erin?",
+            "a": "Nee. De opgegeven opvangcapaciteit geldt voor een lege opvangbak. Het volume dat de verpakkingen zelf innemen, gaat ervan af. Bij de standaardmodellen voor een bepaald aantal vaten of IBC's heeft de fabrikant hier al rekening mee gehouden: er blijft minimaal 110% van de grootste verpakking over."
+          },
+          {
+            "q": "Kan een heftruck over de opvangbak rijden?",
+            "a": "Ja, volgens de fabrikant wel. Haal de steunen weg en leg de opstaande wand plat. Dan kan een heftruck of zelfs een vrachtwagen over de bodem rijden. Vervoer een vat of IBC nooit samen met de opvangbak op een heftruck."
+          },
+          {
+            "q": "Is de opvangbak bestand tegen mijn vloeistof?",
+            "a": "Het EVA-weefsel is bestand tegen veel oliën, brandstoffen, zuren en glycol, maar niet tegen alle stoffen. Zoek uw stof op in de bestendigheidstabel bij Downloads, of stuur ons het veiligheidsinformatieblad. Wij controleren het voor u."
+          },
+          {
+            "q": "Hoe maak ik de opvangbak schoon na een lekkage?",
+            "a": "Verwijder de gelekte vloeistof zoals het veiligheidsinformatieblad van die stof voorschrijft. In de praktijk gebeurt dat meestal met geschikte absorptiemiddelen. Laat ook regenwater niet in de bak staan: dat gaat af van de opvangcapaciteit."
+          },
+          {
+            "q": "Hoe controleer ik of de opvangbak nog in orde is?",
+            "a": "Kijk regelmatig of het weefsel en de naden onbeschadigd zijn. Zit er een snee of scheur in het weefsel, gebruik de opvangbak dan niet meer. Welke inspecties voor uw locatie verplicht zijn, hangt af van de regels en de vergunning die voor u gelden."
+          }
+        ]
+      }
     },
     {
       "id": "wasmatten-voertuigen",
@@ -206,7 +238,37 @@
         }
       ],
       "imageSrc": "/assets/img/producten/waterbase-f-2.jpg",
-      "h1": "Brandwatertanks en bluswatertanks"
+      "h1": "Brandwatertanks en bluswatertanks",
+      "productPage": {
+        "videos": [],
+        "photos": [],
+        "faq": [
+          {
+            "q": "Geldt het Poolse CNBOP-certificaat ook in Nederland?",
+            "a": "CNBOP is een Pools keuringsinstituut. In Nederland beoordelen de gemeente en de brandweer of veiligheidsregio of een bluswatervoorziening voldoet. Bespreek de tank daarom vooraf met hen. Wij leveren de technische gegevens die zij nodig hebben."
+          },
+          {
+            "q": "Hoe bereid ik de ondergrond voor?",
+            "a": "De plek moet vlak zijn en vrij van scherpe voorwerpen. De fabrikant raadt een zandbed aan. De precieze eisen aan de ondergrond staan in de datasheet, die u bij ons kunt opvragen."
+          },
+          {
+            "q": "Kan het water in de winter bevriezen?",
+            "a": "De tank heeft verwarmingsmatten met temperatuursensoren en een isolatieset. Die houden het water ook in de winter vloeibaar. De verwarmingsmatten moeten worden aangesloten door een bevoegde elektricien."
+          },
+          {
+            "q": "Hoeveel stroom gebruikt de verwarming?",
+            "a": "Volgens de fabrikant hoeft de verwarming van mei tot en met oktober niet aan. In stand-by gebruikt het systeem ongeveer 22 tot 36 kWh per maand. Als het verwarmt, hangt het verbruik af van de buitentemperatuur."
+          },
+          {
+            "q": "Hoe lang duurt de installatie?",
+            "a": "Met enkele personen is de tank volgens de fabrikant in 2 tot 3 uur geplaatst. Er zijn geen bouwwerkzaamheden nodig."
+          },
+          {
+            "q": "Kan ik de tank later verplaatsen?",
+            "a": "Ja. Leeg past de tank op een pallet. U kunt hem vervoeren en op een andere plek opnieuw plaatsen. Na het leegmaken blijft er, afhankelijk van de maat, een paar tientallen liters water in de tank achter."
+          }
+        ]
+      }
     },
     {
       "id": "drinkwatertanks",

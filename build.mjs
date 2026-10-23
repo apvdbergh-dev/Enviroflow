@@ -17,10 +17,12 @@ const raw = { site: readJson('src/data/site.json'), brands: readJson('src/data/b
 const rawContent = {
   solutions: (await import('./src/content/nl/solutions.mjs')).default,
   sectors: (await import('./src/content/nl/sectors.mjs')).default,
-  articles: (await import('./src/content/nl/articles.mjs')).default
+  articles: (await import('./src/content/nl/articles.mjs')).default,
+  guides: (await import('./src/content/nl/guides.mjs')).default
 };
 // Kennisbankartikelen zijn lange teksten: de Engelse versie staat als eigen bestand (zelfde slugs).
 const articlesEn = (await import('./src/content/en/articles.mjs')).default;
+const guidesEn = (await import('./src/content/en/guides.mjs')).default;
 const enTable = existsSync(join(root, 'src/i18n/en-data.json')) ? readJson('src/i18n/en-data.json') : {};
 const version = Date.now().toString(36);
 // De stylesheet gaat direct in elke pagina (geen apart verzoek dat de eerste weergave tegenhoudt).
@@ -46,6 +48,7 @@ for (const lang of LANGS) {
   const tr = (o) => (lang === 'en' ? translateDeep(o, enTable, missing) : o);
   const catalog = buildCatalog({ site: tr(raw.site), brands: tr(raw.brands), categories: tr(raw.categories), products: tr(raw.products) });
   const solutions = tr(rawContent.solutions), sectors = tr(rawContent.sectors), articles = lang === 'en' ? articlesEn : rawContent.articles;
+  const guides = lang === 'en' ? guidesEn : rawContent.guides;
   if (missing.size && process.env.I18N_ALLOW_MISSING === '1') {
     console.warn(`(ontwikkelmodus) ${missing.size} vertaling(en) ontbreken nog`);
   } else if (missing.size) {
@@ -100,6 +103,7 @@ for (const lang of LANGS) {
   // emit(content.projectTemplatePage(ctx));
   emit(content.knowledgeOverview(ctx));
   articles.forEach((a) => emit(content.articlePage(a, ctx)));
+  guides.forEach((g) => emit(content.articlePage(g, ctx)));
   emit(content.aboutPage(ctx));
   emit(content.partnersPage(ctx));
   ctx.brands.filter((b) => b.active).forEach((b) => emit(content.brandPage(b, ctx)));
@@ -121,7 +125,8 @@ for (const lang of LANGS) {
     ...catalog.categories.map((c) => ({ t: c.name, u: localPath(ctx.urls.category(c)), d: c.short, k: K.category, x: (c.applications || []).join(' ') + ' ' + (c.seoTitle || '') })),
     ...solutions.map((s) => ({ t: s.title, u: localPath(`/oplossingen/${s.slug}/`), d: s.seoDescription, k: K.solution, x: s.tile })),
     ...sectors.map((s) => ({ t: s.name, u: localPath(`/sectoren/${s.slug}/`), d: s.intro, k: K.sector, x: s.liquids.join(' ') })),
-    ...articles.map((a) => ({ t: a.title, u: localPath(`/kennisbank/${a.slug}/`), d: a.description, k: K.knowledge, x: '' }))
+    ...articles.map((a) => ({ t: a.title, u: localPath(`/kennisbank/${a.slug}/`), d: a.description, k: K.knowledge, x: '' })),
+    ...guides.map((a) => ({ t: a.title, u: localPath(a.path), d: a.description, k: K.knowledge, x: '' }))
   ];
   writeFileSync(join(dist, `assets/data/search-index${suffix}.json`), JSON.stringify(searchIndex));
 }
@@ -163,7 +168,7 @@ writeFileSync(join(dist, '_headers'), `/*
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; form-action 'self' https://www.mollie.com; frame-ancestors 'self'; base-uri 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; form-action 'self' https://www.mollie.com; frame-src https://www.youtube-nocookie.com; frame-ancestors 'self'; base-uri 'self'
 /assets/css/*
   Cache-Control: public, max-age=31536000, immutable
 /assets/js/*

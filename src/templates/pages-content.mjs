@@ -1,5 +1,5 @@
 // Oplossingen, sectoren, projecten, kennisbank, over ons, partners, contact, juridisch, zoeken en 404.
-import { esc, ph, icon, media, CARD_SIZES, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, faqBlock } from './ui.mjs';
+import { esc, ph, icon, media, CARD_SIZES, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, faqBlock, insightFields } from './ui.mjs';
 import { stepsList } from './pages-shop.mjs';
 import { T, numberLocale } from '../lib/i18n.mjs';
 
@@ -188,8 +188,11 @@ ${faq.html}
 <div class="container section--tight">${adviceBlock(ctx.site)}</div>
 <section class="section section--tight"><div class="container"><h2>${T('Lees ook', 'Read also')}</h2><div class="kb-grid kb-grid--3">${others.map((o) => articleCard(o)).join('')}</div></div></section>`;
   const abs = (u) => ctx.site.baseUrl + u;
-  const ld = { '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.description, image: [abs(a.image.src)], inLanguage: T('nl-NL', 'en'), datePublished: a.updated, dateModified: a.updated, mainEntityOfPage: abs(`/kennisbank/${a.slug}/`), author: { '@type': 'Organization', name: 'EnviroFlow', url: ctx.site.baseUrl }, publisher: { '@type': 'Organization', name: 'EnviroFlow', logo: { '@type': 'ImageObject', url: abs('/assets/img/enviroflow-logo.png') } } };
-  return { path: `/kennisbank/${a.slug}/`, title: a.seoTitle || `${a.title} | EnviroFlow`, description: a.description, ogImage: a.image.src, body, crumbs: [H, { name: T('Kennisbank', 'Knowledge base'), url: '/kennisbank/' }, { name: a.title, url: `/kennisbank/${a.slug}/` }], jsonld: [ld, faq.ld].filter(Boolean) };
+  // Gidspagina's (zoals /waarom-flexibel/) gebruiken dezelfde opbouw, maar met een eigen adres.
+  const path = a.path || `/kennisbank/${a.slug}/`;
+  const crumbs = a.path ? [H, { name: a.crumb, url: a.path }] : [H, { name: T('Kennisbank', 'Knowledge base'), url: '/kennisbank/' }, { name: a.title, url: path }];
+  const ld = { '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.description, image: [abs(a.image.src)], inLanguage: T('nl-NL', 'en'), datePublished: a.updated, dateModified: a.updated, mainEntityOfPage: abs(path), author: { '@type': 'Organization', name: 'EnviroFlow', url: ctx.site.baseUrl }, publisher: { '@type': 'Organization', name: 'EnviroFlow', logo: { '@type': 'ImageObject', url: abs('/assets/img/enviroflow-logo.png') } } };
+  return { path, title: a.seoTitle || `${a.title} | EnviroFlow`, description: a.description, ogImage: a.image.src, body, crumbs, jsonld: [ld, faq.ld].filter(Boolean) };
 }
 
 /* ---------------------------------------------------------------- over ons & partners */
@@ -291,6 +294,7 @@ export function contactPage(ctx) {
       ${field({ name: 'email', label: T('E-mailadres', 'Email address'), type: 'email', required: true, autocomplete: 'email' })}
       ${field({ name: 'phone', label: T('Telefoonnummer', 'Phone number'), type: 'tel', autocomplete: 'tel' })}
       ${field({ name: 'message', label: T('Uw vraag', 'Your question'), type: 'textarea', required: true, rows: 6, full: true })}
+      ${insightFields()}
     </div>
     <label class="check"><input type="checkbox" name="privacy" value="1" required><span>${T('Ik ga akkoord dat EnviroFlow mijn gegevens gebruikt om op mijn vraag te reageren (zie <a href="/privacybeleid/">privacybeleid</a>).', 'I agree that EnviroFlow may use my details to respond to my question (see <a href="/privacybeleid/">privacy policy</a>).')} <span class="req" aria-hidden="true">*</span></span></label>
     ${formStatus()}

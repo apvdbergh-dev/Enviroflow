@@ -32,4 +32,17 @@
       });
     });
   }
+
+  // Video's laden pas na een klik: geen YouTube-verkeer of zware bestanden bij het openen van de pagina.
+  document.querySelectorAll('[data-yt]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(b.getAttribute('data-yt')) + '?autoplay=1&rel=0';
+      f.title = b.getAttribute('data-title') || 'Video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      f.className = 'video__frame';
+      b.replaceWith(f);
+    });
+  });
 })();

@@ -75,6 +75,10 @@
   "nl": "Van 30 kg (5.000 l) tot 79,8 kg (25.000 l), zonder hoes",
   "en": "From 30 kg (5,000 l) to 79.8 kg (25,000 l), without cover"
  },
+ "03fb5dbe73a9": {
+  "nl": "Kijk regelmatig of het weefsel en de naden onbeschadigd zijn. Zit er een snee of scheur in het weefsel, gebruik de opvangbak dan niet meer. Welke inspecties voor uw locatie verplicht zijn, hangt af van de regels en de vergunning die voor u gelden.",
+  "en": "Check regularly that the fabric and seams are undamaged. If there is a cut or tear in the fabric, stop using the spill tray. Which inspections are mandatory for your site depends on the rules and the permit that apply to you."
+ },
  "0429ff4d3a4f": {
   "nl": "Hydronion open tank bij de brandweer",
   "en": "Hydronion open tank at the fire service"
@@ -119,9 +123,17 @@
   "nl": "Ik moet me beschermen tegen wateroverlast",
   "en": "I need to protect against flooding"
  },
+ "06b45a534f42": {
+  "nl": "Ja. Leeg past de tank op een pallet. U kunt hem vervoeren en op een andere plek opnieuw plaatsen. Na het leegmaken blijft er, afhankelijk van de maat, een paar tientallen liters water in de tank achter.",
+  "en": "Yes. When empty, the tank fits on a pallet. You can transport it and install it again elsewhere. After draining, depending on the size, a few dozen litres of water remain in the tank."
+ },
  "06bb6c8d39c1": {
   "nl": "Een opblaasbare wasmat van 6 × 3 m vangt waswater met reinigingsmiddelen, olie en vuil op. Zo komt het niet in de bodem of het riool terecht en kunt u het opzuigen en afvoeren.",
   "en": "An inflatable 6 × 3 m wash mat collects wash water containing cleaning agents, oil and dirt. This keeps it out of the soil and the sewer, and you can vacuum it up and dispose of it."
+ },
+ "0728590978fc": {
+  "nl": "Hoe lang duurt de installatie?",
+  "en": "How long does installation take?"
  },
  "075d407ceec7": {
   "nl": "Volgens de fabrikant geschikt voor ATEX-zone 2 (categorie 3G, richtlijn 2014/34/EU), ook voor stoffen uit subgroep IIA, IIB en IIC",
@@ -154,6 +166,14 @@
  "09dd49869f33": {
   "nl": "Standaard: 2 aansluitingen DN100 met Storz 110, handgrepen, reflecterende elementen, beschermmat, hoes, reparatieset, kraag met hydrofoob schuim en vlotter onder de zuigleiding.",
   "en": "Standard: 2 DN100 connections with Storz 110, handles, reflective elements, protective mat, cover, repair kit, collar with hydrophobic foam and float under the suction line."
+ },
+ "0a2e343344b0": {
+  "nl": "Volgens de fabrikant hoeft de verwarming van mei tot en met oktober niet aan. In stand-by gebruikt het systeem ongeveer 22 tot 36 kWh per maand. Als het verwarmt, hangt het verbruik af van de buitentemperatuur.",
+  "en": "According to the manufacturer, the heating does not need to be on from May to October. On standby, the system uses about 22 to 36 kWh per month. When heating, consumption depends on the outside temperature."
+ },
+ "0a99188f3d51": {
+  "nl": "Verwijder de gelekte vloeistof zoals het veiligheidsinformatieblad van die stof voorschrijft. In de praktijk gebeurt dat meestal met geschikte absorptiemiddelen. Laat ook regenwater niet in de bak staan: dat gaat af van de opvangcapaciteit.",
+  "en": "Remove the leaked liquid as the safety data sheet of that substance prescribes. In practice this is usually done with suitable absorbents. Do not let rainwater stand in the tray either: it reduces the containment capacity."
  },
  "0b56421e6ffa": {
   "nl": "Opblaasbare wasmat 8 × 4 m voor het opvangen van waswater.",
@@ -254,6 +274,10 @@
  "10917e754274": {
   "nl": "Hydronion tank tijdens een brandweeroefening",
   "en": "Hydronion tank during a fire service exercise"
+ },
+ "10c64e1e5b88": {
+  "nl": "De plek moet vlak zijn en vrij van scherpe voorwerpen. De fabrikant raadt een zandbed aan. De precieze eisen aan de ondergrond staan in de datasheet, die u bij ons kunt opvragen.",
+  "en": "The site must be level and free of sharp objects. The manufacturer recommends a sand bed. The exact ground requirements are in the datasheet, which you can request from us."
  },
  "10d10f7f554a": {
   "nl": "Volgens de fabrikant moet de tank in een opvangbak staan met minimaal 110% van de tankinhoud. Wij adviseren u graag over een passende opvangbak.",
@@ -667,6 +691,10 @@
   "nl": "Flexibele Waterbase R-tank van 30.000 liter voor de opslag van industriewater (geen drinkwater), vuil of verontreinigd water, afvalwater en regenwater.",
   "en": "Flexible 30,000-litre Waterbase R tank for storing industrial water (not drinking water), dirty or contaminated water, waste water and rainwater."
  },
+ "268cff65e4f9": {
+  "nl": "De tank heeft verwarmingsmatten met temperatuursensoren en een isolatieset. Die houden het water ook in de winter vloeibaar. De verwarmingsmatten moeten worden aangesloten door een bevoegde elektricien.",
+  "en": "The tank has heating mats with temperature sensors and an insulation set. These keep the water liquid in winter too. The heating mats must be connected by a qualified electrician."
+ },
  "26c63ab21c78": {
   "nl": "Staat er materieel of een aggregaat dat olie of brandstof kan lekken?",
   "en": "Is there equipment or a generator that could leak oil or fuel?"
@@ -838,6 +866,10 @@
  "353871230a2a": {
   "nl": "Op kades, schepen en offshore locaties is ruimte beperkt en moet materiaal compact te vervoeren zijn.",
   "en": "On quays, ships and offshore locations, space is limited and equipment must be compact to transport."
+ },
+ "3538c5207a85": {
+  "nl": "Ja, volgens de fabrikant wel. Haal de steunen weg en leg de opstaande wand plat. Dan kan een heftruck of zelfs een vrachtwagen over de bodem rijden. Vervoer een vat of IBC nooit samen met de opvangbak op een heftruck.",
+  "en": "Yes, according to the manufacturer. Remove the supports and lay the upright wall flat. A forklift or even a lorry can then drive over the base. Never transport a drum or IBC together with the spill tray on a forklift."
  },
  "35db1d2994c1": {
   "nl": "4,00 × 1,89 m",
@@ -1019,6 +1051,10 @@
   "nl": "Inrijdbare opvangbak voor een tankwagen",
   "en": "Drive-in spill tray for a tanker truck"
  },
+ "4321127f1340": {
+  "nl": "Vouw de opvangbak uit en schuif de steunen in de opstaande wand. Volgens de fabrikant is dat in enkele minuten gebeurd. Er is geen extra constructie of bouwwerk nodig.",
+  "en": "Unfold the spill tray and slide the supports into the upright wall. According to the manufacturer, this takes a few minutes. No extra structure or construction work is needed."
+ },
  "433bb300ee8e": {
   "nl": "Decontaminatiebaden voor personen",
   "en": "Decontamination baths for people"
@@ -1074,6 +1110,10 @@
  "457b9db332f7": {
   "nl": "UAN en andere vloeibare meststoffen (pH 3–10, alcoholgehalte < 4%)",
   "en": "UAN and other liquid fertilisers (pH 3–10, alcohol content < 4%)"
+ },
+ "45b8b5d3cf84": {
+  "nl": "Hoe maak ik de opvangbak schoon na een lekkage?",
+  "en": "How do I clean the spill tray after a leak?"
  },
  "460611b7276e": {
   "nl": "18,40 × 3,69 × 0,35 m",
@@ -1278,6 +1318,10 @@
  "557db6a9475e": {
   "nl": "Maatwerk",
   "en": "Custom solutions"
+ },
+ "55d8a0f6b3b7": {
+  "nl": "Met enkele personen is de tank volgens de fabrikant in 2 tot 3 uur geplaatst. Er zijn geen bouwwerkzaamheden nodig.",
+  "en": "According to the manufacturer, a few people can install the tank in 2 to 3 hours. No construction work is needed."
  },
  "55febf181c0d": {
   "nl": "78 kg",
@@ -1643,6 +1687,10 @@
   "nl": "6.690 liter of 12.508 liter",
   "en": "6,690 litres or 12,508 litres"
  },
+ "6b636fd36cf8": {
+  "nl": "Telt de opgegeven capaciteit met de vaten of IBC's erin?",
+  "en": "Does the stated capacity include the drums or IBCs inside?"
+ },
  "6c6516e3ffc6": {
   "nl": "Personen",
   "en": "People"
@@ -1759,6 +1807,10 @@
   "nl": "Tijdelijke opslag bij onderhoud",
   "en": "Temporary storage during maintenance"
  },
+ "7352be42b99c": {
+  "nl": "Hoe bereid ik de ondergrond voor?",
+  "en": "How do I prepare the ground?"
+ },
  "73c97e08b7e4": {
   "nl": "Vloeibare meststoffen zoals UAN koopt u vaak in grotere hoeveelheden in. Een flexibele UAN-tank biedt opslag op het erf zonder vaste bouwwerken.",
   "en": "Liquid fertilisers such as UAN are often bought in larger quantities. A flexible UAN tank offers storage in the farmyard without permanent structures."
@@ -1863,6 +1915,10 @@
   "nl": "Bouwprojecten en tijdelijke locaties",
   "en": "Construction projects and temporary sites"
  },
+ "796887fd7b52": {
+  "nl": "Het EVA-weefsel is bestand tegen veel oliën, brandstoffen, zuren en glycol, maar niet tegen alle stoffen. Zoek uw stof op in de bestendigheidstabel bij Downloads, of stuur ons het veiligheidsinformatieblad. Wij controleren het voor u.",
+  "en": "The EVA fabric is resistant to many oils, fuels, acids and glycol, but not to every substance. Look up your substance in the resistance table under Downloads, or send us the safety data sheet. We will check it for you."
+ },
  "79f97051e5ce": {
   "nl": "14,70 × 12,10 m",
   "en": "14.70 × 12.10 m"
@@ -1931,6 +1987,10 @@
   "nl": "CNBOP-goedkeuringscertificaat nr. 5753/2025 (Polen)",
   "en": "CNBOP approval certificate no. 5753/2025 (Poland)"
  },
+ "7d8975ab9a35": {
+  "nl": "Kan het water in de winter bevriezen?",
+  "en": "Can the water freeze in winter?"
+ },
  "7dccc675d7f9": {
   "nl": "1,05 × 0,65 × 0,35 m",
   "en": "1.05 × 0.65 × 0.35 m"
@@ -1975,6 +2035,10 @@
   "nl": "Flexibele lekbakken, wasmatten en decontaminatie voor IBC's, vaten, machines en voertuigen.",
   "en": "Flexible spill trays, wash mats and decontamination for IBCs, drums, machinery and vehicles."
  },
+ "812efb9ac01e": {
+  "nl": "Geldt het Poolse CNBOP-certificaat ook in Nederland?",
+  "en": "Is the Polish CNBOP certificate also valid in the Netherlands?"
+ },
  "813a75670999": {
   "nl": "Vaten",
   "en": "Drums"
@@ -1994,6 +2058,10 @@
  "81722a9456ee": {
   "nl": "Water nodig op een plek zonder aansluiting? Een mobiele of draagbare watertank neemt u mee in een bestelwagen of aanhanger en vult u op locatie.",
   "en": "Need water at a location without a connection? You take a mobile or portable water tank along in a van or trailer and fill it on site."
+ },
+ "819020e86f4a": {
+  "nl": "Hoeveel stroom gebruikt de verwarming?",
+  "en": "How much electricity does the heating use?"
  },
  "81b41c4477cc": {
   "nl": "Auto op een wasmat die het waswater opvangt",
@@ -2351,6 +2419,10 @@
   "nl": "1,89 × 0,80 m",
   "en": "1.89 × 0.80 m"
  },
+ "9a497a7e1351": {
+  "nl": "Hoe snel staat de opvangbak klaar?",
+  "en": "How quickly is the spill tray ready?"
+ },
  "9aaf12e4afca": {
   "nl": "Verontreinigd water bij decontaminatie",
   "en": "Contaminated water during decontamination"
@@ -2699,6 +2771,10 @@
   "nl": "Opgevouwen slechts een paar procent van het volume",
   "en": "Folded, only a few per cent of its volume"
  },
+ "b282dd52ca70": {
+  "nl": "Kan ik de tank later verplaatsen?",
+  "en": "Can I move the tank later?"
+ },
  "b2971c00f83b": {
   "nl": "5,81 × 3,20 m",
   "en": "5.81 × 3.20 m"
@@ -2963,6 +3039,10 @@
   "nl": "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder vier vaten. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
   "en": "This flexible spill tray (drip tray) catches leaks and spills under four drums. This prevents oil, acid or other liquids from ending up on the floor, in the soil or in the sewer."
  },
+ "c3ad9ba36c22": {
+  "nl": "Is de opvangbak bestand tegen mijn vloeistof?",
+  "en": "Is the spill tray resistant to my liquid?"
+ },
  "c4025773c3cf": {
   "nl": "10 jaar op lekdichtheid volgens de productpagina van de fabrikant",
   "en": "10 years on leak-tightness according to the manufacturer's product page"
@@ -3146,6 +3226,10 @@
  "ce46e30de32c": {
   "nl": "Een IBC of vat kan lekken door een beschadiging, een losse kraan of een fout bij het aftappen. Zonder opvang komt de vloeistof op de vloer, in de bodem of in het riool.",
   "en": "An IBC or drum can leak due to damage, a loose tap or a mistake when dispensing. Without containment, the liquid ends up on the floor, in the soil or in the sewer."
+ },
+ "ce69dabc9e55": {
+  "nl": "Kan een heftruck over de opvangbak rijden?",
+  "en": "Can a forklift drive over the spill tray?"
  },
  "cea66d57cacd": {
   "nl": "14,8 kg per mat",
@@ -3458,6 +3542,10 @@
  "e22896f54358": {
   "nl": "Hoe vaak verplaatst u de oplossing naar een volgend project?",
   "en": "How often do you move the solution to a next project?"
+ },
+ "e23b9f492935": {
+  "nl": "Hoe controleer ik of de opvangbak nog in orde is?",
+  "en": "How do I check whether the spill tray is still in good condition?"
  },
  "e2a509fd4d81": {
   "nl": "Overige oplossingen",
@@ -3855,6 +3943,10 @@
   "nl": "Flexibele tanks",
   "en": "Flexible tanks"
  },
+ "fbb212a3b289": {
+  "nl": "Nee. De opgegeven opvangcapaciteit geldt voor een lege opvangbak. Het volume dat de verpakkingen zelf innemen, gaat ervan af. Bij de standaardmodellen voor een bepaald aantal vaten of IBC's heeft de fabrikant hier al rekening mee gehouden: er blijft minimaal 110% van de grootste verpakking over.",
+  "en": "No. The stated containment capacity applies to an empty spill tray. The volume taken up by the containers themselves must be subtracted. For the standard models for a given number of drums or IBCs, the manufacturer has already allowed for this: at least 110% of the largest container remains."
+ },
  "fbc8577e980a": {
   "nl": "De Exflooder is een flexibele, met water gevulde waterkering: een sneller en lichter alternatief voor zandzakken. Uitrollen, verankeren en vullen met water. Na gebruik leegmaken, drogen en compact opbergen.",
   "en": "The Exflooder is a flexible, water-filled flood barrier: a faster and lighter alternative to sandbags. Roll out, anchor and fill with water. After use, empty, dry and store compactly."
@@ -3890,6 +3982,10 @@
  "fed3e3f1e40b": {
   "nl": "De Waterbase W is een dichte, verplaatsbare tank voor afvalwater, fecaliën en vuil water. Geschikt voor tijdelijke containerbases, modulaire woningen, evenementen en campings, en voor het opvangen van decontaminatiewater.",
   "en": "The Waterbase W is a closed, movable tank for waste water, sewage and dirty water. Suitable for temporary container bases, modular homes, events and campsites, and for collecting decontamination water."
+ },
+ "ff5c00e86e9b": {
+  "nl": "CNBOP is een Pools keuringsinstituut. In Nederland beoordelen de gemeente en de brandweer of veiligheidsregio of een bluswatervoorziening voldoet. Bespreek de tank daarom vooraf met hen. Wij leveren de technische gegevens die zij nodig hebben.",
+  "en": "CNBOP is a Polish testing institute. In the Netherlands, the municipality and the fire service or safety region (veiligheidsregio) assess whether a fire water supply is adequate. So discuss the tank with them in advance. We supply the technical data they need."
  },
  "ff8525f36687": {
   "nl": "14,70 × 9,85 m",

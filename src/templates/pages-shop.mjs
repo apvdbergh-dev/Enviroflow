@@ -1,5 +1,5 @@
 // Home, productoverzichten, productpagina's, winkelwagen, checkout, formulieren en keuzehulp.
-import { esc, ph, icon, fmtEUR, media, CARD_SIZES, priceBlock, faqBlock, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus } from './ui.mjs';
+import { esc, ph, icon, fmtEUR, media, CARD_SIZES, priceBlock, faqBlock, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, insightFields } from './ui.mjs';
 import { isOrderable, hasRealPrice } from '../lib/catalog.mjs';
 import { T, isEn, getLang, localPath } from '../lib/i18n.mjs';
 
@@ -299,7 +299,7 @@ export function categoryPage(c, ctx) {
   }
   // Uit de kennisbank: artikelen over deze categorie (interne links helpen bezoekers en zoekmachines).
   const reads = (ctx.articles || []).filter((a) => (a.categories || []).includes(c.id)).slice(0, 3);
-  const kb = reads.length ? `<section class="section section--tight" aria-labelledby="h-kb"><div class="container"><h2 id="h-kb" class="subhead">${T('Uit de kennisbank', 'From the knowledge base')}</h2><ul class="link-list">${reads.map((a) => `<li><a href="/kennisbank/${a.slug}/">${esc(a.title)}</a></li>`).join('')}</ul></div></section>` : '';
+  const kb = reads.length ? `<section class="section section--tight" aria-labelledby="h-kb"><div class="container"><h2 id="h-kb" class="subhead">${T('Uit de kennisbank', 'From the knowledge base')}</h2><ul class="link-list">${c.productPage?.compare ? `<li><a href="/waarom-flexibel/">${T('Waarom flexibel? Flexibele, stalen en kunststof lekbakken vergeleken', 'Why flexible? Flexible, steel and plastic spill trays compared')}</a></li>` : ''}${reads.map((a) => `<li><a href="/kennisbank/${a.slug}/">${esc(a.title)}</a></li>`).join('')}</ul></div></section>` : '';
   const body = `${head}${main}${faq.html}${kb}<div class="container section--tight">${adviceBlock(site)}</div>`;
   return { path: urls.category(c), title: c.seoTitle || `${c.name} | EnviroFlow`, description: c.seoDescription || c.short, body, crumbs, jsonld: faq.ld ? [faq.ld] : [], scripts: c.isCustom ? ['/assets/js/forms.js'] : ['/assets/js/listing.js'] };
 }
@@ -310,6 +310,41 @@ const SPEC_LABELS = () => [
   ['aansluitingen', T('Aansluitingen', 'Connections')], ['temperatuurbereik', T('Temperatuurbereik', 'Temperature range')], ['chemischeBestendigheid', T('Chemische bestendigheid', 'Chemical resistance')],
   ['garantie', T('Garantie', 'Warranty')], ['certificering', T('Certificering', 'Certification')]
 ];
+
+/* ---------- vaste productblokken: in de praktijk, toepassingen, vergelijking, FAQ ----------
+   Video's en foto's komen uit de categorie (productPage) of het product zelf. Zolang er niets is, verschijnt het blok niet. */
+const videoHtml = (v) => v.youtube
+  ? `<figure class="video"><button type="button" class="video__facade" data-yt="${esc(v.youtube)}" data-title="${esc(v.title)}" aria-label="${T('Video afspelen', 'Play video')}: ${esc(v.title)}">${v.poster ? `<img src="${esc(v.poster)}" alt="" width="1280" height="720" loading="lazy" decoding="async">` : ''}<span class="video__play">${icon('play')}</span></button><figcaption>${esc(v.title)} <span class="muted small">${T('De video wordt pas na klikken geladen via YouTube.', 'The video only loads from YouTube after you click.')}</span></figcaption></figure>`
+  : `<figure class="video"><video controls preload="none"${v.poster ? ` poster="${esc(v.poster)}"` : ''} width="1280" height="720"><source src="${esc(v.src)}" type="video/mp4"></video><figcaption>${esc(v.title)}</figcaption></figure>`;
+
+function practiceBlock(p, c) {
+  const videos = [...(p.videos || []), ...(c.productPage?.videos || [])];
+  const photos = [...(p.photos || []), ...(c.productPage?.photos || [])];
+  if (!videos.length && !photos.length) return '';
+  return `<section id="praktijk" class="pd-block"><h2>${T('In de praktijk', 'In practice')}</h2>
+    ${videos.map(videoHtml).join('')}
+    ${photos.length ? `<ul class="practice-grid">${photos.map((im) => `<li><figure>${media(im, '4-3', false, '(max-width: 640px) 92vw, 380px')}${im.caption ? `<figcaption>${esc(im.caption)}</figcaption>` : ''}</figure></li>`).join('')}</ul>` : ''}
+  </section>`;
+}
+
+// Korte vergelijking voor lekbakken; de uitgebreide versie staat op /waarom-flexibel/.
+const compareRows = () => [
+  [T('Bestand tegen', 'Resistant to'), T('Veel oliën, brandstoffen, zuren en glycol (per stof in de bestendigheidstabel)', 'Many oils, fuels, acids and glycol (per substance in the resistance table)'), T('Oplosmiddelen en olie', 'Solvents and oil'), T('Zuren en logen', 'Acids and alkalis')],
+  [T('Zwakke plek', 'Weak spot'), T('Sneden en scheuren in het weefsel', 'Cuts and tears in the fabric'), T('Corrosie', 'Corrosion'), T('Scheuren', 'Cracks')],
+  [T('Niet in gebruik', 'When not in use'), T('Opgevouwen klein, past op een stelling', 'Folds up small, fits on a shelf'), T('Neemt evenveel ruimte in', 'Takes up the same space'), T('Neemt evenveel ruimte in', 'Takes up the same space')],
+  [T('Grote of afwijkende maten', 'Large or non-standard sizes'), T('Op maat te maken, ook voor voertuigen', 'Can be made to measure, also for vehicles'), T('Afhankelijk van de leverancier', 'Depends on the supplier'), T('Afhankelijk van de leverancier', 'Depends on the supplier')]
+];
+function compareBlock(c) {
+  if (!c.productPage?.compare) return '';
+  return `<section id="vergelijking" class="pd-block"><h2>${T('Flexibel, staal of kunststof?', 'Flexible, steel or plastic?')}</h2>
+    <div class="table-scroll"><table class="spec-table spec-table--grid compare-table"><caption class="sr-only">${T('Vergelijking van lekbakken', 'Comparison of spill trays')}</caption>
+      <thead><tr><th scope="col"></th><th scope="col">${T('Flexibel (EVA-weefsel)', 'Flexible (EVA fabric)')}</th><th scope="col">${T('Staal', 'Steel')}</th><th scope="col">${T('Kunststof (PE)', 'Plastic (PE)')}</th></tr></thead>
+      <tbody>${compareRows().map((r) => `<tr><th scope="row">${r[0]}</th>${r.slice(1).map((x) => `<td>${x}</td>`).join('')}</tr>`).join('')}</tbody></table></div>
+    <p><a class="link-arrow" href="/waarom-flexibel/">${T('Alle verschillen en wanneer u beter staal of kunststof kiest', 'All the differences, and when steel or plastic is the better choice')} ${icon('arrow')}</a></p>
+  </section>`;
+}
+
+const productFaqBlock = (c) => c.productPage?.faq?.length ? `<section id="vragen" class="pd-block"><h2>${T('Vragen over dit product', 'Questions about this product')}</h2>${c.productPage.faq.map((f) => `<details class="faq__item"><summary>${esc(f.q)}${icon('chevron', 'faq__chev')}</summary><div class="faq__a"><p>${esc(f.a)}</p></div></details>`).join('')}</section>` : '';
 
 export function productPage(p, ctx) {
   const { t, site, urls, categoryById, groupById, products, brandById } = ctx;
@@ -322,6 +357,7 @@ export function productPage(p, ctx) {
     .concat(products.filter((x) => x.category === p.category && x.id !== p.id)).filter((x, i, arr) => arr.indexOf(x) === i).slice(0, 3);
   const images = p.images?.length ? p.images : [{ alt: `${T('Foto', 'Photo')}: ${p.name}` }];
 
+  const practice = practiceBlock(p, c);
   const body = `
 <section class="product-top">
   <div class="container product-top__grid">
@@ -353,7 +389,7 @@ export function productPage(p, ctx) {
 </section>
 
 <nav class="subnav" aria-label="${T('Op deze pagina', 'On this page')}"><div class="container"><ul>
-  <li><a href="#toepassing">${T('Toepassing', 'Application')}</a></li><li><a href="#voordelen">${T('Voordelen', 'Benefits')}</a></li><li><a href="#specificaties">${T('Specificaties', 'Specifications')}</a></li>${p.sizes ? `<li><a href="#uitvoeringen">${T('Uitvoeringen', 'Versions')}</a></li>` : ''}<li><a href="#geschikt">${T('Geschikt voor', 'Suitable for')}</a></li><li><a href="#downloads">Downloads</a></li>
+  <li><a href="#toepassing">${T('Toepassing', 'Application')}</a></li><li><a href="#voordelen">${T('Voordelen', 'Benefits')}</a></li><li><a href="#specificaties">${T('Specificaties', 'Specifications')}</a></li>${p.sizes ? `<li><a href="#uitvoeringen">${T('Uitvoeringen', 'Versions')}</a></li>` : ''}<li><a href="#geschikt">${T('Geschikt voor', 'Suitable for')}</a></li>${practice ? `<li><a href="#praktijk">${T('In de praktijk', 'In practice')}</a></li>` : ''}${c.productPage?.compare ? `<li><a href="#vergelijking">${T('Vergelijking', 'Comparison')}</a></li>` : ''}${c.productPage?.faq?.length ? `<li><a href="#vragen">${T('Vragen', 'Questions')}</a></li>` : ''}<li><a href="#downloads">Downloads</a></li>
 </ul></div></nav>
 
 <section class="section section--tight"><div class="container product-detail">
@@ -369,6 +405,10 @@ export function productPage(p, ctx) {
     </section>
     ${p.sizes ? `<section id="uitvoeringen" class="pd-block"><h2>${T('Uitvoeringen', 'Versions')}</h2><div class="table-scroll"><table class="spec-table spec-table--grid"><caption class="sr-only">${T('Uitvoeringen', 'Versions')} ${esc(p.name)}</caption><thead><tr>${p.sizes.head.map((h) => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${p.sizes.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${p.sizes.note ? `<p class="small muted">${esc(p.sizes.note)}</p>` : ''}</section>` : ''}
     <section id="geschikt" class="pd-block"><h2>${T('Geschikt voor', 'Suitable for')}</h2><ul class="check-list">${p.suitableFor.map((b) => `<li>${icon('check')}${esc(b)}</li>`).join('')}</ul></section>
+    ${c.applications?.length ? `<section id="toepassingen" class="pd-block"><h2>${T('Toepassingen', 'Applications')}</h2><ul class="check-list">${c.applications.map((b) => `<li>${icon('check')}${esc(b)}</li>`).join('')}</ul></section>` : ''}
+    ${practice}
+    ${compareBlock(c)}
+    ${productFaqBlock(c)}
     <section id="downloads" class="pd-block"><h2>Downloads</h2>
       ${(p.downloads || []).map((d) => `<a class="download" href="${esc(d.href)}" download>${icon('download')}<span>${esc(d.label)}</span></a>`).join('')}
       <p class="muted">${T('Een volledige datasheet ontvangt u op aanvraag.', 'A full datasheet is available on request.')} <a href="mailto:${site.email}?subject=${encodeURIComponent(`Datasheet ${p.name}`)}">${T('Vraag de datasheet aan', 'Request the datasheet')}</a>.</p>
@@ -512,6 +552,7 @@ export function quoteForm(ctx) {
     ${field({ name: 'delivery_date', label: T('Gewenste leverdatum', 'Preferred delivery date'), type: 'date' })}
     ${field({ name: 'remarks', label: T('Opmerkingen', 'Remarks'), type: 'textarea', rows: 5, full: true, hint: T('Vertel zo veel mogelijk over uw situatie: locatie, afmetingen, binnen of buiten, tijdelijk of permanent.', 'Tell us as much as possible about your situation: location, dimensions, indoors or outdoors, temporary or permanent.') })}
     ${uploadField()}
+    ${insightFields()}
   </div></fieldset>
   <input type="hidden" name="source" value="">
   ${privacyCheck()}
@@ -535,6 +576,7 @@ export function customForm() {
     ${field({ name: 'duration', label: T('Tijdelijk of permanent', 'Temporary or permanent'), type: 'select', options: [['', T('Maak een keuze', 'Make a choice')], ['Tijdelijk', T('Tijdelijk', 'Temporary')], ['Permanent', T('Permanent', 'Permanent')], UNKNOWN()] })}
     ${field({ name: 'wish', label: T('Gewenste oplossing', 'Desired solution'), type: 'textarea', rows: 5, full: true, hint: T('Beschrijf wat u nodig heeft. Een schets of foto helpt.', 'Describe what you need. A sketch or photo helps.') })}
     ${uploadField(T("Foto's of tekeningen", 'Photos or drawings'))}
+    ${insightFields()}
   </div></fieldset>
   ${privacyCheck()}
   ${formStatus()}
