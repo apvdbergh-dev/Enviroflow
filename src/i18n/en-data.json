@@ -859,10 +859,6 @@
   "nl": "Op kades, schepen en offshore locaties is ruimte beperkt en moet materiaal compact te vervoeren zijn.",
   "en": "On quays, ships and offshore locations, space is limited and equipment must be compact to transport."
  },
- "3538c5207a85": {
-  "nl": "Ja, volgens de fabrikant wel. Haal de steunen weg en leg de opstaande wand plat. Dan kan een heftruck of zelfs een vrachtwagen over de bodem rijden. Vervoer een vat of IBC nooit samen met de opvangbak op een heftruck.",
-  "en": "Yes, according to the manufacturer. Remove the supports and lay the upright wall flat. A forklift or even a lorry can then drive over the base. Never transport a drum or IBC together with the spill tray on a forklift."
- },
  "358f1b6d1d85": {
   "nl": "Ca. 4 weken; vraag naar sneller leverbare maten",
   "en": "Approx. 4 weeks; ask us about sizes available sooner"
@@ -955,6 +951,10 @@
   "nl": "Vul-/aftapaansluiting 3\" draad (1 st. standaard); ontluchting 2\" draad",
   "en": "Fill/drain connection 3\" thread (1 pc as standard); vent 2\" thread"
  },
+ "3bf078b394be": {
+  "nl": "7 jaar vanaf de aankoopdatum, op materiaal- en productiefouten (fabrieksgarantie)",
+  "en": "7 years from the date of purchase, on material and manufacturing defects (manufacturer's warranty)"
+ },
  "3c0da51025b4": {
   "nl": "1,89 × 1,40 m",
   "en": "1.89 × 1.40 m"
@@ -982,6 +982,10 @@
  "3e48b1856567": {
   "nl": "Watertransport naar moeilijk bereikbare plekken",
   "en": "Water transport to hard-to-reach places"
+ },
+ "3e7cee29b5cf": {
+  "nl": "De fabrikant geeft 7 jaar garantie vanaf de aankoopdatum op materiaal- en productiefouten, waaronder de naden en de lekdichtheid van het weefsel. Mechanische schade, normale slijtage en schade door een stof die volgens de bestendigheidstabel niet geschikt is, vallen er niet onder. De volledige voorwaarden staan bij Downloads.",
+  "en": "The manufacturer gives a 7-year warranty from the date of purchase on material and manufacturing defects, including the seams and the leak-tightness of the fabric. Mechanical damage, normal wear and damage caused by a substance that is not suitable according to the resistance table are not covered. The full conditions are under Downloads."
  },
  "3e925b766c2e": {
   "nl": "Oefening met Exflooder waterkeringen",
@@ -2139,6 +2143,10 @@
   "nl": "Decontaminatiematten voor voertuigen | EnviroFlow",
   "en": "Decontamination mats for vehicles | EnviroFlow"
  },
+ "88652bf2187c": {
+  "nl": "Garantievoorwaarden opvangbakken (fabrikant, Engels, PDF)",
+  "en": "Warranty conditions for spill trays (manufacturer, English, PDF)"
+ },
  "8873235bb98c": {
   "nl": "IBC's en vaten veilig opslaan | IBC lekbak | EnviroFlow",
   "en": "Storing IBCs and drums safely | IBC spill tray | EnviroFlow"
@@ -2198,6 +2206,10 @@
  "8c17277c7801": {
   "nl": "Dekzeilen en beschermhoezen van technisch textiel, gemaakt op maat.",
   "en": "Tarpaulins and protective covers made of technical textile, custom-made."
+ },
+ "8c28deb1cc31": {
+  "nl": "Wat valt onder de garantie?",
+  "en": "What does the warranty cover?"
  },
  "8c3e2644e754": {
   "nl": "5 jaar op lekdichtheid (fabrieksgarantie)",
@@ -3294,6 +3306,10 @@
  "d06fdbbeb8c3": {
   "nl": "Van 1,99 × 1,44 m (500 l) tot 13,90 × 13,00 m (200.000 l), zie uitvoeringen",
   "en": "From 1.99 × 1.44 m (500 l) to 13.90 × 13.00 m (200,000 l), see versions"
+ },
+ "d144d144bf73": {
+  "nl": "Ja, volgens de fabrikant wel. Haal de steunen weg en leg de opstaande wand plat. Dan kan een heftruck of zelfs een vrachtwagen over de bodem rijden. Vervoer een vat of IBC nooit samen met de opvangbak op een heftruck. Schade bij het in- en uitrijden valt niet onder de garantie.",
+  "en": "Yes, according to the manufacturer. Remove the supports and lay the upright wall flat. A forklift or even a lorry can then drive over the base. Never transport a drum or IBC together with the spill tray on a forklift. Damage caused when driving in and out is not covered by the warranty."
  },
  "d16f4dbeab9f": {
   "nl": "Temperatuurbestendig van −30 °C tot +80 °C",

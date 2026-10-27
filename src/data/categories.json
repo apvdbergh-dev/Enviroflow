@@ -102,7 +102,7 @@
           },
           {
             "q": "Kan een heftruck over de opvangbak rijden?",
-            "a": "Ja, volgens de fabrikant wel. Haal de steunen weg en leg de opstaande wand plat. Dan kan een heftruck of zelfs een vrachtwagen over de bodem rijden. Vervoer een vat of IBC nooit samen met de opvangbak op een heftruck."
+            "a": "Ja, volgens de fabrikant wel. Haal de steunen weg en leg de opstaande wand plat. Dan kan een heftruck of zelfs een vrachtwagen over de bodem rijden. Vervoer een vat of IBC nooit samen met de opvangbak op een heftruck. Schade bij het in- en uitrijden valt niet onder de garantie."
           },
           {
             "q": "Is de opvangbak bestand tegen mijn vloeistof?",
@@ -115,6 +115,10 @@
           {
             "q": "Hoe controleer ik of de opvangbak nog in orde is?",
             "a": "Kijk regelmatig of het weefsel en de naden onbeschadigd zijn. Zit er een snee of scheur in het weefsel, gebruik de opvangbak dan niet meer. Welke inspecties voor uw locatie verplicht zijn, hangt af van de regels en de vergunning die voor u gelden."
+          },
+          {
+            "q": "Wat valt onder de garantie?",
+            "a": "De fabrikant geeft 7 jaar garantie vanaf de aankoopdatum op materiaal- en productiefouten, waaronder de naden en de lekdichtheid van het weefsel. Mechanische schade, normale slijtage en schade door een stof die volgens de bestendigheidstabel niet geschikt is, vallen er niet onder. De volledige voorwaarden staan bij Downloads."
           }
         ]
       }
