@@ -10,10 +10,13 @@ const ALLOWED_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.heic', '.pdf'])
 const FINAL_STATUSES = new Set(['paid', 'failed', 'canceled', 'expired']);
 
 const FORM_SPECS = {
-  quote: { prefix: 'OFF', label: 'offerteaanvraag', title: 'Nieuwe offerteaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['request_type', 'company', 'name', 'email', 'phone', 'product', 'quantity', 'liquid', 'application', 'delivery_date', 'remarks', 'source', 'found_via', 'doubts'] },
-  custom: { prefix: 'MW', label: 'maatwerkaanvraag', title: 'Nieuwe maatwerkaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['company', 'name', 'email', 'phone', 'liquid', 'volume', 'dimensions', 'application', 'location', 'duration', 'wish', 'found_via', 'doubts'] },
+  quote: { prefix: 'OF', numbered: true, label: 'offerteaanvraag', title: 'Nieuwe offerteaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['request_type', 'company', 'name', 'email', 'phone', 'product', 'quantity', 'liquid', 'application', 'delivery_date', 'remarks', 'source', 'found_via', 'doubts'] },
+  custom: { prefix: 'OF', numbered: true, label: 'maatwerkaanvraag', title: 'Nieuwe maatwerkaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['company', 'name', 'email', 'phone', 'liquid', 'volume', 'dimensions', 'application', 'location', 'duration', 'wish', 'found_via', 'doubts'] },
   contact: { prefix: 'CT', label: 'contactbericht', title: 'Nieuw contactbericht', required: ['name', 'email', 'message', 'privacy'], fields: ['name', 'company', 'email', 'phone', 'message', 'found_via', 'doubts'] }
 };
+// Offertenummers: OF + jaar (2 cijfers) + volgnummer van 4 cijfers, per jaar opnieuw vanaf 0001 (bijv. OF260396).
+// Per jaar het laatste nummer dat al buiten de website om is uitgegeven; de website gaat daarna verder.
+const QUOTE_NUMBER_START = { 26: 395 };
 const LONG_FIELDS = new Set(['remarks', 'wish', 'message', 'doubts']);
 const FIELD_LABELS = {
   request_type: 'Soort aanvraag', company: 'Bedrijf', name: 'Naam', email: 'E-mail', phone: 'Telefoon', product: 'Product (id)', productName: 'Product',
@@ -68,7 +71,7 @@ const wantsJson = (request) => (request.headers.get('accept') || '').includes('a
 function reply(request, status, obj, lang = 'nl') {
   if (wantsJson(request)) return json(status, obj);
   const T = tr(lang);
-  if (status < 300) return new Response(null, { status: 303, headers: { Location: T('/bedankt/', '/en/bedankt/') } });
+  if (status < 300) return new Response(null, { status: 303, headers: { Location: T('/bedankt/', '/en/bedankt/') + (obj.nr ? `?nr=${encodeURIComponent(obj.nr)}` : '') } });
   return new Response(`<!doctype html><html lang="${lang}"><meta charset="utf-8"><title>${T('Fout', 'Error')}</title><p>${escHtml(obj.error)}</p><p><a href="javascript:history.back()">${T('Terug', 'Back')}</a></p></html>`, { status, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
 }
 
@@ -103,6 +106,19 @@ export function createApi({ catalog, catalogEn = catalog, store, config, log = c
   const site = catalog.site;
   const siteFor = (lang) => (lang === 'en' ? catalogEn.site : site);
   const notifyEmail = cfg.notifyEmail || site.email;
+  const now = cfg.now || (() => new Date());
+
+  /** Volgend offertenummer. Het jaar volgt de Nederlandse tijd, zodat 1 januari 00:00 meteen het nieuwe jaar is. */
+  async function nextQuoteNumber() {
+    const yy = new Intl.DateTimeFormat('nl-NL', { timeZone: 'Europe/Amsterdam', year: '2-digit' }).format(now());
+    const key = `counter:OF:${yy}`;
+    let n = Math.max(Number(await store.getJSON(key)) || 0, QUOTE_NUMBER_START[yy] || 0);
+    let id;
+    // Bestaat het nummer toch al (bijv. twee aanvragen tegelijk), dan het volgende nemen.
+    do { n += 1; id = `OF${yy}${String(n).padStart(4, '0')}`; } while (await store.getJSON(`submission:${id}`));
+    await store.putJSON(key, n);
+    return id;
+  }
   const productsById = Object.fromEntries(catalog.products.map((p) => [p.id, p]));
   const productsByIdEn = Object.fromEntries(catalogEn.products.map((p) => [p.id, p]));
   const companyFooter = (lang) => tr(lang)(
@@ -170,7 +186,7 @@ export function createApi({ catalog, catalogEn = catalog, store, config, log = c
       if (f.size > MAX_FILE_SIZE) return reply(request, 400, { error: T('Een bestand is groter dan 10 MB.', 'A file is larger than 10 MB.') }, lang);
     }
 
-    const record = { id: newId(spec.prefix), kind, lang, createdAt: new Date().toISOString(), data: {} };
+    const record = { id: spec.numbered ? await nextQuoteNumber() : newId(spec.prefix), kind, lang, createdAt: now().toISOString(), data: {} };
     spec.fields.forEach((k) => { record.data[k] = clean(fields[k], LONG_FIELDS.has(k) ? 5000 : 300); });
     if (record.data.product && productsById[record.data.product]) record.data.productName = productsById[record.data.product].name;
 
@@ -187,16 +203,18 @@ export function createApi({ catalog, catalogEn = catalog, store, config, log = c
     await store.putJSON(`submission:${record.id}`, record);
 
     const d = record.data;
+    // Zoals EnviroFlow een offerte noemt: "Enviroflow OF260396 Bedrijfsnaam" (bedrijfsnaam precies zoals ingevuld).
+    const nr = spec.numbered ? `Enviroflow ${record.id}` : null;
     const rows = Object.entries(d).filter(([k]) => k !== 'product').map(([k, v]) => [FIELD_LABELS[k] || k, v]);
     if (lang === 'en') rows.push(['Taal', LANG_NOTE]);
     const fileNote = record.files.length ? `${record.files.length} bijlage(n)${attachments.length < record.files.length ? ' (te groot om allemaal mee te sturen; opgeslagen bij ' + record.id + ')' : ''}` : '';
     const { text, html } = renderMail(`${spec.title} via de website (${record.id}).`, [['Gegevens', rows], ['Bijlagen', [['', fileNote || 'geen']]]], 'Beantwoorden van deze mail gaat rechtstreeks naar de klant.');
     bg(safely('formulier', Promise.all([
       push({ title: spec.title, message: `${record.id}${record.files.length ? ` · ${record.files.length} bijlage(n)` : ''} · details in je mail`, tags: ['envelope'] }),
-      mail({ to: notifyEmail, subject: `${spec.title} ${record.id}${d.company ? ` – ${d.company}` : ''}`, text, html, replyTo: d.email, attachments })
+      mail({ to: notifyEmail, subject: nr ? `${nr}${d.company ? ` ${d.company}` : ''}` : `${spec.title} ${record.id}${d.company ? ` – ${d.company}` : ''}`, text, html, replyTo: d.email, attachments })
     ])));
     log.log(`nieuwe ${kind}: ${record.id}${lang === 'en' ? ' (Engels)' : ''}`);
-    return reply(request, 200, { ok: true, id: record.id }, lang);
+    return reply(request, 200, { ok: true, id: record.id, ...(nr ? { nr } : {}) }, lang);
   }
 
   /* ---------- bestellingen ---------- */

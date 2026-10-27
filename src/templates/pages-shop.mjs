@@ -612,7 +612,7 @@ export function customPage(ctx) {
 }
 
 export function thanksPage(ctx) {
-  const body = `<section class="section"><div class="container container--narrow thanks">${icon('check', 'thanks__icon')}<h1>${T('Bedankt voor uw aanvraag', 'Thank you for your request')}</h1><p class="lead">${ctx.t.formThanks}</p><div class="btn-row"><a class="btn btn--primary" href="/producten/">${T('Verder kijken', 'Continue browsing')}</a><a class="btn btn--ghost" href="/">${T('Naar de homepage', 'To the homepage')}</a></div></div></section>`;
+  const body = `<section class="section"><div class="container container--narrow thanks">${icon('check', 'thanks__icon')}<h1>${T('Bedankt voor uw aanvraag', 'Thank you for your request')}</h1><p class="lead">${ctx.t.formThanks}</p><p data-request-nr hidden></p><script>(function(){var n=new URLSearchParams(location.search).get('nr');if(!n||!/^Enviroflow OF\\d{6,}$/.test(n))return;var p=document.querySelector('[data-request-nr]'),b=document.createElement('strong');b.textContent=n;p.append(${JSON.stringify(T('Uw aanvraag ', 'Your request '))},b,${JSON.stringify(T(' is ontvangen. Vermeld dit nummer als u contact met ons opneemt.', ' has been received. Please quote this number when you contact us.'))});p.hidden=false;})();</script><div class="btn-row"><a class="btn btn--primary" href="/producten/">${T('Verder kijken', 'Continue browsing')}</a><a class="btn btn--ghost" href="/">${T('Naar de homepage', 'To the homepage')}</a></div></div></section>`;
   return { path: '/bedankt/', title: T('Bedankt | EnviroFlow', 'Thank you | EnviroFlow'), description: T('Bedankt voor uw aanvraag bij EnviroFlow.', 'Thank you for your request to EnviroFlow.'), body, noindex: true };
 }
 

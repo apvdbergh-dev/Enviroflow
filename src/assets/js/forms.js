@@ -78,6 +78,7 @@
           var box = document.createElement('div');
           box.className = 'form-status ok'; box.setAttribute('role', 'status'); box.tabIndex = -1;
           box.innerHTML = '<p><strong>' + EF.esc(EF.t.formThanks) + '</strong></p>';
+          if (res.j.nr) box.innerHTML += '<p>' + EF.esc(L('Uw aanvraag ', 'Your request ')) + '<strong>' + EF.esc(res.j.nr) + '</strong>' + EF.esc(L(' is ontvangen. Vermeld dit nummer als u contact met ons opneemt.', ' has been received. Please quote this number when you contact us.')) + '</p>';
           form.replaceWith(box); box.focus();
         })
         .catch(function (err) {
