@@ -171,10 +171,6 @@
   "nl": "Volgens de fabrikant hoeft de verwarming van mei tot en met oktober niet aan. In stand-by gebruikt het systeem ongeveer 22 tot 36 kWh per maand. Als het verwarmt, hangt het verbruik af van de buitentemperatuur.",
   "en": "According to the manufacturer, the heating does not need to be on from May to October. On standby, the system uses about 22 to 36 kWh per month. When heating, consumption depends on the outside temperature."
  },
- "0a99188f3d51": {
-  "nl": "Verwijder de gelekte vloeistof zoals het veiligheidsinformatieblad van die stof voorschrijft. In de praktijk gebeurt dat meestal met geschikte absorptiemiddelen. Laat ook regenwater niet in de bak staan: dat gaat af van de opvangcapaciteit.",
-  "en": "Remove the leaked liquid as the safety data sheet of that substance prescribes. In practice this is usually done with suitable absorbents. Do not let rainwater stand in the tray either: it reduces the containment capacity."
- },
  "0b56421e6ffa": {
   "nl": "Opblaasbare wasmat 8 × 4 m voor het opvangen van waswater.",
   "en": "Inflatable wash mat 8 × 4 m for collecting wash water."
@@ -426,6 +422,10 @@
  "1914fe3a7bcc": {
   "nl": "7.000 liter",
   "en": "7,000 litres"
+ },
+ "1928cf475b44": {
+  "nl": "Een flexibele lekbak is licht, snel te plaatsen en makkelijk te verplaatsen. Daarmee is hij geschikt voor de tijdelijke opslag van vaten en IBC's, wisselende werkplekken en situaties waar een stalen lekbak niet past of te zwaar is.",
+  "en": "A flexible spill tray is light, quick to set up and easy to move. This makes it suitable for the temporary storage of drums and IBCs, changing work sites and situations where a steel spill tray does not fit or is too heavy."
  },
  "193dbce2d991": {
   "nl": "Bouw- en evenemententerreinen",
@@ -683,10 +683,6 @@
   "nl": "Daarnaast is er de GFFF-tank van 300 liter voor quads en ATV-aanhangers.",
   "en": "There is also the 300-litre GFFF tank for quads and ATV trailers."
  },
- "266163fa4371": {
-  "nl": "Een flexibele lekbak is licht, snel te plaatsen en makkelijk te verplaatsen. Daarmee is hij geschikt voor tijdelijke opslag, wisselende werkplekken en situaties waar een stalen lekbak niet past of te zwaar is.",
-  "en": "A flexible spill tray is light, quick to set up and easy to move. That makes it suitable for temporary storage, changing work locations and situations where a steel spill tray does not fit or is too heavy."
- },
  "26652715ba4c": {
   "nl": "Flexibele Waterbase R-tank van 30.000 liter voor de opslag van industriewater (geen drinkwater), vuil of verontreinigd water, afvalwater en regenwater.",
   "en": "Flexible 30,000-litre Waterbase R tank for storing industrial water (not drinking water), dirty or contaminated water, waste water and rainwater."
@@ -866,6 +862,10 @@
  "3538c5207a85": {
   "nl": "Ja, volgens de fabrikant wel. Haal de steunen weg en leg de opstaande wand plat. Dan kan een heftruck of zelfs een vrachtwagen over de bodem rijden. Vervoer een vat of IBC nooit samen met de opvangbak op een heftruck.",
   "en": "Yes, according to the manufacturer. Remove the supports and lay the upright wall flat. A forklift or even a lorry can then drive over the base. Never transport a drum or IBC together with the spill tray on a forklift."
+ },
+ "358f1b6d1d85": {
+  "nl": "Ca. 4 weken; vraag naar sneller leverbare maten",
+  "en": "Approx. 4 weeks; ask us about sizes available sooner"
  },
  "35db1d2994c1": {
   "nl": "4,00 × 1,89 m",
@@ -2970,6 +2970,10 @@
  "be9b753b1e6a": {
   "nl": "Publicatiereeks Gevaarlijke Stoffen (PGS 30)",
   "en": "Dutch Hazardous Substances Publication Series (PGS 30, in Dutch)"
+ },
+ "bec2e9c059df": {
+  "nl": "Verwijder gelekte vloeistof zo snel mogelijk. Een opvangbak is bedoeld om lekkages op te vangen, niet om vloeistof in te bewaren. Volg daarbij het veiligheidsinformatieblad van de stof; meestal gaat het met geschikte absorptiemiddelen. Laat ook regenwater niet in de bak staan: dat gaat af van de opvangcapaciteit.",
+  "en": "Remove leaked liquid as soon as possible. A spill tray is designed to catch leaks, not to hold liquid. Follow the safety data sheet of the substance; this is usually done with suitable absorbents. Do not let rainwater stand in the tray either: it reduces the containment capacity."
  },
  "bf7571697c42": {
   "nl": "Technisch weefsel met EVA-coating, 1.365 g/m²",
