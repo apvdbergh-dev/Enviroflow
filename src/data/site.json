@@ -20,8 +20,9 @@
   "vatNumber": "NL005099776B64",
   "serviceArea": "Nederland",
   "vatRate": 0.21,
-  "_priceMarkupComment": "Opslag op de EXFLO-prijzen in products.json (0.30 = 30%). Verkoopprijs = EXFLO-prijs x (1 + opslag), afgerond op hele euro's. VOORLOPIG: nog definitief vaststellen.",
-  "priceMarkup": 0.30,
+  "_priceComment": "products.json bevat de EXFLO-lijstprijzen (EXW/FCA, excl. btw). Inkoopprijs = lijstprijs - distributeurskorting. Verkoopprijs = inkoopprijs x (1 + marge op inkoop), afgerond op centen. Transport wordt apart gerekend.",
+  "distributorDiscount": 0.10,
+  "marginOnPurchase": 0.30,
   "currency": "EUR",
   "shipping": {
     "_comment": "Zet 'flatRate' op een bedrag excl. btw (bijv. 95) zodra bekend. Bij null: 'Verzendkosten worden na bestelling berekend'.",
