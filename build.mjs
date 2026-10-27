@@ -162,6 +162,10 @@ writeFileSync(join(dist, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
 writeFileSync(join(dist, 'version.txt'), `${process.env.CF_PAGES_COMMIT_SHA || 'lokaal'} ${new Date().toISOString()}\n`);
 
 // Beveiligings- en cacheheaders voor Cloudflare Pages (zelfde regels als server.mjs).
+// Oude adressen die nog ergens gelinkt kunnen zijn (Cloudflare Pages leest _redirects).
+writeFileSync(join(dist, '_redirects'), `/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf /assets/datasheets/opvangbak-chemische-bestendigheid.pdf 301
+/assets/datasheets/exflo-opvangbak-garantievoorwaarden.pdf /assets/datasheets/opvangbak-garantievoorwaarden.pdf 301
+`);
 writeFileSync(join(dist, '_headers'), `/*
   X-Content-Type-Options: nosniff
   Strict-Transport-Security: max-age=31536000

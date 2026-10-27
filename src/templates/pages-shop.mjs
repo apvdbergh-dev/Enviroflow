@@ -367,7 +367,7 @@ export function productPage(p, ctx) {
       <template data-gallery-items>${images.map((im) => media(im, '4-3')).join('')}</template>
     </div>
     <div class="buybox">
-      <p class="buybox__brand">${t.manufacturer}: <a href="/partners/${brand.slug}/">${esc(brand.name)}</a>${p.line ? ` · ${T('Productlijn', 'Product line')} ${esc(p.line)}` : ''}</p>
+      ${p.line ? `<p class="buybox__brand">${T('Productlijn', 'Product line')} ${esc(p.line)}</p>` : ''}
       <h1>${esc(p.name)}</h1>
       <p class="buybox__short">${esc(p.short)}</p>
       ${priceBlock(p, t, 'price--lg')}
