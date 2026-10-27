@@ -10,13 +10,18 @@ const ALLOWED_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.heic', '.pdf'])
 const FINAL_STATUSES = new Set(['paid', 'failed', 'canceled', 'expired']);
 
 const FORM_SPECS = {
-  quote: { prefix: 'OF', numbered: true, label: 'offerteaanvraag', title: 'Nieuwe offerteaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['request_type', 'company', 'name', 'email', 'phone', 'product', 'quantity', 'liquid', 'application', 'delivery_date', 'remarks', 'source', 'found_via', 'doubts'] },
-  custom: { prefix: 'OF', numbered: true, label: 'maatwerkaanvraag', title: 'Nieuwe maatwerkaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['company', 'name', 'email', 'phone', 'liquid', 'volume', 'dimensions', 'application', 'location', 'duration', 'wish', 'found_via', 'doubts'] },
+  quote: { prefix: 'OF', label: 'offerteaanvraag', title: 'Nieuwe offerteaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['request_type', 'company', 'name', 'email', 'phone', 'product', 'quantity', 'liquid', 'application', 'delivery_date', 'remarks', 'source', 'found_via', 'doubts'] },
+  custom: { prefix: 'OF', label: 'maatwerkaanvraag', title: 'Nieuwe maatwerkaanvraag', required: ['company', 'name', 'email', 'phone', 'privacy'], fields: ['company', 'name', 'email', 'phone', 'liquid', 'volume', 'dimensions', 'application', 'location', 'duration', 'wish', 'found_via', 'doubts'] },
   contact: { prefix: 'CT', label: 'contactbericht', title: 'Nieuw contactbericht', required: ['name', 'email', 'message', 'privacy'], fields: ['name', 'company', 'email', 'phone', 'message', 'found_via', 'doubts'] }
 };
-// Offertenummers: OF + jaar (2 cijfers) + volgnummer van 4 cijfers, per jaar opnieuw vanaf 0001 (bijv. OF260396).
-// Per jaar het laatste nummer dat al buiten de website om is uitgegeven; de website gaat daarna verder.
-const QUOTE_NUMBER_START = { 26: 395 };
+// Nummers: letters + jaar (2 cijfers) + volgnummer van 4 cijfers, per jaar opnieuw vanaf 0001.
+// Offertes (ook maatwerk): OF260396. Contactberichten: CT-262648. Webshopbestellingen: EF-263886.
+// `start` = per jaar het laatste nummer dat al vergeven is (of het gekozen beginpunt); de website gaat daarna verder.
+const NUMBER_SERIES = {
+  OF: { sep: '', start: { 26: 395 }, key: 'submission' },
+  CT: { sep: '-', start: { 26: 2647 }, key: 'submission' },
+  EF: { sep: '-', start: { 26: 3885 }, key: 'order' }
+};
 const LONG_FIELDS = new Set(['remarks', 'wish', 'message', 'doubts']);
 const FIELD_LABELS = {
   request_type: 'Soort aanvraag', company: 'Bedrijf', name: 'Naam', email: 'E-mail', phone: 'Telefoon', product: 'Product (id)', productName: 'Product',
@@ -50,12 +55,6 @@ const eur = (n, lang = 'nl') => new Intl.NumberFormat(lang === 'en' ? 'en-IE' : 
 const langOf = (fields) => (fields?.lang === 'en' ? 'en' : 'nl');
 const tr = (lang) => (nl, en) => (lang === 'en' ? en : nl);
 const extOf = (name) => { const m = /\.[^.]+$/.exec(name || ''); return m ? m[0].toLowerCase() : ''; };
-
-function newId(prefix) {
-  const bytes = crypto.getRandomValues(new Uint8Array(3));
-  const hex = Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('').toUpperCase();
-  return `${prefix}-${new Date().toISOString().slice(0, 10).replace(/-/g, '')}-${hex}`;
-}
 
 function toBase64(buf) {
   const bytes = new Uint8Array(buf); let bin = '';
@@ -108,14 +107,15 @@ export function createApi({ catalog, catalogEn = catalog, store, config, log = c
   const notifyEmail = cfg.notifyEmail || site.email;
   const now = cfg.now || (() => new Date());
 
-  /** Volgend offertenummer. Het jaar volgt de Nederlandse tijd, zodat 1 januari 00:00 meteen het nieuwe jaar is. */
-  async function nextQuoteNumber() {
+  /** Volgend nummer in een reeks (OF, CT of EF). Het jaar volgt de Nederlandse tijd, zodat 1 januari 00:00 meteen het nieuwe jaar is. */
+  async function nextNumber(series) {
+    const { sep, start, key: recordKey } = NUMBER_SERIES[series];
     const yy = new Intl.DateTimeFormat('nl-NL', { timeZone: 'Europe/Amsterdam', year: '2-digit' }).format(now());
-    const key = `counter:OF:${yy}`;
-    let n = Math.max(Number(await store.getJSON(key)) || 0, QUOTE_NUMBER_START[yy] || 0);
+    const key = `counter:${series}:${yy}`;
+    let n = Math.max(Number(await store.getJSON(key)) || 0, start[yy] || 0);
     let id;
     // Bestaat het nummer toch al (bijv. twee aanvragen tegelijk), dan het volgende nemen.
-    do { n += 1; id = `OF${yy}${String(n).padStart(4, '0')}`; } while (await store.getJSON(`submission:${id}`));
+    do { n += 1; id = `${series}${sep}${yy}${String(n).padStart(4, '0')}`; } while (await store.getJSON(`${recordKey}:${id}`));
     await store.putJSON(key, n);
     return id;
   }
@@ -186,7 +186,7 @@ export function createApi({ catalog, catalogEn = catalog, store, config, log = c
       if (f.size > MAX_FILE_SIZE) return reply(request, 400, { error: T('Een bestand is groter dan 10 MB.', 'A file is larger than 10 MB.') }, lang);
     }
 
-    const record = { id: spec.numbered ? await nextQuoteNumber() : newId(spec.prefix), kind, lang, createdAt: now().toISOString(), data: {} };
+    const record = { id: await nextNumber(spec.prefix), kind, lang, createdAt: now().toISOString(), data: {} };
     spec.fields.forEach((k) => { record.data[k] = clean(fields[k], LONG_FIELDS.has(k) ? 5000 : 300); });
     if (record.data.product && productsById[record.data.product]) record.data.productName = productsById[record.data.product].name;
 
@@ -204,7 +204,7 @@ export function createApi({ catalog, catalogEn = catalog, store, config, log = c
 
     const d = record.data;
     // Zoals EnviroFlow een offerte noemt: "Enviroflow OF260396 Bedrijfsnaam" (bedrijfsnaam precies zoals ingevuld).
-    const nr = spec.numbered ? `Enviroflow ${record.id}` : null;
+    const nr = spec.prefix === 'OF' ? `Enviroflow ${record.id}` : null;
     const rows = Object.entries(d).filter(([k]) => k !== 'product').map(([k, v]) => [FIELD_LABELS[k] || k, v]);
     if (lang === 'en') rows.push(['Taal', LANG_NOTE]);
     const fileNote = record.files.length ? `${record.files.length} bijlage(n)${attachments.length < record.files.length ? ' (te groot om allemaal mee te sturen; opgeslagen bij ' + record.id + ')' : ''}` : '';
@@ -306,7 +306,7 @@ export function createApi({ catalog, catalogEn = catalog, store, config, log = c
 
     const g = (k, max) => clean(fields[k], max);
     const order = {
-      id: newId('EF'), lang, createdAt: new Date().toISOString(), status: 'created',
+      id: await nextNumber('EF'), lang, createdAt: now().toISOString(), status: 'created',
       customer: { company: g('company'), vatNumber: g('vat_number'), name: g('name'), email: g('email'), phone: g('phone'), reference: g('reference') },
       delivery: { street: g('delivery_street'), postcode: g('delivery_postcode'), city: g('delivery_city'), country: g('delivery_country') || 'NL' },
       billing: fields.billing_same ? 'gelijk aan afleveradres' : { street: g('billing_street'), postcode: g('billing_postcode'), city: g('billing_city'), country: g('billing_country') || 'NL' },
@@ -348,7 +348,8 @@ export function createApi({ catalog, catalogEn = catalog, store, config, log = c
     return json(200, { ok: true, orderId: order.id, message: T('Wij hebben uw bestelling ontvangen. U ontvangt van ons een bevestiging met betaalinstructies.', 'We have received your order. You will receive a confirmation with payment instructions from us.') });
   }
 
-  const validOrderId = (id) => /^EF-\d{8}-[A-F0-9]{6}$/.test(id || '');
+  // Nieuw: EF-263886. Oud (vóór de doorlopende nummering): EF-20261021-5FBECE; die blijven werken.
+  const validOrderId = (id) => /^EF-(\d{6,}|\d{8}-[A-F0-9]{6})$/.test(id || '');
 
   async function handleMollieWebhook(request) {
     const { fields } = await readForm(request);
