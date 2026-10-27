@@ -934,7 +934,7 @@
       "afmetingen": "6 × 3 m (vloer), randhoogte 10 cm",
       "capaciteit": null,
       "materiaal": "Driedubbellaags PVC-gecoat technisch weefsel, gelakt, 900 g/m²",
-      "gewicht": "36 kg",
+      "gewicht": "23 kg",
       "aansluitingen": null,
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
@@ -1017,7 +1017,7 @@
       "afmetingen": "6 × 3 m (vloer), randhoogte 10 cm",
       "capaciteit": null,
       "materiaal": "Driedubbellaags PVC-gecoat technisch weefsel, gelakt, 900 g/m²",
-      "gewicht": null,
+      "gewicht": "25 kg (inclusief oprijstroken)",
       "aansluitingen": null,
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
@@ -1099,7 +1099,7 @@
       "afmetingen": "8 × 4 m (vloer), randhoogte 10 cm",
       "capaciteit": null,
       "materiaal": "Driedubbellaags PVC-gecoat technisch weefsel, gelakt, 900 g/m²",
-      "gewicht": null,
+      "gewicht": "41 kg",
       "aansluitingen": null,
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
@@ -1181,7 +1181,7 @@
       "afmetingen": "8 × 4 m (vloer), randhoogte 10 cm",
       "capaciteit": null,
       "materiaal": "Driedubbellaags PVC-gecoat technisch weefsel, gelakt, 900 g/m²",
-      "gewicht": null,
+      "gewicht": "44 kg (inclusief oprijstroken)",
       "aansluitingen": null,
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
@@ -1215,15 +1215,15 @@
     "slug": "wasmat-motor",
     "category": "wasmatten-voertuigen",
     "brand": "exflo",
-    "name": "Wasmat voor motoren 3 × 2 m",
+    "name": "Wasmat voor motoren 2,6 × 1,5 m",
     "line": null,
     "sku": null,
-    "short": "Opblaasbare wasmat van 3 × 2 m voor motoren en andere tweewielers.",
+    "short": "Opblaasbare wasmat van 2,6 × 1,5 m met oprijstrook, voor motoren en andere tweewielers.",
     "purpose": [
-      "Deze opblaasbare wasmat van 3 × 2 m vangt waswater met reinigingsmiddelen op bij het wassen van motoren en andere tweewielers. Ook handig in de garage tegen modder en sneeuw."
+      "Deze opblaasbare wasmat van 2,6 × 1,5 m vangt waswater met reinigingsmiddelen op bij het wassen van motoren en andere tweewielers. Ook handig in de garage tegen modder en sneeuw."
     ],
     "benefits": [
-      "Makkelijk op en af te rijden met een tweewieler",
+      "Met oprijstrook: makkelijk op en af te rijden met een tweewieler",
       "In enkele minuten klaar voor gebruik",
       "Sterk en goed bestand tegen beschadiging",
       "Opgevouwen neemt hij weinig ruimte in"
@@ -1253,10 +1253,10 @@
       }
     ],
     "specs": {
-      "afmetingen": "3 × 2 m",
+      "afmetingen": "2,6 × 1,5 × 0,1 m (l × b × h)",
       "capaciteit": null,
       "materiaal": "PVC-weefsel, 900 g/m²",
-      "gewicht": "10,5 kg",
+      "gewicht": "7 kg",
       "aansluitingen": null,
       "temperatuurbereik": null,
       "chemischeBestendigheid": null,
@@ -1268,7 +1268,7 @@
       "ibcCount": null,
       "drumCount": null,
       "capacityL": null,
-      "dimensions": "3 × 2 m",
+      "dimensions": "2,6 × 1,5 m",
       "material": null,
       "application": [
         "Voertuigen"
