@@ -410,7 +410,7 @@ export function productPage(p, ctx) {
     ${compareBlock(c)}
     ${productFaqBlock(c)}
     <section id="downloads" class="pd-block"><h2>Downloads</h2>
-      ${(p.downloads || []).map((d) => `<a class="download" href="${esc(d.href)}" download>${icon('download')}<span>${esc(d.label)}</span></a>`).join('')}
+      ${(p.downloads || []).map((d) => `<a class="download" href="${esc(isEn() && d.hrefEn ? d.hrefEn : d.href)}" download>${icon('download')}<span>${esc(d.label)}</span></a>`).join('')}
       <p class="muted">${T('Een volledige datasheet ontvangt u op aanvraag.', 'A full datasheet is available on request.')} <a href="mailto:${site.email}?subject=${encodeURIComponent(`Datasheet ${p.name}`)}">${T('Vraag de datasheet aan', 'Request the datasheet')}</a>.</p>
     </section>
     <div class="notice">${icon('info')}<p>${t.requirementsNote}</p></div>

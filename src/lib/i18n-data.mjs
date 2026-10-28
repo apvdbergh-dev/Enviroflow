@@ -3,7 +3,7 @@
 // Ontbreekt een vertaling, dan stopt de build met een duidelijke lijst (er komt nooit Nederlands op de Engelse site).
 
 /** Velden met technische waarden (id's, links, bestanden) die niet vertaald worden. */
-const SKIP_KEYS = new Set(['id', 'slug', 'category', 'brand', 'src', 'href', 'source', 'related', 'group', 'imageSrc', 'url', 'sku', 'logo', 'logoDark', 'website', 'icon', 'tel', 'email', 'baseUrl', 'width', 'height', 'key', 'currency', 'defaultLocale', 'locales', 'vatNumber', 'kvk', 'postalCode', 'street', 'city', 'country', 'line', 'display', 'cfAnalyticsToken', 'youtube', 'poster']);
+const SKIP_KEYS = new Set(['id', 'slug', 'category', 'brand', 'src', 'href', 'source', 'related', 'group', 'imageSrc', 'url', 'sku', 'logo', 'logoDark', 'website', 'icon', 'tel', 'email', 'baseUrl', 'width', 'height', 'key', 'currency', 'defaultLocale', 'locales', 'vatNumber', 'kvk', 'postalCode', 'street', 'city', 'country', 'line', 'display', 'cfAnalyticsToken', 'youtube', 'poster', 'hrefEn']);
 /** Velden die soms een lijst met id's zijn (overslaan) en soms echte inhoud (vertalen). */
 const ID_LIST_KEYS = new Set(['categories', 'products', 'solutions', 'sectors', 'articles', 'riskCategories']);
 const skip = (k, v) => SKIP_KEYS.has(k) || k.startsWith('_') || (ID_LIST_KEYS.has(k) && Array.isArray(v) && v.every((x) => typeof x === 'string'));
