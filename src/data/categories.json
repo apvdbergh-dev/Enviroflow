@@ -155,7 +155,33 @@
         }
       ],
       "imageSrc": "/assets/img/producten/wasmat-in-gebruik.jpg",
-      "h1": "Wasmatten voor voertuigen"
+      "h1": "Wasmatten voor voertuigen",
+      "productPage": {
+        "videos": [],
+        "photos": [],
+        "faq": [
+          {
+            "q": "Heb ik een pomp nodig?",
+            "a": "Ja. De wanden vult u met lucht met een elektrische pomp of een autocompressor. Een pomp wordt niet meegeleverd. De druk mag niet hoger zijn dan 0,1 bar."
+          },
+          {
+            "q": "Kan een voertuig over de wand rijden?",
+            "a": "Ja, maar zorg dat de wand waar het voertuig overheen rijdt maar half gevuld is met lucht. Over een volledig gevulde wand rijden beschadigt de mat. Met oprijstroken is de mat extra beschermd."
+          },
+          {
+            "q": "Kan ik de mat gebruiken als het vriest?",
+            "a": "Het weefsel is bestand tegen −30 °C tot +70 °C. Vouw de mat bij vorst bij voorkeur niet open of dicht: het weefsel wordt dan stijf en raakt makkelijker beschadigd."
+          },
+          {
+            "q": "Hoe maak ik de mat schoon en berg ik hem op?",
+            "a": "Spoel de mat met schoon water, laat hem uitlekken en aan de lucht drogen voordat u hem opvouwt. Maak de buitenkant schoon met een doek of bezem; gebruik geen hogedrukreiniger op de mat. Bewaar hem waar knaagdieren er niet bij kunnen."
+          },
+          {
+            "q": "Hoe lang gaat een wasmat mee?",
+            "a": "Volgens de fabrikant 5 jaar of langer. Dat hangt af van hoe vaak u hem gebruikt, opzet en opvouwt, en van uv-straling. Kleine beschadigingen zijn te repareren met een lap van hetzelfde PVC-weefsel."
+          }
+        ]
+      }
     },
     {
       "id": "decontaminatiematten-voertuigen",

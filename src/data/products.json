@@ -1008,7 +1008,18 @@
     "quoteOnly": false,
     "leadTime": null,
     "stock": null,
-    "downloads": [],
+    "downloads": [
+      {
+        "label": "Technisch informatieblad wasmat (PDF)",
+        "href": "/assets/datasheets/wasmat-technisch-informatieblad.pdf",
+        "hrefEn": "/assets/datasheets/wasmat-technical-data-sheet.pdf"
+      },
+      {
+        "label": "Montagehandleiding wasmat (PDF)",
+        "href": "/assets/datasheets/wasmat-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/wasmat-assembly-instructions.pdf"
+      }
+    ],
     "liquids": null,
     "images": [
       {
@@ -1036,7 +1047,7 @@
       "materiaal": "Driedubbellaags PVC-gecoat technisch weefsel, gelakt, 900 g/m²",
       "gewicht": "23 kg",
       "aansluitingen": null,
-      "temperatuurbereik": null,
+      "temperatuurbereik": "−30 °C tot +70 °C",
       "chemischeBestendigheid": null,
       "garantie": "2 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
@@ -1091,7 +1102,18 @@
     "quoteOnly": false,
     "leadTime": null,
     "stock": null,
-    "downloads": [],
+    "downloads": [
+      {
+        "label": "Technisch informatieblad wasmat (PDF)",
+        "href": "/assets/datasheets/wasmat-technisch-informatieblad.pdf",
+        "hrefEn": "/assets/datasheets/wasmat-technical-data-sheet.pdf"
+      },
+      {
+        "label": "Montagehandleiding wasmat (PDF)",
+        "href": "/assets/datasheets/wasmat-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/wasmat-assembly-instructions.pdf"
+      }
+    ],
     "liquids": null,
     "images": [
       {
@@ -1119,7 +1141,7 @@
       "materiaal": "Driedubbellaags PVC-gecoat technisch weefsel, gelakt, 900 g/m²",
       "gewicht": "25 kg (inclusief oprijstroken)",
       "aansluitingen": null,
-      "temperatuurbereik": null,
+      "temperatuurbereik": "−30 °C tot +70 °C",
       "chemischeBestendigheid": null,
       "garantie": "2 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
@@ -1173,7 +1195,18 @@
     "quoteOnly": false,
     "leadTime": null,
     "stock": null,
-    "downloads": [],
+    "downloads": [
+      {
+        "label": "Technisch informatieblad wasmat (PDF)",
+        "href": "/assets/datasheets/wasmat-technisch-informatieblad.pdf",
+        "hrefEn": "/assets/datasheets/wasmat-technical-data-sheet.pdf"
+      },
+      {
+        "label": "Montagehandleiding wasmat (PDF)",
+        "href": "/assets/datasheets/wasmat-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/wasmat-assembly-instructions.pdf"
+      }
+    ],
     "liquids": null,
     "images": [
       {
@@ -1201,7 +1234,7 @@
       "materiaal": "Driedubbellaags PVC-gecoat technisch weefsel, gelakt, 900 g/m²",
       "gewicht": "41 kg",
       "aansluitingen": null,
-      "temperatuurbereik": null,
+      "temperatuurbereik": "−30 °C tot +70 °C",
       "chemischeBestendigheid": null,
       "garantie": "2 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
@@ -1255,7 +1288,18 @@
     "quoteOnly": false,
     "leadTime": null,
     "stock": null,
-    "downloads": [],
+    "downloads": [
+      {
+        "label": "Technisch informatieblad wasmat (PDF)",
+        "href": "/assets/datasheets/wasmat-technisch-informatieblad.pdf",
+        "hrefEn": "/assets/datasheets/wasmat-technical-data-sheet.pdf"
+      },
+      {
+        "label": "Montagehandleiding wasmat (PDF)",
+        "href": "/assets/datasheets/wasmat-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/wasmat-assembly-instructions.pdf"
+      }
+    ],
     "liquids": null,
     "images": [
       {
@@ -1283,7 +1327,7 @@
       "materiaal": "Driedubbellaags PVC-gecoat technisch weefsel, gelakt, 900 g/m²",
       "gewicht": "44 kg (inclusief oprijstroken)",
       "aansluitingen": null,
-      "temperatuurbereik": null,
+      "temperatuurbereik": "−30 °C tot +70 °C",
       "chemischeBestendigheid": null,
       "garantie": "2 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
@@ -1336,7 +1380,13 @@
     "quoteOnly": false,
     "leadTime": null,
     "stock": null,
-    "downloads": [],
+    "downloads": [
+      {
+        "label": "Montagehandleiding wasmat (PDF)",
+        "href": "/assets/datasheets/wasmat-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/wasmat-assembly-instructions.pdf"
+      }
+    ],
     "liquids": null,
     "images": [
       {

@@ -359,6 +359,10 @@
   "nl": "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder een aggregaat, pomp of koelmachine bij een storing of brandstoflek. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
   "en": "This flexible spill tray (drip tray) catches leaks and spills under a generator, pump or chiller in the event of a malfunction or fuel leak. This prevents oil, acid or other liquids from ending up on the floor, in the soil or in the sewer."
  },
+ "1688dbc116b2": {
+  "nl": "Volgens de fabrikant 5 jaar of langer. Dat hangt af van hoe vaak u hem gebruikt, opzet en opvouwt, en van uv-straling. Kleine beschadigingen zijn te repareren met een lap van hetzelfde PVC-weefsel.",
+  "en": "According to the manufacturer, 5 years or more. This depends on how often you use, set up and fold it, and on UV radiation. Small damage can be repaired with a patch of the same PVC fabric."
+ },
  "1691d88a5f16": {
   "nl": "Technisch weefsel met polyester gaas en PVC-coating, UV-lak",
   "en": "Technical fabric with polyester mesh and PVC coating, UV lacquer"
@@ -526,6 +530,10 @@
  "1e57656e2360": {
   "nl": "Decontaminatiemat voor personen in gebruik",
   "en": "Decontamination mat for people in use"
+ },
+ "1e6268c9acd3": {
+  "nl": "Kan ik de mat gebruiken als het vriest?",
+  "en": "Can I use the mat when it is freezing?"
  },
  "1e8cb1d49201": {
   "nl": "Ik heb tijdelijk wateropslag nodig",
@@ -734,6 +742,10 @@
  "29e25d93e299": {
   "nl": "Mobiele waterkering in gebruik",
   "en": "Mobile flood barrier in use"
+ },
+ "2a56ac60ad10": {
+  "nl": "Spoel de mat met schoon water, laat hem uitlekken en aan de lucht drogen voordat u hem opvouwt. Maak de buitenkant schoon met een doek of bezem; gebruik geen hogedrukreiniger op de mat. Bewaar hem waar knaagdieren er niet bij kunnen.",
+  "en": "Rinse the mat with clean water, let it drain and air dry before folding it. Clean the outside with a cloth or broom; do not use a high-pressure cleaner on the mat. Store it where rodents cannot reach it."
  },
  "2ac6bdfbbe75": {
   "nl": "Een wasmat vangt het waswater op zodat u het kunt afvoeren of verwerken. U legt hem neer waar u hem nodig heeft en ruimt hem daarna weer op.",
@@ -991,6 +1003,10 @@
   "nl": "De fabrikant geeft 7 jaar garantie vanaf de aankoopdatum op materiaal- en productiefouten, waaronder de naden en de lekdichtheid van het weefsel. Mechanische schade, normale slijtage en schade door een stof die volgens de bestendigheidstabel niet geschikt is, vallen er niet onder. De volledige voorwaarden staan bij Downloads.",
   "en": "The manufacturer gives a 7-year warranty from the date of purchase on material and manufacturing defects, including the seams and the leak-tightness of the fabric. Mechanical damage, normal wear and damage caused by a substance that is not suitable according to the resistance table are not covered. The full conditions are under Downloads."
  },
+ "3e8130bcdb1f": {
+  "nl": "Kan een voertuig over de wand rijden?",
+  "en": "Can a vehicle drive over the wall?"
+ },
  "3e925b766c2e": {
   "nl": "Oefening met Exflooder waterkeringen",
   "en": "Exercise with Exflooder flood barriers"
@@ -1167,6 +1183,10 @@
   "nl": "Ik zoek bluswatervoorziening",
   "en": "I am looking for a fire water supply"
  },
+ "4a0e180a5404": {
+  "nl": "Heb ik een pomp nodig?",
+  "en": "Do I need a pump?"
+ },
  "4a47505201a4": {
   "nl": "Geen frame: in enkele minuten opgezet",
   "en": "No frame: set up in a few minutes"
@@ -1250,6 +1270,10 @@
  "4f06537b66c9": {
   "nl": "Dekzeil of hoes op maat",
   "en": "Custom tarpaulin or cover"
+ },
+ "505c20cfc4af": {
+  "nl": "Hoe maak ik de mat schoon en berg ik hem op?",
+  "en": "How do I clean and store the mat?"
  },
  "50cd92ed1ab0": {
   "nl": "Open zelfdragende tank | Hydronion | EnviroFlow",
@@ -1791,6 +1815,10 @@
   "nl": "Polyesterweefsel, aan beide zijden PVC-gecoat en gelakt, UV-bestendig, cadmiumvrij; 1.300 g/m²; scheursterkte 4.400 N/5 cm",
   "en": "Polyester fabric, PVC-coated and lacquered on both sides, UV-resistant, cadmium-free; 1,300 g/m²; tear strength 4,400 N/5 cm"
  },
+ "71b8a48579b8": {
+  "nl": "Technisch informatieblad wasmat (PDF)",
+  "en": "Technical data sheet for the car wash mat (PDF)"
+ },
  "71e371804e69": {
   "nl": "23 kg",
   "en": "23 kg"
@@ -1914,6 +1942,10 @@
  "7885e371edd5": {
   "nl": "Calamiteiten",
   "en": "Emergencies"
+ },
+ "78d650bfccea": {
+  "nl": "Hoe lang gaat een wasmat mee?",
+  "en": "How long does a car wash mat last?"
  },
  "78f86c4bd66b": {
   "nl": "Flexibele lekbak voor twee vaten. Opvangcapaciteit 410 liter.",
@@ -2478,6 +2510,10 @@
  "9c3ec4737137": {
   "nl": "Langs een wand of in een gang",
   "en": "Along a wall or in a corridor"
+ },
+ "9c4f3a8941dd": {
+  "nl": "Montagehandleiding wasmat (PDF)",
+  "en": "Assembly instructions for the car wash mat (PDF)"
  },
  "9c870d874028": {
   "nl": "Flexibele drinkwatertank | Waterbase D Plus | EnviroFlow",
@@ -3499,6 +3535,10 @@
   "nl": "IBC's in een flexibele opvangbak",
   "en": "IBCs in a flexible containment tray"
  },
+ "dd1982c4588d": {
+  "nl": "Het weefsel is bestand tegen −30 °C tot +70 °C. Vouw de mat bij vorst bij voorkeur niet open of dicht: het weefsel wordt dan stijf en raakt makkelijker beschadigd.",
+  "en": "The fabric withstands −30 °C to +70 °C. Preferably do not unfold or fold the mat in freezing temperatures: the fabric becomes stiff and is more easily damaged."
+ },
  "dd4d391c77c3": {
   "nl": "11,20 × 8,90 m",
   "en": "11.20 × 8.90 m"
@@ -3831,6 +3871,10 @@
   "nl": "De Waterbase R is een flexibele tank van PVC-gecoat meerlaags weefsel voor tijdelijke of permanente opslag van water. Bedoeld voor retentie: regenwater opvangen en hergebruiken, wateroverlast beperken en water bufferen.",
   "en": "The Waterbase R is a flexible tank made of PVC-coated multi-layer fabric for temporary or permanent water storage. Intended for retention: collecting and reusing rainwater, reducing flooding and buffering water."
  },
+ "f0c767329e04": {
+  "nl": "Ja. De wanden vult u met lucht met een elektrische pomp of een autocompressor. Een pomp wordt niet meegeleverd. De druk mag niet hoger zijn dan 0,1 bar.",
+  "en": "Yes. You fill the walls with air using an electric pump or a car compressor. A pump is not included. The pressure must not exceed 0.1 bar."
+ },
  "f0dd619200f4": {
   "nl": "8,77 × 4,30 m",
   "en": "8.77 × 4.30 m"
@@ -3850,6 +3894,10 @@
  "f1d76135fa29": {
   "nl": "Mobiele waterkeringen (Exflooder)",
   "en": "Mobile flood barriers (Exflooder)"
+ },
+ "f23b62436f0e": {
+  "nl": "Ja, maar zorg dat de wand waar het voertuig overheen rijdt maar half gevuld is met lucht. Over een volledig gevulde wand rijden beschadigt de mat. Met oprijstroken is de mat extra beschermd.",
+  "en": "Yes, but make sure the wall the vehicle drives over is only half filled with air. Driving over a fully filled wall damages the mat. Drive-on strips give the mat extra protection."
  },
  "f24a716a618d": {
   "nl": "9,50 × 3,69 × 0,35 m",
