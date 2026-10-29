@@ -7,6 +7,13 @@ const DEEP = [10 / 255, 59 / 255, 44 / 255];      // #0A3B2C
 const YELLOW = [242 / 255, 183 / 255, 5 / 255];   // #F2B705
 const MUTED = [0.38, 0.42, 0.40];
 const LINE = [0.85, 0.87, 0.86];
+const SOFT = [191 / 255, 211 / 255, 203 / 255]; // #BFD3CB
+
+// Huisstijl: groene golf met gele golf eronder (eerste pagina) en groene voetbalk. Maten in px op een A4 van 794 px breed.
+const K = PAGE_W / 794;
+const WAVE_YELLOW = [[794, 104], [[700, 126], [610, 126], [500, 112]], [[380, 96], [290, 74], [180, 90]], [[110, 100], [50, 110], [0, 110]]];
+const WAVE_GREEN = [[794, 64], [[700, 98], [610, 108], [500, 96]], [[380, 82], [290, 64], [180, 82]], [[110, 94], [50, 106], [0, 108]]];
+const WAVE_H = 150, SIDE = 66 * K, FOOT_H = 38 * K;
 
 // Taal van de PDF volgt de taal waarin de klant bestelde (order.lang); Engels gebruikt en-IE (€1,234.56).
 const LOCALE = { nl: 'nl-NL', en: 'en-IE' };
@@ -63,6 +70,10 @@ export function orderPdf(order, site, lang = order.lang === 'en' ? 'en' : 'nl') 
   };
   const rect = (x, yy, w, h, color) => ops.push(`${rgb(color)} ${num(x)} ${num(yy)} ${num(w)} ${num(h)} re f`);
   const hline = (x1, x2, yy, color = LINE, width = 0.75) => ops.push(`${rgb(color, true)} ${width} w ${num(x1)} ${num(yy)} m ${num(x2)} ${num(yy)} l S`);
+  const wave = ([start, ...curves], color) => {
+    const P = (x, yy) => `${num(x * K)} ${num(PAGE_H - yy * K)}`;
+    ops.push(`${rgb(color)} ${P(0, 0)} m ${P(794, 0)} l ${P(...start)} l ${curves.map(([a, b2, c2]) => `${P(...a)} ${P(...b2)} ${P(...c2)} c`).join(' ')} h f`);
+  };
 
   const right = PAGE_W - MARGIN;
   const methodLabel = site.paymentMethods.find((m) => m.id === order.paymentMethod)?.label || order.paymentMethod;
@@ -83,14 +94,14 @@ export function orderPdf(order, site, lang = order.lang === 'en' ? 'en' : 'nl') 
     y -= 36;
   };
 
-  // ---------- pagina 1: kop ----------
+  // ---------- pagina 1: kop (golf met wit logo en titel) ----------
   newPage();
-  const logoW = 170, logoH = (LOGO.height / LOGO.width) * logoW;
-  ops.push(`q ${num(logoW)} 0 0 ${num(logoH)} ${MARGIN} ${num(y - logoH)} cm /Im1 Do Q`);
-  text(title, right, y - logoH + 2, { size: 20, bold: true, color: DEEP, align: 'right' });
-  y -= logoH + 14;
-  rect(MARGIN, y, 48, 3, YELLOW);
-  y -= 28;
+  wave(WAVE_YELLOW, YELLOW);
+  wave(WAVE_GREEN, DEEP);
+  const logoW = 180 * K, logoH = (LOGO.height / LOGO.width) * logoW;
+  ops.push(`q ${num(logoW)} 0 0 ${num(logoH)} ${num(66 * K)} ${num(PAGE_H - 40 * K - logoH)} cm /Im1 Do Q`);
+  text(title, right, PAGE_H - 56 * K, { size: title.length > 12 ? 16.5 : 22.5, bold: true, color: [1, 1, 1], align: 'right' });
+  y = PAGE_H - WAVE_H * K - 16;
 
   // ---------- gegevensblokken ----------
   // Rij 1: klant en bestelling; rij 2: afleveradres en factuuradres (altijd allebei).
@@ -138,7 +149,6 @@ export function orderPdf(order, site, lang = order.lang === 'en' ? 'en' : 'nl') 
   hline(labelX, right, y + 9, DEEP, 1);
   y -= 4;
   totalRow(T('Totaal incl. btw', 'Total incl. VAT'), eur(t.totalIncl), true);
-  rect(labelX, y + 8, 48, 2.5, YELLOW);
   y -= 18;
 
   // ---------- opmerkingen en toelichting ----------
@@ -158,12 +168,14 @@ export function orderPdf(order, site, lang = order.lang === 'en' ? 'en' : 'nl') 
 
   // ---------- voettekst op elke pagina ----------
   const a = site.address;
-  const footer = `${site.name} · ${a.street}, ${a.postalCode} ${a.city}${T('', ', NL')} · ${T('KvK', 'CoC')} ${site.kvk} · ${T('Btw', 'VAT')} ${site.vatNumber} · ${site.phonePrimary.display} · ${site.email}`;
+  const footRest = ` · ${a.street}, ${a.postalCode} ${a.city}${T('', ', NL')} · ${T('KvK', 'CoC')} ${site.kvk} · ${T('Btw', 'VAT')} ${site.vatNumber} · ${site.phonePrimary.display} · ${site.email}`;
   pages.forEach((p, i) => {
     ops = p;
-    hline(MARGIN, right, MARGIN + 6);
-    text(footer, PAGE_W / 2, MARGIN - 8, { size: 7.5, color: MUTED, align: 'center' });
-    text(`${T('Pagina', 'Page')} ${i + 1} ${T('van', 'of')} ${pages.length}`, right, MARGIN - 20, { size: 7.5, color: MUTED, align: 'right' });
+    rect(0, 0, PAGE_W, FOOT_H, DEEP);
+    const fy = FOOT_H / 2 - 2.4;
+    text(site.name, SIDE, fy, { size: 6.75, bold: true, color: YELLOW });
+    text(footRest, SIDE + textWidth(site.name, 6.75, true), fy, { size: 6.75, color: SOFT });
+    text(`${T('Pagina', 'Page')} ${i + 1} ${T('van', 'of')} ${pages.length}`, PAGE_W - SIDE, fy, { size: 6.75, color: SOFT, align: 'right' });
   });
 
   return buildPdf(pages.map((p) => p.join('\n')), `${title} ${order.id}`);
