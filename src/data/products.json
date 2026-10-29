@@ -1461,7 +1461,18 @@
     "quoteOnly": false,
     "leadTime": null,
     "stock": null,
-    "downloads": [],
+    "downloads": [
+      {
+        "label": "Technisch informatieblad decontaminatiemat (PDF)",
+        "href": "/assets/datasheets/decontaminatiemat-technisch-informatieblad.pdf",
+        "hrefEn": "/assets/datasheets/decontaminatiemat-technical-data-sheet.pdf"
+      },
+      {
+        "label": "Montagehandleiding decontaminatiemat (PDF)",
+        "href": "/assets/datasheets/decontaminatiemat-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/decontaminatiemat-assembly-instructions.pdf"
+      }
+    ],
     "liquids": null,
     "images": [
       {
@@ -1483,9 +1494,9 @@
       "materiaal": "Technisch weefsel met EVA-coating, 1.365 g/m²",
       "gewicht": null,
       "aansluitingen": null,
-      "temperatuurbereik": null,
+      "temperatuurbereik": "−30 °C tot +70 °C",
       "chemischeBestendigheid": null,
-      "garantie": "3 jaar op lekdichtheid (fabrieksgarantie)",
+      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
     },
     "sizes": null,
@@ -1538,7 +1549,18 @@
     "quoteOnly": false,
     "leadTime": null,
     "stock": null,
-    "downloads": [],
+    "downloads": [
+      {
+        "label": "Technisch informatieblad decontaminatiemat (PDF)",
+        "href": "/assets/datasheets/decontaminatiemat-technisch-informatieblad.pdf",
+        "hrefEn": "/assets/datasheets/decontaminatiemat-technical-data-sheet.pdf"
+      },
+      {
+        "label": "Montagehandleiding decontaminatiemat (PDF)",
+        "href": "/assets/datasheets/decontaminatiemat-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/decontaminatiemat-assembly-instructions.pdf"
+      }
+    ],
     "liquids": null,
     "images": [
       {
@@ -1560,9 +1582,9 @@
       "materiaal": "Technisch weefsel met EVA-coating, 1.365 g/m²",
       "gewicht": null,
       "aansluitingen": null,
-      "temperatuurbereik": null,
+      "temperatuurbereik": "−30 °C tot +70 °C",
       "chemischeBestendigheid": null,
-      "garantie": "3 jaar op lekdichtheid (fabrieksgarantie)",
+      "garantie": "2 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
     },
     "sizes": null,
