@@ -1438,10 +1438,10 @@
     "slug": "decontaminatiemat-voertuigen",
     "category": "decontaminatiematten-voertuigen",
     "brand": "exflo",
-    "name": "Decontaminatiemat voor voertuigen",
+    "name": "Decontaminatiemat voor voertuigen 9,62 × 3,66 m",
     "line": null,
     "sku": null,
-    "short": "Mobiele mat met opblaasbare randen van 20 cm voor het decontamineren van voertuigen. 6.690 of 12.508 liter.",
+    "short": "Mobiele mat met opblaasbare randen van 20 cm voor het decontamineren van voertuigen. 9,62 × 3,66 m, inhoud 6.690 liter.",
     "purpose": [
       "Ontwikkeld voor inzet bij chemische, biologische, radiologische en nucleaire (CBRN) dreigingen. De mat vangt decontaminatievloeistof en verontreinigd water op bij het reinigen van militaire, hulpverlenings- en civiele voertuigen, in het veld of op een vaste post.",
       "Ook bedoeld voor snelle inzet bij de bestrijding van besmettelijke dierziekten, zoals Afrikaanse varkenspest en mond-en-klauwzeer."
@@ -1457,7 +1457,7 @@
       "Defensie",
       "Dierziektebestrijding en calamiteiten"
     ],
-    "price": null,
+    "price": 2529,
     "quoteOnly": false,
     "leadTime": null,
     "stock": null,
@@ -1478,8 +1478,8 @@
       }
     ],
     "specs": {
-      "afmetingen": "9,62 × 3,66 × 0,20 m of 12,66 × 5,20 × 0,20 m",
-      "capaciteit": "6.690 liter of 12.508 liter",
+      "afmetingen": "9,62 × 3,66 × 0,20 m (l × b × h)",
+      "capaciteit": "6.690 liter",
       "materiaal": "Technisch weefsel met EVA-coating, 1.365 g/m²",
       "gewicht": null,
       "aansluitingen": null,
@@ -1488,27 +1488,12 @@
       "garantie": "3 jaar op lekdichtheid (fabrieksgarantie)",
       "certificering": null
     },
-    "sizes": {
-      "head": [
-        "Afmetingen (l × b × h)",
-        "Inhoud"
-      ],
-      "rows": [
-        [
-          "9,62 × 3,66 × 0,20 m",
-          "6.690 l"
-        ],
-        [
-          "12,66 × 5,20 × 0,20 m",
-          "12.508 l"
-        ]
-      ]
-    },
+    "sizes": null,
     "attributes": {
       "ibcCount": null,
       "drumCount": null,
-      "capacityL": null,
-      "dimensions": null,
+      "capacityL": 6690,
+      "dimensions": "9,62 × 3,66 m",
       "material": "EVA-weefsel",
       "application": [
         "Voertuigen"
@@ -1518,6 +1503,84 @@
       "duration": null
     },
     "related": [
+      "decontaminatiemat-voertuigen-12x5",
+      "decontaminatiebad-personen",
+      "opvangbak-voertuigen-vrachtwagen"
+    ],
+    "featured": false,
+    "source": "https://exflo.eu/products/vehicle-decontamination-mats/"
+  },
+  {
+    "id": "decontaminatiemat-voertuigen-12x5",
+    "slug": "decontaminatiemat-voertuigen-12x5",
+    "category": "decontaminatiematten-voertuigen",
+    "brand": "exflo",
+    "name": "Decontaminatiemat voor voertuigen 12,66 × 5,20 m",
+    "line": null,
+    "sku": null,
+    "short": "Mobiele mat met opblaasbare randen van 20 cm voor het decontamineren van grote voertuigen. 12,66 × 5,20 m, inhoud 12.508 liter.",
+    "purpose": [
+      "Ontwikkeld voor inzet bij chemische, biologische, radiologische en nucleaire (CBRN) dreigingen. De mat vangt decontaminatievloeistof en verontreinigd water op bij het reinigen van militaire, hulpverlenings- en civiele voertuigen, in het veld of op een vaste post.",
+      "Ook bedoeld voor snelle inzet bij de bestrijding van besmettelijke dierziekten, zoals Afrikaanse varkenspest en mond-en-klauwzeer."
+    ],
+    "benefits": [
+      "EVA-weefsel van 1.365 g/m²: hoge chemische en mechanische bestendigheid",
+      "Opblaasbare randen van 20 cm houden de vloeistof vast",
+      "Zonder gereedschap op te bouwen",
+      "Opgevouwen klein genoeg voor op een brandweerwagen"
+    ],
+    "suitableFor": [
+      "Brandweer en hulpdiensten",
+      "Defensie",
+      "Dierziektebestrijding en calamiteiten"
+    ],
+    "price": 3883,
+    "quoteOnly": false,
+    "leadTime": null,
+    "stock": null,
+    "downloads": [],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/decontaminatiemat-voertuigen.jpg",
+        "alt": "Decontaminatiemat voor voertuigen",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/decontaminatiemat-voertuigen-2.jpg",
+        "alt": "Voertuig op een decontaminatiemat",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "12,66 × 5,20 × 0,20 m (l × b × h)",
+      "capaciteit": "12.508 liter",
+      "materiaal": "Technisch weefsel met EVA-coating, 1.365 g/m²",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": null,
+      "garantie": "3 jaar op lekdichtheid (fabrieksgarantie)",
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": 12508,
+      "dimensions": "12,66 × 5,20 m",
+      "material": "EVA-weefsel",
+      "application": [
+        "Voertuigen"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "decontaminatiemat-voertuigen",
       "decontaminatiebad-personen",
       "opvangbak-voertuigen-vrachtwagen"
     ],

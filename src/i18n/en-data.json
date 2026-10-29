@@ -335,10 +335,6 @@
   "nl": "IBC's of vaten met olie of chemicaliën veilig opslaan? Lees waar u op let en welke flexibele opvangbak of lekbak bij uw situatie past.",
   "en": "Want to store IBCs or drums containing oil or chemicals safely? Read what to look out for and which flexible spill tray fits your situation."
  },
- "148c36e40358": {
-  "nl": "6.690 l",
-  "en": "6,690 l"
- },
  "15c704ae4110": {
   "nl": "7 jaar op lekdichtheid (fabrieksgarantie)",
   "en": "7 years on leak-tightness (manufacturer's warranty)"
@@ -442,6 +438,10 @@
  "19486655beb8": {
   "nl": "Flexibele tank op locatie",
   "en": "Flexible tank on site"
+ },
+ "196b83fb6284": {
+  "nl": "9,62 × 3,66 × 0,20 m (l × b × h)",
+  "en": "9.62 × 3.66 × 0.20 m (l × w × h)"
  },
  "199839e54ca5": {
   "nl": "Flexibele opvangbak voor een aggregaat",
@@ -1467,6 +1467,10 @@
   "nl": "Tijdelijke opslag van afval- en vuilwater.",
   "en": "Temporary storage of waste water and grey water."
  },
+ "5d9af54d55fd": {
+  "nl": "12.508 liter",
+  "en": "12,508 litres"
+ },
  "5da76b621f55": {
   "nl": "Flexibele watertank op een bouwterrein naast bouwketen",
   "en": "Flexible water tank on a construction site next to site cabins"
@@ -1527,10 +1531,6 @@
   "nl": "8.000 l",
   "en": "8,000 l"
  },
- "61060654733c": {
-  "nl": "12,66 × 5,20 × 0,20 m",
-  "en": "12.66 × 5.20 × 0.20 m"
- },
  "6157b487b6fd": {
   "nl": "Flexibele lekbak voor 1 vat | Opvangbak | EnviroFlow",
   "en": "Flexible spill tray for 1 drum | Containment | EnviroFlow"
@@ -1558,6 +1558,10 @@
  "625eb6729eec": {
   "nl": "Nederland",
   "en": "The Netherlands"
+ },
+ "627f8955abfd": {
+  "nl": "12,66 × 5,20 × 0,20 m (l × b × h)",
+  "en": "12.66 × 5.20 × 0.20 m (l × w × h)"
  },
  "62ab482c84e2": {
   "nl": "0,8 m",
@@ -1683,10 +1687,6 @@
   "nl": "Welke regels gelden voor brandstofopslag?",
   "en": "Which rules apply to fuel storage?"
  },
- "69431ace8e26": {
-  "nl": "9,62 × 3,66 × 0,20 m",
-  "en": "9.62 × 3.66 × 0.20 m"
- },
  "6957b3d7e73f": {
   "nl": "1,0 m",
   "en": "1.0 m"
@@ -1710,10 +1710,6 @@
  "6b29a5e86be1": {
   "nl": "Deze opblaasbare wasmat van 2,6 × 1,5 m vangt waswater met reinigingsmiddelen op bij het wassen van motoren en andere tweewielers. Ook handig in de garage tegen modder en sneeuw.",
   "en": "This inflatable 2.6 × 1.5 m wash mat collects wash water with detergents when washing motorcycles and other two-wheelers. Also handy in the garage against mud and snow."
- },
- "6b54e3edd300": {
-  "nl": "6.690 liter of 12.508 liter",
-  "en": "6,690 litres or 12,508 litres"
  },
  "6b636fd36cf8": {
   "nl": "Telt de opgegeven capaciteit met de vaten of IBC's erin?",
@@ -1902,6 +1898,10 @@
  "75e763288474": {
   "nl": "EnviroFlow",
   "en": "EnviroFlow"
+ },
+ "76131507a71a": {
+  "nl": "Mobiele mat met opblaasbare randen van 20 cm voor het decontamineren van grote voertuigen. 12,66 × 5,20 m, inhoud 12.508 liter.",
+  "en": "Mobile mat with 20 cm inflatable walls for decontaminating large vehicles. 12.66 × 5.20 m, capacity 12,508 litres."
  },
  "7614b5f34515": {
   "nl": "Geschikt voor bouwplaatsen, veldkampen, evenementen en noodsituaties, en als reservevoorziening voor waterbedrijven en industrie. Modellen tot 5.000 liter wegen minder dan 35 kg en passen leeg en opgevouwen in de kofferbak van een personenauto.",
@@ -2119,6 +2119,10 @@
   "nl": "Mest- en slurrytanks",
   "en": "Manure and slurry tanks"
  },
+ "8322bfb532f6": {
+  "nl": "Mobiele mat met opblaasbare randen van 20 cm voor het decontamineren van voertuigen. 9,62 × 3,66 m, inhoud 6.690 liter.",
+  "en": "Mobile mat with 20 cm inflatable walls for decontaminating vehicles. 9.62 × 3.66 m, capacity 6,690 litres."
+ },
  "83351a76b0a1": {
   "nl": "Flexibele opvangbak voor 2 vaten",
   "en": "Flexible spill tray for 2 drums"
@@ -2178,6 +2182,10 @@
  "874bc3a82b34": {
   "nl": "Decontaminatiematten voor voertuigen | EnviroFlow",
   "en": "Decontamination mats for vehicles | EnviroFlow"
+ },
+ "87c0902ddfda": {
+  "nl": "12,66 × 5,20 m",
+  "en": "12.66 × 5.20 m"
  },
  "88652bf2187c": {
   "nl": "Garantievoorwaarden opvangbakken (fabrikant, Engels, PDF)",
@@ -2799,10 +2807,6 @@
   "nl": "Afdekken van opslag en materialen",
   "en": "Covering storage and materials"
  },
- "af0b0527aa27": {
-  "nl": "12.508 l",
-  "en": "12,508 l"
- },
  "af2f55a72438": {
   "nl": "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder één vat. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
   "en": "This flexible spill tray (drip tray) catches leaks and spills under one drum. This prevents oil, acid or other liquids from ending up on the floor, in the soil or in the sewer."
@@ -3119,9 +3123,9 @@
   "nl": "Flexibele brandstoftanks voor diesel",
   "en": "Flexible fuel tanks for diesel"
  },
- "c5026d8bf812": {
-  "nl": "Mobiele mat met opblaasbare randen van 20 cm voor het decontamineren van voertuigen. 6.690 of 12.508 liter.",
-  "en": "Mobile mat with 20 cm inflatable edges for decontaminating vehicles. 6,690 or 12,508 litres."
+ "c42c4afc1133": {
+  "nl": "Decontaminatiemat voor voertuigen 9,62 × 3,66 m",
+  "en": "Vehicle decontamination mat 9.62 × 3.66 m"
  },
  "c53248d9d154": {
   "nl": "4,75 × 2,88 m",
@@ -3371,6 +3375,10 @@
   "nl": "Chemicaliën in IBC's en vaten",
   "en": "Chemicals in IBCs and drums"
  },
+ "d2c5885289ae": {
+  "nl": "6.690 liter",
+  "en": "6,690 litres"
+ },
  "d2c8ee8ecbf0": {
   "nl": "11,5 kW",
   "en": "11.5 kW"
@@ -3550,6 +3558,10 @@
  "dd7c5371750f": {
   "nl": "Flexibele brandwatertank op locatie",
   "en": "Flexible fire water tank on site"
+ },
+ "dda36754b593": {
+  "nl": "Decontaminatiemat voor voertuigen 12,66 × 5,20 m",
+  "en": "Vehicle decontamination mat 12.66 × 5.20 m"
  },
  "ddaa8b118f2a": {
   "nl": "Auto's en bestelwagens",
@@ -3831,6 +3843,10 @@
   "nl": "150.000 liter",
   "en": "150,000 litres"
  },
+ "eddc369b8ae7": {
+  "nl": "9,62 × 3,66 m",
+  "en": "9.62 × 3.66 m"
+ },
  "ee31ad1d5496": {
   "nl": "Exnoiser-matten bevestigt u aan bouwhekken, steigers of andere constructies. Zo bouwt u een geluidsscherm rond een bouwplaats, boorlocatie of installatie. De matten zijn horizontaal en verticaal aan elkaar te koppelen.",
   "en": "You attach Exnoiser mats to construction fences, scaffolding or other structures. This lets you build a noise barrier around a construction site, drilling site or installation. The mats can be connected horizontally and vertically."
@@ -3850,10 +3866,6 @@
  "efbca25a8088": {
   "nl": "Geen vaste water- of rioolaansluiting",
   "en": "No fixed water or sewer connection"
- },
- "efc88890ae1b": {
-  "nl": "9,62 × 3,66 × 0,20 m of 12,66 × 5,20 × 0,20 m",
-  "en": "9.62 × 3.66 × 0.20 m or 12.66 × 5.20 × 0.20 m"
  },
  "f0358d95724d": {
   "nl": "Mestzak op een agrarisch bedrijf",
