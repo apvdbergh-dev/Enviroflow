@@ -1003,10 +1003,6 @@
   "nl": "Watertransport naar moeilijk bereikbare plekken",
   "en": "Water transport to hard-to-reach places"
  },
- "3e7cee29b5cf": {
-  "nl": "De fabrikant geeft 7 jaar garantie vanaf de aankoopdatum op materiaal- en productiefouten, waaronder de naden en de lekdichtheid van het weefsel. Mechanische schade, normale slijtage en schade door een stof die volgens de bestendigheidstabel niet geschikt is, vallen er niet onder. De volledige voorwaarden staan bij Downloads.",
-  "en": "The manufacturer gives a 7-year warranty from the date of purchase on material and manufacturing defects, including the seams and the leak-tightness of the fabric. Mechanical damage, normal wear and damage caused by a substance that is not suitable according to the resistance table are not covered. The full conditions are under Downloads."
- },
  "3e8130bcdb1f": {
   "nl": "Kan een voertuig over de wand rijden?",
   "en": "Can a vehicle drive over the wall?"
@@ -1022,6 +1018,10 @@
  "3ef07a261ca3": {
   "nl": "8,77 × 8,30 m",
   "en": "8.77 × 8.30 m"
+ },
+ "3f14631f23e0": {
+  "nl": "De fabrikant geeft 7 jaar garantie vanaf de aankoopdatum op materiaal- en productiefouten, waaronder de naden en de lekdichtheid van het weefsel. Mechanische schade, normale slijtage en schade door een stof die volgens de bestendigheidstabel niet geschikt is, vallen er niet onder. Wilt u de volledige voorwaarden ontvangen? Neem dan contact met ons op.",
+  "en": "The manufacturer gives a 7-year warranty from the date of purchase on material and manufacturing defects, including the seams and the leak-tightness of the fabric. Mechanical damage, normal wear and damage caused by a substance that is not suitable according to the resistance table are not covered. Would you like to receive the full conditions? Please contact us."
  },
  "3f1e0dbd1e09": {
   "nl": "Voor mestopslag gelden in Nederland eigen regels. Controleer bij uw gemeente of omgevingsdienst welke eisen voor uw situatie gelden.",
@@ -2190,10 +2190,6 @@
  "87c0902ddfda": {
   "nl": "12,66 × 5,20 m",
   "en": "12.66 × 5.20 m"
- },
- "88652bf2187c": {
-  "nl": "Garantievoorwaarden opvangbakken (fabrikant, Engels, PDF)",
-  "en": "Warranty conditions for spill trays (manufacturer, English, PDF)"
  },
  "8873235bb98c": {
   "nl": "IBC's en vaten veilig opslaan | IBC lekbak | EnviroFlow",
