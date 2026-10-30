@@ -129,6 +129,44 @@ for (const lang of LANGS) {
     ...guides.map((a) => ({ t: a.title, u: localPath(a.path), d: a.description, k: K.knowledge, x: '' }))
   ];
   writeFileSync(join(dist, `assets/data/search-index${suffix}.json`), JSON.stringify(searchIndex));
+
+  // llms.txt: beknopt overzicht van het bedrijf en het aanbod voor AI-assistenten (ChatGPT, Perplexity, Gemini).
+  if (lang === 'nl') {
+    const S = catalog.site, B = S.baseUrl;
+    const eur = (n) => new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(n);
+    const line = (p) => `- [${p.name}](${B}${ctx.urls.product(p)}): ${p.short}${hasRealPrice(p) && !p.quoteOnly ? ` Prijs ${eur(p.price)} excl. btw.` : ' Prijs op aanvraag.'}`;
+    const cats = catalog.categories.filter((c) => !c.isCustom).map((c) => {
+      const list = catalog.products.filter((p) => p.category === c.id);
+      return list.length ? `### [${c.name}](${B}${ctx.urls.category(c)})\n${c.short}\n\n${list.map(line).join('\n')}` : '';
+    }).filter(Boolean);
+    writeFileSync(join(dist, 'llms.txt'), `# EnviroFlow
+
+> EnviroFlow is een Nederlands bedrijf (Rockanje, Zuid-Holland) dat flexibele lekbakken en opvangbakken levert voor IBC's, vaten, aggregaten en voertuigen, plus wasmatten, decontaminatiematten en flexibele tanks voor water, brandstof en mest. Zakelijke klanten bestellen standaardmaten direct online (prijzen excl. btw); maatwerk en advies op aanvraag.
+
+- Adres: ${S.address.street}, ${S.address.postalCode} ${S.address.city}, Nederland
+- KvK: ${S.kvk} · Btw: ${S.vatNumber}
+- Telefoon: ${S.phonePrimary.display} · E-mail: ${S.email}
+- Website: ${B}/ (Nederlands) en ${B}/en/ (Engels)
+
+## Producten
+
+${cats.join('\n\n')}
+
+## Kennisbank
+
+${[...articles, ...guides].map((a) => `- [${a.title}](${B}${a.path || `/kennisbank/${a.slug}/`}): ${a.description}`).join('\n')}
+
+## Meer informatie
+
+- [Waarom flexibel? Flexibele, stalen en kunststof lekbakken vergeleken](${B}/waarom-flexibel/)
+- [Offerte of advies aanvragen](${B}/offerte-aanvragen/)
+- [Maatwerk aanvragen](${B}/maatwerk-aanvragen/)
+- [Levering en verzending](${B}/levering-en-verzending/)
+- [Retourneren](${B}/retourneren/)
+- [Over EnviroFlow](${B}/over-ons/)
+- [Contact](${B}/contact/)
+`);
+  }
 }
 setLang('nl');
 

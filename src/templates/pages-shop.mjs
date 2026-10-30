@@ -155,13 +155,17 @@ ${ctaBand({ title: T('Weet u niet welke oplossing u nodig heeft?', "Not sure whi
     areaServed: { '@type': 'Country', name: site.address.countryName },
     identifier: { '@type': 'PropertyValue', propertyID: 'KvK', value: site.kvk },
     vatID: site.vatNumber,
-    contactPoint: [{ '@type': 'ContactPoint', telephone: site.phonePrimary.tel, contactType: 'sales', areaServed: 'NL', availableLanguage: ['nl', 'en'] }]
+    contactPoint: [{ '@type': 'ContactPoint', telephone: site.phonePrimary.tel, contactType: 'sales', areaServed: 'NL', availableLanguage: ['nl', 'en'] }],
+    '@id': site.baseUrl + '/#organisatie',
+    description: T('EnviroFlow levert flexibele lekbakken en opvangbakken voor IBC\'s, vaten, machines en voertuigen, wasmatten en flexibele tanks voor water, brandstof en mest. Online te bestellen voor bedrijven in Nederland.', 'EnviroFlow supplies flexible spill trays and containment berms for IBCs, drums, machinery and vehicles, wash mats and flexible tanks for water, fuel and manure. Available to order online for businesses in the Netherlands.'),
+    knowsAbout: [T('Flexibele lekbakken', 'Flexible spill trays'), T('IBC-opvangbakken', 'IBC containment'), 'PGS 15', T('Flexibele tanks', 'Flexible tanks'), T('Bluswatervoorziening', 'Firefighting water supply'), T('Opvang van gevaarlijke stoffen', 'Spill containment of hazardous substances')]
   };
+  const website = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'EnviroFlow', url: site.baseUrl + localPath('/'), inLanguage: T('nl-NL', 'en'), publisher: { '@id': site.baseUrl + '/#organisatie' } };
   return {
     path: '/',
     title: T('Flexibele lekbak, IBC opvangbak & flexibele tanks | EnviroFlow', 'Flexible spill trays, IBC containment & flexible tanks | EnviroFlow'),
     description: T("Flexibele lekbak voor IBC's en vaten, en flexibele tanks voor water, brandstof en mest. Online bestellen of persoonlijk advies van EnviroFlow.", 'Flexible spill trays for IBCs and drums, and flexible tanks for water, fuel and manure. Order online or get personal advice from EnviroFlow.'),
-    body, jsonld: [org], bodyClass: 'page-home', scripts: ['/assets/js/hero.js'],
+    body, jsonld: [org, website], bodyClass: 'page-home', scripts: ['/assets/js/hero.js'],
     // De eerste hero-foto is het grootste element: direct laten starten, vóór lettertypes en scripts.
     preload: `<link rel="preload" as="image" type="image/webp" href="/assets/img/hero/${slides[0].img}.webp" imagesrcset="/assets/img/hero/${slides[0].img}-800.webp 800w, /assets/img/hero/${slides[0].img}.webp 1600w" imagesizes="100vw" fetchpriority="high">`
   };
@@ -301,7 +305,8 @@ export function categoryPage(c, ctx) {
   const reads = (ctx.articles || []).filter((a) => (a.categories || []).includes(c.id)).slice(0, 3);
   const kb = reads.length ? `<section class="section section--tight" aria-labelledby="h-kb"><div class="container"><h2 id="h-kb" class="subhead">${T('Uit de kennisbank', 'From the knowledge base')}</h2><ul class="link-list">${c.productPage?.compare ? `<li><a href="/waarom-flexibel/">${T('Waarom flexibel? Flexibele, stalen en kunststof lekbakken vergeleken', 'Why flexible? Flexible, steel and plastic spill trays compared')}</a></li>` : ''}${reads.map((a) => `<li><a href="/kennisbank/${a.slug}/">${esc(a.title)}</a></li>`).join('')}</ul></div></section>` : '';
   const body = `${head}${main}${faq.html}${kb}<div class="container section--tight">${adviceBlock(site)}</div>`;
-  return { path: urls.category(c), title: c.seoTitle || `${c.name} | EnviroFlow`, description: c.seoDescription || c.short, body, crumbs, jsonld: faq.ld ? [faq.ld] : [], scripts: c.isCustom ? ['/assets/js/forms.js'] : ['/assets/js/listing.js'] };
+  const itemList = list.length ? { '@context': 'https://schema.org', '@type': 'ItemList', name: c.name, itemListElement: list.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: site.baseUrl + localPath(urls.product(p)), name: p.name })) } : null;
+  return { path: urls.category(c), title: c.seoTitle || `${c.name} | EnviroFlow`, description: c.seoDescription || c.short, body, crumbs, jsonld: [faq.ld, itemList].filter(Boolean), scripts: c.isCustom ? ['/assets/js/forms.js'] : ['/assets/js/listing.js'] };
 }
 
 /* ================================================================ PRODUCT */
@@ -425,17 +430,24 @@ ${related.length ? `<section class="section section--grey" aria-labelledby="h-re
     url: site.baseUrl + urls.product(p),
     brand: { '@type': 'Brand', name: brand.name }, manufacturer: { '@type': 'Organization', name: brand.name }
   };
-  if (p.sku) ld.sku = p.sku;
+  ld.sku = p.sku || p.id;
+  ld.itemCondition = 'https://schema.org/NewCondition';
+  // Kenmerken uit de specificaties: helpt zoekmachines en AI-assistenten om maten en capaciteit te begrijpen.
+  const props = SPEC_LABELS().filter(([k]) => p.specs?.[k]).map(([k, l]) => ({ '@type': 'PropertyValue', name: l, value: p.specs[k] }));
+  if (props.length) ld.additionalProperty = props;
   const realImages = images.filter((i) => i.src).map((i) => site.baseUrl + i.src);
   if (realImages.length) ld.image = realImages;
   if (hasRealPrice(p) && !p.quoteOnly) {
     ld.offers = {
       '@type': 'Offer', url: site.baseUrl + urls.product(p), priceCurrency: 'EUR', price: p.price.toFixed(2),
       priceSpecification: { '@type': 'UnitPriceSpecification', price: p.price.toFixed(2), priceCurrency: 'EUR', valueAddedTaxIncluded: false },
-      seller: { '@type': 'Organization', name: 'EnviroFlow' }
+      seller: { '@type': 'Organization', name: 'EnviroFlow' },
+      // Volgens /retourneren/: retour melden binnen 5 werkdagen, terugsturen per post op kosten van de klant.
+      hasMerchantReturnPolicy: { '@type': 'MerchantReturnPolicy', applicableCountry: 'NL', returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow', merchantReturnDays: 5, returnMethod: 'https://schema.org/ReturnByMail', returnFees: 'https://schema.org/ReturnShippingFees', merchantReturnLink: site.baseUrl + localPath('/retourneren/') }
     };
   }
-  return { path: urls.product(p), title: p.seoTitle || `${p.name} | EnviroFlow`, description: (orderable ? T(`${p.short} Online te bestellen of vraag een offerte aan bij EnviroFlow.`, `${p.short} Order online or request a quote from EnviroFlow.`) : T(`${p.short} Prijs op aanvraag. Vraag een offerte aan bij EnviroFlow.`, `${p.short} Price on request. Request a quote from EnviroFlow.`)).replace(/\s+/g, ' '), body, crumbs, jsonld: [ld], scripts: ['/assets/js/product.js'] };
+  const faqLd = c.productPage?.faq?.length ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: c.productPage.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) } : null;
+  return { path: urls.product(p), title: p.seoTitle || `${p.name} | EnviroFlow`, description: (orderable ? T(`${p.short} Online te bestellen of vraag een offerte aan bij EnviroFlow.`, `${p.short} Order online or request a quote from EnviroFlow.`) : T(`${p.short} Prijs op aanvraag. Vraag een offerte aan bij EnviroFlow.`, `${p.short} Price on request. Request a quote from EnviroFlow.`)).replace(/\s+/g, ' '), body, crumbs, jsonld: faqLd ? [ld, faqLd] : [ld], scripts: ['/assets/js/product.js'] };
 }
 
 /* ================================================================ CART & CHECKOUT */
