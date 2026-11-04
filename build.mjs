@@ -1,6 +1,7 @@
 // Statische sitegenerator voor EnviroFlow. Gebruik: node build.mjs  (output in ./dist)
 import { mkdirSync, writeFileSync, rmSync, cpSync, readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { buildCatalog, isOrderable, hasRealPrice, groupUrl, categoryUrl, productUrl } from './src/lib/catalog.mjs';
 import { setLang, localizeHtml, localPath, LANGS } from './src/lib/i18n.mjs';
@@ -40,6 +41,15 @@ cpSync(join(root, 'src/assets'), join(dist, 'assets'), { recursive: true });
 mkdirSync(join(dist, 'assets/data'), { recursive: true });
 
 const sitemap = [];
+// Echte wijzigingsdatum per pagina voor de sitemap: alleen een nieuwe datum als de inhoud van de pagina verandert.
+const LASTMOD_FILE = join(root, 'src/data/lastmod.json');
+const lastmod = existsSync(LASTMOD_FILE) ? JSON.parse(readFileSync(LASTMOD_FILE, 'utf8')) : {};
+const today = new Date().toISOString().slice(0, 10);
+const stamp = (path, page) => {
+  const h = createHash('sha1').update(JSON.stringify([page.title, page.description, page.body, page.jsonld || null])).digest('hex').slice(0, 16);
+  if (lastmod[path]?.h !== h) lastmod[path] = { h, d: today };
+  return lastmod[path].d;
+};
 let siteForRobots;
 
 for (const lang of LANGS) {
@@ -76,7 +86,7 @@ for (const lang of LANGS) {
     const file = page.file ? join(out, page.file) : join(out, page.path, 'index.html');
     mkdirSync(dirname(file), { recursive: true });
     writeFileSync(file, html);
-    if (!page.noindex) sitemap.push({ path: localized.path, alt: page.path });
+    if (!page.noindex) sitemap.push({ path: localized.path, alt: page.path, d: stamp(localized.path, page) });
   };
 
   // Shop & kernpagina's
@@ -130,6 +140,20 @@ for (const lang of LANGS) {
   ];
   writeFileSync(join(dist, `assets/data/search-index${suffix}.json`), JSON.stringify(searchIndex));
 
+  // Productfeed voor Google Merchant Center (gratis vermeldingen in Google Shopping). Prijzen incl. btw, zoals Google in Nederland vraagt.
+  if (lang === 'nl') {
+    const S = catalog.site, B = S.baseUrl;
+    const x = (v) => String(v ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const items = catalog.products.filter((p) => isOrderable(p) && hasRealPrice(p) && !p.quoteOnly).map((p) => {
+      const imgs = (p.images || []).filter((i) => i.src).map((i) => B + i.src);
+      const c = catalog.categories.find((k) => k.id === p.category);
+      const incl = (Math.round(p.price * (1 + S.vatRate) * 100) / 100).toFixed(2);
+      const desc = [p.short, ...(p.purpose || []), ...(p.benefits || []).map((b) => `• ${b}`)].join(' ');
+      return `<item><g:id>${x(p.id)}</g:id><g:title>${x(p.seoTitle ? p.seoTitle.split(' | ')[0] : p.name)}</g:title><g:description>${x(desc).slice(0, 4900)}</g:description><g:link>${B}${ctx.urls.product(p)}</g:link>${imgs[0] ? `<g:image_link>${imgs[0]}</g:image_link>` : ''}${imgs.slice(1, 10).map((u) => `<g:additional_image_link>${u}</g:additional_image_link>`).join('')}<g:availability>backorder</g:availability><g:price>${incl} EUR</g:price><g:condition>new</g:condition><g:brand>${x(catalog.brands.find((b) => b.id === p.brand)?.name || 'EnviroFlow')}</g:brand><g:identifier_exists>no</g:identifier_exists><g:product_type>${x(c ? c.name : '')}</g:product_type>${p.attributes?.material ? `<g:material>${x(p.attributes.material)}</g:material>` : ''}</item>`;
+    });
+    writeFileSync(join(dist, 'google-shopping.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0"><channel><title>EnviroFlow</title><link>${B}/</link><description>Producten van EnviroFlow</description>\n${items.join('\n')}\n</channel></rss>\n`);
+  }
+
   // llms.txt: beknopt overzicht van het bedrijf en het aanbod voor AI-assistenten (ChatGPT, Perplexity, Gemini).
   if (lang === 'nl') {
     const S = catalog.site, B = S.baseUrl;
@@ -171,11 +195,11 @@ ${[...articles, ...guides].map((a) => `- [${a.title}](${B}${a.path || `/kennisba
 setLang('nl');
 
 // Sitemap & robots
-const today = new Date().toISOString().slice(0, 10);
 const base = siteForRobots.baseUrl;
+writeFileSync(LASTMOD_FILE, JSON.stringify(Object.fromEntries(Object.entries(lastmod).sort()), null, 1) + '\n');
 writeFileSync(join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${sitemap.map((p) => `  <url><loc>${base}${p.path}</loc><lastmod>${today}</lastmod><xhtml:link rel="alternate" hreflang="nl" href="${base}${p.alt}"/><xhtml:link rel="alternate" hreflang="en" href="${base}${localPath(p.alt, 'en')}"/></url>`).join('\n')}
+${sitemap.map((p) => `  <url><loc>${base}${p.path}</loc><lastmod>${p.d}</lastmod><xhtml:link rel="alternate" hreflang="nl" href="${base}${p.alt}"/><xhtml:link rel="alternate" hreflang="en" href="${base}${localPath(p.alt, 'en')}"/></url>`).join('\n')}
 </urlset>
 `);
 writeFileSync(join(dist, 'robots.txt'), `User-agent: *

@@ -44,7 +44,7 @@
       "group": "opvang",
       "slug": "flexibele-opvangbakken",
       "name": "Flexibele opvangbakken",
-      "menuName": "Flexibele opvangbakken / lekbakken",
+      "menuName": "Flexibele lekbakken / opvangbakken",
       "active": true,
       "popular": true,
       "image": "IBC's en vaten in flexibele opvangbakken in een bedrijfsruimte",
@@ -63,6 +63,18 @@
         "Tijdelijke werkplekken en onderhoudslocaties"
       ],
       "faq": [
+        {
+          "q": "Wat kost een flexibele lekbak?",
+          "a": "Bij EnviroFlow kost een flexibele lekbak vanaf € 386,10 excl. btw (Starter in PVC voor 1 vat). Een lekbak voor één IBC kost € 648,18 in PVC en € 840,06 in EVA. Voor grotere aantallen of maatwerk maken wij graag een offerte."
+        },
+        {
+          "q": "Welke lekbak heb ik nodig voor een IBC?",
+          "a": "Voor één IBC van 1.000 liter is er een opvangbak van 2,16 × 1,60 m met een opvangcapaciteit van 1.149 liter. Voor 2, 4 of 10 IBC's zijn er grotere standaardmaten. Ze zijn er in PVC (Starter) en in EVA (Plus)."
+        },
+        {
+          "q": "Is een PVC of een EVA lekbak beter?",
+          "a": "EVA is sterker, tegen veel meer stoffen bestand (ook diesel en benzine) en heeft 7 jaar fabrieksgarantie. PVC is voordeliger en geschikt voor kortdurend contact met bijvoorbeeld motorolie, antivries en accuzuur. Twijfelt u, kies dan EVA of vraag ons advies."
+        },
         {
           "q": "Kan ik een flexibele lekbak online bestellen?",
           "a": "Ja. De standaardmaten voor vaten en IBC's bestelt u direct in de webshop. Heeft u een andere maat nodig, bijvoorbeeld voor een machine of voertuig, of maatwerk? Vraag dan een offerte aan."
@@ -119,6 +131,32 @@
           {
             "q": "Wat valt onder de garantie?",
             "a": "De fabrikant geeft 7 jaar garantie vanaf de aankoopdatum op materiaal- en productiefouten, waaronder de naden en de lekdichtheid van het weefsel. Mechanische schade, normale slijtage en schade door een stof die volgens de bestendigheidstabel niet geschikt is, vallen er niet onder. Wilt u de volledige voorwaarden ontvangen? Neem dan contact met ons op."
+          }
+        ]
+      },
+      "guide": {
+        "title": "Flexibele lekbak kopen: waar let u op?",
+        "intro": "Een goede flexibele lekbak kiest u op vijf punten: de maat, het materiaal, de plek, hoe lang u hem gebruikt en de prijs. Hieronder zetten we ze op een rij.",
+        "items": [
+          {
+            "h": "1. Maat en opvangcapaciteit",
+            "p": "Kies een lekbak die minimaal 110% van de grootste verpakking kan opvangen. Is 10% van de totale inhoud meer, dan geldt die 10% (PGS 15). Onze standaardmaten houden hier al rekening mee: van 226 liter voor één vat tot 22.575 liter voor een vrachtwagen. Rekenvoorbeelden staan in [Opvangcapaciteit berekenen](/kennisbank/hoe-kies-je-de-juiste-opvangcapaciteit/)."
+          },
+          {
+            "h": "2. PVC of EVA",
+            "p": "Een flexibele lekbak in **PVC** (Starter, 900 g/m²) is voordelig en bedoeld voor kortdurend contact met chemicaliën. Een lekbak in **EVA** (Plus, 1.365 g/m²) is sterker, tegen veel meer stoffen bestand en heeft 7 jaar fabrieksgarantie. Voor diesel en benzine kiest u EVA. Lees meer over het [verschil tussen een PVC en een EVA lekbak](/kennisbank/verschil-pvc-en-eva-lekbak/)."
+          },
+          {
+            "h": "3. Binnen of buiten",
+            "p": "Een EVA-lekbak blijft volgens de fabrikant bruikbaar van −40 °C tot +70 °C en kan dus buiten staan. Houd er rekening mee dat regenwater de beschikbare opvangcapaciteit verkleint: kies buiten liever een ruimere maat of zet de opslag onder een overkapping."
+          },
+          {
+            "h": "4. Tijdelijk of vast",
+            "p": "Een flexibele lekbak staat er zonder gereedschap in enkele minuten en vouwt u leeg weer op. Ideaal voor tijdelijke opslag, projecten en wisselende werkplekken. Voor een vaste plek waar dagelijks een heftruck in en uit rijdt, kan een stalen lekbak beter passen. Zie [Waarom flexibel?](/waarom-flexibel/)"
+          },
+          {
+            "h": "5. Prijs",
+            "p": "Een flexibele lekbak kost bij ons vanaf € 386,10 excl. btw (Starter voor 1 vat). Een IBC lekbak voor één IBC kost € 648,18 in PVC en € 840,06 in EVA. Alle standaardmaten bestelt u direct online; maatwerk is op aanvraag mogelijk."
           }
         ]
       }

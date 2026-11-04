@@ -163,7 +163,7 @@ ${ctaBand({ title: T('Weet u niet welke oplossing u nodig heeft?', "Not sure whi
   const website = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'EnviroFlow', url: site.baseUrl + localPath('/'), inLanguage: T('nl-NL', 'en'), publisher: { '@id': site.baseUrl + '/#organisatie' } };
   return {
     path: '/',
-    title: T('Flexibele lekbak, IBC opvangbak & flexibele tanks | EnviroFlow', 'Flexible spill trays, IBC containment & flexible tanks | EnviroFlow'),
+    title: T('EnviroFlow | Opvangbakken, wasmatten en flexibele tanks voor bedrijven', 'EnviroFlow | Spill containment, wash mats and flexible tanks for businesses'),
     description: T("Flexibele lekbak voor IBC's en vaten, en flexibele tanks voor water, brandstof en mest. Online bestellen of persoonlijk advies van EnviroFlow.", 'Flexible spill trays for IBCs and drums, and flexible tanks for water, fuel and manure. Order online or get personal advice from EnviroFlow.'),
     body, jsonld: [org, website], bodyClass: 'page-home', scripts: ['/assets/js/hero.js'],
     // De eerste hero-foto is het grootste element: direct laten starten, vóór lettertypes en scripts.
@@ -281,6 +281,15 @@ ${listingSection(list, ctx, { title: T(`Alle producten in ${g.name.toLowerCase()
   return { path: urls.group(g), title: `${g.name} | EnviroFlow`, description: `${g.short} ${T('Bekijk de mogelijkheden of vraag advies aan bij EnviroFlow.', 'View the options or request advice from EnviroFlow.')}`, body, crumbs: [{ name: 'Home', url: '/' }, { name: T('Producten', 'Products'), url: '/producten/' }, { name: g.name, url: urls.group(g) }], scripts: ['/assets/js/listing.js'] };
 }
 
+// Tekst met **vet** en [link](/pad/), zoals in de kennisbank.
+const md = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>');
+
+// Koopgids op de categoriepagina: uitleg die bezoekers helpt kiezen (en zoekmachines laat zien waar de pagina over gaat).
+function guideBlock(g) {
+  if (!g?.items?.length) return '';
+  return `<section class="section section--tight" aria-labelledby="h-gids"><div class="container container--narrow"><h2 id="h-gids">${esc(g.title)}</h2>${g.intro ? `<p class="lead">${md(g.intro)}</p>` : ''}${g.items.map((i) => `<h3>${esc(i.h)}</h3><p>${md(i.p)}</p>`).join('')}</div></section>`;
+}
+
 export function categoryPage(c, ctx) {
   const { products, groupById, urls, site } = ctx;
   const g = groupById[c.group];
@@ -304,7 +313,7 @@ export function categoryPage(c, ctx) {
   // Uit de kennisbank: artikelen over deze categorie (interne links helpen bezoekers en zoekmachines).
   const reads = (ctx.articles || []).filter((a) => (a.categories || []).includes(c.id)).slice(0, 3);
   const kb = reads.length ? `<section class="section section--tight" aria-labelledby="h-kb"><div class="container"><h2 id="h-kb" class="subhead">${T('Uit de kennisbank', 'From the knowledge base')}</h2><ul class="link-list">${c.productPage?.compare ? `<li><a href="/waarom-flexibel/">${T('Waarom flexibel? Flexibele, stalen en kunststof lekbakken vergeleken', 'Why flexible? Flexible, steel and plastic spill trays compared')}</a></li>` : ''}${reads.map((a) => `<li><a href="/kennisbank/${a.slug}/">${esc(a.title)}</a></li>`).join('')}</ul></div></section>` : '';
-  const body = `${head}${main}${faq.html}${kb}<div class="container section--tight">${adviceBlock(site)}</div>`;
+  const body = `${head}${main}${guideBlock(c.guide)}${faq.html}${kb}<div class="container section--tight">${adviceBlock(site)}</div>`;
   const itemList = list.length ? { '@context': 'https://schema.org', '@type': 'ItemList', name: c.name, itemListElement: list.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: site.baseUrl + localPath(urls.product(p)), name: p.name })) } : null;
   return { path: urls.category(c), title: c.seoTitle || `${c.name} | EnviroFlow`, description: c.seoDescription || c.short, body, crumbs, jsonld: [faq.ld, itemList].filter(Boolean), scripts: c.isCustom ? ['/assets/js/forms.js'] : ['/assets/js/listing.js'] };
 }
