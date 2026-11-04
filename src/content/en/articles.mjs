@@ -29,6 +29,141 @@ const UPDATED = '2026-10-17';
 
 export default [
   {
+    slug: 'verschil-pvc-en-eva-lekbak',
+    kicker: 'Containment',
+    title: 'PVC or EVA spill berm: what is the difference and which do you choose?',
+    seoTitle: 'PVC or EVA spill berm: difference, price and resistance | EnviroFlow',
+    description: 'What is the difference between a PVC and an EVA spill berm? Comparison of material, strength, chemical resistance, warranty and price, with advice per situation.',
+    updated: '2026-11-04',
+    image: { src: IMG + 'opvangbak-pvc-vs-eva.jpg', alt: 'Flexible spill berm in orange PVC (Starter) next to a black berm in EVA (Plus), each with one IBC' },
+    intro: 'Flexible spill berms look almost the same from the outside, but the fabric makes a big difference. Most standard berms are made of PVC. An EVA berm is heavier, stronger and resistant to many more substances. Below you can read exactly what the difference is, what it costs and which one suits your situation.',
+    takeaways: [
+      '**PVC** (Starter, 900 g/m²) is economical and light, and intended for short-term contact with chemicals.',
+      '**EVA** (Plus, 1,365 g/m²) is stronger, resistant to many more substances and comes with a 7-year manufacturer’s warranty.',
+      'According to the manufacturer, PVC is not suitable for **petrol, diesel, glycol and solvents**: choose EVA.',
+      'Per size, the Starter is about 8 to 30% cheaper than the Plus.',
+      `View all [flexible spill berms](${L.opvang}) in PVC and EVA, for drums, IBCs, generators and vehicles.`
+    ],
+    sections: [
+      {
+        h: 'The short answer',
+        p: [
+          'Choose **PVC** if you want an economical berm for liquids that PVC tolerates well, such as engine oil, antifreeze or battery acid, and the berm is not heavily loaded.',
+          'Choose **EVA** if you store fuels or aggressive chemicals, if the berm will be used for a long time or intensively, or if you want the certainty of a 7-year manufacturer’s warranty.'
+        ],
+        callout: { t: 'Rule of thumb', d: 'Unsure about your liquid? Choose EVA, or send us the safety data sheet (SDS). We will check it for you.' }
+      },
+      {
+        h: 'What are PVC and EVA?',
+        p: [
+          'Both berms are made of **polyester fabric with a coating**. The fabric provides the strength; the coating makes the berm liquid-tight and determines what it is resistant to.',
+          '**PVC** (polyvinyl chloride) is the coating used for most standard spill berms. It is affordable, flexible and easy to weld.',
+          '**EVA** (poly(ethylene-co-vinyl acetate)) is a coating that, according to the manufacturer, is chemically resistant to a wider range of substances than PVC. Combined with a heavier fabric of 1,365 g/m², the berm is also mechanically stronger.'
+        ],
+        image: { src: IMG + 'opvangbak-starter-2-ibc.jpg', alt: 'Starter berm in orange PVC with two IBCs', caption: 'The Starter in orange PVC (900 g/m²), here for two IBCs.' }
+      },
+      {
+        h: 'PVC and EVA side by side',
+        table: {
+          head: ['', 'Starter (PVC)', 'Plus (EVA)'],
+          rows: [
+            ['Coating', 'PVC', 'EVA'],
+            ['Fabric weight', '900 g/m²', '1,365 g/m²'],
+            ['Colour', 'Orange', 'Black with orange stripes'],
+            ['Intended for', 'Short-term contact with chemicals', 'Long-term use, broad chemical resistance'],
+            ['Petrol and diesel', 'Not suitable', 'Suitable (petrol up to 6 months)'],
+            ['Temperature', 'Not stated by the manufacturer', '−40 °C to +70 °C'],
+            ['Manufacturer’s warranty', 'Not stated by the manufacturer', '7 years'],
+            ['Sizes and construction', 'Same as the Plus', 'Same as the Starter'],
+            ['Price', 'More economical', 'Higher']
+          ],
+          note: 'Manufacturer’s data. Both versions are set up the same way: unfold, slide the brackets into the wall and you are done.'
+        }
+      },
+      {
+        h: 'Which liquids are they resistant to?',
+        p: ['This is the biggest difference. The manufacturer states for each substance how long the fabric can resist it. **Yes** means suitable, a period means the fabric may be in contact for at most that long, **No** means not suitable.'],
+        table: {
+          head: ['Liquid', 'Starter (PVC)', 'Plus (EVA)'],
+          rows: [
+            ['Engine oil', 'Yes', 'Yes'],
+            ['Antifreeze', 'Yes', 'Yes'],
+            ['Battery acid', 'Yes', 'Yes'],
+            ['Hydrochloric acid 10%', 'Yes', 'Yes'],
+            ['Water-glycol solution', 'Yes', 'Yes'],
+            ['Calcium chloride solution', 'Yes', 'Yes'],
+            ['Ethanol (undenatured)', '3 days', 'Yes'],
+            ['Paraffin oil', '3 days', '6 months'],
+            ['Petrol', 'No', '6 months'],
+            ['Diesel', 'No', 'Yes'],
+            ['Glycol 100%', 'No', 'Yes'],
+            ['Isopropanol 100%', 'No', 'Yes'],
+            ['Oleic acid', 'No', 'Yes'],
+            ['Hydrochloric acid 32%', 'No', '6 months']
+          ],
+          note: 'Source: comparison table of the manufacturer (EXFLO). For the Plus version there is an extended resistance table with 53 substances: see the downloads with the spill berms.'
+        }
+      },
+      {
+        h: 'What does a PVC spill berm cost, and what does an EVA one cost?',
+        p: ['The sizes are the same; only the fabric differs. This is how our prices compare (excl. VAT):'],
+        table: {
+          head: ['Version', 'Starter (PVC)', 'Plus (EVA)'],
+          rows: [
+            ['1 drum', '€386.10', '€417.69'],
+            ['2 drums', '€507.78', '€589.68'],
+            ['4 drums', '€513.63', '€717.21'],
+            ['1 IBC', '€648.18', '€840.06'],
+            ['2 IBCs', '€868.14', '€1,106.82'],
+            ['4 IBCs', '€1,154.79', '€1,495.26'],
+            ['10 IBCs', '€1,667.25', '€2,067.39'],
+            ['Generator (3 × 1.5 m)', '€730.08', '€983.97'],
+            ['Tanker truck', '€2,764.71', '€3,973.32'],
+            ['Truck', '€4,586.40', '€6,440.85']
+          ],
+          note: 'Prices per unit, excluding VAT and transport. Current prices are always shown with the product in the webshop.'
+        }
+      },
+      {
+        h: 'Which one do you choose for your situation?',
+        table: {
+          head: ['Situation', 'Advice', 'Why'],
+          rows: [
+            ['Storage of engine oil, antifreeze or battery acid', 'PVC or EVA', 'Both are suitable according to the manufacturer'],
+            ['Diesel, petrol or other fuel', 'EVA', 'PVC is not suitable for this'],
+            ['Solvents, glycol 100% or isopropanol', 'EVA', 'PVC is not suitable for this'],
+            ['Short project or one-off use', 'PVC', 'Economical and light, if the liquid is suitable'],
+            ['Permanent storage that lasts for years', 'EVA', 'Stronger fabric and 7-year manufacturer’s warranty'],
+            ['Forklifts or vehicles drive in and out', 'EVA', 'Heavier fabric, better able to take the load'],
+            ['Unknown or changing substances', 'EVA', 'Chemically resistant to a wider range']
+          ]
+        },
+        image: { src: IMG + 'opvangbak-2-ibc.jpg', alt: 'Plus berm in EVA with two IBCs', caption: 'The Plus in EVA (1,365 g/m²), here for two IBCs.' }
+      },
+      {
+        h: 'What do they have in common?',
+        list: [
+          'The same sizes and containment capacity per version.',
+          'Set up in a few minutes without tools: unfold and slide the brackets into the wall.',
+          'Fold up when empty and store compactly.',
+          'Also suitable as temporary containment on site, for example under a generator.',
+          'For liquid hazardous substances in packaging, the Dutch guideline PGS 15 requires at least 110% of the largest container. The standard sizes take this into account.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What is the difference between a PVC and an EVA spill berm?', a: 'The difference is the coating of the fabric. PVC (900 g/m²) is economical and light, and intended for short-term contact with chemicals. EVA (1,365 g/m²) is stronger, resistant to many more substances such as diesel and glycol, and comes with a 7-year manufacturer’s warranty.' },
+      { q: 'Is a PVC spill berm suitable for diesel?', a: 'No. According to the manufacturer, the PVC version is not suitable for diesel and petrol. For fuels, choose a berm in EVA.' },
+      { q: 'Is an EVA spill berm better than PVC?', a: 'For most business situations, yes: EVA is stronger, chemically resistant to a wider range and has a longer manufacturer’s warranty. PVC is a good, more economical choice for liquids that PVC tolerates well, such as engine oil, antifreeze and battery acid.' },
+      { q: 'How much cheaper is a PVC spill berm?', a: 'For the same size, the Starter in PVC is about 8 to 30% cheaper than the Plus in EVA. A berm for 1 IBC costs €648.18 in PVC and €840.06 in EVA (excl. VAT).' },
+      { q: 'Can I use a PVC spill berm outdoors?', a: 'You can, but the manufacturer does not state a temperature range for PVC. According to the manufacturer, EVA remains usable from −40 °C to +70 °C. If the berm stays outside all year, we recommend EVA.' }
+    ],
+    categories: ['flexibele-opvangbakken'],
+    products: ['opvangbak-starter-1-ibc', 'opvangbak-1-ibc', 'opvangbak-starter-2-ibc'],
+    sources: [{ label: 'EXFLO – Spill containment berms: STARTER and PLUS versions, prices and chemical resistance', url: 'https://exflo.eu/products/spill-containment-berm/' }, SRC.pgs15]
+  },
+
+  {
     slug: 'wat-is-een-flexibele-lekbak',
     kicker: 'Containment',
     title: 'Flexible spill tray: what is it and when should you choose one?',

@@ -87,9 +87,9 @@
       "duration": null
     },
     "related": [
+      "opvangbak-starter-1-vat",
       "opvangbak-2-vaten",
-      "opvangbak-4-vaten",
-      "opvangbak-1-ibc"
+      "opvangbak-4-vaten"
     ],
     "featured": true,
     "source": "https://exflo.eu/product/1-drum-spill-containment-berm/"
@@ -182,6 +182,7 @@
       "duration": null
     },
     "related": [
+      "opvangbak-starter-2-vaten",
       "opvangbak-1-vat",
       "opvangbak-4-vaten"
     ],
@@ -275,6 +276,7 @@
       "duration": null
     },
     "related": [
+      "opvangbak-starter-4-vaten",
       "opvangbak-2-vaten",
       "opvangbak-1-ibc"
     ],
@@ -369,9 +371,9 @@
       "duration": null
     },
     "related": [
+      "opvangbak-starter-1-ibc",
       "opvangbak-2-ibc",
-      "opvangbak-4-ibc",
-      "opvangbak-1-vat"
+      "opvangbak-4-ibc"
     ],
     "featured": true,
     "source": "https://exflo.eu/product/1-ibc-spill-containment-berm/"
@@ -464,6 +466,7 @@
       "duration": null
     },
     "related": [
+      "opvangbak-starter-2-ibc",
       "opvangbak-1-ibc",
       "opvangbak-4-ibc"
     ],
@@ -558,6 +561,7 @@
       "duration": null
     },
     "related": [
+      "opvangbak-starter-4-ibc",
       "opvangbak-2-ibc",
       "opvangbak-10-ibc"
     ],
@@ -652,6 +656,7 @@
       "duration": null
     },
     "related": [
+      "opvangbak-starter-10-ibc",
       "opvangbak-4-ibc",
       "opvangbak-2-ibc"
     ],
@@ -746,6 +751,7 @@
       "duration": null
     },
     "related": [
+      "opvangbak-starter-aggregaat",
       "fuelbase-brandstoftank",
       "opvangbak-voertuigen-tankwagen"
     ],
@@ -840,6 +846,7 @@
       "duration": null
     },
     "related": [
+      "opvangbak-starter-voertuigen-tankwagen",
       "opvangbak-voertuigen-vrachtwagen",
       "opvangbak-aggregaat"
     ],
@@ -934,10 +941,1170 @@
       "duration": null
     },
     "related": [
+      "opvangbak-starter-voertuigen-vrachtwagen",
       "opvangbak-voertuigen-tankwagen",
       "wasmat-8x4"
     ],
     "featured": false,
+    "source": "https://exflo.eu/product/truck-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-starter-1-vat",
+    "slug": "opvangbak-starter-1-vat",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak Starter (PVC) voor 1 vat",
+    "seoTitle": "PVC lekbak voor 1 vat (Starter) | Opvangbak | EnviroFlow",
+    "line": "Starter",
+    "sku": null,
+    "short": "Voordelige PVC-opvangbak voor 1 vat. Opvangcapaciteit 226 liter.",
+    "purpose": [
+      "De Starter is de voordelige uitvoering van de flexibele opvangbak voor 1 vat. Hij heeft dezelfde maten en opbouw als de Plus-uitvoering, maar is gemaakt van oranje polyesterweefsel met een PVC-coating van 900 g/m².",
+      "De Starter is licht en bedoeld voor kortdurend contact met chemicaliën. Voor brandstoffen en agressieve stoffen, of voor langdurig gebruik, adviseren wij de Plus-uitvoering in EVA. Op de foto’s ziet u de Starter-uitvoering voor IBC’s; deze uitvoering heeft hetzelfde oranje PVC-weefsel."
+    ],
+    "benefits": [
+      "Voordeliger dan de Plus-uitvoering in EVA",
+      "Licht PVC-weefsel (900 g/m²), makkelijk te verplaatsen",
+      "In enkele minuten geplaatst, zonder gereedschap",
+      "Opgevouwen klein op te bergen"
+    ],
+    "suitableFor": [
+      "Opslag van één vat (200 l)",
+      "Aftappunten",
+      "Werkplaatsen en onderhoudslocaties"
+    ],
+    "price": 330,
+    "quoteOnly": false,
+    "leadTime": "Ca. 4 weken; vraag naar sneller leverbare maten",
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Montagehandleiding opvangbakken (PDF)",
+        "href": "/assets/datasheets/opvangbak-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/opvangbak-assembly-instructions.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-starter-1-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met één IBC",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-2-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met twee IBC's",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-4-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met vier IBC's op een rij",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "1,05 × 0,65 × 0,35 m (l × b × h)",
+      "capaciteit": "226 liter",
+      "materiaal": "Polyesterweefsel met PVC-coating, 900 g/m² (oranje)",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Bedoeld voor kortdurend contact met chemicaliën. Volgens de fabrikant geschikt voor onder meer motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet geschikt voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Twijfelt u? Kies de Plus-uitvoering in EVA of neem contact met ons op.",
+      "garantie": null,
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": 1,
+      "capacityL": 226,
+      "dimensions": "1,05 × 0,65 × 0,35 m",
+      "material": "PVC-weefsel",
+      "application": [
+        "Vaten"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-1-vat",
+      "opvangbak-starter-2-vaten",
+      "opvangbak-starter-4-vaten"
+    ],
+    "featured": false,
+    "faq": [
+      {
+        "q": "Wat is het verschil tussen de Starter (PVC) en de Plus (EVA)?",
+        "a": "De maten en de opbouw zijn gelijk. Het verschil zit in het weefsel. De Starter is van polyesterweefsel met een PVC-coating van 900 g/m²: voordelig en licht, bedoeld voor kortdurend contact met chemicaliën. De Plus is van zwaarder weefsel met een EVA-coating van 1.365 g/m²: sterker, breder chemisch bestendig en met 7 jaar fabrieksgarantie."
+      },
+      {
+        "q": "Voor welke vloeistoffen is de Starter geschikt?",
+        "a": "Volgens de fabrikant onder meer voor motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Slaat u brandstof of oplosmiddelen op, kies dan de Plus-uitvoering in EVA."
+      },
+      {
+        "q": "Wanneer kies ik beter de Plus-uitvoering?",
+        "a": "Als u brandstoffen of agressieve chemicaliën opslaat, als de bak lang of intensief gebruikt wordt, of als u zekerheid wilt met 7 jaar fabrieksgarantie. Twijfelt u, stuur ons dan het veiligheidsinformatieblad van uw stof."
+      },
+      {
+        "q": "Hoe snel staat de opvangbak klaar?",
+        "a": "Vouw de opvangbak uit en schuif de steunen in de opstaande wand. Er is geen gereedschap en geen extra constructie nodig."
+      },
+      {
+        "q": "Telt de opgegeven capaciteit met de vaten of IBC's erin?",
+        "a": "Nee. De opgegeven opvangcapaciteit geldt voor een lege opvangbak. Het volume dat de verpakkingen zelf innemen, gaat ervan af. Bij de standaardmodellen heeft de fabrikant hier al rekening mee gehouden: er blijft minimaal 110% van de grootste verpakking over."
+      },
+      {
+        "q": "Hoe maak ik de opvangbak schoon na een lekkage?",
+        "a": "Verwijder gelekte vloeistof zo snel mogelijk. Een opvangbak is bedoeld om lekkages op te vangen, niet om vloeistof in te bewaren. Volg het veiligheidsinformatieblad van de stof en laat ook regenwater niet in de bak staan."
+      }
+    ],
+    "source": "https://exflo.eu/product/1-drum-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-starter-2-vaten",
+    "slug": "opvangbak-starter-2-vaten",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak Starter (PVC) voor 2 vaten",
+    "seoTitle": "PVC lekbak voor 2 vaten (Starter) | Opvangbak | EnviroFlow",
+    "line": "Starter",
+    "sku": null,
+    "short": "Voordelige PVC-opvangbak voor 2 vaten. Opvangcapaciteit 410 liter.",
+    "purpose": [
+      "De Starter is de voordelige uitvoering van de flexibele opvangbak voor 2 vaten. Hij heeft dezelfde maten en opbouw als de Plus-uitvoering, maar is gemaakt van oranje polyesterweefsel met een PVC-coating van 900 g/m².",
+      "De Starter is licht en bedoeld voor kortdurend contact met chemicaliën. Voor brandstoffen en agressieve stoffen, of voor langdurig gebruik, adviseren wij de Plus-uitvoering in EVA. Op de foto’s ziet u de Starter-uitvoering voor IBC’s; deze uitvoering heeft hetzelfde oranje PVC-weefsel."
+    ],
+    "benefits": [
+      "Voordeliger dan de Plus-uitvoering in EVA",
+      "Licht PVC-weefsel (900 g/m²), makkelijk te verplaatsen",
+      "In enkele minuten geplaatst, zonder gereedschap",
+      "Opgevouwen klein op te bergen"
+    ],
+    "suitableFor": [
+      "Opslag van twee vaten",
+      "Aftappunten",
+      "Werkplaatsen"
+    ],
+    "price": 434,
+    "quoteOnly": false,
+    "leadTime": "Ca. 4 weken; vraag naar sneller leverbare maten",
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Montagehandleiding opvangbakken (PDF)",
+        "href": "/assets/datasheets/opvangbak-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/opvangbak-assembly-instructions.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-starter-2-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met twee IBC's",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-1-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met één IBC",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-4-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met vier IBC's op een rij",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "1,90 × 0,65 × 0,35 m (l × b × h)",
+      "capaciteit": "410 liter",
+      "materiaal": "Polyesterweefsel met PVC-coating, 900 g/m² (oranje)",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Bedoeld voor kortdurend contact met chemicaliën. Volgens de fabrikant geschikt voor onder meer motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet geschikt voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Twijfelt u? Kies de Plus-uitvoering in EVA of neem contact met ons op.",
+      "garantie": null,
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": 2,
+      "capacityL": 410,
+      "dimensions": "1,90 × 0,65 × 0,35 m",
+      "material": "PVC-weefsel",
+      "application": [
+        "Vaten"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-2-vaten",
+      "opvangbak-starter-1-vat",
+      "opvangbak-starter-4-vaten"
+    ],
+    "featured": false,
+    "faq": [
+      {
+        "q": "Wat is het verschil tussen de Starter (PVC) en de Plus (EVA)?",
+        "a": "De maten en de opbouw zijn gelijk. Het verschil zit in het weefsel. De Starter is van polyesterweefsel met een PVC-coating van 900 g/m²: voordelig en licht, bedoeld voor kortdurend contact met chemicaliën. De Plus is van zwaarder weefsel met een EVA-coating van 1.365 g/m²: sterker, breder chemisch bestendig en met 7 jaar fabrieksgarantie."
+      },
+      {
+        "q": "Voor welke vloeistoffen is de Starter geschikt?",
+        "a": "Volgens de fabrikant onder meer voor motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Slaat u brandstof of oplosmiddelen op, kies dan de Plus-uitvoering in EVA."
+      },
+      {
+        "q": "Wanneer kies ik beter de Plus-uitvoering?",
+        "a": "Als u brandstoffen of agressieve chemicaliën opslaat, als de bak lang of intensief gebruikt wordt, of als u zekerheid wilt met 7 jaar fabrieksgarantie. Twijfelt u, stuur ons dan het veiligheidsinformatieblad van uw stof."
+      },
+      {
+        "q": "Hoe snel staat de opvangbak klaar?",
+        "a": "Vouw de opvangbak uit en schuif de steunen in de opstaande wand. Er is geen gereedschap en geen extra constructie nodig."
+      },
+      {
+        "q": "Telt de opgegeven capaciteit met de vaten of IBC's erin?",
+        "a": "Nee. De opgegeven opvangcapaciteit geldt voor een lege opvangbak. Het volume dat de verpakkingen zelf innemen, gaat ervan af. Bij de standaardmodellen heeft de fabrikant hier al rekening mee gehouden: er blijft minimaal 110% van de grootste verpakking over."
+      },
+      {
+        "q": "Hoe maak ik de opvangbak schoon na een lekkage?",
+        "a": "Verwijder gelekte vloeistof zo snel mogelijk. Een opvangbak is bedoeld om lekkages op te vangen, niet om vloeistof in te bewaren. Volg het veiligheidsinformatieblad van de stof en laat ook regenwater niet in de bak staan."
+      }
+    ],
+    "source": "https://exflo.eu/product/2-drum-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-starter-4-vaten",
+    "slug": "opvangbak-starter-4-vaten",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak Starter (PVC) voor 4 vaten",
+    "seoTitle": "PVC lekbak voor 4 vaten (Starter) | Opvangbak | EnviroFlow",
+    "line": "Starter",
+    "sku": null,
+    "short": "Voordelige PVC-opvangbak voor 4 vaten. Opvangcapaciteit 412 liter.",
+    "purpose": [
+      "De Starter is de voordelige uitvoering van de flexibele opvangbak voor 4 vaten. Hij heeft dezelfde maten en opbouw als de Plus-uitvoering, maar is gemaakt van oranje polyesterweefsel met een PVC-coating van 900 g/m².",
+      "De Starter is licht en bedoeld voor kortdurend contact met chemicaliën. Voor brandstoffen en agressieve stoffen, of voor langdurig gebruik, adviseren wij de Plus-uitvoering in EVA. Op de foto’s ziet u de Starter-uitvoering voor IBC’s; deze uitvoering heeft hetzelfde oranje PVC-weefsel."
+    ],
+    "benefits": [
+      "Voordeliger dan de Plus-uitvoering in EVA",
+      "Licht PVC-weefsel (900 g/m²), makkelijk te verplaatsen",
+      "In enkele minuten geplaatst, zonder gereedschap",
+      "Opgevouwen klein op te bergen"
+    ],
+    "suitableFor": [
+      "Opslag van vier vaten",
+      "Werkplaatsen en magazijnen"
+    ],
+    "price": 439,
+    "quoteOnly": false,
+    "leadTime": "Ca. 4 weken; vraag naar sneller leverbare maten",
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Montagehandleiding opvangbakken (PDF)",
+        "href": "/assets/datasheets/opvangbak-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/opvangbak-assembly-instructions.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-starter-4-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met vier IBC's op een rij",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-1-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met één IBC",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-2-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met twee IBC's",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "2,90 × 1,07 × 0,14 m (l × b × h)",
+      "capaciteit": "412 liter",
+      "materiaal": "Polyesterweefsel met PVC-coating, 900 g/m² (oranje)",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Bedoeld voor kortdurend contact met chemicaliën. Volgens de fabrikant geschikt voor onder meer motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet geschikt voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Twijfelt u? Kies de Plus-uitvoering in EVA of neem contact met ons op.",
+      "garantie": null,
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": 4,
+      "capacityL": 412,
+      "dimensions": "2,90 × 1,07 × 0,14 m",
+      "material": "PVC-weefsel",
+      "application": [
+        "Vaten"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-4-vaten",
+      "opvangbak-starter-2-vaten",
+      "opvangbak-starter-1-ibc"
+    ],
+    "featured": false,
+    "faq": [
+      {
+        "q": "Wat is het verschil tussen de Starter (PVC) en de Plus (EVA)?",
+        "a": "De maten en de opbouw zijn gelijk. Het verschil zit in het weefsel. De Starter is van polyesterweefsel met een PVC-coating van 900 g/m²: voordelig en licht, bedoeld voor kortdurend contact met chemicaliën. De Plus is van zwaarder weefsel met een EVA-coating van 1.365 g/m²: sterker, breder chemisch bestendig en met 7 jaar fabrieksgarantie."
+      },
+      {
+        "q": "Voor welke vloeistoffen is de Starter geschikt?",
+        "a": "Volgens de fabrikant onder meer voor motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Slaat u brandstof of oplosmiddelen op, kies dan de Plus-uitvoering in EVA."
+      },
+      {
+        "q": "Wanneer kies ik beter de Plus-uitvoering?",
+        "a": "Als u brandstoffen of agressieve chemicaliën opslaat, als de bak lang of intensief gebruikt wordt, of als u zekerheid wilt met 7 jaar fabrieksgarantie. Twijfelt u, stuur ons dan het veiligheidsinformatieblad van uw stof."
+      },
+      {
+        "q": "Hoe snel staat de opvangbak klaar?",
+        "a": "Vouw de opvangbak uit en schuif de steunen in de opstaande wand. Er is geen gereedschap en geen extra constructie nodig."
+      },
+      {
+        "q": "Telt de opgegeven capaciteit met de vaten of IBC's erin?",
+        "a": "Nee. De opgegeven opvangcapaciteit geldt voor een lege opvangbak. Het volume dat de verpakkingen zelf innemen, gaat ervan af. Bij de standaardmodellen heeft de fabrikant hier al rekening mee gehouden: er blijft minimaal 110% van de grootste verpakking over."
+      },
+      {
+        "q": "Hoe maak ik de opvangbak schoon na een lekkage?",
+        "a": "Verwijder gelekte vloeistof zo snel mogelijk. Een opvangbak is bedoeld om lekkages op te vangen, niet om vloeistof in te bewaren. Volg het veiligheidsinformatieblad van de stof en laat ook regenwater niet in de bak staan."
+      }
+    ],
+    "source": "https://exflo.eu/product/4-drum-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-starter-1-ibc",
+    "slug": "opvangbak-starter-1-ibc",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak Starter (PVC) voor 1 IBC",
+    "seoTitle": "PVC lekbak voor 1 IBC (Starter) | Opvangbak | EnviroFlow",
+    "line": "Starter",
+    "sku": null,
+    "short": "Voordelige PVC-opvangbak voor 1 IBC. Opvangcapaciteit 1.149 liter.",
+    "purpose": [
+      "De Starter is de voordelige uitvoering van de flexibele opvangbak voor 1 IBC. Hij heeft dezelfde maten en opbouw als de Plus-uitvoering, maar is gemaakt van oranje polyesterweefsel met een PVC-coating van 900 g/m².",
+      "De Starter is licht en bedoeld voor kortdurend contact met chemicaliën. Voor brandstoffen en agressieve stoffen, of voor langdurig gebruik, adviseren wij de Plus-uitvoering in EVA."
+    ],
+    "benefits": [
+      "Voordeliger dan de Plus-uitvoering in EVA",
+      "Licht PVC-weefsel (900 g/m²), makkelijk te verplaatsen",
+      "In enkele minuten geplaatst, zonder gereedschap",
+      "Opgevouwen klein op te bergen"
+    ],
+    "suitableFor": [
+      "Opslag van één IBC (1.000 l)",
+      "Magazijnen en werkplaatsen",
+      "Tijdelijke opslag op locatie"
+    ],
+    "price": 554,
+    "quoteOnly": false,
+    "leadTime": "Ca. 4 weken; vraag naar sneller leverbare maten",
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Montagehandleiding opvangbakken (PDF)",
+        "href": "/assets/datasheets/opvangbak-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/opvangbak-assembly-instructions.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-starter-1-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met één IBC",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-2-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met twee IBC's",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-4-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met vier IBC's op een rij",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "2,16 × 1,60 × 0,35 m (l × b × h)",
+      "capaciteit": "1.149 liter",
+      "materiaal": "Polyesterweefsel met PVC-coating, 900 g/m² (oranje)",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Bedoeld voor kortdurend contact met chemicaliën. Volgens de fabrikant geschikt voor onder meer motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet geschikt voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Twijfelt u? Kies de Plus-uitvoering in EVA of neem contact met ons op.",
+      "garantie": null,
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": 1,
+      "drumCount": null,
+      "capacityL": 1149,
+      "dimensions": "2,16 × 1,60 × 0,35 m",
+      "material": "PVC-weefsel",
+      "application": [
+        "IBC's"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-1-ibc",
+      "opvangbak-starter-4-vaten",
+      "opvangbak-starter-2-ibc"
+    ],
+    "featured": false,
+    "faq": [
+      {
+        "q": "Wat is het verschil tussen de Starter (PVC) en de Plus (EVA)?",
+        "a": "De maten en de opbouw zijn gelijk. Het verschil zit in het weefsel. De Starter is van polyesterweefsel met een PVC-coating van 900 g/m²: voordelig en licht, bedoeld voor kortdurend contact met chemicaliën. De Plus is van zwaarder weefsel met een EVA-coating van 1.365 g/m²: sterker, breder chemisch bestendig en met 7 jaar fabrieksgarantie."
+      },
+      {
+        "q": "Voor welke vloeistoffen is de Starter geschikt?",
+        "a": "Volgens de fabrikant onder meer voor motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Slaat u brandstof of oplosmiddelen op, kies dan de Plus-uitvoering in EVA."
+      },
+      {
+        "q": "Wanneer kies ik beter de Plus-uitvoering?",
+        "a": "Als u brandstoffen of agressieve chemicaliën opslaat, als de bak lang of intensief gebruikt wordt, of als u zekerheid wilt met 7 jaar fabrieksgarantie. Twijfelt u, stuur ons dan het veiligheidsinformatieblad van uw stof."
+      },
+      {
+        "q": "Hoe snel staat de opvangbak klaar?",
+        "a": "Vouw de opvangbak uit en schuif de steunen in de opstaande wand. Er is geen gereedschap en geen extra constructie nodig."
+      },
+      {
+        "q": "Telt de opgegeven capaciteit met de vaten of IBC's erin?",
+        "a": "Nee. De opgegeven opvangcapaciteit geldt voor een lege opvangbak. Het volume dat de verpakkingen zelf innemen, gaat ervan af. Bij de standaardmodellen heeft de fabrikant hier al rekening mee gehouden: er blijft minimaal 110% van de grootste verpakking over."
+      },
+      {
+        "q": "Hoe maak ik de opvangbak schoon na een lekkage?",
+        "a": "Verwijder gelekte vloeistof zo snel mogelijk. Een opvangbak is bedoeld om lekkages op te vangen, niet om vloeistof in te bewaren. Volg het veiligheidsinformatieblad van de stof en laat ook regenwater niet in de bak staan."
+      }
+    ],
+    "source": "https://exflo.eu/product/1-ibc-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-starter-2-ibc",
+    "slug": "opvangbak-starter-2-ibc",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak Starter (PVC) voor 2 IBC's",
+    "seoTitle": "PVC lekbak voor 2 IBC's (Starter) | Opvangbak | EnviroFlow",
+    "line": "Starter",
+    "sku": null,
+    "short": "Voordelige PVC-opvangbak voor 2 IBC's. Opvangcapaciteit 1.795 liter.",
+    "purpose": [
+      "De Starter is de voordelige uitvoering van de flexibele opvangbak voor 2 IBC's. Hij heeft dezelfde maten en opbouw als de Plus-uitvoering, maar is gemaakt van oranje polyesterweefsel met een PVC-coating van 900 g/m².",
+      "De Starter is licht en bedoeld voor kortdurend contact met chemicaliën. Voor brandstoffen en agressieve stoffen, of voor langdurig gebruik, adviseren wij de Plus-uitvoering in EVA."
+    ],
+    "benefits": [
+      "Voordeliger dan de Plus-uitvoering in EVA",
+      "Licht PVC-weefsel (900 g/m²), makkelijk te verplaatsen",
+      "In enkele minuten geplaatst, zonder gereedschap",
+      "Opgevouwen klein op te bergen"
+    ],
+    "suitableFor": [
+      "Opslag van twee IBC's",
+      "Magazijnen en werkplaatsen",
+      "Tijdelijke opslag op locatie"
+    ],
+    "price": 742,
+    "quoteOnly": false,
+    "leadTime": "Ca. 4 weken; vraag naar sneller leverbare maten",
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Montagehandleiding opvangbakken (PDF)",
+        "href": "/assets/datasheets/opvangbak-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/opvangbak-assembly-instructions.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-starter-2-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met twee IBC's",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-1-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met één IBC",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-4-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met vier IBC's op een rij",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "2,50 × 2,16 × 0,35 m (l × b × h)",
+      "capaciteit": "1.795 liter",
+      "materiaal": "Polyesterweefsel met PVC-coating, 900 g/m² (oranje)",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Bedoeld voor kortdurend contact met chemicaliën. Volgens de fabrikant geschikt voor onder meer motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet geschikt voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Twijfelt u? Kies de Plus-uitvoering in EVA of neem contact met ons op.",
+      "garantie": null,
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": 2,
+      "drumCount": null,
+      "capacityL": 1795,
+      "dimensions": "2,50 × 2,16 × 0,35 m",
+      "material": "PVC-weefsel",
+      "application": [
+        "IBC's"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-2-ibc",
+      "opvangbak-starter-1-ibc",
+      "opvangbak-starter-4-ibc"
+    ],
+    "featured": false,
+    "faq": [
+      {
+        "q": "Wat is het verschil tussen de Starter (PVC) en de Plus (EVA)?",
+        "a": "De maten en de opbouw zijn gelijk. Het verschil zit in het weefsel. De Starter is van polyesterweefsel met een PVC-coating van 900 g/m²: voordelig en licht, bedoeld voor kortdurend contact met chemicaliën. De Plus is van zwaarder weefsel met een EVA-coating van 1.365 g/m²: sterker, breder chemisch bestendig en met 7 jaar fabrieksgarantie."
+      },
+      {
+        "q": "Voor welke vloeistoffen is de Starter geschikt?",
+        "a": "Volgens de fabrikant onder meer voor motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Slaat u brandstof of oplosmiddelen op, kies dan de Plus-uitvoering in EVA."
+      },
+      {
+        "q": "Wanneer kies ik beter de Plus-uitvoering?",
+        "a": "Als u brandstoffen of agressieve chemicaliën opslaat, als de bak lang of intensief gebruikt wordt, of als u zekerheid wilt met 7 jaar fabrieksgarantie. Twijfelt u, stuur ons dan het veiligheidsinformatieblad van uw stof."
+      },
+      {
+        "q": "Hoe snel staat de opvangbak klaar?",
+        "a": "Vouw de opvangbak uit en schuif de steunen in de opstaande wand. Er is geen gereedschap en geen extra constructie nodig."
+      },
+      {
+        "q": "Telt de opgegeven capaciteit met de vaten of IBC's erin?",
+        "a": "Nee. De opgegeven opvangcapaciteit geldt voor een lege opvangbak. Het volume dat de verpakkingen zelf innemen, gaat ervan af. Bij de standaardmodellen heeft de fabrikant hier al rekening mee gehouden: er blijft minimaal 110% van de grootste verpakking over."
+      },
+      {
+        "q": "Hoe maak ik de opvangbak schoon na een lekkage?",
+        "a": "Verwijder gelekte vloeistof zo snel mogelijk. Een opvangbak is bedoeld om lekkages op te vangen, niet om vloeistof in te bewaren. Volg het veiligheidsinformatieblad van de stof en laat ook regenwater niet in de bak staan."
+      }
+    ],
+    "source": "https://exflo.eu/product/2-ibc-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-starter-4-ibc",
+    "slug": "opvangbak-starter-4-ibc",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak Starter (PVC) voor 4 IBC's",
+    "seoTitle": "PVC lekbak voor 4 IBC's (Starter) | Opvangbak | EnviroFlow",
+    "line": "Starter",
+    "sku": null,
+    "short": "Voordelige PVC-opvangbak voor 4 IBC's. Opvangcapaciteit 2.420 liter.",
+    "purpose": [
+      "De Starter is de voordelige uitvoering van de flexibele opvangbak voor 4 IBC's. Hij heeft dezelfde maten en opbouw als de Plus-uitvoering, maar is gemaakt van oranje polyesterweefsel met een PVC-coating van 900 g/m².",
+      "De Starter is licht en bedoeld voor kortdurend contact met chemicaliën. Voor brandstoffen en agressieve stoffen, of voor langdurig gebruik, adviseren wij de Plus-uitvoering in EVA."
+    ],
+    "benefits": [
+      "Voordeliger dan de Plus-uitvoering in EVA",
+      "Licht PVC-weefsel (900 g/m²), makkelijk te verplaatsen",
+      "In enkele minuten geplaatst, zonder gereedschap",
+      "Opgevouwen klein op te bergen"
+    ],
+    "suitableFor": [
+      "Opslag van vier IBC's",
+      "Langs een wand of in een gang",
+      "Tijdelijke opslag op locatie"
+    ],
+    "price": 987,
+    "quoteOnly": false,
+    "leadTime": "Ca. 4 weken; vraag naar sneller leverbare maten",
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Montagehandleiding opvangbakken (PDF)",
+        "href": "/assets/datasheets/opvangbak-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/opvangbak-assembly-instructions.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-starter-4-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met vier IBC's op een rij",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-1-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met één IBC",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-2-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met twee IBC's",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "5,20 × 1,40 × 0,35 m (l × b × h)",
+      "capaciteit": "2.420 liter",
+      "materiaal": "Polyesterweefsel met PVC-coating, 900 g/m² (oranje)",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Bedoeld voor kortdurend contact met chemicaliën. Volgens de fabrikant geschikt voor onder meer motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet geschikt voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Twijfelt u? Kies de Plus-uitvoering in EVA of neem contact met ons op.",
+      "garantie": null,
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": 4,
+      "drumCount": null,
+      "capacityL": 2420,
+      "dimensions": "5,20 × 1,40 × 0,35 m",
+      "material": "PVC-weefsel",
+      "application": [
+        "IBC's"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-4-ibc",
+      "opvangbak-starter-2-ibc",
+      "opvangbak-starter-10-ibc"
+    ],
+    "featured": false,
+    "faq": [
+      {
+        "q": "Wat is het verschil tussen de Starter (PVC) en de Plus (EVA)?",
+        "a": "De maten en de opbouw zijn gelijk. Het verschil zit in het weefsel. De Starter is van polyesterweefsel met een PVC-coating van 900 g/m²: voordelig en licht, bedoeld voor kortdurend contact met chemicaliën. De Plus is van zwaarder weefsel met een EVA-coating van 1.365 g/m²: sterker, breder chemisch bestendig en met 7 jaar fabrieksgarantie."
+      },
+      {
+        "q": "Voor welke vloeistoffen is de Starter geschikt?",
+        "a": "Volgens de fabrikant onder meer voor motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Slaat u brandstof of oplosmiddelen op, kies dan de Plus-uitvoering in EVA."
+      },
+      {
+        "q": "Wanneer kies ik beter de Plus-uitvoering?",
+        "a": "Als u brandstoffen of agressieve chemicaliën opslaat, als de bak lang of intensief gebruikt wordt, of als u zekerheid wilt met 7 jaar fabrieksgarantie. Twijfelt u, stuur ons dan het veiligheidsinformatieblad van uw stof."
+      },
+      {
+        "q": "Hoe snel staat de opvangbak klaar?",
+        "a": "Vouw de opvangbak uit en schuif de steunen in de opstaande wand. Er is geen gereedschap en geen extra constructie nodig."
+      },
+      {
+        "q": "Telt de opgegeven capaciteit met de vaten of IBC's erin?",
+        "a": "Nee. De opgegeven opvangcapaciteit geldt voor een lege opvangbak. Het volume dat de verpakkingen zelf innemen, gaat ervan af. Bij de standaardmodellen heeft de fabrikant hier al rekening mee gehouden: er blijft minimaal 110% van de grootste verpakking over."
+      },
+      {
+        "q": "Hoe maak ik de opvangbak schoon na een lekkage?",
+        "a": "Verwijder gelekte vloeistof zo snel mogelijk. Een opvangbak is bedoeld om lekkages op te vangen, niet om vloeistof in te bewaren. Volg het veiligheidsinformatieblad van de stof en laat ook regenwater niet in de bak staan."
+      }
+    ],
+    "source": "https://exflo.eu/product/4-ibc-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-starter-10-ibc",
+    "slug": "opvangbak-starter-10-ibc",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak Starter (PVC) voor 10 IBC's",
+    "seoTitle": "PVC lekbak voor 10 IBC's (Starter) | Opvangbak | EnviroFlow",
+    "line": "Starter",
+    "sku": null,
+    "short": "Voordelige PVC-opvangbak voor 10 IBC's. Opvangcapaciteit 5.836 liter.",
+    "purpose": [
+      "De Starter is de voordelige uitvoering van de flexibele opvangbak voor 10 IBC's. Hij heeft dezelfde maten en opbouw als de Plus-uitvoering, maar is gemaakt van oranje polyesterweefsel met een PVC-coating van 900 g/m².",
+      "De Starter is licht en bedoeld voor kortdurend contact met chemicaliën. Voor brandstoffen en agressieve stoffen, of voor langdurig gebruik, adviseren wij de Plus-uitvoering in EVA."
+    ],
+    "benefits": [
+      "Voordeliger dan de Plus-uitvoering in EVA",
+      "Licht PVC-weefsel (900 g/m²), makkelijk te verplaatsen",
+      "In enkele minuten geplaatst, zonder gereedschap",
+      "Opgevouwen klein op te bergen"
+    ],
+    "suitableFor": [
+      "Opslag van tien IBC's",
+      "Grotere opslaglocaties",
+      "Projectlocaties"
+    ],
+    "price": 1425,
+    "quoteOnly": false,
+    "leadTime": "Ca. 4 weken; vraag naar sneller leverbare maten",
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Montagehandleiding opvangbakken (PDF)",
+        "href": "/assets/datasheets/opvangbak-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/opvangbak-assembly-instructions.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-starter-4-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met vier IBC's op een rij",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-1-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met één IBC",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-2-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met twee IBC's",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "5,95 × 2,95 × 0,35 m (l × b × h)",
+      "capaciteit": "5.836 liter",
+      "materiaal": "Polyesterweefsel met PVC-coating, 900 g/m² (oranje)",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Bedoeld voor kortdurend contact met chemicaliën. Volgens de fabrikant geschikt voor onder meer motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet geschikt voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Twijfelt u? Kies de Plus-uitvoering in EVA of neem contact met ons op.",
+      "garantie": null,
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": 10,
+      "drumCount": null,
+      "capacityL": 5836,
+      "dimensions": "5,95 × 2,95 × 0,35 m",
+      "material": "PVC-weefsel",
+      "application": [
+        "IBC's"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-10-ibc",
+      "opvangbak-starter-4-ibc",
+      "opvangbak-starter-aggregaat"
+    ],
+    "featured": false,
+    "faq": [
+      {
+        "q": "Wat is het verschil tussen de Starter (PVC) en de Plus (EVA)?",
+        "a": "De maten en de opbouw zijn gelijk. Het verschil zit in het weefsel. De Starter is van polyesterweefsel met een PVC-coating van 900 g/m²: voordelig en licht, bedoeld voor kortdurend contact met chemicaliën. De Plus is van zwaarder weefsel met een EVA-coating van 1.365 g/m²: sterker, breder chemisch bestendig en met 7 jaar fabrieksgarantie."
+      },
+      {
+        "q": "Voor welke vloeistoffen is de Starter geschikt?",
+        "a": "Volgens de fabrikant onder meer voor motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Slaat u brandstof of oplosmiddelen op, kies dan de Plus-uitvoering in EVA."
+      },
+      {
+        "q": "Wanneer kies ik beter de Plus-uitvoering?",
+        "a": "Als u brandstoffen of agressieve chemicaliën opslaat, als de bak lang of intensief gebruikt wordt, of als u zekerheid wilt met 7 jaar fabrieksgarantie. Twijfelt u, stuur ons dan het veiligheidsinformatieblad van uw stof."
+      },
+      {
+        "q": "Hoe snel staat de opvangbak klaar?",
+        "a": "Vouw de opvangbak uit en schuif de steunen in de opstaande wand. Er is geen gereedschap en geen extra constructie nodig."
+      },
+      {
+        "q": "Telt de opgegeven capaciteit met de vaten of IBC's erin?",
+        "a": "Nee. De opgegeven opvangcapaciteit geldt voor een lege opvangbak. Het volume dat de verpakkingen zelf innemen, gaat ervan af. Bij de standaardmodellen heeft de fabrikant hier al rekening mee gehouden: er blijft minimaal 110% van de grootste verpakking over."
+      },
+      {
+        "q": "Hoe maak ik de opvangbak schoon na een lekkage?",
+        "a": "Verwijder gelekte vloeistof zo snel mogelijk. Een opvangbak is bedoeld om lekkages op te vangen, niet om vloeistof in te bewaren. Volg het veiligheidsinformatieblad van de stof en laat ook regenwater niet in de bak staan."
+      }
+    ],
+    "source": "https://exflo.eu/product/10-ibc-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-starter-aggregaat",
+    "slug": "opvangbak-starter-aggregaat",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak Starter (PVC) voor aggregaat (3 × 1,5 m)",
+    "seoTitle": "PVC lekbak voor aggregaat (3 × 1,5 m) (Starter) | Opvangbak | EnviroFlow",
+    "line": "Starter",
+    "sku": null,
+    "short": "Voordelige PVC-opvangbak voor aggregaat (3 × 1,5 m). Opvangcapaciteit 1.451 liter.",
+    "purpose": [
+      "De Starter is de voordelige uitvoering van de flexibele opvangbak voor aggregaat (3 × 1,5 m). Hij heeft dezelfde maten en opbouw als de Plus-uitvoering, maar is gemaakt van oranje polyesterweefsel met een PVC-coating van 900 g/m².",
+      "De Starter is licht en bedoeld voor kortdurend contact met chemicaliën. Voor brandstoffen en agressieve stoffen, of voor langdurig gebruik, adviseren wij de Plus-uitvoering in EVA. Op de foto’s ziet u de Starter-uitvoering voor IBC’s; deze uitvoering heeft hetzelfde oranje PVC-weefsel."
+    ],
+    "benefits": [
+      "Voordeliger dan de Plus-uitvoering in EVA",
+      "Licht PVC-weefsel (900 g/m²), makkelijk te verplaatsen",
+      "In enkele minuten geplaatst, zonder gereedschap",
+      "Opgevouwen klein op te bergen"
+    ],
+    "suitableFor": [
+      "Aggregaten en noodstroom",
+      "Pompen en koelmachines",
+      "Bouw- en evenemententerreinen"
+    ],
+    "price": 624,
+    "quoteOnly": false,
+    "leadTime": "Ca. 4 weken; vraag naar sneller leverbare maten",
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Montagehandleiding opvangbakken (PDF)",
+        "href": "/assets/datasheets/opvangbak-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/opvangbak-assembly-instructions.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-starter-1-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met één IBC",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-2-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met twee IBC's",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-4-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met vier IBC's op een rij",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "2,91 × 1,50 × 0,35 m (l × b × h)",
+      "capaciteit": "1.451 liter",
+      "materiaal": "Polyesterweefsel met PVC-coating, 900 g/m² (oranje)",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Bedoeld voor kortdurend contact met chemicaliën. Volgens de fabrikant geschikt voor onder meer motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet geschikt voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Twijfelt u? Kies de Plus-uitvoering in EVA of neem contact met ons op.",
+      "garantie": null,
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": 1451,
+      "dimensions": "2,91 × 1,50 × 0,35 m",
+      "material": "PVC-weefsel",
+      "application": [
+        "Machines"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-aggregaat",
+      "opvangbak-starter-10-ibc",
+      "opvangbak-starter-voertuigen-tankwagen"
+    ],
+    "featured": false,
+    "faq": [
+      {
+        "q": "Wat is het verschil tussen de Starter (PVC) en de Plus (EVA)?",
+        "a": "De maten en de opbouw zijn gelijk. Het verschil zit in het weefsel. De Starter is van polyesterweefsel met een PVC-coating van 900 g/m²: voordelig en licht, bedoeld voor kortdurend contact met chemicaliën. De Plus is van zwaarder weefsel met een EVA-coating van 1.365 g/m²: sterker, breder chemisch bestendig en met 7 jaar fabrieksgarantie."
+      },
+      {
+        "q": "Voor welke vloeistoffen is de Starter geschikt?",
+        "a": "Volgens de fabrikant onder meer voor motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Slaat u brandstof of oplosmiddelen op, kies dan de Plus-uitvoering in EVA."
+      },
+      {
+        "q": "Wanneer kies ik beter de Plus-uitvoering?",
+        "a": "Als u brandstoffen of agressieve chemicaliën opslaat, als de bak lang of intensief gebruikt wordt, of als u zekerheid wilt met 7 jaar fabrieksgarantie. Twijfelt u, stuur ons dan het veiligheidsinformatieblad van uw stof."
+      },
+      {
+        "q": "Hoe snel staat de opvangbak klaar?",
+        "a": "Vouw de opvangbak uit en schuif de steunen in de opstaande wand. Er is geen gereedschap en geen extra constructie nodig."
+      },
+      {
+        "q": "Telt de opgegeven capaciteit met de vaten of IBC's erin?",
+        "a": "Nee. De opgegeven opvangcapaciteit geldt voor een lege opvangbak. Het volume dat de verpakkingen zelf innemen, gaat ervan af. Bij de standaardmodellen heeft de fabrikant hier al rekening mee gehouden: er blijft minimaal 110% van de grootste verpakking over."
+      },
+      {
+        "q": "Hoe maak ik de opvangbak schoon na een lekkage?",
+        "a": "Verwijder gelekte vloeistof zo snel mogelijk. Een opvangbak is bedoeld om lekkages op te vangen, niet om vloeistof in te bewaren. Volg het veiligheidsinformatieblad van de stof en laat ook regenwater niet in de bak staan."
+      }
+    ],
+    "source": "https://exflo.eu/product/generator-spill-containment-berm-3-x-15-m/"
+  },
+  {
+    "id": "opvangbak-starter-voertuigen-tankwagen",
+    "slug": "opvangbak-starter-voertuigen-tankwagen",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak Starter (PVC) voor tankwagen",
+    "seoTitle": "PVC lekbak voor tankwagen (Starter) | Opvangbak | EnviroFlow",
+    "line": "Starter",
+    "sku": null,
+    "short": "Voordelige PVC-opvangbak voor tankwagen. Opvangcapaciteit 11.655 liter.",
+    "purpose": [
+      "De Starter is de voordelige uitvoering van de flexibele opvangbak voor tankwagen. Hij heeft dezelfde maten en opbouw als de Plus-uitvoering, maar is gemaakt van oranje polyesterweefsel met een PVC-coating van 900 g/m².",
+      "De Starter is licht en bedoeld voor kortdurend contact met chemicaliën. Voor brandstoffen en agressieve stoffen, of voor langdurig gebruik, adviseren wij de Plus-uitvoering in EVA. Op de foto’s ziet u de Starter-uitvoering voor IBC’s; deze uitvoering heeft hetzelfde oranje PVC-weefsel."
+    ],
+    "benefits": [
+      "Voordeliger dan de Plus-uitvoering in EVA",
+      "Licht PVC-weefsel (900 g/m²), makkelijk te verplaatsen",
+      "In enkele minuten geplaatst, zonder gereedschap",
+      "Opgevouwen klein op te bergen"
+    ],
+    "suitableFor": [
+      "Tankwagens",
+      "Laad- en losplaatsen",
+      "Calamiteiten"
+    ],
+    "price": 2363,
+    "quoteOnly": false,
+    "leadTime": "Ca. 4 weken; vraag naar sneller leverbare maten",
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Montagehandleiding opvangbakken (PDF)",
+        "href": "/assets/datasheets/opvangbak-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/opvangbak-assembly-instructions.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-starter-4-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met vier IBC's op een rij",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-1-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met één IBC",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-2-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met twee IBC's",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "9,50 × 3,69 × 0,35 m (l × b × h)",
+      "capaciteit": "11.655 liter",
+      "materiaal": "Polyesterweefsel met PVC-coating, 900 g/m² (oranje)",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Bedoeld voor kortdurend contact met chemicaliën. Volgens de fabrikant geschikt voor onder meer motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet geschikt voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Twijfelt u? Kies de Plus-uitvoering in EVA of neem contact met ons op.",
+      "garantie": null,
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": 11655,
+      "dimensions": "9,50 × 3,69 × 0,35 m",
+      "material": "PVC-weefsel",
+      "application": [
+        "Voertuigen"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-voertuigen-tankwagen",
+      "opvangbak-starter-aggregaat",
+      "opvangbak-starter-voertuigen-vrachtwagen"
+    ],
+    "featured": false,
+    "faq": [
+      {
+        "q": "Wat is het verschil tussen de Starter (PVC) en de Plus (EVA)?",
+        "a": "De maten en de opbouw zijn gelijk. Het verschil zit in het weefsel. De Starter is van polyesterweefsel met een PVC-coating van 900 g/m²: voordelig en licht, bedoeld voor kortdurend contact met chemicaliën. De Plus is van zwaarder weefsel met een EVA-coating van 1.365 g/m²: sterker, breder chemisch bestendig en met 7 jaar fabrieksgarantie."
+      },
+      {
+        "q": "Voor welke vloeistoffen is de Starter geschikt?",
+        "a": "Volgens de fabrikant onder meer voor motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Slaat u brandstof of oplosmiddelen op, kies dan de Plus-uitvoering in EVA."
+      },
+      {
+        "q": "Wanneer kies ik beter de Plus-uitvoering?",
+        "a": "Als u brandstoffen of agressieve chemicaliën opslaat, als de bak lang of intensief gebruikt wordt, of als u zekerheid wilt met 7 jaar fabrieksgarantie. Twijfelt u, stuur ons dan het veiligheidsinformatieblad van uw stof."
+      },
+      {
+        "q": "Hoe snel staat de opvangbak klaar?",
+        "a": "Vouw de opvangbak uit en schuif de steunen in de opstaande wand. Er is geen gereedschap en geen extra constructie nodig."
+      },
+      {
+        "q": "Telt de opgegeven capaciteit met de vaten of IBC's erin?",
+        "a": "Nee. De opgegeven opvangcapaciteit geldt voor een lege opvangbak. Het volume dat de verpakkingen zelf innemen, gaat ervan af. Bij de standaardmodellen heeft de fabrikant hier al rekening mee gehouden: er blijft minimaal 110% van de grootste verpakking over."
+      },
+      {
+        "q": "Hoe maak ik de opvangbak schoon na een lekkage?",
+        "a": "Verwijder gelekte vloeistof zo snel mogelijk. Een opvangbak is bedoeld om lekkages op te vangen, niet om vloeistof in te bewaren. Volg het veiligheidsinformatieblad van de stof en laat ook regenwater niet in de bak staan."
+      }
+    ],
+    "source": "https://exflo.eu/product/tanker-truck-spill-containment-berm/"
+  },
+  {
+    "id": "opvangbak-starter-voertuigen-vrachtwagen",
+    "slug": "opvangbak-starter-voertuigen-vrachtwagen",
+    "category": "flexibele-opvangbakken",
+    "brand": "exflo",
+    "name": "Flexibele opvangbak Starter (PVC) voor vrachtwagen",
+    "seoTitle": "PVC lekbak voor vrachtwagen (Starter) | Opvangbak | EnviroFlow",
+    "line": "Starter",
+    "sku": null,
+    "short": "Voordelige PVC-opvangbak voor vrachtwagen. Opvangcapaciteit 22.575 liter.",
+    "purpose": [
+      "De Starter is de voordelige uitvoering van de flexibele opvangbak voor vrachtwagen. Hij heeft dezelfde maten en opbouw als de Plus-uitvoering, maar is gemaakt van oranje polyesterweefsel met een PVC-coating van 900 g/m².",
+      "De Starter is licht en bedoeld voor kortdurend contact met chemicaliën. Voor brandstoffen en agressieve stoffen, of voor langdurig gebruik, adviseren wij de Plus-uitvoering in EVA. Op de foto’s ziet u de Starter-uitvoering voor IBC’s; deze uitvoering heeft hetzelfde oranje PVC-weefsel."
+    ],
+    "benefits": [
+      "Voordeliger dan de Plus-uitvoering in EVA",
+      "Licht PVC-weefsel (900 g/m²), makkelijk te verplaatsen",
+      "In enkele minuten geplaatst, zonder gereedschap",
+      "Opgevouwen klein op te bergen"
+    ],
+    "suitableFor": [
+      "Vrachtwagens",
+      "Laad- en losplaatsen",
+      "Transport van gevaarlijke stoffen"
+    ],
+    "price": 3920,
+    "quoteOnly": false,
+    "leadTime": "Ca. 4 weken; vraag naar sneller leverbare maten",
+    "stock": null,
+    "downloads": [
+      {
+        "label": "Montagehandleiding opvangbakken (PDF)",
+        "href": "/assets/datasheets/opvangbak-montagehandleiding.pdf",
+        "hrefEn": "/assets/datasheets/opvangbak-assembly-instructions.pdf"
+      }
+    ],
+    "liquids": null,
+    "images": [
+      {
+        "src": "/assets/img/producten/opvangbak-starter-4-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met vier IBC's op een rij",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-1-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met één IBC",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/assets/img/producten/opvangbak-starter-2-ibc.jpg",
+        "alt": "Starter-opvangbak in oranje PVC met twee IBC's",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "specs": {
+      "afmetingen": "18,40 × 3,69 × 0,35 m (l × b × h)",
+      "capaciteit": "22.575 liter",
+      "materiaal": "Polyesterweefsel met PVC-coating, 900 g/m² (oranje)",
+      "gewicht": null,
+      "aansluitingen": null,
+      "temperatuurbereik": null,
+      "chemischeBestendigheid": "Bedoeld voor kortdurend contact met chemicaliën. Volgens de fabrikant geschikt voor onder meer motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet geschikt voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Twijfelt u? Kies de Plus-uitvoering in EVA of neem contact met ons op.",
+      "garantie": null,
+      "certificering": null
+    },
+    "sizes": null,
+    "attributes": {
+      "ibcCount": null,
+      "drumCount": null,
+      "capacityL": 22575,
+      "dimensions": "18,40 × 3,69 × 0,35 m",
+      "material": "PVC-weefsel",
+      "application": [
+        "Voertuigen"
+      ],
+      "liquids": [],
+      "location": null,
+      "duration": null
+    },
+    "related": [
+      "opvangbak-voertuigen-vrachtwagen",
+      "opvangbak-starter-voertuigen-tankwagen",
+      "opvangbak-starter-aggregaat"
+    ],
+    "featured": false,
+    "faq": [
+      {
+        "q": "Wat is het verschil tussen de Starter (PVC) en de Plus (EVA)?",
+        "a": "De maten en de opbouw zijn gelijk. Het verschil zit in het weefsel. De Starter is van polyesterweefsel met een PVC-coating van 900 g/m²: voordelig en licht, bedoeld voor kortdurend contact met chemicaliën. De Plus is van zwaarder weefsel met een EVA-coating van 1.365 g/m²: sterker, breder chemisch bestendig en met 7 jaar fabrieksgarantie."
+      },
+      {
+        "q": "Voor welke vloeistoffen is de Starter geschikt?",
+        "a": "Volgens de fabrikant onder meer voor motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Slaat u brandstof of oplosmiddelen op, kies dan de Plus-uitvoering in EVA."
+      },
+      {
+        "q": "Wanneer kies ik beter de Plus-uitvoering?",
+        "a": "Als u brandstoffen of agressieve chemicaliën opslaat, als de bak lang of intensief gebruikt wordt, of als u zekerheid wilt met 7 jaar fabrieksgarantie. Twijfelt u, stuur ons dan het veiligheidsinformatieblad van uw stof."
+      },
+      {
+        "q": "Hoe snel staat de opvangbak klaar?",
+        "a": "Vouw de opvangbak uit en schuif de steunen in de opstaande wand. Er is geen gereedschap en geen extra constructie nodig."
+      },
+      {
+        "q": "Telt de opgegeven capaciteit met de vaten of IBC's erin?",
+        "a": "Nee. De opgegeven opvangcapaciteit geldt voor een lege opvangbak. Het volume dat de verpakkingen zelf innemen, gaat ervan af. Bij de standaardmodellen heeft de fabrikant hier al rekening mee gehouden: er blijft minimaal 110% van de grootste verpakking over."
+      },
+      {
+        "q": "Hoe maak ik de opvangbak schoon na een lekkage?",
+        "a": "Verwijder gelekte vloeistof zo snel mogelijk. Een opvangbak is bedoeld om lekkages op te vangen, niet om vloeistof in te bewaren. Volg het veiligheidsinformatieblad van de stof en laat ook regenwater niet in de bak staan."
+      }
+    ],
     "source": "https://exflo.eu/product/truck-spill-containment-berm/"
   },
   {

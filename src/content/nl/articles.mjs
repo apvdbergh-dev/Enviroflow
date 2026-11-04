@@ -38,6 +38,141 @@ const UPDATED = '2026-10-17';
 
 export default [
   {
+    slug: 'verschil-pvc-en-eva-lekbak',
+    kicker: 'Opvang',
+    title: 'PVC of EVA lekbak: wat is het verschil en welke kiest u?',
+    seoTitle: 'PVC of EVA lekbak: verschil, prijs en bestendigheid | EnviroFlow',
+    description: 'Wat is het verschil tussen een PVC en een EVA lekbak? Vergelijking van materiaal, sterkte, chemische bestendigheid, garantie en prijs, met advies per situatie.',
+    updated: '2026-11-04',
+    image: { src: IMG + 'opvangbak-pvc-vs-eva.jpg', alt: 'Flexibele opvangbak in oranje PVC (Starter) naast een zwarte opvangbak in EVA (Plus), elk met één IBC' },
+    intro: 'Flexibele lekbakken zien er van buiten bijna hetzelfde uit, maar het weefsel maakt een groot verschil. De meeste standaard lekbakken zijn van PVC. Een EVA-lekbak is zwaarder, sterker en tegen veel meer stoffen bestand. Hieronder leest u wat het verschil precies is, wat het kost en welke u kiest voor uw situatie.',
+    takeaways: [
+      '**PVC** (Starter, 900 g/m²) is voordelig en licht, en bedoeld voor kortdurend contact met chemicaliën.',
+      '**EVA** (Plus, 1.365 g/m²) is sterker, tegen veel meer stoffen bestand en heeft 7 jaar fabrieksgarantie.',
+      'Voor **benzine, diesel, glycol en oplosmiddelen** is PVC volgens de fabrikant niet geschikt: kies dan EVA.',
+      'De Starter is per maat ongeveer 8 tot 30% goedkoper dan de Plus.',
+      `Bekijk alle [flexibele lekbakken](${L.opvang}) in PVC en EVA, voor vaten, IBC's, aggregaten en voertuigen.`
+    ],
+    sections: [
+      {
+        h: 'Het korte antwoord',
+        p: [
+          'Kies **PVC** als u een voordelige lekbak zoekt voor vloeistoffen die PVC goed verdraagt, zoals motorolie, antivries of accuzuur, en de bak niet zwaar belast wordt.',
+          'Kies **EVA** als u brandstoffen of agressieve chemicaliën opslaat, als de bak lang of intensief gebruikt wordt, of als u zekerheid wilt met 7 jaar fabrieksgarantie.'
+        ],
+        callout: { t: 'Vuistregel', d: 'Twijfelt u over uw vloeistof? Kies EVA, of stuur ons het veiligheidsinformatieblad (VIB). Wij controleren het voor u.' }
+      },
+      {
+        h: 'Wat zijn PVC en EVA?',
+        p: [
+          'Beide lekbakken zijn gemaakt van **polyesterweefsel met een coating**. Het weefsel geeft de sterkte, de coating maakt de bak vloeistofdicht en bepaalt waartegen hij bestand is.',
+          '**PVC** (polyvinylchloride) is de coating die voor de meeste standaard lekbakken wordt gebruikt. Het is betaalbaar, soepel en goed te lassen.',
+          '**EVA** (poly(ethyleen-co-vinylacetaat)) is een coating die volgens de fabrikant chemisch breder bestand is dan PVC. In combinatie met een zwaarder weefsel van 1.365 g/m² is de bak ook mechanisch sterker.'
+        ],
+        image: { src: IMG + 'opvangbak-starter-2-ibc.jpg', alt: "Starter-opvangbak in oranje PVC met twee IBC's", caption: "De Starter in oranje PVC (900 g/m²), hier voor twee IBC's." }
+      },
+      {
+        h: 'PVC en EVA naast elkaar',
+        table: {
+          head: ['', 'Starter (PVC)', 'Plus (EVA)'],
+          rows: [
+            ['Coating', 'PVC', 'EVA'],
+            ['Gewicht weefsel', '900 g/m²', '1.365 g/m²'],
+            ['Kleur', 'Oranje', 'Zwart met oranje banen'],
+            ['Bedoeld voor', 'Kortdurend contact met chemicaliën', 'Langdurig gebruik, breed chemisch bestendig'],
+            ['Benzine en diesel', 'Niet geschikt', 'Geschikt (benzine tot 6 maanden)'],
+            ['Temperatuur', 'Niet opgegeven door de fabrikant', '−40 °C tot +70 °C'],
+            ['Fabrieksgarantie', 'Niet opgegeven door de fabrikant', '7 jaar'],
+            ['Maten en opbouw', 'Gelijk aan de Plus', 'Gelijk aan de Starter'],
+            ['Prijs', 'Voordeliger', 'Hoger']
+          ],
+          note: 'Gegevens van de fabrikant. Beide uitvoeringen worden op dezelfde manier geplaatst: uitvouwen, steunen in de wand schuiven en klaar.'
+        }
+      },
+      {
+        h: 'Tegen welke vloeistoffen zijn ze bestand?',
+        p: ['Dit is het grootste verschil. De fabrikant geeft per stof aan hoe lang het weefsel ertegen bestand is. **Ja** betekent geschikt, een termijn betekent dat het weefsel maximaal zo lang in contact mag zijn, **Nee** betekent niet geschikt.'],
+        table: {
+          head: ['Vloeistof', 'Starter (PVC)', 'Plus (EVA)'],
+          rows: [
+            ['Motorolie', 'Ja', 'Ja'],
+            ['Antivries', 'Ja', 'Ja'],
+            ['Accuzuur', 'Ja', 'Ja'],
+            ['Zoutzuur 10%', 'Ja', 'Ja'],
+            ['Water-glycoloplossing', 'Ja', 'Ja'],
+            ['Calciumchloride-oplossing', 'Ja', 'Ja'],
+            ['Ethanol (niet gedenatureerd)', '3 dagen', 'Ja'],
+            ['Paraffineolie', '3 dagen', '6 maanden'],
+            ['Benzine', 'Nee', '6 maanden'],
+            ['Diesel', 'Nee', 'Ja'],
+            ['Glycol 100%', 'Nee', 'Ja'],
+            ['Isopropanol 100%', 'Nee', 'Ja'],
+            ['Oliezuur', 'Nee', 'Ja'],
+            ['Zoutzuur 32%', 'Nee', '6 maanden']
+          ],
+          note: 'Bron: vergelijkingstabel van de fabrikant (EXFLO). Voor de Plus-uitvoering is er een uitgebreide bestendigheidstabel met 53 stoffen: zie de downloads bij de opvangbakken.'
+        }
+      },
+      {
+        h: 'Wat kost een PVC lekbak en wat een EVA lekbak?',
+        p: ['De maten zijn gelijk, alleen het weefsel verschilt. Zo verhouden de prijzen zich bij ons (excl. btw):'],
+        table: {
+          head: ['Uitvoering', 'Starter (PVC)', 'Plus (EVA)'],
+          rows: [
+            ['1 vat', '€ 386,10', '€ 417,69'],
+            ['2 vaten', '€ 507,78', '€ 589,68'],
+            ['4 vaten', '€ 513,63', '€ 717,21'],
+            ['1 IBC', '€ 648,18', '€ 840,06'],
+            ["2 IBC's", '€ 868,14', '€ 1.106,82'],
+            ["4 IBC's", '€ 1.154,79', '€ 1.495,26'],
+            ["10 IBC's", '€ 1.667,25', '€ 2.067,39'],
+            ['Aggregaat (3 × 1,5 m)', '€ 730,08', '€ 983,97'],
+            ['Tankwagen', '€ 2.764,71', '€ 3.973,32'],
+            ['Vrachtwagen', '€ 4.586,40', '€ 6.440,85']
+          ],
+          note: 'Prijzen per stuk, exclusief btw en transport. Actuele prijzen staan altijd bij het product in de webshop.'
+        }
+      },
+      {
+        h: 'Welke kiest u in uw situatie?',
+        table: {
+          head: ['Situatie', 'Advies', 'Waarom'],
+          rows: [
+            ['Opslag van motorolie, antivries of accuzuur', 'PVC of EVA', 'Beide zijn volgens de fabrikant geschikt'],
+            ['Diesel, benzine of andere brandstof', 'EVA', 'PVC is hiervoor niet geschikt'],
+            ['Oplosmiddelen, glycol 100% of isopropanol', 'EVA', 'PVC is hiervoor niet geschikt'],
+            ['Kort project of eenmalige inzet', 'PVC', 'Voordelig en licht, als de vloeistof past'],
+            ['Vaste opslag die jaren meegaat', 'EVA', 'Sterker weefsel en 7 jaar fabrieksgarantie'],
+            ['Heftruck of voertuigen rijden in en uit', 'EVA', 'Zwaarder weefsel, beter bestand tegen belasting'],
+            ['Onbekende of wisselende stoffen', 'EVA', 'Breder chemisch bestendig']
+          ]
+        },
+        image: { src: IMG + 'opvangbak-2-ibc.jpg', alt: "Plus-opvangbak in EVA met twee IBC's", caption: "De Plus in EVA (1.365 g/m²), hier voor twee IBC's." }
+      },
+      {
+        h: 'Wat hebben ze gemeen?',
+        list: [
+          'Dezelfde maten en opvangcapaciteit per uitvoering.',
+          'Zonder gereedschap in enkele minuten geplaatst: uitvouwen en de steunen in de wand schuiven.',
+          'Leeg op te vouwen en klein op te bergen.',
+          'Ook geschikt als tijdelijke opvang op locatie, bijvoorbeeld onder een aggregaat.',
+          'Voor vloeibare gevaarlijke stoffen in verpakking geldt volgens PGS 15 minimaal 110% van de grootste verpakking. De standaardmaten houden hier rekening mee.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'Wat is het verschil tussen een PVC en een EVA lekbak?', a: 'Het verschil zit in de coating van het weefsel. PVC (900 g/m²) is voordelig en licht, en bedoeld voor kortdurend contact met chemicaliën. EVA (1.365 g/m²) is sterker, tegen veel meer stoffen bestand, zoals diesel en glycol, en heeft 7 jaar fabrieksgarantie.' },
+      { q: 'Is een PVC lekbak geschikt voor diesel?', a: 'Nee. Volgens de fabrikant is de PVC-uitvoering niet geschikt voor diesel en benzine. Kies voor brandstoffen een lekbak in EVA.' },
+      { q: 'Is een EVA lekbak beter dan PVC?', a: 'Voor de meeste bedrijfssituaties wel: EVA is sterker en breder chemisch bestendig, en heeft een langere fabrieksgarantie. PVC is een goede, voordeligere keuze voor vloeistoffen die PVC goed verdraagt, zoals motorolie, antivries en accuzuur.' },
+      { q: 'Hoeveel goedkoper is een PVC lekbak?', a: 'Bij dezelfde maat is de Starter in PVC bij ons ongeveer 8 tot 30% goedkoper dan de Plus in EVA. Een opvangbak voor 1 IBC kost in PVC € 648,18 en in EVA € 840,06 (excl. btw).' },
+      { q: 'Kan ik een PVC lekbak buiten gebruiken?', a: 'Dat kan, maar de fabrikant geeft voor PVC geen temperatuurbereik op. EVA blijft volgens de fabrikant bruikbaar van −40 °C tot +70 °C. Staat de bak het hele jaar buiten, dan adviseren wij EVA.' }
+    ],
+    categories: ['flexibele-opvangbakken'],
+    products: ['opvangbak-starter-1-ibc', 'opvangbak-1-ibc', 'opvangbak-starter-2-ibc'],
+    sources: [{ label: 'EXFLO – Spill containment berms: STARTER- en PLUS-uitvoering, prijzen en chemische bestendigheid', url: 'https://exflo.eu/products/spill-containment-berm/' }, SRC.pgs15]
+  },
+
+  {
     slug: 'wat-is-een-flexibele-lekbak',
     kicker: 'Opvang',
     title: 'Flexibele lekbak: wat is het en wanneer kiest u ervoor?',

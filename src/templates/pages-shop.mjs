@@ -349,7 +349,9 @@ function compareBlock(c) {
   </section>`;
 }
 
-const productFaqBlock = (c) => c.productPage?.faq?.length ? `<section id="vragen" class="pd-block"><h2>${T('Vragen over dit product', 'Questions about this product')}</h2>${c.productPage.faq.map((f) => `<details class="faq__item"><summary>${esc(f.q)}${icon('chevron', 'faq__chev')}</summary><div class="faq__a"><p>${esc(f.a)}</p></div></details>`).join('')}</section>` : '';
+// Een product kan eigen vragen hebben (bijv. de Starter in PVC); anders gelden de vragen van de categorie.
+const productFaq = (c, p) => p.faq?.length ? p.faq : c.productPage?.faq || [];
+const productFaqBlock = (c, p) => productFaq(c, p).length ? `<section id="vragen" class="pd-block"><h2>${T('Vragen over dit product', 'Questions about this product')}</h2>${productFaq(c, p).map((f) => `<details class="faq__item"><summary>${esc(f.q)}${icon('chevron', 'faq__chev')}</summary><div class="faq__a"><p>${esc(f.a)}</p></div></details>`).join('')}</section>` : '';
 
 export function productPage(p, ctx) {
   const { t, site, urls, categoryById, groupById, products, brandById } = ctx;
@@ -394,7 +396,7 @@ export function productPage(p, ctx) {
 </section>
 
 <nav class="subnav" aria-label="${T('Op deze pagina', 'On this page')}"><div class="container"><ul>
-  <li><a href="#toepassing">${T('Toepassing', 'Application')}</a></li><li><a href="#voordelen">${T('Voordelen', 'Benefits')}</a></li><li><a href="#specificaties">${T('Specificaties', 'Specifications')}</a></li>${p.sizes ? `<li><a href="#uitvoeringen">${T('Uitvoeringen', 'Versions')}</a></li>` : ''}<li><a href="#geschikt">${T('Geschikt voor', 'Suitable for')}</a></li>${practice ? `<li><a href="#praktijk">${T('In de praktijk', 'In practice')}</a></li>` : ''}${c.productPage?.compare ? `<li><a href="#vergelijking">${T('Vergelijking', 'Comparison')}</a></li>` : ''}${c.productPage?.faq?.length ? `<li><a href="#vragen">${T('Vragen', 'Questions')}</a></li>` : ''}<li><a href="#downloads">Downloads</a></li>
+  <li><a href="#toepassing">${T('Toepassing', 'Application')}</a></li><li><a href="#voordelen">${T('Voordelen', 'Benefits')}</a></li><li><a href="#specificaties">${T('Specificaties', 'Specifications')}</a></li>${p.sizes ? `<li><a href="#uitvoeringen">${T('Uitvoeringen', 'Versions')}</a></li>` : ''}<li><a href="#geschikt">${T('Geschikt voor', 'Suitable for')}</a></li>${practice ? `<li><a href="#praktijk">${T('In de praktijk', 'In practice')}</a></li>` : ''}${c.productPage?.compare && p.line !== 'Starter' ? `<li><a href="#vergelijking">${T('Vergelijking', 'Comparison')}</a></li>` : ''}${productFaq(c, p).length ? `<li><a href="#vragen">${T('Vragen', 'Questions')}</a></li>` : ''}<li><a href="#downloads">Downloads</a></li>
 </ul></div></nav>
 
 <section class="section section--tight"><div class="container product-detail">
@@ -412,8 +414,8 @@ export function productPage(p, ctx) {
     <section id="geschikt" class="pd-block"><h2>${T('Geschikt voor', 'Suitable for')}</h2><ul class="check-list">${p.suitableFor.map((b) => `<li>${icon('check')}${esc(b)}</li>`).join('')}</ul></section>
     ${c.applications?.length ? `<section id="toepassingen" class="pd-block"><h2>${T('Toepassingen', 'Applications')}</h2><ul class="check-list">${c.applications.map((b) => `<li>${icon('check')}${esc(b)}</li>`).join('')}</ul></section>` : ''}
     ${practice}
-    ${compareBlock(c)}
-    ${productFaqBlock(c)}
+    ${p.line === 'Starter' ? '' : compareBlock(c)}
+    ${productFaqBlock(c, p)}
     <section id="downloads" class="pd-block"><h2>Downloads</h2>
       ${(p.downloads || []).map((d) => `<a class="download" href="${esc(isEn() && d.hrefEn ? d.hrefEn : d.href)}" download>${icon('download')}<span>${esc(d.label)}</span></a>`).join('')}
       <p class="muted">${T('Een volledige datasheet ontvangt u op aanvraag.', 'A full datasheet is available on request.')} <a href="mailto:${site.email}?subject=${encodeURIComponent(`Datasheet ${p.name}`)}">${T('Vraag de datasheet aan', 'Request the datasheet')}</a>.</p>
@@ -446,7 +448,7 @@ ${related.length ? `<section class="section section--grey" aria-labelledby="h-re
       hasMerchantReturnPolicy: { '@type': 'MerchantReturnPolicy', applicableCountry: 'NL', returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow', merchantReturnDays: 5, returnMethod: 'https://schema.org/ReturnByMail', returnFees: 'https://schema.org/ReturnShippingFees', merchantReturnLink: site.baseUrl + localPath('/retourneren/') }
     };
   }
-  const faqLd = c.productPage?.faq?.length ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: c.productPage.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) } : null;
+  const faqLd = productFaq(c, p).length ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: productFaq(c, p).map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) } : null;
   return { path: urls.product(p), title: p.seoTitle || `${p.name} | EnviroFlow`, description: (orderable ? T(`${p.short} Online te bestellen of vraag een offerte aan bij EnviroFlow.`, `${p.short} Order online or request a quote from EnviroFlow.`) : T(`${p.short} Prijs op aanvraag. Vraag een offerte aan bij EnviroFlow.`, `${p.short} Price on request. Request a quote from EnviroFlow.`)).replace(/\s+/g, ' '), body, crumbs, jsonld: faqLd ? [ld, faqLd] : [ld], scripts: ['/assets/js/product.js'] };
 }
 
