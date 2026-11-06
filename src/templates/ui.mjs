@@ -344,6 +344,8 @@ function localizeLd(value, base) {
 export function layout(ctx, { path, altPath = path, title, description, body, crumbs = [], jsonld = [], noindex = false, bodyClass = '', scripts = [], ogImage, preload = '' }) {
   const { site } = ctx;
   const canonical = site.baseUrl + path;
+  if (description && description.length > 160) { const cut = description.slice(0, 157); description = cut.slice(0, cut.lastIndexOf(" ")).replace(/[\s,.;:–-]+$/, "") + "…"; }
+  const ogImg = site.baseUrl + (ogImage || "/assets/img/enviroflow-og.png");
   const lds = [...jsonld];
   if (crumbs.length) lds.push(breadcrumbLd(crumbs, site.baseUrl));
   const ldOut = isEn() ? lds.map((l) => localizeLd(l, site.baseUrl)) : lds;
@@ -361,7 +363,8 @@ ${altLinks}
 ${noindex ? '<meta name="robots" content="noindex, follow">' : ''}
 <meta property="og:type" content="website"><meta property="og:locale" content="${isEn() ? 'en_GB' : 'nl_NL'}"><meta property="og:locale:alternate" content="${isEn() ? 'nl_NL' : 'en_GB'}"><meta property="og:site_name" content="EnviroFlow">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canonical}">
-<meta property="og:image" content="${site.baseUrl}${ogImage || '/assets/img/enviroflow-og.png'}">
+<meta property="og:image" content="${ogImg}">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="${ogImg}">
 <meta name="theme-color" content="#0A3B2C">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 ${preload}

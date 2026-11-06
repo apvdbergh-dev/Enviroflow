@@ -22,7 +22,7 @@ export function home(ctx) {
   const body = `
 <section class="hero hero--slider" aria-labelledby="h-hero" data-hero>
   <div class="hero__slides" aria-hidden="true">
-    ${slides.map((sl, i) => `<div class="hero__slide${i === 0 ? ' is-active' : ''}" data-slide="${i}"><picture><source type="image/webp" ${i === 0 ? '' : 'data-'}srcset="/assets/img/hero/${sl.img}-800.webp 800w, /assets/img/hero/${sl.img}.webp 1600w" sizes="100vw"><img ${i === 0 ? '' : 'data-'}src="/assets/img/hero/${sl.img}.jpg" alt="" width="1600" height="900" ${i === 0 ? 'fetchpriority="high"' : ''} decoding="async"></picture></div>`).join('')}
+    ${slides.map((sl, i) => `<div class="hero__slide${i === 0 ? ' is-active' : ''}" data-slide="${i}"><picture><source type="image/webp" ${i === 0 ? '' : 'data-'}srcset="/assets/img/hero/${sl.img}-800.webp 800w, /assets/img/hero/${sl.img}.webp 1600w" sizes="100vw"><img ${i === 0 ? '' : 'data-'}src="/assets/img/hero/${sl.img}.jpg" alt="${esc(sl.title)}" width="1600" height="900" ${i === 0 ? 'fetchpriority="high"' : ''} decoding="async"></picture></div>`).join('')}
   </div>
   <div class="hero__scrim" aria-hidden="true"></div>
   <div class="container hero__inner">
@@ -163,7 +163,7 @@ ${ctaBand({ title: T('Weet u niet welke oplossing u nodig heeft?', "Not sure whi
   const website = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'EnviroFlow', url: site.baseUrl + localPath('/'), inLanguage: T('nl-NL', 'en'), publisher: { '@id': site.baseUrl + '/#organisatie' } };
   return {
     path: '/',
-    title: T('EnviroFlow | Opvangbakken, wasmatten en flexibele tanks voor bedrijven', 'EnviroFlow | Spill containment, wash mats and flexible tanks for businesses'),
+    title: T('Opvangbakken, wasmatten en flexibele tanks | EnviroFlow', 'Spill containment, wash mats and flexible tanks | EnviroFlow'),
     description: T("Flexibele lekbak voor IBC's en vaten, en flexibele tanks voor water, brandstof en mest. Online bestellen of persoonlijk advies van EnviroFlow.", 'Flexible spill trays for IBCs and drums, and flexible tanks for water, fuel and manure. Order online or get personal advice from EnviroFlow.'),
     body, jsonld: [org, website], bodyClass: 'page-home', scripts: ['/assets/js/hero.js'],
     // De eerste hero-foto is het grootste element: direct laten starten, vóór lettertypes en scripts.
@@ -266,7 +266,7 @@ ${groups.map((g) => `<section class="section section--tight" aria-labelledby="h-
   <div class="cat-grid">${categories.filter((c) => c.group === g.id).map((c) => categoryCard(c, ctx)).join('')}</div>
 </div></section>`).join('')}
 <div class="container section--tight">${adviceBlock(ctx.site)}</div>`;
-  return { path: '/producten/', title: T('Producten: opvangbakken, flexibele tanks en waterkeringen | EnviroFlow', 'Products: spill trays, flexible tanks and flood barriers | EnviroFlow'), description: T('Bekijk het assortiment van EnviroFlow: flexibele opvangbakken, wasmatten, brandwater-, drinkwater-, brandstof- en mesttanks, mobiele waterkeringen en maatwerk.', 'View the EnviroFlow range: flexible spill trays, wash mats, fire water, drinking water, fuel and manure tanks, mobile flood barriers and custom solutions.'), body, crumbs: [{ name: 'Home', url: '/' }, { name: T('Producten', 'Products'), url: '/producten/' }] };
+  return { path: '/producten/', title: T('Producten: opvangbakken, tanks en waterkeringen | EnviroFlow', 'Products: spill trays, tanks and flood barriers | EnviroFlow'), description: T('Bekijk het assortiment van EnviroFlow: flexibele opvangbakken, wasmatten, brandwater-, drinkwater-, brandstof- en mesttanks, mobiele waterkeringen en maatwerk.', 'View the EnviroFlow range: flexible spill trays, wash mats, fire water, drinking water, fuel and manure tanks, mobile flood barriers and custom solutions.'), body, crumbs: [{ name: 'Home', url: '/' }, { name: T('Producten', 'Products'), url: '/producten/' }] };
 }
 
 export function groupPage(g, ctx) {

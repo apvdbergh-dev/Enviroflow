@@ -86,7 +86,11 @@ for (const lang of LANGS) {
     const file = page.file ? join(out, page.file) : join(out, page.path, 'index.html');
     mkdirSync(dirname(file), { recursive: true });
     writeFileSync(file, html);
-    if (!page.noindex) sitemap.push({ path: localized.path, alt: page.path, d: stamp(localized.path, page) });
+    if (!page.noindex) {
+      // Inhoudsafbeeldingen (producten, artikelen, hero) voor de image-sitemap; logo/iconen niet.
+      const imgs = [...new Set([...String(page.body || "").matchAll(/(?:data-)?src="(\/assets\/img\/(?:producten|hero|kennisbank|artikelen|oplossingen)\/[^"]+\.jpg)"/g)].map((m) => m[1]))].slice(0, 20);
+      sitemap.push({ path: localized.path, alt: page.path, d: stamp(localized.path, page), imgs });
+    }
   };
 
   // Shop & kernpagina's
@@ -198,8 +202,8 @@ setLang('nl');
 const base = siteForRobots.baseUrl;
 writeFileSync(LASTMOD_FILE, JSON.stringify(Object.fromEntries(Object.entries(lastmod).sort()), null, 1) + '\n');
 writeFileSync(join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${sitemap.map((p) => `  <url><loc>${base}${p.path}</loc><lastmod>${p.d}</lastmod><xhtml:link rel="alternate" hreflang="nl" href="${base}${p.alt}"/><xhtml:link rel="alternate" hreflang="en" href="${base}${localPath(p.alt, 'en')}"/></url>`).join('\n')}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${sitemap.map((p) => `  <url><loc>${base}${p.path}</loc><lastmod>${p.d}</lastmod><xhtml:link rel="alternate" hreflang="nl" href="${base}${p.alt}"/><xhtml:link rel="alternate" hreflang="en" href="${base}${localPath(p.alt, 'en')}"/>${(p.imgs || []).map((i) => `<image:image><image:loc>${base}${i}</image:loc></image:image>`).join("")}</url>`).join('\n')}
 </urlset>
 `);
 writeFileSync(join(dist, 'robots.txt'), `User-agent: *
