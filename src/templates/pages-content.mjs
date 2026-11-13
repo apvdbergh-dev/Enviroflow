@@ -1,5 +1,6 @@
 // Oplossingen, sectoren, projecten, kennisbank, over ons, partners, contact, juridisch, zoeken en 404.
-import { esc, ph, icon, media, CARD_SIZES, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, faqBlock, insightFields } from './ui.mjs';
+import { esc, ph, icon, fmtEUR, media, CARD_SIZES, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, faqBlock, fillPrices, faqWithPrices, insightFields } from './ui.mjs';
+import { hasRealPrice } from '../lib/catalog.mjs';
 import { stepsList } from './pages-shop.mjs';
 import { T, numberLocale } from '../lib/i18n.mjs';
 
@@ -161,8 +162,12 @@ export function articlePage(a, ctx) {
   const prods = (a.products || []).map((id) => ctx.products.find((p) => p.id === id)).filter(Boolean);
   const others = ctx.articles.filter((x) => x.slug !== a.slug).sort((x, y) => (y.kicker === a.kicker) - (x.kicker === a.kicker)).slice(0, 3);
   const toc = a.sections.map((s) => `<li><a href="#${slugify(s.h)}">${esc(s.h)}</a></li>`).join('') + (a.faq?.length ? `<li><a href="#faq-title">${T('Veelgestelde vragen', 'Frequently asked questions')}</a></li>` : '');
-  const faq = faqBlock(a.faq);
-  const body = `
+  const faq = faqBlock(faqWithPrices(a.faq, ctx));
+  // Direct naar de producten: de categorieën waar het artikel over gaat, met de vanafprijs uit de webshop.
+  const shopCats = (a.categories || []).map((id) => ctx.categoryById[id]).filter((c) => c && c.active !== false).slice(0, 3);
+  const fromPrice = (c) => { const pr = ctx.products.filter((p) => p.category === c.id && hasRealPrice(p) && !p.quoteOnly).map((p) => p.price); return pr.length ? ` ${T('Vanaf', 'From')} ${fmtEUR(Math.min(...pr))} ${ctx.t.pricesExcl}.` : ''; };
+  const shop = shopCats.length ? `<nav class="kb-shop" aria-label="${T('Producten bij dit onderwerp', 'Products for this topic')}"><p class="kb-shop__title">${T('Direct naar de producten', 'Go straight to the products')}</p><ul class="index-list">${shopCats.map((c) => `<li><a href="${ctx.urls.category(c)}"><span class="index-list__name">${esc(c.name)}</span><span class="index-list__text">${esc(c.short)}${fromPrice(c)}</span>${icon('arrow')}</a></li>`).join('')}</ul></nav>` : '';
+  const body = fillPrices(`
 <article class="kb-article">
   <header class="kb-hero">
     <div class="container kb-hero__text">
@@ -178,6 +183,7 @@ export function articlePage(a, ctx) {
     <div class="kb-body">
       <details class="kb-toc-mobile"><summary>${T('In dit artikel', 'In this article')}${icon('chevron')}</summary><ol>${toc}</ol></details>
       <div class="kb-summary"><h2>${T('In het kort', 'In short')}</h2><ul class="check-list">${a.takeaways.map((x) => `<li>${icon('check')}<span>${inline(x)}</span></li>`).join('')}</ul></div>
+      ${shop}
       ${a.sections.map(sectionHtml).join('\n')}
       ${sourcesBlock(a.sources)}
     </div>
@@ -186,7 +192,7 @@ export function articlePage(a, ctx) {
 ${prods.length ? `<section class="section section--tight section--grey"><div class="container"><h2>${T('Producten bij dit artikel', 'Products for this article')}</h2><div class="product-grid product-grid--3">${prods.map((p) => productCard(p, ctx)).join('')}</div></div></section>` : ''}
 ${faq.html}
 <div class="container section--tight">${adviceBlock(ctx.site)}</div>
-<section class="section section--tight"><div class="container"><h2>${T('Lees ook', 'Read also')}</h2><div class="kb-grid kb-grid--3">${others.map((o) => articleCard(o)).join('')}</div></div></section>`;
+<section class="section section--tight"><div class="container"><h2>${T('Lees ook', 'Read also')}</h2><div class="kb-grid kb-grid--3">${others.map((o) => articleCard(o)).join('')}</div></div></section>`, ctx);
   const abs = (u) => ctx.site.baseUrl + u;
   // Gidspagina's (zoals /waarom-flexibel/) gebruiken dezelfde opbouw, maar met een eigen adres.
   const path = a.path || `/kennisbank/${a.slug}/`;

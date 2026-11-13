@@ -80,9 +80,9 @@ export default [
         h: 'With a flexible spill tray, check the fabric',
         p: [
           'Flexible spill trays often look alike, but the fabric can differ greatly. A black tray may be PVC or EVA. So always ask about two things: the coating and the weight of the fabric per square metre.',
-          '**The coating.** PVC is cheaper, but according to the manufacturer it is not resistant to petrol, engine oil, glycol and ethanol, among others. EVA is far more chemically resistant. TPU is more resistant still, but also much more expensive and mostly made to order.',
+          '**The coating.** PVC is cheaper, but according to the manufacturer it is not resistant to petrol and glycol (100%), among others. EVA is far more chemically resistant. TPU is more resistant still, but also much more expensive and mostly made to order.',
           '**The weight.** A heavier fabric is thicker and stronger. The manufacturer recommends at least 1,000 g/m², and 1,200 to 1,400 g/m² if trolleys or a forklift often drive over the base.',
-          'Our [flexible spill trays](' + L.opvang + ') are made of EVA fabric of 1,365 g/m². The resistance table is under Downloads on every product page.'
+          'Our [flexible spill trays](' + L.opvang + ') come in EVA fabric of 1,365 g/m² (Plus) and in PVC fabric of 900 g/m² (Starter). The resistance table for the Plus is under Downloads on the product page.'
         ]
       },
       {

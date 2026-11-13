@@ -43,17 +43,17 @@
       "id": "flexibele-opvangbakken",
       "group": "opvang",
       "slug": "flexibele-opvangbakken",
-      "name": "Flexibele opvangbakken",
+      "name": "Flexibele lekbakken",
       "menuName": "Flexibele lekbakken / opvangbakken",
       "active": true,
       "popular": true,
-      "image": "IBC's en vaten in flexibele opvangbakken in een bedrijfsruimte",
+      "image": "Vaten op pallets in een flexibele lekbak in een bedrijfshal",
       "short": "Lekbakken voor 1 t/m 10 IBC's, vaten, machines, voertuigen en werkplekken. Standaardmaten en maatwerk.",
       "seoTitle": "Flexibele lekbak kopen | Opvangbak voor IBC en vaten | EnviroFlow",
-      "seoDescription": "Flexibele lekbak voor IBC's, vaten, machines en voertuigen. Standaardmaten online bestellen of maatwerk op aanvraag. Advies van EnviroFlow.",
+      "seoDescription": "Flexibele lekbak voor IBC's, vaten, aggregaten en voertuigen. {aantal} modellen in PVC en EVA, vanaf {vanafprijs} excl. btw. Direct online bestellen of maatwerk.",
       "intro": [
         "Een lekkende IBC, een omgevallen vat of een machine die olie verliest: zonder opvang komt de vloeistof direct op de vloer, in de bodem of in het riool. Een flexibele opvangbak (spill containment berm) vangt lekkages op voordat ze schade aanrichten.",
-        "Een flexibele lekbak is licht, snel te plaatsen en makkelijk te verplaatsen. Daarmee is hij geschikt voor de tijdelijke opslag van vaten en IBC's, wisselende werkplekken en situaties waar een stalen lekbak niet past of te zwaar is."
+        "Een flexibele lekbak is licht, snel te plaatsen en makkelijk te verplaatsen. Leeg vouwt u hem weer op; daarom wordt hij ook wel opvouwbare of mobiele lekbak genoemd. Hij is geschikt voor de tijdelijke opslag van vaten en IBC's, wisselende werkplekken en situaties waar een stalen lekbak niet past of te zwaar is."
       ],
       "applications": [
         "IBC lekbak voor 1 t/m 10 IBC's",
@@ -64,8 +64,12 @@
       ],
       "faq": [
         {
+          "q": "Wat is een flexibele lekbak?",
+          "a": "Een flexibele lekbak is een opvangbak van sterk, gecoat weefsel met opstaande randen. Hij vangt lekkages en morsingen op onder IBC's, vaten, machines en voertuigen, zodat de vloeistof niet op de vloer, in de bodem of in het riool komt. Hij is licht, staat er in enkele minuten en is leeg op te vouwen. Daarom wordt hij ook opvouwbare of mobiele lekbak genoemd."
+        },
+        {
           "q": "Wat kost een flexibele lekbak?",
-          "a": "Bij EnviroFlow kost een flexibele lekbak vanaf € 386,10 excl. btw (Starter in PVC voor 1 vat). Een lekbak voor één IBC kost € 648,18 in PVC en € 840,06 in EVA. Voor grotere aantallen of maatwerk maken wij graag een offerte."
+          "a": "Bij EnviroFlow kost een flexibele lekbak vanaf {prijs:opvangbak-starter-1-vat} excl. btw (Starter in PVC voor 1 vat). Een lekbak voor één IBC kost {prijs:opvangbak-starter-1-ibc} in PVC en {prijs:opvangbak-1-ibc} in EVA. Voor grotere aantallen of maatwerk maken wij graag een offerte."
         },
         {
           "q": "Welke lekbak heb ik nodig voor een IBC?",
@@ -77,11 +81,19 @@
         },
         {
           "q": "Kan ik een flexibele lekbak online bestellen?",
-          "a": "Ja. De standaardmaten voor vaten en IBC's bestelt u direct in de webshop. Heeft u een andere maat nodig, bijvoorbeeld voor een machine of voertuig, of maatwerk? Vraag dan een offerte aan."
+          "a": "Ja. Alle standaardmaten bestelt u direct in de webshop: voor vaten, IBC's, een aggregaat, een tankwagen of een vrachtwagen. Heeft u een andere maat of maatwerk nodig? Vraag dan een offerte aan."
         },
         {
           "q": "Wat is het verschil tussen een flexibele en een stalen lekbak?",
           "a": "Een flexibele lekbak is gemaakt van technisch textiel met opstaande randen. Hij is licht, op te vouwen en snel te verplaatsen. Een stalen lekbak is zwaarder en bedoeld voor een vaste plek. Welke het beste past, hangt af van de vloeistof, de locatie en hoe lang de opslag nodig is."
+        },
+        {
+          "q": "Is een flexibele lekbak inrijdbaar met een heftruck of voertuig?",
+          "a": "Bij de Plus-uitvoering in EVA kan dat volgens de fabrikant. Haal de steunen weg en leg de opstaande wand plat; dan kan een heftruck of zelfs een vrachtwagen over de bodem rijden. Voor tankwagens en vrachtwagens zijn er lange modellen. Schade bij het in- en uitrijden valt niet onder de garantie."
+        },
+        {
+          "q": "Wat is de levertijd van een flexibele lekbak?",
+          "a": "De levertijd is ongeveer 4 weken. Heeft u haast? Vraag dan naar maten die sneller leverbaar zijn."
         },
         {
           "q": "Hoe groot moet mijn opvangbak zijn?",
@@ -156,9 +168,14 @@
           },
           {
             "h": "5. Prijs",
-            "p": "Een flexibele lekbak kost bij ons vanaf € 386,10 excl. btw (Starter voor 1 vat). Een IBC lekbak voor één IBC kost € 648,18 in PVC en € 840,06 in EVA. Alle standaardmaten bestelt u direct online; maatwerk is op aanvraag mogelijk."
+            "p": "Een flexibele lekbak kost bij ons vanaf {prijs:opvangbak-starter-1-vat} excl. btw (Starter voor 1 vat). Een IBC lekbak voor één IBC kost {prijs:opvangbak-starter-1-ibc} in PVC en {prijs:opvangbak-1-ibc} in EVA. Alle standaardmaten bestelt u direct online; maatwerk is op aanvraag mogelijk. De prijzen van alle maten staan in de tabel hierboven."
           }
         ]
+      },
+      "sizeTable": {
+        "title": "Flexibele lekbak: alle maten en prijzen",
+        "intro": "Elke maat is er in twee uitvoeringen: de Starter in PVC en de Plus in EVA. De afmetingen en de opvangcapaciteit zijn gelijk; alleen het weefsel verschilt.",
+        "note": "Opvangcapaciteit van de lege bak. Prijzen per stuk, exclusief transport. Klik op een prijs om het product te bekijken."
       }
     },
     {

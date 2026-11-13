@@ -1,5 +1,5 @@
 // Home, productoverzichten, productpagina's, winkelwagen, checkout, formulieren en keuzehulp.
-import { esc, ph, icon, fmtEUR, media, CARD_SIZES, priceBlock, faqBlock, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, insightFields } from './ui.mjs';
+import { esc, ph, icon, fmtEUR, media, CARD_SIZES, priceBlock, faqBlock, fillPrices, faqWithPrices, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, insightFields } from './ui.mjs';
 import { isOrderable, hasRealPrice } from '../lib/catalog.mjs';
 import { T, isEn, getLang, localPath } from '../lib/i18n.mjs';
 
@@ -12,7 +12,7 @@ export function home(ctx) {
   const minPrice = (catId) => Math.min(...products.filter((p) => p.category === catId && typeof p.price === 'number' && !p.quoteOnly).map((p) => p.price));
   const catUrl = (id) => urls.category(ctx.categoryById[id]);
   const slides = [
-    { img: 'hero-opvang', group: T('Opvang & spill containment', 'Spill containment'), short: T('Opvangbakken', 'Spill trays'), title: T("Flexibele opvangbakken voor IBC's en vaten", 'Flexible spill trays for IBCs and drums'), text: T(`Van 226 tot 22.575 liter opvangcapaciteit, met 7 jaar fabrieksgarantie. Online te bestellen vanaf ${fmtEUR(minPrice('flexibele-opvangbakken'))} excl. btw.`, `From 226 to 22,575 litres of containment capacity, with a 7-year manufacturer's warranty. Order online from ${fmtEUR(minPrice('flexibele-opvangbakken'))} excl. VAT.`), cta: T('Bekijk opvangbakken', 'View spill trays'), href: catUrl('flexibele-opvangbakken') },
+    { img: 'hero-opvang', group: T('Opvang & spill containment', 'Spill containment'), short: T('Lekbakken', 'Spill trays'), title: T("Flexibele lekbakken voor IBC's en vaten", 'Flexible spill trays for IBCs and drums'), text: T(`Van 226 tot 22.575 liter opvangcapaciteit, in PVC of in EVA met 7 jaar fabrieksgarantie. Online te bestellen vanaf ${fmtEUR(minPrice('flexibele-opvangbakken'))} excl. btw.`, `From 226 to 22,575 litres of containment capacity, in PVC or in EVA with a 7-year manufacturer's warranty. Order online from ${fmtEUR(minPrice('flexibele-opvangbakken'))} excl. VAT.`), cta: T('Bekijk flexibele lekbakken', 'View flexible spill trays'), href: catUrl('flexibele-opvangbakken') },
     { img: 'hero-brandwater', group: T('Flexibele tanks', 'Flexible tanks'), short: T('Brandwatertanks', 'Fire water tanks'), title: T('Brandwatertanks van 50 tot 300 m³', 'Fire water tanks from 50 to 300 m³'), text: T('De Waterbase F met verwarmingsmatten en isolatie, voor een bluswatervoorziening die ook in de winter werkt.', 'The Waterbase F with heating mats and insulation, for a fire water supply that also works in winter.'), cta: T('Bekijk de Waterbase F', 'View the Waterbase F'), href: urls.product(products.find((p) => p.id === 'exflo-waterbase-f')) },
     { img: 'hero-waterkering', group: T('Mobiel & calamiteiten', 'Mobile & emergency'), short: T('Waterkeringen', 'Flood barriers'), title: T('Mobiele waterkeringen tegen wateroverlast', 'Mobile flood barriers against flooding'), text: T('De Exflooder: sneller geplaatst dan een dijk van zandzakken. Hoogte na vullen tot 89 cm, gestapeld meer dan 140 cm.', 'The Exflooder: faster to install than a sandbag dike. Height after filling up to 89 cm, stacked more than 140 cm.'), cta: T('Bekijk waterkeringen', 'View flood barriers'), href: catUrl('mobiele-waterkeringen') },
     { img: 'hero-mest', group: T('Landbouw', 'Agriculture'), short: T('Mest & UAN', 'Manure & UAN'), title: T('Extra opslag voor mest en meststoffen', 'Extra storage for manure and fertilisers'), text: T('Mestzakken van 50 tot 300 m³ zonder bouwwerkzaamheden, met 10 jaar garantie op lekdichtheid.', 'Manure bags from 50 to 300 m³ without construction work, with a 10-year warranty on leak-tightness.'), cta: T('Bekijk mestzakken', 'View manure bags'), href: catUrl('mest-en-slurrytanks') }
@@ -98,7 +98,7 @@ export function home(ctx) {
 
 ${featured.length ? `<section class="section" aria-labelledby="h-featured">
   <div class="container">
-    <div class="section-head section-head--row"><div><p class="kicker">${T('Direct online te bestellen', 'Order directly online')}</p><h2 id="h-featured">${T('Uitgelichte producten', 'Featured products')}</h2></div><a class="link-arrow" href="/producten/opvang-en-spill-containment/flexibele-opvangbakken/">${T('Alle opvangbakken', 'All spill trays')} ${icon('arrow')}</a></div>
+    <div class="section-head section-head--row"><div><p class="kicker">${T('Direct online te bestellen', 'Order directly online')}</p><h2 id="h-featured">${T('Uitgelichte producten', 'Featured products')}</h2></div><a class="link-arrow" href="/producten/opvang-en-spill-containment/flexibele-opvangbakken/">${T('Alle flexibele lekbakken', 'All flexible spill trays')} ${icon('arrow')}</a></div>
     <div class="product-grid">${featured.map((p) => productCard(p, ctx)).join('')}</div>
   </div>
 </section>` : ''}
@@ -163,7 +163,7 @@ ${ctaBand({ title: T('Weet u niet welke oplossing u nodig heeft?', "Not sure whi
   const website = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'EnviroFlow', url: site.baseUrl + localPath('/'), inLanguage: T('nl-NL', 'en'), publisher: { '@id': site.baseUrl + '/#organisatie' } };
   return {
     path: '/',
-    title: T('Opvangbakken, wasmatten en flexibele tanks | EnviroFlow', 'Spill containment, wash mats and flexible tanks | EnviroFlow'),
+    title: T('Lekbakken, wasmatten en flexibele tanks | EnviroFlow', 'Spill containment, wash mats and flexible tanks | EnviroFlow'),
     description: T("Flexibele lekbak voor IBC's en vaten, en flexibele tanks voor water, brandstof en mest. Online bestellen of persoonlijk advies van EnviroFlow.", 'Flexible spill trays for IBCs and drums, and flexible tanks for water, fuel and manure. Order online or get personal advice from EnviroFlow.'),
     body, jsonld: [org, website], bodyClass: 'page-home', scripts: ['/assets/js/hero.js'],
     // De eerste hero-foto is het grootste element: direct laten starten, vóór lettertypes en scripts.
@@ -290,11 +290,39 @@ function guideBlock(g) {
   return `<section class="section section--tight" aria-labelledby="h-gids"><div class="container container--narrow"><h2 id="h-gids">${esc(g.title)}</h2>${g.intro ? `<p class="lead">${md(g.intro)}</p>` : ''}${g.items.map((i) => `<h3>${esc(i.h)}</h3><p>${md(i.p)}</p>`).join('')}</div></section>`;
 }
 
+// Maten- en prijstabel op de categoriepagina: één rij per maat met de prijs per uitvoering.
+// De rijen komen uit de productgegevens, zodat maten en prijzen altijd gelijk zijn aan de webshop.
+function sizeTableBlock(c, list, ctx) {
+  const cfg = c.sizeTable;
+  if (!cfg) return '';
+  const rows = new Map();
+  for (const p of list) {
+    const key = p.specs?.afmetingen;
+    if (!key || !hasRealPrice(p) || p.quoteOnly) continue;
+    if (!rows.has(key)) rows.set(key, {});
+    rows.get(key)[p.line === 'Starter' ? 'starter' : 'plus'] = p;
+  }
+  if (!rows.size) return '';
+  const label = (p) => { const x = p.name.split(/ voor | for /).pop(); return x.charAt(0).toUpperCase() + x.slice(1); };
+  const price = (p) => (p ? `<a href="${ctx.urls.product(p)}" aria-label="${esc(p.name)}: ${fmtEUR(p.price)}"><span data-price-excl="${p.price}">${fmtEUR(p.price)}</span></a>` : '–');
+  const body = [...rows.values()].map((r) => {
+    const p = r.plus || r.starter;
+    return `<tr><th scope="row">${esc(label(p))}</th><td>${esc(p.specs.afmetingen.replace(/\s*\([^)]*\)\s*$/, ''))}</td><td>${esc(p.specs.capaciteit || '')}</td><td data-label="Starter (PVC)">${price(r.starter)}</td><td data-label="Plus (EVA)">${price(r.plus)}</td></tr>`;
+  }).join('');
+  const head = [T('Geschikt voor', 'Suitable for'), T('Afmetingen (l × b × h)', 'Dimensions (l × w × h)'), T('Opvangcapaciteit', 'Containment capacity'), 'Starter (PVC)', 'Plus (EVA)'];
+  return `<section class="section section--tight" aria-labelledby="h-maten"><div class="container container--narrow"><h2 id="h-maten">${esc(cfg.title)}</h2>${cfg.intro ? `<p>${md(cfg.intro)}</p>` : ''}
+  <div class="table-scroll"><table class="kb-table kb-table--sizes"><thead><tr>${head.map((h) => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${body}</tbody></table></div>
+  <p class="kb-note">${esc(cfg.note || '')} ${T('Prijzen', 'Prices')} <span data-vat-label>${ctx.t.pricesExcl}</span>.</p></div></section>`;
+}
+
 export function categoryPage(c, ctx) {
   const { products, groupById, urls, site } = ctx;
   const g = groupById[c.group];
   const list = products.filter((p) => p.category === c.id);
-  const faq = faqBlock(c.faq);
+  const faq = faqBlock(faqWithPrices(c.faq, ctx));
+  // In de meta-beschrijving mogen {aantal} en {vanafprijs} staan; die volgen de actuele productgegevens.
+  const priced = list.filter((p) => hasRealPrice(p) && !p.quoteOnly);
+  const fill = (x) => String(x || '').replace('{aantal}', list.length).replace('{vanafprijs}', priced.length ? fmtEUR(Math.min(...priced.map((p) => p.price))) : '');
   const crumbs = [{ name: 'Home', url: '/' }, { name: T('Producten', 'Products'), url: '/producten/' }, { name: g.name, url: urls.group(g) }, { name: c.name, url: urls.category(c) }];
   const head = `<section class="page-head"><div class="container page-head__grid"><div>
     <p class="eyebrow">${esc(g.name)}</p><h1>${esc(c.h1 || c.name)}</h1>
@@ -311,11 +339,11 @@ export function categoryPage(c, ctx) {
     <section class="section section--tight"><div class="container"><div class="custom-hint">${icon('ruler')}<div><h2>${T('Geen passende maat of uitvoering?', 'No suitable size or version?')}</h2><p>${T('Wij bekijken wat er op maat mogelijk is.', 'We look at what is possible as a custom solution.')}</p></div><a class="btn btn--ghost" href="/maatwerk-aanvragen/">${T('Vraag maatwerk aan', 'Request custom-made')}</a></div></div></section>`;
   }
   // Uit de kennisbank: artikelen over deze categorie (interne links helpen bezoekers en zoekmachines).
-  const reads = (ctx.articles || []).filter((a) => (a.categories || []).includes(c.id)).slice(0, 3);
+  const reads = (ctx.articles || []).filter((a) => (a.categories || []).includes(c.id)).slice(0, 5);
   const kb = reads.length ? `<section class="section section--tight" aria-labelledby="h-kb"><div class="container"><h2 id="h-kb" class="subhead">${T('Uit de kennisbank', 'From the knowledge base')}</h2><ul class="link-list">${c.productPage?.compare ? `<li><a href="/waarom-flexibel/">${T('Waarom flexibel? Flexibele, stalen en kunststof lekbakken vergeleken', 'Why flexible? Flexible, steel and plastic spill trays compared')}</a></li>` : ''}${reads.map((a) => `<li><a href="/kennisbank/${a.slug}/">${esc(a.title)}</a></li>`).join('')}</ul></div></section>` : '';
-  const body = `${head}${main}${guideBlock(c.guide)}${faq.html}${kb}<div class="container section--tight">${adviceBlock(site)}</div>`;
+  const body = `${head}${main}${c.isCustom ? '' : sizeTableBlock(c, list, ctx)}${fillPrices(guideBlock(c.guide), ctx)}${faq.html}${kb}<div class="container section--tight">${adviceBlock(site)}</div>`;
   const itemList = list.length ? { '@context': 'https://schema.org', '@type': 'ItemList', name: c.name, itemListElement: list.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: site.baseUrl + localPath(urls.product(p)), name: p.name })) } : null;
-  return { path: urls.category(c), title: c.seoTitle || `${c.name} | EnviroFlow`, description: c.seoDescription || c.short, body, crumbs, jsonld: [faq.ld, itemList].filter(Boolean), scripts: c.isCustom ? ['/assets/js/forms.js'] : ['/assets/js/listing.js'] };
+  return { path: urls.category(c), title: c.seoTitle || `${c.name} | EnviroFlow`, description: fill(c.seoDescription || c.short), ogImage: c.imageSrc || undefined, body, crumbs, jsonld: [faq.ld, itemList].filter(Boolean), scripts: c.isCustom ? ['/assets/js/forms.js'] : ['/assets/js/listing.js'] };
 }
 
 /* ================================================================ PRODUCT */
@@ -451,6 +479,7 @@ ${related.length ? `<section class="section section--grey" aria-labelledby="h-re
   if (hasRealPrice(p) && !p.quoteOnly) {
     ld.offers = {
       '@type': 'Offer', url: site.baseUrl + urls.product(p), priceCurrency: 'EUR', price: p.price.toFixed(2),
+      availability: 'https://schema.org/BackOrder',
       priceSpecification: { '@type': 'UnitPriceSpecification', price: p.price.toFixed(2), priceCurrency: 'EUR', valueAddedTaxIncluded: false },
       seller: { '@type': 'Organization', name: 'EnviroFlow' },
       // Volgens /retourneren/: retour melden binnen 5 werkdagen, terugsturen per post op kosten van de klant.
@@ -458,7 +487,7 @@ ${related.length ? `<section class="section section--grey" aria-labelledby="h-re
     };
   }
   const faqLd = productFaq(c, p).length ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: productFaq(c, p).map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) } : null;
-  return { path: urls.product(p), title: p.seoTitle || `${p.name} | EnviroFlow`, description: (orderable ? T(`${p.short} Online te bestellen of vraag een offerte aan bij EnviroFlow.`, `${p.short} Order online or request a quote from EnviroFlow.`) : T(`${p.short} Prijs op aanvraag. Vraag een offerte aan bij EnviroFlow.`, `${p.short} Price on request. Request a quote from EnviroFlow.`)).replace(/\s+/g, ' '), body, crumbs, jsonld: faqLd ? [ld, faqLd] : [ld], scripts: ['/assets/js/product.js'] };
+  return { path: urls.product(p), title: p.seoTitle || `${p.name} | EnviroFlow`, description: (orderable ? T(`${p.short} Online te bestellen of vraag een offerte aan bij EnviroFlow.`, `${p.short} Order online or request a quote from EnviroFlow.`) : T(`${p.short} Prijs op aanvraag. Vraag een offerte aan bij EnviroFlow.`, `${p.short} Price on request. Request a quote from EnviroFlow.`)).replace(/\s+/g, ' '), ogImage: images.find((i) => i.src)?.src, body, crumbs, jsonld: faqLd ? [ld, faqLd] : [ld], scripts: ['/assets/js/product.js'] };
 }
 
 /* ================================================================ CART & CHECKOUT */

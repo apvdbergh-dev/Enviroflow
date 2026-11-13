@@ -119,16 +119,16 @@ export default [
         table: {
           head: ['Uitvoering', 'Starter (PVC)', 'Plus (EVA)'],
           rows: [
-            ['1 vat', '€ 386,10', '€ 417,69'],
-            ['2 vaten', '€ 507,78', '€ 589,68'],
-            ['4 vaten', '€ 513,63', '€ 717,21'],
-            ['1 IBC', '€ 648,18', '€ 840,06'],
-            ["2 IBC's", '€ 868,14', '€ 1.106,82'],
-            ["4 IBC's", '€ 1.154,79', '€ 1.495,26'],
-            ["10 IBC's", '€ 1.667,25', '€ 2.067,39'],
-            ['Aggregaat (3 × 1,5 m)', '€ 730,08', '€ 983,97'],
-            ['Tankwagen', '€ 2.764,71', '€ 3.973,32'],
-            ['Vrachtwagen', '€ 4.586,40', '€ 6.440,85']
+            ['1 vat', '{prijs:opvangbak-starter-1-vat}', '{prijs:opvangbak-1-vat}'],
+            ['2 vaten', '{prijs:opvangbak-starter-2-vaten}', '{prijs:opvangbak-2-vaten}'],
+            ['4 vaten', '{prijs:opvangbak-starter-4-vaten}', '{prijs:opvangbak-4-vaten}'],
+            ['1 IBC', '{prijs:opvangbak-starter-1-ibc}', '{prijs:opvangbak-1-ibc}'],
+            ["2 IBC's", '{prijs:opvangbak-starter-2-ibc}', '{prijs:opvangbak-2-ibc}'],
+            ["4 IBC's", '{prijs:opvangbak-starter-4-ibc}', '{prijs:opvangbak-4-ibc}'],
+            ["10 IBC's", '{prijs:opvangbak-starter-10-ibc}', '{prijs:opvangbak-10-ibc}'],
+            ['Aggregaat (3 × 1,5 m)', '{prijs:opvangbak-starter-aggregaat}', '{prijs:opvangbak-aggregaat}'],
+            ['Tankwagen', '{prijs:opvangbak-starter-voertuigen-tankwagen}', '{prijs:opvangbak-voertuigen-tankwagen}'],
+            ['Vrachtwagen', '{prijs:opvangbak-starter-voertuigen-vrachtwagen}', '{prijs:opvangbak-voertuigen-vrachtwagen}']
           ],
           note: 'Prijzen per stuk, exclusief btw en transport. Actuele prijzen staan altijd bij het product in de webshop.'
         }
@@ -164,7 +164,7 @@ export default [
       { q: 'Wat is het verschil tussen een PVC en een EVA lekbak?', a: 'Het verschil zit in de coating van het weefsel. PVC (900 g/m²) is voordelig en licht, en bedoeld voor kortdurend contact met chemicaliën. EVA (1.365 g/m²) is sterker, tegen veel meer stoffen bestand, zoals diesel en glycol, en heeft 7 jaar fabrieksgarantie.' },
       { q: 'Is een PVC lekbak geschikt voor diesel?', a: 'Nee. Volgens de fabrikant is de PVC-uitvoering niet geschikt voor diesel en benzine. Kies voor brandstoffen een lekbak in EVA.' },
       { q: 'Is een EVA lekbak beter dan PVC?', a: 'Voor de meeste bedrijfssituaties wel: EVA is sterker en breder chemisch bestendig, en heeft een langere fabrieksgarantie. PVC is een goede, voordeligere keuze voor vloeistoffen die PVC goed verdraagt, zoals motorolie, antivries en accuzuur.' },
-      { q: 'Hoeveel goedkoper is een PVC lekbak?', a: 'Bij dezelfde maat is de Starter in PVC bij ons ongeveer 8 tot 30% goedkoper dan de Plus in EVA. Een opvangbak voor 1 IBC kost in PVC € 648,18 en in EVA € 840,06 (excl. btw).' },
+      { q: 'Hoeveel goedkoper is een PVC lekbak?', a: 'Bij dezelfde maat is de Starter in PVC bij ons ongeveer 8 tot 30% goedkoper dan de Plus in EVA. Een opvangbak voor 1 IBC kost in PVC {prijs:opvangbak-starter-1-ibc} en in EVA {prijs:opvangbak-1-ibc} (excl. btw).' },
       { q: 'Kan ik een PVC lekbak buiten gebruiken?', a: 'Dat kan, maar de fabrikant geeft voor PVC geen temperatuurbereik op. EVA blijft volgens de fabrikant bruikbaar van −40 °C tot +70 °C. Staat de bak het hele jaar buiten, dan adviseren wij EVA.' }
     ],
     categories: ['flexibele-opvangbakken'],
@@ -177,8 +177,8 @@ export default [
     kicker: 'Opvang',
     title: 'Flexibele lekbak: wat is het en wanneer kiest u ervoor?',
     seoTitle: 'Flexibele lekbak: wat is het en wanneer kiest u ervoor? | EnviroFlow',
-    description: 'Wat is een flexibele lekbak, hoe werkt hij en wanneer past hij beter dan een stalen lekbak? Met maten, materiaal, regels (PGS 15) en praktijktips.',
-    updated: UPDATED,
+    description: 'Wat is een flexibele lekbak, hoe werkt hij en wanneer past hij beter dan een stalen lekbak? Met maten, prijzen, PVC of EVA, regels (PGS 15) en praktijktips.',
+    updated: '2026-11-13',
     image: { src: IMG + 'sfeer-ibc-hal.jpg', alt: "IBC's in een flexibele lekbak in een bedrijfshal" },
     intro: 'Een flexibele lekbak is een opvangbak van stevig technisch textiel met opstaande randen. Staat er een IBC, vat of machine in en gaat er iets mis, dan blijft de vloeistof in de bak. Niet op de vloer, niet in de bodem en niet in het riool. Hieronder leest u hoe zo’n bak werkt, wanneer hij beter past dan een stalen lekbak en waar u op let bij het kiezen.',
     takeaways: [
@@ -193,7 +193,7 @@ export default [
         h: 'Hoe werkt een flexibele lekbak?',
         p: [
           'De bodem en de opstaande randen vormen samen één bak. Lekt er iets uit een IBC, een vat of een machine, dan blijft het binnen de randen. Daarna zuigt of pompt u de vloeistof op en voert u die af zoals voor die stof is voorgeschreven.',
-          'De opvangbakken die wij leveren, zijn gemaakt van polyesterweefsel met een EVA-coating van 1.365 g/m². Volgens de fabrikant is dat sterker en chemisch beter bestand dan het PVC-weefsel van 650 tot 900 g/m² dat vaak voor standaard lekbakken wordt gebruikt.'
+          'Wij leveren de lekbakken in twee uitvoeringen. De **Plus** is gemaakt van polyesterweefsel met een EVA-coating van 1.365 g/m². Volgens de fabrikant is dat sterker en chemisch beter bestand dan het PVC-weefsel van 650 tot 900 g/m² dat vaak voor standaard lekbakken wordt gebruikt. De **Starter** is de voordelige uitvoering in PVC-weefsel van 900 g/m², bedoeld voor kortdurend contact met chemicaliën. Meer hierover leest u in [PVC of EVA lekbak: wat is het verschil?](/kennisbank/verschil-pvc-en-eva-lekbak/)'
         ],
         image: { src: IMG + 'opvangbak-leeg.jpg', alt: 'Lege flexibele opvangbak met opstaande randen', caption: 'Een lege opvangbak: de bodem en de opstaande randen vormen samen de bak.' }
       },
@@ -213,7 +213,7 @@ export default [
       },
       {
         h: 'Welke maten zijn er?',
-        p: [`Er zijn standaardmaten voor vaten, IBC's, aggregaten en voertuigen. Past geen van deze maten, dan is maatwerk mogelijk. Bekijk alle [flexibele opvangbakken](${L.opvang}).`],
+        p: [`Er zijn standaardmaten voor vaten, IBC's, aggregaten en voertuigen, elk in PVC (Starter) en in EVA (Plus). Past geen van deze maten, dan is maatwerk mogelijk. Bekijk alle [flexibele lekbakken met maten en prijzen](${L.opvang}).`],
         table: {
           head: ['Uitvoering', 'Opvangcapaciteit', 'Afmetingen (l × b × h)'],
           rows: [
@@ -231,8 +231,15 @@ export default [
         }
       },
       {
+        h: 'Wat kost een flexibele lekbak?',
+        p: [
+          'De prijs hangt af van de maat en van het weefsel. De Starter in PVC is de voordeligste uitvoering: een lekbak voor 1 vat kost {prijs:opvangbak-starter-1-vat} en een lekbak voor 1 IBC {prijs:opvangbak-starter-1-ibc}. De Plus in EVA kost voor 1 IBC {prijs:opvangbak-1-ibc}. Alle prijzen zijn exclusief btw en transport.',
+          `De prijzen van alle maten staan in de [maten- en prijstabel bij de flexibele lekbakken](${L.opvang}#h-maten).`
+        ]
+      },
+      {
         h: 'Is de lekbak bestand tegen mijn vloeistof?',
-        p: ['Dat verschilt per stof. De fabrikant heeft een bestendigheidstabel waarin per vloeistof staat hoe het materiaal zich houdt bij twee jaar contact: A (goed), B (matig) of C (niet geschikt). De meeste oliën en veel chemicaliën scoren goed, maar niet alles. Zoutzuur 32% bijvoorbeeld staat op C.'],
+        p: ['Dat verschilt per stof en per uitvoering. Voor de Plus (EVA) heeft de fabrikant een bestendigheidstabel waarin per vloeistof staat hoe het materiaal zich houdt bij twee jaar contact: A (goed), B (matig) of C (niet geschikt). De meeste oliën en veel chemicaliën scoren goed, maar niet alles. Zoutzuur 32% bijvoorbeeld staat op C. De Starter (PVC) is bedoeld voor kortdurend contact en is volgens de fabrikant niet geschikt voor onder meer benzine en diesel.'],
         callout: { t: 'Tip', d: 'Houd het veiligheidsinformatieblad (VIB) van de stof bij de hand. Daarin staat precies welke stof het is. Stuur het mee met uw aanvraag, dan controleren wij de bestendigheid voor u.' }
       },
       {
@@ -244,7 +251,7 @@ export default [
       },
       {
         h: 'Binnen of buiten?',
-        p: ['Een flexibele lekbak kan buiten staan. Volgens de fabrikant blijft het materiaal bruikbaar van −40 °C tot +70 °C. Buiten komt er wel regenwater in de bak, en dat gaat af van de opvangcapaciteit. Kies buiten liever een ruimere bak of zet de opslag onder een overkapping.']
+        p: ['Een flexibele lekbak kan buiten staan. Voor de Plus (EVA) geeft de fabrikant aan dat het weefsel bruikbaar blijft van −40 °C tot +70 °C; voor de Starter (PVC) is geen temperatuurbereik opgegeven. Buiten komt er wel regenwater in de bak, en dat gaat af van de opvangcapaciteit. Kies buiten liever een ruimere bak of zet de opslag onder een overkapping.']
       },
       {
         h: 'Gebruik en controle',
@@ -258,9 +265,11 @@ export default [
       }
     ],
     faq: [
-      { q: 'Hoe lang gaat een flexibele lekbak mee?', a: 'De fabrikant geeft 7 jaar garantie op de opvangbakken die wij leveren. Hoe lang hij in de praktijk meegaat, hangt af van het gebruik, de vloeistof en of hij binnen of buiten staat.' },
-      { q: 'Kan een flexibele lekbak buiten staan?', a: 'Ja. Het materiaal blijft volgens de fabrikant bruikbaar van −40 °C tot +70 °C. Houd er rekening mee dat regenwater de beschikbare opvangcapaciteit verkleint.' },
-      { q: 'Is een flexibele lekbak geschikt voor brandbare vloeistoffen?', a: 'Volgens de fabrikant zijn de opvangbakken geschikt voor ATEX-zone 2 (categorie 3G), ook voor stoffen uit subgroep IIA, IIB en IIC. Welke eisen voor uw opslag gelden, bepaalt het bevoegd gezag.' },
+      { q: 'Hoe heet een flexibele lekbak nog meer?', a: 'Een flexibele lekbak wordt ook opvouwbare lekbak, mobiele lekbak of flexibele opvangbak genoemd. In het Engels heet hij spill containment berm.' },
+      { q: 'Wat kost een flexibele lekbak?', a: 'De Starter in PVC is er vanaf {prijs:opvangbak-starter-1-vat} excl. btw (voor 1 vat). Voor 1 IBC betaalt u {prijs:opvangbak-starter-1-ibc} in PVC en {prijs:opvangbak-1-ibc} in EVA. De prijzen van alle maten staan bij de flexibele lekbakken in de webshop.' },
+      { q: 'Hoe lang gaat een flexibele lekbak mee?', a: 'Op de Plus-uitvoering in EVA geeft de fabrikant 7 jaar garantie. Hoe lang een lekbak in de praktijk meegaat, hangt af van het gebruik, de vloeistof en of hij binnen of buiten staat.' },
+      { q: 'Kan een flexibele lekbak buiten staan?', a: 'Ja. Het EVA-weefsel van de Plus-uitvoering blijft volgens de fabrikant bruikbaar van −40 °C tot +70 °C. Houd er rekening mee dat regenwater de beschikbare opvangcapaciteit verkleint.' },
+      { q: 'Is een flexibele lekbak geschikt voor brandbare vloeistoffen?', a: 'Volgens de fabrikant is de Plus-uitvoering in EVA geschikt voor ATEX-zone 2 (categorie 3G), ook voor stoffen uit subgroep IIA, IIB en IIC. De Starter in PVC is niet geschikt voor benzine en diesel. Welke eisen voor uw opslag gelden, bepaalt het bevoegd gezag.' },
       { q: 'Kan ik een lekbak op maat laten maken?', a: 'Ja. Geef de afmetingen van de ruimte of de machine door en vertel wat erin komt te staan. Wij vragen bij de fabrikant na wat mogelijk is.' }
     ],
     categories: ['flexibele-opvangbakken'],
@@ -281,7 +290,7 @@ export default [
       'Voor één volle IBC van 1.000 liter is volgens PGS 15 minimaal 1.100 liter opvang nodig.',
       "Bij meerdere IBC's telt 110% van de grootste, of 10% van het totaal als dat meer is.",
       'Buiten vult regenwater de bak. Houd daar ruimte voor.',
-      "Flexibele IBC lekbakken zijn er voor 1, 2, 4 en 10 IBC's, en op maat."
+      "[Flexibele lekbakken voor IBC's](/producten/opvang-en-spill-containment/flexibele-opvangbakken/) zijn er voor 1, 2, 4 en 10 IBC's, in PVC en EVA, en op maat."
     ],
     sections: [
       {
@@ -396,7 +405,7 @@ export default [
         h: 'Eén grote bak of meerdere kleine?',
         p: [
           'Beide mag. Volgens PGS 15 kunt u de opvang voor de hele opslag in één keer regelen, of met kleinere lekbakken per stelling, pallet of verpakking. Elke bak moet dan wel voldoen voor wat erin staat.',
-          `Meerdere kleine bakken zijn handig als de opslag verspreid staat of vaak verandert. Eén grote bak is overzichtelijk bij een vaste opslag. Bekijk de [maten van de flexibele opvangbakken](${L.opvang}).`
+          `Meerdere kleine bakken zijn handig als de opslag verspreid staat of vaak verandert. Eén grote bak is overzichtelijk bij een vaste opslag. Bekijk de [maten en prijzen van de flexibele lekbakken](${L.opvang}).`
         ],
         image: { src: IMG + 'opvangbak-10-ibc.jpg', alt: "Flexibele opvangbak voor tien IBC's", caption: "Eén bak voor tien IBC's: 5.836 liter opvangcapaciteit." }
       },
@@ -753,7 +762,7 @@ export default [
       },
       {
         h: 'Opvang onder het aggregaat',
-        p: [`Een aggregaat kan ook zelf lekken, bijvoorbeeld bij een storing of bij het bijvullen. Een [opvangbak voor aggregaten](${L.opvang}) van 2,91 × 1,50 m vangt 1.451 liter op en neemt u zo mee naar het volgende project.`],
+        p: [`Een aggregaat kan ook zelf lekken, bijvoorbeeld bij een storing of bij het bijvullen. Een [flexibele lekbak voor aggregaten](${L.opvang}) van 2,91 × 1,50 m vangt 1.451 liter op en neemt u zo mee naar het volgende project.`],
         image: { src: IMG + 'opvangbak-aggregaat.jpg', alt: 'Aggregaat in een flexibele opvangbak', caption: 'Een aggregaat in een flexibele opvangbak: 1.451 liter opvangcapaciteit.' }
       },
       {

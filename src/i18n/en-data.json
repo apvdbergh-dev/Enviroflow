@@ -31,10 +31,6 @@
   "nl": "2. PVC of EVA",
   "en": "2. PVC or EVA"
  },
- "01bc5da7f6b2": {
-  "nl": "Flexibele opvangbak voor aggregaat (3 × 1,5 m)",
-  "en": "Flexible spill tray for generator (3 × 1.5 m)"
- },
  "01c62366d9a4": {
   "nl": "De Starter is de voordelige uitvoering van de flexibele opvangbak voor 4 vaten. Hij heeft dezelfde maten en opbouw als de Plus-uitvoering, maar is gemaakt van oranje polyesterweefsel met een PVC-coating van 900 g/m².",
   "en": "The Starter is the economical version of the flexible spill containment berm for 4 drums. It has the same sizes and construction as the Plus version, but is made of orange polyester fabric with a PVC coating of 900 g/m²."
@@ -51,10 +47,6 @@
   "nl": "5.000 l",
   "en": "5,000 l"
  },
- "02829313ae95": {
-  "nl": "Flexibele opvangbak met één vat",
-  "en": "Flexible spill tray with one drum"
- },
  "0295704a13ae": {
   "nl": "Diameter 94 cm; lengte 5 m, 10 m, 15 m",
   "en": "Diameter 94 cm; length 5 m, 10 m, 15 m"
@@ -70,6 +62,10 @@
  "02f57b784d8a": {
   "nl": "Flexibele UAN-tanks voor de opslag van vloeibare meststoffen op het agrarisch bedrijf. Prijs op aanvraag.",
   "en": "Flexible UAN tanks for storing liquid fertilisers on the farm. Price on request."
+ },
+ "035332326c20": {
+  "nl": "Flexibele lekbak Starter (PVC) voor tankwagen",
+  "en": "Flexible spill containment berm Starter (PVC) for tanker truck"
  },
  "035eebf4e0e7": {
   "nl": "Vermogen verwarmingsmatten",
@@ -118,6 +114,10 @@
  "054217f4add7": {
   "nl": "50.000 liter",
   "en": "50,000 litres"
+ },
+ "0558490c3b26": {
+  "nl": "Flexibele lekbak Starter (PVC) voor 1 vat",
+  "en": "Flexible spill containment berm Starter (PVC) for 1 drum"
  },
  "05bef362cd73": {
   "nl": "232 kg",
@@ -275,10 +275,6 @@
   "nl": "3,60 × 2,88 m",
   "en": "3.60 × 2.88 m"
  },
- "0fa07566d2f4": {
-  "nl": "Flexibele opvangbak voor 4 IBC's",
-  "en": "Flexible spill tray for 4 IBCs"
- },
  "101da9fa9b36": {
   "nl": "Opslag van digestaat en slurry",
   "en": "Storage of digestate and slurry"
@@ -286,6 +282,10 @@
  "10917e754274": {
   "nl": "Hydronion tank tijdens een brandweeroefening",
   "en": "Hydronion tank during a fire service exercise"
+ },
+ "10a4ddcb3308": {
+  "nl": "Inrijdbare flexibele lekbak voor een vrachtwagen",
+  "en": "Drive-in spill tray for a lorry"
  },
  "10c64e1e5b88": {
   "nl": "De plek moet vlak zijn en vrij van scherpe voorwerpen. De fabrikant raadt een zandbed aan. De precieze eisen aan de ondergrond staan in de datasheet, die u bij ons kunt opvragen.",
@@ -455,10 +455,6 @@
   "nl": "7.000 liter",
   "en": "7,000 litres"
  },
- "1928cf475b44": {
-  "nl": "Een flexibele lekbak is licht, snel te plaatsen en makkelijk te verplaatsen. Daarmee is hij geschikt voor de tijdelijke opslag van vaten en IBC's, wisselende werkplekken en situaties waar een stalen lekbak niet past of te zwaar is.",
-  "en": "A flexible spill tray is light, quick to set up and easy to move. This makes it suitable for the temporary storage of drums and IBCs, changing work sites and situations where a steel spill tray does not fit or is too heavy."
- },
  "193dbce2d991": {
   "nl": "Bouw- en evenemententerreinen",
   "en": "Construction and event sites"
@@ -471,10 +467,6 @@
   "nl": "9,62 × 3,66 × 0,20 m (l × b × h)",
   "en": "9.62 × 3.66 × 0.20 m (l × w × h)"
  },
- "199839e54ca5": {
-  "nl": "Flexibele opvangbak voor een aggregaat",
-  "en": "Flexible spill tray for a generator"
- },
  "19aff91c9a59": {
   "nl": "Ontwikkeld voor inzet bij chemische, biologische, radiologische en nucleaire (CBRN) dreigingen. De mat vangt decontaminatievloeistof en verontreinigd water op bij het reinigen van militaire, hulpverlenings- en civiele voertuigen, in het veld of op een vaste post.",
   "en": "Developed for use in chemical, biological, radiological and nuclear (CBRN) threats. The mat collects decontamination fluid and contaminated water when cleaning military, emergency service and civilian vehicles, in the field or at a fixed post."
@@ -482,6 +474,10 @@
  "19e0c4677f42": {
   "nl": "Max. afmetingen gevuld (diameter × hoogte)",
   "en": "Max. dimensions when filled (diameter × height)"
+ },
+ "1a41b75c718e": {
+  "nl": "Is een flexibele lekbak inrijdbaar met een heftruck of voertuig?",
+  "en": "Can a forklift or vehicle drive into a flexible spill tray?"
  },
  "1a4354c4e91a": {
   "nl": "Mobiele decontaminatieposten",
@@ -607,6 +603,10 @@
   "nl": "Gemeenten en waterschappen",
   "en": "Municipalities and water boards"
  },
+ "20754f7436c5": {
+  "nl": "Flexibele lekbak met twee vaten",
+  "en": "Flexible spill tray with two drums"
+ },
  "20e8c4907a56": {
   "nl": "10 jaar garantie op lekdichtheid",
   "en": "10-year warranty on leak-tightness"
@@ -638,10 +638,6 @@
  "2200cb178177": {
   "nl": "Mest en meststoffen opslaan",
   "en": "Storing manure and fertilisers"
- },
- "2227cb6f918d": {
-  "nl": "Flexibele opvangbak voor 10 IBC's",
-  "en": "Flexible spill tray for 10 IBCs"
  },
  "2234af7a41b6": {
   "nl": "Zwaar EVA-weefsel (1.365 g/m²): sterk en breed chemisch bestendig",
@@ -703,9 +699,17 @@
   "nl": "1,30 m",
   "en": "1.30 m"
  },
+ "255dcc4e84ef": {
+  "nl": "Flexibele lekbak voor 10 IBC's",
+  "en": "Flexible spill tray for 10 IBCs"
+ },
  "256b2a891241": {
   "nl": "Reinigen van beschermende kleding en uitrusting",
   "en": "Cleaning protective clothing and equipment"
+ },
+ "25725ac520f9": {
+  "nl": "Flexibele lekbak voor 2 vaten",
+  "en": "Flexible spill tray for 2 drums"
  },
  "2585663d1abb": {
   "nl": "18,50 × 11,80 m",
@@ -782,6 +786,14 @@
  "28b841f3a00d": {
   "nl": "9,00 × 8,92 m",
   "en": "9.00 × 8.92 m"
+ },
+ "295e084a956a": {
+  "nl": "Flexibele lekbak Starter (PVC) voor 4 IBC's",
+  "en": "Flexible spill containment berm Starter (PVC) for 4 IBCs"
+ },
+ "29dff7ba40f1": {
+  "nl": "Flexibele lekbak Starter (PVC) voor 2 vaten",
+  "en": "Flexible spill containment berm Starter (PVC) for 2 drums"
  },
  "29e25d93e299": {
   "nl": "Mobiele waterkering in gebruik",
@@ -879,6 +891,10 @@
   "nl": "Een lekkende IBC, een omgevallen vat of een machine die olie verliest: zonder opvang komt de vloeistof direct op de vloer, in de bodem of in het riool. Een flexibele opvangbak (spill containment berm) vangt lekkages op voordat ze schade aanrichten.",
   "en": "A leaking IBC, a toppled drum or a machine losing oil: without containment, the liquid ends up directly on the floor, in the soil or in the sewer. A flexible spill tray (spill containment berm) catches leaks before they cause damage."
  },
+ "3277aa1ba709": {
+  "nl": "Flexibele lekbak Starter in oranje PVC met één IBC",
+  "en": "Starter berm in orange PVC with one IBC"
+ },
  "32c2dace7c73": {
   "nl": "Bedrijven en bedrijventerreinen",
   "en": "Businesses and business parks"
@@ -963,6 +979,10 @@
   "nl": "Verwijder gelekte vloeistof zo snel mogelijk. Een opvangbak is bedoeld om lekkages op te vangen, niet om vloeistof in te bewaren. Volg het veiligheidsinformatieblad van de stof en laat ook regenwater niet in de bak staan.",
   "en": "Remove spilled liquid as soon as possible. A berm is meant to catch leaks, not to store liquid. Follow the safety data sheet of the substance and do not leave rainwater in the berm either."
  },
+ "381f88d34f52": {
+  "nl": "Flexibele lekbak Starter (PVC) voor aggregaat (3 × 1,5 m)",
+  "en": "Flexible spill containment berm Starter (PVC) for generator (3 × 1.5 m)"
+ },
  "38b9e011cec3": {
   "nl": "Een EVA-lekbak blijft volgens de fabrikant bruikbaar van −40 °C tot +70 °C en kan dus buiten staan. Houd er rekening mee dat regenwater de beschikbare opvangcapaciteit verkleint: kies buiten liever een ruimere maat of zet de opslag onder een overkapping.",
   "en": "According to the manufacturer, an EVA berm remains usable from −40 °C to +70 °C, so it can stand outdoors. Keep in mind that rainwater reduces the available containment capacity: outdoors, choose a larger size or put the storage under a canopy."
@@ -994,6 +1014,10 @@
  "3a44864da339": {
   "nl": "Bestand tegen wind, regen, sneeuw en UV",
   "en": "Resistant to wind, rain, snow and UV"
+ },
+ "3a7e4119a616": {
+  "nl": "Flexibele lekbak voor tankwagen",
+  "en": "Flexible spill tray for tanker truck"
  },
  "3ad0140979bc": {
   "nl": "Brandwatertank met afdekking",
@@ -1046,6 +1070,10 @@
  "3d0f065df168": {
   "nl": "Flexibele lekbak voor tankwagen | Opvangbak | EnviroFlow",
   "en": "Flexible spill tray for tanker truck | Containment | EnviroFlow"
+ },
+ "3d31985b43c9": {
+  "nl": "Flexibele lekbak Starter (PVC) voor 1 IBC",
+  "en": "Flexible spill containment berm Starter (PVC) for 1 IBC"
  },
  "3d73c122489b": {
   "nl": "2 jaar op lekdichtheid van de wand en sterkte van de lassen (fabrieksgarantie)",
@@ -1131,10 +1159,6 @@
   "nl": "1,40 m",
   "en": "1.40 m"
  },
- "42b5f864007a": {
-  "nl": "Inrijdbare opvangbak voor een tankwagen",
-  "en": "Drive-in spill tray for a tanker truck"
- },
  "4321127f1340": {
   "nl": "Vouw de opvangbak uit en schuif de steunen in de opstaande wand. Volgens de fabrikant is dat in enkele minuten gebeurd. Er is geen extra constructie of bouwwerk nodig.",
   "en": "Unfold the spill tray and slide the supports into the upright wall. According to the manufacturer, this takes a few minutes. No extra structure or construction work is needed."
@@ -1178,6 +1202,10 @@
  "44b0378e64a7": {
   "nl": "Bluswatervoorziening",
   "en": "Fire water supply"
+ },
+ "44c4812981a9": {
+  "nl": "Opvangcapaciteit van de lege bak. Prijzen per stuk, exclusief transport. Klik op een prijs om het product te bekijken.",
+  "en": "Containment capacity of the empty tray. Prices per unit, excluding transport. Click a price to view the product."
  },
  "44db1c8acb22": {
   "nl": "Driedubbellaags PVC-gecoat technisch weefsel, gelakt, 900 g/m²",
@@ -1251,10 +1279,6 @@
   "nl": "Met water gevulde mobiele waterkering, Ø 22 cm, hoogte na vullen 22 cm. Lengtes 3 m, 5 m, 10 m, 15 m.",
   "en": "Water-filled mobile flood barrier, Ø 22 cm, height after filling 22 cm. Lengths 3 m, 5 m, 10 m, 15 m."
  },
- "48f520554770": {
-  "nl": "Flexibele opvangbak Starter (PVC) voor 4 IBC's",
-  "en": "Flexible spill containment berm Starter (PVC) for 4 IBCs"
- },
  "49d09ec7d62d": {
   "nl": "Ik zoek bluswatervoorziening",
   "en": "I am looking for a fire water supply"
@@ -1262,6 +1286,10 @@
  "4a0e180a5404": {
   "nl": "Heb ik een pomp nodig?",
   "en": "Do I need a pump?"
+ },
+ "4a320d12a990": {
+  "nl": "Flexibele lekbak met één vat",
+  "en": "Flexible spill tray with one drum"
  },
  "4a47505201a4": {
   "nl": "Geen frame: in enkele minuten opgezet",
@@ -1347,6 +1375,10 @@
   "nl": "De Exflooder+ heeft een licht vernauwde, zelfdichtende mof en extra banden met gespen om modules aan elkaar te koppelen. Gestapeld (piramide) zijn met de Ø 94 cm-uitvoering keringen van meer dan 140 cm hoog mogelijk.",
   "en": "The Exflooder+ has a slightly narrowed, self-sealing sleeve and extra straps with buckles to connect modules. Stacked (pyramid), the Ø 94 cm version allows barriers more than 140 cm high."
  },
+ "4e69c11bbf92": {
+  "nl": "Flexibele lekbak voor tien IBC's",
+  "en": "Flexible spill tray for ten IBCs"
+ },
  "4e92c62a9079": {
   "nl": "Geluidsabsorberende matten voor de bouwplaats",
   "en": "Sound-absorbing mats for construction sites"
@@ -1378,6 +1410,10 @@
  "510690092a08": {
   "nl": "Mobiele en draagbare watertanks voor tijdelijke wateropslag en watertransport op locatie.",
   "en": "Mobile and portable water tanks for temporary water storage and water transport on site."
+ },
+ "518ca113ebae": {
+  "nl": "Flexibele lekbak voor 2 IBC's",
+  "en": "Flexible spill tray for 2 IBCs"
  },
  "51d4e6f9cf4d": {
   "nl": "Hoeveel IBC's of vaten staan er, en hoeveel opvangcapaciteit is nodig?",
@@ -1411,6 +1447,10 @@
   "nl": "13,90 × 13,00 m",
   "en": "13.90 × 13.00 m"
  },
+ "53b40efd7738": {
+  "nl": "Flexibele lekbak met één IBC",
+  "en": "Flexible spill tray with one IBC"
+ },
  "53ccad8d2e81": {
   "nl": "Drinkwatertanks",
   "en": "Drinking water tanks"
@@ -1427,6 +1467,10 @@
   "nl": "De Starter is de voordelige uitvoering van de flexibele opvangbak voor 2 IBC's. Hij heeft dezelfde maten en opbouw als de Plus-uitvoering, maar is gemaakt van oranje polyesterweefsel met een PVC-coating van 900 g/m².",
   "en": "The Starter is the economical version of the flexible spill containment berm for 2 IBCs. It has the same sizes and construction as the Plus version, but is made of orange polyester fabric with a PVC coating of 900 g/m²."
  },
+ "54a377c3924b": {
+  "nl": "Flexibele lekbak Starter (PVC) voor 10 IBC's",
+  "en": "Flexible spill containment berm Starter (PVC) for 10 IBCs"
+ },
  "551641924d28": {
   "nl": "1,89 × 0,80 m (200 l), 1,89 × 1,40 m (500 l) of 1,89 × 1,90 m (900 l)",
   "en": "1.89 × 0.80 m (200 l), 1.89 × 1.40 m (500 l) or 1.89 × 1.90 m (900 l)"
@@ -1442,10 +1486,6 @@
  "557db6a9475e": {
   "nl": "Maatwerk",
   "en": "Custom solutions"
- },
- "55d1e3734d68": {
-  "nl": "Bij EnviroFlow kost een flexibele lekbak vanaf € 386,10 excl. btw (Starter in PVC voor 1 vat). Een lekbak voor één IBC kost € 648,18 in PVC en € 840,06 in EVA. Voor grotere aantallen of maatwerk maken wij graag een offerte.",
-  "en": "At EnviroFlow a flexible spill berm costs from €386.10 excl. VAT (Starter in PVC for 1 drum). A berm for one IBC costs €648.18 in PVC and €840.06 in EVA. For larger quantities or custom sizes we are happy to send you a quote."
  },
  "55d8a0f6b3b7": {
   "nl": "Met enkele personen is de tank volgens de fabrikant in 2 tot 3 uur geplaatst. Er zijn geen bouwwerkzaamheden nodig.",
@@ -1499,13 +1539,13 @@
   "nl": "Geluidsabsorberende matten aan een bouwhek",
   "en": "Sound-absorbing mats on a construction fence"
  },
- "58f5abe5aea8": {
-  "nl": "Flexibele opvangbak met twee IBC's",
-  "en": "Flexible spill tray with two IBCs"
- },
  "593435f90f17": {
   "nl": "Voor beheer van openbare ruimte en calamiteiten heeft u oplossingen nodig die snel inzetbaar zijn en compact kunnen worden opgeslagen.",
   "en": "For managing public spaces and emergencies, you need solutions that can be deployed quickly and stored compactly."
+ },
+ "5948225303f8": {
+  "nl": "Inrijdbare flexibele lekbak voor een tankwagen",
+  "en": "Drive-in spill tray for a tanker truck"
  },
  "595a96271200": {
   "nl": "1,00 m",
@@ -1531,13 +1571,13 @@
   "nl": "Welke maat wasmat heb ik nodig?",
   "en": "Which size wash mat do I need?"
  },
+ "5a8b23ac62b8": {
+  "nl": "De levertijd is ongeveer 4 weken. Heeft u haast? Vraag dan naar maten die sneller leverbaar zijn.",
+  "en": "The delivery time is about 4 weeks. In a hurry? Ask us which sizes are available sooner."
+ },
  "5aa7024236bb": {
   "nl": "Welke regels gelden er bij uw gemeente of omgevingsdienst?",
   "en": "Which rules apply in your municipality or at your environmental agency?"
- },
- "5aca81a06517": {
-  "nl": "Flexibele opvangbak met vier IBC's",
-  "en": "Flexible spill tray with four IBCs"
  },
  "5acc3052d1de": {
   "nl": "Welke inhoud en aansluitingen nodig zijn, stemt u af met de brandweer of veiligheidsregio. Wij helpen u om de juiste tank te kiezen.",
@@ -1550,6 +1590,10 @@
  "5aeec8b1a94d": {
   "nl": "Hydraulische olie",
   "en": "Hydraulic oil"
+ },
+ "5b3416a4d728": {
+  "nl": "Flexibele lekbak voor aggregaat (3 × 1,5 m)",
+  "en": "Flexible spill tray for generator (3 × 1.5 m)"
  },
  "5b8bd8841181": {
   "nl": "6,00 × 5,80 m",
@@ -1639,10 +1683,6 @@
   "nl": "Absorptiemateriaal",
   "en": "Absorbents"
  },
- "5fb2cb44dd97": {
-  "nl": "Starter-opvangbak in oranje PVC met twee IBC's",
-  "en": "Starter berm in orange PVC with two IBCs"
- },
  "606cc1a59d2d": {
   "nl": "8.000 l",
   "en": "8,000 l"
@@ -1654,6 +1694,10 @@
  "6157b487b6fd": {
   "nl": "Flexibele lekbak voor 1 vat | Opvangbak | EnviroFlow",
   "en": "Flexible spill tray for 1 drum | Containment | EnviroFlow"
+ },
+ "615a658a525f": {
+  "nl": "Wat is een flexibele lekbak?",
+  "en": "What is a flexible spill tray?"
  },
  "619320e34fcf": {
   "nl": "Machines en installaties",
@@ -1723,10 +1767,6 @@
   "nl": "Agrarische bedrijven en buitengebied",
   "en": "Agricultural businesses and rural areas"
  },
- "642e3fc06a0f": {
-  "nl": "Een flexibele lekbak kost bij ons vanaf € 386,10 excl. btw (Starter voor 1 vat). Een IBC lekbak voor één IBC kost € 648,18 in PVC en € 840,06 in EVA. Alle standaardmaten bestelt u direct online; maatwerk is op aanvraag mogelijk.",
-  "en": "At EnviroFlow a flexible spill berm costs from €386.10 excl. VAT (Starter for 1 drum). An IBC spill berm for one IBC costs €648.18 in PVC and €840.06 in EVA. All standard sizes can be ordered online; custom sizes on request."
- },
  "6461a6721a90": {
   "nl": "Is een decontaminatiemat geschikt voor mijn toepassing?",
   "en": "Is a decontamination mat suitable for my application?"
@@ -1739,10 +1779,6 @@
   "nl": "11,74 × 9,00 m",
   "en": "11.74 × 9.00 m"
  },
- "64b4bc277884": {
-  "nl": "Flexibele opvangbak voor 1 IBC",
-  "en": "Flexible spill tray for 1 IBC"
- },
  "64c4904613de": {
   "nl": "CNBOP-conformiteitscertificaat (Polen)",
   "en": "CNBOP certificate of conformity (Poland)"
@@ -1750,10 +1786,6 @@
  "650485d9eb13": {
   "nl": "Aftappunten",
   "en": "Dispensing points"
- },
- "65139b66f4ba": {
-  "nl": "Flexibele opvangbak met vier vaten",
-  "en": "Flexible spill tray with four drums"
  },
  "652b06b58ce6": {
   "nl": "200.000 liter",
@@ -1767,13 +1799,13 @@
   "nl": "Na inzet bij een incident of bij het verlaten van een besmet gebied moeten voertuigen worden gereinigd. Het spoelwater mag niet ongecontroleerd in de omgeving terechtkomen.",
   "en": "After deployment at an incident or when leaving a contaminated area, vehicles must be cleaned. The rinse water must not end up in the environment uncontrolled."
  },
- "6560318c3a0a": {
-  "nl": "Flexibele opvangbak voor 4 vaten",
-  "en": "Flexible spill tray for 4 drums"
- },
  "665cf65c6050": {
   "nl": "Van 8,78 × 7,20 m (50 m³) tot 20,64 × 12,65 m (300 m³), zie uitvoeringen",
   "en": "From 8.78 × 7.20 m (50 m³) to 20.64 × 12.65 m (300 m³), see versions"
+ },
+ "66b9369bee67": {
+  "nl": "Flexibele lekbak voor IBC's, vaten, aggregaten en voertuigen. {aantal} modellen in PVC en EVA, vanaf {vanafprijs} excl. btw. Direct online bestellen of maatwerk.",
+  "en": "Flexible spill trays for IBCs, drums, generators and vehicles. {aantal} models in PVC and EVA, from {vanafprijs} excl. VAT. Order online or request a custom size."
  },
  "67237579be71": {
   "nl": "EVA is sterker, tegen veel meer stoffen bestand (ook diesel en benzine) en heeft 7 jaar fabrieksgarantie. PVC is voordeliger en geschikt voor kortdurend contact met bijvoorbeeld motorolie, antivries en accuzuur. Twijfelt u, kies dan EVA of vraag ons advies.",
@@ -1811,10 +1843,6 @@
   "nl": "Vulaansluiting 3\" Storz 75 met kap; aftapflens Ø 146 mm met dop; 2 ontluchtingen; 6 handgrepen; 2 verankeringsbanden",
   "en": "Filling connection 3\" Storz 75 with cap; drain flange Ø 146 mm with cap; 2 vents; 6 handles; 2 anchoring straps"
  },
- "69359fc40154": {
-  "nl": "Flexibele opvangbak met één IBC",
-  "en": "Flexible spill tray with one IBC"
- },
  "693d31aa7001": {
   "nl": "Welke regels gelden voor brandstofopslag?",
   "en": "Which rules apply to fuel storage?"
@@ -1827,6 +1855,10 @@
   "nl": "Hydronion",
   "en": "Hydronion"
  },
+ "697d1fa57446": {
+  "nl": "Flexibele lekbak met vier vaten",
+  "en": "Flexible spill tray with four drums"
+ },
  "69e4e15db5db": {
   "nl": "5.836 liter",
   "en": "5,836 litres"
@@ -1834,6 +1866,10 @@
  "69f894072f71": {
   "nl": "Exnoiser geluidsabsorberende matten aan een bouwhek",
   "en": "Exnoiser sound-absorbing mats on a construction fence"
+ },
+ "6a7ec707abe6": {
+  "nl": "Flexibele lekbakken",
+  "en": "Flexible spill trays"
  },
  "6b04e03958c1": {
   "nl": "Hoezen voor specifieke vormen",
@@ -1999,10 +2035,6 @@
   "nl": "Auto op een wasmat",
   "en": "Car on a wash mat"
  },
- "7472f39f0535": {
-  "nl": "Flexibele opvangbak met twee vaten",
-  "en": "Flexible spill tray with two drums"
- },
  "74863c2709fe": {
   "nl": "Waswater op te zuigen met een industriële stofzuiger",
   "en": "Wash water can be vacuumed up with an industrial vacuum cleaner"
@@ -2151,6 +2183,10 @@
   "nl": "Ik wil mest of meststoffen opslaan",
   "en": "I want to store manure or fertilisers"
  },
+ "7bd9120b1b32": {
+  "nl": "Flexibele lekbak voor 1 vat",
+  "en": "Flexible spill tray for 1 drum"
+ },
  "7be08dda3381": {
   "nl": "Opblaasbare wasmat 8 × 4 m voor het opvangen van waswater, met oprijstroken.",
   "en": "Inflatable wash mat 8 × 4 m for collecting wash water, with drive-on strips."
@@ -2178,10 +2214,6 @@
  "7cb242dc2419": {
   "nl": "IBC's en vaten veilig opslaan",
   "en": "Storing IBCs and drums safely"
- },
- "7d22fa2fbe32": {
-  "nl": "Flexibele opvangbak Starter (PVC) voor 4 vaten",
-  "en": "Flexible spill containment berm Starter (PVC) for 4 drums"
  },
  "7d7982590ca7": {
   "nl": "CNBOP-goedkeuringscertificaat nr. 5753/2025 (Polen)",
@@ -2222,10 +2254,6 @@
  "7f8552640543": {
   "nl": "Testrapport RS-2018/B-268 (11-07-2018), Centrum Techniki Okrętowej S.A. (Polen): Rw 22 (−1; −3) dB en Dw 25 (−1; −4) dB volgens PN-EN ISO 717-1:2013",
   "en": "Test report RS-2018/B-268 (11-07-2018), Centrum Techniki Okrętowej S.A. (Poland): Rw 22 (−1; −3) dB and Dw 25 (−1; −4) dB according to PN-EN ISO 717-1:2013"
- },
- "7f93e9b78a59": {
-  "nl": "Flexibele opvangbak Starter (PVC) voor 2 IBC's",
-  "en": "Flexible spill containment berm Starter (PVC) for 2 IBCs"
  },
  "7fa798020369": {
   "nl": "Opvang en hergebruik van regenwater",
@@ -2282,10 +2310,6 @@
  "8322bfb532f6": {
   "nl": "Mobiele mat met opblaasbare randen van 20 cm voor het decontamineren van voertuigen. 9,62 × 3,66 m, inhoud 6.690 liter.",
   "en": "Mobile mat with 20 cm inflatable walls for decontaminating vehicles. 9.62 × 3.66 m, capacity 6,690 litres."
- },
- "83351a76b0a1": {
-  "nl": "Flexibele opvangbak voor 2 vaten",
-  "en": "Flexible spill tray for 2 drums"
  },
  "834b88843ff3": {
   "nl": "Agrarische handel",
@@ -2346,6 +2370,10 @@
  "874bc3a82b34": {
   "nl": "Decontaminatiematten voor voertuigen | EnviroFlow",
   "en": "Decontamination mats for vehicles | EnviroFlow"
+ },
+ "8773298f4ad9": {
+  "nl": "Bij EnviroFlow kost een flexibele lekbak vanaf {prijs:opvangbak-starter-1-vat} excl. btw (Starter in PVC voor 1 vat). Een lekbak voor één IBC kost {prijs:opvangbak-starter-1-ibc} in PVC en {prijs:opvangbak-1-ibc} in EVA. Voor grotere aantallen of maatwerk maken wij graag een offerte.",
+  "en": "At EnviroFlow a flexible spill berm costs from {prijs:opvangbak-starter-1-vat} excl. VAT (Starter in PVC for 1 drum). A berm for one IBC costs {prijs:opvangbak-starter-1-ibc} in PVC and {prijs:opvangbak-1-ibc} in EVA. For larger quantities or custom sizes we are happy to send you a quote."
  },
  "87c0902ddfda": {
   "nl": "12,66 × 5,20 m",
@@ -2467,10 +2495,6 @@
   "nl": "11,74 × 6,60 m",
   "en": "11.74 × 6.60 m"
  },
- "8d81c151763a": {
-  "nl": "Flexibele opvangbak Starter (PVC) voor 2 vaten",
-  "en": "Flexible spill containment berm Starter (PVC) for 2 drums"
- },
  "8df158dbab04": {
   "nl": "Producten in IBC's en vaten",
   "en": "Products in IBCs and drums"
@@ -2543,10 +2567,6 @@
   "nl": "Wat is het verschil tussen de Starter (PVC) en de Plus (EVA)?",
   "en": "What is the difference between the Starter (PVC) and the Plus (EVA)?"
  },
- "91f46dbe5a6e": {
-  "nl": "Flexibele opvangbak voor tankwagen",
-  "en": "Flexible spill tray for tanker truck"
- },
  "91f6c1f44c8d": {
   "nl": "Flexibele lekbak voor één vat. Opvangcapaciteit 226 liter.",
   "en": "Flexible spill tray for one drum. Containment capacity 226 litres."
@@ -2615,13 +2635,13 @@
   "nl": "Opslag van één IBC (1.000 l)",
   "en": "Storage of one IBC (1,000 l)"
  },
- "95d42ac830f1": {
-  "nl": "Flexibele opvangbak voor 1 vat",
-  "en": "Flexible spill tray for 1 drum"
- },
  "95d4de67414b": {
   "nl": "Laad- en losplaatsen",
   "en": "Loading and unloading areas"
+ },
+ "964a36bedc86": {
+  "nl": "Flexibele lekbak Starter (PVC) voor vrachtwagen",
+  "en": "Flexible spill containment berm Starter (PVC) for truck"
  },
  "96fcac8d6c49": {
   "nl": "5.000, 8.000, 10.000, 15.000 of 25.000 liter",
@@ -2655,6 +2675,10 @@
   "nl": "1,89 × 1,90 m",
   "en": "1.89 × 1.90 m"
  },
+ "98c5936e9e64": {
+  "nl": "Flexibele lekbak met twee IBC's",
+  "en": "Flexible spill tray with two IBCs"
+ },
  "98d65739b8a4": {
   "nl": "Tijdelijke drinkwatervoorziening",
   "en": "Temporary drinking water supply"
@@ -2670,10 +2694,6 @@
  "9a497a7e1351": {
   "nl": "Hoe snel staat de opvangbak klaar?",
   "en": "How quickly is the spill tray ready?"
- },
- "9a85c0773ad4": {
-  "nl": "Flexibele opvangbak Starter (PVC) voor 1 vat",
-  "en": "Flexible spill containment berm Starter (PVC) for 1 drum"
  },
  "9aaf12e4afca": {
   "nl": "Verontreinigd water bij decontaminatie",
@@ -2691,9 +2711,17 @@
   "nl": "Bouw- en infraprojecten",
   "en": "Construction and infrastructure projects"
  },
+ "9b6a8e2251b7": {
+  "nl": "Elke maat is er in twee uitvoeringen: de Starter in PVC en de Plus in EVA. De afmetingen en de opvangcapaciteit zijn gelijk; alleen het weefsel verschilt.",
+  "en": "Every size comes in two versions: the Starter in PVC and the Plus in EVA. The dimensions and the containment capacity are the same; only the fabric differs."
+ },
  "9b81b0b64e94": {
   "nl": "Wasmat 8 × 4 m met oprijstroken",
   "en": "Wash mat 8 × 4 m with drive-on strips"
+ },
+ "9b9402314e3a": {
+  "nl": "Flexibele lekbak Starter in oranje PVC met vier IBC's op een rij",
+  "en": "Starter berm in orange PVC with four IBCs in a row"
  },
  "9bce4c7cf6c3": {
   "nl": "De Starter is de voordelige uitvoering van de flexibele opvangbak voor 2 vaten. Hij heeft dezelfde maten en opbouw als de Plus-uitvoering, maar is gemaakt van oranje polyesterweefsel met een PVC-coating van 900 g/m².",
@@ -2767,6 +2795,10 @@
   "nl": "5 jaar garantie op lekdichtheid",
   "en": "5-year warranty on leak-tightness"
  },
+ "9ff6f880f8e2": {
+  "nl": "Flexibele lekbak Starter in oranje PVC met twee IBC's",
+  "en": "Starter berm in orange PVC with two IBCs"
+ },
  "a085ada45084": {
   "nl": "Mobiele watertank & draagbare watertank | EnviroFlow",
   "en": "Mobile water tank & portable water tank | EnviroFlow"
@@ -2806,10 +2838,6 @@
  "a1e845316d8f": {
   "nl": "Wat kost een brandwatertank?",
   "en": "What does a fire water tank cost?"
- },
- "a1f3fc6499d5": {
-  "nl": "Inrijdbare opvangbak voor een vrachtwagen",
-  "en": "Drive-in spill tray for a lorry"
  },
  "a256d9b5632b": {
   "nl": "Tijdelijke wateropslag op locatie",
@@ -2927,10 +2955,6 @@
   "nl": "Wateroverlast",
   "en": "Flooding"
  },
- "a9606fc81fb9": {
-  "nl": "Flexibele opvangbak Starter (PVC) voor aggregaat (3 × 1,5 m)",
-  "en": "Flexible spill containment berm Starter (PVC) for generator (3 × 1.5 m)"
- },
  "a9b2b55a25fa": {
   "nl": "Afmetingen (l × b × h)",
   "en": "Dimensions (l × w × h)"
@@ -2958,6 +2982,10 @@
  "aaa8bf262162": {
   "nl": "Sneller te plaatsen dan een dijk van zandzakken",
   "en": "Faster to install than a sandbag dike"
+ },
+ "aab3f8bfd43b": {
+  "nl": "Flexibele lekbak: alle maten en prijzen",
+  "en": "Flexible spill trays: all sizes and prices"
  },
  "aaf8aa16300d": {
   "nl": "Tijdelijke opslag bij verbouw of calamiteiten",
@@ -3010,6 +3038,10 @@
  "aebbd584103d": {
   "nl": "Afdekken van opslag en materialen",
   "en": "Covering storage and materials"
+ },
+ "af25331f3731": {
+  "nl": "Ja. Alle standaardmaten bestelt u direct in de webshop: voor vaten, IBC's, een aggregaat, een tankwagen of een vrachtwagen. Heeft u een andere maat of maatwerk nodig? Vraag dan een offerte aan.",
+  "en": "Yes. You can order all standard sizes directly in the webshop: for drums, IBCs, a generator, a tanker truck or a lorry. Need a different size or a custom solution? Then request a quote."
  },
  "af2f55a72438": {
   "nl": "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder één vat. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
@@ -3095,10 +3127,6 @@
   "nl": "Volgens de fabrikant onder meer voor motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Slaat u brandstof of oplosmiddelen op, kies dan de Plus-uitvoering in EVA.",
   "en": "According to the manufacturer, among others for engine oil, antifreeze, battery acid, hydrochloric acid 10%, water-glycol solution and calcium chloride solution. Not for petrol, diesel, glycol 100%, isopropanol 100%, oleic acid and hydrochloric acid 32%. If you store fuel or solvents, choose the Plus version in EVA."
  },
- "b45be7355e8b": {
-  "nl": "Flexibele opvangbak Starter (PVC) voor tankwagen",
-  "en": "Flexible spill containment berm Starter (PVC) for tanker truck"
- },
  "b46fbb51d18b": {
   "nl": "Snelkoppelingen voor snel vullen en legen",
   "en": "Quick couplings for fast filling and emptying"
@@ -3118,6 +3146,10 @@
  "b4e0687bbe51": {
   "nl": "Landbouw",
   "en": "Agriculture"
+ },
+ "b53aec88bb22": {
+  "nl": "Bij de Plus-uitvoering in EVA kan dat volgens de fabrikant. Haal de steunen weg en leg de opstaande wand plat; dan kan een heftruck of zelfs een vrachtwagen over de bodem rijden. Voor tankwagens en vrachtwagens zijn er lange modellen. Schade bij het in- en uitrijden valt niet onder de garantie.",
+  "en": "With the Plus version in EVA this is possible, according to the manufacturer. Remove the supports and lay the upright wall flat; a forklift or even a lorry can then drive over the base. There are long models for tanker trucks and lorries. Damage caused when driving in and out is not covered by the warranty."
  },
  "b56b37ff0641": {
   "nl": "Noodvoorziening bij storingen",
@@ -3183,10 +3215,6 @@
   "nl": "Werkplaatsen en onderhoudslocaties",
   "en": "Workshops and maintenance sites"
  },
- "b8d1657bf6be": {
-  "nl": "Flexibele lekbak voor IBC's, vaten, machines en voertuigen. Standaardmaten online bestellen of maatwerk op aanvraag. Advies van EnviroFlow.",
-  "en": "Flexible spill trays for IBCs, drums, machines and vehicles. Order standard sizes online or request a custom solution. Advice from EnviroFlow."
- },
  "b8e341a7c663": {
   "nl": "1,99 × 1,44 m",
   "en": "1.99 × 1.44 m"
@@ -3211,6 +3239,10 @@
   "nl": "Van 2,90 × 2,45 × 1,10 m (5.000 l) tot 5,00 × 4,20 × 1,45 m (25.000 l), zie uitvoeringen",
   "en": "From 2.90 × 2.45 × 1.10 m (5,000 l) to 5.00 × 4.20 × 1.45 m (25,000 l), see versions"
  },
+ "ba20b4c500da": {
+  "nl": "Vaten op pallets in een flexibele lekbak in een bedrijfshal",
+  "en": "Drums on pallets in a flexible spill tray in a commercial hall"
+ },
  "ba2edf30fbf9": {
   "nl": "Opslag van andere vloeibare meststoffen",
   "en": "Storage of other liquid fertilisers"
@@ -3218,6 +3250,10 @@
  "ba84205792f4": {
   "nl": "Exflooder mobiele waterkering Ø 46 cm",
   "en": "Exflooder mobile flood barrier Ø 46 cm"
+ },
+ "ba98d39b4a1f": {
+  "nl": "Wat is de levertijd van een flexibele lekbak?",
+  "en": "What is the delivery time of a flexible spill tray?"
  },
  "bafe7b08e823": {
   "nl": "Machines, installaties of opslag die buiten staan, beschermt u met een dekzeil of hoes die precies past. Geef de afmetingen en de toepassing door, dan ontvangt u een voorstel.",
@@ -3251,9 +3287,9 @@
   "nl": "Te weinig buffercapaciteit voor proceswater",
   "en": "Insufficient buffer capacity for process water"
  },
- "bced2d789bd2": {
-  "nl": "Flexibele opvangbak Starter (PVC) voor 1 IBC",
-  "en": "Flexible spill containment berm Starter (PVC) for 1 IBC"
+ "bd2930337000": {
+  "nl": "Flexibele lekbak met vier IBC's",
+  "en": "Flexible spill tray with four IBCs"
  },
  "be2d1791592d": {
   "nl": "Flexibele IBC opvangbak voor twee IBC's van 1.000 liter. Opvangcapaciteit 1.795 liter.",
@@ -3287,10 +3323,6 @@
   "nl": "Het opgevangen water kunt u (laten) afpompen en afvoeren of verwerken volgens de regels die voor uw locatie gelden. Wij denken mee over een praktische opstelling.",
   "en": "You can pump out the collected water (or have it pumped out) and dispose of or treat it according to the rules that apply to your location. We are happy to help you find a practical set-up."
  },
- "c053b56a0c4c": {
-  "nl": "Flexibele opvangbak voor vrachtwagen",
-  "en": "Flexible spill tray for lorry"
- },
  "c073889b6dec": {
   "nl": "Flexibele watertank 30.000 liter",
   "en": "Flexible water tank 30,000 litres"
@@ -3306,10 +3338,6 @@
  "c198ca82e6bc": {
   "nl": "171 kg",
   "en": "171 kg"
- },
- "c1ca715d2d2d": {
-  "nl": "Starter-opvangbak in oranje PVC met vier IBC's op een rij",
-  "en": "Starter berm in orange PVC with four IBCs in a row"
  },
  "c1d3754e84f2": {
   "nl": "Waswater met reinigingsmiddelen",
@@ -3346,6 +3374,10 @@
  "c2e297cf4f41": {
   "nl": "Standaarduitrusting: 2 afnameaansluitingen DN100 met Storz 110, vulaansluiting Storz 110, verwarmingsmatten met regelunit, isolatiematten en afdekking met spanbanden.",
   "en": "Standard equipment: 2 DN100 outlet connections with Storz 110, Storz 110 filling connection, heating mats with control unit, insulation mats and cover with tension straps."
+ },
+ "c2fa64f8050a": {
+  "nl": "Flexibele lekbak Starter (PVC) voor 4 vaten",
+  "en": "Flexible spill containment berm Starter (PVC) for 4 drums"
  },
  "c319d7b09d34": {
   "nl": "Deze flexibele opvangbak (lekbak) vangt lekkages en morsingen op onder vier vaten. Zo komt olie, zuur of een andere vloeistof niet op de vloer, in de bodem of in het riool terecht.",
@@ -3395,10 +3427,6 @@
   "nl": "Tijdelijke opslag van proceswater",
   "en": "Temporary storage of process water"
  },
- "c67f80525f1b": {
-  "nl": "Flexibele opvangbak voor tien IBC's",
-  "en": "Flexible spill tray for ten IBCs"
- },
  "c6b410528a0f": {
   "nl": "Gewicht",
   "en": "Weight"
@@ -3411,9 +3439,17 @@
   "nl": "Bedoeld voor kortdurend contact met chemicaliën. Volgens de fabrikant geschikt voor onder meer motorolie, antivries, accuzuur, zoutzuur 10%, water-glycoloplossing en calciumchloride-oplossing. Niet geschikt voor benzine, diesel, glycol 100%, isopropanol 100%, oliezuur en zoutzuur 32%. Twijfelt u? Kies de Plus-uitvoering in EVA of neem contact met ons op.",
   "en": "Intended for short-term contact with chemicals. According to the manufacturer suitable for, among others, engine oil, antifreeze, battery acid, hydrochloric acid 10%, water-glycol solution and calcium chloride solution. Not suitable for petrol, diesel, glycol 100%, isopropanol 100%, oleic acid and hydrochloric acid 32%. In doubt? Choose the Plus version in EVA or contact us."
  },
+ "c6fb599d6305": {
+  "nl": "Een flexibele lekbak is een opvangbak van sterk, gecoat weefsel met opstaande randen. Hij vangt lekkages en morsingen op onder IBC's, vaten, machines en voertuigen, zodat de vloeistof niet op de vloer, in de bodem of in het riool komt. Hij is licht, staat er in enkele minuten en is leeg op te vouwen. Daarom wordt hij ook opvouwbare of mobiele lekbak genoemd.",
+  "en": "A flexible spill tray is a containment tray made of strong, coated fabric with raised edges. It catches leaks and spills under IBCs, drums, machines and vehicles, so the liquid does not end up on the floor, in the soil or in the sewer. It is light, is set up in a few minutes and folds up when empty. That is why it is also called a foldable or portable spill tray."
+ },
  "c6fdd4674bab": {
   "nl": "8,77 × 7,10 m",
   "en": "8.77 × 7.10 m"
+ },
+ "c706c3894a57": {
+  "nl": "Flexibele lekbak voor 4 IBC's",
+  "en": "Flexible spill tray for 4 IBCs"
  },
  "c71c954a313c": {
   "nl": "Voor het afdekken en beschermen van machines, installaties en opslag. Gemaakt op de afmetingen die u opgeeft.",
@@ -3518,6 +3554,10 @@
  "ccd5671567f7": {
   "nl": "Regenwater",
   "en": "Rainwater"
+ },
+ "cd19a26c2cfe": {
+  "nl": "Flexibele lekbak Starter (PVC) voor 2 IBC's",
+  "en": "Flexible spill containment berm Starter (PVC) for 2 IBCs"
  },
  "cd304d68e603": {
   "nl": "14,70 × 9,40 m",
@@ -3643,10 +3683,6 @@
   "nl": "Voordelige PVC-opvangbak voor tankwagen. Opvangcapaciteit 11.655 liter.",
   "en": "Economical PVC spill containment berm for tanker truck. Containment capacity 11,655 litres."
  },
- "d2f5b0502414": {
-  "nl": "Flexibele opvangbak voor 2 IBC's",
-  "en": "Flexible spill tray for 2 IBCs"
- },
  "d32eaef62d28": {
   "nl": "Opgevouwen klein op te bergen",
   "en": "Folds up small for storage"
@@ -3698,6 +3734,10 @@
  "d6c472113cfb": {
   "nl": "Niet elke locatie heeft voldoende bluswater uit het waterleidingnet of uit open water in de buurt. Een brandwatertank zorgt voor een vaste voorraad bluswater op uw terrein.",
   "en": "Not every location has enough fire water from the mains or from open water nearby. A fire water tank provides a permanent supply of fire water on your site."
+ },
+ "d6e84eec3b9b": {
+  "nl": "Een flexibele lekbak kost bij ons vanaf {prijs:opvangbak-starter-1-vat} excl. btw (Starter voor 1 vat). Een IBC lekbak voor één IBC kost {prijs:opvangbak-starter-1-ibc} in PVC en {prijs:opvangbak-1-ibc} in EVA. Alle standaardmaten bestelt u direct online; maatwerk is op aanvraag mogelijk. De prijzen van alle maten staan in de tabel hierboven.",
+  "en": "At EnviroFlow a flexible spill berm costs from {prijs:opvangbak-starter-1-vat} excl. VAT (Starter for 1 drum). An IBC spill berm for one IBC costs {prijs:opvangbak-starter-1-ibc} in PVC and {prijs:opvangbak-1-ibc} in EVA. All standard sizes can be ordered online; custom sizes on request. The prices of all sizes are in the table above."
  },
  "d70aa898951d": {
   "nl": "PVC-weefsel",
@@ -3754,10 +3794,6 @@
  "d9f3b25df786": {
   "nl": "6 × 3 m (vloer), randhoogte 10 cm",
   "en": "6 × 3 m (floor), edge height 10 cm"
- },
- "da3444c0e071": {
-  "nl": "Flexibele opvangbakken",
-  "en": "Flexible spill trays"
  },
  "da65e21a49b5": {
   "nl": "Flexibele drinkwatertanks van TPU (Waterbase D Plus).",
@@ -3819,10 +3855,6 @@
   "nl": "11,20 × 8,90 m",
   "en": "11.20 × 8.90 m"
  },
- "dd7682d92810": {
-  "nl": "Ja. De standaardmaten voor vaten en IBC's bestelt u direct in de webshop. Heeft u een andere maat nodig, bijvoorbeeld voor een machine of voertuig, of maatwerk? Vraag dan een offerte aan.",
-  "en": "Yes. You can order the standard sizes for drums and IBCs directly in the webshop. Need a different size, for example for a machine or vehicle, or a custom solution? Then request a quote."
- },
  "dd7c5371750f": {
   "nl": "Flexibele brandwatertank op locatie",
   "en": "Flexible fire water tank on site"
@@ -3863,10 +3895,6 @@
   "nl": "Moet de tank verplaatsbaar zijn?",
   "en": "Does the tank need to be movable?"
  },
- "df7f28e9792d": {
-  "nl": "Flexibele opvangbak Starter (PVC) voor vrachtwagen",
-  "en": "Flexible spill containment berm Starter (PVC) for truck"
- },
  "dfc1cde957d8": {
   "nl": "Brandwatertanks (Waterbase F)",
   "en": "Fire water tanks (Waterbase F)"
@@ -3906,6 +3934,10 @@
  "e10ece72bccb": {
   "nl": "Bestand tegen vorst tot −30 °C",
   "en": "Frost-resistant down to −30 °C"
+ },
+ "e202b63baa6f": {
+  "nl": "Flexibele lekbak voor 4 vaten",
+  "en": "Flexible spill tray for 4 drums"
  },
  "e21b95a1c1b3": {
   "nl": "Wat doe ik met het opgevangen waswater?",
@@ -3954,6 +3986,10 @@
  "e44a76df6e6c": {
   "nl": "Groenonderhoud en reiniging op locatie",
   "en": "Landscaping and on-site cleaning"
+ },
+ "e45be47a9fc2": {
+  "nl": "Flexibele lekbak voor een aggregaat",
+  "en": "Flexible spill tray for a generator"
  },
  "e4677488ec11": {
   "nl": "Brandweer en civiele bescherming",
@@ -4027,10 +4063,6 @@
   "nl": "Voordelige PVC-opvangbak voor aggregaat (3 × 1,5 m). Opvangcapaciteit 1.451 liter.",
   "en": "Economical PVC spill containment berm for generator (3 × 1.5 m). Containment capacity 1,451 litres."
  },
- "e878dc8ab198": {
-  "nl": "Flexibele opvangbak Starter (PVC) voor 10 IBC's",
-  "en": "Flexible spill containment berm Starter (PVC) for 10 IBCs"
- },
  "e87c4665c827": {
   "nl": "17,67 × 14,80 m",
   "en": "17.67 × 14.80 m"
@@ -4091,10 +4123,6 @@
   "nl": "Maatwerk: staat uw oplossing er niet tussen?",
   "en": "Custom solutions: can't find what you need?"
  },
- "ebca566eb948": {
-  "nl": "IBC's en vaten in flexibele opvangbakken in een bedrijfsruimte",
-  "en": "IBCs and drums in flexible spill trays in a commercial building"
- },
  "ebf1c1f3bb73": {
   "nl": "Garages en werkplaatsen",
   "en": "Garages and workshops"
@@ -4114,6 +4142,10 @@
  "ecc9951bac27": {
   "nl": "Diameter 46 cm; lengte 5 m, 10 m, 15 m",
   "en": "Diameter 46 cm; length 5 m, 10 m, 15 m"
+ },
+ "ecf1d2dd2367": {
+  "nl": "Flexibele lekbak voor vrachtwagen",
+  "en": "Flexible spill tray for lorry"
  },
  "ecf830dc6dd7": {
   "nl": "Opvang van lekkages bij incidenten",
@@ -4142,6 +4174,10 @@
  "edb7dad7ecf6": {
   "nl": "Technisch informatieblad decontaminatiemat (PDF)",
   "en": "Technical data sheet decontamination mat (PDF)"
+ },
+ "edce218cb256": {
+  "nl": "Flexibele lekbak voor 1 IBC",
+  "en": "Flexible spill tray for 1 IBC"
  },
  "eddc369b8ae7": {
   "nl": "9,62 × 3,66 m",
@@ -4383,10 +4419,6 @@
   "nl": "Hevige regen, hoog water of een gesprongen leiding kan in korte tijd veel schade veroorzaken aan uw pand, voorraad of installaties.",
   "en": "Heavy rain, high water or a burst pipe can cause a lot of damage to your building, stock or installations in a short time."
  },
- "fd15d3e74bff": {
-  "nl": "Starter-opvangbak in oranje PVC met één IBC",
-  "en": "Starter berm in orange PVC with one IBC"
- },
  "fd6269eae205": {
   "nl": "1.509 l",
   "en": "1,509 l"
@@ -4394,6 +4426,10 @@
  "fd7d2b5cf33b": {
   "nl": "Flexibele IBC opvangbak voor tien IBC's. Opvangcapaciteit 5.836 liter.",
   "en": "Flexible IBC spill tray for ten IBCs. Containment capacity 5,836 litres."
+ },
+ "fdf5ac4db805": {
+  "nl": "Een flexibele lekbak is licht, snel te plaatsen en makkelijk te verplaatsen. Leeg vouwt u hem weer op; daarom wordt hij ook wel opvouwbare of mobiele lekbak genoemd. Hij is geschikt voor de tijdelijke opslag van vaten en IBC's, wisselende werkplekken en situaties waar een stalen lekbak niet past of te zwaar is.",
+  "en": "A flexible spill tray is light, quick to set up and easy to move. When empty, you simply fold it up again; that is why it is also called a foldable or portable spill tray. It is suitable for the temporary storage of drums and IBCs, changing work sites and situations where a steel spill tray does not fit or is too heavy."
  },
  "fed3e3f1e40b": {
   "nl": "De Waterbase W is een dichte, verplaatsbare tank voor afvalwater, fecaliën en vuil water. Geschikt voor tijdelijke containerbases, modulaire woningen, evenementen en campings, en voor het opvangen van decontaminatiewater.",

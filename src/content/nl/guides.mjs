@@ -23,7 +23,7 @@ export default [
     crumb: 'Waarom flexibel?',
     kicker: 'Vergelijking',
     title: 'Waarom flexibel? Flexibele, stalen en kunststof lekbakken vergeleken',
-    seoTitle: 'Flexibele lekbak, stalen of kunststof lekbak? Vergelijking | EnviroFlow',
+    seoTitle: 'Stalen, kunststof of flexibele lekbak? De verschillen | EnviroFlow',
     description: 'Flexibele lekbak, stalen lekbak of kunststof lekbak? Vergelijk bestendigheid, zwakke plekken, ruimte en maatwerk, en lees wanneer welk type past.',
     updated: '2026-10-23',
     image: { src: IMG + 'opvangbak-4-vaten.jpg', alt: 'Vier vaten in een flexibele opvangbak' },
@@ -82,9 +82,9 @@ export default [
         h: 'Let bij een flexibele lekbak op het weefsel',
         p: [
           'Flexibele lekbakken zien er vaak hetzelfde uit, maar het weefsel kan sterk verschillen. Een zwarte lekbak kan van PVC of van EVA zijn. Vraag daarom altijd naar twee dingen: de coating en het gewicht van het weefsel per vierkante meter.',
-          '**De coating.** PVC is goedkoper, maar volgens de fabrikant niet bestand tegen onder meer benzine, motorolie, glycol en ethanol. EVA is chemisch veel beter bestand. TPU is nog bestendiger, maar ook veel duurder en wordt vooral op bestelling gemaakt.',
+          '**De coating.** PVC is goedkoper, maar volgens de fabrikant niet bestand tegen onder meer benzine en glycol (100%). EVA is chemisch veel beter bestand. TPU is nog bestendiger, maar ook veel duurder en wordt vooral op bestelling gemaakt.',
           '**Het gewicht.** Een zwaarder weefsel is dikker en sterker. De fabrikant adviseert minimaal 1.000 g/m², en 1.200 tot 1.400 g/m² als er vaak met karren of een heftruck over de bodem wordt gereden.',
-          'Onze [flexibele opvangbakken](' + L.opvang + ') zijn gemaakt van EVA-weefsel van 1.365 g/m². De bestendigheidstabel staat bij elk product onder Downloads.'
+          'Onze [flexibele lekbakken](' + L.opvang + ') zijn er in EVA-weefsel van 1.365 g/m² (Plus) en in PVC-weefsel van 900 g/m² (Starter). De bestendigheidstabel van de Plus staat bij het product onder Downloads.'
         ]
       },
       {

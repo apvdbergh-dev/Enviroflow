@@ -88,6 +88,18 @@ export const breadcrumbLd = (items, base) => ({
   itemListElement: items.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.name, item: base + localPath(b.url) }))
 });
 
+/** Vervangt {prijs:product-id} in een tekst door de actuele verkoopprijs excl. btw.
+ *  Zo lopen prijzen in koopgidsen, veelgestelde vragen en artikelen nooit achter op de webshop. */
+export function fillPrices(s, ctx) {
+  return String(s ?? '').replace(/\{prijs:([a-z0-9-]+)\}/g, (m, id) => {
+    const p = ctx.products.find((x) => x.id === id);
+    if (!p || !hasRealPrice(p)) throw new Error(`Onbekende prijsverwijzing ${m}`);
+    return fmtEUR(p.price);
+  });
+}
+/** Veelgestelde vragen met ingevulde prijsverwijzingen (voor de pagina én de gestructureerde gegevens). */
+export const faqWithPrices = (faq, ctx) => (faq || []).map((f) => ({ ...f, a: fillPrices(f.a, ctx) }));
+
 export function faqBlock(faq, title = T('Veelgestelde vragen', 'Frequently asked questions')) {
   if (!faq?.length) return { html: '', ld: null };
   const html = `<section class="section faq" aria-labelledby="faq-title"><div class="container container--narrow"><h2 id="faq-title">${esc(title)}</h2>${faq.map((f) => `<details class="faq__item"><summary>${esc(f.q)}${icon('chevron', 'faq__chev')}</summary><div class="faq__a"><p>${esc(f.a)}</p></div></details>`).join('')}</div></section>`;

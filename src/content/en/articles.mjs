@@ -110,16 +110,16 @@ export default [
         table: {
           head: ['Version', 'Starter (PVC)', 'Plus (EVA)'],
           rows: [
-            ['1 drum', '€386.10', '€417.69'],
-            ['2 drums', '€507.78', '€589.68'],
-            ['4 drums', '€513.63', '€717.21'],
-            ['1 IBC', '€648.18', '€840.06'],
-            ['2 IBCs', '€868.14', '€1,106.82'],
-            ['4 IBCs', '€1,154.79', '€1,495.26'],
-            ['10 IBCs', '€1,667.25', '€2,067.39'],
-            ['Generator (3 × 1.5 m)', '€730.08', '€983.97'],
-            ['Tanker truck', '€2,764.71', '€3,973.32'],
-            ['Truck', '€4,586.40', '€6,440.85']
+            ['1 drum', '{prijs:opvangbak-starter-1-vat}', '{prijs:opvangbak-1-vat}'],
+            ['2 drums', '{prijs:opvangbak-starter-2-vaten}', '{prijs:opvangbak-2-vaten}'],
+            ['4 drums', '{prijs:opvangbak-starter-4-vaten}', '{prijs:opvangbak-4-vaten}'],
+            ['1 IBC', '{prijs:opvangbak-starter-1-ibc}', '{prijs:opvangbak-1-ibc}'],
+            ['2 IBCs', '{prijs:opvangbak-starter-2-ibc}', '{prijs:opvangbak-2-ibc}'],
+            ['4 IBCs', '{prijs:opvangbak-starter-4-ibc}', '{prijs:opvangbak-4-ibc}'],
+            ['10 IBCs', '{prijs:opvangbak-starter-10-ibc}', '{prijs:opvangbak-10-ibc}'],
+            ['Generator (3 × 1.5 m)', '{prijs:opvangbak-starter-aggregaat}', '{prijs:opvangbak-aggregaat}'],
+            ['Tanker truck', '{prijs:opvangbak-starter-voertuigen-tankwagen}', '{prijs:opvangbak-voertuigen-tankwagen}'],
+            ['Truck', '{prijs:opvangbak-starter-voertuigen-vrachtwagen}', '{prijs:opvangbak-voertuigen-vrachtwagen}']
           ],
           note: 'Prices per unit, excluding VAT and transport. Current prices are always shown with the product in the webshop.'
         }
@@ -155,7 +155,7 @@ export default [
       { q: 'What is the difference between a PVC and an EVA spill berm?', a: 'The difference is the coating of the fabric. PVC (900 g/m²) is economical and light, and intended for short-term contact with chemicals. EVA (1,365 g/m²) is stronger, resistant to many more substances such as diesel and glycol, and comes with a 7-year manufacturer’s warranty.' },
       { q: 'Is a PVC spill berm suitable for diesel?', a: 'No. According to the manufacturer, the PVC version is not suitable for diesel and petrol. For fuels, choose a berm in EVA.' },
       { q: 'Is an EVA spill berm better than PVC?', a: 'For most business situations, yes: EVA is stronger, chemically resistant to a wider range and has a longer manufacturer’s warranty. PVC is a good, more economical choice for liquids that PVC tolerates well, such as engine oil, antifreeze and battery acid.' },
-      { q: 'How much cheaper is a PVC spill berm?', a: 'For the same size, the Starter in PVC is about 8 to 30% cheaper than the Plus in EVA. A berm for 1 IBC costs €648.18 in PVC and €840.06 in EVA (excl. VAT).' },
+      { q: 'How much cheaper is a PVC spill berm?', a: 'For the same size, the Starter in PVC is about 8 to 30% cheaper than the Plus in EVA. A berm for 1 IBC costs {prijs:opvangbak-starter-1-ibc} in PVC and {prijs:opvangbak-1-ibc} in EVA (excl. VAT).' },
       { q: 'Can I use a PVC spill berm outdoors?', a: 'You can, but the manufacturer does not state a temperature range for PVC. According to the manufacturer, EVA remains usable from −40 °C to +70 °C. If the berm stays outside all year, we recommend EVA.' }
     ],
     categories: ['flexibele-opvangbakken'],
@@ -168,8 +168,8 @@ export default [
     kicker: 'Containment',
     title: 'Flexible spill tray: what is it and when should you choose one?',
     seoTitle: 'Flexible spill tray: what is it and when to choose one? | EnviroFlow',
-    description: 'What is a flexible spill tray, how does it work and when is it a better fit than a steel one? With sizes, material, Dutch rules (PGS 15) and practical tips.',
-    updated: UPDATED,
+    description: 'What is a flexible spill tray, how does it work and when is it a better fit than a steel one? With sizes, prices, PVC or EVA, Dutch rules (PGS 15) and tips.',
+    updated: '2026-11-13',
     image: { src: IMG + 'sfeer-ibc-hal.jpg', alt: 'IBCs in a flexible spill tray in a commercial hall' },
     intro: 'A flexible spill tray is a containment tray made of strong technical textile with raised edges. If something goes wrong with the IBC, drum or machine standing in it, the liquid stays in the tray. Not on the floor, not in the soil and not in the sewer. Below you can read how such a tray works, when it is a better fit than a steel tray and what to look out for when choosing one.',
     takeaways: [
@@ -184,7 +184,7 @@ export default [
         h: 'How does a flexible spill tray work?',
         p: [
           'The floor and the raised edges together form one tray. If something leaks from an IBC, a drum or a machine, it stays within the edges. You then vacuum or pump up the liquid and dispose of it as required for that substance.',
-          'The spill trays we supply are made of polyester fabric with an EVA coating of 1,365 g/m². According to the manufacturer, this is stronger and more chemically resistant than the 650 to 900 g/m² PVC fabric often used for standard spill trays.'
+          'We supply the spill trays in two versions. The **Plus** is made of polyester fabric with an EVA coating of 1,365 g/m². According to the manufacturer, this is stronger and more chemically resistant than the 650 to 900 g/m² PVC fabric often used for standard spill trays. The **Starter** is the economical version in 900 g/m² PVC fabric, intended for short-term contact with chemicals. Read more in [PVC or EVA spill berm: what is the difference?](/kennisbank/verschil-pvc-en-eva-lekbak/)'
         ],
         image: { src: IMG + 'opvangbak-leeg.jpg', alt: 'Empty flexible spill tray with raised edges', caption: 'An empty spill tray: the floor and the raised edges together form the tray.' }
       },
@@ -204,7 +204,7 @@ export default [
       },
       {
         h: 'Which sizes are available?',
-        p: [`There are standard sizes for drums, IBCs, generators and vehicles. If none of them fits, a custom size is possible. View all [flexible spill trays](${L.opvang}).`],
+        p: [`There are standard sizes for drums, IBCs, generators and vehicles, each in PVC (Starter) and EVA (Plus). If none of them fits, a custom size is possible. View all [flexible spill trays with sizes and prices](${L.opvang}).`],
         table: {
           head: ['Version', 'Containment capacity', 'Dimensions (l × w × h)'],
           rows: [
@@ -222,8 +222,15 @@ export default [
         }
       },
       {
+        h: 'What does a flexible spill tray cost?',
+        p: [
+          'The price depends on the size and the fabric. The Starter in PVC is the most economical version: a tray for 1 drum costs {prijs:opvangbak-starter-1-vat} and a tray for 1 IBC costs {prijs:opvangbak-starter-1-ibc}. The Plus in EVA for 1 IBC costs {prijs:opvangbak-1-ibc}. All prices exclude VAT and transport.',
+          `The prices of all sizes are listed in the [size and price table with the flexible spill trays](${L.opvang}#h-maten).`
+        ]
+      },
+      {
         h: 'Is the spill tray resistant to my liquid?',
-        p: ['That differs per substance. The manufacturer has a resistance table stating for each liquid how the material holds up after two years of contact: A (good), B (moderate) or C (not suitable). Most oils and many chemicals score well, but not everything. Hydrochloric acid 32%, for example, is rated C.'],
+        p: ['That differs per substance and per version. For the Plus (EVA), the manufacturer has a resistance table stating for each liquid how the material holds up after two years of contact: A (good), B (moderate) or C (not suitable). Most oils and many chemicals score well, but not everything. Hydrochloric acid 32%, for example, is rated C. The Starter (PVC) is intended for short-term contact and, according to the manufacturer, is not suitable for petrol and diesel, among others.'],
         callout: { t: 'Tip', d: 'Keep the safety data sheet (SDS) of the substance to hand. It states exactly which substance it is. Send it with your request and we will check the resistance for you.' }
       },
       {
@@ -235,7 +242,7 @@ export default [
       },
       {
         h: 'Indoors or outdoors?',
-        p: ['A flexible spill tray can stand outdoors. According to the manufacturer, the material remains usable from −40 °C to +70 °C. Outdoors, however, rainwater collects in the tray and reduces the containment capacity. Outdoors, choose a larger tray or place the storage under a roof.']
+        p: ['A flexible spill tray can stand outdoors. For the Plus (EVA), the manufacturer states that the fabric remains usable from −40 °C to +70 °C; no temperature range is given for the Starter (PVC). Outdoors, however, rainwater collects in the tray and reduces the containment capacity. Outdoors, choose a larger tray or place the storage under a roof.']
       },
       {
         h: 'Use and inspection',
@@ -249,9 +256,11 @@ export default [
       }
     ],
     faq: [
-      { q: 'How long does a flexible spill tray last?', a: 'The manufacturer gives a 7-year warranty on the spill trays we supply. How long it lasts in practice depends on use, the liquid and whether it is indoors or outdoors.' },
-      { q: 'Can a flexible spill tray stand outdoors?', a: 'Yes. According to the manufacturer, the material remains usable from −40 °C to +70 °C. Keep in mind that rainwater reduces the available containment capacity.' },
-      { q: 'Is a flexible spill tray suitable for flammable liquids?', a: 'According to the manufacturer, the spill trays are suitable for ATEX zone 2 (category 3G), including substances from subgroups IIA, IIB and IIC. The competent authority decides which requirements apply to your storage.' },
+      { q: 'What else is a flexible spill tray called?', a: 'A flexible spill tray is also called a foldable spill tray, portable spill tray, flexible containment berm or spill containment berm.' },
+      { q: 'What does a flexible spill tray cost?', a: 'The Starter in PVC starts at {prijs:opvangbak-starter-1-vat} excl. VAT (for 1 drum). For 1 IBC you pay {prijs:opvangbak-starter-1-ibc} in PVC and {prijs:opvangbak-1-ibc} in EVA. The prices of all sizes are listed with the flexible spill trays in the webshop.' },
+      { q: 'How long does a flexible spill tray last?', a: 'The manufacturer gives a 7-year warranty on the Plus version in EVA. How long a spill tray lasts in practice depends on use, the liquid and whether it is indoors or outdoors.' },
+      { q: 'Can a flexible spill tray stand outdoors?', a: 'Yes. According to the manufacturer, the EVA fabric of the Plus version remains usable from −40 °C to +70 °C. Keep in mind that rainwater reduces the available containment capacity.' },
+      { q: 'Is a flexible spill tray suitable for flammable liquids?', a: 'According to the manufacturer, the Plus version in EVA is suitable for ATEX zone 2 (category 3G), including substances from subgroups IIA, IIB and IIC. The Starter in PVC is not suitable for petrol and diesel. The competent authority decides which requirements apply to your storage.' },
       { q: 'Can I have a spill tray custom-made?', a: 'Yes. Send us the dimensions of the space or machine and tell us what will stand in it. We will check with the manufacturer what is possible.' }
     ],
     categories: ['flexibele-opvangbakken'],
@@ -272,7 +281,7 @@ export default [
       'For one full 1,000-litre IBC, the Dutch PGS 15 guideline requires at least 1,100 litres of containment.',
       'With several IBCs, 110% of the largest counts, or 10% of the total if that is more.',
       'Outdoors, rainwater fills the tray. Leave room for it.',
-      'Flexible IBC spill trays are available for 1, 2, 4 and 10 IBCs, and custom-made.'
+      '[Flexible spill trays for IBCs](/producten/opvang-en-spill-containment/flexibele-opvangbakken/) are available for 1, 2, 4 and 10 IBCs, in PVC and EVA, and custom-made.'
     ],
     sections: [
       {
@@ -387,7 +396,7 @@ export default [
         h: 'One large tray or several small ones?',
         p: [
           'Both are allowed. Under PGS 15 you can arrange containment for the whole storage at once, or with smaller spill trays per rack, pallet or container. Each tray must then be sufficient for what stands in it.',
-          `Several small trays are handy when storage is spread out or changes often. One large tray keeps things simple for fixed storage. View the [sizes of the flexible spill trays](${L.opvang}).`
+          `Several small trays are handy when storage is spread out or changes often. One large tray keeps things simple for fixed storage. View the [sizes and prices of the flexible spill trays](${L.opvang}).`
         ],
         image: { src: IMG + 'opvangbak-10-ibc.jpg', alt: 'Flexible spill tray for ten IBCs', caption: 'One tray for ten IBCs: 5,836 litres of containment capacity.' }
       },

@@ -34,10 +34,13 @@ for (const file of pages) {
     if (!ok) errors.push(`${rel}: dode link ${u}`);
   }
   for (const m of html.matchAll(/<img (?![^>]*alt=)[^>]*>/g)) errors.push(`${rel}: img zonder alt ${m[0].slice(0, 60)}`);
+  // Prijsverwijzingen ({prijs:product-id}) en andere invulvelden moeten bij het bouwen zijn ingevuld.
+  for (const m of html.matchAll(/\{(?:prijs:[a-z0-9-]+|aantal|vanafprijs)\}/g)) errors.push(`${rel}: niet ingevuld ${m[0]}`);
   for (const m of html.matchAll(/<input [^>]*id="([^"]+)"/g)) {
     const id = m[1]; if (!html.includes(`for="${id}"`) && !/type="(hidden|checkbox|radio)"/.test(m[0])) errors.push(`${rel}: input #${id} zonder label`);
   }
 }
+for (const f of ['llms.txt', 'google-shopping.xml', 'sitemap.xml']) { const p = join(dist, f); if (existsSync(p) && /\{(?:prijs:[a-z0-9-]+|aantal|vanafprijs)\}/.test(readFileSync(p, 'utf8'))) errors.push(`/${f}: niet ingevulde verwijzing`); }
 const unique = [...new Set(errors)];
 console.log(`${pages.length} pagina's gecontroleerd, ${unique.length} problemen`);
 unique.slice(0, 80).forEach((e) => console.log(' - ' + e));

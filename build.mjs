@@ -228,6 +228,7 @@ writeFileSync(join(dist, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
 writeFileSync(join(dist, 'version.txt'), `${process.env.CF_PAGES_COMMIT_SHA || 'lokaal'} ${new Date().toISOString()}\n`);
 
 // Beveiligings- en cacheheaders voor Cloudflare Pages (zelfde regels als server.mjs).
+// De laatste regel houdt het technische adres *.pages.dev uit de zoekmachines: alleen www.enviroflow.nl hoort gevonden te worden.
 // Oude adressen die nog ergens gelinkt kunnen zijn (Cloudflare Pages leest _redirects).
 writeFileSync(join(dist, '_redirects'), `/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf /assets/datasheets/opvangbak-chemische-bestendigheid.pdf 301
 `);
@@ -246,6 +247,8 @@ writeFileSync(join(dist, '_headers'), `/*
   Cache-Control: public, max-age=31536000, immutable
 /assets/fonts/*
   Cache-Control: public, max-age=31536000, immutable
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
 `);
 
 console.log(`Build gereed: ${sitemap.length} indexeerbare pagina's (NL + EN) → dist/`);
