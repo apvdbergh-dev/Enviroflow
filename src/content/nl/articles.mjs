@@ -15,10 +15,24 @@ const SRC = {
   diesel: { label: 'IPLO – Regels bodem: opslaan van diesel in een bovengrondse opslagtank', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/opslaan-diesel-oxiderende-bijtende-aquatoxische/regels-bodem/' },
   mestBodem: { label: 'IPLO – Regels bodem: opslaan van drijfmest in een mestbassin (paragraaf 4.86 Bal)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/opslaan-drijfmest-digestaat-dunne-fractie/regels-bodem/' },
   mestRegels: { label: 'IPLO – Opslaan van mest: wanneer welke regels gelden', url: 'https://iplo.nl/thema/toepassing-regels-praktijk/veehouderijen/opslaan-mest-wanneer-welke-regels-gelden/' },
-  rvo: { label: 'RVO – Wanneer mest uitrijden 2026 (tabel)', url: 'https://www.rvo.nl/sites/default/files/2026-02/Tabel-1-Wanneer-mest-uitrijden-2026.pdf' }
+  rvo: { label: 'RVO – Wanneer mest uitrijden 2026 (tabel)', url: 'https://www.rvo.nl/sites/default/files/2026-02/Tabel-1-Wanneer-mest-uitrijden-2026.pdf' },
+  lekbak: { label: 'IPLO – Lekbak: definitie en eisen (paragraaf 5.4.2 Bal)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/bodemmodules/bodembeschermende-voorzieningen/lekbak/' },
+  voorzieningen: { label: 'IPLO – Bodembeschermende voorzieningen', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/bodemmodules/bodembeschermende-voorzieningen/' },
+  ondergrenzen: { label: 'IPLO – Opslaan van gevaarlijke stoffen in verpakking (paragraaf 3.2.9 Bal)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/milieubelastende-activiteiten-hoofdstuk-3-bal/activiteiten/opslaan-gevaarlijke/' },
+  ondergrenzenNieuws: { label: 'IPLO – Ondergrenzen verpakte gevaarlijke stoffen (artikel 3.27 en 4.1012 Bal)', url: 'https://iplo.nl/thema/externe-veiligheid/nieuws-externe-veiligheid/ondergrenzen-verpakte-gevaarlijke-stoffen/' },
+  werkvoorraad: { label: 'IPLO – PGS 15: het opslaan van gevaarlijke en CMR-stoffen (werkvoorraad)', url: 'https://iplo.nl/thema/externe-veiligheid/publicatiereeks-gevaarlijke-stoffen-pgs/handleiding-publicatiereeks-gevaarlijke-stoffen/pgs-15-algemene-voorschriften/pgs-15-opslaan-gevaarlijke-cmr-stoffen/' },
+  goederen: { label: 'IPLO – Regels bodem: opslaan van goederen (paragraaf 4.104 Bal)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/opslaan-goederen/regels-bodem/' },
+  opslagtank: { label: 'IPLO – Dit valt onder opslagtank voor vloeistoffen (paragraaf 3.2.8 Bal)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/milieubelastende-activiteiten-hoofdstuk-3-bal/activiteiten/opslagtank/' },
+  tankcontainer: { label: 'IPLO – Regels bodem: tankcontainer of verpakking als opslagtank (paragraaf 4.95 Bal)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/opslaan-bijtende-aquatoxische-vloeistoffen/regels-bodem/' },
+  ibcRegels: { label: 'IPLO – Intermediate bulkcontainer (IBC): verpakking of opslagtank', url: 'https://iplo.nl/thema/bodem/bodembescherming/regels-bodem/intermediate-bulkcontainer-ibc-verpakking/' },
+  adblue: { label: 'IPLO – Regels voor het tanken en opslaan van ureum (AdBlue)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/regels-tanken-opslaan-ureum-adblue/' },
+  zorgplicht: { label: 'IPLO – Zorgplicht bodem', url: 'https://iplo.nl/thema/bodem/bodembescherming/zorgplicht-bodemverontreiniging/' },
+  pgs15Verpakking: { label: 'IPLO – PGS 15: verpakking en etikettering', url: 'https://iplo.nl/thema/externe-veiligheid/publicatiereeks-gevaarlijke-stoffen-pgs/handleiding-publicatiereeks-gevaarlijke-stoffen/pgs-15-algemene-voorschriften/pgs-15-verpakking-etikettering/' },
+  schuetz: { label: 'Schütz – datasheet ECOBULK MX 1000 met stalen pallet (maart 2026, Duits)', url: 'https://www.schuetz-packaging.net/downloads/datenblaetter-ibc/datenblatt-ecobulk-mx-1000-mit-3-kufen-stahlpalette/datasheet-schuetz-ecobulk-mx-3-skid-steel-pallet-de.pdf' },
+  werit: { label: 'Werit – datasheet IBC TOPline (Duits)', url: 'https://www.werit.eu/sites/default/files/2026-03/datenblatt_topline_de.pdf' }
 };
 const L = {
-  opvang: '/producten/opvang-en-spill-containment/flexibele-opvangbakken/',
+  opvang: '/flexibele-lekbak/',
   brandwater: '/producten/flexibele-tanks/brandwatertanks/',
   drinkwater: '/producten/flexibele-tanks/drinkwatertanks/',
   buffer: '/producten/flexibele-tanks/industriele-water-en-buffertanks/',
@@ -31,12 +45,290 @@ const L = {
   kering: '/producten/mobiel-en-calamiteiten/mobiele-waterkeringen/',
   capaciteit: '/kennisbank/hoe-kies-je-de-juiste-opvangcapaciteit/',
   ibc: '/kennisbank/welke-opvangbak-heb-ik-nodig-voor-ibcs/',
-  lekbak: '/kennisbank/wat-is-een-flexibele-lekbak/',
+  lekbak: '/flexibele-lekbak/',
+  verplicht: '/kennisbank/wanneer-is-een-lekbak-verplicht/',
+  ibcMaten: '/kennisbank/ibc-afmetingen/',
   brandstofArtikel: '/kennisbank/brandstof-tijdelijk-opslaan-op-locatie/'
 };
 const UPDATED = '2026-10-17';
 
 export default [
+  {
+    slug: 'wanneer-is-een-lekbak-verplicht',
+    kicker: 'Regels en berekenen',
+    title: 'Wanneer is een lekbak verplicht? De regels per situatie',
+    seoTitle: 'Wanneer is een lekbak verplicht? Regels per situatie | EnviroFlow',
+    description: "Wanneer is een lekbak verplicht? Regels voor gevaarlijke stoffen, olie, diesel, IBC's en AdBlue per situatie, met de eisen aan de lekbak en de officiële bron.",
+    updated: '2026-11-13',
+    image: { src: IMG + 'opvangbak-2-ibc.jpg', alt: "Twee IBC's in een flexibele lekbak" },
+    intro: 'Of een lekbak verplicht is, hangt af van wat u opslaat, hoeveel en op welke manier. Voor vloeibare gevaarlijke stoffen in verpakking, voor een bovengrondse dieseltank en voor een IBC die als opslagtank dient, schrijven de regels opvang voor. Voor AdBlue niet. Hieronder staat per situatie wat er geldt, steeds met de officiële bron erbij.',
+    takeaways: [
+      'Voor **vloeibare gevaarlijke stoffen in verpakking** is productopvang verplicht zodra PGS 15 geldt (voorschrift 3.6.1).',
+      'Een **bovengrondse dieseltank** van meer dan 250 liter staat boven of in een lekbak, of is dubbelwandig met lekdetectie.',
+      'Een **IBC die als opslagtank dient**, staat boven of in een lekbak die de volledige inhoud opvangt.',
+      'Voor **AdBlue** stelt het Bal geen regels aan de opslag. Wel geldt de zorgplicht.',
+      'Een lekbak vangt minimaal **110% van de grootste verpakking** op, en minimaal 10% van het totaal.'
+    ],
+    sections: [
+      {
+        h: 'Het korte antwoord per situatie',
+        p: ['Een lekbak is verplicht als u vloeibare gevaarlijke stoffen in verpakking opslaat en PGS 15 geldt, als u diesel opslaat in een bovengrondse tank van meer dan 250 liter (tenzij die dubbelwandig is met lekdetectie), en als een IBC of tankcontainer als opslagtank dient. Voor oliën en vetten in een geopende verpakking is een lekbak ook voorgeschreven. Voor AdBlue niet.'],
+        table: {
+          head: ['Wat slaat u op?', 'Lekbak verplicht?', 'Waar staat het?'],
+          rows: [
+            ["Vloeibare gevaarlijke stoffen in verpakking (vaten, jerrycans, IBC's), boven de ondergrens", 'Ja: productopvang', 'PGS 15, voorschrift 3.6.1 (via paragraaf 4.98 Bal)'],
+            ['Werkvoorraad gevaarlijke stoffen van meer dan 50 liter', 'Ja: lekbak of gelijkwaardige voorziening', 'PGS 15'],
+            ['Oliën en vetten in een geopende verpakking', 'Ja: een lekbak boven een aaneengesloten vloer', 'Artikel 4.1063a Bal'],
+            ['Oliën en vetten in een afgesloten verpakking', 'Nee: een elementenbodemvoorziening is voldoende', 'Artikel 4.1063a Bal'],
+            ['Bovengrondse dieseltank van meer dan 250 liter', 'Ja, of een dubbelwandige tank met lekdetectie', 'Paragraaf 4.94 Bal'],
+            ['IBC of tankcontainer die als opslagtank dient (meer dan 250 liter)', 'Ja: de lekbak vangt de volledige inhoud op', 'Paragraaf 4.95 Bal'],
+            ['AdBlue (ureum)', 'Niet voorgeschreven; wel geldt de zorgplicht', 'Artikel 2.11 Bal']
+          ],
+          note: 'Dit zijn de landelijke regels uit het Besluit activiteiten leefomgeving (Bal) en PGS 15, stand november 2026. Welke paragraaf voor uw bedrijf geldt, hangt af van uw activiteiten. Een omgevingsvergunning of het omgevingsplan van uw gemeente kan strengere eisen stellen.'
+        },
+        callout: { t: 'Geen juridisch advies', d: 'Dit artikel vat de regels samen. De officiële teksten en het bevoegd gezag (meestal de gemeente of de omgevingsdienst) zijn leidend. De bronnen staan onderaan.' }
+      },
+      {
+        h: 'Wat is een lekbak volgens de wet?',
+        p: ['Het Bal omschrijft een lekbak als **een bodembeschermende voorziening met opstaande randen**. Een lekbak mag niet zijn aangesloten op het vuilwaterriool. Naast de lekbak kent het Bal drie soorten vloeren:'],
+        list: [
+          '**Vloeistofdichte bodemvoorziening:** een vloer of verharding die door een inspectie-instantie is beoordeeld en goedgekeurd.',
+          '**Aaneengesloten bodemvoorziening:** een vloer of verharding die stoffen tijdelijk tegenhoudt en waarvan de naden zijn gedicht.',
+          '**Elementenbodemvoorziening:** een vloer of verharding die stoffen tijdelijk tegenhoudt, maar waarvan de naden niet zijn gedicht.'
+        ],
+        after: ['Per activiteit schrijft het Bal voor welke voorziening minimaal nodig is. Soms is dat alleen een vloer, soms een lekbak, soms allebei.']
+      },
+      {
+        h: 'Gevaarlijke stoffen in verpakking: PGS 15',
+        p: ["Slaat u gevaarlijke stoffen op in verpakking, zoals vaten, jerrycans of IBC's? Dan valt dat onder het Bal zodra u boven één van deze ondergrenzen komt:"],
+        list: [
+          '**1 kg** stoffen van ADR-klasse 5.2, 6.1 (verpakkingsgroep I), 6.2 (categorie I1 of I2) of 8 (verpakkingsgroep I)',
+          '**25 kg** vloeibare stoffen van ADR-klasse 3, verpakkingsgroep I of II (brandbare vloeistoffen)',
+          '**25 liter** giftige of bijtende gassen van ADR-klasse 2',
+          '**125 liter** brandbare gassen van ADR-klasse 2 in gasflessen',
+          '**1.000 kg** gevaarlijke stoffen in verpakking in totaal'
+        ],
+        after: [
+          'Komt u boven één van deze grenzen, dan moet de opslag van **alle** verpakte gevaarlijke stoffen voldoen aan PGS 15 (artikel 4.1012 Bal). De werkvoorraad telt niet mee als opslag.',
+          'PGS 15 schrijft voor vloeibare gevaarlijke stoffen **productopvang** voor (voorschrift 3.6.1): bij een lekkage mag de vloeistof niet uit de opslagvoorziening stromen. Die opvang mag u voor de hele opslagvoorziening regelen, of met lekbakken per stelling, pallet of verpakking. Voor vaste gevaarlijke stoffen is productopvang niet nodig.'
+        ],
+        callout: { t: 'Werkvoorraad van meer dan 50 liter', d: 'Staat er buiten de opslagvoorziening een werkvoorraad van meer dan 50 liter, dan hoort de verpakking boven een vloeistofdichte lekbak of een gelijkwaardige voorziening. Daarvan mag worden afgeweken als de vloer van de werkruimte ten minste vloeistofkerend is. Voor brandbare vloeistoffen (ADR-klasse 3) blijft een lekbak of gelijkwaardige voorziening nodig.' }
+      },
+      {
+        h: "Olie en vetten in vaten, jerrycans of IBC's",
+        p: [
+          'Oliën en vetten die geen brandbare vloeistof van ADR-klasse 3 zijn, vallen niet onder de regels voor gevaarlijke stoffen. Daarvoor gelden de bodemregels voor het opslaan van goederen (paragraaf 4.104 Bal). Die paragraaf geldt voor bedrijven waarvoor het Bal haar aanwijst; dat hangt af van uw bedrijfsactiviteit.',
+          'De hoofdregel staat in artikel 4.1063a: oliën, vetten en pekel in verpakking staan boven een **aaneengesloten bodemvoorziening én een lekbak**. Een dubbele bescherming dus. Er zijn twee uitzonderingen:'
+        ],
+        list: [
+          'Staat de olie in een **afgesloten verpakking**, dan is een elementenbodemvoorziening voldoende. Een jerrycan met een dichte dop is daar een voorbeeld van.',
+          'Voor **smeervetten** is een elementenbodemvoorziening altijd voldoende, ook als de verpakking geopend is.'
+        ],
+        after: ['Kort gezegd: een dicht vat op voorraad mag op een verharde vloer staan. Is de verpakking geopend, dan geldt de hoofdregel en hoort er een lekbak onder.']
+      },
+      {
+        h: 'Dieseltank: lekbak of dubbelwandig',
+        p: [
+          'Een bovengrondse opslagtank van meer dan 250 liter met diesel valt onder het Bal (paragraaf 3.2.8). Voor de bodem geldt paragraaf 4.94: de tank staat **boven of in een lekbak**, of is **dubbelwandig met een lekdetectiesysteem** in de wand.',
+          'Het aansluitpunt van de vulleiding hoort boven een vloeistofdichte bodemvoorziening, of boven of in een vulpuntmorsbak. Zit die morsbak op de tank, dan is een inhoud van 5 liter genoeg. Staat hij los, dan is minimaal 65 liter nodig.',
+          'Dezelfde paragraaf geldt voor bovengrondse tanks met oxiderende, bijtende of aquatoxische vloeistoffen, oliën, vetten of pekel.',
+          `Meer over tanken op locatie leest u in [Diesel tijdelijk opslaan op de bouwplaats of bij een aggregaat](${L.brandstofArtikel}).`
+        ]
+      },
+      {
+        h: 'IBC: verpakking of opslagtank?',
+        p: ['Een IBC is volgens het Bal altijd een verpakking. Hij kan daarnaast ook een opslagtank zijn. Dat is zo als de IBC **op een vaste plaats staat en door een tankwagen wordt gevuld of geleegd**. Een IBC die u leeg of vol omwisselt, is geen opslagtank. Het verschil bepaalt welke regels gelden:'],
+        table: {
+          head: ['', 'IBC als verpakking', 'IBC als opslagtank'],
+          rows: [
+            ['Wanneer', 'U wisselt de IBC om: vol erin, leeg eruit', 'De IBC blijft staan en wordt door een tankwagen gevuld of geleegd'],
+            ['Welke regels', 'Gevaarlijke stoffen: paragraaf 4.98 Bal en PGS 15. Oliën en vetten: paragraaf 4.104 Bal', 'Paragraaf 4.95 Bal, bij een inhoud van meer dan 250 liter'],
+            ['Opvang', 'Minimaal 110% van de grootste verpakking, of 10% van het totaal als dat meer is', 'Boven of in een lekbak die de volledige inhoud opvangt'],
+            ['Keuring van de IBC', 'Volgens de vervoersregels van het ADR', 'ADR hoofdstuk 6.5 is voorgeschreven, met inspecties om de 2,5 en 5 jaar']
+          ]
+        },
+        after: [
+          'Paragraaf 4.95 geldt voor diesel, oxiderende, bijtende of aquatoxische vloeistoffen, oliën, vetten en pekel. Na het verplaatsen controleert u de IBC en de aangesloten leidingen op beschadigingen.',
+          `De maten en het gewicht van een IBC staan in [IBC afmetingen: maten, inhoud en gewicht](${L.ibcMaten}).`
+        ]
+      },
+      {
+        h: 'AdBlue: geen lekbak voorgeschreven',
+        p: [
+          'Het Bal stelt **geen regels aan de opslag van ureum (AdBlue)**. Een lekbak onder een IBC of tank met AdBlue is dus niet voorgeschreven.',
+          'Wel geldt de specifieke zorgplicht uit artikel 2.11 van het Bal: u voorkomt zo veel mogelijk dat de opslag nadelige gevolgen heeft voor de omgeving. Heeft u een omgevingsvergunning, dan kan het bevoegd gezag daarin eigen voorschriften opnemen.',
+          'Tankt u AdBlue op dezelfde plek als brandstof, dan gelden daarvoor wel regels (paragrafen 4.39, 4.40, 4.42 en 4.43 Bal).'
+        ]
+      },
+      {
+        h: 'Aggregaat, pomp of machine',
+        p: [
+          'Staat er bij het aggregaat een losse dieseltank van meer dan 250 liter, dan gelden daarvoor de tankregels hierboven: een lekbak, of een dubbelwandige tank met lekdetectie. Dient een IBC met diesel als opslagtank, dan geldt paragraaf 4.95: een lekbak die de volledige inhoud opvangt.',
+          'Voor het aggregaat, de pomp of de machine zelf geldt in elk geval de **zorgplicht**: wie een activiteit verricht, treft maatregelen om bodemverontreiniging te voorkomen, voor zover dat redelijkerwijs mogelijk is. Gemorste vloeistof ruimt u op. Een lekbak onder het apparaat vangt lekkende olie of brandstof op voordat die de bodem bereikt.',
+          'Werkt u op een bouwplaats of op het terrein van een opdrachtgever? Kijk dan ook in de vergunning en in de regels van de opdrachtgever. Die kunnen een lekbak voorschrijven.'
+        ]
+      },
+      {
+        h: 'Aan welke eisen moet een lekbak voldoen?',
+        p: ['De eisen staan in paragraaf 5.4.2 van het Bal:'],
+        list: [
+          'De lekbak vangt **minimaal 110%** op van de inhoud van de grootste verpakking of opslagtank.',
+          'Daarnaast vangt hij **minimaal 10%** op van de inhoud van alle opgeslagen stoffen samen.',
+          'De lekbak is **bestand tegen de stoffen** die erin of erboven staan.',
+          'Er blijven **geen stoffen en geen water** in de lekbak staan.',
+          'De lekbak is **niet aangesloten op het vuilwaterriool**.'
+        ],
+        after: [
+          `Rekenvoorbeelden staan in [Opvangcapaciteit berekenen: de 110%-regel uitgelegd](${L.capaciteit}).`,
+          'Controleer de lekbak regelmatig, zodat hij niet vol raakt. Voor bodembeschermende voorzieningen houdt u een logboek bij van controles, onderhoud en reparaties. Dat mag digitaal.'
+        ]
+      },
+      {
+        h: 'Buiten: wat doet u met regenwater?',
+        p: ['Een lekbak mag buiten staan, maar er mag geen water in blijven staan. Regenwater gaat af van de opvangcapaciteit. Het water uit de lekbak mag u niet lozen: u voert het af als afval. U kunt ook voorkomen dat er regen in de lekbak komt, bijvoorbeeld met een overkapping.']
+      },
+      {
+        h: 'Welke lekbak past bij uw opslag?',
+        p: [
+          `Een [flexibele lekbak](${L.opvang}) is er in standaardmaten voor 1, 2, 4 of 10 IBC's, voor vaten, voor een aggregaat en voor voertuigen. De lekbak voor één IBC heeft een opvangcapaciteit van 1.149 liter. Volgens de fabrikant blijft met de IBC erin minimaal 110% van de inhoud van de IBC over.`,
+          `Slaat u diesel, benzine of agressieve chemicaliën op, kies dan de uitvoering in EVA. Het verschil leest u in [PVC of EVA lekbak: wat is het verschil?](/kennisbank/verschil-pvc-en-eva-lekbak/) Hulp bij de maat vindt u in [IBC lekbak kiezen](${L.ibc}).`
+        ]
+      }
+    ],
+    faq: [
+      { q: 'Vanaf hoeveel liter is een lekbak verplicht?', a: 'Er is niet één grens. Voor brandbare vloeistoffen (ADR-klasse 3, verpakkingsgroep I of II) gelden de regels vanaf 25 kg, voor alle gevaarlijke stoffen in verpakking samen vanaf 1.000 kg. Voor een werkvoorraad ligt de grens bij 50 liter, voor een opslagtank of een IBC als opslagtank bij 250 liter.' },
+      { q: 'Is een lekbak onder een IBC verplicht?', a: 'Dat hangt af van de inhoud en het gebruik. Zit er een vloeibare gevaarlijke stof in en geldt PGS 15, dan is productopvang verplicht. Dient de IBC als opslagtank voor bijvoorbeeld diesel of olie, dan staat hij boven of in een lekbak die de volledige inhoud opvangt. Voor AdBlue is geen lekbak voorgeschreven.' },
+      { q: 'Is een lekbak verplicht voor AdBlue?', a: 'Nee. Het Bal stelt geen regels aan de opslag van ureum (AdBlue). Wel geldt de zorgplicht uit artikel 2.11 van het Bal, en in een omgevingsvergunning kunnen eigen voorschriften staan.' },
+      { q: 'Is een lekbak onder een dieseltank verplicht?', a: 'Een bovengrondse dieseltank van meer dan 250 liter staat boven of in een lekbak, of is dubbelwandig met een lekdetectiesysteem in de wand. Dat staat in paragraaf 4.94 van het Bal.' },
+      { q: 'Hoe groot moet een lekbak zijn?', a: 'Minimaal 110% van de inhoud van de grootste verpakking of tank, en minimaal 10% van alles wat er in totaal staat. Dient een IBC of tankcontainer als opslagtank, dan moet de lekbak de volledige inhoud kunnen opvangen.' },
+      { q: 'Mag een lekbak op het riool zijn aangesloten?', a: 'Nee. Volgens het Bal is een lekbak niet aangesloten op het vuilwaterriool. Gelekte vloeistof en regenwater uit de lekbak voert u af als afval.' },
+      { q: 'Mag een lekbak buiten staan?', a: 'Ja, maar er mag geen water in blijven staan. Voer regenwater uit de lekbak af als afval, of voorkom dat er regen in komt, bijvoorbeeld met een overkapping.' },
+      { q: 'Is een flexibele lekbak ook toegestaan?', a: 'Het Bal omschrijft een lekbak als een bodembeschermende voorziening met opstaande randen, die bestand moet zijn tegen de opgeslagen stoffen. Controleer daarom per stof de bestendigheid. Voor opslag onder PGS 15 of een vergunning kunnen aanvullende eisen gelden. Overleg bij twijfel met het bevoegd gezag.' }
+    ],
+    categories: ['flexibele-opvangbakken'],
+    products: ['opvangbak-1-ibc', 'opvangbak-2-ibc', 'opvangbak-aggregaat'],
+    sources: [SRC.lekbak, SRC.voorzieningen, SRC.ondergrenzen, SRC.ondergrenzenNieuws, SRC.pgs15, SRC.werkvoorraad, SRC.goederen, SRC.opslagtank, SRC.diesel, SRC.tankcontainer, SRC.ibcRegels, SRC.adblue, SRC.zorgplicht]
+  },
+
+  {
+    slug: 'ibc-afmetingen',
+    kicker: 'Opvang',
+    title: 'IBC afmetingen: maten, inhoud en gewicht van een IBC-container',
+    seoTitle: 'IBC afmetingen: maten, gewicht en inhoud per type | EnviroFlow',
+    description: 'Een IBC-container van 1000 liter is 120 × 100 × 116 cm. Alle afmetingen per type, het gewicht leeg en vol en stapelen, uit datasheets van fabrikanten.',
+    updated: '2026-11-13',
+    image: { src: IMG + 'opvangbak-1-ibc.jpg', alt: 'IBC-container van 1.000 liter in een flexibele lekbak' },
+    intro: 'Een standaard IBC-container van 1.000 liter is 120 cm lang, 100 cm breed en ongeveer 116 cm hoog. Leeg weegt hij 57 tot 63 kilo. Hieronder staan de maten en gewichten per inhoud en per pallet, rechtstreeks uit de datasheets van fabrikanten. Ook leest u hoe zwaar een volle IBC is, of u mag stapelen en welke lekbak eronder past.',
+    takeaways: [
+      'Een IBC van **1.000 liter** meet 120 × 100 × 116 cm (lengte × breedte × hoogte).',
+      'Leeg weegt hij **57 tot 63 kg**, afhankelijk van de pallet. Gevuld met water ruim **1.050 kg**.',
+      "Er zijn ook IBC's van **300, 600 en 800 liter**. Die van 600 liter hebben het grondvlak van een europallet: 120 × 80 cm.",
+      'Of u mag **stapelen**, hangt af van de fabrikant en van het gewicht van de inhoud.',
+      `Onder één volle IBC hoort minimaal 1.100 liter opvang als PGS 15 geldt. Bekijk de [flexibele lekbakken voor IBC's](${L.opvang}).`
+    ],
+    sections: [
+      {
+        h: 'Wat zijn de afmetingen van een IBC van 1.000 liter?',
+        p: ['De meest gebruikte IBC heeft een inhoud van 1.000 liter en een grondvlak van 120 × 100 cm. De hoogte verschilt een paar centimeter per fabrikant en per soort pallet:'],
+        table: {
+          head: ['Fabrikant en uitvoering', 'Lengte × breedte × hoogte', 'Leeg gewicht'],
+          rows: [
+            ['Schütz ECOBULK MX 1000, stalen pallet', '1.200 × 1.000 × 1.160 mm', '59 kg'],
+            ['Werit TOPline (1.000 liter), houten pallet', '1.200 × 1.000 × 1.164 mm', 'ca. 63 kg'],
+            ['Werit TOPline (1.000 liter), kunststof pallet', '1.200 × 1.000 × 1.163 mm', 'ca. 57 kg'],
+            ['Werit TOPline (1.000 liter), combipallet', '1.200 × 1.000 × 1.135 mm', 'ca. 59 kg']
+          ],
+          note: 'Bron: datasheets van Schütz (maart 2026) en Werit. De maten zijn inclusief pallet en kooi. Is de ruimte krap, kijk dan in de datasheet van uw eigen IBC.'
+        }
+      },
+      {
+        h: 'Afmetingen van een IBC van 300, 600 en 800 liter',
+        p: ["Kleinere IBC's zijn er met verschillende grondvlakken. Dit zijn de maten uit de datasheet van Werit (TOPline):"],
+        table: {
+          head: ['Inhoud', 'Pallet', 'Lengte × breedte × hoogte', 'Leeg gewicht'],
+          rows: [
+            ['300 liter', 'Kunststof', '600 × 800 × 1.000 mm', 'ca. 23 kg'],
+            ['600 liter', 'Hout', '1.200 × 800 × 1.003 mm', 'ca. 50 kg'],
+            ['600 liter', 'Kunststof', '1.200 × 800 × 1.013 mm', 'ca. 46 kg'],
+            ['800 liter, europalletmaat', 'Kunststof', '1.200 × 800 × 1.178 mm', 'ca. 51 kg'],
+            ['800 liter', 'Hout', '1.200 × 1.000 × 1.001 mm', 'ca. 54 kg'],
+            ['800 liter', 'Kunststof', '1.200 × 1.000 × 1.000 mm', 'ca. 53 kg']
+          ],
+          note: 'Bron: datasheet Werit TOPline. Andere fabrikanten hebben eigen maten; kijk daarvoor in hun datasheet.'
+        }
+      },
+      {
+        h: 'Hoe zwaar is een lege IBC?',
+        p: ['Een lege IBC van 1.000 liter weegt 57 tot 63 kg. Het verschil zit in de pallet: met een houten pallet is hij het zwaarst, met een kunststof pallet het lichtst. Een IBC van 600 liter weegt leeg ongeveer 46 tot 50 kg, een IBC van 300 liter ongeveer 23 kg.']
+      },
+      {
+        h: 'Hoe zwaar is een volle IBC?',
+        p: ['Het gewicht van een volle IBC is het lege gewicht plus het gewicht van de inhoud. De inhoud weegt het aantal liters maal de dichtheid van de vloeistof. Voor een IBC van 1.000 liter die leeg 59 kg weegt:'],
+        table: {
+          head: ['Vloeistof', 'Dichtheid', 'Gewicht van 1.000 liter', 'Totaal met IBC'],
+          rows: [
+            ['Water', '1,00 kg per liter', '1.000 kg', '1.059 kg'],
+            ['Diesel (EN 590)', '0,820 tot 0,845 kg per liter bij 15 °C', '820 tot 845 kg', '879 tot 904 kg'],
+            ['AdBlue (ISO 22241)', '1,087 tot 1,093 kg per liter bij 20 °C', '1.087 tot 1.093 kg', '1.146 tot 1.152 kg']
+          ],
+          note: 'De dichtheid van diesel en AdBlue is vastgelegd in de normen EN 590 en ISO 22241.'
+        },
+        after: ['Let op de **maximale dichtheid** waarvoor de IBC is goedgekeurd. Bij de UN-uitvoeringen van Schütz en Werit is dat 1,9 kg per liter. Reken bij het kiezen van een heftruck of stelling dus op ruim 1.000 kg per volle IBC.']
+      },
+      {
+        h: 'Vulopening en aftapkraan',
+        p: ['De vulopening bovenop heeft een schroefdop van 150 of 225 mm (DN 150 of DN 225). De aftapkraan onderaan is er in DN 50 en DN 80. Dat zijn de maten die Schütz en Werit opgeven.']
+      },
+      {
+        h: "Mag u IBC's stapelen?",
+        p: ['Dat verschilt per IBC. De fabrikant geeft op hoe hoog u mag stapelen, en dat hangt af van het gewicht van de inhoud. Schütz geeft voor de ECOBULK MX 1000 met stalen pallet het volgende op:'],
+        list: [
+          '**Bij opslag (stilstaand):** maximaal 4 hoog.',
+          '**Bij vervoer:** 2 hoog bij een dichtheid tot 1,5 kg per liter. Daarboven niet stapelen.'
+        ],
+        after: ['Deze waarden gelden alleen voor dit type. Kijk voor uw eigen IBC op het typeplaatje en in de datasheet.']
+      },
+      {
+        h: 'Hoe lang mag u een IBC gebruiken?',
+        p: [
+          "Voor gevaarlijke stoffen gelden de regels van het ADR. Voor kunststof IBC's en IBC's met een kunststof binnenvat is de toegestane gebruiksduur **5 jaar**, tenzij de bevoegde autoriteit anders bepaalt. Daarnaast kent het ADR inspecties om de 2,5 en 5 jaar.",
+          'Slaat u alleen water op, dan gelden de ADR-regels niet.'
+        ]
+      },
+      {
+        h: 'Is een IBC een verpakking of een opslagtank?',
+        p: [`Een IBC is volgens de regels altijd een verpakking. Hij telt daarnaast als opslagtank als hij op een vaste plaats staat en door een tankwagen wordt gevuld of geleegd. Dat maakt uit voor de regels en voor de lekbak die eronder hoort. Per situatie staat het in [Wanneer is een lekbak verplicht?](${L.verplicht})`]
+      },
+      {
+        h: 'Welke lekbak past onder een IBC?',
+        p: ["Een IBC van 1.000 liter heeft een grondvlak van 1,20 × 1,00 m. Geldt PGS 15, dan is de opvang minimaal 110% van de grootste verpakking: 1.100 liter voor één volle IBC. Dit zijn de standaardmaten van onze flexibele lekbakken voor IBC's:"],
+        table: {
+          head: ["Aantal IBC's", 'Afmetingen lekbak (l × b × h)', 'Opvangcapaciteit', 'Prijs vanaf, excl. btw'],
+          rows: [
+            ['1 IBC', '2,16 × 1,60 × 0,35 m', '1.149 liter', '{prijs:opvangbak-starter-1-ibc}'],
+            ["2 IBC's", '2,50 × 2,16 × 0,35 m', '1.795 liter', '{prijs:opvangbak-starter-2-ibc}'],
+            ["4 IBC's", '5,20 × 1,40 × 0,35 m', '2.420 liter', '{prijs:opvangbak-starter-4-ibc}'],
+            ["10 IBC's", '5,95 × 2,95 × 0,35 m', '5.836 liter', '{prijs:opvangbak-starter-10-ibc}']
+          ],
+          note: `Prijs van de uitvoering in PVC (Starter). De uitvoering in EVA (Plus) is sterker en ook bestand tegen diesel. Alle maten en prijzen staan bij de [flexibele lekbakken](${L.opvang}#h-maten).`
+        },
+        after: [`Hulp bij het kiezen vindt u in [IBC lekbak kiezen: zo bepaalt u de juiste opvangbak](${L.ibc}).`]
+      }
+    ],
+    faq: [
+      { q: 'Wat zijn de afmetingen van een IBC-container van 1000 liter?', a: 'Een IBC van 1.000 liter is 120 cm lang, 100 cm breed en ongeveer 116 cm hoog, inclusief pallet en kooi. De hoogte verschilt per fabrikant en pallet: van 113,5 tot 116,4 cm in de datasheets van Schütz en Werit.' },
+      { q: 'Hoe zwaar is een lege IBC van 1000 liter?', a: 'Ongeveer 57 tot 63 kg, afhankelijk van de pallet. Met een kunststof pallet weegt hij rond de 57 kg, met een stalen pallet of combipallet 59 kg en met een houten pallet ongeveer 63 kg.' },
+      { q: 'Hoe zwaar is een volle IBC met water?', a: 'Ruim 1.050 kg: 1.000 kg water plus 57 tot 63 kg voor de IBC zelf.' },
+      { q: 'Past een IBC op een europallet?', a: "Een IBC heeft zijn eigen pallet. De standaard IBC van 1.000 liter heeft een grondvlak van 120 × 100 cm. IBC's van 600 liter, en een deel van de IBC's van 800 liter, hebben het grondvlak van een europallet: 120 × 80 cm." },
+      { q: 'Hoeveel liter gaat er in een IBC?', a: "De meest gebruikte IBC heeft een inhoud van 1.000 liter. Er zijn ook IBC's van 300, 600 en 800 liter." },
+      { q: 'Wat betekent IBC?', a: 'IBC staat voor Intermediate Bulk Container: een verpakking voor vloeistoffen die groter is dan een vat en kleiner dan een tank. Voor gevaarlijke stoffen moet een IBC voldoen aan hoofdstuk 6.5 van het ADR.' },
+      { q: 'Welke lekbak heb ik nodig voor een IBC?', a: 'Voor één volle IBC van 1.000 liter is volgens PGS 15 minimaal 1.100 liter opvang nodig. Onze flexibele lekbak voor 1 IBC meet 2,16 × 1,60 m en heeft een opvangcapaciteit van 1.149 liter.' }
+    ],
+    categories: ['flexibele-opvangbakken'],
+    products: ['opvangbak-starter-1-ibc', 'opvangbak-1-ibc', 'opvangbak-2-ibc'],
+    sources: [SRC.schuetz, SRC.werit, SRC.pgs15Verpakking, SRC.ibcRegels, SRC.pgs15]
+  },
+
   {
     slug: 'verschil-pvc-en-eva-lekbak',
     kicker: 'Opvang',
@@ -173,111 +465,6 @@ export default [
   },
 
   {
-    slug: 'wat-is-een-flexibele-lekbak',
-    kicker: 'Opvang',
-    title: 'Flexibele lekbak: wat is het en wanneer kiest u ervoor?',
-    seoTitle: 'Flexibele lekbak: wat is het en wanneer kiest u ervoor? | EnviroFlow',
-    description: 'Wat is een flexibele lekbak, hoe werkt hij en wanneer past hij beter dan een stalen lekbak? Met maten, prijzen, PVC of EVA, regels (PGS 15) en praktijktips.',
-    updated: '2026-11-13',
-    image: { src: IMG + 'sfeer-ibc-hal.jpg', alt: "IBC's in een flexibele lekbak in een bedrijfshal" },
-    intro: 'Een flexibele lekbak is een opvangbak van stevig technisch textiel met opstaande randen. Staat er een IBC, vat of machine in en gaat er iets mis, dan blijft de vloeistof in de bak. Niet op de vloer, niet in de bodem en niet in het riool. Hieronder leest u hoe zo’n bak werkt, wanneer hij beter past dan een stalen lekbak en waar u op let bij het kiezen.',
-    takeaways: [
-      "Een flexibele lekbak vangt lekkages en morsingen op onder IBC's, vaten, aggregaten en voertuigen.",
-      'Hij staat er in een paar minuten en kan leeg worden opgevouwen.',
-      'Voor vloeibare gevaarlijke stoffen in verpakking geldt volgens PGS 15: minimaal 110% van de grootste verpakking opvangen.',
-      'Controleer altijd of het materiaal bestand is tegen uw vloeistof.',
-      `Bekijk de [flexibele lekbakken](${L.opvang}) in standaardmaten voor vaten, IBC's, machines en voertuigen.`
-    ],
-    sections: [
-      {
-        h: 'Hoe werkt een flexibele lekbak?',
-        p: [
-          'De bodem en de opstaande randen vormen samen één bak. Lekt er iets uit een IBC, een vat of een machine, dan blijft het binnen de randen. Daarna zuigt of pompt u de vloeistof op en voert u die af zoals voor die stof is voorgeschreven.',
-          'Wij leveren de lekbakken in twee uitvoeringen. De **Plus** is gemaakt van polyesterweefsel met een EVA-coating van 1.365 g/m². Volgens de fabrikant is dat sterker en chemisch beter bestand dan het PVC-weefsel van 650 tot 900 g/m² dat vaak voor standaard lekbakken wordt gebruikt. De **Starter** is de voordelige uitvoering in PVC-weefsel van 900 g/m², bedoeld voor kortdurend contact met chemicaliën. Meer hierover leest u in [PVC of EVA lekbak: wat is het verschil?](/kennisbank/verschil-pvc-en-eva-lekbak/)'
-        ],
-        image: { src: IMG + 'opvangbak-leeg.jpg', alt: 'Lege flexibele opvangbak met opstaande randen', caption: 'Een lege opvangbak: de bodem en de opstaande randen vormen samen de bak.' }
-      },
-      {
-        h: 'Flexibel of staal: wat past bij uw situatie?',
-        p: ['Een stalen lekbak is een prima oplossing voor een vaste plek. Een flexibele bak is sterker in situaties waar het om snelheid, ruimte of verplaatsen gaat.'],
-        table: {
-          head: ['Situatie', 'Meestal de beste keuze', 'Waarom'],
-          rows: [
-            ['Tijdelijke opslag of wisselende werkplek', 'Flexibel', 'Snel geplaatst en daarna weer opgeruimd'],
-            ['Weinig ruimte of een afwijkende maat', 'Flexibel', 'Op maat te maken, ook rond een machine'],
-            ['Onder een aggregaat, pomp of voertuig', 'Flexibel', 'Er zijn uitvoeringen voor aggregaten, tankwagens en vrachtwagens'],
-            ['Vaste opslag waar dagelijks een heftruck in en uit rijdt', 'Vaak staal', 'Beter bestand tegen dagelijks stoten en schuren'],
-            ['Opslag in een brandwerende kast of ruimte', 'Volgens de eisen van die opslag', 'Bespreek dit met uw adviseur of het bevoegd gezag']
-          ]
-        }
-      },
-      {
-        h: 'Welke maten zijn er?',
-        p: [`Er zijn standaardmaten voor vaten, IBC's, aggregaten en voertuigen, elk in PVC (Starter) en in EVA (Plus). Past geen van deze maten, dan is maatwerk mogelijk. Bekijk alle [flexibele lekbakken met maten en prijzen](${L.opvang}).`],
-        table: {
-          head: ['Uitvoering', 'Opvangcapaciteit', 'Afmetingen (l × b × h)'],
-          rows: [
-            ['1 vat', '226 liter', '1,05 × 0,65 × 0,35 m'],
-            ['2 vaten', '410 liter', '1,90 × 0,65 × 0,35 m'],
-            ['4 vaten (laag model)', '412 liter', '2,90 × 1,07 × 0,14 m'],
-            ['1 IBC', '1.149 liter', '2,16 × 1,60 × 0,35 m'],
-            ["2 IBC's", '1.795 liter', '2,50 × 2,16 × 0,35 m'],
-            ["4 IBC's", '2.420 liter', '5,20 × 1,40 × 0,35 m'],
-            ["10 IBC's", '5.836 liter', '5,95 × 2,95 × 0,35 m'],
-            ['Aggregaat (3 × 1,5 m)', '1.451 liter', '2,91 × 1,50 × 0,35 m'],
-            ['Tankwagen (inrijdbaar)', '11.655 liter', '9,50 × 3,69 × 0,35 m'],
-            ['Vrachtwagen (inrijdbaar)', '22.575 liter', '18,40 × 3,69 × 0,35 m']
-          ]
-        }
-      },
-      {
-        h: 'Wat kost een flexibele lekbak?',
-        p: [
-          'De prijs hangt af van de maat en van het weefsel. De Starter in PVC is de voordeligste uitvoering: een lekbak voor 1 vat kost {prijs:opvangbak-starter-1-vat} en een lekbak voor 1 IBC {prijs:opvangbak-starter-1-ibc}. De Plus in EVA kost voor 1 IBC {prijs:opvangbak-1-ibc}. Alle prijzen zijn exclusief btw en transport.',
-          `De prijzen van alle maten staan in de [maten- en prijstabel bij de flexibele lekbakken](${L.opvang}#h-maten).`
-        ]
-      },
-      {
-        h: 'Is de lekbak bestand tegen mijn vloeistof?',
-        p: ['Dat verschilt per stof en per uitvoering. Voor de Plus (EVA) heeft de fabrikant een bestendigheidstabel waarin per vloeistof staat hoe het materiaal zich houdt bij twee jaar contact: A (goed), B (matig) of C (niet geschikt). De meeste oliën en veel chemicaliën scoren goed, maar niet alles. Zoutzuur 32% bijvoorbeeld staat op C. De Starter (PVC) is bedoeld voor kortdurend contact en is volgens de fabrikant niet geschikt voor onder meer benzine en diesel.'],
-        callout: { t: 'Tip', d: 'Houd het veiligheidsinformatieblad (VIB) van de stof bij de hand. Daarin staat precies welke stof het is. Stuur het mee met uw aanvraag, dan controleren wij de bestendigheid voor u.' }
-      },
-      {
-        h: 'Wat zeggen de regels?',
-        p: [
-          'Voor de opslag van vloeibare gevaarlijke stoffen in verpakking is **PGS 15** de richtlijn. Daarin staat dat de opvang minimaal **110% van de inhoud van de grootste verpakking** moet zijn. Is 10% van de totale inhoud meer, dan geldt die 10%. Lege, niet-gereinigde verpakkingen tellen niet mee.',
-          `Of PGS 15 voor uw opslag geldt, hangt af van de stoffen en de hoeveelheid. Dat bepaalt het bevoegd gezag, meestal de gemeente of de omgevingsdienst. In het artikel [Opvangcapaciteit berekenen](${L.capaciteit}) staan rekenvoorbeelden.`
-        ]
-      },
-      {
-        h: 'Binnen of buiten?',
-        p: ['Een flexibele lekbak kan buiten staan. Voor de Plus (EVA) geeft de fabrikant aan dat het weefsel bruikbaar blijft van −40 °C tot +70 °C; voor de Starter (PVC) is geen temperatuurbereik opgegeven. Buiten komt er wel regenwater in de bak, en dat gaat af van de opvangcapaciteit. Kies buiten liever een ruimere bak of zet de opslag onder een overkapping.']
-      },
-      {
-        h: 'Gebruik en controle',
-        list: [
-          'Leg de bak op een vlakke ondergrond zonder scherpe stenen of uitsteeksels.',
-          'Zet IBC’s en vaten voorzichtig neer en schuif ze niet over de bodem.',
-          'Houd kranen en aftappunten boven de bak.',
-          'Controleer de bak regelmatig op schade en verwijder gelekte vloeistof direct.',
-          'Staat de bak buiten, kijk dan na een regenbui of er water in staat.'
-        ]
-      }
-    ],
-    faq: [
-      { q: 'Hoe heet een flexibele lekbak nog meer?', a: 'Een flexibele lekbak wordt ook opvouwbare lekbak, mobiele lekbak of flexibele opvangbak genoemd. In het Engels heet hij spill containment berm.' },
-      { q: 'Wat kost een flexibele lekbak?', a: 'De Starter in PVC is er vanaf {prijs:opvangbak-starter-1-vat} excl. btw (voor 1 vat). Voor 1 IBC betaalt u {prijs:opvangbak-starter-1-ibc} in PVC en {prijs:opvangbak-1-ibc} in EVA. De prijzen van alle maten staan bij de flexibele lekbakken in de webshop.' },
-      { q: 'Hoe lang gaat een flexibele lekbak mee?', a: 'Op de Plus-uitvoering in EVA geeft de fabrikant 7 jaar garantie. Hoe lang een lekbak in de praktijk meegaat, hangt af van het gebruik, de vloeistof en of hij binnen of buiten staat.' },
-      { q: 'Kan een flexibele lekbak buiten staan?', a: 'Ja. Het EVA-weefsel van de Plus-uitvoering blijft volgens de fabrikant bruikbaar van −40 °C tot +70 °C. Houd er rekening mee dat regenwater de beschikbare opvangcapaciteit verkleint.' },
-      { q: 'Is een flexibele lekbak geschikt voor brandbare vloeistoffen?', a: 'Volgens de fabrikant is de Plus-uitvoering in EVA geschikt voor ATEX-zone 2 (categorie 3G), ook voor stoffen uit subgroep IIA, IIB en IIC. De Starter in PVC is niet geschikt voor benzine en diesel. Welke eisen voor uw opslag gelden, bepaalt het bevoegd gezag.' },
-      { q: 'Kan ik een lekbak op maat laten maken?', a: 'Ja. Geef de afmetingen van de ruimte of de machine door en vertel wat erin komt te staan. Wij vragen bij de fabrikant na wat mogelijk is.' }
-    ],
-    categories: ['flexibele-opvangbakken'],
-    products: ['opvangbak-1-ibc', 'opvangbak-2-vaten', 'opvangbak-aggregaat'],
-    sources: [SRC.pgs15, SRC.pgs]
-  },
-
-  {
     slug: 'welke-opvangbak-heb-ik-nodig-voor-ibcs',
     kicker: 'Opvang',
     title: 'IBC lekbak kiezen: zo bepaalt u de juiste opvangbak',
@@ -290,7 +477,7 @@ export default [
       'Voor één volle IBC van 1.000 liter is volgens PGS 15 minimaal 1.100 liter opvang nodig.',
       "Bij meerdere IBC's telt 110% van de grootste, of 10% van het totaal als dat meer is.",
       'Buiten vult regenwater de bak. Houd daar ruimte voor.',
-      "[Flexibele lekbakken voor IBC's](/producten/opvang-en-spill-containment/flexibele-opvangbakken/) zijn er voor 1, 2, 4 en 10 IBC's, in PVC en EVA, en op maat."
+      "[Flexibele lekbakken voor IBC's](/flexibele-lekbak/) zijn er voor 1, 2, 4 en 10 IBC's, in PVC en EVA, en op maat."
     ],
     sections: [
       {
@@ -321,7 +508,7 @@ export default [
       },
       {
         h: 'Welke IBC lekbak past?',
-        p: ["Alle standaard IBC lekbakken hieronder hebben meer opvangcapaciteit dan de 1.100 liter die nodig is voor volle IBC's van 1.000 liter."],
+        p: ["Alle standaard IBC lekbakken hieronder hebben meer opvangcapaciteit dan de 1.100 liter die nodig is voor volle IBC's van 1.000 liter. De maten en het gewicht van de IBC zelf staan in [IBC afmetingen: maten, inhoud en gewicht](/kennisbank/ibc-afmetingen/)."],
         table: {
           head: ['Uitvoering', 'Opvangcapaciteit', 'Afmetingen (l × b × h)'],
           rows: [
@@ -415,7 +602,7 @@ export default [
       },
       {
         h: 'Wanneer geldt PGS 15?',
-        p: ['PGS 15 gaat over de opslag van verpakte gevaarlijke stoffen. Of de richtlijn voor uw opslag geldt, hangt af van welke stoffen u opslaat en hoeveel. Dat bepaalt het bevoegd gezag, meestal de gemeente of de omgevingsdienst.'],
+        p: ['PGS 15 gaat over de opslag van verpakte gevaarlijke stoffen. Of de richtlijn voor uw opslag geldt, hangt af van welke stoffen u opslaat en hoeveel: het Bal kent daarvoor ondergrenzen. Die staan, met de regels per situatie, in [Wanneer is een lekbak verplicht?](/kennisbank/wanneer-is-een-lekbak-verplicht/)'],
         callout: { t: 'Wij rekenen met u mee', d: 'Stuur een lijstje van wat er staat: het aantal verpakkingen, de inhoud en de stof. Wij rekenen uit hoeveel opvang u nodig heeft en welke bak past.' }
       }
     ],
@@ -749,7 +936,7 @@ export default [
           'Het vul- of aftappunt zit boven een vloeistofdichte voorziening, of boven of in een vulpuntmorsbak.',
           'Een morsbak op de tank heeft minimaal 5 liter inhoud. Een losse morsbak minimaal 65 liter.'
         ],
-        after: ['Daarnaast is er PGS 30 voor vloeibare brandstoffen in bovengrondse tanks tot 150 m³. Die noemt ook mobiele tankinstallaties, zoals een losse tank met pomp op een bouwplaats, en wijst op de risico’s van lekken door verplaatsen en van tanken boven onverharde grond. Welke regels voor uw situatie gelden, bepaalt het bevoegd gezag.']
+        after: ['Daarnaast is er PGS 30 voor vloeibare brandstoffen in bovengrondse tanks tot 150 m³. Die noemt ook mobiele tankinstallaties, zoals een losse tank met pomp op een bouwplaats, en wijst op de risico’s van lekken door verplaatsen en van tanken boven onverharde grond. Welke regels voor uw situatie gelden, bepaalt het bevoegd gezag.', 'Wanneer een lekbak verplicht is voor diesel, olie, IBC’s en AdBlue, leest u in [Wanneer is een lekbak verplicht?](/kennisbank/wanneer-is-een-lekbak-verplicht/)']
       },
       {
         h: 'De flexibele brandstoftank',

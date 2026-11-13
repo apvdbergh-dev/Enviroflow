@@ -1,5 +1,5 @@
 // Oplossingen, sectoren, projecten, kennisbank, over ons, partners, contact, juridisch, zoeken en 404.
-import { esc, ph, icon, fmtEUR, media, CARD_SIZES, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, faqBlock, fillPrices, faqWithPrices, insightFields } from './ui.mjs';
+import { esc, ph, icon, fmtEUR, media, CARD_SIZES, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, faqBlock, fillPrices, faqWithPrices, insightFields, inline, plain, slugify, sectionHtml } from './ui.mjs';
 import { hasRealPrice } from '../lib/catalog.mjs';
 import { stepsList } from './pages-shop.mjs';
 import { T, numberLocale } from '../lib/i18n.mjs';
@@ -106,12 +106,6 @@ ${ctaBand({ title: 'Een vergelijkbare situatie?', text: 'Bespreek uw situatie me
 }
 
 /* ---------------------------------------------------------------- kennisbank */
-// Tekst uit de artikelen: eerst escapen, dan **vet** en [link](/pad/) omzetten.
-const inline = (s) => esc(s)
-  .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-  .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, u) => `<a href="${u}"${/^https?:/.test(u) ? ' target="_blank" rel="noopener"' : ''}>${t}</a>`);
-const plain = (s) => String(s || '').replace(/\*\*|\[|\]\([^)]*\)/g, '');
-const slugify = (s) => plain(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 /** Leestijd in minuten (200 woorden per minuut, minimaal 3). */
 function readMinutes(a) {
   const parts = [a.intro, ...(a.takeaways || [])];
@@ -141,21 +135,6 @@ export function knowledgeOverview(ctx) {
 </div></section>
 <div class="container section--tight">${adviceBlock(ctx.site, { title: T('Staat uw vraag er niet tussen?', 'Is your question not covered?'), text: T('Bel of mail ons. Wij denken mee en rekenen met u mee.', 'Call or email us. We will think along and do the maths with you.') })}</div>`;
   return { path: '/kennisbank/', title: T('Kennisbank: lekbakken, flexibele tanks en opslag | EnviroFlow', 'Knowledge base: spill trays, flexible tanks and storage | EnviroFlow'), description: T('Artikelen over flexibele lekbakken, IBC lekbakken, opvangcapaciteit (PGS 15), flexibele tanks, bluswater, mestopslag, diesel en wateroverlast.', 'Articles about flexible spill trays, IBC spill trays, containment capacity (PGS 15), flexible tanks, fire water, manure storage, diesel and flooding.'), body, crumbs: [H, { name: T('Kennisbank', 'Knowledge base'), url: '/kennisbank/' }] };
-}
-
-function sectionHtml(s) {
-  const id = slugify(s.h);
-  const table = s.table ? `<div class="table-scroll"><table class="kb-table"><thead><tr>${s.table.head.map((h) => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${s.table.rows.map((r) => `<tr>${r.map((c, i) => (i === 0 ? `<th scope="row">${inline(c)}</th>` : `<td>${inline(c)}</td>`)).join('')}</tr>`).join('')}</tbody></table></div>${s.table.note ? `<p class="kb-note">${inline(s.table.note)}</p>` : ''}` : '';
-  return `<section class="kb-section" id="${id}" aria-labelledby="h-${id}">
-  <h2 id="h-${id}">${esc(s.h)}</h2>
-  ${(s.p || []).map((x) => `<p>${inline(x)}</p>`).join('')}
-  ${s.list ? `<ul class="check-list">${s.list.map((x) => `<li>${icon('check')}<span>${inline(x)}</span></li>`).join('')}</ul>` : ''}
-  ${s.steps ? `<ol class="kb-steps">${s.steps.map((x, i) => `<li><span class="kb-steps__n" aria-hidden="true">${i + 1}</span><div><h3>${esc(x.t)}</h3><p>${inline(x.d)}</p></div></li>`).join('')}</ol>` : ''}
-  ${table}
-  ${(s.after || []).map((x) => `<p>${inline(x)}</p>`).join('')}
-  ${s.callout ? `<aside class="kb-callout">${icon('info')}<div><strong>${esc(s.callout.t)}</strong><p>${inline(s.callout.d)}</p></div></aside>` : ''}
-  ${s.image ? `<figure class="kb-figure">${media(s.image, '16-9')}<figcaption>${esc(s.image.caption || '')}</figcaption></figure>` : ''}
-</section>`;
 }
 
 export function articlePage(a, ctx) {

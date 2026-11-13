@@ -9,10 +9,24 @@ const SRC = {
   diesel: { label: 'IPLO – Soil rules: storing diesel in an above-ground tank (in Dutch)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/opslaan-diesel-oxiderende-bijtende-aquatoxische/regels-bodem/' },
   mestBodem: { label: 'IPLO – Soil rules: storing liquid manure in a manure basin, section 4.86 Bal (in Dutch)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/opslaan-drijfmest-digestaat-dunne-fractie/regels-bodem/' },
   mestRegels: { label: 'IPLO – Storing manure: which rules apply when (in Dutch)', url: 'https://iplo.nl/thema/toepassing-regels-praktijk/veehouderijen/opslaan-mest-wanneer-welke-regels-gelden/' },
-  rvo: { label: 'RVO – When to spread manure 2026 (table, in Dutch)', url: 'https://www.rvo.nl/sites/default/files/2026-02/Tabel-1-Wanneer-mest-uitrijden-2026.pdf' }
+  rvo: { label: 'RVO – When to spread manure 2026 (table, in Dutch)', url: 'https://www.rvo.nl/sites/default/files/2026-02/Tabel-1-Wanneer-mest-uitrijden-2026.pdf' },
+  lekbak: { label: 'IPLO – Spill tray (lekbak): definition and requirements, section 5.4.2 Bal (in Dutch)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/bodemmodules/bodembeschermende-voorzieningen/lekbak/' },
+  voorzieningen: { label: 'IPLO – Soil-protection provisions (in Dutch)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/bodemmodules/bodembeschermende-voorzieningen/' },
+  ondergrenzen: { label: 'IPLO – Storing packaged hazardous substances, section 3.2.9 Bal (in Dutch)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/milieubelastende-activiteiten-hoofdstuk-3-bal/activiteiten/opslaan-gevaarlijke/' },
+  ondergrenzenNieuws: { label: 'IPLO – Thresholds for packaged hazardous substances, articles 3.27 and 4.1012 Bal (in Dutch)', url: 'https://iplo.nl/thema/externe-veiligheid/nieuws-externe-veiligheid/ondergrenzen-verpakte-gevaarlijke-stoffen/' },
+  werkvoorraad: { label: 'IPLO – PGS 15: storing hazardous and CMR substances, working stock (in Dutch)', url: 'https://iplo.nl/thema/externe-veiligheid/publicatiereeks-gevaarlijke-stoffen-pgs/handleiding-publicatiereeks-gevaarlijke-stoffen/pgs-15-algemene-voorschriften/pgs-15-opslaan-gevaarlijke-cmr-stoffen/' },
+  goederen: { label: 'IPLO – Soil rules: storing goods, section 4.104 Bal (in Dutch)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/opslaan-goederen/regels-bodem/' },
+  opslagtank: { label: 'IPLO – What falls under storage tank for liquids, section 3.2.8 Bal (in Dutch)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/milieubelastende-activiteiten-hoofdstuk-3-bal/activiteiten/opslagtank/' },
+  tankcontainer: { label: 'IPLO – Soil rules: tank container or packaging used as a storage tank, section 4.95 Bal (in Dutch)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/opslaan-bijtende-aquatoxische-vloeistoffen/regels-bodem/' },
+  ibcRegels: { label: 'IPLO – Intermediate bulk container (IBC): packaging or storage tank (in Dutch)', url: 'https://iplo.nl/thema/bodem/bodembescherming/regels-bodem/intermediate-bulkcontainer-ibc-verpakking/' },
+  adblue: { label: 'IPLO – Rules for dispensing and storing urea (AdBlue) (in Dutch)', url: 'https://iplo.nl/regelgeving/regels-voor-activiteiten/regels-tanken-opslaan-ureum-adblue/' },
+  zorgplicht: { label: 'IPLO – Duty of care for soil (in Dutch)', url: 'https://iplo.nl/thema/bodem/bodembescherming/zorgplicht-bodemverontreiniging/' },
+  pgs15Verpakking: { label: 'IPLO – PGS 15: packaging and labelling (in Dutch)', url: 'https://iplo.nl/thema/externe-veiligheid/publicatiereeks-gevaarlijke-stoffen-pgs/handleiding-publicatiereeks-gevaarlijke-stoffen/pgs-15-algemene-voorschriften/pgs-15-verpakking-etikettering/' },
+  schuetz: { label: 'Schütz – datasheet ECOBULK MX 1000 with steel pallet (March 2026, in German)', url: 'https://www.schuetz-packaging.net/downloads/datenblaetter-ibc/datenblatt-ecobulk-mx-1000-mit-3-kufen-stahlpalette/datasheet-schuetz-ecobulk-mx-3-skid-steel-pallet-de.pdf' },
+  werit: { label: 'Werit – datasheet IBC TOPline (in German)', url: 'https://www.werit.eu/sites/default/files/2026-03/datenblatt_topline_de.pdf' }
 };
 const L = {
-  opvang: '/producten/opvang-en-spill-containment/flexibele-opvangbakken/',
+  opvang: '/flexibele-lekbak/',
   brandwater: '/producten/flexibele-tanks/brandwatertanks/',
   drinkwater: '/producten/flexibele-tanks/drinkwatertanks/',
   buffer: '/producten/flexibele-tanks/industriele-water-en-buffertanks/',
@@ -23,11 +37,290 @@ const L = {
   mobiel: '/producten/mobiel-en-calamiteiten/mobiele-watertanks/',
   open: '/producten/mobiel-en-calamiteiten/open-zelfdragende-tanks/',
   capaciteit: '/kennisbank/hoe-kies-je-de-juiste-opvangcapaciteit/',
+  ibc: '/kennisbank/welke-opvangbak-heb-ik-nodig-voor-ibcs/',
+  verplicht: '/kennisbank/wanneer-is-een-lekbak-verplicht/',
+  ibcMaten: '/kennisbank/ibc-afmetingen/',
   brandstofArtikel: '/kennisbank/brandstof-tijdelijk-opslaan-op-locatie/'
 };
 const UPDATED = '2026-10-17';
 
 export default [
+  {
+    slug: 'wanneer-is-een-lekbak-verplicht',
+    kicker: 'Rules and calculation',
+    title: 'When is a spill tray mandatory? The Dutch rules per situation',
+    seoTitle: 'When is a spill tray mandatory? Dutch rules explained | EnviroFlow',
+    description: 'When is a spill tray mandatory in the Netherlands? The rules for hazardous substances, oil, diesel, IBCs and AdBlue per situation, with the official sources.',
+    updated: '2026-11-13',
+    image: { src: IMG + 'opvangbak-2-ibc.jpg', alt: 'Two IBCs in a flexible spill tray' },
+    intro: 'Whether a spill tray is mandatory depends on what you store, how much and in what way. For packaged liquid hazardous substances, for an above-ground diesel tank and for an IBC used as a storage tank, the Dutch rules prescribe containment. For AdBlue they do not. Below you can read what applies in each situation, always with the official source.',
+    takeaways: [
+      'For **packaged liquid hazardous substances**, product containment is mandatory as soon as PGS 15 applies (provision 3.6.1).',
+      'An **above-ground diesel tank** of more than 250 litres stands above or in a spill tray, or is double-walled with leak detection.',
+      'An **IBC used as a storage tank** stands above or in a spill tray that holds its full contents.',
+      'For **AdBlue**, the Bal sets no storage rules. The duty of care does apply.',
+      'A spill tray holds at least **110% of the largest container**, and at least 10% of the total.'
+    ],
+    sections: [
+      {
+        h: 'The short answer per situation',
+        p: ['A spill tray is mandatory if you store packaged liquid hazardous substances and PGS 15 applies, if you store diesel in an above-ground tank of more than 250 litres (unless it is double-walled with leak detection), and if an IBC or tank container is used as a storage tank. For oils and greases in opened packaging, a spill tray is also prescribed. For AdBlue it is not.'],
+        table: {
+          head: ['What do you store?', 'Spill tray mandatory?', 'Where is it stated?'],
+          rows: [
+            ['Packaged liquid hazardous substances (drums, jerrycans, IBCs), above the threshold', 'Yes: product containment', 'PGS 15, provision 3.6.1 (via section 4.98 Bal)'],
+            ['Working stock of hazardous substances of more than 50 litres', 'Yes: spill tray or equivalent provision', 'PGS 15'],
+            ['Oils and greases in opened packaging', 'Yes: a spill tray above a continuous floor', 'Article 4.1063a Bal'],
+            ['Oils and greases in sealed packaging', 'No: an element floor is sufficient', 'Article 4.1063a Bal'],
+            ['Above-ground diesel tank of more than 250 litres', 'Yes, or a double-walled tank with leak detection', 'Section 4.94 Bal'],
+            ['IBC or tank container used as a storage tank (more than 250 litres)', 'Yes: the spill tray holds the full contents', 'Section 4.95 Bal'],
+            ['AdBlue (urea)', 'Not prescribed; the duty of care applies', 'Article 2.11 Bal']
+          ],
+          note: 'These are the national rules from the Dutch Environmental Activities Decree (Besluit activiteiten leefomgeving, Bal) and PGS 15, as at November 2026. Which section applies to your business depends on your activities. An environmental permit or the municipal environment plan may set stricter requirements.'
+        },
+        callout: { t: 'Not legal advice', d: 'This article summarises the rules. The official texts and the competent authority (usually the municipality or the environmental agency) are decisive. The sources are listed at the bottom.' }
+      },
+      {
+        h: 'What is a spill tray according to the law?',
+        p: ['The Bal describes a spill tray (lekbak) as **a soil-protection provision with raised edges**. A spill tray may not be connected to the foul sewer. Besides the spill tray, the Bal distinguishes three types of floor:'],
+        list: [
+          '**Liquid-tight floor (vloeistofdichte bodemvoorziening):** a floor or paving that has been assessed and approved by an inspection body.',
+          '**Continuous floor (aaneengesloten bodemvoorziening):** a floor or paving that temporarily retains substances and whose joints have been sealed.',
+          '**Element floor (elementenbodemvoorziening):** a floor or paving that temporarily retains substances, but whose joints have not been sealed.'
+        ],
+        after: ['For each activity, the Bal prescribes which provision is required as a minimum. Sometimes that is only a floor, sometimes a spill tray, sometimes both.']
+      },
+      {
+        h: 'Packaged hazardous substances: PGS 15',
+        p: ['Do you store hazardous substances in packaging, such as drums, jerrycans or IBCs? Then this falls under the Bal as soon as you exceed one of these thresholds:'],
+        list: [
+          '**1 kg** of substances of ADR class 5.2, 6.1 (packing group I), 6.2 (category I1 or I2) or 8 (packing group I)',
+          '**25 kg** of liquid substances of ADR class 3, packing group I or II (flammable liquids)',
+          '**25 litres** of toxic or corrosive gases of ADR class 2',
+          '**125 litres** of flammable gases of ADR class 2 in gas cylinders',
+          '**1,000 kg** of packaged hazardous substances in total'
+        ],
+        after: [
+          'If you exceed one of these thresholds, the storage of **all** packaged hazardous substances must comply with PGS 15 (article 4.1012 Bal). Working stock does not count as storage.',
+          'For liquid hazardous substances, PGS 15 prescribes **product containment** (provision 3.6.1): in the event of a leak, the liquid must not flow out of the storage facility. You may arrange this containment for the whole storage facility, or with spill trays per rack, pallet or container. Product containment is not required for solid hazardous substances.'
+        ],
+        callout: { t: 'Working stock of more than 50 litres', d: 'If a working stock of more than 50 litres stands outside the storage facility, the packaging belongs above a liquid-tight spill tray or an equivalent provision. An exception is possible if the floor of the workspace is at least liquid-retaining. For flammable liquids (ADR class 3), a spill tray or equivalent provision remains required.' }
+      },
+      {
+        h: 'Oil and greases in drums, jerrycans or IBCs',
+        p: [
+          'Oils and greases that are not a flammable liquid of ADR class 3 do not fall under the rules for hazardous substances. They are covered by the soil rules for storing goods (section 4.104 Bal). That section applies to businesses for which the Bal designates it; this depends on your business activity.',
+          'The main rule is in article 4.1063a: packaged oils, greases and brine stand above a **continuous floor and a spill tray**. Double protection, in other words. There are two exceptions:'
+        ],
+        list: [
+          'If the oil is in **sealed packaging**, an element floor is sufficient. A jerrycan with a closed cap is an example.',
+          'For **lubricating greases**, an element floor is always sufficient, even if the packaging has been opened.'
+        ],
+        after: ['In short: a sealed drum in stock may stand on a paved floor. If the packaging has been opened, the main rule applies and a spill tray belongs underneath.']
+      },
+      {
+        h: 'Diesel tank: spill tray or double-walled',
+        p: [
+          'An above-ground storage tank of more than 250 litres containing diesel falls under the Bal (section 3.2.8). For the soil, section 4.94 applies: the tank stands **above or in a spill tray**, or is **double-walled with a leak detection system** in the wall.',
+          'The connection point of the fill pipe belongs above a liquid-tight floor, or above or in a fill-point spill container. If that container is mounted on the tank, a capacity of 5 litres is sufficient. If it stands separately, at least 65 litres is required.',
+          'The same section applies to above-ground tanks containing oxidising, corrosive or aquatoxic liquids, oils, greases or brine.',
+          `Read more about refuelling on site in [Storing diesel temporarily on the construction site or at a generator](${L.brandstofArtikel}).`
+        ]
+      },
+      {
+        h: 'IBC: packaging or storage tank?',
+        p: ['According to the Bal, an IBC is always packaging. It can also be a storage tank. That is the case if the IBC **stands in a fixed place and is filled or emptied by a tanker**. An IBC that you swap full for empty is not a storage tank. The difference determines which rules apply:'],
+        table: {
+          head: ['', 'IBC as packaging', 'IBC as storage tank'],
+          rows: [
+            ['When', 'You swap the IBC: full in, empty out', 'The IBC stays in place and is filled or emptied by a tanker'],
+            ['Which rules', 'Hazardous substances: section 4.98 Bal and PGS 15. Oils and greases: section 4.104 Bal', 'Section 4.95 Bal, for a capacity of more than 250 litres'],
+            ['Containment', 'At least 110% of the largest container, or 10% of the total if that is more', 'Above or in a spill tray that holds the full contents'],
+            ['Inspection of the IBC', 'According to the ADR transport rules', 'ADR chapter 6.5 is prescribed, with inspections every 2.5 and 5 years']
+          ]
+        },
+        after: [
+          'Section 4.95 applies to diesel, oxidising, corrosive or aquatoxic liquids, oils, greases and brine. After moving the IBC, you check it and the connected pipes for damage.',
+          `The sizes and weight of an IBC are in [IBC dimensions: sizes, capacity and weight](${L.ibcMaten}).`
+        ]
+      },
+      {
+        h: 'AdBlue: no spill tray prescribed',
+        p: [
+          'The Bal sets **no rules for the storage of urea (AdBlue)**. A spill tray under an IBC or tank with AdBlue is therefore not prescribed.',
+          'The specific duty of care from article 2.11 of the Bal does apply: you prevent, as far as possible, the storage from having adverse effects on the surroundings. If you have an environmental permit, the competent authority may include its own requirements in it.',
+          'If you dispense AdBlue in the same place as fuel, rules do apply to that (sections 4.39, 4.40, 4.42 and 4.43 Bal).'
+        ]
+      },
+      {
+        h: 'Generator, pump or machine',
+        p: [
+          'If there is a separate diesel tank of more than 250 litres next to the generator, the tank rules above apply: a spill tray, or a double-walled tank with leak detection. If an IBC with diesel is used as a storage tank, section 4.95 applies: a spill tray that holds the full contents.',
+          'For the generator, pump or machine itself, the **duty of care** applies in any case: anyone carrying out an activity takes measures to prevent soil contamination, as far as reasonably possible. You clean up spilled liquid. A spill tray under the equipment catches leaking oil or fuel before it reaches the soil.',
+          'Working on a construction site or on a client’s premises? Then also check the permit and the client’s rules. They may prescribe a spill tray.'
+        ]
+      },
+      {
+        h: 'Which requirements must a spill tray meet?',
+        p: ['The requirements are in section 5.4.2 of the Bal:'],
+        list: [
+          'The spill tray holds **at least 110%** of the contents of the largest container or storage tank.',
+          'In addition, it holds **at least 10%** of the contents of all stored substances together.',
+          'The spill tray is **resistant to the substances** stored in or above it.',
+          '**No substances and no water** remain standing in the spill tray.',
+          'The spill tray is **not connected to the foul sewer**.'
+        ],
+        after: [
+          `Worked examples are in [Calculating containment capacity: the 110% rule explained](${L.capaciteit}).`,
+          'Check the spill tray regularly so that it does not fill up. For soil-protection provisions you keep a logbook of checks, maintenance and repairs. This may be digital.'
+        ]
+      },
+      {
+        h: 'Outdoors: what do you do with rainwater?',
+        p: ['A spill tray may stand outdoors, but no water may remain in it. Rainwater reduces the containment capacity. You may not discharge the water from the spill tray: you dispose of it as waste. You can also prevent rain from entering the spill tray, for example with a roof.']
+      },
+      {
+        h: 'Which spill tray suits your storage?',
+        p: [
+          `A [flexible spill tray](${L.opvang}) is available in standard sizes for 1, 2, 4 or 10 IBCs, for drums, for a generator and for vehicles. The spill tray for one IBC has a containment capacity of 1,149 litres. According to the manufacturer, with the IBC in place at least 110% of the contents of the IBC remains available.`,
+          `If you store diesel, petrol or aggressive chemicals, choose the EVA version. The difference is explained in [PVC or EVA spill berm: what is the difference?](/kennisbank/verschil-pvc-en-eva-lekbak/) Help with the size is in [Choosing an IBC spill tray](${L.ibc}).`
+        ]
+      }
+    ],
+    faq: [
+      { q: 'From how many litres is a spill tray mandatory?', a: 'There is no single threshold. For flammable liquids (ADR class 3, packing group I or II) the rules apply from 25 kg, and for all packaged hazardous substances together from 1,000 kg. For working stock the threshold is 50 litres, and for a storage tank or an IBC used as a storage tank it is 250 litres.' },
+      { q: 'Is a spill tray under an IBC mandatory?', a: 'That depends on the contents and the use. If it contains a liquid hazardous substance and PGS 15 applies, product containment is mandatory. If the IBC is used as a storage tank, for diesel or oil for example, it stands above or in a spill tray that holds the full contents. No spill tray is prescribed for AdBlue.' },
+      { q: 'Is a spill tray mandatory for AdBlue?', a: 'No. The Bal sets no rules for the storage of urea (AdBlue). The duty of care from article 2.11 of the Bal does apply, and an environmental permit may contain its own requirements.' },
+      { q: 'Is a spill tray under a diesel tank mandatory?', a: 'An above-ground diesel tank of more than 250 litres stands above or in a spill tray, or is double-walled with a leak detection system in the wall. This is stated in section 4.94 of the Bal.' },
+      { q: 'How large must a spill tray be?', a: 'At least 110% of the contents of the largest container or tank, and at least 10% of everything stored in total. If an IBC or tank container is used as a storage tank, the spill tray must be able to hold the full contents.' },
+      { q: 'May a spill tray be connected to the sewer?', a: 'No. According to the Bal, a spill tray is not connected to the foul sewer. You dispose of leaked liquid and rainwater from the spill tray as waste.' },
+      { q: 'May a spill tray stand outdoors?', a: 'Yes, but no water may remain in it. Dispose of rainwater from the spill tray as waste, or prevent rain from entering, for example with a roof.' },
+      { q: 'Is a flexible spill tray also allowed?', a: 'The Bal describes a spill tray as a soil-protection provision with raised edges that must be resistant to the stored substances. So check the resistance for each substance. For storage under PGS 15 or a permit, additional requirements may apply. If in doubt, consult the competent authority.' }
+    ],
+    categories: ['flexibele-opvangbakken'],
+    products: ['opvangbak-1-ibc', 'opvangbak-2-ibc', 'opvangbak-aggregaat'],
+    sources: [SRC.lekbak, SRC.voorzieningen, SRC.ondergrenzen, SRC.ondergrenzenNieuws, SRC.pgs15, SRC.werkvoorraad, SRC.goederen, SRC.opslagtank, SRC.diesel, SRC.tankcontainer, SRC.ibcRegels, SRC.adblue, SRC.zorgplicht]
+  },
+
+  {
+    slug: 'ibc-afmetingen',
+    kicker: 'Containment',
+    title: 'IBC dimensions: sizes, capacity and weight of an IBC container',
+    seoTitle: 'IBC dimensions: sizes, weight and capacity per type | EnviroFlow',
+    description: 'A 1,000-litre IBC container measures 120 × 100 × 116 cm. All dimensions per type, the weight empty and full, and stacking, taken from manufacturers’ datasheets.',
+    updated: '2026-11-13',
+    image: { src: IMG + 'opvangbak-1-ibc.jpg', alt: '1,000-litre IBC container in a flexible spill tray' },
+    intro: 'A standard 1,000-litre IBC container is 120 cm long, 100 cm wide and about 116 cm high. Empty, it weighs 57 to 63 kilos. Below are the sizes and weights per capacity and per pallet, taken directly from manufacturers’ datasheets. You can also read how heavy a full IBC is, whether you may stack them and which spill tray fits underneath.',
+    takeaways: [
+      'A **1,000-litre** IBC measures 120 × 100 × 116 cm (length × width × height).',
+      'Empty, it weighs **57 to 63 kg**, depending on the pallet. Filled with water, just over **1,050 kg**.',
+      'There are also IBCs of **300, 600 and 800 litres**. The 600-litre ones have the footprint of a Euro pallet: 120 × 80 cm.',
+      'Whether you may **stack** them depends on the manufacturer and on the weight of the contents.',
+      `Under one full IBC, at least 1,100 litres of containment is required if PGS 15 applies. View the [flexible spill trays for IBCs](${L.opvang}).`
+    ],
+    sections: [
+      {
+        h: 'What are the dimensions of a 1,000-litre IBC?',
+        p: ['The most widely used IBC has a capacity of 1,000 litres and a footprint of 120 × 100 cm. The height differs by a few centimetres per manufacturer and per type of pallet:'],
+        table: {
+          head: ['Manufacturer and version', 'Length × width × height', 'Empty weight'],
+          rows: [
+            ['Schütz ECOBULK MX 1000, steel pallet', '1,200 × 1,000 × 1,160 mm', '59 kg'],
+            ['Werit TOPline (1,000 litres), wooden pallet', '1,200 × 1,000 × 1,164 mm', 'approx. 63 kg'],
+            ['Werit TOPline (1,000 litres), plastic pallet', '1,200 × 1,000 × 1,163 mm', 'approx. 57 kg'],
+            ['Werit TOPline (1,000 litres), combination pallet', '1,200 × 1,000 × 1,135 mm', 'approx. 59 kg']
+          ],
+          note: 'Source: datasheets from Schütz (March 2026) and Werit. The sizes include pallet and cage. If space is tight, check the datasheet of your own IBC.'
+        }
+      },
+      {
+        h: 'Dimensions of a 300, 600 and 800-litre IBC',
+        p: ['Smaller IBCs come with different footprints. These are the sizes from the Werit datasheet (TOPline):'],
+        table: {
+          head: ['Capacity', 'Pallet', 'Length × width × height', 'Empty weight'],
+          rows: [
+            ['300 litres', 'Plastic', '600 × 800 × 1,000 mm', 'approx. 23 kg'],
+            ['600 litres', 'Wood', '1,200 × 800 × 1,003 mm', 'approx. 50 kg'],
+            ['600 litres', 'Plastic', '1,200 × 800 × 1,013 mm', 'approx. 46 kg'],
+            ['800 litres, Euro pallet size', 'Plastic', '1,200 × 800 × 1,178 mm', 'approx. 51 kg'],
+            ['800 litres', 'Wood', '1,200 × 1,000 × 1,001 mm', 'approx. 54 kg'],
+            ['800 litres', 'Plastic', '1,200 × 1,000 × 1,000 mm', 'approx. 53 kg']
+          ],
+          note: 'Source: Werit TOPline datasheet. Other manufacturers have their own sizes; check their datasheet.'
+        }
+      },
+      {
+        h: 'How heavy is an empty IBC?',
+        p: ['An empty 1,000-litre IBC weighs 57 to 63 kg. The difference is in the pallet: it is heaviest with a wooden pallet and lightest with a plastic pallet. A 600-litre IBC weighs about 46 to 50 kg empty, and a 300-litre IBC about 23 kg.']
+      },
+      {
+        h: 'How heavy is a full IBC?',
+        p: ['The weight of a full IBC is the empty weight plus the weight of the contents. The contents weigh the number of litres times the density of the liquid. For a 1,000-litre IBC that weighs 59 kg empty:'],
+        table: {
+          head: ['Liquid', 'Density', 'Weight of 1,000 litres', 'Total with IBC'],
+          rows: [
+            ['Water', '1.00 kg per litre', '1,000 kg', '1,059 kg'],
+            ['Diesel (EN 590)', '0.820 to 0.845 kg per litre at 15 °C', '820 to 845 kg', '879 to 904 kg'],
+            ['AdBlue (ISO 22241)', '1.087 to 1.093 kg per litre at 20 °C', '1,087 to 1,093 kg', '1,146 to 1,152 kg']
+          ],
+          note: 'The density of diesel and AdBlue is laid down in the standards EN 590 and ISO 22241.'
+        },
+        after: ['Mind the **maximum density** for which the IBC is approved. For the UN versions from Schütz and Werit this is 1.9 kg per litre. So when choosing a forklift or rack, allow for just over 1,000 kg per full IBC.']
+      },
+      {
+        h: 'Filling opening and outlet valve',
+        p: ['The filling opening on top has a screw cap of 150 or 225 mm (DN 150 or DN 225). The outlet valve at the bottom is available in DN 50 and DN 80. These are the sizes stated by Schütz and Werit.']
+      },
+      {
+        h: 'May you stack IBCs?',
+        p: ['That differs per IBC. The manufacturer states how high you may stack, and that depends on the weight of the contents. For the ECOBULK MX 1000 with steel pallet, Schütz states the following:'],
+        list: [
+          '**In storage (stationary):** a maximum of 4 high.',
+          '**In transport:** 2 high for a density up to 1.5 kg per litre. Above that, do not stack.'
+        ],
+        after: ['These values apply to this type only. For your own IBC, check the type plate and the datasheet.']
+      },
+      {
+        h: 'How long may you use an IBC?',
+        p: [
+          'For hazardous substances, the ADR rules apply. For plastic IBCs and IBCs with a plastic inner receptacle, the permitted period of use is **5 years**, unless the competent authority decides otherwise. The ADR also has inspections every 2.5 and 5 years.',
+          'If you only store water, the ADR rules do not apply.'
+        ]
+      },
+      {
+        h: 'Is an IBC packaging or a storage tank?',
+        p: [`According to the Dutch rules, an IBC is always packaging. It also counts as a storage tank if it stands in a fixed place and is filled or emptied by a tanker. This matters for the rules and for the spill tray that belongs underneath. It is explained per situation in [When is a spill tray mandatory?](${L.verplicht})`]
+      },
+      {
+        h: 'Which spill tray fits under an IBC?',
+        p: ['A 1,000-litre IBC has a footprint of 1.20 × 1.00 m. If PGS 15 applies, the containment is at least 110% of the largest container: 1,100 litres for one full IBC. These are the standard sizes of our flexible spill trays for IBCs:'],
+        table: {
+          head: ['Number of IBCs', 'Spill tray dimensions (l × w × h)', 'Containment capacity', 'Price from, excl. VAT'],
+          rows: [
+            ['1 IBC', '2.16 × 1.60 × 0.35 m', '1,149 litres', '{prijs:opvangbak-starter-1-ibc}'],
+            ['2 IBCs', '2.50 × 2.16 × 0.35 m', '1,795 litres', '{prijs:opvangbak-starter-2-ibc}'],
+            ['4 IBCs', '5.20 × 1.40 × 0.35 m', '2,420 litres', '{prijs:opvangbak-starter-4-ibc}'],
+            ['10 IBCs', '5.95 × 2.95 × 0.35 m', '5,836 litres', '{prijs:opvangbak-starter-10-ibc}']
+          ],
+          note: `Price of the PVC version (Starter). The EVA version (Plus) is stronger and also resistant to diesel. All sizes and prices are listed with the [flexible spill trays](${L.opvang}#h-maten).`
+        },
+        after: [`Help with choosing is in [Choosing an IBC spill tray: how to find the right one](${L.ibc}).`]
+      }
+    ],
+    faq: [
+      { q: 'What are the dimensions of a 1000-litre IBC container?', a: 'A 1,000-litre IBC is 120 cm long, 100 cm wide and about 116 cm high, including pallet and cage. The height differs per manufacturer and pallet: from 113.5 to 116.4 cm in the datasheets from Schütz and Werit.' },
+      { q: 'How heavy is an empty 1000-litre IBC?', a: 'About 57 to 63 kg, depending on the pallet. With a plastic pallet it weighs around 57 kg, with a steel or combination pallet 59 kg and with a wooden pallet about 63 kg.' },
+      { q: 'How heavy is a full IBC with water?', a: 'Just over 1,050 kg: 1,000 kg of water plus 57 to 63 kg for the IBC itself.' },
+      { q: 'Does an IBC fit on a Euro pallet?', a: 'An IBC has its own pallet. The standard 1,000-litre IBC has a footprint of 120 × 100 cm. 600-litre IBCs, and some 800-litre IBCs, have the footprint of a Euro pallet: 120 × 80 cm.' },
+      { q: 'How many litres does an IBC hold?', a: 'The most widely used IBC has a capacity of 1,000 litres. There are also IBCs of 300, 600 and 800 litres.' },
+      { q: 'What does IBC stand for?', a: 'IBC stands for Intermediate Bulk Container: packaging for liquids that is larger than a drum and smaller than a tank. For hazardous substances, an IBC must comply with chapter 6.5 of the ADR.' },
+      { q: 'Which spill tray do I need for an IBC?', a: 'For one full 1,000-litre IBC, PGS 15 requires at least 1,100 litres of containment. Our flexible spill tray for 1 IBC measures 2.16 × 1.60 m and has a containment capacity of 1,149 litres.' }
+    ],
+    categories: ['flexibele-opvangbakken'],
+    products: ['opvangbak-starter-1-ibc', 'opvangbak-1-ibc', 'opvangbak-2-ibc'],
+    sources: [SRC.schuetz, SRC.werit, SRC.pgs15Verpakking, SRC.ibcRegels, SRC.pgs15]
+  },
+
   {
     slug: 'verschil-pvc-en-eva-lekbak',
     kicker: 'Containment',
@@ -164,111 +457,6 @@ export default [
   },
 
   {
-    slug: 'wat-is-een-flexibele-lekbak',
-    kicker: 'Containment',
-    title: 'Flexible spill tray: what is it and when should you choose one?',
-    seoTitle: 'Flexible spill tray: what is it and when to choose one? | EnviroFlow',
-    description: 'What is a flexible spill tray, how does it work and when is it a better fit than a steel one? With sizes, prices, PVC or EVA, Dutch rules (PGS 15) and tips.',
-    updated: '2026-11-13',
-    image: { src: IMG + 'sfeer-ibc-hal.jpg', alt: 'IBCs in a flexible spill tray in a commercial hall' },
-    intro: 'A flexible spill tray is a containment tray made of strong technical textile with raised edges. If something goes wrong with the IBC, drum or machine standing in it, the liquid stays in the tray. Not on the floor, not in the soil and not in the sewer. Below you can read how such a tray works, when it is a better fit than a steel tray and what to look out for when choosing one.',
-    takeaways: [
-      'A flexible spill tray catches leaks and spills under IBCs, drums, generators and vehicles.',
-      'It is set up in a few minutes and can be folded when empty.',
-      'For packaged liquid hazardous substances, the Dutch PGS 15 guideline requires containment of at least 110% of the largest container.',
-      'Always check that the material is resistant to your liquid.',
-      `View the [flexible spill trays](${L.opvang}) in standard sizes for drums, IBCs, machines and vehicles.`
-    ],
-    sections: [
-      {
-        h: 'How does a flexible spill tray work?',
-        p: [
-          'The floor and the raised edges together form one tray. If something leaks from an IBC, a drum or a machine, it stays within the edges. You then vacuum or pump up the liquid and dispose of it as required for that substance.',
-          'We supply the spill trays in two versions. The **Plus** is made of polyester fabric with an EVA coating of 1,365 g/m². According to the manufacturer, this is stronger and more chemically resistant than the 650 to 900 g/m² PVC fabric often used for standard spill trays. The **Starter** is the economical version in 900 g/m² PVC fabric, intended for short-term contact with chemicals. Read more in [PVC or EVA spill berm: what is the difference?](/kennisbank/verschil-pvc-en-eva-lekbak/)'
-        ],
-        image: { src: IMG + 'opvangbak-leeg.jpg', alt: 'Empty flexible spill tray with raised edges', caption: 'An empty spill tray: the floor and the raised edges together form the tray.' }
-      },
-      {
-        h: 'Flexible or steel: what suits your situation?',
-        p: ['A steel spill tray is a fine solution for a fixed location. A flexible tray is stronger where speed, space or moving it around matter.'],
-        table: {
-          head: ['Situation', 'Usually the best choice', 'Why'],
-          rows: [
-            ['Temporary storage or a changing workplace', 'Flexible', 'Set up quickly and cleared away again afterwards'],
-            ['Little space or a non-standard size', 'Flexible', 'Can be custom-made, even around a machine'],
-            ['Under a generator, pump or vehicle', 'Flexible', 'There are versions for generators, tanker trucks and lorries'],
-            ['Fixed storage where a forklift drives in and out every day', 'Often steel', 'Better resistant to daily knocks and scraping'],
-            ['Storage in a fire-resistant cabinet or room', 'According to the requirements for that storage', 'Discuss this with your adviser or the competent authority']
-          ]
-        }
-      },
-      {
-        h: 'Which sizes are available?',
-        p: [`There are standard sizes for drums, IBCs, generators and vehicles, each in PVC (Starter) and EVA (Plus). If none of them fits, a custom size is possible. View all [flexible spill trays with sizes and prices](${L.opvang}).`],
-        table: {
-          head: ['Version', 'Containment capacity', 'Dimensions (l × w × h)'],
-          rows: [
-            ['1 drum', '226 litres', '1.05 × 0.65 × 0.35 m'],
-            ['2 drums', '410 litres', '1.90 × 0.65 × 0.35 m'],
-            ['4 drums (low model)', '412 litres', '2.90 × 1.07 × 0.14 m'],
-            ['1 IBC', '1,149 litres', '2.16 × 1.60 × 0.35 m'],
-            ['2 IBCs', '1,795 litres', '2.50 × 2.16 × 0.35 m'],
-            ['4 IBCs', '2,420 litres', '5.20 × 1.40 × 0.35 m'],
-            ['10 IBCs', '5,836 litres', '5.95 × 2.95 × 0.35 m'],
-            ['Generator (3 × 1.5 m)', '1,451 litres', '2.91 × 1.50 × 0.35 m'],
-            ['Tanker truck (drive-in)', '11,655 litres', '9.50 × 3.69 × 0.35 m'],
-            ['Lorry (drive-in)', '22,575 litres', '18.40 × 3.69 × 0.35 m']
-          ]
-        }
-      },
-      {
-        h: 'What does a flexible spill tray cost?',
-        p: [
-          'The price depends on the size and the fabric. The Starter in PVC is the most economical version: a tray for 1 drum costs {prijs:opvangbak-starter-1-vat} and a tray for 1 IBC costs {prijs:opvangbak-starter-1-ibc}. The Plus in EVA for 1 IBC costs {prijs:opvangbak-1-ibc}. All prices exclude VAT and transport.',
-          `The prices of all sizes are listed in the [size and price table with the flexible spill trays](${L.opvang}#h-maten).`
-        ]
-      },
-      {
-        h: 'Is the spill tray resistant to my liquid?',
-        p: ['That differs per substance and per version. For the Plus (EVA), the manufacturer has a resistance table stating for each liquid how the material holds up after two years of contact: A (good), B (moderate) or C (not suitable). Most oils and many chemicals score well, but not everything. Hydrochloric acid 32%, for example, is rated C. The Starter (PVC) is intended for short-term contact and, according to the manufacturer, is not suitable for petrol and diesel, among others.'],
-        callout: { t: 'Tip', d: 'Keep the safety data sheet (SDS) of the substance to hand. It states exactly which substance it is. Send it with your request and we will check the resistance for you.' }
-      },
-      {
-        h: 'What do the rules say?',
-        p: [
-          'In the Netherlands, the guideline for storing packaged liquid hazardous substances is **PGS 15**. It requires containment of at least **110% of the volume of the largest container**. If 10% of the total volume is more, that 10% applies. Empty, uncleaned packaging does not count.',
-          `Whether PGS 15 applies to your storage depends on the substances and the quantity. The competent authority, usually the municipality or the environmental agency, decides this. The article [Calculating containment capacity](${L.capaciteit}) includes worked examples.`
-        ]
-      },
-      {
-        h: 'Indoors or outdoors?',
-        p: ['A flexible spill tray can stand outdoors. For the Plus (EVA), the manufacturer states that the fabric remains usable from −40 °C to +70 °C; no temperature range is given for the Starter (PVC). Outdoors, however, rainwater collects in the tray and reduces the containment capacity. Outdoors, choose a larger tray or place the storage under a roof.']
-      },
-      {
-        h: 'Use and inspection',
-        list: [
-          'Place the tray on a level surface without sharp stones or protrusions.',
-          'Put IBCs and drums down carefully and do not slide them across the floor of the tray.',
-          'Keep taps and dispensing points above the tray.',
-          'Check the tray regularly for damage and remove leaked liquid immediately.',
-          'If the tray is outdoors, check for water after rain.'
-        ]
-      }
-    ],
-    faq: [
-      { q: 'What else is a flexible spill tray called?', a: 'A flexible spill tray is also called a foldable spill tray, portable spill tray, flexible containment berm or spill containment berm.' },
-      { q: 'What does a flexible spill tray cost?', a: 'The Starter in PVC starts at {prijs:opvangbak-starter-1-vat} excl. VAT (for 1 drum). For 1 IBC you pay {prijs:opvangbak-starter-1-ibc} in PVC and {prijs:opvangbak-1-ibc} in EVA. The prices of all sizes are listed with the flexible spill trays in the webshop.' },
-      { q: 'How long does a flexible spill tray last?', a: 'The manufacturer gives a 7-year warranty on the Plus version in EVA. How long a spill tray lasts in practice depends on use, the liquid and whether it is indoors or outdoors.' },
-      { q: 'Can a flexible spill tray stand outdoors?', a: 'Yes. According to the manufacturer, the EVA fabric of the Plus version remains usable from −40 °C to +70 °C. Keep in mind that rainwater reduces the available containment capacity.' },
-      { q: 'Is a flexible spill tray suitable for flammable liquids?', a: 'According to the manufacturer, the Plus version in EVA is suitable for ATEX zone 2 (category 3G), including substances from subgroups IIA, IIB and IIC. The Starter in PVC is not suitable for petrol and diesel. The competent authority decides which requirements apply to your storage.' },
-      { q: 'Can I have a spill tray custom-made?', a: 'Yes. Send us the dimensions of the space or machine and tell us what will stand in it. We will check with the manufacturer what is possible.' }
-    ],
-    categories: ['flexibele-opvangbakken'],
-    products: ['opvangbak-1-ibc', 'opvangbak-2-vaten', 'opvangbak-aggregaat'],
-    sources: [SRC.pgs15, SRC.pgs]
-  },
-
-  {
     slug: 'welke-opvangbak-heb-ik-nodig-voor-ibcs',
     kicker: 'Containment',
     title: 'Choosing an IBC spill tray: how to find the right one',
@@ -281,7 +469,7 @@ export default [
       'For one full 1,000-litre IBC, the Dutch PGS 15 guideline requires at least 1,100 litres of containment.',
       'With several IBCs, 110% of the largest counts, or 10% of the total if that is more.',
       'Outdoors, rainwater fills the tray. Leave room for it.',
-      '[Flexible spill trays for IBCs](/producten/opvang-en-spill-containment/flexibele-opvangbakken/) are available for 1, 2, 4 and 10 IBCs, in PVC and EVA, and custom-made.'
+      '[Flexible spill trays for IBCs](/flexibele-lekbak/) are available for 1, 2, 4 and 10 IBCs, in PVC and EVA, and custom-made.'
     ],
     sections: [
       {
@@ -312,7 +500,7 @@ export default [
       },
       {
         h: 'Which IBC spill tray fits?',
-        p: ['All standard IBC spill trays below have more containment capacity than the 1,100 litres needed for full 1,000-litre IBCs.'],
+        p: ['All standard IBC spill trays below have more containment capacity than the 1,100 litres needed for full 1,000-litre IBCs. The sizes and weight of the IBC itself are in [IBC dimensions: sizes, capacity and weight](/kennisbank/ibc-afmetingen/).'],
         table: {
           head: ['Version', 'Containment capacity', 'Dimensions (l × w × h)'],
           rows: [
@@ -406,7 +594,7 @@ export default [
       },
       {
         h: 'When does PGS 15 apply?',
-        p: ['PGS 15 covers the storage of packaged hazardous substances. Whether the guideline applies to your storage depends on which substances you store and how much. The competent authority decides this, usually the municipality or the environmental agency.'],
+        p: ['PGS 15 covers the storage of packaged hazardous substances. Whether the guideline applies to your storage depends on which substances you store and how much: the Bal sets thresholds for this. They are listed, with the rules per situation, in [When is a spill tray mandatory?](/kennisbank/wanneer-is-een-lekbak-verplicht/)'],
         callout: { t: 'We do the maths with you', d: 'Send us a list of what is stored: the number of containers, their volume and the substance. We will calculate how much containment you need and which tray fits.' }
       }
     ],
@@ -738,7 +926,7 @@ export default [
           'The filling or draining point is above a liquid-tight facility, or above or in a filling point drip tray.',
           'A drip tray on the tank holds at least 5 litres. A separate drip tray at least 65 litres.'
         ],
-        after: ['There is also PGS 30 for liquid fuels in above-ground tanks up to 150 m³. It also mentions mobile tank installations, such as a separate tank with a pump on a construction site, and points out the risks of leaks from moving the tank and of refuelling over unpaved ground. The competent authority decides which rules apply to your situation.']
+        after: ['There is also PGS 30 for liquid fuels in above-ground tanks up to 150 m³. It also mentions mobile tank installations, such as a separate tank with a pump on a construction site, and points out the risks of leaks from moving the tank and of refuelling over unpaved ground. The competent authority decides which rules apply to your situation.', 'When a spill tray is mandatory for diesel, oil, IBCs and AdBlue is explained in [When is a spill tray mandatory?](/kennisbank/wanneer-is-een-lekbak-verplicht/)']
       },
       {
         h: 'The flexible fuel tank',

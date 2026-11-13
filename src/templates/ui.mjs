@@ -88,6 +88,30 @@ export const breadcrumbLd = (items, base) => ({
   itemListElement: items.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.name, item: base + localPath(b.url) }))
 });
 
+/* ---------- artikeltekst (kennisbank, gidsen en uitleg op categoriepagina's) ---------- */
+// Tekst uit de artikelen: eerst escapen, dan **vet** en [link](/pad/) omzetten.
+export const inline = (s) => esc(s)
+  .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+  .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, u) => `<a href="${u}"${/^https?:/.test(u) ? ' target="_blank" rel="noopener"' : ''}>${t}</a>`);
+export const plain = (s) => String(s || '').replace(/\*\*|\[|\]\([^)]*\)/g, '');
+export const slugify = (s) => plain(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+/** Eén sectie van een artikel of gids: kop, alinea's, lijst, stappen, tabel, kader en afbeelding. */
+export function sectionHtml(s) {
+  const id = slugify(s.h);
+  const table = s.table ? `<div class="table-scroll"><table class="kb-table"><thead><tr>${s.table.head.map((h) => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${s.table.rows.map((r) => `<tr>${r.map((c, i) => (i === 0 ? `<th scope="row">${inline(c)}</th>` : `<td>${inline(c)}</td>`)).join('')}</tr>`).join('')}</tbody></table></div>${s.table.note ? `<p class="kb-note">${inline(s.table.note)}</p>` : ''}` : '';
+  return `<section class="kb-section" id="${id}" aria-labelledby="h-${id}">
+  <h2 id="h-${id}">${esc(s.h)}</h2>
+  ${(s.p || []).map((x) => `<p>${inline(x)}</p>`).join('')}
+  ${s.list ? `<ul class="check-list">${s.list.map((x) => `<li>${icon('check')}<span>${inline(x)}</span></li>`).join('')}</ul>` : ''}
+  ${s.steps ? `<ol class="kb-steps">${s.steps.map((x, i) => `<li><span class="kb-steps__n" aria-hidden="true">${i + 1}</span><div><h3>${esc(x.t)}</h3><p>${inline(x.d)}</p></div></li>`).join('')}</ol>` : ''}
+  ${table}
+  ${(s.after || []).map((x) => `<p>${inline(x)}</p>`).join('')}
+  ${s.callout ? `<aside class="kb-callout">${icon('info')}<div><strong>${esc(s.callout.t)}</strong><p>${inline(s.callout.d)}</p></div></aside>` : ''}
+  ${s.image ? `<figure class="kb-figure">${media(s.image, '16-9')}<figcaption>${esc(s.image.caption || '')}</figcaption></figure>` : ''}
+</section>`;
+}
+
+
 /** Vervangt {prijs:product-id} in een tekst door de actuele verkoopprijs excl. btw.
  *  Zo lopen prijzen in koopgidsen, veelgestelde vragen en artikelen nooit achter op de webshop. */
 export function fillPrices(s, ctx) {

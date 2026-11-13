@@ -19,11 +19,13 @@ const rawContent = {
   solutions: (await import('./src/content/nl/solutions.mjs')).default,
   sectors: (await import('./src/content/nl/sectors.mjs')).default,
   articles: (await import('./src/content/nl/articles.mjs')).default,
-  guides: (await import('./src/content/nl/guides.mjs')).default
+  guides: (await import('./src/content/nl/guides.mjs')).default,
+  categoryGuides: (await import('./src/content/nl/category-guides.mjs')).default
 };
 // Kennisbankartikelen zijn lange teksten: de Engelse versie staat als eigen bestand (zelfde slugs).
 const articlesEn = (await import('./src/content/en/articles.mjs')).default;
 const guidesEn = (await import('./src/content/en/guides.mjs')).default;
+const categoryGuidesEn = (await import('./src/content/en/category-guides.mjs')).default;
 const enTable = existsSync(join(root, 'src/i18n/en-data.json')) ? readJson('src/i18n/en-data.json') : {};
 const version = Date.now().toString(36);
 // De stylesheet gaat direct in elke pagina (geen apart verzoek dat de eerste weergave tegenhoudt).
@@ -59,6 +61,7 @@ for (const lang of LANGS) {
   const catalog = buildCatalog({ site: tr(raw.site), brands: tr(raw.brands), categories: tr(raw.categories), products: tr(raw.products) });
   const solutions = tr(rawContent.solutions), sectors = tr(rawContent.sectors), articles = lang === 'en' ? articlesEn : rawContent.articles;
   const guides = lang === 'en' ? guidesEn : rawContent.guides;
+  const categoryGuides = lang === 'en' ? categoryGuidesEn : rawContent.categoryGuides;
   if (missing.size && process.env.I18N_ALLOW_MISSING === '1') {
     console.warn(`(ontwikkelmodus) ${missing.size} vertaling(en) ontbreken nog`);
   } else if (missing.size) {
@@ -68,7 +71,7 @@ for (const lang of LANGS) {
   const t = readJson(`src/i18n/${lang}.json`);
   const { groupById, categoryById } = catalog;
   const ctx = {
-    ...catalog, t, solutions, sectors, articles, lang, version, inlineCss,
+    ...catalog, t, solutions, sectors, articles, categoryGuides, lang, version, inlineCss,
     urls: {
       group: (g) => groupUrl(g),
       category: (c) => categoryUrl(c, groupById),
@@ -230,8 +233,20 @@ writeFileSync(join(dist, 'version.txt'), `${process.env.CF_PAGES_COMMIT_SHA || '
 // Beveiligings- en cacheheaders voor Cloudflare Pages (zelfde regels als server.mjs).
 // De laatste regel houdt het technische adres *.pages.dev uit de zoekmachines: alleen www.enviroflow.nl hoort gevonden te worden.
 // Oude adressen die nog ergens gelinkt kunnen zijn (Cloudflare Pages leest _redirects).
-writeFileSync(join(dist, '_redirects'), `/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf /assets/datasheets/opvangbak-chemische-bestendigheid.pdf 301
-`);
+// De lekbakpagina heeft sinds november 2026 een eigen, kort adres (/flexibele-lekbak/); het kennisbankartikel
+// "Flexibele lekbak" is daarin opgenomen. Alle oude adressen verwijzen blijvend (301) door, ook de Engelse.
+const OLD_CAT = '/producten/opvang-en-spill-containment/flexibele-opvangbakken';
+const OLD_ART = '/kennisbank/wat-is-een-flexibele-lekbak';
+const redirects = [
+  '/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf /assets/datasheets/opvangbak-chemische-bestendigheid.pdf 301',
+  ...['', '/en'].flatMap((p) => [
+    `${p}${OLD_CAT} ${p}/flexibele-lekbak/ 301`,
+    `${p}${OLD_CAT}/* ${p}/flexibele-lekbak/:splat 301`,
+    `${p}${OLD_ART} ${p}/flexibele-lekbak/ 301`,
+    `${p}${OLD_ART}/ ${p}/flexibele-lekbak/ 301`
+  ])
+];
+writeFileSync(join(dist, '_redirects'), redirects.join('\n') + '\n');
 writeFileSync(join(dist, '_headers'), `/*
   X-Content-Type-Options: nosniff
   Strict-Transport-Security: max-age=31536000

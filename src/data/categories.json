@@ -43,6 +43,7 @@
       "id": "flexibele-opvangbakken",
       "group": "opvang",
       "slug": "flexibele-opvangbakken",
+      "path": "/flexibele-lekbak/",
       "name": "Flexibele lekbakken",
       "menuName": "Flexibele lekbakken / opvangbakken",
       "active": true,
@@ -109,7 +110,7 @@
         }
       ],
       "imageSrc": "/assets/img/producten/opvangbak-praktijk.jpg",
-      "h1": "Flexibele lekbakken en opvangbakken voor IBC's en vaten",
+      "h1": "Flexibele lekbak voor IBC's, vaten en voertuigen",
       "productPage": {
         "_comment": "Vaste blokken op elke productpagina van deze categorie. videos: [{\"youtube\": \"id\", \"title\": \"…\", \"poster\": \"/assets/img/video/….webp\"}] of [{\"src\": \"/assets/video/….mp4\", …}]; photos: [{\"src\", \"alt\", \"width\", \"height\", \"caption\"}]. Alleen invullen met materiaal waarvoor toestemming is.",
         "videos": [],

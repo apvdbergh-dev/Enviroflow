@@ -1,5 +1,5 @@
 // Home, productoverzichten, productpagina's, winkelwagen, checkout, formulieren en keuzehulp.
-import { esc, ph, icon, fmtEUR, media, CARD_SIZES, priceBlock, faqBlock, fillPrices, faqWithPrices, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, insightFields } from './ui.mjs';
+import { esc, ph, icon, fmtEUR, media, CARD_SIZES, priceBlock, faqBlock, fillPrices, faqWithPrices, sectionHtml, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, insightFields } from './ui.mjs';
 import { isOrderable, hasRealPrice } from '../lib/catalog.mjs';
 import { T, isEn, getLang, localPath } from '../lib/i18n.mjs';
 
@@ -29,7 +29,7 @@ export function home(ctx) {
     <div class="hero__content">
       <p class="kicker kicker--light hero__in" style="--d:0">${T('Zakelijke specialist in vloeistofopslag en opvang', 'Business specialist in liquid storage and containment')}</p>
       <h1 id="h-hero" class="hero__title">${T('<span class="line"><span style="--d:1">Flexibele lekbakken</span></span> <span class="line"><span style="--d:2">en tanks voor veilige</span></span> <span class="line"><span style="--d:3">vloeistofopslag</span></span>', '<span class="line"><span style="--d:1">Flexible spill trays</span></span> <span class="line"><span style="--d:2">and tanks for safe</span></span> <span class="line"><span style="--d:3">liquid storage</span></span>')}</h1>
-      <p class="hero__lead hero__in" style="--d:4">${T("Van <a href=\"/producten/opvang-en-spill-containment/flexibele-opvangbakken/\" style=\"color:inherit\">flexibele lekbakken voor IBC's</a> tot brandwater-, brandstof- en mesttanks. EnviroFlow helpt bedrijven vloeistoffen veilig en praktisch op te slaan, op te vangen en te verplaatsen.", 'From <a href="/producten/opvang-en-spill-containment/flexibele-opvangbakken/" style="color:inherit">flexible spill trays for IBCs</a> to fire water, fuel and manure tanks. EnviroFlow helps businesses store, contain and move liquids safely and practically.')}</p>
+      <p class="hero__lead hero__in" style="--d:4">${T(`Van <a href="${catUrl('flexibele-opvangbakken')}" style="color:inherit">flexibele lekbakken voor IBC's</a> tot brandwater-, brandstof- en mesttanks. EnviroFlow helpt bedrijven vloeistoffen veilig en praktisch op te slaan, op te vangen en te verplaatsen.`, `From <a href="${catUrl('flexibele-opvangbakken')}" style="color:inherit">flexible spill trays for IBCs</a> to fire water, fuel and manure tanks. EnviroFlow helps businesses store, contain and move liquids safely and practically.`)}</p>
       <div class="btn-row hero__in" style="--d:5"><a class="btn btn--accent btn--lg" href="/producten/">${T('Bekijk producten', 'View products')} ${icon('arrow')}</a><a class="btn btn--outline-light btn--lg" href="/offerte-aanvragen/?type=advies">${T('Vraag advies aan', 'Request advice')}</a></div>
       <p class="hero__phone hero__in" style="--d:6">${icon('phone')}<span>${T('Liever direct overleggen? Bel', 'Prefer to talk right away? Call')} <a href="tel:${site.phonePrimary.tel}">${site.phonePrimary.display}</a></span></p>
     </div>
@@ -98,7 +98,7 @@ export function home(ctx) {
 
 ${featured.length ? `<section class="section" aria-labelledby="h-featured">
   <div class="container">
-    <div class="section-head section-head--row"><div><p class="kicker">${T('Direct online te bestellen', 'Order directly online')}</p><h2 id="h-featured">${T('Uitgelichte producten', 'Featured products')}</h2></div><a class="link-arrow" href="/producten/opvang-en-spill-containment/flexibele-opvangbakken/">${T('Alle flexibele lekbakken', 'All flexible spill trays')} ${icon('arrow')}</a></div>
+    <div class="section-head section-head--row"><div><p class="kicker">${T('Direct online te bestellen', 'Order directly online')}</p><h2 id="h-featured">${T('Uitgelichte producten', 'Featured products')}</h2></div><a class="link-arrow" href="${catUrl('flexibele-opvangbakken')}">${T('Alle flexibele lekbakken', 'All flexible spill trays')} ${icon('arrow')}</a></div>
     <div class="product-grid">${featured.map((p) => productCard(p, ctx)).join('')}</div>
   </div>
 </section>` : ''}
@@ -319,7 +319,10 @@ export function categoryPage(c, ctx) {
   const { products, groupById, urls, site } = ctx;
   const g = groupById[c.group];
   const list = products.filter((p) => p.category === c.id);
-  const faq = faqBlock(faqWithPrices(c.faq, ctx));
+  // Uitleg onder de producten (src/content/<taal>/category-guides.mjs): secties zoals in een kennisbankartikel, plus extra vragen.
+  const guide = ctx.categoryGuides?.[c.id];
+  const faq = faqBlock(faqWithPrices([...(c.faq || []), ...(guide?.faq || [])], ctx));
+  const explain = guide?.sections?.length ? `<section class="section section--tight" aria-label="${T('Uitleg', 'Explanation')}"><div class="container container--narrow kb-body">${guide.sections.map(sectionHtml).join('\n')}</div></section>` : '';
   // In de meta-beschrijving mogen {aantal} en {vanafprijs} staan; die volgen de actuele productgegevens.
   const priced = list.filter((p) => hasRealPrice(p) && !p.quoteOnly);
   const fill = (x) => String(x || '').replace('{aantal}', list.length).replace('{vanafprijs}', priced.length ? fmtEUR(Math.min(...priced.map((p) => p.price))) : '');
@@ -339,9 +342,9 @@ export function categoryPage(c, ctx) {
     <section class="section section--tight"><div class="container"><div class="custom-hint">${icon('ruler')}<div><h2>${T('Geen passende maat of uitvoering?', 'No suitable size or version?')}</h2><p>${T('Wij bekijken wat er op maat mogelijk is.', 'We look at what is possible as a custom solution.')}</p></div><a class="btn btn--ghost" href="/maatwerk-aanvragen/">${T('Vraag maatwerk aan', 'Request custom-made')}</a></div></div></section>`;
   }
   // Uit de kennisbank: artikelen over deze categorie (interne links helpen bezoekers en zoekmachines).
-  const reads = (ctx.articles || []).filter((a) => (a.categories || []).includes(c.id)).slice(0, 5);
+  const reads = (ctx.articles || []).filter((a) => (a.categories || []).includes(c.id)).slice(0, 6);
   const kb = reads.length ? `<section class="section section--tight" aria-labelledby="h-kb"><div class="container"><h2 id="h-kb" class="subhead">${T('Uit de kennisbank', 'From the knowledge base')}</h2><ul class="link-list">${c.productPage?.compare ? `<li><a href="/waarom-flexibel/">${T('Waarom flexibel? Flexibele, stalen en kunststof lekbakken vergeleken', 'Why flexible? Flexible, steel and plastic spill trays compared')}</a></li>` : ''}${reads.map((a) => `<li><a href="/kennisbank/${a.slug}/">${esc(a.title)}</a></li>`).join('')}</ul></div></section>` : '';
-  const body = `${head}${main}${c.isCustom ? '' : sizeTableBlock(c, list, ctx)}${fillPrices(guideBlock(c.guide), ctx)}${faq.html}${kb}<div class="container section--tight">${adviceBlock(site)}</div>`;
+  const body = `${head}${main}${c.isCustom ? '' : sizeTableBlock(c, list, ctx)}${fillPrices(guideBlock(c.guide), ctx)}${fillPrices(explain, ctx)}${faq.html}${kb}<div class="container section--tight">${adviceBlock(site)}</div>`;
   const itemList = list.length ? { '@context': 'https://schema.org', '@type': 'ItemList', name: c.name, itemListElement: list.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: site.baseUrl + localPath(urls.product(p)), name: p.name })) } : null;
   return { path: urls.category(c), title: c.seoTitle || `${c.name} | EnviroFlow`, description: fill(c.seoDescription || c.short), ogImage: c.imageSrc || undefined, body, crumbs, jsonld: [faq.ld, itemList].filter(Boolean), scripts: c.isCustom ? ['/assets/js/forms.js'] : ['/assets/js/listing.js'] };
 }

@@ -41,6 +41,16 @@ for (const file of pages) {
   }
 }
 for (const f of ['llms.txt', 'google-shopping.xml', 'sitemap.xml']) { const p = join(dist, f); if (existsSync(p) && /\{(?:prijs:[a-z0-9-]+|aantal|vanafprijs)\}/.test(readFileSync(p, 'utf8'))) errors.push(`/${f}: niet ingevulde verwijzing`); }
+// Doorverwijzingen (_redirects): het doel moet een bestaande pagina zijn, en het oude adres mag niet meer bestaan.
+if (existsSync(join(dist, '_redirects'))) {
+  for (const line of readFileSync(join(dist, '_redirects'), 'utf8').split('\n').filter(Boolean)) {
+    const [from, to] = line.split(/\s+/);
+    const target = join(dist, to.replace(':splat', ''));
+    if (!(existsSync(target) && (statSync(target).isFile() || existsSync(join(target, 'index.html'))))) errors.push(`_redirects: doel bestaat niet: ${to}`);
+    const old = join(dist, from.replace(/\/\*$/, ''));
+    if (!from.includes('.') && existsSync(join(old, 'index.html'))) errors.push(`_redirects: oud adres bestaat nog: ${from}`);
+  }
+}
 const unique = [...new Set(errors)];
 console.log(`${pages.length} pagina's gecontroleerd, ${unique.length} problemen`);
 unique.slice(0, 80).forEach((e) => console.log(' - ' + e));

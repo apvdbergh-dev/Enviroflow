@@ -27,5 +27,6 @@ export const hasPlaceholderPrice = (p) => typeof p.price === 'string' && p.price
 export const isOrderable = (p) => !p.quoteOnly && (hasRealPrice(p) || hasPlaceholderPrice(p));
 
 export const groupUrl = (g) => `/producten/${g.slug}/`;
-export const categoryUrl = (c, groupById) => `/producten/${groupById[c.group].slug}/${c.slug}/`;
+// Een categorie kan een eigen, kort adres hebben (path), bijvoorbeeld /flexibele-lekbak/.
+export const categoryUrl = (c, groupById) => c.path || `/producten/${groupById[c.group].slug}/${c.slug}/`;
 export const productUrl = (p, categoryById, groupById) => `${categoryUrl(categoryById[p.category], groupById)}${p.slug}/`;

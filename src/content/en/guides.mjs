@@ -7,7 +7,7 @@ const SRC = {
   weefsel: { label: 'Manufacturer – PVC, EVA or TPU: differences in technical fabric', url: 'https://exflo.eu/pvc-eva-or-maybe-tpu-learn-about-the-differences-in-the-construction-of-spill-containment-berms/' }
 };
 const L = {
-  opvang: '/producten/opvang-en-spill-containment/flexibele-opvangbakken/',
+  opvang: '/flexibele-lekbak/',
   capaciteit: '/kennisbank/hoe-kies-je-de-juiste-opvangcapaciteit/',
   ibc: '/kennisbank/welke-opvangbak-heb-ik-nodig-voor-ibcs/',
   tank: '/kennisbank/flexibele-tank-of-stalen-tank/',
