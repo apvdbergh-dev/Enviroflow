@@ -1038,7 +1038,7 @@ a.contact-card:hover span { text-decoration: underline; text-underline-offset: 3
 .kcard__media .media { border-radius: 0; }
 .kcard__media .media img { transition: transform 700ms var(--ease-out); }
 .kcard__body { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 22px; }
-.kcard h2 { font-size: 1.1875rem; line-height: 1.3; margin: 0 0 8px; }
+.kcard h2, .kcard h3 { font-size: 1.1875rem; line-height: 1.3; margin: 0 0 8px; }
 .kcard__body > p:not(.kb-kicker):not(.kcard__meta) { color: var(--ink-2); font-size: .9375rem; margin: 0 0 16px; flex: 1; }
 .kcard__meta { display: flex; align-items: center; gap: 8px; margin: 0; font-size: .8125rem; color: var(--ink-3); }
 .kcard__meta .ic { width: 15px; height: 15px; }
@@ -1096,6 +1096,12 @@ a.contact-card:hover span { text-decoration: underline; text-underline-offset: 3
 .kb-summary .check-list { margin: 0; }
 .kb-summary .check-list li { border-color: var(--line-dark); font-size: 1rem; color: var(--on-dark); }
 .kb-summary .check-list .ic { color: var(--accent); }
+.section-foot { margin: 28px 0 0; }
+.section-head__aside a { color: var(--link); text-underline-offset: 3px; }
+/* Kleine hulpklassen (voorheen style-attributen in de HTML) */
+.d-0 { --d: 0; } .d-1 { --d: 1; } .d-2 { --d: 2; } .d-3 { --d: 3; } .d-4 { --d: 4; } .d-5 { --d: 5; } .d-6 { --d: 6; } .d-7 { --d: 7; } .d-8 { --d: 8; }
+.link-inherit { color: inherit; }
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
 .kb-shop { margin: 22px 0 8px; }
 .kb-shop__title { margin: 0 0 6px; font: 600 .8125rem/1.3 var(--font-body); text-transform: uppercase; letter-spacing: .12em; color: var(--ink-3); }
 .kb-shop .index-list { grid-template-columns: 1fr; }

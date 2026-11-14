@@ -1,5 +1,5 @@
 // Oplossingen, sectoren, projecten, kennisbank, over ons, partners, contact, juridisch, zoeken en 404.
-import { esc, ph, icon, fmtEUR, media, CARD_SIZES, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, faqBlock, fillPrices, faqWithPrices, insightFields, inline, plain, slugify, sectionHtml } from './ui.mjs';
+import { esc, ph, icon, fmtEUR, media, CARD_SIZES, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, faqBlock, fillPrices, faqWithPrices, insightFields, inline, plain, slugify, sectionHtml, readLabel, articleCard } from './ui.mjs';
 import { hasRealPrice } from '../lib/catalog.mjs';
 import { stepsList } from './pages-shop.mjs';
 import { T, numberLocale } from '../lib/i18n.mjs';
@@ -106,23 +106,7 @@ ${ctaBand({ title: 'Een vergelijkbare situatie?', text: 'Bespreek uw situatie me
 }
 
 /* ---------------------------------------------------------------- kennisbank */
-/** Leestijd in minuten (200 woorden per minuut, minimaal 3). */
-function readMinutes(a) {
-  const parts = [a.intro, ...(a.takeaways || [])];
-  for (const s of a.sections) parts.push(s.h, ...(s.p || []), ...(s.list || []), ...(s.after || []), ...(s.steps || []).flatMap((x) => [x.t, x.d]), ...(s.table?.rows || []).flat(), s.callout?.d || '');
-  for (const f of a.faq || []) parts.push(f.q, f.a);
-  return Math.max(3, Math.round(parts.join(' ').split(/\s+/).length / 200));
-}
 const fmtDate = (iso) => new Intl.DateTimeFormat(numberLocale(), { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(iso));
-const readLabel = (a) => `${readMinutes(a)} ${T('min leestijd', 'min read')}`;
-
-function articleCard(a, cls = '') {
-  return `<a class="kcard ${cls}" href="/kennisbank/${a.slug}/">
-  <div class="kcard__media">${cls ? media(a.image, '16-10') : media(a.image, '3-2', false, CARD_SIZES)}</div>
-  <div class="kcard__body"><p class="kb-kicker">${esc(a.kicker)}</p><h2>${esc(a.title)}</h2><p>${esc(a.description)}</p>
-  <p class="kcard__meta">${icon('file')}<span>${readLabel(a)}</span><span class="link-arrow">${T('Lees artikel', 'Read article')} ${icon('arrow')}</span></p></div>
-</a>`;
-}
 
 export function knowledgeOverview(ctx) {
   const [first, ...rest] = ctx.articles;
@@ -171,13 +155,13 @@ export function articlePage(a, ctx) {
 ${prods.length ? `<section class="section section--tight section--grey"><div class="container"><h2>${T('Producten bij dit artikel', 'Products for this article')}</h2><div class="product-grid product-grid--3">${prods.map((p) => productCard(p, ctx)).join('')}</div></div></section>` : ''}
 ${faq.html}
 <div class="container section--tight">${adviceBlock(ctx.site)}</div>
-<section class="section section--tight"><div class="container"><h2>${T('Lees ook', 'Read also')}</h2><div class="kb-grid kb-grid--3">${others.map((o) => articleCard(o)).join('')}</div></div></section>`, ctx);
+<section class="section section--tight"><div class="container"><h2>${T('Lees ook', 'Read also')}</h2><div class="kb-grid kb-grid--3">${others.map((o) => articleCard(o, '', 'h3')).join('')}</div></div></section>`, ctx);
   const abs = (u) => ctx.site.baseUrl + u;
   // Gidspagina's (zoals /waarom-flexibel/) gebruiken dezelfde opbouw, maar met een eigen adres.
   const path = a.path || `/kennisbank/${a.slug}/`;
   const crumbs = a.path ? [H, { name: a.crumb, url: a.path }] : [H, { name: T('Kennisbank', 'Knowledge base'), url: '/kennisbank/' }, { name: a.title, url: path }];
   const ld = { '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.description, image: [abs(a.image.src)], inLanguage: T('nl-NL', 'en'), datePublished: a.updated, dateModified: a.updated, mainEntityOfPage: abs(path), author: { '@type': 'Organization', name: 'EnviroFlow', url: ctx.site.baseUrl }, publisher: { '@type': 'Organization', name: 'EnviroFlow', logo: { '@type': 'ImageObject', url: abs('/assets/img/enviroflow-logo.png') } } };
-  return { path, title: a.seoTitle || `${a.title} | EnviroFlow`, description: a.description, ogImage: a.image.src, body, crumbs, jsonld: [ld, faq.ld].filter(Boolean) };
+  return { path, title: a.seoTitle || `${a.title} | EnviroFlow`, description: a.description, ogImage: a.image.src, ogAlt: a.image.alt, ogType: 'article', ogExtra: `<meta property="article:published_time" content="${a.updated}"><meta property="article:modified_time" content="${a.updated}">`, body, crumbs, jsonld: [ld, faq.ld].filter(Boolean) };
 }
 
 /* ---------------------------------------------------------------- over ons & partners */

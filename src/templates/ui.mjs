@@ -41,7 +41,7 @@ const ICONS = {
 };
 
 export const icon = (name, cls = '') => `<svg class="ic ${cls}" aria-hidden="true" focusable="false"><use href="#i-${name}"/></svg>`;
-const iconSprite = () => `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">${Object.entries(ICONS)
+const iconSprite = () => `<svg xmlns="http://www.w3.org/2000/svg" class="sprite" width="0" height="0" aria-hidden="true">${Object.entries(ICONS)
   .map(([k, v]) => `<symbol id="i-${k}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${v}</symbol>`).join('')}</svg>`;
 
 /** Golflijn uit het logo als sectiescheiding. */
@@ -111,6 +111,24 @@ export function sectionHtml(s) {
 </section>`;
 }
 
+
+/** Leestijd in minuten (200 woorden per minuut, minimaal 3). */
+function readMinutes(a) {
+  const parts = [a.intro, ...(a.takeaways || [])];
+  for (const s of a.sections) parts.push(s.h, ...(s.p || []), ...(s.list || []), ...(s.after || []), ...(s.steps || []).flatMap((x) => [x.t, x.d]), ...(s.table?.rows || []).flat(), s.callout?.d || '');
+  for (const f of a.faq || []) parts.push(f.q, f.a);
+  return Math.max(3, Math.round(parts.join(' ').split(/\s+/).length / 200));
+}
+export const readLabel = (a) => `${readMinutes(a)} ${T('min leestijd', 'min read')}`;
+
+/** Kaart van een kennisbankartikel. `tag` is de kop van de titel: h2 op het overzicht, h3 onder een eigen kop. */
+export function articleCard(a, cls = '', tag = 'h2') {
+  return `<a class="kcard ${cls}" href="/kennisbank/${a.slug}/">
+  <div class="kcard__media">${cls ? media(a.image, '16-10') : media(a.image, '3-2', false, CARD_SIZES)}</div>
+  <div class="kcard__body"><p class="kb-kicker">${esc(a.kicker)}</p><${tag}>${esc(a.title)}</${tag}><p>${esc(a.description)}</p>
+  <p class="kcard__meta">${icon('file')}<span>${readLabel(a)}</span><span class="link-arrow">${T('Lees artikel', 'Read article')} ${icon('arrow')}</span></p></div>
+</a>`;
+}
 
 /** Vervangt {prijs:product-id} in een tekst door de actuele verkoopprijs excl. btw.
  *  Zo lopen prijzen in koopgidsen, veelgestelde vragen en artikelen nooit achter op de webshop. */
@@ -377,7 +395,7 @@ function localizeLd(value, base) {
   return value;
 }
 
-export function layout(ctx, { path, altPath = path, title, description, body, crumbs = [], jsonld = [], noindex = false, bodyClass = '', scripts = [], ogImage, preload = '' }) {
+export function layout(ctx, { path, altPath = path, title, description, body, crumbs = [], jsonld = [], noindex = false, bodyClass = '', scripts = [], ogImage, ogAlt, ogType = 'website', ogExtra = '', preload = '' }) {
   const { site } = ctx;
   const canonical = site.baseUrl + path;
   if (description && description.length > 160) { const cut = description.slice(0, 157); description = cut.slice(0, cut.lastIndexOf(" ")).replace(/[\s,.;:–-]+$/, "") + "…"; }
@@ -396,17 +414,22 @@ export function layout(ctx, { path, altPath = path, title, description, body, cr
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${canonical}">
 ${altLinks}
-${noindex ? '<meta name="robots" content="noindex, follow">' : ''}
-<meta property="og:type" content="website"><meta property="og:locale" content="${isEn() ? 'en_GB' : 'nl_NL'}"><meta property="og:locale:alternate" content="${isEn() ? 'nl_NL' : 'en_GB'}"><meta property="og:site_name" content="EnviroFlow">
+${noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">'}
+<meta property="og:type" content="${ogType}">${ogExtra}<meta property="og:locale" content="${isEn() ? 'en_GB' : 'nl_NL'}"><meta property="og:locale:alternate" content="${isEn() ? 'nl_NL' : 'en_GB'}"><meta property="og:site_name" content="EnviroFlow">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canonical}">
-<meta property="og:image" content="${ogImg}">
+<meta property="og:image" content="${ogImg}">${ogImage ? '' : '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">'}<meta property="og:image:alt" content="${esc(ogAlt || title)}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="${ogImg}">
 <meta name="theme-color" content="#0A3B2C">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+${ctx.inlineCss ? '' : `<link rel="stylesheet" href="${ctx.cssHref}">`}
 ${preload}
 <link rel="preload" href="/assets/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/archivo-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
-${ctx.inlineCss ? `<style>${ctx.inlineCss}</style>` : `<link rel="stylesheet" href="/assets/css/main.css?v=${ctx.version}">`}
+${ctx.inlineCss ? `<style>${ctx.inlineCss}</style>` : ''}
 ${ldOut.map((l) => `<script type="application/ld+json">${JSON.stringify(l).replace(/</g, '\\u003c')}</script>`).join('\n')}
 </head>
 <body class="${bodyClass}">

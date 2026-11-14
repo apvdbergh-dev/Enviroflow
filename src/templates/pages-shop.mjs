@@ -1,7 +1,7 @@
 // Home, productoverzichten, productpagina's, winkelwagen, checkout, formulieren en keuzehulp.
-import { esc, ph, icon, fmtEUR, media, CARD_SIZES, priceBlock, faqBlock, fillPrices, faqWithPrices, sectionHtml, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, insightFields } from './ui.mjs';
+import { esc, ph, icon, fmtEUR, media, CARD_SIZES, priceBlock, faqBlock, fillPrices, faqWithPrices, sectionHtml, articleCard, adviceBlock, ctaBand, productCard, categoryCard, field, honeypot, formStatus, insightFields } from './ui.mjs';
 import { isOrderable, hasRealPrice } from '../lib/catalog.mjs';
-import { T, isEn, getLang, localPath } from '../lib/i18n.mjs';
+import { T, isEn, getLang, localPath, numberLocale } from '../lib/i18n.mjs';
 
 
 /* ================================================================ HOME */
@@ -11,6 +11,36 @@ export function home(ctx) {
   const popular = categories.filter((c) => c.popular).slice(0, 8);
   const minPrice = (catId) => Math.min(...products.filter((p) => p.category === catId && typeof p.price === 'number' && !p.quoteOnly).map((p) => p.price));
   const catUrl = (id) => urls.category(ctx.categoryById[id]);
+
+  // Kennisbank op de homepage: de drie nieuwste artikelen (bovenaan in src/content/<taal>/articles.mjs).
+  const kbArticles = (ctx.articles || []).slice(0, 3);
+  // Veelgestelde vragen: alleen feiten die elders op de site staan. Betaalwijzen, sectoren, levertijd en capaciteit
+  // komen uit de gegevens, zodat de antwoorden meeveranderen.
+  const listOf = (items) => (items.length > 1 ? `${items.slice(0, -1).join(', ')} ${T('en', 'and')} ${items[items.length - 1]}` : items.join(''));
+  const nf = (n) => new Intl.NumberFormat(numberLocale()).format(n);
+  const lekbakken = products.filter((p) => p.category === 'flexibele-opvangbakken');
+  const caps = lekbakken.map((p) => p.attributes?.capacityL).filter((n) => typeof n === 'number');
+  const lead = lekbakken.find((p) => p.leadTime)?.leadTime || '';
+  const leadText = lead ? lead.charAt(0).toLowerCase() + lead.slice(1) : '';
+  const homeFaq = [
+    { q: T('Wat levert EnviroFlow?', 'What does EnviroFlow supply?'),
+      a: T("EnviroFlow levert flexibele lekbakken voor IBC's, vaten, aggregaten en voertuigen, wasmatten en decontaminatiematten, flexibele tanks voor bluswater, drinkwater, brandstof, afvalwater, mest en UAN, mobiele waterkeringen en geluidsabsorberende matten. Standaardmaten bestelt u online; maatwerk is op aanvraag mogelijk.", 'EnviroFlow supplies flexible spill trays for IBCs, drums, generators and vehicles, wash mats and decontamination mats, flexible tanks for fire water, drinking water, fuel, waste water, manure and UAN, mobile flood barriers and sound-absorbing mats. Standard sizes can be ordered online; custom solutions are available on request.') },
+    { q: T('Wat is een flexibele lekbak?', 'What is a flexible spill tray?'),
+      a: T(`Een flexibele lekbak is een opvouwbare opvangbak van gecoat weefsel met opstaande randen. Hij vangt lekkages op onder IBC's, vaten, machines en voertuigen. Wij leveren hem in PVC en in EVA, met een opvangcapaciteit van ${nf(Math.min(...caps))} tot ${nf(Math.max(...caps))} liter.`, `A flexible spill tray is a foldable containment tray made of coated fabric with raised edges. It catches leaks under IBCs, drums, machines and vehicles. We supply it in PVC and in EVA, with a containment capacity from ${nf(Math.min(...caps))} to ${nf(Math.max(...caps))} litres.`) },
+    { q: T('Wanneer is een lekbak verplicht?', 'When is a spill tray mandatory?'),
+      a: T('Dat hangt af van wat u opslaat en hoeveel. Voor vloeibare gevaarlijke stoffen in verpakking, voor een bovengrondse dieseltank en voor een IBC die als opslagtank dient, schrijven de regels opvang voor. In de kennisbank staat het per situatie, met de officiële bron erbij.', 'That depends on what you store and how much. For packaged liquid hazardous substances, for an above-ground diesel tank and for an IBC used as a storage tank, the Dutch rules prescribe containment. The knowledge base explains it per situation, with the official source.') },
+    { q: T('Kan ik online bestellen en hoe betaal ik?', 'Can I order online and how do I pay?'),
+      a: T(`Ja. Producten met een prijs bestelt u direct in de webshop. U kunt betalen met: ${listOf(site.paymentMethods.map((m) => m.label))}. Voor de overige producten vraagt u een offerte aan.`, `Yes. Products with a price can be ordered directly in the webshop. You can pay with: ${listOf(site.paymentMethods.map((m) => m.label))}. For all other products, you request a quote.`) },
+    { q: T('Wat zijn de verzendkosten en de levertijd?', 'What are the shipping costs and the delivery time?'),
+      a: T(`De verzendkosten hangen af van het product, het formaat en het afleveradres. Na uw bestelling nemen wij contact met u op over de verzendkosten en de levering. De levertijd staat bij elk product.${leadText ? ` Voor de flexibele lekbakken: ${leadText}.` : ''} Wij leveren in Nederland.`, `Shipping costs depend on the product, the size and the delivery address. After your order we contact you about the shipping costs and the delivery. The delivery time is stated with each product.${leadText ? ` For the flexible spill trays: ${leadText}.` : ''} We deliver in the Netherlands.`) },
+    { q: T('Leveren jullie ook maatwerk?', 'Do you also supply custom solutions?'),
+      a: T('Ja. Past een standaardmaat niet, dan bekijken wij samen met de fabrikant wat mogelijk is. Denk aan een lekbak rond een specifieke machine of een tank voor een ruimte met beperkte hoogte.', 'Yes. If a standard size does not fit, we look at what is possible together with the manufacturer. For example a spill tray around a specific machine or a tank for a space with limited height.') },
+    { q: T('Voor welke bedrijven werkt EnviroFlow?', 'Which businesses does EnviroFlow work for?'),
+      a: T(`Voor bedrijven en organisaties in Nederland die met vloeistoffen werken. Per sector staan de oplossingen op een rij: ${listOf(sectors.map((x) => x.name))}.`, `For businesses and organisations in the Netherlands that work with liquids. The solutions are listed per sector: ${listOf(sectors.map((x) => x.name))}.`) },
+    { q: T('Hoe krijg ik advies over de juiste oplossing?', 'How do I get advice on the right solution?'),
+      a: T('Bel of mail ons met uw situatie, of gebruik de keuzehulp: zes korte vragen over uw vloeistof, de hoeveelheid en de locatie. U ziet direct welke oplossingen kunnen passen, en een specialist kijkt op verzoek mee.', 'Call or email us about your situation, or use the selection guide: six short questions about your liquid, the quantity and the location. You immediately see which solutions may fit, and a specialist can review it on request.') }
+  ];
+  const faq = faqBlock(homeFaq, T('Veelgestelde vragen over EnviroFlow', 'Frequently asked questions about EnviroFlow'));
   const slides = [
     { img: 'hero-opvang', group: T('Opvang & spill containment', 'Spill containment'), short: T('Lekbakken', 'Spill trays'), title: T("Flexibele lekbakken voor IBC's en vaten", 'Flexible spill trays for IBCs and drums'), text: T(`Van 226 tot 22.575 liter opvangcapaciteit, in PVC of in EVA met 7 jaar fabrieksgarantie. Online te bestellen vanaf ${fmtEUR(minPrice('flexibele-opvangbakken'))} excl. btw.`, `From 226 to 22,575 litres of containment capacity, in PVC or in EVA with a 7-year manufacturer's warranty. Order online from ${fmtEUR(minPrice('flexibele-opvangbakken'))} excl. VAT.`), cta: T('Bekijk flexibele lekbakken', 'View flexible spill trays'), href: catUrl('flexibele-opvangbakken') },
     { img: 'hero-brandwater', group: T('Flexibele tanks', 'Flexible tanks'), short: T('Brandwatertanks', 'Fire water tanks'), title: T('Brandwatertanks van 50 tot 300 m³', 'Fire water tanks from 50 to 300 m³'), text: T('De Waterbase F met verwarmingsmatten en isolatie, voor een bluswatervoorziening die ook in de winter werkt.', 'The Waterbase F with heating mats and insulation, for a fire water supply that also works in winter.'), cta: T('Bekijk de Waterbase F', 'View the Waterbase F'), href: urls.product(products.find((p) => p.id === 'exflo-waterbase-f')) },
@@ -22,18 +52,18 @@ export function home(ctx) {
   const body = `
 <section class="hero hero--slider" aria-labelledby="h-hero" data-hero>
   <div class="hero__slides" aria-hidden="true">
-    ${slides.map((sl, i) => `<div class="hero__slide${i === 0 ? ' is-active' : ''}" data-slide="${i}"><picture><source type="image/webp" ${i === 0 ? '' : 'data-'}srcset="/assets/img/hero/${sl.img}-800.webp 800w, /assets/img/hero/${sl.img}.webp 1600w" sizes="100vw"><img ${i === 0 ? '' : 'data-'}src="/assets/img/hero/${sl.img}.jpg" alt="${esc(sl.title)}" width="1600" height="900" ${i === 0 ? 'fetchpriority="high"' : ''} decoding="async"></picture></div>`).join('')}
+    ${slides.map((sl, i) => `<div class="hero__slide${i === 0 ? ' is-active' : ''}" data-slide="${i}"><picture><source type="image/webp" ${i === 0 ? '' : 'data-'}srcset="/assets/img/hero/${sl.img}-800.webp 800w, /assets/img/hero/${sl.img}.webp 1600w" sizes="100vw"><img ${i === 0 ? '' : 'data-'}src="/assets/img/hero/${sl.img}.jpg" alt="${esc(sl.title)}" width="1600" height="900" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture></div>`).join('')}
   </div>
   <div class="hero__scrim" aria-hidden="true"></div>
   <div class="container hero__inner">
     <div class="hero__content">
-      <p class="kicker kicker--light hero__in" style="--d:0">${T('Zakelijke specialist in vloeistofopslag en opvang', 'Business specialist in liquid storage and containment')}</p>
-      <h1 id="h-hero" class="hero__title">${T('<span class="line"><span style="--d:1">Flexibele lekbakken</span></span> <span class="line"><span style="--d:2">en tanks voor veilige</span></span> <span class="line"><span style="--d:3">vloeistofopslag</span></span>', '<span class="line"><span style="--d:1">Flexible spill trays</span></span> <span class="line"><span style="--d:2">and tanks for safe</span></span> <span class="line"><span style="--d:3">liquid storage</span></span>')}</h1>
-      <p class="hero__lead hero__in" style="--d:4">${T(`Van <a href="${catUrl('flexibele-opvangbakken')}" style="color:inherit">flexibele lekbakken voor IBC's</a> tot brandwater-, brandstof- en mesttanks. EnviroFlow helpt bedrijven vloeistoffen veilig en praktisch op te slaan, op te vangen en te verplaatsen.`, `From <a href="${catUrl('flexibele-opvangbakken')}" style="color:inherit">flexible spill trays for IBCs</a> to fire water, fuel and manure tanks. EnviroFlow helps businesses store, contain and move liquids safely and practically.`)}</p>
-      <div class="btn-row hero__in" style="--d:5"><a class="btn btn--accent btn--lg" href="/producten/">${T('Bekijk producten', 'View products')} ${icon('arrow')}</a><a class="btn btn--outline-light btn--lg" href="/offerte-aanvragen/?type=advies">${T('Vraag advies aan', 'Request advice')}</a></div>
-      <p class="hero__phone hero__in" style="--d:6">${icon('phone')}<span>${T('Liever direct overleggen? Bel', 'Prefer to talk right away? Call')} <a href="tel:${site.phonePrimary.tel}">${site.phonePrimary.display}</a></span></p>
+      <p class="kicker kicker--light hero__in d-0">${T('Zakelijke specialist in vloeistofopslag en opvang', 'Business specialist in liquid storage and containment')}</p>
+      <h1 id="h-hero" class="hero__title">${T('<span class="line"><span class="d-1">Flexibele lekbakken</span></span> <span class="line"><span class="d-2">en tanks voor veilige</span></span> <span class="line"><span class="d-3">vloeistofopslag</span></span>', '<span class="line"><span class="d-1">Flexible spill trays</span></span> <span class="line"><span class="d-2">and tanks for safe</span></span> <span class="line"><span class="d-3">liquid storage</span></span>')}</h1>
+      <p class="hero__lead hero__in d-4">${T(`Van <a href="${catUrl('flexibele-opvangbakken')}" class="link-inherit">flexibele lekbakken voor IBC's</a> tot brandwater-, brandstof- en mesttanks. EnviroFlow helpt bedrijven vloeistoffen veilig en praktisch op te slaan, op te vangen en te verplaatsen.`, `From <a href="${catUrl('flexibele-opvangbakken')}" class="link-inherit">flexible spill trays for IBCs</a> to fire water, fuel and manure tanks. EnviroFlow helps businesses store, contain and move liquids safely and practically.`)}</p>
+      <div class="btn-row hero__in d-5"><a class="btn btn--accent btn--lg" href="/producten/">${T('Bekijk producten', 'View products')} ${icon('arrow')}</a><a class="btn btn--outline-light btn--lg" href="/offerte-aanvragen/?type=advies">${T('Vraag advies aan', 'Request advice')}</a></div>
+      <p class="hero__phone hero__in d-6">${icon('phone')}<span>${T('Liever direct overleggen? Bel', 'Prefer to talk right away? Call')} <a href="tel:${site.phonePrimary.tel}">${site.phonePrimary.display}</a></span></p>
     </div>
-    <div class="hero__captions hero__in" style="--d:7" role="region" aria-roledescription="${T('carrousel', 'carousel')}" aria-label="${T('Uitgelichte oplossingen', 'Featured solutions')}">
+    <div class="hero__captions hero__in d-7" role="region" aria-roledescription="${T('carrousel', 'carousel')}" aria-label="${T('Uitgelichte oplossingen', 'Featured solutions')}">
       ${slides.map((sl, i) => `<div class="hero__caption${i === 0 ? ' is-active' : ''}" role="group" aria-roledescription="${T('dia', 'slide')}" aria-label="${i + 1} ${T('van', 'of')} ${slides.length}: ${esc(sl.group)}" data-caption="${i}"${i === 0 ? '' : ' aria-hidden="true"'}>
         <span class="hero__caption-kicker"><span class="hero__caption-num">${String(i + 1).padStart(2, '0')}</span>${esc(sl.group)}</span>
         <p class="hero__caption-title">${esc(sl.title)}</p>
@@ -42,7 +72,7 @@ export function home(ctx) {
       </div>`).join('')}
     </div>
   </div>
-  <div class="container hero__controls hero__in" style="--d:8">
+  <div class="container hero__controls hero__in d-8">
     <ol class="hero__progress">
       ${slides.map((sl, i) => `<li><button type="button" data-goto="${i}"${i === 0 ? ' aria-current="true"' : ''}><span class="hero__progress-label"><span>${String(i + 1).padStart(2, '0')}</span> ${esc(sl.short)}</span><span class="hero__progress-bar"><i></i></span></button></li>`).join('')}
     </ol>
@@ -145,27 +175,41 @@ ${featured.length ? `<section class="section" aria-labelledby="h-featured">
   </div>
 </section>
 
+${kbArticles.length ? `<section class="section section--mist" aria-labelledby="h-kennis">
+  <div class="container">
+    <div class="section-head section-head--row"><div><p class="kicker">${T('Kennisbank', 'Knowledge base')}</p><h2 id="h-kennis">${T("Kennis over lekbakken, IBC's en opslag", 'Knowledge about spill trays, IBCs and storage')}</h2></div><p class="section-head__aside">${T('Praktische artikelen met rekenvoorbeelden, maten en de regels die gelden. Bij regels verwijzen wij naar de officiële bron, zoals <a href="https://iplo.nl/" target="_blank" rel="noopener">IPLO</a> en de <a href="https://publicatiereeksgevaarlijkestoffen.nl/" target="_blank" rel="noopener">Publicatiereeks Gevaarlijke Stoffen (PGS)</a>.', 'Practical articles with worked examples, sizes and the rules that apply. For rules we refer to the official source, such as <a href="https://iplo.nl/" target="_blank" rel="noopener">IPLO</a> and the <a href="https://publicatiereeksgevaarlijkestoffen.nl/" target="_blank" rel="noopener">Dutch Hazardous Substances Publication Series (PGS)</a>.')}</p></div>
+    <div class="kb-grid kb-grid--3">${kbArticles.map((a) => articleCard(a, '', 'h3')).join('')}</div>
+    <p class="section-foot"><a class="link-arrow" href="/kennisbank/">${T('Alle artikelen in de kennisbank', 'All articles in the knowledge base')} ${icon('arrow')}</a></p>
+  </div>
+</section>` : ''}
+
+${faq.html}
+
 ${ctaBand({ title: T('Weet u niet welke oplossing u nodig heeft?', "Not sure which solution you need?"), text: T('Bespreek uw situatie met een specialist. Wij denken mee en komen met een passend voorstel.', 'Discuss your situation with a specialist. We think along with you and come up with a suitable proposal.'), buttons: [{ label: T('Vraag advies aan', 'Request advice'), href: '/offerte-aanvragen/?type=advies', cls: 'btn--accent' }, { label: `${T('Bel', 'Call')} ${site.phonePrimary.display}`, href: `tel:${site.phonePrimary.tel}`, cls: 'btn--outline-light', icon: 'phone' }] })}
 `;
   const org = {
-    '@context': 'https://schema.org', '@type': 'Organization', name: 'EnviroFlow', url: site.baseUrl,
+    '@context': 'https://schema.org', '@type': 'OnlineStore', name: 'EnviroFlow', url: site.baseUrl,
     logo: site.baseUrl + '/assets/img/enviroflow-logo.png', email: site.email,
     telephone: [site.phonePrimary.tel, site.phoneSecondary.tel],
     address: { '@type': 'PostalAddress', streetAddress: site.address.street, postalCode: site.address.postalCode, addressLocality: site.address.city, addressCountry: site.address.country },
     areaServed: { '@type': 'Country', name: site.address.countryName },
     identifier: { '@type': 'PropertyValue', propertyID: 'KvK', value: site.kvk },
+    iso6523Code: `0106:${site.kvk}`,
+    // Volgens /retourneren/: retour melden binnen 5 werkdagen, terugsturen per post op kosten van de klant.
+    hasMerchantReturnPolicy: { '@type': 'MerchantReturnPolicy', applicableCountry: 'NL', returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow', merchantReturnDays: 5, returnMethod: 'https://schema.org/ReturnByMail', returnFees: 'https://schema.org/ReturnShippingFees', merchantReturnLink: site.baseUrl + '/retourneren/' },
+    hasOfferCatalog: { '@type': 'OfferCatalog', name: T('Assortiment', 'Range'), itemListElement: categories.filter((c) => !c.isCustom).map((c) => ({ '@type': 'OfferCatalog', name: c.name, url: site.baseUrl + urls.category(c) })) },
     vatID: site.vatNumber,
     contactPoint: [{ '@type': 'ContactPoint', telephone: site.phonePrimary.tel, contactType: 'sales', areaServed: 'NL', availableLanguage: ['nl', 'en'] }],
     '@id': site.baseUrl + '/#organisatie',
     description: T('EnviroFlow levert flexibele lekbakken en opvangbakken voor IBC\'s, vaten, machines en voertuigen, wasmatten en flexibele tanks voor water, brandstof en mest. Online te bestellen voor bedrijven in Nederland.', 'EnviroFlow supplies flexible spill trays and containment berms for IBCs, drums, machinery and vehicles, wash mats and flexible tanks for water, fuel and manure. Available to order online for businesses in the Netherlands.'),
     knowsAbout: [T('Flexibele lekbakken', 'Flexible spill trays'), T('IBC-opvangbakken', 'IBC containment'), 'PGS 15', T('Flexibele tanks', 'Flexible tanks'), T('Bluswatervoorziening', 'Firefighting water supply'), T('Opvang van gevaarlijke stoffen', 'Spill containment of hazardous substances')]
   };
-  const website = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'EnviroFlow', url: site.baseUrl + localPath('/'), inLanguage: T('nl-NL', 'en'), publisher: { '@id': site.baseUrl + '/#organisatie' } };
+  const website = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'EnviroFlow', url: site.baseUrl + localPath('/'), inLanguage: T('nl-NL', 'en'), publisher: { '@id': site.baseUrl + '/#organisatie' }, potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: site.baseUrl + '/zoeken/?q={search_term_string}' }, 'query-input': 'required name=search_term_string' } };
   return {
     path: '/',
-    title: T('Lekbakken, wasmatten en flexibele tanks | EnviroFlow', 'Spill containment, wash mats and flexible tanks | EnviroFlow'),
-    description: T("Flexibele lekbak voor IBC's en vaten, en flexibele tanks voor water, brandstof en mest. Online bestellen of persoonlijk advies van EnviroFlow.", 'Flexible spill trays for IBCs and drums, and flexible tanks for water, fuel and manure. Order online or get personal advice from EnviroFlow.'),
-    body, jsonld: [org, website], bodyClass: 'page-home', scripts: ['/assets/js/hero.js'],
+    title: T('Flexibele lekbakken, wasmatten en flexibele tanks | EnviroFlow', 'Flexible spill trays, wash mats and flexible tanks | EnviroFlow'),
+    description: T("Flexibele lekbakken voor IBC's en vaten, wasmatten en flexibele tanks voor water, brandstof en mest. Online bestellen of persoonlijk advies van EnviroFlow.", 'Flexible spill trays for IBCs and drums, wash mats and flexible tanks for water, fuel and manure. Order online or get personal advice from EnviroFlow.'),
+    body, jsonld: [org, website, faq.ld], bodyClass: 'page-home', scripts: ['/assets/js/hero.js'],
     // De eerste hero-foto is het grootste element: direct laten starten, vóór lettertypes en scripts.
     preload: `<link rel="preload" as="image" type="image/webp" href="/assets/img/hero/${slides[0].img}.webp" imagesrcset="/assets/img/hero/${slides[0].img}-800.webp 800w, /assets/img/hero/${slides[0].img}.webp 1600w" imagesizes="100vw" fetchpriority="high">`
   };

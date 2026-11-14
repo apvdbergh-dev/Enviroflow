@@ -28,18 +28,32 @@ const guidesEn = (await import('./src/content/en/guides.mjs')).default;
 const categoryGuidesEn = (await import('./src/content/en/category-guides.mjs')).default;
 const enTable = existsSync(join(root, 'src/i18n/en-data.json')) ? readJson('src/i18n/en-data.json') : {};
 const version = Date.now().toString(36);
-// De stylesheet gaat direct in elke pagina (geen apart verzoek dat de eerste weergave tegenhoudt).
-// Paden worden absoluut, commentaar en overbodige witruimte gaan eruit.
-const inlineCss = readFileSync(join(root, 'src/assets/css/main.css'), 'utf8')
+// De stylesheet: paden absoluut, commentaar en overbodige witruimte eruit.
+// Standaard als apart bestand met de inhoud in de naam (main.<hash>.css): de browser bewaart het een jaar en
+// haalt het alleen opnieuw op als de stylesheet echt verandert. De pagina's zelf blijven daardoor klein.
+// Met CSS_MODE=inline gaat de hele stylesheet in elke pagina (geen apart verzoek, maar ruim 90 KB per pagina).
+const minCss = readFileSync(join(root, 'src/assets/css/main.css'), 'utf8')
   .replace(/url\("\.\.\//g, 'url("/assets/')
   .replace(/\/\*[\s\S]*?\*\//g, '')
   .replace(/\s+/g, ' ')
   .replace(/\s*([{};])\s*/g, '$1')
   .trim();
+const cssMode = process.env.CSS_MODE || 'external';
+const inlineCss = cssMode === 'inline' ? minCss : '';
+const cssHref = `/assets/css/main.${createHash('sha1').update(minCss).digest('hex').slice(0, 10)}.css`;
 
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist, { recursive: true });
 cpSync(join(root, 'src/assets'), join(dist, 'assets'), { recursive: true });
+writeFileSync(join(dist, cssHref), minCss);
+// Iconen: het bestaande favicon ook als .ico in de hoofdmap (browsers en zoekmachines vragen dat adres standaard op),
+// en een manifest met de iconen voor Android en 'Zet op beginscherm'.
+cpSync(join(root, 'src/assets/img/favicon.ico'), join(dist, 'favicon.ico'));
+writeFileSync(join(dist, 'site.webmanifest'), JSON.stringify({
+  name: 'EnviroFlow', short_name: 'EnviroFlow', start_url: '/', display: 'browser', lang: 'nl',
+  background_color: '#ffffff', theme_color: '#0A3B2C',
+  icons: [{ src: '/assets/img/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/assets/img/icon-512.png', sizes: '512x512', type: 'image/png' }]
+}) + '\n');
 mkdirSync(join(dist, 'assets/data'), { recursive: true });
 
 const sitemap = [];
@@ -71,7 +85,7 @@ for (const lang of LANGS) {
   const t = readJson(`src/i18n/${lang}.json`);
   const { groupById, categoryById } = catalog;
   const ctx = {
-    ...catalog, t, solutions, sectors, articles, categoryGuides, lang, version, inlineCss,
+    ...catalog, t, solutions, sectors, articles, categoryGuides, lang, version, inlineCss, cssHref,
     urls: {
       group: (g) => groupUrl(g),
       category: (c) => categoryUrl(c, groupById),
@@ -209,16 +223,16 @@ writeFileSync(join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 ${sitemap.map((p) => `  <url><loc>${base}${p.path}</loc><lastmod>${p.d}</lastmod><xhtml:link rel="alternate" hreflang="nl" href="${base}${p.alt}"/><xhtml:link rel="alternate" hreflang="en" href="${base}${localPath(p.alt, 'en')}"/>${(p.imgs || []).map((i) => `<image:image><image:loc>${base}${i}</image:loc></image:image>`).join("")}</url>`).join('\n')}
 </urlset>
 `);
+// robots.txt: alles mag gelezen worden behalve de winkelwagen, het afrekenen en de zoekpagina.
+// AI-assistenten (ChatGPT, Claude, Perplexity, Gemini, Apple) staan er met naam in: zij mogen de site lezen en aanhalen.
+const DISALLOW = ['/api/', '/winkelwagen/', '/afrekenen/', '/bestelling/', '/zoeken/', '/en/winkelwagen/', '/en/afrekenen/', '/en/bestelling/', '/en/zoeken/'].map((p) => `Disallow: ${p}`).join('\n');
+const AI_BOTS = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User', 'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot-Extended'];
 writeFileSync(join(dist, 'robots.txt'), `User-agent: *
-Disallow: /api/
-Disallow: /winkelwagen/
-Disallow: /afrekenen/
-Disallow: /bestelling/
-Disallow: /zoeken/
-Disallow: /en/winkelwagen/
-Disallow: /en/afrekenen/
-Disallow: /en/bestelling/
-Disallow: /en/zoeken/
+${DISALLOW}
+
+${AI_BOTS.map((b) => `User-agent: ${b}`).join('\n')}
+Allow: /
+${DISALLOW}
 
 Sitemap: ${base}/sitemap.xml
 `);
@@ -253,6 +267,7 @@ writeFileSync(join(dist, '_headers'), `/*
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Cross-Origin-Opener-Policy: same-origin
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; form-action 'self' https://www.mollie.com; frame-src https://www.youtube-nocookie.com; frame-ancestors 'self'; base-uri 'self'
 /assets/css/*
   Cache-Control: public, max-age=31536000, immutable
