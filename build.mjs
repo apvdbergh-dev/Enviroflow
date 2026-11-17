@@ -254,6 +254,8 @@ const OLD_ART = '/kennisbank/wat-is-een-flexibele-lekbak';
 const redirects = [
   '/assets/datasheets/exflo-opvangbak-chemische-bestendigheid.pdf /assets/datasheets/opvangbak-chemische-bestendigheid.pdf 301',
   ...['', '/en'].flatMap((p) => [
+    // Productadressen zonder slot aan het eind: in één stap naar het nieuwe adres (anders twee doorverwijzingen).
+    ...raw.products.filter((x) => x.category === 'flexibele-opvangbakken').map((x) => `${p}${OLD_CAT}/${x.slug} ${p}/flexibele-lekbak/${x.slug}/ 301`),
     `${p}${OLD_CAT} ${p}/flexibele-lekbak/ 301`,
     `${p}${OLD_CAT}/* ${p}/flexibele-lekbak/:splat 301`,
     `${p}${OLD_ART} ${p}/flexibele-lekbak/ 301`,

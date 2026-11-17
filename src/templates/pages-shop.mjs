@@ -359,6 +359,28 @@ function sizeTableBlock(c, list, ctx) {
   <p class="kb-note">${esc(cfg.note || '')} ${T('Prijzen', 'Prices')} <span data-vat-label>${ctx.t.pricesExcl}</span>.</p></div></section>`;
 }
 
+// Maten en uitvoeringen op een categoriepagina (niet bij de lekbakken: die hebben hun eigen tabel).
+// Eén product met een tabel met uitvoeringen: die tabel. Meerdere producten: een vergelijking van de belangrijkste gegevens.
+// Alles komt uit de productgegevens, dus de tabel loopt altijd gelijk met de productpagina's.
+function variantsBlock(c, list, ctx) {
+  if (c.sizeTable || c.isCustom || !list.length) return '';
+  const table = (head, rows) => `<div class="table-scroll"><table class="kb-table"><thead><tr>${head.map((h) => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table></div>`;
+  if (list.length === 1) {
+    const p = list[0];
+    if (!p.sizes?.rows?.length) return '';
+    const rows = p.sizes.rows.map((r) => `<tr>${r.map((v, i) => (i === 0 ? `<th scope="row">${esc(v)}</th>` : `<td>${esc(v)}</td>`)).join('')}</tr>`);
+    return `<section class="section section--tight" aria-labelledby="h-maten"><div class="container container--narrow"><h2 id="h-maten">${esc(T(`${c.name}: alle maten`, `${c.name}: all sizes`))}</h2>
+  <p>${T('Standaarduitvoeringen van de', 'Standard versions of the')} <a href="${ctx.urls.product(p)}">${esc(p.name)}</a>${p.quoteOnly || !hasRealPrice(p) ? T('. De prijs ontvangt u op aanvraag.', '. Price on request.') : '.'}</p>
+  ${table(p.sizes.head, rows)}${p.sizes.note ? `<p class="kb-note">${esc(p.sizes.note)}</p>` : ''}</div></section>`;
+  }
+  const cols = [['afmetingen', T('Afmetingen', 'Dimensions')], ['capaciteit', T('Capaciteit', 'Capacity')]].filter(([k]) => list.some((p) => p.specs?.[k]));
+  const anyPrice = list.some((p) => hasRealPrice(p) && !p.quoteOnly);
+  const head = [T('Uitvoering', 'Version'), ...cols.map(([, l]) => l), ...(anyPrice ? [T('Prijs', 'Price')] : [])];
+  const rows = list.map((p) => `<tr><th scope="row"><a href="${ctx.urls.product(p)}">${esc(p.name)}</a></th>${cols.map(([k]) => `<td>${esc(p.specs?.[k] || '–')}</td>`).join('')}${anyPrice ? `<td>${hasRealPrice(p) && !p.quoteOnly ? `<span data-price-excl="${p.price}">${fmtEUR(p.price)}</span>` : T('Op aanvraag', 'On request')}</td>` : ''}</tr>`);
+  return `<section class="section section--tight" aria-labelledby="h-maten"><div class="container container--narrow"><h2 id="h-maten">${esc(anyPrice ? T(`${c.name}: maten en prijzen`, `${c.name}: sizes and prices`) : T(`${c.name}: maten en uitvoeringen`, `${c.name}: sizes and versions`))}</h2>
+  ${table(head, rows)}${anyPrice ? `<p class="kb-note">${T('Prijzen per stuk, exclusief transport.', 'Prices per unit, excluding transport.')} ${T('Prijzen', 'Prices')} <span data-vat-label>${ctx.t.pricesExcl}</span>.</p>` : ''}</div></section>`;
+}
+
 export function categoryPage(c, ctx) {
   const { products, groupById, urls, site } = ctx;
   const g = groupById[c.group];
@@ -388,7 +410,7 @@ export function categoryPage(c, ctx) {
   // Uit de kennisbank: artikelen over deze categorie (interne links helpen bezoekers en zoekmachines).
   const reads = (ctx.articles || []).filter((a) => (a.categories || []).includes(c.id)).slice(0, 6);
   const kb = reads.length ? `<section class="section section--tight" aria-labelledby="h-kb"><div class="container"><h2 id="h-kb" class="subhead">${T('Uit de kennisbank', 'From the knowledge base')}</h2><ul class="link-list">${c.productPage?.compare ? `<li><a href="/waarom-flexibel/">${T('Waarom flexibel? Flexibele, stalen en kunststof lekbakken vergeleken', 'Why flexible? Flexible, steel and plastic spill trays compared')}</a></li>` : ''}${reads.map((a) => `<li><a href="/kennisbank/${a.slug}/">${esc(a.title)}</a></li>`).join('')}</ul></div></section>` : '';
-  const body = `${head}${main}${c.isCustom ? '' : sizeTableBlock(c, list, ctx)}${fillPrices(guideBlock(c.guide), ctx)}${fillPrices(explain, ctx)}${faq.html}${kb}<div class="container section--tight">${adviceBlock(site)}</div>`;
+  const body = `${head}${main}${c.isCustom ? '' : sizeTableBlock(c, list, ctx)}${variantsBlock(c, list, ctx)}${fillPrices(guideBlock(c.guide), ctx)}${fillPrices(explain, ctx)}${faq.html}${kb}<div class="container section--tight">${adviceBlock(site)}</div>`;
   const itemList = list.length ? { '@context': 'https://schema.org', '@type': 'ItemList', name: c.name, itemListElement: list.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: site.baseUrl + localPath(urls.product(p)), name: p.name })) } : null;
   return { path: urls.category(c), title: c.seoTitle || `${c.name} | EnviroFlow`, description: fill(c.seoDescription || c.short), ogImage: c.imageSrc || undefined, body, crumbs, jsonld: [faq.ld, itemList].filter(Boolean), scripts: c.isCustom ? ['/assets/js/forms.js'] : ['/assets/js/listing.js'] };
 }

@@ -208,6 +208,22 @@
         {
           "q": "Welke maat wasmat heb ik nodig?",
           "a": "Dat hangt af van de afmetingen van het grootste voertuig en de ruimte op uw terrein. Geef de afmetingen door, dan adviseren wij een passende maat."
+        },
+        {
+          "q": "Welke maten wasmatten zijn er?",
+          "a": "Voor auto's, bussen, vrachtwagens en materieel zijn er wasmatten van 6 × 3 m en 8 × 4 m, allebei ook met oprijstroken. Voor motoren en andere tweewielers is er een wasmat van 2,6 × 1,5 m met oprijstrook. De opgegeven maat is die van de vloer: uitgevouwen is de mat tot 30 cm groter."
+        },
+        {
+          "q": "Hoe blijft het waswater op de mat?",
+          "a": "De wasmatten voor voertuigen hebben opblaasbare randen van 10 cm hoog. Het waswater met reinigingsmiddelen, olie en vuil blijft daardoor op de mat. Daarna zuigt u het op met een industriële stofzuiger en voert u het af."
+        },
+        {
+          "q": "Waarvoor dienen de oprijstroken?",
+          "a": "Oprijstroken beschermen de mat tegen beschadiging als een voertuig erop en eraf rijdt. De uitvoeringen met oprijstroken hebben een set van twee stroken van PVC (650 g/m²). De wasmatten zonder stroken kunt u later uitbreiden met oprijstroken."
+        },
+        {
+          "q": "Van welk materiaal is een wasmat en hoe zwaar is hij?",
+          "a": "De wasmatten voor voertuigen zijn gemaakt van driedubbellaags, PVC-gecoat technisch weefsel van 900 g/m². Volgens de fabrikant zijn ze bruikbaar van −30 °C tot +70 °C. De mat van 6 × 3 m weegt 23 kg, die van 8 × 4 m 41 kg en de motorwasmat 7 kg. Opgevouwen past een wasmat in een doos en op een stelling. Op de lekdichtheid geeft de fabrikant 2 jaar garantie."
         }
       ],
       "imageSrc": "/assets/img/producten/wasmat-in-gebruik.jpg",
@@ -264,6 +280,18 @@
         {
           "q": "Is een decontaminatiemat geschikt voor mijn toepassing?",
           "a": "Dat hangt af van het type verontreiniging en de voertuigen. Bespreek uw situatie met ons, dan bekijken wij welke uitvoering past."
+        },
+        {
+          "q": "Welke maten decontaminatiematten zijn er?",
+          "a": "Er zijn twee maten: 9,62 × 3,66 m met een inhoud van 6.690 liter, en 12,66 × 5,20 m met een inhoud van 12.508 liter voor grote voertuigen. Beide hebben opblaasbare randen van 20 cm."
+        },
+        {
+          "q": "Waarvoor wordt een decontaminatiemat gebruikt?",
+          "a": "De mat is ontwikkeld voor inzet bij chemische, biologische, radiologische en nucleaire (CBRN) dreigingen. Hij vangt decontaminatievloeistof en verontreinigd water op bij het reinigen van militaire, hulpverlenings- en civiele voertuigen. Ook is hij bedoeld voor snelle inzet bij de bestrijding van besmettelijke dierziekten, zoals Afrikaanse varkenspest en mond-en-klauwzeer."
+        },
+        {
+          "q": "Van welk materiaal is de mat?",
+          "a": "Van technisch weefsel met een EVA-coating van 1.365 g/m², met een hoge chemische en mechanische bestendigheid. Volgens de fabrikant is de mat bruikbaar van −30 °C tot +70 °C. U bouwt hem op zonder gereedschap, en opgevouwen past hij op een brandweerwagen."
         }
       ],
       "imageSrc": "/assets/img/producten/decontaminatiemat-voertuigen.jpg"
@@ -288,7 +316,20 @@
         "Reinigen van beschermende kleding en uitrusting",
         "Opleidingen en oefeningen"
       ],
-      "faq": [],
+      "faq": [
+        {
+          "q": "Welke maten zijn er?",
+          "a": "De decontaminatiemat voor personen is er in drie maten: 2,45 × 2,00 m (931 liter), 3,97 × 2,00 m (1.509 liter) en 5,50 × 2,00 m (2.090 liter). Alle maten hebben randen van 20 cm hoog met steunen."
+        },
+        {
+          "q": "Waarvoor wordt een decontaminatiebad gebruikt?",
+          "a": "Bij het ontsmetten van personen en beschermende kleding, bijvoorbeeld bij CBRN-dreigingen, epidemieën en reddingsacties. De mat vangt de decontaminatievloeistof op en beperkt zo het risico op secundaire besmetting. Hij is aan te sluiten op afvoer- en opslagsystemen."
+        },
+        {
+          "q": "Van welk materiaal is het bad?",
+          "a": "Van technisch weefsel met een EVA-coating van 1.365 g/m², met een hoge chemische bestendigheid. U bouwt het op zonder gereedschap. De fabrikant geeft 3 jaar garantie op de lekdichtheid."
+        }
+      ],
       "imageSrc": "/assets/img/producten/decontaminatiemat-personen.jpg"
     },
     {
@@ -321,6 +362,26 @@
         {
           "q": "Wat kost een brandwatertank?",
           "a": "De prijs hangt af van de inhoud, de aansluitingen en de toebehoren. Vraag een offerte aan, dan ontvangt u een voorstel op maat."
+        },
+        {
+          "q": "Welke inhoud heeft een flexibele bluswatertank?",
+          "a": "De Waterbase F is er in zeven standaardmaten van 50 tot 300 m³: van 8,78 × 7,45 m (50 m³) tot 20,50 × 11,86 m (300 m³). Een andere maat is op maat leverbaar."
+        },
+        {
+          "q": "Bevriest het bluswater in de winter?",
+          "a": "De Waterbase F is ontworpen voor gebruik het hele jaar door. Verwarmingsmatten met sensoren en een regelunit, plus isolatie, beschermen het water tegen bevriezen. Het vermogen van de verwarmingsmatten loopt van 7,5 kW bij 50 m³ tot 26,1 kW bij 300 m³."
+        },
+        {
+          "q": "Is er een fundering nodig?",
+          "a": "Nee. Er zijn geen bouwwerkzaamheden nodig: de tank staat op een vlakke ondergrond, bijvoorbeeld een verdicht zandbed."
+        },
+        {
+          "q": "Welke aansluitingen heeft de tank?",
+          "a": "Standaard twee afnameaansluitingen met DN100-afsluiters en een Storz 110-koppeling, met verwarmingskabels en isolatie, en één vulaansluiting Storz 110. De tank is te koppelen aan een hydrofoorinstallatie of aan waterstandsbewaking."
+        },
+        {
+          "q": "Hoe lang is de garantie?",
+          "a": "De fabrikant geeft 2 jaar garantie. Bij een jaarlijkse geautoriseerde inspectie is die uit te breiden tot 10 jaar."
         }
       ],
       "imageSrc": "/assets/img/producten/waterbase-f-2.jpg",
@@ -380,6 +441,22 @@
         {
           "q": "Mag ik de tank direct voor drinkwater gebruiken?",
           "a": "De Waterbase D Plus heeft volgens de fabrikant een Pools PZH-certificaat en is gemaakt van weefsel conform BS 6920 met een Brits WRAS-certificaat. Dat zijn geen Nederlandse goedkeuringen. Controleer welke eisen voor uw situatie gelden; wij denken graag met u mee."
+        },
+        {
+          "q": "Welke inhoud heeft een flexibele drinkwatertank?",
+          "a": "De Waterbase D Plus is er in zestien maten van 500 tot 200.000 liter: van 1,99 × 1,44 m (500 liter) tot 13,90 × 13,00 m (200.000 liter). De tank is stationair of mobiel op een aanhanger te gebruiken."
+        },
+        {
+          "q": "Heeft de tank invloed op de smaak van het water?",
+          "a": "Volgens de fabrikant niet. De tank is gemaakt van polyesterweefsel met aan beide zijden een coating van thermoplastisch polyurethaan (TPU) met lage migratie. Het weefsel is conform BS 6920 en heeft een Brits WRAS-certificaat. Het is BPA- en ftalaatvrij."
+        },
+        {
+          "q": "Hoe zwaar is een drinkwatertank?",
+          "a": "Modellen tot 5.000 liter wegen minder dan 35 kg. Eén persoon kan ze vervoeren en plaatsen, en leeg en opgevouwen passen ze in de kofferbak van een personenauto."
+        },
+        {
+          "q": "Welke garantie geldt?",
+          "a": "De fabrikant geeft 5 jaar garantie. Volgens de fabrikant is het materiaal bruikbaar van −30 °C tot +70 °C."
         }
       ],
       "imageSrc": "/assets/img/producten/waterbase-d-plus-2.jpg",
@@ -406,7 +483,24 @@
         "Opvang en hergebruik van regenwater",
         "Tijdelijke wateropslag op de bouwplaats"
       ],
-      "faq": [],
+      "faq": [
+        {
+          "q": "Welke maten buffertanks zijn er?",
+          "a": "De Waterbase R retentie- en buffertank is er in negen maten van 10 tot 250 m³: van 6,50 × 2,90 m (10 m³) tot 18,50 × 11,80 m (250 m³), met een maximale hoogte van 0,8 tot 1,4 m. Daarnaast is er een industriewatertank van 30.000 liter van 8,78 × 4,95 m."
+        },
+        {
+          "q": "Welk water mag erin?",
+          "a": "De retentietank is bedoeld voor regenwater, industriewater, grijs water en afvalwater. De industriewatertank van 30.000 liter is voor industriewater, vuil of verontreinigd water, afvalwater en regenwater, maar niet voor drinkwater. Voor drinkwater is de Waterbase D Plus bedoeld."
+        },
+        {
+          "q": "Wat is er nodig om de tank te plaatsen?",
+          "a": "Er zijn geen bouwwerkzaamheden nodig. De retentietank kunt u plaatsen op gras, betonplaten of een zandbed. Leeg weegt hij van 63 kg (10 m³) tot 599 kg (250 m³)."
+        },
+        {
+          "q": "Welke garantie geldt?",
+          "a": "Op de lekdichtheid van de Waterbase R retentietank geeft de fabrikant 10 jaar garantie."
+        }
+      ],
       "imageSrc": "/assets/img/producten/waterbase-r.jpg",
       "h1": "Flexibele watertanks en buffertanks"
     },
@@ -430,7 +524,20 @@
         "Bouwplaatsen",
         "Tijdelijke opslag tot afvoer"
       ],
-      "faq": [],
+      "faq": [
+        {
+          "q": "Welke maten afvalwatertanks zijn er?",
+          "a": "De Waterbase W is er van 10 tot 250 m³: van 6,50 × 2,84 m (10 m³) tot 18,60 × 11,74 m (250 m³). Leeg weegt hij van 60 kg (10 m³) tot 535 kg (250 m³)."
+        },
+        {
+          "q": "Waarvoor wordt een flexibele afvalwatertank gebruikt?",
+          "a": "Voor afvalwater, fecaliën en vuil water, bijvoorbeeld bij tijdelijke containerbases, modulaire woningen, evenementen en campings, en voor het opvangen van decontaminatiewater. Geschikt voor vloeistoffen met een dichtheid tot 1 kg/dm³ en een pH van 3 tot 10."
+        },
+        {
+          "q": "Hoe snel staat de tank er?",
+          "a": "In ongeveer 30 minuten, en er is geen vaste verankering nodig. Op de lekdichtheid geeft de fabrikant 7 jaar garantie."
+        }
+      ],
       "imageSrc": "/assets/img/producten/waterbase-w.jpg"
     },
     {
@@ -458,6 +565,18 @@
         {
           "q": "Welke regels gelden voor brandstofopslag?",
           "a": "Voor de opslag van vloeibare brandstoffen gelden onder meer de richtlijnen uit PGS 30. Welke eisen voor uw locatie van toepassing zijn, bepaalt het bevoegd gezag. Raadpleeg de officiële publicatie en bespreek uw situatie met ons."
+        },
+        {
+          "q": "Welke maten flexibele brandstoftanks zijn er?",
+          "a": "De Fuelbase XSD is er in drie maten: 200 liter (1,89 × 0,80 m), 500 liter (1,89 × 1,40 m) en 900 liter (1,89 × 1,90 m). De tank is bedoeld voor de tijdelijke opslag van diesel en verwarmingsolie."
+        },
+        {
+          "q": "Moet een flexibele brandstoftank in een lekbak staan?",
+          "a": "Ja. Volgens de fabrikant moet de tank in een opvangbak staan met minimaal 110% van de tankinhoud. Voor de tank van 900 liter is dat minimaal 990 liter. Wij adviseren u graag over een passende flexibele lekbak."
+        },
+        {
+          "q": "Van welk materiaal is de tank?",
+          "a": "Van meerlaags technisch weefsel met een antistatische, UV-bestendige TPU-coating. De lekdichtheid van elke tank is getest door UDT, een Pools keuringsinstituut. De tank is zelfdragend en heeft geen fundering nodig. De fabrikant geeft 2 jaar garantie op de lekdichtheid."
         }
       ],
       "imageSrc": "/assets/img/producten/fuelbase-2.jpg",
@@ -482,7 +601,24 @@
         "Opslag van UAN op het agrarisch bedrijf",
         "Opslag van andere vloeibare meststoffen"
       ],
-      "faq": [],
+      "faq": [
+        {
+          "q": "Welke maten UAN-tanks zijn er?",
+          "a": "De Farmer type U is er in dertien maten van 10 tot 265 m³: van 5,81 × 3,20 m (10 m³) tot 17,67 × 14,80 m (265 m³). Vanaf 100 m³ heeft de tank een extra vulaansluiting."
+        },
+        {
+          "q": "Welke meststoffen mogen erin?",
+          "a": "UAN en andere vloeibare minerale meststoffen met een pH van 3 tot 10 en een alcoholgehalte onder 4%."
+        },
+        {
+          "q": "Is een opvangmembraan nodig?",
+          "a": "De fabrikant adviseert de tank in een extra opvangmembraan te plaatsen, als tweede tankwand. Dat membraan is optioneel leverbaar."
+        },
+        {
+          "q": "Kan de tank buiten staan bij vorst?",
+          "a": "Ja. Volgens de fabrikant is het gelakte, UV-bestendige PVC-weefsel van 1.300 g/m² bestand tegen vorst tot −30 °C."
+        }
+      ],
       "imageSrc": "/assets/img/producten/farmer-u.jpg",
       "h1": "UAN-tanks voor vloeibare meststoffen"
     },
@@ -507,7 +643,24 @@
         "Opslag van digestaat en slurry",
         "Tijdelijke opslag bij verbouw of calamiteiten"
       ],
-      "faq": [],
+      "faq": [
+        {
+          "q": "Welke maten mestzakken zijn er?",
+          "a": "De Farmer type S is er in zes maten van 50 tot 300 m³: van 8,78 × 7,20 m (50 m³) tot 20,64 × 12,65 m (300 m³). De mestzak is geschikt voor drijfmest, digestaat en andere natuurlijke meststoffen."
+        },
+        {
+          "q": "Hoeveel garantie geldt op een mestzak?",
+          "a": "De fabrikant geeft 10 jaar garantie op de lekdichtheid. Het weefsel is gelakt, PVC-gecoat en weegt 1.300 g/m², met een treksterkte van 4.300 N/5 cm."
+        },
+        {
+          "q": "Beperkt een mestzak de geur?",
+          "a": "Volgens de fabrikant is het weefsel speciaal bedoeld voor contact met natuurlijke meststoffen en digestaat, en beperkt het de uitstoot van gassen en geur."
+        },
+        {
+          "q": "Heeft de mestzak een menger?",
+          "a": "Nee. De mestzak heeft een 5\"-schuifafsluiter met hendel (één bij 50 m³, twee vanaf 100 m³) en een ontluchting. Volgens de fabrikant is hij bestand tegen vorst tot −30 °C."
+        }
+      ],
       "imageSrc": "/assets/img/producten/farmer-s.jpg",
       "h1": "Mestzakken en flexibele mestopslag"
     },
@@ -531,7 +684,20 @@
         "Watervoorziening voor groenonderhoud en reiniging",
         "Calamiteiten en noodvoorziening"
       ],
-      "faq": [],
+      "faq": [
+        {
+          "q": "Welke inhoud heeft een mobiele watertank?",
+          "a": "De Flextanker is er van 500 tot 10.000 liter. Voor quads en ATV-aanhangers is er de GFFF-tank van 300 liter."
+        },
+        {
+          "q": "Hoe werkt een mobiele watertank zonder frame?",
+          "a": "De Flextanker is zelfdragend en heeft geen frame nodig. Hij verandert een aanhanger, pick-up of oplegger in een tankwagen. Met snelkoppelingen vult en leegt u hem snel, en leeg neemt hij slechts een paar procent van het volume in."
+        },
+        {
+          "q": "Is er ook een uitvoering voor drinkwater?",
+          "a": "Ja. De Flextanker is ook leverbaar in een drinkwateruitvoering: de Waterbase D Plus met PZH-certificaat. Volgens de fabrikant is de tank bestand tegen temperaturen van −30 °C tot +80 °C."
+        }
+      ],
       "imageSrc": "/assets/img/producten/flextanker.jpg"
     },
     {
@@ -554,7 +720,20 @@
         "Wateropslag bij calamiteiten",
         "Tijdelijke opslag van proceswater"
       ],
-      "faq": [],
+      "faq": [
+        {
+          "q": "Welke maten open tanks zijn er?",
+          "a": "De Hydronion is er in vijf maten: 5.000, 8.000, 10.000, 15.000 en 25.000 liter. Gevuld is de kleinste 2,90 × 2,45 × 1,10 m en de grootste 5,00 × 4,20 × 1,45 m."
+        },
+        {
+          "q": "Hoe snel staat een open zelfdragende tank?",
+          "a": "De Hydronion heeft geen frame en staat in enkele minuten. De open vorm maakt snel vullen en legen mogelijk, ook door meerdere eenheden tegelijk. De hoogte is geschikt om helikopter-blusemmers te vullen."
+        },
+        {
+          "q": "Welke aansluitingen en garantie heeft de tank?",
+          "a": "Twee geflensde aluminium aansluitingen DN100 met Storz 110-koppeling, voor gelijktijdig vullen en afnemen. Het weefsel weegt 1.000 g/m². De fabrikant geeft 5 jaar garantie op de lekdichtheid."
+        }
+      ],
       "imageSrc": "/assets/img/producten/hydronion-2.jpg"
     },
     {
@@ -578,7 +757,28 @@
         "Omleiden van water bij werkzaamheden",
         "Calamiteitenvoorraad voor gemeenten en waterschappen"
       ],
-      "faq": [],
+      "faq": [
+        {
+          "q": "Hoe hoog is een mobiele waterkering?",
+          "a": "De Exflooder is er in drie diameters: Ø 22 cm (hoogte na vullen 22 cm), Ø 46 cm (45 cm) en Ø 94 cm (89 cm). Gestapeld in een piramide zijn met de Ø 94 cm-uitvoering keringen van meer dan 140 cm hoog mogelijk."
+        },
+        {
+          "q": "Welke lengtes zijn er?",
+          "a": "De Ø 22 cm-uitvoering is er in 3, 5, 10 en 15 m. De Ø 46 cm- en Ø 94 cm-uitvoeringen zijn er in 5, 10 en 15 m. De modules zijn aan elkaar te koppelen."
+        },
+        {
+          "q": "Hoe werkt een waterkering die met water gevuld wordt?",
+          "a": "U rolt de kering uit, verankert hem en vult hem met water. Na gebruik maakt u hem leeg, laat u hem drogen en bergt u hem compact op. Leeg neemt hij slechts een paar procent van het volume in. De Exflooder is daarmee een sneller en lichter alternatief voor zandzakken."
+        },
+        {
+          "q": "Wat is het verschil tussen de Exflooder en de Exflooder+?",
+          "a": "De Exflooder+ heeft een licht vernauwde, zelfdichtende mof en extra banden met gespen om modules aan elkaar te koppelen. Hij is leverbaar in de diameters Ø 46 cm en Ø 94 cm."
+        },
+        {
+          "q": "Van welk materiaal is de kering en welke garantie geldt?",
+          "a": "Van driedubbellaags PVC-weefsel van 900 g/m² met UV-lak. De fabrikant geeft 7 jaar garantie."
+        }
+      ],
       "imageSrc": "/assets/img/producten/exflooder-praktijk.jpg",
       "h1": "Mobiele waterkeringen tegen wateroverlast"
     },
@@ -602,7 +802,20 @@
         "Boorlocaties",
         "Afscherming van aggregaten en pompen"
       ],
-      "faq": [],
+      "faq": [
+        {
+          "q": "Hoeveel geluid houdt een geluidsabsorberende mat tegen?",
+          "a": "De Exnoiser R25 geeft een geluidsreductie tot 25 dB (Dw) in één laag. De akoestische waarden zijn getest door een geaccrediteerd laboratorium: Rw 22 (−1; −3) dB en Dw 25 (−1; −4) dB volgens PN-EN ISO 717-1:2013."
+        },
+        {
+          "q": "Hoe groot en hoe zwaar is een mat?",
+          "a": "Een mat is 2,05 × 1,20 m (hart-op-hart bevestigingspunten 2,00 × 1,05 m) en weegt 14,8 kg. U bevestigt de matten aan bouwhekken, steigers of andere constructies, en koppelt ze horizontaal en verticaal aan elkaar."
+        },
+        {
+          "q": "Waar let u op bij het plaatsen?",
+          "a": "Een geluidsscherm werkt het best zo dicht mogelijk bij de geluidsbron. Houd rekening met de windbelasting op uw locatie, en houd afstand tot hete motoren en aggregaten: de mat is bruikbaar tot maximaal +70 °C."
+        }
+      ],
       "imageSrc": "/assets/img/producten/exnoiser.jpg",
       "h1": "Geluidsabsorberende matten voor de bouwplaats"
     },

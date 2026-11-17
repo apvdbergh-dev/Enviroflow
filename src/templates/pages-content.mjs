@@ -87,7 +87,8 @@ export function projectsPage() {
   <div class="notice" role="note"><p>${T('Wij werken aan de eerste projectverhalen. Wilt u weten wat wij voor uw situatie kunnen betekenen? Wij denken graag met u mee.', 'We are working on our first project stories. Would you like to know what we can do for your situation? We are happy to think along with you.')}</p></div>
   <div class="btn-row"><a class="btn btn--primary" href="/offerte-aanvragen/">${T('Advies of offerte aanvragen', 'Request advice or a quote')}</a><a class="btn btn--ghost" href="/oplossingen/">${T('Bekijk oplossingen', 'View solutions')}</a></div>
 </div></section>`;
-  return { path: '/projecten/', title: T('Projecten | EnviroFlow', 'Projects | EnviroFlow'), description: T('Projecten van EnviroFlow: situatie, uitdaging, oplossing en resultaat.', 'EnviroFlow projects: situation, challenge, solution and result.'), body, crumbs: [H, { name: T('Projecten', 'Projects'), url: '/projecten/' }] };
+  // Nog geen projecten: niet in zoekmachines tot er echte projectverhalen staan (een lege pagina telt mee in de beoordeling van de hele site).
+  return { noindex: true, path: '/projecten/', title: T('Projecten | EnviroFlow', 'Projects | EnviroFlow'), description: T('Projecten van EnviroFlow: situatie, uitdaging, oplossing en resultaat.', 'EnviroFlow projects: situation, challenge, solution and result.'), body, crumbs: [H, { name: T('Projecten', 'Projects'), url: '/projecten/' }] };
 }
 
 export function projectTemplatePage(ctx) {
@@ -173,6 +174,18 @@ export function aboutPage(ctx) {
   <div><h2>${T('Onze ambitie', 'Our ambition')}</h2><p>${T('Wij beginnen met flexibele oplossingen van technisch textiel: opvangbakken, tanks en waterkeringen. Ons doel is om uit te groeien tot een vaste partner voor alles rond opslag en opvang van vloeistoffen. Het assortiment breiden wij stap voor stap uit, onder meer met lekbakken van staal en kunststof, spill kits, absorptiemateriaal, pompen en slangen.', 'We are starting with flexible solutions made of technical textile: spill trays, tanks and flood barriers. Our goal is to grow into a regular partner for everything related to the storage and containment of liquids. We will expand the range step by step, including steel and plastic spill trays, spill kits, absorbents, pumps and hoses.')}</p></div>
 </div></section>
 <section class="section section--grey"><div class="container"><h2>${T('Hoe wij werken', 'How we work')}</h2>${stepsList()}</div></section>
+<section class="section section--tight" aria-labelledby="h-gegevens"><div class="container container--narrow"><h2 id="h-gegevens">${T('Bedrijfsgegevens', 'Company details')}</h2>
+  <div class="table-scroll"><table class="kb-table"><tbody>
+    <tr><th scope="row">${T('Naam', 'Name')}</th><td>EnviroFlow</td></tr>
+    <tr><th scope="row">${T('Adres', 'Address')}</th><td>${esc(ctx.site.address.street)}, ${esc(ctx.site.address.postalCode)} ${esc(ctx.site.address.city)}</td></tr>
+    <tr><th scope="row">${T('KvK-nummer', 'Chamber of Commerce (KvK)')}</th><td>${esc(ctx.site.kvk)}</td></tr>
+    <tr><th scope="row">${T('Btw-nummer', 'VAT number')}</th><td>${esc(ctx.site.vatNumber)}</td></tr>
+    <tr><th scope="row">${T('Telefoon', 'Phone')}</th><td><a href="tel:${ctx.site.phonePrimary.tel}">${ctx.site.phonePrimary.display}</a> · <a href="tel:${ctx.site.phoneSecondary.tel}">${ctx.site.phoneSecondary.display}</a></td></tr>
+    <tr><th scope="row">${T('E-mail', 'Email')}</th><td><a href="mailto:${ctx.site.email}">${ctx.site.email}</a></td></tr>
+    <tr><th scope="row">${T('Werkgebied', 'Service area')}</th><td>${T('Nederland', 'The Netherlands')}</td></tr>
+  </tbody></table></div>
+  <p>${T('In onze <a href="/kennisbank/">kennisbank</a> leggen wij uit hoe u vloeistoffen veilig opslaat en opvangt. Bij wet- en regelgeving verwijzen wij altijd naar de officiële bron. Productgegevens komen van de fabrikant.', 'In our <a href="/kennisbank/">knowledge base</a> we explain how to store and contain liquids safely. For laws and regulations we always refer to the official source. Product data comes from the manufacturer.')}</p>
+</div></section>
 ${ctaBand({ title: T('Kennismaken?', 'Get to know us?'), text: T('Bel of mail ons. Wij horen graag waar u mee bezig bent.', 'Call or email us. We would love to hear what you are working on.'), buttons: [{ label: T('Neem contact op', 'Contact us'), href: '/contact/', cls: 'btn--accent' }, { label: ctx.site.phonePrimary.display, href: `tel:${ctx.site.phonePrimary.tel}`, cls: 'btn--outline-light', icon: 'phone' }] })}`;
   return { path: '/over-ons/', title: T('Over EnviroFlow | Persoonlijk advies in vloeistofopslag', 'About EnviroFlow | Personal advice on liquid storage'), description: T('EnviroFlow is een jong bedrijf, opgericht door twee broers. Korte lijnen, persoonlijk contact en praktisch advies over vloeistofopslag en opvang.', 'EnviroFlow is a young company founded by two brothers. Short lines of communication, personal contact and practical advice on liquid storage and containment.'), body, crumbs: [H, { name: T('Over ons', 'About us'), url: '/over-ons/' }] };
 }
@@ -180,7 +193,8 @@ ${ctaBand({ title: T('Kennismaken?', 'Get to know us?'), text: T('Bel of mail on
 export function partnersPage(ctx) {
   const body = `<section class="page-head"><div class="container"><h1>Partners</h1><p class="lead">${T('EnviroFlow werkt samen met fabrikanten die wij kennen en vertrouwen.', 'EnviroFlow works with manufacturers we know and trust.')}</p></div></section>
 <section class="section section--tight"><div class="container"><div class="cat-grid">${ctx.brands.filter((b) => b.active).map((b) => `<a class="ccard" href="/partners/${b.slug}/"><div class="logo-ph logo-ph--card">${b.logo ? `<img class="partner-logo" src="${b.logo}" alt="${esc(b.name)} logo" width="280" height="105">` : ph(b.logoPlaceholder)}</div><div class="ccard__body"><h2>${esc(b.name)}</h2><p>${esc(b.intro)}</p><span class="link-arrow">${T('Meer over', 'More about')} ${esc(b.name)} ${icon('arrow')}</span></div></a>`).join('')}</div></div></section>`;
-  return { path: '/partners/', title: 'Partners | EnviroFlow', description: T('De fabrikanten waarmee EnviroFlow samenwerkt.', 'The manufacturers EnviroFlow works with.'), body, crumbs: [H, { name: 'Partners', url: '/partners/' }] };
+  // Overzicht met één partner: te dun voor zoekmachines; de partnerpagina zelf blijft vindbaar.
+  return { noindex: true, path: '/partners/', title: 'Partners | EnviroFlow', description: T('De fabrikanten waarmee EnviroFlow samenwerkt.', 'The manufacturers EnviroFlow works with.'), body, crumbs: [H, { name: 'Partners', url: '/partners/' }] };
 }
 
 export function brandPage(b, ctx) {
